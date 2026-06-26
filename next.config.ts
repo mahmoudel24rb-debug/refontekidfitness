@@ -6,7 +6,6 @@ const nextConfig: NextConfig = {
   // type-check/lint sur ce code, sinon le build échoue sur ces propriétés.
   // Le code métier qu'on écrit à la main reste vérifié dans l'éditeur.
   typescript: { ignoreBuildErrors: true },
-  eslint: { ignoreDuringBuilds: true },
 };
 
 export default nextConfig;
