@@ -13,7 +13,7 @@ export default function HomePage() {
                 <nav className={"framer-8315z framer-epvch framer-v-epvch"} data-framer-name={"Desktop"} style={{ backgroundColor: "rgba(0, 0, 0, 0)", width: "100%" }}>
                   <div className={"framer-1kmavi"} data-framer-name={"Limit"}>
                     <div className={"framer-13iyn47"} data-framer-name={"Logo & Menu"}>
-                      <a as={"a"} data-framer-name={"Logo"} href={"./"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-cgggxx framer-m0itgv"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                      <a data-framer-name={"Logo"} href={"./"} className={"framer-cgggxx framer-m0itgv"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                         <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                           <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 124 32"}>
                             <use href={"#svg-117104609_5241"} />
@@ -87,7 +87,7 @@ export default function HomePage() {
                       <div className={"framer-1bes2uj-container"}>
                         <div style={{ display: "contents" }} />
                       </div>
-                      <a as={"a"} data-framer-name={"Logo"} href={"./"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-cgggxx framer-m0itgv"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                      <a data-framer-name={"Logo"} href={"./"} className={"framer-cgggxx framer-m0itgv"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                         <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                           <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 124 32"}>
                             <use href={"#svg-117104609_5241"} />
@@ -158,7 +158,7 @@ export default function HomePage() {
                 <nav className={"framer-8315z framer-epvch framer-v-1a8ygpt"} data-framer-name={"Laptop Scroll"} style={{ backgroundColor: "rgba(0, 0, 0, 0)", width: "100%" }}>
                   <div className={"framer-1kmavi"} data-framer-name={"Limit"}>
                     <div className={"framer-13iyn47"} data-framer-name={"Logo & Menu"}>
-                      <a as={"a"} data-framer-name={"Logo"} href={"./"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-cgggxx framer-m0itgv"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                      <a data-framer-name={"Logo"} href={"./"} className={"framer-cgggxx framer-m0itgv"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                         <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                           <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 124 32"}>
                             <use href={"#svg-117104609_5241"} />
@@ -235,7 +235,7 @@ export default function HomePage() {
                     <div className={"framer-1bes2uj-container"}>
                       <div style={{ display: "contents" }} />
                     </div>
-                    <a as={"a"} data-framer-name={"Logo"} href={"./"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-cgggxx framer-m0itgv"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                    <a data-framer-name={"Logo"} href={"./"} className={"framer-cgggxx framer-m0itgv"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                       <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                         <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 124 32"}>
                           <use href={"#svg-117104609_5241"} />
@@ -305,7 +305,7 @@ export default function HomePage() {
           </div>
           <div className={"framer-19bh027"} data-framer-name={"Sticky"}>
             <main className={"framer-okomez"} data-framer-name={"Hero"} id={"hero"}>
-              <div data-framer-name={"Line-Drawing"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-9n5cfh hidden-10l0lpx"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+              <div data-framer-name={"Line-Drawing"} className={"framer-9n5cfh hidden-10l0lpx"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                 <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                   <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 558 563"}>
                     <use href={"#svg2137278723_743"} />
@@ -458,21 +458,21 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className={"framer-1oxtim0"} data-framer-name={"Image Wrapper"}>
-                  <div data-framer-name={"Plane"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-1a8u8yt"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                  <div data-framer-name={"Plane"} className={"framer-1a8u8yt"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                     <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                       <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 69 57"}>
                         <use href={"#svg619412030_1349"} />
                       </svg>
                     </div>
                   </div>
-                  <div data-framer-name={"Stars"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-zsmc7z"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                  <div data-framer-name={"Stars"} className={"framer-zsmc7z"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                     <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                       <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 69 66"}>
                         <use href={"#svg-884819209_2835"} />
                       </svg>
                     </div>
                   </div>
-                  <div data-framer-name={"Star"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-2nw3pe"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                  <div data-framer-name={"Star"} className={"framer-2nw3pe"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                     <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                       <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 45 46"}>
                         <use href={"#svg968732524_1559"} />
@@ -501,7 +501,7 @@ export default function HomePage() {
                       </div>
                     </li>
                     <li className={"ticker-item"} aria-hidden={"false"} aria-posinset={"2"} aria-setsize={"6"} style={{ flexGrow: "0", flexShrink: "0", position: "relative", height: "fit-content", width: "fit-content", transform: "none" }}>
-                      <div data-framer-name={"Star 5"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-7lwfiv"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                      <div data-framer-name={"Star 5"} className={"framer-7lwfiv"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                         <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                           <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 25 25"}>
                             <use href={"#svg-1252930658_457"} />
@@ -517,7 +517,7 @@ export default function HomePage() {
                       </div>
                     </li>
                     <li className={"ticker-item"} aria-hidden={"false"} aria-posinset={"4"} aria-setsize={"6"} style={{ flexGrow: "0", flexShrink: "0", position: "relative", height: "fit-content", width: "fit-content", transform: "none" }}>
-                      <div data-framer-name={"Star 5"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-10q9py"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                      <div data-framer-name={"Star 5"} className={"framer-10q9py"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                         <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                           <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 25 25"}>
                             <use href={"#svg-1252930658_457"} />
@@ -533,7 +533,7 @@ export default function HomePage() {
                       </div>
                     </li>
                     <li className={"ticker-item"} aria-hidden={"false"} aria-posinset={"6"} aria-setsize={"6"} style={{ flexGrow: "0", flexShrink: "0", position: "relative", height: "fit-content", width: "fit-content", transform: "none" }}>
-                      <div data-framer-name={"Star 5"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-1jiajfp"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                      <div data-framer-name={"Star 5"} className={"framer-1jiajfp"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                         <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                           <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 25 25"}>
                             <use href={"#svg-1252930658_457"} />
@@ -598,7 +598,7 @@ export default function HomePage() {
                         </div>
                       </div>
                     </div>
-                    <div data-framer-name={"Lightning Icon "} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-1afbjog"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                    <div data-framer-name={"Lightning Icon "} className={"framer-1afbjog"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                       <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                         <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 79 79"}>
                           <use href={"#svg-1593822655_1047"} />
@@ -749,7 +749,7 @@ export default function HomePage() {
               </div>
             </section>
             <section className={"framer-13n12c8"} data-framer-name={"Activities"}>
-              <div data-framer-name={"Box"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-bmnnku"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+              <div data-framer-name={"Box"} className={"framer-bmnnku"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                 <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                   <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 73 73"}>
                     <use href={"#svg433889345_395"} />
@@ -2020,7 +2020,7 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-              <div data-framer-name={"Star"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-15ki5wd"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+              <div data-framer-name={"Star"} className={"framer-15ki5wd"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                 <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                   <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 25 25"}>
                     <use href={"#svg1371842836_457"} />
@@ -2031,7 +2031,7 @@ export default function HomePage() {
             <section className={"framer-10x9iwm"} data-framer-name={"Testimonials"}>
               <div className={"framer-1ifo1f4"} data-framer-name={"Testimonial Slider Section"}>
                 <div className={"framer-1e7le41"} data-framer-name={"Limit"}>
-                  <div data-framer-name={"quote mark"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-1sw2d6"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                  <div data-framer-name={"quote mark"} className={"framer-1sw2d6"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                     <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                       <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 112 96"}>
                         <use href={"#svg1948298611_726"} />
@@ -2039,7 +2039,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div className={"framer-16exp08"} data-framer-name={"Shape"}>
-                    <div data-framer-name={"Ellipse "} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-tpmuq8"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0" }}>
+                    <div data-framer-name={"Ellipse "} className={"framer-tpmuq8"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0" }}>
                       <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                         <svg style={{ width: "100%", height: "100%" }}>
                           <use href={"#svg11589070080"} />
@@ -2084,7 +2084,7 @@ export default function HomePage() {
                                     </p>
                                   </div>
                                 </div>
-                                <div data-framer-name={"“"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-11f6jit"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                                <div data-framer-name={"“"} className={"framer-11f6jit"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                   <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                     <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 40 34"}>
                                       <use href={"#svg1096321103_669"} />
@@ -2100,7 +2100,7 @@ export default function HomePage() {
                             </div>
                           </div>
                           <div className={"framer-a50m00-container"} data-framer-name={"Image Card"} name={"Image Card"}>
-                            <div name={"Image Card"} className={"framer-jyvtl framer-JIYi9 framer-5BS8D framer-1hwrja9 framer-v-bfo15t"} data-framer-name={"Image Card"} background={"[object Object]"} style={{ backgroundColor: "rgba(0, 0, 0, 0)", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
+                            <div name={"Image Card"} className={"framer-jyvtl framer-JIYi9 framer-5BS8D framer-1hwrja9 framer-v-bfo15t"} data-framer-name={"Image Card"} style={{ backgroundColor: "rgba(0, 0, 0, 0)", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                               <div className={"framer-lw0z7q"} data-framer-name={"BG"} style={{ backgroundColor: "rgba(255, 255, 255, 0.3)", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px", transform: "rotate(3deg)" }} />
                               <div className={"framer-11t831z"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                                 <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
@@ -2171,7 +2171,7 @@ export default function HomePage() {
                                     </p>
                                   </div>
                                 </div>
-                                <div data-framer-name={"“"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-11f6jit"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                                <div data-framer-name={"“"} className={"framer-11f6jit"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                   <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                     <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 40 34"}>
                                       <use href={"#svg1096321103_669"} />
@@ -2187,7 +2187,7 @@ export default function HomePage() {
                             </div>
                           </div>
                           <div className={"framer-a50m00-container"} data-framer-name={"Image Card"} name={"Image Card"}>
-                            <div name={"Image Card"} className={"framer-jyvtl framer-JIYi9 framer-5BS8D framer-1hwrja9 framer-v-bfo15t"} data-framer-name={"Image Card"} background={"[object Object]"} style={{ backgroundColor: "rgba(0, 0, 0, 0)", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
+                            <div name={"Image Card"} className={"framer-jyvtl framer-JIYi9 framer-5BS8D framer-1hwrja9 framer-v-bfo15t"} data-framer-name={"Image Card"} style={{ backgroundColor: "rgba(0, 0, 0, 0)", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                               <div className={"framer-lw0z7q"} data-framer-name={"BG"} style={{ backgroundColor: "rgba(255, 255, 255, 0.3)", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px", transform: "rotate(3deg)" }} />
                               <div className={"framer-11t831z"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                                 <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
@@ -2221,7 +2221,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div data-framer-name={"Exclude Icon"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-4aacu7"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                  <div data-framer-name={"Exclude Icon"} className={"framer-4aacu7"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                     <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                       <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 55 55"}>
                         <use href={"#svg1714458378_811"} />
@@ -2384,28 +2384,28 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-              <div data-framer-name={"Intersect"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-1ok0wro"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+              <div data-framer-name={"Intersect"} className={"framer-1ok0wro"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                 <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                   <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 65 130"}>
                     <use href={"#svg2112573605_927"} />
                   </svg>
                 </div>
               </div>
-              <div data-framer-name={"Union"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-15nzl37"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+              <div data-framer-name={"Union"} className={"framer-15nzl37"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                 <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                   <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 77 131"}>
                     <use href={"#svg-1994336551_1324"} />
                   </svg>
                 </div>
               </div>
-              <div data-framer-name={"Star "} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-lnuq4o"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+              <div data-framer-name={"Star "} className={"framer-lnuq4o"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                 <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                   <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 25 25"}>
                     <use href={"#svg1371842836_457"} />
                   </svg>
                 </div>
               </div>
-              <div data-framer-name={"Ellipse "} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-89oilq"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+              <div data-framer-name={"Ellipse "} className={"framer-89oilq"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                 <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                   <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 24 24"}>
                     <use href={"#svg-126777974_148"} />
@@ -2472,14 +2472,14 @@ export default function HomePage() {
                           </div>
                         </div>
                         <div className={"framer-g9atzz"} data-framer-name={"Patterns"} style={{ borderBottomLeftRadius: "40px", borderBottomRightRadius: "40px", borderTopLeftRadius: "40px", borderTopRightRadius: "40px" }}>
-                          <div data-framer-name={"Pattern"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-6mrs5u"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                          <div data-framer-name={"Pattern"} className={"framer-6mrs5u"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                             <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                               <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 1038 406"}>
                                 <use href={"#svg781757668_452"} />
                               </svg>
                             </div>
                           </div>
-                          <div data-framer-name={"Intersect"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-1wkjtj8"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                          <div data-framer-name={"Intersect"} className={"framer-1wkjtj8"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                             <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                               <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 88 88"}>
                                 <use href={"#svg-62817165_709"} />
@@ -2492,7 +2492,7 @@ export default function HomePage() {
                         <div className={"framer-uw0mir"} data-framer-name={"Content"}>
                           <div className={"framer-vuq2bp"} data-framer-name={"Logo & Text"}>
                             <div className={"framer-1j5pir8"}>
-                              <a as={"a"} data-framer-name={"Logo"} href={"./"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-1k2me5 framer-1sylu6b"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                              <a data-framer-name={"Logo"} href={"./"} className={"framer-1k2me5 framer-1sylu6b"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                 <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                   <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 124 32"}>
                                     <use href={"#svg757967357_5234"} />
@@ -2507,7 +2507,7 @@ export default function HomePage() {
                             </div>
                             <div className={"framer-1l5wre9"} data-framer-name={"Social Icons"}>
                               <a className={"framer-138mdus framer-1sylu6b"} data-framer-name={"Facebook"} href={"https://facebook.com"} target={"_blank"} rel={"noopener"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
-                                <div data-framer-name={"Facebook"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-1cbuggw"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                                <div data-framer-name={"Facebook"} className={"framer-1cbuggw"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                   <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                     <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 14 23"}>
                                       <use href={"#svg-1112614042_342"} />
@@ -2516,7 +2516,7 @@ export default function HomePage() {
                                 </div>
                               </a>
                               <a className={"framer-1yhf2k9 framer-1sylu6b"} data-framer-name={"X"} href={"https://x.com"} target={"_blank"} rel={"noopener"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
-                                <div data-framer-name={"X logo"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-v9qygc"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                                <div data-framer-name={"X logo"} className={"framer-v9qygc"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                   <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                     <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 23 21"}>
                                       <use href={"#svg-410644346_311"} />
@@ -2525,7 +2525,7 @@ export default function HomePage() {
                                 </div>
                               </a>
                               <a className={"framer-1szajvl framer-1sylu6b"} data-framer-name={"Linkedin"} href={"https://linkedin.com"} target={"_blank"} rel={"noopener"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
-                                <div data-framer-name={"LinkedIn"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-3hj7dz"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                                <div data-framer-name={"LinkedIn"} className={"framer-3hj7dz"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                   <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                     <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 23 23"}>
                                       <use href={"#svg1483383778_471"} />
@@ -2534,7 +2534,7 @@ export default function HomePage() {
                                 </div>
                               </a>
                               <a className={"framer-1titr0 framer-1sylu6b"} data-framer-name={"Youtube"} href={"https://youtube.com"} target={"_blank"} rel={"noopener"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
-                                <div data-framer-name={"YouTube"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-ye8qwh"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                                <div data-framer-name={"YouTube"} className={"framer-ye8qwh"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                   <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                     <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 29 20"}>
                                       <use href={"#svg-1101678604_400"} />
@@ -2692,7 +2692,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div data-framer-name={"Left Icon"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-a0i0ao"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                  <div data-framer-name={"Left Icon"} className={"framer-a0i0ao"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                     <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                       <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 55 55"}>
                         <use href={"#svg1714458378_811"} />
@@ -2700,7 +2700,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div className={"framer-tyx4g"} data-framer-name={"Ellipse"} style={{ transform: "translate(-50%, -50%)" }}>
-                    <div data-framer-name={"Ellipse icon"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-2k4vgg"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0" }}>
+                    <div data-framer-name={"Ellipse icon"} className={"framer-2k4vgg"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0" }}>
                       <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                         <svg style={{ width: "100%", height: "100%" }}>
                           <use href={"#svg11589070080"} />
@@ -2770,14 +2770,14 @@ export default function HomePage() {
                           </div>
                         </div>
                         <div className={"framer-g9atzz"} data-framer-name={"Patterns"} style={{ borderBottomLeftRadius: "40px", borderBottomRightRadius: "40px", borderTopLeftRadius: "40px", borderTopRightRadius: "40px" }}>
-                          <div data-framer-name={"Pattern"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-6mrs5u"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                          <div data-framer-name={"Pattern"} className={"framer-6mrs5u"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                             <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                               <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 1038 406"}>
                                 <use href={"#svg781757668_452"} />
                               </svg>
                             </div>
                           </div>
-                          <div data-framer-name={"Intersect"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-1wkjtj8"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                          <div data-framer-name={"Intersect"} className={"framer-1wkjtj8"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                             <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                               <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 88 88"}>
                                 <use href={"#svg-62817165_709"} />
@@ -2790,7 +2790,7 @@ export default function HomePage() {
                         <div className={"framer-uw0mir"} data-framer-name={"Content"}>
                           <div className={"framer-vuq2bp"} data-framer-name={"Logo & Text"}>
                             <div className={"framer-1j5pir8"}>
-                              <a as={"a"} data-framer-name={"Logo"} href={"./"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-1k2me5 framer-1sylu6b"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                              <a data-framer-name={"Logo"} href={"./"} className={"framer-1k2me5 framer-1sylu6b"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                 <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                   <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 124 32"}>
                                     <use href={"#svg757967357_5234"} />
@@ -2805,7 +2805,7 @@ export default function HomePage() {
                             </div>
                             <div className={"framer-1l5wre9"} data-framer-name={"Social Icons"}>
                               <a className={"framer-138mdus framer-1sylu6b"} data-framer-name={"Facebook"} href={"https://facebook.com"} target={"_blank"} rel={"noopener"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
-                                <div data-framer-name={"Facebook"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-1cbuggw"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                                <div data-framer-name={"Facebook"} className={"framer-1cbuggw"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                   <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                     <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 14 23"}>
                                       <use href={"#svg-1112614042_342"} />
@@ -2814,7 +2814,7 @@ export default function HomePage() {
                                 </div>
                               </a>
                               <a className={"framer-1yhf2k9 framer-1sylu6b"} data-framer-name={"X"} href={"https://x.com"} target={"_blank"} rel={"noopener"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
-                                <div data-framer-name={"X logo"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-v9qygc"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                                <div data-framer-name={"X logo"} className={"framer-v9qygc"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                   <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                     <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 23 21"}>
                                       <use href={"#svg-410644346_311"} />
@@ -2823,7 +2823,7 @@ export default function HomePage() {
                                 </div>
                               </a>
                               <a className={"framer-1szajvl framer-1sylu6b"} data-framer-name={"Linkedin"} href={"https://linkedin.com"} target={"_blank"} rel={"noopener"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
-                                <div data-framer-name={"LinkedIn"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-3hj7dz"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                                <div data-framer-name={"LinkedIn"} className={"framer-3hj7dz"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                   <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                     <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 23 23"}>
                                       <use href={"#svg1483383778_471"} />
@@ -2832,7 +2832,7 @@ export default function HomePage() {
                                 </div>
                               </a>
                               <a className={"framer-1titr0 framer-1sylu6b"} data-framer-name={"Youtube"} href={"https://youtube.com"} target={"_blank"} rel={"noopener"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
-                                <div data-framer-name={"YouTube"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-ye8qwh"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                                <div data-framer-name={"YouTube"} className={"framer-ye8qwh"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                   <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                     <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 29 20"}>
                                       <use href={"#svg-1101678604_400"} />
@@ -2987,7 +2987,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div data-framer-name={"Left Icon"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-a0i0ao"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                  <div data-framer-name={"Left Icon"} className={"framer-a0i0ao"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                     <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                       <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 55 55"}>
                         <use href={"#svg1714458378_811"} />
@@ -2995,7 +2995,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div className={"framer-tyx4g"} data-framer-name={"Ellipse"} style={{ transform: "translate(-50%, -50%)" }}>
-                    <div data-framer-name={"Ellipse icon"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-2k4vgg"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0" }}>
+                    <div data-framer-name={"Ellipse icon"} className={"framer-2k4vgg"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0" }}>
                       <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                         <svg style={{ width: "100%", height: "100%" }}>
                           <use href={"#svg11589070080"} />
@@ -3065,14 +3065,14 @@ export default function HomePage() {
                           </div>
                         </div>
                         <div className={"framer-g9atzz"} data-framer-name={"Patterns"} style={{ borderBottomLeftRadius: "40px", borderBottomRightRadius: "40px", borderTopLeftRadius: "40px", borderTopRightRadius: "40px" }}>
-                          <div data-framer-name={"Pattern"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-6mrs5u"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                          <div data-framer-name={"Pattern"} className={"framer-6mrs5u"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                             <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                               <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 1038 406"}>
                                 <use href={"#svg781757668_452"} />
                               </svg>
                             </div>
                           </div>
-                          <div data-framer-name={"Intersect"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-1wkjtj8"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                          <div data-framer-name={"Intersect"} className={"framer-1wkjtj8"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                             <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                               <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 88 88"}>
                                 <use href={"#svg-62817165_709"} />
@@ -3085,7 +3085,7 @@ export default function HomePage() {
                         <div className={"framer-uw0mir"} data-framer-name={"Content"}>
                           <div className={"framer-vuq2bp"} data-framer-name={"Logo & Text"}>
                             <div className={"framer-1j5pir8"}>
-                              <a as={"a"} data-framer-name={"Logo"} href={"./"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-1k2me5 framer-1sylu6b"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                              <a data-framer-name={"Logo"} href={"./"} className={"framer-1k2me5 framer-1sylu6b"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                 <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                   <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 124 32"}>
                                     <use href={"#svg757967357_5234"} />
@@ -3100,7 +3100,7 @@ export default function HomePage() {
                             </div>
                             <div className={"framer-1l5wre9"} data-framer-name={"Social Icons"}>
                               <a className={"framer-138mdus framer-1sylu6b"} data-framer-name={"Facebook"} href={"https://facebook.com"} target={"_blank"} rel={"noopener"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
-                                <div data-framer-name={"Facebook"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-1cbuggw"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                                <div data-framer-name={"Facebook"} className={"framer-1cbuggw"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                   <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                     <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 14 23"}>
                                       <use href={"#svg-1112614042_342"} />
@@ -3109,7 +3109,7 @@ export default function HomePage() {
                                 </div>
                               </a>
                               <a className={"framer-1yhf2k9 framer-1sylu6b"} data-framer-name={"X"} href={"https://x.com"} target={"_blank"} rel={"noopener"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
-                                <div data-framer-name={"X logo"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-v9qygc"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                                <div data-framer-name={"X logo"} className={"framer-v9qygc"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                   <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                     <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 23 21"}>
                                       <use href={"#svg-410644346_311"} />
@@ -3118,7 +3118,7 @@ export default function HomePage() {
                                 </div>
                               </a>
                               <a className={"framer-1szajvl framer-1sylu6b"} data-framer-name={"Linkedin"} href={"https://linkedin.com"} target={"_blank"} rel={"noopener"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
-                                <div data-framer-name={"LinkedIn"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-3hj7dz"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                                <div data-framer-name={"LinkedIn"} className={"framer-3hj7dz"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                   <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                     <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 23 23"}>
                                       <use href={"#svg1483383778_471"} />
@@ -3127,7 +3127,7 @@ export default function HomePage() {
                                 </div>
                               </a>
                               <a className={"framer-1titr0 framer-1sylu6b"} data-framer-name={"Youtube"} href={"https://youtube.com"} target={"_blank"} rel={"noopener"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
-                                <div data-framer-name={"YouTube"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-ye8qwh"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                                <div data-framer-name={"YouTube"} className={"framer-ye8qwh"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                   <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                     <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 29 20"}>
                                       <use href={"#svg-1101678604_400"} />
@@ -3285,7 +3285,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div data-framer-name={"Left Icon"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-a0i0ao"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                  <div data-framer-name={"Left Icon"} className={"framer-a0i0ao"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                     <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                       <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 55 55"}>
                         <use href={"#svg1714458378_811"} />
@@ -3293,7 +3293,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div className={"framer-tyx4g"} data-framer-name={"Ellipse"} style={{ transform: "translate(-50%, -50%)" }}>
-                    <div data-framer-name={"Ellipse icon"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-2k4vgg"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0" }}>
+                    <div data-framer-name={"Ellipse icon"} className={"framer-2k4vgg"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0" }}>
                       <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                         <svg style={{ width: "100%", height: "100%" }}>
                           <use href={"#svg11589070080"} />
@@ -3363,14 +3363,14 @@ export default function HomePage() {
                           </div>
                         </div>
                         <div className={"framer-g9atzz"} data-framer-name={"Patterns"} style={{ borderBottomLeftRadius: "40px", borderBottomRightRadius: "40px", borderTopLeftRadius: "40px", borderTopRightRadius: "40px" }}>
-                          <div data-framer-name={"Pattern"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-6mrs5u"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                          <div data-framer-name={"Pattern"} className={"framer-6mrs5u"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                             <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                               <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 1038 406"}>
                                 <use href={"#svg781757668_452"} />
                               </svg>
                             </div>
                           </div>
-                          <div data-framer-name={"Intersect"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-1wkjtj8"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                          <div data-framer-name={"Intersect"} className={"framer-1wkjtj8"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                             <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                               <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 88 88"}>
                                 <use href={"#svg-62817165_709"} />
@@ -3383,7 +3383,7 @@ export default function HomePage() {
                         <div className={"framer-uw0mir"} data-framer-name={"Content"}>
                           <div className={"framer-vuq2bp"} data-framer-name={"Logo & Text"}>
                             <div className={"framer-1j5pir8"}>
-                              <a as={"a"} data-framer-name={"Logo"} href={"./"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-1k2me5 framer-1sylu6b"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                              <a data-framer-name={"Logo"} href={"./"} className={"framer-1k2me5 framer-1sylu6b"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                 <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                   <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 124 32"}>
                                     <use href={"#svg757967357_5234"} />
@@ -3398,7 +3398,7 @@ export default function HomePage() {
                             </div>
                             <div className={"framer-1l5wre9"} data-framer-name={"Social Icons"}>
                               <a className={"framer-138mdus framer-1sylu6b"} data-framer-name={"Facebook"} href={"https://facebook.com"} target={"_blank"} rel={"noopener"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
-                                <div data-framer-name={"Facebook"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-1cbuggw"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                                <div data-framer-name={"Facebook"} className={"framer-1cbuggw"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                   <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                     <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 14 23"}>
                                       <use href={"#svg-1112614042_342"} />
@@ -3407,7 +3407,7 @@ export default function HomePage() {
                                 </div>
                               </a>
                               <a className={"framer-1yhf2k9 framer-1sylu6b"} data-framer-name={"X"} href={"https://x.com"} target={"_blank"} rel={"noopener"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
-                                <div data-framer-name={"X logo"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-v9qygc"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                                <div data-framer-name={"X logo"} className={"framer-v9qygc"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                   <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                     <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 23 21"}>
                                       <use href={"#svg-410644346_311"} />
@@ -3416,7 +3416,7 @@ export default function HomePage() {
                                 </div>
                               </a>
                               <a className={"framer-1szajvl framer-1sylu6b"} data-framer-name={"Linkedin"} href={"https://linkedin.com"} target={"_blank"} rel={"noopener"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
-                                <div data-framer-name={"LinkedIn"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-3hj7dz"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                                <div data-framer-name={"LinkedIn"} className={"framer-3hj7dz"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                   <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                     <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 23 23"}>
                                       <use href={"#svg1483383778_471"} />
@@ -3425,7 +3425,7 @@ export default function HomePage() {
                                 </div>
                               </a>
                               <a className={"framer-1titr0 framer-1sylu6b"} data-framer-name={"Youtube"} href={"https://youtube.com"} target={"_blank"} rel={"noopener"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "8px", borderBottomRightRadius: "8px", borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
-                                <div data-framer-name={"YouTube"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-ye8qwh"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                                <div data-framer-name={"YouTube"} className={"framer-ye8qwh"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                   <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                                     <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 29 20"}>
                                       <use href={"#svg-1101678604_400"} />
@@ -3583,7 +3583,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div data-framer-name={"Left Icon"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-a0i0ao"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
+                  <div data-framer-name={"Left Icon"} className={"framer-a0i0ao"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                     <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                       <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 55 55"}>
                         <use href={"#svg1714458378_811"} />
@@ -3591,7 +3591,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div className={"framer-tyx4g"} data-framer-name={"Ellipse"} style={{ transform: "translate(-50%, -50%)" }}>
-                    <div data-framer-name={"Ellipse icon"} parentsize={"0"} constraints={"[object Object]"} rotation={"0"} shadows={null} className={"framer-2k4vgg"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0" }}>
+                    <div data-framer-name={"Ellipse icon"} className={"framer-2k4vgg"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0" }}>
                       <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
                         <svg style={{ width: "100%", height: "100%" }}>
                           <use href={"#svg11589070080"} />
