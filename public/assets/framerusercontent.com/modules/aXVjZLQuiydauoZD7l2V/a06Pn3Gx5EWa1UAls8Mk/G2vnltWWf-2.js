@@ -1,0 +1,2 @@
+import{jsx as e}from"react/jsx-runtime";import*as r from"react";export const richText=/*#__PURE__*/e(r.Fragment,{children:/*#__PURE__*/e("p",{children:"Our Pre-School program blends play-based learning with structured activities to help children develop foundational skills.Our Pre-School program blends play-based learning with structured activities to help children develop foundational skills."})});
+export const __FramerMetadata__ = {"exports":{"richText":{"type":"variable","annotations":{"framerContractVersion":"1"}},"__FramerMetadata__":{"type":"variable"}}}
