@@ -25,7 +25,7 @@ export default function ContactPage() {
                       <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-yxaa9i framer-d3xhqn"} data-framer-name={"Desktop"} href={"./about-us"}>
                         <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            About Us
+                            À propos
                           </p>
                         </div>
                       </a>
@@ -34,7 +34,7 @@ export default function ContactPage() {
                       <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-yxaa9i framer-d3xhqn"} data-framer-name={"Desktop"} href={"./programs"}>
                         <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Programs
+                            Activités
                           </p>
                         </div>
                       </a>
@@ -43,7 +43,7 @@ export default function ContactPage() {
                       <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-yxaa9i framer-d3xhqn"} data-framer-name={"Desktop"} href={"./admission"}>
                         <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Admissions
+                            Inscription
                           </p>
                         </div>
                       </a>
@@ -52,7 +52,7 @@ export default function ContactPage() {
                       <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-yxaa9i framer-d3xhqn"} data-framer-name={"Desktop"} href={"./parent-resources"}>
                         <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Parent Resources
+                            Infos parents
                           </p>
                         </div>
                       </a>
@@ -61,7 +61,7 @@ export default function ContactPage() {
                       <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-yxaa9i framer-d3xhqn"} data-framer-name={"Desktop"} href={"./contact"}>
                         <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Contact Us
+                            Contact
                           </p>
                         </div>
                       </a>
@@ -71,7 +71,7 @@ export default function ContactPage() {
                     <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-14bqr5f framer-1hf9a6b"} data-framer-name={"Button Nav"} data-border={"true"} href={"./book-a-tour"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                       <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91)))" }}>
-                          Book a Tour
+                          Réserver un essai
                         </p>
                       </div>
                     </a>
@@ -99,7 +99,7 @@ export default function ContactPage() {
                       <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-1egiqg8 framer-d3xhqn"} data-framer-name={"Phone"} href={"./about-us"} style={{ width: "100%" }}>
                         <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-ls868s"} data-styles-preset={"BkESJ3Zef"}>
-                            About Us
+                            À propos
                           </p>
                         </div>
                       </a>
@@ -108,7 +108,7 @@ export default function ContactPage() {
                       <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-1egiqg8 framer-d3xhqn"} data-framer-name={"Phone"} href={"./programs"} style={{ width: "100%" }}>
                         <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-ls868s"} data-styles-preset={"BkESJ3Zef"}>
-                            Programs
+                            Activités
                           </p>
                         </div>
                       </a>
@@ -117,7 +117,7 @@ export default function ContactPage() {
                       <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-1egiqg8 framer-d3xhqn"} data-framer-name={"Phone"} href={"./admission"} style={{ width: "100%" }}>
                         <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-ls868s"} data-styles-preset={"BkESJ3Zef"}>
-                            Admissions
+                            Inscription
                           </p>
                         </div>
                       </a>
@@ -126,7 +126,7 @@ export default function ContactPage() {
                       <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-1egiqg8 framer-d3xhqn"} data-framer-name={"Phone"} href={"./parent-resources"} style={{ width: "100%" }}>
                         <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-ls868s"} data-styles-preset={"BkESJ3Zef"}>
-                            Parent Resources
+                            Infos parents
                           </p>
                         </div>
                       </a>
@@ -135,7 +135,7 @@ export default function ContactPage() {
                       <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-1egiqg8 framer-d3xhqn"} data-framer-name={"Phone"} href={"./contact"} style={{ width: "100%" }}>
                         <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-ls868s"} data-styles-preset={"BkESJ3Zef"}>
-                            Contact Us
+                            Contact
                           </p>
                         </div>
                       </a>
@@ -145,7 +145,7 @@ export default function ContactPage() {
                     <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-14bqr5f framer-1hf9a6b"} data-framer-name={"Button Nav"} data-border={"true"} href={"./book-a-tour"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                       <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91)))" }}>
-                          Book a Tour
+                          Réserver un essai
                         </p>
                       </div>
                     </a>
@@ -170,7 +170,7 @@ export default function ContactPage() {
                       <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-yxaa9i framer-d3xhqn"} data-framer-name={"Desktop"} href={"./about-us"}>
                         <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            About Us
+                            À propos
                           </p>
                         </div>
                       </a>
@@ -179,7 +179,7 @@ export default function ContactPage() {
                       <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-yxaa9i framer-d3xhqn"} data-framer-name={"Desktop"} href={"./programs"}>
                         <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Programs
+                            Activités
                           </p>
                         </div>
                       </a>
@@ -188,7 +188,7 @@ export default function ContactPage() {
                       <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-yxaa9i framer-d3xhqn"} data-framer-name={"Desktop"} href={"./admission"}>
                         <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Admissions
+                            Inscription
                           </p>
                         </div>
                       </a>
@@ -197,7 +197,7 @@ export default function ContactPage() {
                       <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-yxaa9i framer-d3xhqn"} data-framer-name={"Desktop"} href={"./parent-resources"}>
                         <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Parent Resources
+                            Infos parents
                           </p>
                         </div>
                       </a>
@@ -206,7 +206,7 @@ export default function ContactPage() {
                       <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-yxaa9i framer-d3xhqn"} data-framer-name={"Desktop"} href={"./contact"}>
                         <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Contact Us
+                            Contact
                           </p>
                         </div>
                       </a>
@@ -216,7 +216,7 @@ export default function ContactPage() {
                     <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-14bqr5f framer-1hf9a6b"} data-framer-name={"Button Nav"} data-border={"true"} href={"./book-a-tour"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                       <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91)))" }}>
-                          Book a Tour
+                          Réserver un essai
                         </p>
                       </div>
                     </a>
@@ -228,7 +228,7 @@ export default function ContactPage() {
           <div className={"framer-vacs23"} data-framer-name={"Header"}>
             <div className={"framer-1uig2g8"} style={{ transform: "none" }}>
               <h2 className={"framer-text framer-styles-preset-h971pb"} data-styles-preset={"CEhR1NBj_"} style={{ "--framer-text-alignment": "center" }}>
-                Contact us
+                Contactez-nous
               </h2>
             </div>
             <div data-framer-name={"red star"} className={"framer-1obeg40"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
@@ -272,14 +272,14 @@ export default function ContactPage() {
                     </div>
                     <div className={"framer-idu7lg"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                        Phone Number
+                        Téléphone
                       </h4>
                     </div>
                     <div className={"framer-brm039"} data-framer-name={"Tel / Email / Office Hours"}>
                       <div className={"framer-v640wu"} style={{ "--extracted-r6o4lv": "var(--variable-reference-zQk8k8QB2-GqYXtpThk)", "--variable-reference-zQk8k8QB2-GqYXtpThk": "rgb(0, 0, 0)", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-alignment": "center", "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-zQk8k8QB2-GqYXtpThk))" }}>
                           <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"}>
-                            +1 (212) 555-1234
+                            02 47 44 41 43
                           </a>
                         </p>
                       </div>
@@ -293,14 +293,14 @@ export default function ContactPage() {
                     </div>
                     <div className={"framer-aiudmw"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                        Email Address
+                        Adresse email
                       </h4>
                     </div>
                     <div className={"framer-14lw3oa"} data-framer-name={"Tel / Email / Office Hours"}>
                       <div className={"framer-gfrw3y"} style={{ "--extracted-r6o4lv": "var(--variable-reference-zQk8k8QB2-GqYXtpThk)", "--variable-reference-zQk8k8QB2-GqYXtpThk": "rgb(0, 0, 0)", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-alignment": "center", "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-zQk8k8QB2-GqYXtpThk))" }}>
                           <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"}>
-                            hello@kinderly.com
+                            kidfitnessrochecorbon@gmail.com
                           </a>
                         </p>
                       </div>
@@ -314,13 +314,13 @@ export default function ContactPage() {
                     </div>
                     <div className={"framer-1w2ip0b"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                        Office Hour
+                        Horaires
                       </h4>
                     </div>
                     <div className={"framer-1q7l3pc"} data-framer-name={"Tel / Email / Office Hours"}>
                       <div className={"framer-p7vucw"} style={{ "--extracted-r6o4lv": "rgb(0, 0, 0)", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-alignment": "center", "--framer-text-color": "var(--extracted-r6o4lv, rgb(0, 0, 0))" }}>
-                          Monday to Friday: 8.30am – 04.00pm
+                          Lun–Ven : 9h30–12h30 et 16h–19h30 · Sam : 9h30–17h30
                         </p>
                       </div>
                     </div>
@@ -339,14 +339,14 @@ export default function ContactPage() {
                     </div>
                     <div className={"framer-idu7lg"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                        Phone Number
+                        Téléphone
                       </h4>
                     </div>
                     <div className={"framer-brm039"} data-framer-name={"Tel / Email / Office Hours"}>
                       <div className={"framer-v640wu"} style={{ "--extracted-r6o4lv": "var(--variable-reference-zQk8k8QB2-GqYXtpThk)", "--variable-reference-zQk8k8QB2-GqYXtpThk": "rgb(0, 0, 0)", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-alignment": "center", "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-zQk8k8QB2-GqYXtpThk))" }}>
                           <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"}>
-                            +1 (212) 555-1234
+                            02 47 44 41 43
                           </a>
                         </p>
                       </div>
@@ -360,14 +360,14 @@ export default function ContactPage() {
                     </div>
                     <div className={"framer-aiudmw"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                        Email Address
+                        Adresse email
                       </h4>
                     </div>
                     <div className={"framer-14lw3oa"} data-framer-name={"Tel / Email / Office Hours"}>
                       <div className={"framer-gfrw3y"} style={{ "--extracted-r6o4lv": "var(--variable-reference-zQk8k8QB2-GqYXtpThk)", "--variable-reference-zQk8k8QB2-GqYXtpThk": "rgb(0, 0, 0)", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-alignment": "center", "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-zQk8k8QB2-GqYXtpThk))" }}>
                           <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"}>
-                            hello@kinderly.com
+                            kidfitnessrochecorbon@gmail.com
                           </a>
                         </p>
                       </div>
@@ -381,13 +381,13 @@ export default function ContactPage() {
                     </div>
                     <div className={"framer-1w2ip0b"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                        Office Hour
+                        Horaires
                       </h4>
                     </div>
                     <div className={"framer-1q7l3pc"} data-framer-name={"Tel / Email / Office Hours"}>
                       <div className={"framer-p7vucw"} style={{ "--extracted-r6o4lv": "rgb(0, 0, 0)", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-alignment": "center", "--framer-text-color": "var(--extracted-r6o4lv, rgb(0, 0, 0))" }}>
-                          Monday to Friday: 8.30am – 04.00pm
+                          Lun–Ven : 9h30–12h30 et 16h–19h30 · Sam : 9h30–17h30
                         </p>
                       </div>
                     </div>
@@ -418,12 +418,12 @@ export default function ContactPage() {
                 </div>
                 <div className={"framer-1vm7j5"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                    School
+                    Le club
                   </h4>
                 </div>
                 <div className={"framer-tqtzya"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                    Locations
+                    à Rochecorbon
                   </h4>
                 </div>
               </div>
@@ -436,7 +436,7 @@ export default function ContactPage() {
                   </div>
                   <div className={"framer-h8xa2s"} style={{ transform: "none" }}>
                     <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                      Warsaw, Poland
+                      1 Quai de la Loire
                     </h5>
                   </div>
                   <div className={"framer-jvgrme"} data-framer-name={"Address Wrapper"}>
@@ -453,7 +453,7 @@ export default function ContactPage() {
                     <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-8xagx7 framer-1hf9a6b"} data-framer-name={"Link"} href={"https://maps.app.goo.gl/JGZes2HCu9eZbn2v9"} target={"_blank"} rel={"noopener"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "rgba(0, 0, 0, 0)", borderBottomLeftRadius: "0px", borderBottomRightRadius: "0px", borderTopLeftRadius: "0px", borderTopRightRadius: "0px" }}>
                       <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"}>
-                          Get Direction
+                          Itinéraire
                         </p>
                       </div>
                       <div className={"framer-1lg9yj-container"}>
@@ -470,7 +470,7 @@ export default function ContactPage() {
                   </div>
                   <div className={"framer-svd93s"} style={{ transform: "none" }}>
                     <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                      Krakow, Poland
+                      37210 Rochecorbon
                     </h5>
                   </div>
                   <div className={"framer-1psyg4u"} data-framer-name={"Address Wrapper"}>
@@ -487,7 +487,7 @@ export default function ContactPage() {
                     <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-8xagx7 framer-1hf9a6b"} data-framer-name={"Link"} href={"https://maps.app.goo.gl/JGZes2HCu9eZbn2v9"} target={"_blank"} rel={"noopener"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "rgba(0, 0, 0, 0)", borderBottomLeftRadius: "0px", borderBottomRightRadius: "0px", borderTopLeftRadius: "0px", borderTopRightRadius: "0px" }}>
                       <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"}>
-                          Get Direction
+                          Itinéraire
                         </p>
                       </div>
                       <div className={"framer-1lg9yj-container"}>
@@ -526,7 +526,7 @@ export default function ContactPage() {
                 </div>
                 <div className={"framer-1oewsb4"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                    Our Team
+                    Notre équipe
                   </h4>
                 </div>
               </div>
@@ -546,7 +546,7 @@ export default function ContactPage() {
                     <label className={"framer-b3i39w"}>
                       <div className={"framer-1t6bv9a"} style={{ transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                          Email Address
+                          Adresse email
                         </p>
                       </div>
                       <div className={"framer-form-text-input framer-form-input-wrapper framer-rpy7ff"}>
@@ -556,7 +556,7 @@ export default function ContactPage() {
                     <label className={"framer-178p6gz"}>
                       <div className={"framer-4gmv1q"} style={{ transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                          Phone
+                          Téléphone
                         </p>
                       </div>
                       <div className={"framer-form-text-input framer-form-input-wrapper framer-vppy60"}>
@@ -569,7 +569,7 @@ export default function ContactPage() {
                       <button type={"submit"} className={"framer-cOt14 framer-12ozwzs framer-v-12ozwzs"} data-framer-name={"Default"} data-reset={"button"} tabIndex={"0"} style={{ backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", height: "100%", width: "100%", borderBottomLeftRadius: "10px", borderBottomRightRadius: "10px", borderTopLeftRadius: "10px", borderTopRightRadius: "10px", opacity: "1" }}>
                         <div className={"framer-bdfcrl"} style={{ "--extracted-r6o4lv": "rgb(255, 255, 255)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text"} style={{ "--font-selector": "SW50ZXItU2VtaUJvbGQ=", "--framer-font-family": "&quot", "--framer-font-size": "14px", "--framer-font-weight": "600", "--framer-text-color": "var(--extracted-r6o4lv, rgb(255, 255, 255))" }}>
-                            Submit
+                            Envoyer
                           </p>
                         </div>
                       </button>
@@ -603,18 +603,18 @@ export default function ContactPage() {
                             <div className={"framer-qkx34f"} data-framer-name={"Title"}>
                               <div className={"framer-zffv9k"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                 <h3 className={"framer-text framer-styles-preset-1nbh77e"} data-styles-preset={"lq9mvyhvy"}>
-                                  Ready to Begin
+                                  Prêt à commencer ?
                                 </h3>
                               </div>
                               <div className={"framer-d5kajl"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                 <h3 className={"framer-text framer-styles-preset-1ojkh5d"} data-styles-preset={"pK7omk1yJ"}>
-                                  Your Child’s New Journey?
+                                  L’aventure sportive de votre enfant ?
                                 </h3>
                               </div>
                             </div>
                             <div className={"framer-g8jsdb"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                Every moment in your child’s early years is crucial. Our programs are designed to inspire curiosity, and build essential skills that will last a lifetime.
+                                Chaque moment compte dans la vie d’un enfant. Au Kid Sport Club, le sport développe la confiance, la motricité et le goût de l’effort, pour la vie.
                               </p>
                             </div>
                           </div>
@@ -623,7 +623,7 @@ export default function ContactPage() {
                               <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1t61j7z framer-1hf9a6b"} data-framer-name={"White Button"} href={"./admission"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                                 <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
-                                    Apply for Admission
+                                    S’inscrire
                                   </p>
                                 </div>
                               </a>
@@ -632,7 +632,7 @@ export default function ContactPage() {
                               <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"./programs"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                                 <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
-                                    Explore Programs
+                                    Nos activités
                                   </p>
                                 </div>
                                 <div className={"framer-1lg9yj-container"}>
@@ -678,7 +678,7 @@ export default function ContactPage() {
                             </a>
                             <div className={"framer-1seteo3"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                Every moment in your child’s early years are crucial for their growth and development.
+                                Le sport dès le plus jeune âge, pour grandir épanoui à Rochecorbon.
                               </p>
                             </div>
                           </div>
@@ -725,7 +725,7 @@ export default function ContactPage() {
                           <div className={"framer-19qe0r1"} data-framer-name={"Home"}>
                             <div className={"framer-1m32aij"} style={{ "--extracted-1w1cjl5": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"} style={{ "--framer-text-color": "var(--extracted-1w1cjl5, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                Home
+                                Accueil
                               </h6>
                             </div>
                             <div className={"framer-1q8bwmy-container"}>
@@ -733,7 +733,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./about-us"}>
-                                      About Us
+                                      À propos
                                     </a>
                                   </p>
                                 </div>
@@ -744,7 +744,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./programs"}>
-                                      Programs
+                                      Activités
                                     </a>
                                   </p>
                                 </div>
@@ -755,7 +755,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./admission"}>
-                                      Admissions
+                                      Inscription
                                     </a>
                                   </p>
                                 </div>
@@ -766,7 +766,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./parent-resources"}>
-                                      Parent Resources
+                                      Infos parents
                                     </a>
                                   </p>
                                 </div>
@@ -793,7 +793,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./fees-breakdown"}>
-                                      Fees
+                                      Tarifs
                                     </a>
                                   </p>
                                 </div>
@@ -804,7 +804,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./blog"}>
-                                      Blogs
+                                      Actualités
                                     </a>
                                   </p>
                                 </div>
@@ -815,7 +815,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./gallery"}>
-                                      Gallery
+                                      Galerie
                                     </a>
                                   </p>
                                 </div>
@@ -826,7 +826,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./testimonials"}>
-                                      Testimonials
+                                      Avis
                                     </a>
                                   </p>
                                 </div>
@@ -836,7 +836,7 @@ export default function ContactPage() {
                           <div className={"framer-1tfe5n1"} data-framer-name={"Resources"}>
                             <div className={"framer-94d6q6"} style={{ "--extracted-1w1cjl5": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"} style={{ "--framer-text-color": "var(--extracted-1w1cjl5, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                Other Services
+                                Plus
                               </h6>
                             </div>
                             <div className={"framer-x3flcz-container"}>
@@ -844,7 +844,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./privacy-policy"}>
-                                      Privacy Policy
+                                      Confidentialité
                                     </a>
                                   </p>
                                 </div>
@@ -862,7 +862,7 @@ export default function ContactPage() {
                       <div className={"framer-8pecr9"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} dir={"auto"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                           <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"https://urest.agency"} target={"_blank"} rel={"noopener"}>
-                            urest.agency
+                            DGL Agency
                           </a>
                         </p>
                       </div>
@@ -899,18 +899,18 @@ export default function ContactPage() {
                             <div className={"framer-qkx34f"} data-framer-name={"Title"}>
                               <div className={"framer-zffv9k"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                 <h3 className={"framer-text framer-styles-preset-1nbh77e"} data-styles-preset={"lq9mvyhvy"}>
-                                  Ready to Begin
+                                  Prêt à commencer ?
                                 </h3>
                               </div>
                               <div className={"framer-d5kajl"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                 <h3 className={"framer-text framer-styles-preset-1ojkh5d"} data-styles-preset={"pK7omk1yJ"}>
-                                  Your Child’s New Journey?
+                                  L’aventure sportive de votre enfant ?
                                 </h3>
                               </div>
                             </div>
                             <div className={"framer-g8jsdb"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                Every moment in your child’s early years is crucial. Our programs are designed to inspire curiosity, and build essential skills that will last a lifetime.
+                                Chaque moment compte dans la vie d’un enfant. Au Kid Sport Club, le sport développe la confiance, la motricité et le goût de l’effort, pour la vie.
                               </p>
                             </div>
                           </div>
@@ -919,7 +919,7 @@ export default function ContactPage() {
                               <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1t61j7z framer-1hf9a6b"} data-framer-name={"White Button"} href={"./admission"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", maxWidth: "100%", width: "100%", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                                 <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
-                                    Apply for Admission
+                                    S’inscrire
                                   </p>
                                 </div>
                               </a>
@@ -928,7 +928,7 @@ export default function ContactPage() {
                               <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"./programs"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", maxWidth: "100%", width: "100%", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                                 <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
-                                    Explore Programs
+                                    Nos activités
                                   </p>
                                 </div>
                                 <div className={"framer-1lg9yj-container"}>
@@ -974,7 +974,7 @@ export default function ContactPage() {
                             </a>
                             <div className={"framer-1seteo3"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                Every moment in your child’s early years are crucial for their growth and development.
+                                Le sport dès le plus jeune âge, pour grandir épanoui à Rochecorbon.
                               </p>
                             </div>
                           </div>
@@ -1021,7 +1021,7 @@ export default function ContactPage() {
                           <div className={"framer-19qe0r1"} data-framer-name={"Home"}>
                             <div className={"framer-1m32aij"} style={{ "--extracted-1w1cjl5": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"} style={{ "--framer-text-color": "var(--extracted-1w1cjl5, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                Home
+                                Accueil
                               </h6>
                             </div>
                             <div className={"framer-1q8bwmy-container"}>
@@ -1029,7 +1029,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./about-us"}>
-                                      About Us
+                                      À propos
                                     </a>
                                   </p>
                                 </div>
@@ -1040,7 +1040,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./programs"}>
-                                      Programs
+                                      Activités
                                     </a>
                                   </p>
                                 </div>
@@ -1051,7 +1051,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./admission"}>
-                                      Admissions
+                                      Inscription
                                     </a>
                                   </p>
                                 </div>
@@ -1062,7 +1062,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./parent-resources"}>
-                                      Parent Resources
+                                      Infos parents
                                     </a>
                                   </p>
                                 </div>
@@ -1086,7 +1086,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./fees-breakdown"}>
-                                      Fees
+                                      Tarifs
                                     </a>
                                   </p>
                                 </div>
@@ -1097,7 +1097,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./blog"}>
-                                      Blogs
+                                      Actualités
                                     </a>
                                   </p>
                                 </div>
@@ -1108,7 +1108,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./gallery"}>
-                                      Gallery
+                                      Galerie
                                     </a>
                                   </p>
                                 </div>
@@ -1119,7 +1119,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./testimonials"}>
-                                      Testimonials
+                                      Avis
                                     </a>
                                   </p>
                                 </div>
@@ -1129,7 +1129,7 @@ export default function ContactPage() {
                           <div className={"framer-1tfe5n1"} data-framer-name={"Resources"}>
                             <div className={"framer-94d6q6"} style={{ "--extracted-1w1cjl5": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"} style={{ "--framer-text-color": "var(--extracted-1w1cjl5, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                Other Services
+                                Plus
                               </h6>
                             </div>
                             <div className={"framer-x3flcz-container"}>
@@ -1137,7 +1137,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./privacy-policy"}>
-                                      Privacy Policy
+                                      Confidentialité
                                     </a>
                                   </p>
                                 </div>
@@ -1155,7 +1155,7 @@ export default function ContactPage() {
                       <div className={"framer-8pecr9"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} dir={"auto"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                           <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"https://urest.agency"} target={"_blank"} rel={"noopener"}>
-                            urest.agency
+                            DGL Agency
                           </a>
                         </p>
                       </div>
@@ -1192,18 +1192,18 @@ export default function ContactPage() {
                             <div className={"framer-qkx34f"} data-framer-name={"Title"}>
                               <div className={"framer-zffv9k"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                 <h3 className={"framer-text framer-styles-preset-1nbh77e"} data-styles-preset={"lq9mvyhvy"}>
-                                  Ready to Begin
+                                  Prêt à commencer ?
                                 </h3>
                               </div>
                               <div className={"framer-d5kajl"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                 <h3 className={"framer-text framer-styles-preset-1ojkh5d"} data-styles-preset={"pK7omk1yJ"}>
-                                  Your Child’s New Journey?
+                                  L’aventure sportive de votre enfant ?
                                 </h3>
                               </div>
                             </div>
                             <div className={"framer-g8jsdb"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                Every moment in your child’s early years is crucial. Our programs are designed to inspire curiosity, and build essential skills that will last a lifetime.
+                                Chaque moment compte dans la vie d’un enfant. Au Kid Sport Club, le sport développe la confiance, la motricité et le goût de l’effort, pour la vie.
                               </p>
                             </div>
                           </div>
@@ -1212,7 +1212,7 @@ export default function ContactPage() {
                               <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1t61j7z framer-1hf9a6b"} data-framer-name={"White Button"} href={"./admission"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                                 <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
-                                    Apply for Admission
+                                    S’inscrire
                                   </p>
                                 </div>
                               </a>
@@ -1221,7 +1221,7 @@ export default function ContactPage() {
                               <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"./programs"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                                 <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
-                                    Explore Programs
+                                    Nos activités
                                   </p>
                                 </div>
                                 <div className={"framer-1lg9yj-container"}>
@@ -1267,7 +1267,7 @@ export default function ContactPage() {
                             </a>
                             <div className={"framer-1seteo3"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                Every moment in your child’s early years are crucial for their growth and development.
+                                Le sport dès le plus jeune âge, pour grandir épanoui à Rochecorbon.
                               </p>
                             </div>
                           </div>
@@ -1314,7 +1314,7 @@ export default function ContactPage() {
                           <div className={"framer-19qe0r1"} data-framer-name={"Home"}>
                             <div className={"framer-1m32aij"} style={{ "--extracted-1w1cjl5": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"} style={{ "--framer-text-color": "var(--extracted-1w1cjl5, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                Home
+                                Accueil
                               </h6>
                             </div>
                             <div className={"framer-1q8bwmy-container"}>
@@ -1322,7 +1322,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./about-us"}>
-                                      About Us
+                                      À propos
                                     </a>
                                   </p>
                                 </div>
@@ -1333,7 +1333,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./programs"}>
-                                      Programs
+                                      Activités
                                     </a>
                                   </p>
                                 </div>
@@ -1344,7 +1344,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./admission"}>
-                                      Admissions
+                                      Inscription
                                     </a>
                                   </p>
                                 </div>
@@ -1355,7 +1355,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./parent-resources"}>
-                                      Parent Resources
+                                      Infos parents
                                     </a>
                                   </p>
                                 </div>
@@ -1382,7 +1382,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./fees-breakdown"}>
-                                      Fees
+                                      Tarifs
                                     </a>
                                   </p>
                                 </div>
@@ -1393,7 +1393,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./blog"}>
-                                      Blogs
+                                      Actualités
                                     </a>
                                   </p>
                                 </div>
@@ -1404,7 +1404,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./gallery"}>
-                                      Gallery
+                                      Galerie
                                     </a>
                                   </p>
                                 </div>
@@ -1415,7 +1415,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./testimonials"}>
-                                      Testimonials
+                                      Avis
                                     </a>
                                   </p>
                                 </div>
@@ -1425,7 +1425,7 @@ export default function ContactPage() {
                           <div className={"framer-1tfe5n1"} data-framer-name={"Resources"}>
                             <div className={"framer-94d6q6"} style={{ "--extracted-1w1cjl5": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"} style={{ "--framer-text-color": "var(--extracted-1w1cjl5, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                Other Services
+                                Plus
                               </h6>
                             </div>
                             <div className={"framer-x3flcz-container"}>
@@ -1433,7 +1433,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./privacy-policy"}>
-                                      Privacy Policy
+                                      Confidentialité
                                     </a>
                                   </p>
                                 </div>
@@ -1451,7 +1451,7 @@ export default function ContactPage() {
                       <div className={"framer-8pecr9"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} dir={"auto"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                           <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"https://urest.agency"} target={"_blank"} rel={"noopener"}>
-                            urest.agency
+                            DGL Agency
                           </a>
                         </p>
                       </div>
@@ -1488,18 +1488,18 @@ export default function ContactPage() {
                             <div className={"framer-qkx34f"} data-framer-name={"Title"}>
                               <div className={"framer-zffv9k"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                 <h3 className={"framer-text framer-styles-preset-1nbh77e"} data-styles-preset={"lq9mvyhvy"}>
-                                  Ready to Begin
+                                  Prêt à commencer ?
                                 </h3>
                               </div>
                               <div className={"framer-d5kajl"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                 <h3 className={"framer-text framer-styles-preset-1ojkh5d"} data-styles-preset={"pK7omk1yJ"}>
-                                  Your Child’s New Journey?
+                                  L’aventure sportive de votre enfant ?
                                 </h3>
                               </div>
                             </div>
                             <div className={"framer-g8jsdb"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                Every moment in your child’s early years is crucial. Our programs are designed to inspire curiosity, and build essential skills that will last a lifetime.
+                                Chaque moment compte dans la vie d’un enfant. Au Kid Sport Club, le sport développe la confiance, la motricité et le goût de l’effort, pour la vie.
                               </p>
                             </div>
                           </div>
@@ -1508,7 +1508,7 @@ export default function ContactPage() {
                               <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1t61j7z framer-1hf9a6b"} data-framer-name={"White Button"} href={"./admission"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                                 <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
-                                    Apply for Admission
+                                    S’inscrire
                                   </p>
                                 </div>
                               </a>
@@ -1517,7 +1517,7 @@ export default function ContactPage() {
                               <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"./programs"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                                 <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
-                                    Explore Programs
+                                    Nos activités
                                   </p>
                                 </div>
                                 <div className={"framer-1lg9yj-container"}>
@@ -1563,7 +1563,7 @@ export default function ContactPage() {
                             </a>
                             <div className={"framer-1seteo3"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                Every moment in your child’s early years are crucial for their growth and development.
+                                Le sport dès le plus jeune âge, pour grandir épanoui à Rochecorbon.
                               </p>
                             </div>
                           </div>
@@ -1610,7 +1610,7 @@ export default function ContactPage() {
                           <div className={"framer-19qe0r1"} data-framer-name={"Home"}>
                             <div className={"framer-1m32aij"} style={{ "--extracted-1w1cjl5": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"} style={{ "--framer-text-color": "var(--extracted-1w1cjl5, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                Home
+                                Accueil
                               </h6>
                             </div>
                             <div className={"framer-1q8bwmy-container"}>
@@ -1618,7 +1618,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./about-us"}>
-                                      About Us
+                                      À propos
                                     </a>
                                   </p>
                                 </div>
@@ -1629,7 +1629,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./programs"}>
-                                      Programs
+                                      Activités
                                     </a>
                                   </p>
                                 </div>
@@ -1640,7 +1640,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./admission"}>
-                                      Admissions
+                                      Inscription
                                     </a>
                                   </p>
                                 </div>
@@ -1651,7 +1651,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./parent-resources"}>
-                                      Parent Resources
+                                      Infos parents
                                     </a>
                                   </p>
                                 </div>
@@ -1678,7 +1678,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./fees-breakdown"}>
-                                      Fees
+                                      Tarifs
                                     </a>
                                   </p>
                                 </div>
@@ -1689,7 +1689,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./blog"}>
-                                      Blogs
+                                      Actualités
                                     </a>
                                   </p>
                                 </div>
@@ -1700,7 +1700,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./gallery"}>
-                                      Gallery
+                                      Galerie
                                     </a>
                                   </p>
                                 </div>
@@ -1711,7 +1711,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./testimonials"}>
-                                      Testimonials
+                                      Avis
                                     </a>
                                   </p>
                                 </div>
@@ -1721,7 +1721,7 @@ export default function ContactPage() {
                           <div className={"framer-1tfe5n1"} data-framer-name={"Resources"}>
                             <div className={"framer-94d6q6"} style={{ "--extracted-1w1cjl5": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"} style={{ "--framer-text-color": "var(--extracted-1w1cjl5, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                Other Services
+                                Plus
                               </h6>
                             </div>
                             <div className={"framer-x3flcz-container"}>
@@ -1729,7 +1729,7 @@ export default function ContactPage() {
                                 <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                     <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./privacy-policy"}>
-                                      Privacy Policy
+                                      Confidentialité
                                     </a>
                                   </p>
                                 </div>
@@ -1747,7 +1747,7 @@ export default function ContactPage() {
                       <div className={"framer-8pecr9"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} dir={"auto"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                           <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"https://urest.agency"} target={"_blank"} rel={"noopener"}>
-                            urest.agency
+                            DGL Agency
                           </a>
                         </p>
                       </div>
