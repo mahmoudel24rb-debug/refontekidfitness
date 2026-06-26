@@ -14,8 +14,8 @@ export default function FeesBreakdownPage() {
                   <div className={"framer-13iyn47"} data-framer-name={"Logo & Menu"}>
                     <a data-framer-name={"Logo"} href={"./"} className={"framer-cgggxx framer-m0itgv"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                       <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
-                        <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 124 32"}>
-                          <use href={"#svg-117104609_5241"} />
+                        <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 48 32"}>
+                          <image href={"/assets/ksc-logo.png"} width={"124"} height={"32"} preserveAspectRatio={"xMinYMid meet"} />
                         </svg>
                       </div>
                     </a>
@@ -88,8 +88,8 @@ export default function FeesBreakdownPage() {
                     </div>
                     <a data-framer-name={"Logo"} href={"./"} className={"framer-cgggxx framer-m0itgv"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                       <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
-                        <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 124 32"}>
-                          <use href={"#svg-117104609_5241"} />
+                        <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 48 32"}>
+                          <image href={"/assets/ksc-logo.png"} width={"124"} height={"32"} preserveAspectRatio={"xMinYMid meet"} />
                         </svg>
                       </div>
                     </a>
@@ -159,8 +159,8 @@ export default function FeesBreakdownPage() {
                   <div className={"framer-13iyn47"} data-framer-name={"Logo & Menu"}>
                     <a data-framer-name={"Logo"} href={"./"} className={"framer-cgggxx framer-m0itgv"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                       <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
-                        <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 124 32"}>
-                          <use href={"#svg-117104609_5241"} />
+                        <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 48 32"}>
+                          <image href={"/assets/ksc-logo.png"} width={"124"} height={"32"} preserveAspectRatio={"xMinYMid meet"} />
                         </svg>
                       </div>
                     </a>
@@ -410,8 +410,8 @@ export default function FeesBreakdownPage() {
                             <div className={"framer-1j5pir8"}>
                               <a data-framer-name={"Logo"} href={"./"} className={"framer-1k2me5 framer-1sylu6b"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                 <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
-                                  <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 124 32"}>
-                                    <use href={"#svg757967357_5234"} />
+                                  <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 48 32"}>
+                                    <image href={"/assets/ksc-logo.png"} width={"124"} height={"32"} preserveAspectRatio={"xMinYMid meet"} />
                                   </svg>
                                 </div>
                               </a>
@@ -595,7 +595,7 @@ export default function FeesBreakdownPage() {
                         <div className={"framer-1gubu5i"} data-framer-name={"Line"} style={{ backgroundColor: "rgba(255, 255, 255, 0.4)" }} />
                         <div className={"framer-1lntawd-container"}>
                           <div style={{ fontSize: "16px", color: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", fontFamily: "&quot", fontStyle: "normal", fontWeight: "400", letterSpacing: "0em", lineHeight: "1em" }}>
-                            © 2026 Kinderly. All rights reserved. Designed & Developed by Urest
+                            © 2026 Kid Sport Club Rochecorbon. Tous droits réservés. Réalisé par DGL Agency
                           </div>
                         </div>
                         <div className={"framer-8pecr9"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
@@ -706,8 +706,8 @@ export default function FeesBreakdownPage() {
                             <div className={"framer-1j5pir8"}>
                               <a data-framer-name={"Logo"} href={"./"} className={"framer-1k2me5 framer-1sylu6b"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                 <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
-                                  <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 124 32"}>
-                                    <use href={"#svg757967357_5234"} />
+                                  <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 48 32"}>
+                                    <image href={"/assets/ksc-logo.png"} width={"124"} height={"32"} preserveAspectRatio={"xMinYMid meet"} />
                                   </svg>
                                 </div>
                               </a>
@@ -891,7 +891,7 @@ export default function FeesBreakdownPage() {
                         <div className={"framer-1gubu5i"} data-framer-name={"Line"} style={{ backgroundColor: "rgba(255, 255, 255, 0.4)" }} />
                         <div className={"framer-1lntawd-container"}>
                           <div style={{ fontSize: "16px", color: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", fontFamily: "&quot", fontStyle: "normal", fontWeight: "400", letterSpacing: "0em", lineHeight: "1em" }}>
-                            © 2026 Kinderly. All rights reserved. Designed & Developed by Urest
+                            © 2026 Kid Sport Club Rochecorbon. Tous droits réservés. Réalisé par DGL Agency
                           </div>
                         </div>
                         <div className={"framer-8pecr9"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
@@ -1002,8 +1002,8 @@ export default function FeesBreakdownPage() {
                             <div className={"framer-1j5pir8"}>
                               <a data-framer-name={"Logo"} href={"./"} className={"framer-1k2me5 framer-1sylu6b"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                                 <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
-                                  <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 124 32"}>
-                                    <use href={"#svg757967357_5234"} />
+                                  <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 48 32"}>
+                                    <image href={"/assets/ksc-logo.png"} width={"124"} height={"32"} preserveAspectRatio={"xMinYMid meet"} />
                                   </svg>
                                 </div>
                               </a>
@@ -1187,7 +1187,7 @@ export default function FeesBreakdownPage() {
                         <div className={"framer-1gubu5i"} data-framer-name={"Line"} style={{ backgroundColor: "rgba(255, 255, 255, 0.4)" }} />
                         <div className={"framer-1lntawd-container"}>
                           <div style={{ fontSize: "16px", color: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", fontFamily: "&quot", fontStyle: "normal", fontWeight: "400", letterSpacing: "0em", lineHeight: "1em" }}>
-                            © 2026 Kinderly. All rights reserved. Designed & Developed by Urest
+                            © 2026 Kid Sport Club Rochecorbon. Tous droits réservés. Réalisé par DGL Agency
                           </div>
                         </div>
                         <div className={"framer-8pecr9"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
@@ -1301,8 +1301,8 @@ export default function FeesBreakdownPage() {
                           <div className={"framer-1j5pir8"}>
                             <a data-framer-name={"Logo"} href={"./"} className={"framer-1k2me5 framer-1sylu6b"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
                               <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
-                                <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 124 32"}>
-                                  <use href={"#svg757967357_5234"} />
+                                <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 48 32"}>
+                                  <image href={"/assets/ksc-logo.png"} width={"124"} height={"32"} preserveAspectRatio={"xMinYMid meet"} />
                                 </svg>
                               </div>
                             </a>
@@ -1483,7 +1483,7 @@ export default function FeesBreakdownPage() {
                       <div className={"framer-1gubu5i"} data-framer-name={"Line"} style={{ backgroundColor: "rgba(255, 255, 255, 0.4)" }} />
                       <div className={"framer-1lntawd-container"}>
                         <div style={{ fontSize: "16px", color: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", fontFamily: "&quot", fontStyle: "normal", fontWeight: "400", letterSpacing: "0em", lineHeight: "1em" }}>
-                          © 2026 Kinderly. All rights reserved. Designed & Developed by Urest
+                          © 2026 Kid Sport Club Rochecorbon. Tous droits réservés. Réalisé par DGL Agency
                         </div>
                       </div>
                       <div className={"framer-8pecr9"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>

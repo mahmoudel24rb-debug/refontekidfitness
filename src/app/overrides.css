@@ -1,0 +1,14 @@
+/* Correctifs Kid Sport Club sur le port Kinderly. */
+
+/* Logo KSC : l'ancien wordmark "Kinderly" tenait dans ~124x32. Le logo écusson
+   KSC (ratio ~1.5) a besoin de plus de hauteur. On agrandit le conteneur du logo
+   (header) ; l'image est en preserveAspectRatio meet donc elle reste nette. */
+[data-framer-name='Logo'] {
+  width: 96px !important;
+  height: 52px !important;
+}
+[data-framer-name='Logo'] .svgContainer,
+[data-framer-name='Logo'] svg {
+  width: 100% !important;
+  height: 100% !important;
+}

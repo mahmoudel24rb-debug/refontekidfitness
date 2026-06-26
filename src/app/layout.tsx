@@ -2,6 +2,7 @@ import React from 'react'
 
 // Le CSS SSR exact de Framer (reset + styles globaux) — importé une seule fois ici.
 import '@/components/framer.css'
+import './overrides.css'
 import SvgSprite from '@/components/SvgSprite'
 
 export const metadata = {
