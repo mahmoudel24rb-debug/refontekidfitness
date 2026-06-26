@@ -2,6 +2,7 @@ import React from 'react'
 
 // Le CSS SSR exact de Framer (reset + styles globaux) — importé une seule fois ici.
 import '@/components/framer.css'
+import SvgSprite from '@/components/SvgSprite'
 
 export const metadata = {
   title: 'Kid Sport Club — Rochecorbon',
@@ -12,7 +13,10 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
-      <body>{children}</body>
+      <body>
+        <SvgSprite />
+        {children}
+      </body>
     </html>
   )
 }

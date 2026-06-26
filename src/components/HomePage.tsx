@@ -10,7 +10,7 @@ export default function HomePage() {
           <div className={"ssr-variant hidden-1z12sqx"}>
             <div className={"framer-f4iubg-container"}>
               <div className={"ssr-variant hidden-10l0lpx hidden-1woy1ar"}>
-                <nav className={"framer-8315z framer-epvch framer-v-epvch"} data-framer-name={"Desktop"} style={{ backgroundColor: "rgba(0, 0, 0, 0)", width: "100%" }}>
+                <nav className={"framer-8315z framer-epvch framer-v-epvch"} data-framer-name={"Desktop"} style={{ backgroundColor: "var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, rgb(251, 249, 240))", width: "100%" }}>
                   <div className={"framer-1kmavi"} data-framer-name={"Limit"}>
                     <div className={"framer-13iyn47"} data-framer-name={"Logo & Menu"}>
                       <a data-framer-name={"Logo"} href={"./"} className={"framer-cgggxx framer-m0itgv"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
