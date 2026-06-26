@@ -337,7 +337,7 @@ export default function HomePage() {
                     <div className={"framer-14fluox"} data-framer-name={"Button Wrapper"}>
                       <div className={"ssr-variant"}>
                         <div className={"framer-19ux50q-container"}>
-                          <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1jxt7ga framer-1hf9a6b"} data-framer-name={"Hero Green"} href={"./programs"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(0, 186, 89))", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
+                          <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1jxt7ga framer-1hf9a6b"} data-framer-name={"Hero Green"} href={"./programs"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(230, 0, 126))", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                             <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                 Explore Programs
@@ -774,7 +774,7 @@ export default function HomePage() {
                     <div className={"framer-2cmd3m"} data-framer-name={"Category Tabs Filters"}>
                       <div className={"framer-zfdw2i"}>
                         <div className={"framer-1nmxlxj-container"}>
-                          <div className={"framer-gEYBK framer-5BS8D framer-1hz7il4 framer-v-o1mt7"} data-border={"true"} data-framer-name={"Active"} data-highlight={"true"} tabIndex={"0"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(255, 100, 100))", borderBottomLeftRadius: "100px", borderBottomRightRadius: "100px", borderTopLeftRadius: "100px", borderTopRightRadius: "100px" }}>
+                          <div className={"framer-gEYBK framer-5BS8D framer-1hz7il4 framer-v-o1mt7"} data-border={"true"} data-framer-name={"Active"} data-highlight={"true"} tabIndex={"0"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", borderBottomLeftRadius: "100px", borderBottomRightRadius: "100px", borderTopLeftRadius: "100px", borderTopRightRadius: "100px" }}>
                             <div className={"framer-13ih88m"} data-framer-name={"Title"} style={{ "--extracted-r6o4lv": "rgb(255, 255, 255)", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} dir={"auto"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, rgb(255, 255, 255))" }}>
                                 All
@@ -1090,7 +1090,7 @@ export default function HomePage() {
                     <div className={"framer-2cmd3m"} data-framer-name={"Category Tabs Filters"}>
                       <div className={"framer-zfdw2i"}>
                         <div className={"framer-1nmxlxj-container"}>
-                          <div className={"framer-gEYBK framer-5BS8D framer-1hz7il4 framer-v-o1mt7"} data-border={"true"} data-framer-name={"Active"} data-highlight={"true"} tabIndex={"0"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(255, 100, 100))", borderBottomLeftRadius: "100px", borderBottomRightRadius: "100px", borderTopLeftRadius: "100px", borderTopRightRadius: "100px" }}>
+                          <div className={"framer-gEYBK framer-5BS8D framer-1hz7il4 framer-v-o1mt7"} data-border={"true"} data-framer-name={"Active"} data-highlight={"true"} tabIndex={"0"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", borderBottomLeftRadius: "100px", borderBottomRightRadius: "100px", borderTopLeftRadius: "100px", borderTopRightRadius: "100px" }}>
                             <div className={"framer-13ih88m"} data-framer-name={"Title"} style={{ "--extracted-r6o4lv": "rgb(255, 255, 255)", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} dir={"auto"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, rgb(255, 255, 255))" }}>
                                 All
@@ -1406,7 +1406,7 @@ export default function HomePage() {
                     <div className={"framer-2cmd3m"} data-framer-name={"Category Tabs Filters"}>
                       <div className={"framer-zfdw2i"}>
                         <div className={"framer-1nmxlxj-container"}>
-                          <div className={"framer-gEYBK framer-5BS8D framer-1hz7il4 framer-v-o1mt7"} data-border={"true"} data-framer-name={"Active"} data-highlight={"true"} tabIndex={"0"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(255, 100, 100))", borderBottomLeftRadius: "100px", borderBottomRightRadius: "100px", borderTopLeftRadius: "100px", borderTopRightRadius: "100px" }}>
+                          <div className={"framer-gEYBK framer-5BS8D framer-1hz7il4 framer-v-o1mt7"} data-border={"true"} data-framer-name={"Active"} data-highlight={"true"} tabIndex={"0"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", borderBottomLeftRadius: "100px", borderBottomRightRadius: "100px", borderTopLeftRadius: "100px", borderTopRightRadius: "100px" }}>
                             <div className={"framer-13ih88m"} data-framer-name={"Title"} style={{ "--extracted-r6o4lv": "rgb(255, 255, 255)", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} dir={"auto"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, rgb(255, 255, 255))" }}>
                                 All
@@ -1722,7 +1722,7 @@ export default function HomePage() {
                     <div className={"framer-2cmd3m"} data-framer-name={"Category Tabs Filters"}>
                       <div className={"framer-zfdw2i"}>
                         <div className={"framer-1nmxlxj-container"}>
-                          <div className={"framer-gEYBK framer-5BS8D framer-1hz7il4 framer-v-o1mt7"} data-border={"true"} data-framer-name={"Active"} data-highlight={"true"} tabIndex={"0"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(255, 100, 100))", borderBottomLeftRadius: "100px", borderBottomRightRadius: "100px", borderTopLeftRadius: "100px", borderTopRightRadius: "100px" }}>
+                          <div className={"framer-gEYBK framer-5BS8D framer-1hz7il4 framer-v-o1mt7"} data-border={"true"} data-framer-name={"Active"} data-highlight={"true"} tabIndex={"0"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", borderBottomLeftRadius: "100px", borderBottomRightRadius: "100px", borderTopLeftRadius: "100px", borderTopRightRadius: "100px" }}>
                             <div className={"framer-13ih88m"} data-framer-name={"Title"} style={{ "--extracted-r6o4lv": "rgb(255, 255, 255)", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} dir={"auto"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, rgb(255, 255, 255))" }}>
                                 All
@@ -2416,10 +2416,10 @@ export default function HomePage() {
             <div className={"ssr-variant hidden-10l0lpx hidden-1woy1ar hidden-1z12sqx"}>
               <div className={"framer-7r0b0z-container"}>
                 <footer className={"framer-n47lF framer-6tYNf framer-U5AuS framer-5BS8D framer-Ba2hu framer-M1e60 framer-OdaN4 framer-2mlb8n framer-v-2mlb8n"} data-framer-name={"Desktop"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", width: "100%" }}>
-                  <div className={"framer-tdrioh"} data-framer-name={"Container"} style={{ backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(0, 186, 89))" }}>
+                  <div className={"framer-tdrioh"} data-framer-name={"Container"} style={{ backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(230, 0, 126))" }}>
                     <div className={"framer-d8b6ar"} data-framer-name={"White Overlay"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))" }} />
                     <div className={"framer-yzdyko"} data-framer-name={"Container"}>
-                      <div className={"framer-ej2af3"} data-framer-name={"CTA"} style={{ backgroundColor: "var(--token-f787c18e-5195-4593-b2b5-95a95cb0c856, rgb(255, 207, 85))", borderBottomLeftRadius: "40px", borderBottomRightRadius: "40px", borderTopLeftRadius: "40px", borderTopRightRadius: "40px" }}>
+                      <div className={"framer-ej2af3"} data-framer-name={"CTA"} style={{ backgroundColor: "var(--token-f787c18e-5195-4593-b2b5-95a95cb0c856, rgb(16, 96, 200))", borderBottomLeftRadius: "40px", borderBottomRightRadius: "40px", borderTopLeftRadius: "40px", borderTopRightRadius: "40px" }}>
                         <div className={"framer-dhpc42"} data-framer-name={"Content"}>
                           <div className={"framer-13gb9ko"} data-framer-name={"Text"}>
                             <div className={"framer-dsr13c"} data-framer-name={"Text"}>
@@ -2714,10 +2714,10 @@ export default function HomePage() {
             <div className={"ssr-variant hidden-1woy1ar hidden-72rtr7 hidden-1z12sqx"}>
               <div className={"framer-7r0b0z-container"}>
                 <footer className={"framer-n47lF framer-6tYNf framer-U5AuS framer-5BS8D framer-Ba2hu framer-M1e60 framer-OdaN4 framer-2mlb8n framer-v-1wz16g3"} data-framer-name={"Phone"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", width: "100%" }}>
-                  <div className={"framer-tdrioh"} data-framer-name={"Container"} style={{ backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(0, 186, 89))" }}>
+                  <div className={"framer-tdrioh"} data-framer-name={"Container"} style={{ backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(230, 0, 126))" }}>
                     <div className={"framer-d8b6ar"} data-framer-name={"White Overlay"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))" }} />
                     <div className={"framer-yzdyko"} data-framer-name={"Container"}>
-                      <div className={"framer-ej2af3"} data-framer-name={"CTA"} style={{ backgroundColor: "var(--token-f787c18e-5195-4593-b2b5-95a95cb0c856, rgb(255, 207, 85))", borderBottomLeftRadius: "40px", borderBottomRightRadius: "40px", borderTopLeftRadius: "40px", borderTopRightRadius: "40px" }}>
+                      <div className={"framer-ej2af3"} data-framer-name={"CTA"} style={{ backgroundColor: "var(--token-f787c18e-5195-4593-b2b5-95a95cb0c856, rgb(16, 96, 200))", borderBottomLeftRadius: "40px", borderBottomRightRadius: "40px", borderTopLeftRadius: "40px", borderTopRightRadius: "40px" }}>
                         <div className={"framer-dhpc42"} data-framer-name={"Content"}>
                           <div className={"framer-13gb9ko"} data-framer-name={"Text"}>
                             <div className={"framer-dsr13c"} data-framer-name={"Text"}>
@@ -3009,10 +3009,10 @@ export default function HomePage() {
             <div className={"ssr-variant hidden-10l0lpx hidden-72rtr7 hidden-1z12sqx"}>
               <div className={"framer-7r0b0z-container"}>
                 <footer className={"framer-n47lF framer-6tYNf framer-U5AuS framer-5BS8D framer-Ba2hu framer-M1e60 framer-OdaN4 framer-2mlb8n framer-v-1b5svpb"} data-framer-name={"Laptop"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", width: "100%" }}>
-                  <div className={"framer-tdrioh"} data-framer-name={"Container"} style={{ backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(0, 186, 89))" }}>
+                  <div className={"framer-tdrioh"} data-framer-name={"Container"} style={{ backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(230, 0, 126))" }}>
                     <div className={"framer-d8b6ar"} data-framer-name={"White Overlay"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))" }} />
                     <div className={"framer-yzdyko"} data-framer-name={"Container"}>
-                      <div className={"framer-ej2af3"} data-framer-name={"CTA"} style={{ backgroundColor: "var(--token-f787c18e-5195-4593-b2b5-95a95cb0c856, rgb(255, 207, 85))", borderBottomLeftRadius: "40px", borderBottomRightRadius: "40px", borderTopLeftRadius: "40px", borderTopRightRadius: "40px" }}>
+                      <div className={"framer-ej2af3"} data-framer-name={"CTA"} style={{ backgroundColor: "var(--token-f787c18e-5195-4593-b2b5-95a95cb0c856, rgb(16, 96, 200))", borderBottomLeftRadius: "40px", borderBottomRightRadius: "40px", borderTopLeftRadius: "40px", borderTopRightRadius: "40px" }}>
                         <div className={"framer-dhpc42"} data-framer-name={"Content"}>
                           <div className={"framer-13gb9ko"} data-framer-name={"Text"}>
                             <div className={"framer-dsr13c"} data-framer-name={"Text"}>
@@ -3307,10 +3307,10 @@ export default function HomePage() {
             <div className={"ssr-variant hidden-10l0lpx hidden-1woy1ar hidden-72rtr7"}>
               <div className={"framer-7r0b0z-container"}>
                 <footer className={"framer-n47lF framer-6tYNf framer-U5AuS framer-5BS8D framer-Ba2hu framer-M1e60 framer-OdaN4 framer-2mlb8n framer-v-1o1eknr"} data-framer-name={"Tablet"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", width: "100%" }}>
-                  <div className={"framer-tdrioh"} data-framer-name={"Container"} style={{ backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(0, 186, 89))" }}>
+                  <div className={"framer-tdrioh"} data-framer-name={"Container"} style={{ backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(230, 0, 126))" }}>
                     <div className={"framer-d8b6ar"} data-framer-name={"White Overlay"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))" }} />
                     <div className={"framer-yzdyko"} data-framer-name={"Container"}>
-                      <div className={"framer-ej2af3"} data-framer-name={"CTA"} style={{ backgroundColor: "var(--token-f787c18e-5195-4593-b2b5-95a95cb0c856, rgb(255, 207, 85))", borderBottomLeftRadius: "40px", borderBottomRightRadius: "40px", borderTopLeftRadius: "40px", borderTopRightRadius: "40px" }}>
+                      <div className={"framer-ej2af3"} data-framer-name={"CTA"} style={{ backgroundColor: "var(--token-f787c18e-5195-4593-b2b5-95a95cb0c856, rgb(16, 96, 200))", borderBottomLeftRadius: "40px", borderBottomRightRadius: "40px", borderTopLeftRadius: "40px", borderTopRightRadius: "40px" }}>
                         <div className={"framer-dhpc42"} data-framer-name={"Content"}>
                           <div className={"framer-13gb9ko"} data-framer-name={"Text"}>
                             <div className={"framer-dsr13c"} data-framer-name={"Text"}>

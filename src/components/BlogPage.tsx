@@ -421,10 +421,10 @@ export default function BlogPage() {
             <div className={"framer-y87p3f-container"}>
               <div className={"ssr-variant hidden-1ozyafm hidden-1coynm6"}>
                 <footer className={"framer-n47lF framer-6tYNf framer-U5AuS framer-5BS8D framer-Ba2hu framer-M1e60 framer-OdaN4 framer-2mlb8n framer-v-2mlb8n"} data-framer-name={"Desktop"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", width: "100%" }}>
-                  <div className={"framer-tdrioh"} data-framer-name={"Container"} style={{ backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(0, 186, 89))" }}>
+                  <div className={"framer-tdrioh"} data-framer-name={"Container"} style={{ backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(230, 0, 126))" }}>
                     <div className={"framer-d8b6ar"} data-framer-name={"White Overlay"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))" }} />
                     <div className={"framer-yzdyko"} data-framer-name={"Container"}>
-                      <div className={"framer-ej2af3"} data-framer-name={"CTA"} style={{ backgroundColor: "var(--token-f787c18e-5195-4593-b2b5-95a95cb0c856, rgb(255, 207, 85))", borderBottomLeftRadius: "40px", borderBottomRightRadius: "40px", borderTopLeftRadius: "40px", borderTopRightRadius: "40px" }}>
+                      <div className={"framer-ej2af3"} data-framer-name={"CTA"} style={{ backgroundColor: "var(--token-f787c18e-5195-4593-b2b5-95a95cb0c856, rgb(16, 96, 200))", borderBottomLeftRadius: "40px", borderBottomRightRadius: "40px", borderTopLeftRadius: "40px", borderTopRightRadius: "40px" }}>
                         <div className={"framer-dhpc42"} data-framer-name={"Content"}>
                           <div className={"framer-13gb9ko"} data-framer-name={"Text"}>
                             <div className={"framer-dsr13c"} data-framer-name={"Text"}>
@@ -717,10 +717,10 @@ export default function BlogPage() {
               </div>
               <div className={"ssr-variant hidden-1coynm6 hidden-1tik6lk"}>
                 <footer className={"framer-n47lF framer-6tYNf framer-U5AuS framer-5BS8D framer-Ba2hu framer-M1e60 framer-OdaN4 framer-2mlb8n framer-v-1o1eknr"} data-framer-name={"Tablet"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", width: "100%" }}>
-                  <div className={"framer-tdrioh"} data-framer-name={"Container"} style={{ backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(0, 186, 89))" }}>
+                  <div className={"framer-tdrioh"} data-framer-name={"Container"} style={{ backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(230, 0, 126))" }}>
                     <div className={"framer-d8b6ar"} data-framer-name={"White Overlay"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))" }} />
                     <div className={"framer-yzdyko"} data-framer-name={"Container"}>
-                      <div className={"framer-ej2af3"} data-framer-name={"CTA"} style={{ backgroundColor: "var(--token-f787c18e-5195-4593-b2b5-95a95cb0c856, rgb(255, 207, 85))", borderBottomLeftRadius: "40px", borderBottomRightRadius: "40px", borderTopLeftRadius: "40px", borderTopRightRadius: "40px" }}>
+                      <div className={"framer-ej2af3"} data-framer-name={"CTA"} style={{ backgroundColor: "var(--token-f787c18e-5195-4593-b2b5-95a95cb0c856, rgb(16, 96, 200))", borderBottomLeftRadius: "40px", borderBottomRightRadius: "40px", borderTopLeftRadius: "40px", borderTopRightRadius: "40px" }}>
                         <div className={"framer-dhpc42"} data-framer-name={"Content"}>
                           <div className={"framer-13gb9ko"} data-framer-name={"Text"}>
                             <div className={"framer-dsr13c"} data-framer-name={"Text"}>
@@ -1013,10 +1013,10 @@ export default function BlogPage() {
               </div>
               <div className={"ssr-variant hidden-1ozyafm hidden-1tik6lk"}>
                 <footer className={"framer-n47lF framer-6tYNf framer-U5AuS framer-5BS8D framer-Ba2hu framer-M1e60 framer-OdaN4 framer-2mlb8n framer-v-1b5svpb"} data-framer-name={"Laptop"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", width: "100%" }}>
-                  <div className={"framer-tdrioh"} data-framer-name={"Container"} style={{ backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(0, 186, 89))" }}>
+                  <div className={"framer-tdrioh"} data-framer-name={"Container"} style={{ backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(230, 0, 126))" }}>
                     <div className={"framer-d8b6ar"} data-framer-name={"White Overlay"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))" }} />
                     <div className={"framer-yzdyko"} data-framer-name={"Container"}>
-                      <div className={"framer-ej2af3"} data-framer-name={"CTA"} style={{ backgroundColor: "var(--token-f787c18e-5195-4593-b2b5-95a95cb0c856, rgb(255, 207, 85))", borderBottomLeftRadius: "40px", borderBottomRightRadius: "40px", borderTopLeftRadius: "40px", borderTopRightRadius: "40px" }}>
+                      <div className={"framer-ej2af3"} data-framer-name={"CTA"} style={{ backgroundColor: "var(--token-f787c18e-5195-4593-b2b5-95a95cb0c856, rgb(16, 96, 200))", borderBottomLeftRadius: "40px", borderBottomRightRadius: "40px", borderTopLeftRadius: "40px", borderTopRightRadius: "40px" }}>
                         <div className={"framer-dhpc42"} data-framer-name={"Content"}>
                           <div className={"framer-13gb9ko"} data-framer-name={"Text"}>
                             <div className={"framer-dsr13c"} data-framer-name={"Text"}>
@@ -1312,10 +1312,10 @@ export default function BlogPage() {
           <div className={"ssr-variant hidden-1ozyafm hidden-1coynm6 hidden-1tik6lk"}>
             <div className={"framer-y87p3f-container"}>
               <footer className={"framer-n47lF framer-6tYNf framer-U5AuS framer-5BS8D framer-Ba2hu framer-M1e60 framer-OdaN4 framer-2mlb8n framer-v-1wz16g3"} data-framer-name={"Phone"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", width: "100%" }}>
-                <div className={"framer-tdrioh"} data-framer-name={"Container"} style={{ backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(0, 186, 89))" }}>
+                <div className={"framer-tdrioh"} data-framer-name={"Container"} style={{ backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(230, 0, 126))" }}>
                   <div className={"framer-d8b6ar"} data-framer-name={"White Overlay"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))" }} />
                   <div className={"framer-yzdyko"} data-framer-name={"Container"}>
-                    <div className={"framer-ej2af3"} data-framer-name={"CTA"} style={{ backgroundColor: "var(--token-f787c18e-5195-4593-b2b5-95a95cb0c856, rgb(255, 207, 85))", borderBottomLeftRadius: "40px", borderBottomRightRadius: "40px", borderTopLeftRadius: "40px", borderTopRightRadius: "40px" }}>
+                    <div className={"framer-ej2af3"} data-framer-name={"CTA"} style={{ backgroundColor: "var(--token-f787c18e-5195-4593-b2b5-95a95cb0c856, rgb(16, 96, 200))", borderBottomLeftRadius: "40px", borderBottomRightRadius: "40px", borderTopLeftRadius: "40px", borderTopRightRadius: "40px" }}>
                       <div className={"framer-dhpc42"} data-framer-name={"Content"}>
                         <div className={"framer-13gb9ko"} data-framer-name={"Text"}>
                           <div className={"framer-dsr13c"} data-framer-name={"Text"}>
