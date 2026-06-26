@@ -263,12 +263,12 @@ export default function ProgramsPage() {
           <div className={"framer-rt9zq0"} data-framer-name={"Content Wrapper"} name={"Content Wrapper"}>
             <div className={"framer-1xy4tra"} style={{ transform: "none" }}>
               <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                Our
+                Au club
               </h4>
             </div>
             <div className={"framer-47r6u0"} style={{ transform: "none" }}>
               <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                Program Offerings
+                Nos programmes par âge
               </h4>
             </div>
             <div className={"framer-ltotbq"} data-framer-name={"Toddler"} name={"Toddler"}>
@@ -284,18 +284,18 @@ export default function ProgramsPage() {
                   <div className={"framer-f5m2qz"} data-framer-name={"Title"} name={"Title"}>
                     <div className={"framer-6ooat9"} data-framer-name={"Program Name"} style={{ transform: "none" }}>
                       <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))" }}>
-                        Toddler
+                        Baby Gym
                       </h5>
                     </div>
                     <div className={"framer-1uf2pl0"} data-framer-name={"Age Group"} style={{ transform: "none" }}>
                       <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))" }}>
-                        (1.5 - 3 years)
+                        (dès 3 mois)
                       </p>
                     </div>
                   </div>
                   <div className={"framer-1akix72"} data-framer-name={"Description"} style={{ transform: "none" }}>
                     <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))" }}>
-                      Our Toddler Program offers a warm and engaging environment where young children begin to explore and make sense of the world around them. Through sensory play, music, movement, and interactive storytelling, toddlers develop early cognitive and motor skills while building strong emotional connections with peers and caregivers.
+                      La Baby Gym éveille les tout-petits dès 3 mois au mouvement et à la motricité. Parcours adaptés, manipulation et jeux sensoriels : bébé découvre son corps en douceur, accompagné d’un parent et de nos animateurs.
                     </p>
                   </div>
                 </div>
@@ -314,7 +314,7 @@ export default function ProgramsPage() {
                           </div>
                           <div className={"framer-1wkf046"} data-framer-name={"Key Feature 1"} style={{ "--extracted-r6o4lv": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112)))" }}>
-                              Stimulating sensory activities to foster curiosity and exploration.
+                              Éveil moteur et sensoriel pour stimuler la curiosité.
                             </p>
                           </div>
                         </div>
@@ -328,7 +328,7 @@ export default function ProgramsPage() {
                           </div>
                           <div className={"framer-1wkf046"} data-framer-name={"Key Feature 1"} style={{ "--extracted-r6o4lv": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112)))" }}>
-                              Safe and structured routines that provide comfort and security.
+                              Un cadre sécurisé et rassurant, adapté aux tout-petits.
                             </p>
                           </div>
                         </div>
@@ -342,7 +342,7 @@ export default function ProgramsPage() {
                           </div>
                           <div className={"framer-1wkf046"} data-framer-name={"Key Feature 1"} style={{ "--extracted-r6o4lv": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112)))" }}>
-                              Early social interaction through group play and collaborative activities.
+                              Les premiers échanges, en groupe et avec les parents.
                             </p>
                           </div>
                         </div>
@@ -358,18 +358,18 @@ export default function ProgramsPage() {
                   <div className={"framer-k0j06p"} data-framer-name={"Title"} name={"Title"}>
                     <div className={"framer-1gzyqxl"} data-framer-name={"Program Name"} style={{ transform: "none" }}>
                       <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))" }}>
-                        Pre-School
+                        Les P’tits Sportifs
                       </h5>
                     </div>
                     <div className={"framer-10inr1j"} data-framer-name={"Age Group"} style={{ transform: "none" }}>
                       <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))" }}>
-                        (2 - 3 years)
+                        (3 - 6 ans)
                       </p>
                     </div>
                   </div>
                   <div className={"framer-z4j7xa"} data-framer-name={"Description"} style={{ transform: "none" }}>
                     <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))" }}>
-                      Our Pre-School Program focuses on providing a nurturing environment where young children can begin exploring the world around them. Through sensory play, storytelling, and guided activities, toddlers are encouraged to develop motor skills, language, and early social interaction
+                      De 3 à 6 ans, les enfants se dépensent à travers parcours, jeux sportifs et activités variées. Ils développent motricité, coordination et confiance en eux, tout en s’amusant.
                     </p>
                   </div>
                 </div>
@@ -388,7 +388,7 @@ export default function ProgramsPage() {
                           </div>
                           <div className={"framer-1wkf046"} data-framer-name={"Key Feature 1"} style={{ "--extracted-r6o4lv": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112)))" }}>
-                              Sensory play activities to stimulate curiosity.
+                              Parcours et jeux pour se dépenser en s’amusant.
                             </p>
                           </div>
                         </div>
@@ -402,7 +402,7 @@ export default function ProgramsPage() {
                           </div>
                           <div className={"framer-1wkf046"} data-framer-name={"Key Feature 1"} style={{ "--extracted-r6o4lv": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112)))" }}>
-                              Structured routines that provide comfort and security.
+                              Des séances rassurantes et bienveillantes.
                             </p>
                           </div>
                         </div>
@@ -416,7 +416,7 @@ export default function ProgramsPage() {
                           </div>
                           <div className={"framer-1wkf046"} data-framer-name={"Key Feature 1"} style={{ "--extracted-r6o4lv": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112)))" }}>
-                              Social and emotional growth through group play and interaction.
+                              Apprendre à jouer et progresser en groupe.
                             </p>
                           </div>
                         </div>
@@ -446,18 +446,18 @@ export default function ProgramsPage() {
                   <div className={"framer-u3un1v"} data-framer-name={"Title"} name={"Title"}>
                     <div className={"framer-1fpgetz"} data-framer-name={"Program Name"} style={{ transform: "none" }}>
                       <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))" }}>
-                        Kindergarten
+                        Les Sportifs
                       </h5>
                     </div>
                     <div className={"framer-lcr04k"} data-framer-name={"Age Group"} style={{ transform: "none" }}>
                       <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))" }}>
-                        (3 - 4 years)
+                        (6 - 10 ans)
                       </p>
                     </div>
                   </div>
                   <div className={"framer-q189ew"} data-framer-name={"Description"} style={{ transform: "none" }}>
                     <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))" }}>
-                      In our Kindergarten Program, we focus on fostering independence and cognitive development through playful learning experiences. By blending academic readiness with social and emotional skills, children are well-prepared for the next steps in their educational journey.
+                      De 6 à 10 ans, place à l’initiation sportive : les enfants découvrent de nombreux sports, gagnent en autonomie et en esprit d’équipe, dans la bonne humeur.
                     </p>
                   </div>
                 </div>
@@ -475,7 +475,7 @@ export default function ProgramsPage() {
                         </div>
                         <div className={"framer-1wkf046"} data-framer-name={"Key Feature 1"} style={{ "--extracted-r6o4lv": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112)))" }}>
-                            Engaging activities that promote learning through play.
+                            Initiation à de multiples sports par le jeu.
                           </p>
                         </div>
                       </div>
@@ -489,7 +489,7 @@ export default function ProgramsPage() {
                         </div>
                         <div className={"framer-1wkf046"} data-framer-name={"Key Feature 1"} style={{ "--extracted-r6o4lv": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112)))" }}>
-                            Supportive routines that build confidence and a sense of security.
+                            Un encadrement qui renforce la confiance.
                           </p>
                         </div>
                       </div>
@@ -503,7 +503,7 @@ export default function ProgramsPage() {
                         </div>
                         <div className={"framer-1wkf046"} data-framer-name={"Key Feature 1"} style={{ "--extracted-r6o4lv": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112)))" }}>
-                            Development of essential social and emotional skills.
+                            Coordination, autonomie et esprit d’équipe.
                           </p>
                         </div>
                       </div>
@@ -518,18 +518,18 @@ export default function ProgramsPage() {
                   <div className={"framer-tv0ee2"} data-framer-name={"Title"} name={"Title"}>
                     <div className={"framer-uyeo1i"} data-framer-name={"Program Name"} style={{ transform: "none" }}>
                       <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))" }}>
-                        Pre - K Program
+                        Les Champions
                       </h5>
                     </div>
                     <div className={"framer-1sh8ea6"} data-framer-name={"Age Group"} style={{ transform: "none" }}>
                       <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))" }}>
-                        (4 - 5 years)
+                        (10 - 14 ans)
                       </p>
                     </div>
                   </div>
                   <div className={"framer-2btjy4"} data-framer-name={"Description"} style={{ transform: "none" }}>
                     <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))" }}>
-                      Our Pre-K Program prepares children for a smooth transition to elementary school. With a focus on building foundational academic skills and social development, children are encouraged to explore, ask questions, and engage in group learning activities.
+                      De 10 à 14 ans, les ados perfectionnent leurs gestes et leur condition physique. Préparation, dépassement de soi et cohésion : le sport pour grandir et se surpasser.
                     </p>
                   </div>
                 </div>
@@ -548,7 +548,7 @@ export default function ProgramsPage() {
                           </div>
                           <div className={"framer-1wkf046"} data-framer-name={"Key Feature 1"} style={{ "--extracted-r6o4lv": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112)))" }}>
-                              Play-based learning that stimulates critical thinking and curiosity.
+                              Perfectionnement technique et préparation physique.
                             </p>
                           </div>
                         </div>
@@ -562,7 +562,7 @@ export default function ProgramsPage() {
                           </div>
                           <div className={"framer-1wkf046"} data-framer-name={"Key Feature 1"} style={{ "--extracted-r6o4lv": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112)))" }}>
-                              Supportive routines to foster security and independence.
+                              Un cadre qui encourage l’autonomie.
                             </p>
                           </div>
                         </div>
@@ -576,7 +576,7 @@ export default function ProgramsPage() {
                           </div>
                           <div className={"framer-1wkf046"} data-framer-name={"Key Feature 1"} style={{ "--extracted-r6o4lv": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112)))" }}>
-                              Activities that nurture social and emotional growth through peer interaction.
+                              Dépassement de soi et cohésion de groupe.
                             </p>
                           </div>
                         </div>
@@ -608,12 +608,12 @@ export default function ProgramsPage() {
             <div className={"framer-1i5wvj9"} data-framer-name={"Title"} name={"Title"}>
               <div className={"framer-bdwf61"} style={{ transform: "none" }}>
                 <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                  School
+                  Au club
                 </h4>
               </div>
               <div className={"framer-1jfp9m8"} style={{ transform: "none" }}>
                 <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                  Session & Times
+                  Le déroulé d’une séance
                 </h4>
               </div>
             </div>
@@ -625,7 +625,7 @@ export default function ProgramsPage() {
                       <div className={"framer-y4arny"} data-framer-name={"Text"}>
                         <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                            School Drop
+                            Accueil
                           </h6>
                         </div>
                       </div>
@@ -645,7 +645,7 @@ export default function ProgramsPage() {
                       <div className={"framer-y4arny"} data-framer-name={"Text"}>
                         <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                            Morning Classes
+                            Échauffement
                           </h6>
                         </div>
                       </div>
@@ -665,7 +665,7 @@ export default function ProgramsPage() {
                       <div className={"framer-y4arny"} data-framer-name={"Text"}>
                         <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                            Physical Activites
+                            Activité sportive
                           </h6>
                         </div>
                       </div>
@@ -685,7 +685,7 @@ export default function ProgramsPage() {
                       <div className={"framer-y4arny"} data-framer-name={"Text"}>
                         <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                            Lunch
+                            Goûter
                           </h6>
                         </div>
                       </div>
@@ -705,7 +705,7 @@ export default function ProgramsPage() {
                       <div className={"framer-y4arny"} data-framer-name={"Text"}>
                         <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                            Drawing
+                            Jeu libre
                           </h6>
                         </div>
                       </div>
@@ -724,7 +724,7 @@ export default function ProgramsPage() {
                 <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"./admission"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                   <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                     <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
-                      Sign up now
+                      S’inscrire
                     </p>
                   </div>
                   <div className={"framer-1lg9yj-container"}>
@@ -761,12 +761,12 @@ export default function ProgramsPage() {
                 </div>
                 <div className={"framer-1455osn"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                    Our New
+                    Nos
                   </h4>
                 </div>
                 <div className={"framer-q9qog5"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                    Creative & Active Learning Classes
+                    activités phares
                   </h4>
                 </div>
               </div>
@@ -785,12 +785,12 @@ export default function ProgramsPage() {
                             <div className={"framer-13vkegw"} data-framer-name={"Title"}>
                               <div className={"framer-1cu6l9l"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                 <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                  Music Classes
+                                  Baby Spa
                                 </h5>
                               </div>
                               <div className={"framer-pigl3r"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                 <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                  Celebrate the joy of making music together!
+                                  Détente et éveil aquatique pour les bébés.
                                 </p>
                               </div>
                             </div>
@@ -812,7 +812,7 @@ export default function ProgramsPage() {
                             <div className={"framer-1t2fxx6"} data-framer-name={"Seats"}>
                               <div className={"framer-1w7ftd1"} style={{ "--extracted-r6o4lv": "var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                 <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-alignment": "center", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91)))" }}>
-                                  Seats
+                                  Places
                                 </p>
                               </div>
                               <div className={"framer-quwquj"} style={{ "--extracted-r6o4lv": "var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
@@ -825,7 +825,7 @@ export default function ProgramsPage() {
                             <div className={"framer-1pmk8o5"} data-framer-name={"Price"}>
                               <div className={"framer-10k4euo"} style={{ "--extracted-r6o4lv": "var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                 <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-alignment": "center", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91)))" }}>
-                                  Price
+                                  Tarif
                                 </p>
                               </div>
                               <div className={"framer-1uvry7a"} style={{ "--extracted-r6o4lv": "var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
@@ -852,12 +852,12 @@ export default function ProgramsPage() {
                             <div className={"framer-13vkegw"} data-framer-name={"Title"}>
                               <div className={"framer-1cu6l9l"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                 <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                  Physical Activities
+                                  Stages sportifs
                                 </h5>
                               </div>
                               <div className={"framer-pigl3r"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                 <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                  Boost your energy and feel great with fun
+                                  Une semaine de sport pendant les vacances scolaires.
                                 </p>
                               </div>
                             </div>
@@ -879,7 +879,7 @@ export default function ProgramsPage() {
                             <div className={"framer-1t2fxx6"} data-framer-name={"Seats"}>
                               <div className={"framer-1w7ftd1"} style={{ "--extracted-r6o4lv": "var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                 <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-alignment": "center", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91)))" }}>
-                                  Seats
+                                  Places
                                 </p>
                               </div>
                               <div className={"framer-quwquj"} style={{ "--extracted-r6o4lv": "var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
@@ -892,7 +892,7 @@ export default function ProgramsPage() {
                             <div className={"framer-1pmk8o5"} data-framer-name={"Price"}>
                               <div className={"framer-10k4euo"} style={{ "--extracted-r6o4lv": "var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                 <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-alignment": "center", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91)))" }}>
-                                  Price
+                                  Tarif
                                 </p>
                               </div>
                               <div className={"framer-1uvry7a"} style={{ "--extracted-r6o4lv": "var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
@@ -919,12 +919,12 @@ export default function ProgramsPage() {
                             <div className={"framer-13vkegw"} data-framer-name={"Title"}>
                               <div className={"framer-1cu6l9l"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                 <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                  Outdoor Games
+                                  Anniversaires sportifs
                                 </h5>
                               </div>
                               <div className={"framer-pigl3r"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                 <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                  Strengthen friendships with games.
+                                  Fêtez l’anniversaire de votre enfant au club, en plein sport !
                                 </p>
                               </div>
                             </div>
@@ -946,7 +946,7 @@ export default function ProgramsPage() {
                             <div className={"framer-1t2fxx6"} data-framer-name={"Seats"}>
                               <div className={"framer-1w7ftd1"} style={{ "--extracted-r6o4lv": "var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                 <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-alignment": "center", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91)))" }}>
-                                  Seats
+                                  Places
                                 </p>
                               </div>
                               <div className={"framer-quwquj"} style={{ "--extracted-r6o4lv": "var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
@@ -959,7 +959,7 @@ export default function ProgramsPage() {
                             <div className={"framer-1pmk8o5"} data-framer-name={"Price"}>
                               <div className={"framer-10k4euo"} style={{ "--extracted-r6o4lv": "var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                 <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-alignment": "center", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91)))" }}>
-                                  Price
+                                  Tarif
                                 </p>
                               </div>
                               <div className={"framer-1uvry7a"} style={{ "--extracted-r6o4lv": "var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
@@ -979,7 +979,7 @@ export default function ProgramsPage() {
                   <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1kbhlz5 framer-1hf9a6b"} data-framer-name={"Primary"} href={"./admission"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-f787c18e-5195-4593-b2b5-95a95cb0c856, rgb(16, 96, 200))", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                     <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                       <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
-                        Enroll now
+                        Réserver
                       </p>
                     </div>
                     <div className={"framer-1lg9yj-container"}>

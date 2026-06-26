@@ -271,12 +271,12 @@ export default function TestimonialsPage() {
               </div>
               <div className={"framer-45ggw2"} style={{ transform: "none" }}>
                 <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                  Our
+                  Au club
                 </h4>
               </div>
               <div className={"framer-yfjnrv"} style={{ transform: "none" }}>
                 <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                  Video Testimonials
+                  Ils nous font confiance
                 </h4>
               </div>
             </div>
@@ -295,12 +295,12 @@ export default function TestimonialsPage() {
                           <div className={"framer-bggfd5"} data-framer-name={"Name & Program"}>
                             <div className={"framer-17cggy3"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"}>
-                                Jacob Jones
+                                Sophie M.
                               </h6>
                             </div>
                             <div className={"framer-tm0918"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                Kindergarten Program
+                                Maman de Léo, 5 ans
                               </p>
                             </div>
                           </div>
@@ -308,7 +308,7 @@ export default function TestimonialsPage() {
                         <div className={"framer-q4g4nh"} data-framer-name={"Testimonial"}>
                           <div className={"framer-1tolb3r"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"}>
-                              Our Pre-School program blends play-based learning with structured activities to help children develop foundational skills.Our Pre-School program blends play-based learning with structured activities to help children develop foundational skills.
+                              Mon enfant adore ses séances ! L’équipe est top, bienveillante, et les activités sont variées. On recommande le Kid Sport Club les yeux fermés.
                             </p>
                           </div>
                         </div>
@@ -344,12 +344,12 @@ export default function TestimonialsPage() {
                           <div className={"framer-bggfd5"} data-framer-name={"Name & Program"}>
                             <div className={"framer-17cggy3"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"}>
-                                Jacob Jones
+                                Sophie M.
                               </h6>
                             </div>
                             <div className={"framer-tm0918"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                Kindergarten Program
+                                Maman de Léo, 5 ans
                               </p>
                             </div>
                           </div>
@@ -357,7 +357,7 @@ export default function TestimonialsPage() {
                         <div className={"framer-q4g4nh"} data-framer-name={"Testimonial"}>
                           <div className={"framer-1tolb3r"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"}>
-                              Our Pre-School program blends play-based learning with structured activities to help children develop foundational skills.Our Pre-School program blends play-based learning with structured activities to help children develop foundational skills.
+                              Mon enfant adore ses séances ! L’équipe est top, bienveillante, et les activités sont variées. On recommande le Kid Sport Club les yeux fermés.
                             </p>
                           </div>
                         </div>
@@ -395,12 +395,12 @@ export default function TestimonialsPage() {
                           <div className={"framer-bggfd5"} data-framer-name={"Name & Program"}>
                             <div className={"framer-17cggy3"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"}>
-                                Dianne Russell
+                                Karim B.
                               </h6>
                             </div>
                             <div className={"framer-tm0918"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                Pre - School Program
+                                Papa de Jade, 4 ans
                               </p>
                             </div>
                           </div>
@@ -408,7 +408,7 @@ export default function TestimonialsPage() {
                         <div className={"framer-q4g4nh"} data-framer-name={"Testimonial"}>
                           <div className={"framer-1tolb3r"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"}>
-                              Our Pre-School program blends play-based learning with structured activities to help children develop foundational skills.Our Pre-School program blends play-based learning with structured activities to help children develop foundational skills.
+                              Mon enfant adore ses séances ! L’équipe est top, bienveillante, et les activités sont variées. On recommande le Kid Sport Club les yeux fermés.
                             </p>
                           </div>
                         </div>
@@ -444,12 +444,12 @@ export default function TestimonialsPage() {
                           <div className={"framer-bggfd5"} data-framer-name={"Name & Program"}>
                             <div className={"framer-17cggy3"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"}>
-                                Dianne Russell
+                                Karim B.
                               </h6>
                             </div>
                             <div className={"framer-tm0918"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                Pre - School Program
+                                Papa de Jade, 4 ans
                               </p>
                             </div>
                           </div>
@@ -457,7 +457,7 @@ export default function TestimonialsPage() {
                         <div className={"framer-q4g4nh"} data-framer-name={"Testimonial"}>
                           <div className={"framer-1tolb3r"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"}>
-                              Our Pre-School program blends play-based learning with structured activities to help children develop foundational skills.Our Pre-School program blends play-based learning with structured activities to help children develop foundational skills.
+                              Mon enfant adore ses séances ! L’équipe est top, bienveillante, et les activités sont variées. On recommande le Kid Sport Club les yeux fermés.
                             </p>
                           </div>
                         </div>
@@ -495,12 +495,12 @@ export default function TestimonialsPage() {
                           <div className={"framer-bggfd5"} data-framer-name={"Name & Program"}>
                             <div className={"framer-17cggy3"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"}>
-                                Darlene Robertson
+                                Émilie T.
                               </h6>
                             </div>
                             <div className={"framer-tm0918"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                Kindergarten Program
+                                Maman de Léo, 5 ans
                               </p>
                             </div>
                           </div>
@@ -508,7 +508,7 @@ export default function TestimonialsPage() {
                         <div className={"framer-q4g4nh"} data-framer-name={"Testimonial"}>
                           <div className={"framer-1tolb3r"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"}>
-                              Our Pre-School program blends play-based learning with structured activities to help children develop foundational skills.Our Pre-School program blends play-based learning with structured activities to help children develop foundational skills.
+                              Mon enfant adore ses séances ! L’équipe est top, bienveillante, et les activités sont variées. On recommande le Kid Sport Club les yeux fermés.
                             </p>
                           </div>
                         </div>
@@ -544,12 +544,12 @@ export default function TestimonialsPage() {
                           <div className={"framer-bggfd5"} data-framer-name={"Name & Program"}>
                             <div className={"framer-17cggy3"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"}>
-                                Darlene Robertson
+                                Émilie T.
                               </h6>
                             </div>
                             <div className={"framer-tm0918"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                Kindergarten Program
+                                Maman de Léo, 5 ans
                               </p>
                             </div>
                           </div>
@@ -557,7 +557,7 @@ export default function TestimonialsPage() {
                         <div className={"framer-q4g4nh"} data-framer-name={"Testimonial"}>
                           <div className={"framer-1tolb3r"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"}>
-                              Our Pre-School program blends play-based learning with structured activities to help children develop foundational skills.Our Pre-School program blends play-based learning with structured activities to help children develop foundational skills.
+                              Mon enfant adore ses séances ! L’équipe est top, bienveillante, et les activités sont variées. On recommande le Kid Sport Club les yeux fermés.
                             </p>
                           </div>
                         </div>
@@ -603,7 +603,7 @@ export default function TestimonialsPage() {
               </div>
               <div className={"framer-1ngwvxt"} style={{ transform: "none" }}>
                 <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                  Our
+                  Au club
                 </h4>
               </div>
               <div className={"framer-4ti73g"} style={{ transform: "none" }}>
@@ -627,12 +627,12 @@ export default function TestimonialsPage() {
                           <div className={"framer-bggfd5"} data-framer-name={"Name & Program"}>
                             <div className={"framer-17cggy3"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"}>
-                                Albert Flores
+                                Nicolas P.
                               </h6>
                             </div>
                             <div className={"framer-tm0918"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                Pre - School Program
+                                Papa de Jade, 4 ans
                               </p>
                             </div>
                           </div>
@@ -640,7 +640,7 @@ export default function TestimonialsPage() {
                         <div className={"framer-q4g4nh"} data-framer-name={"Testimonial"}>
                           <div className={"framer-1tolb3r"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"}>
-                              Our Pre-School program blends play-based learning with structured activities to help children develop foundational skills.Our Pre-School program blends play-based learning with structured activities to help children develop foundational skills.
+                              Mon enfant adore ses séances ! L’équipe est top, bienveillante, et les activités sont variées. On recommande le Kid Sport Club les yeux fermés.
                             </p>
                           </div>
                         </div>
@@ -661,12 +661,12 @@ export default function TestimonialsPage() {
                           <div className={"framer-bggfd5"} data-framer-name={"Name & Program"}>
                             <div className={"framer-17cggy3"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"}>
-                                Albert Flores
+                                Nicolas P.
                               </h6>
                             </div>
                             <div className={"framer-tm0918"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                Pre - School Program
+                                Papa de Jade, 4 ans
                               </p>
                             </div>
                           </div>
@@ -674,7 +674,7 @@ export default function TestimonialsPage() {
                         <div className={"framer-q4g4nh"} data-framer-name={"Testimonial"}>
                           <div className={"framer-1tolb3r"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"}>
-                              Our Pre-School program blends play-based learning with structured activities to help children develop foundational skills.Our Pre-School program blends play-based learning with structured activities to help children develop foundational skills.
+                              Mon enfant adore ses séances ! L’équipe est top, bienveillante, et les activités sont variées. On recommande le Kid Sport Club les yeux fermés.
                             </p>
                           </div>
                         </div>

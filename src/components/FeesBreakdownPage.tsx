@@ -228,7 +228,7 @@ export default function FeesBreakdownPage() {
           <div className={"framer-1t6axuv"} data-framer-name={"Header"} name={"Header"}>
             <div className={"framer-1dkjlx"} style={{ transform: "none" }}>
               <h2 className={"framer-text framer-styles-preset-h971pb"} data-styles-preset={"CEhR1NBj_"} style={{ "--framer-text-alignment": "center" }}>
-                Fees Breakdown
+                Nos tarifs
               </h2>
             </div>
             <div data-framer-name={"red star"} name={"red star"} className={"framer-wgx6uu"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
@@ -268,7 +268,7 @@ export default function FeesBreakdownPage() {
                     <div className={"framer-4gnsun"} data-framer-name={"Top"}>
                       <div className={"framer-fdp1bv"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-alignment": "left" }}>
-                          Toddler
+                          Baby Gym
                         </h5>
                       </div>
                       <div className={"framer-eid8k6-container"}>
@@ -284,7 +284,7 @@ export default function FeesBreakdownPage() {
                     <div className={"framer-4gnsun"} data-framer-name={"Top"}>
                       <div className={"framer-fdp1bv"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-alignment": "left" }}>
-                          Pre-School
+                          Les P’tits Sportifs
                         </h5>
                       </div>
                       <div className={"framer-eid8k6-container"}>
@@ -300,7 +300,7 @@ export default function FeesBreakdownPage() {
                     <div className={"framer-4gnsun"} data-framer-name={"Top"}>
                       <div className={"framer-fdp1bv"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-alignment": "left" }}>
-                          Kindergarten
+                          Les Sportifs
                         </h5>
                       </div>
                       <div className={"framer-eid8k6-container"}>
@@ -316,7 +316,7 @@ export default function FeesBreakdownPage() {
                     <div className={"framer-4gnsun"} data-framer-name={"Top"}>
                       <div className={"framer-fdp1bv"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-alignment": "left" }}>
-                          Pre - K Program
+                          Les Champions
                         </h5>
                       </div>
                       <div className={"framer-eid8k6-container"}>

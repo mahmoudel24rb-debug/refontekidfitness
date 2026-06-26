@@ -228,7 +228,7 @@ export default function AboutUsPage() {
           <div className={"framer-11q5aa7"} data-framer-name={"Header"}>
             <div className={"framer-rthegw"} style={{ transform: "none" }}>
               <h2 className={"framer-text framer-styles-preset-h971pb"} data-styles-preset={"CEhR1NBj_"} style={{ "--framer-text-alignment": "center" }}>
-                About us
+                À propos
               </h2>
             </div>
             <div data-framer-name={"red star"} className={"framer-dd8sqb"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
@@ -265,34 +265,34 @@ export default function AboutUsPage() {
               <div className={"framer-pp5aof"} data-border={"true"} data-framer-name={"Mission Card"}>
                 <div className={"framer-ih5euo"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                    Our
+                    Au club
                   </h4>
                 </div>
                 <div className={"framer-f4c66w"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                    Mission
+                    Notre mission
                   </h4>
                 </div>
                 <div className={"framer-db3w9x"} style={{ transform: "none" }}>
                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-alignment": "center" }}>
-                    Our mission is to nurture young minds in a  joyful, and stimulating environment where every child is empowered to explore, and grow.
+                    Faire découvrir le sport aux enfants dès le plus jeune âge, dans un cadre joyeux et bienveillant où chacun peut bouger, progresser et s’épanouir.
                   </p>
                 </div>
               </div>
               <div className={"framer-mgwquh"} data-border={"true"} data-framer-name={"Vision Card"}>
                 <div className={"framer-787i5g"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                    Our
+                    Au club
                   </h4>
                 </div>
                 <div className={"framer-1xxxntu"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                    Vision
+                    Notre vision
                   </h4>
                 </div>
                 <div className={"framer-whi8z4"} style={{ transform: "none" }}>
                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-alignment": "center" }}>
-                    We envision a future where children develop a passion for discovery, empathy for others, and the confidence to pursue their dreams.
+                    Des enfants qui prennent goût au sport et au mouvement, gagnent en confiance et grandissent épanouis, à Rochecorbon.
                   </p>
                 </div>
               </div>
@@ -313,12 +313,12 @@ export default function AboutUsPage() {
               <div className={"framer-f45xzw"} data-framer-name={"Title"}>
                 <div className={"framer-1s2uyxd"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                    Our
+                    Au club
                   </h4>
                 </div>
                 <div className={"framer-ae3fjx"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                    Learning Paths
+                    Tranches d’âge
                   </h4>
                 </div>
               </div>
@@ -333,17 +333,17 @@ export default function AboutUsPage() {
                       </div>
                       <div className={"framer-1qb9nfa"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                          Our Beginning
+                          Notre histoire
                         </h5>
                       </div>
                       <div className={"framer-b7bnb9"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"}>
-                          Milestone:
+                          Étape :
                         </p>
                       </div>
                       <div className={"framer-ylcyci"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                          The kindergarten opened its doors, starting with a small group of 30 children. The mission was to create a creative learning space for young minds.
+                          Le Kid Sport Club ouvre ses portes à Rochecorbon, au sein du complexe sportif du Parc Beauregard, pour initier les plus jeunes au sport.
                         </p>
                       </div>
                       <div className={"framer-1nktcih"} style={{ backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", borderBottomLeftRadius: "50%", borderBottomRightRadius: "50%", borderTopLeftRadius: "50%", borderTopRightRadius: "50%", transform: "translate(-50%, -50%)" }}>
@@ -366,17 +366,17 @@ export default function AboutUsPage() {
                       </div>
                       <div className={"framer-1qb9nfa"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                          First Expansion
+                          Une offre qui grandit
                         </h5>
                       </div>
                       <div className={"framer-b7bnb9"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"}>
-                          Milestone:
+                          Étape :
                         </p>
                       </div>
                       <div className={"framer-ylcyci"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                          Expanded to two new location, growing our community to serve over 150 children across the region, introducing a specialized creative curriculum.
+                          Le club enrichit son offre : baby gym, stages et anniversaires sportifs viennent compléter les activités.
                         </p>
                       </div>
                       <div className={"framer-1nktcih"} style={{ backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", borderBottomLeftRadius: "50%", borderBottomRightRadius: "50%", borderTopLeftRadius: "50%", borderTopRightRadius: "50%", transform: "translate(-50%, -50%)" }}>
@@ -399,17 +399,17 @@ export default function AboutUsPage() {
                       </div>
                       <div className={"framer-1qb9nfa"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                          New Recognition
+                          La confiance des familles
                         </h5>
                       </div>
                       <div className={"framer-b7bnb9"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"}>
-                          Milestone:
+                          Étape :
                         </p>
                       </div>
                       <div className={"framer-ylcyci"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                          Achieved national accreditation for our commitment to innovative early childhood education and outstanding learning environments.
+                          De plus en plus de familles nous font confiance pour l’éveil sportif de leurs enfants, de 3 mois à 14 ans.
                         </p>
                       </div>
                       <div className={"framer-1nktcih"} style={{ backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", borderBottomLeftRadius: "50%", borderBottomRightRadius: "50%", borderTopLeftRadius: "50%", borderTopRightRadius: "50%", transform: "translate(-50%, -50%)" }}>
@@ -432,17 +432,17 @@ export default function AboutUsPage() {
                       </div>
                       <div className={"framer-1qb9nfa"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                          New Facilities
+                          De nouveaux équipements
                         </h5>
                       </div>
                       <div className={"framer-b7bnb9"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"}>
-                          Milestone:
+                          Étape :
                         </p>
                       </div>
                       <div className={"framer-ylcyci"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                          Launched our state-of-the-art learning facilities, incorporating cutting-edge technology to enhance interactive learning for over 300 children.
+                          De nouveaux équipements et un Baby Spa pour offrir aux enfants un cadre toujours plus adapté et sécurisé.
                         </p>
                       </div>
                       <div className={"framer-1nktcih"} style={{ backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", borderBottomLeftRadius: "50%", borderBottomRightRadius: "50%", borderTopLeftRadius: "50%", borderTopRightRadius: "50%", transform: "translate(-50%, -50%)" }}>
@@ -463,12 +463,12 @@ export default function AboutUsPage() {
               <div className={"framer-6v5qdy"} data-framer-name={"Title"}>
                 <div className={"framer-136yfxr"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center", "--framer-text-color": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))" }}>
-                    Our
+                    Au club
                   </h4>
                 </div>
                 <div className={"framer-1ew2y9k"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center", "--framer-text-color": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))" }}>
-                    Teachers
+                    Notre équipe
                   </h4>
                 </div>
               </div>
@@ -485,17 +485,17 @@ export default function AboutUsPage() {
                         <div className={"framer-17dbx96"}>
                           <div className={"framer-ume7bb"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                              Brandon Miller
+                              Thomas D.
                             </h5>
                           </div>
                           <div className={"framer-14cvxpb"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              Curriculum Coordinator
+                              Responsable du club
                             </p>
                           </div>
                           <div className={"framer-e8qaoh"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"}>
-                              Brandon ensures that all learning programs are designed to foster growth.
+                              Coordonne les activités et veille au bon déroulé des séances.
                             </p>
                           </div>
                         </div>
@@ -515,17 +515,17 @@ export default function AboutUsPage() {
                         <div className={"framer-17dbx96"}>
                           <div className={"framer-ume7bb"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                              Emily Johnson
+                              Julie M.
                             </h5>
                           </div>
                           <div className={"framer-14cvxpb"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              Physical Education Teacher
+                              Coach sportif
                             </p>
                           </div>
                           <div className={"framer-e8qaoh"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"}>
-                              Dedicated to supporting students' emotion, providing guidance and care.
+                              Encadre les séances avec énergie et bienveillance.
                             </p>
                           </div>
                         </div>
@@ -545,17 +545,17 @@ export default function AboutUsPage() {
                         <div className={"framer-17dbx96"}>
                           <div className={"framer-ume7bb"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                              Michael Davis
+                              Kevin R.
                             </h5>
                           </div>
                           <div className={"framer-14cvxpb"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              School Counselor
+                              Animateur Baby Gym
                             </p>
                           </div>
                           <div className={"framer-e8qaoh"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"}>
-                              Engaging activities to promote physical health and team work development.
+                              Spécialiste de l’éveil moteur des tout-petits.
                             </p>
                           </div>
                         </div>
@@ -575,17 +575,17 @@ export default function AboutUsPage() {
                         <div className={"framer-17dbx96"}>
                           <div className={"framer-ume7bb"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                              Maria Lopez
+                              Laura P.
                             </h5>
                           </div>
                           <div className={"framer-14cvxpb"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              Art Instructor
+                              Coach éveil
                             </p>
                           </div>
                           <div className={"framer-e8qaoh"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"}>
-                              Supporting students' emotional and social development, providing guidance
+                              Accompagne les enfants dans la découverte du sport.
                             </p>
                           </div>
                         </div>
@@ -605,17 +605,17 @@ export default function AboutUsPage() {
                         <div className={"framer-17dbx96"}>
                           <div className={"framer-ume7bb"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                              James Walker
+                              Antoine B.
                             </h5>
                           </div>
                           <div className={"framer-14cvxpb"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              Assistant Teacher
+                              Animateur sportif
                             </p>
                           </div>
                           <div className={"framer-e8qaoh"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"}>
-                              James brings energy to the classroom, supporting each child’s learning journey.
+                              Apporte sa bonne humeur à chaque séance.
                             </p>
                           </div>
                         </div>
@@ -635,17 +635,17 @@ export default function AboutUsPage() {
                         <div className={"framer-17dbx96"}>
                           <div className={"framer-ume7bb"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                              Sarah Mitchell
+                              Sophie L.
                             </h5>
                           </div>
                           <div className={"framer-14cvxpb"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              Head Teacher
+                              Coach principale
                             </p>
                           </div>
                           <div className={"framer-e8qaoh"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"}>
-                              With 12 years of experience in the field of education, Sarah leads our teaching team.
+                              Forte de plusieurs années d’expérience, elle dirige l’équipe d’encadrement.
                             </p>
                           </div>
                         </div>
@@ -678,12 +678,12 @@ export default function AboutUsPage() {
                 </div>
                 <div className={"framer-vpitak"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                    School
+                    Le club
                   </h4>
                 </div>
                 <div className={"framer-7jepnf"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                    Locations
+                    à Rochecorbon
                   </h4>
                 </div>
               </div>
@@ -698,7 +698,7 @@ export default function AboutUsPage() {
                   </div>
                   <div className={"framer-ihhttn"} style={{ transform: "none" }}>
                     <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                      Warsaw, Poland
+                      1 Quai de la Loire
                     </h5>
                   </div>
                   <div className={"framer-pj7t14"} data-framer-name={"Address Wrapper"}>
@@ -734,7 +734,7 @@ export default function AboutUsPage() {
                   </div>
                   <div className={"framer-b2dwja"} style={{ transform: "none" }}>
                     <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                      Krakow, Poland
+                      37210 Rochecorbon
                     </h5>
                   </div>
                   <div className={"framer-7k5apz"} data-framer-name={"Address Wrapper"}>

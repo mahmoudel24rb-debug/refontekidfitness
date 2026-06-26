@@ -272,7 +272,7 @@ export default function GalleryPage() {
                 </div>
                 <div className={"framer-1cihigw"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                    Our
+                    Au club
                   </h4>
                 </div>
                 <div className={"framer-j28510"} style={{ transform: "none" }}>
@@ -450,7 +450,7 @@ export default function GalleryPage() {
                 </div>
                 <div className={"framer-1550111"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                    Our
+                    Au club
                   </h4>
                 </div>
                 <div className={"framer-193cph3"} style={{ transform: "none" }}>

@@ -611,7 +611,7 @@ export default function HomePage() {
                   <div className={"framer-qsymft"} data-framer-name={"Title"}>
                     <div className={"framer-flxcpx"} style={{ transform: "none" }}>
                       <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                        Our
+                        Au club
                       </h4>
                     </div>
                     <div className={"framer-ey5sf6"} style={{ transform: "none" }}>
@@ -636,7 +636,7 @@ export default function HomePage() {
                           </div>
                           <div className={"framer-b7bnb9"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              (1.5 - 3 years)
+                              (dès 3 mois)
                             </p>
                           </div>
                           <div className={"framer-ylcyci"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
@@ -662,7 +662,7 @@ export default function HomePage() {
                           </div>
                           <div className={"framer-b7bnb9"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              (2 - 3 years)
+                              (3 - 6 ans)
                             </p>
                           </div>
                           <div className={"framer-ylcyci"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
@@ -688,7 +688,7 @@ export default function HomePage() {
                           </div>
                           <div className={"framer-b7bnb9"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              (3 - 4 years)
+                              (6 - 10 ans)
                             </p>
                           </div>
                           <div className={"framer-ylcyci"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
@@ -714,7 +714,7 @@ export default function HomePage() {
                           </div>
                           <div className={"framer-b7bnb9"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              (4 - 5 years)
+                              (10 - 14 ans)
                             </p>
                           </div>
                           <div className={"framer-ylcyci"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
@@ -762,7 +762,7 @@ export default function HomePage() {
                     <div className={"framer-1tfqdn2"} data-framer-name={"Title"}>
                       <div className={"framer-10n0kfd"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                          Our
+                          Au club
                         </h4>
                       </div>
                       <div className={"framer-1mzvsm1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
@@ -1078,7 +1078,7 @@ export default function HomePage() {
                     <div className={"framer-1tfqdn2"} data-framer-name={"Title"}>
                       <div className={"framer-10n0kfd"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                          Our
+                          Au club
                         </h4>
                       </div>
                       <div className={"framer-1mzvsm1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
@@ -1394,7 +1394,7 @@ export default function HomePage() {
                     <div className={"framer-1tfqdn2"} data-framer-name={"Title"}>
                       <div className={"framer-10n0kfd"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                          Our
+                          Au club
                         </h4>
                       </div>
                       <div className={"framer-1mzvsm1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
@@ -1710,7 +1710,7 @@ export default function HomePage() {
                     <div className={"framer-1tfqdn2"} data-framer-name={"Title"}>
                       <div className={"framer-10n0kfd"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                          Our
+                          Au club
                         </h4>
                       </div>
                       <div className={"framer-1mzvsm1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>

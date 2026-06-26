@@ -286,7 +286,7 @@ export default function ParentResourcesPage() {
               </div>
               <div className={"framer-1moqexc"} style={{ transform: "none" }}>
                 <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                  Resources
+                  Ressources
                 </h4>
               </div>
             </div>
@@ -297,13 +297,13 @@ export default function ParentResourcesPage() {
                     <div className={"framer-y4arny"} data-framer-name={"Text"}>
                       <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                          Parent Handbook
+                          Guide des parents
                         </h6>
                       </div>
                       <div className={"framer-1g316zg"} data-framer-name={"Age & Deadline"}>
                         <div className={"framer-svztos"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Stay informed about all of our school’s policies, procedures, and guidelines with our comprehensive Parent Handbook.
+                            Toutes les infos pratiques du club : règlement, fonctionnement et consignes en un seul document.
                           </p>
                         </div>
                       </div>
@@ -327,13 +327,13 @@ export default function ParentResourcesPage() {
                     <div className={"framer-y4arny"} data-framer-name={"Text"}>
                       <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                          Parent Handbook
+                          Guide des parents
                         </h6>
                       </div>
                       <div className={"framer-1g316zg"} data-framer-name={"Age & Deadline"}>
                         <div className={"framer-svztos"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Stay informed about all of our school’s policies, procedures, and guidelines with our comprehensive Parent Handbook.
+                            Toutes les infos pratiques du club : règlement, fonctionnement et consignes en un seul document.
                           </p>
                         </div>
                       </div>
@@ -357,13 +357,13 @@ export default function ParentResourcesPage() {
                     <div className={"framer-y4arny"} data-framer-name={"Text"}>
                       <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                          School Calendar
+                          Calendrier du club
                         </h6>
                       </div>
                       <div className={"framer-1g316zg"} data-framer-name={"Age & Deadline"}>
                         <div className={"framer-svztos"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Stay up to date with all important dates, events, and holidays throughout the school year.
+                            Retrouvez les dates importantes : stages, événements et fermetures du club.
                           </p>
                         </div>
                       </div>
@@ -387,13 +387,13 @@ export default function ParentResourcesPage() {
                     <div className={"framer-y4arny"} data-framer-name={"Text"}>
                       <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                          School Calendar
+                          Calendrier du club
                         </h6>
                       </div>
                       <div className={"framer-1g316zg"} data-framer-name={"Age & Deadline"}>
                         <div className={"framer-svztos"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Stay up to date with all important dates, events, and holidays throughout the school year.
+                            Retrouvez les dates importantes : stages, événements et fermetures du club.
                           </p>
                         </div>
                       </div>
@@ -417,13 +417,13 @@ export default function ParentResourcesPage() {
                     <div className={"framer-y4arny"} data-framer-name={"Text"}>
                       <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                          Weekly Meal Plan
+                          Planning des stages
                         </h6>
                       </div>
                       <div className={"framer-1g316zg"} data-framer-name={"Age & Deadline"}>
                         <div className={"framer-svztos"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Check out our nutritious meal plan to see what your child will be eating at school this week.
+                            Consultez le programme des stages sportifs et des activités à venir.
                           </p>
                         </div>
                       </div>
@@ -447,13 +447,13 @@ export default function ParentResourcesPage() {
                     <div className={"framer-y4arny"} data-framer-name={"Text"}>
                       <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                          Weekly Meal Plan
+                          Planning des stages
                         </h6>
                       </div>
                       <div className={"framer-1g316zg"} data-framer-name={"Age & Deadline"}>
                         <div className={"framer-svztos"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Check out our nutritious meal plan to see what your child will be eating at school this week.
+                            Consultez le programme des stages sportifs et des activités à venir.
                           </p>
                         </div>
                       </div>
@@ -477,13 +477,13 @@ export default function ParentResourcesPage() {
                     <div className={"framer-y4arny"} data-framer-name={"Text"}>
                       <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                          Health & Safety Guidelines
+                          Sécurité & bien-être
                         </h6>
                       </div>
                       <div className={"framer-1g316zg"} data-framer-name={"Age & Deadline"}>
                         <div className={"framer-svztos"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Learn more about the steps we take to ensure a safe and healthy environment for your child.
+                            Découvrez les mesures que nous prenons pour un cadre sûr et adapté aux enfants.
                           </p>
                         </div>
                       </div>
@@ -507,13 +507,13 @@ export default function ParentResourcesPage() {
                     <div className={"framer-y4arny"} data-framer-name={"Text"}>
                       <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                          Health & Safety Guidelines
+                          Sécurité & bien-être
                         </h6>
                       </div>
                       <div className={"framer-1g316zg"} data-framer-name={"Age & Deadline"}>
                         <div className={"framer-svztos"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Learn more about the steps we take to ensure a safe and healthy environment for your child.
+                            Découvrez les mesures que nous prenons pour un cadre sûr et adapté aux enfants.
                           </p>
                         </div>
                       </div>
@@ -552,12 +552,12 @@ export default function ParentResourcesPage() {
             <div className={"framer-1e3f7fc"} data-framer-name={"Title"} name={"Title"}>
               <div className={"framer-c7en7p"} style={{ transform: "none" }}>
                 <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                  Subscribe
+                  S’abonner
                 </h4>
               </div>
               <div className={"framer-1cic4pi"} style={{ transform: "none" }}>
                 <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                  Our Newsletter
+                  à notre newsletter
                 </h4>
               </div>
             </div>
@@ -582,7 +582,7 @@ export default function ParentResourcesPage() {
                   <button type={"submit"} className={"framer-cOt14 framer-12ozwzs framer-v-12ozwzs"} data-framer-name={"Default"} data-reset={"button"} tabIndex={"0"} style={{ backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", height: "100%", width: "100%", borderBottomLeftRadius: "10px", borderBottomRightRadius: "10px", borderTopLeftRadius: "10px", borderTopRightRadius: "10px", opacity: "1" }}>
                     <div className={"framer-bdfcrl"} style={{ "--extracted-r6o4lv": "rgb(255, 255, 255)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <p className={"framer-text"} style={{ "--font-selector": "SW50ZXItU2VtaUJvbGQ=", "--framer-font-family": "&quot", "--framer-font-size": "14px", "--framer-font-weight": "600", "--framer-text-color": "var(--extracted-r6o4lv, rgb(255, 255, 255))" }}>
-                        Subscribe
+                        S’abonner
                       </p>
                     </div>
                   </button>
@@ -613,12 +613,12 @@ export default function ParentResourcesPage() {
                 </div>
                 <div className={"framer-19vhujl"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                    Daily
+                    Actus
                   </h4>
                 </div>
                 <div className={"framer-1vuc9i"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                    Newsletter
+                    du club
                   </h4>
                 </div>
               </div>
@@ -642,22 +642,22 @@ export default function ParentResourcesPage() {
                     <div className={"framer-18ow1l0"} data-framer-name={"Text"} name={"Text"}>
                       <div className={"framer-l5tkzq"} style={{ transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                          September 5
+                          Cette semaine
                         </p>
                       </div>
                       <div className={"framer-2156hi"} style={{ transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"}>
-                          Dear Parents,
+                          Chers parents,
                         </h6>
                       </div>
                       <div className={"framer-wdwpwz"} style={{ transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-1k2s06t"}>
-                          We had a fantastic day exploring shapes! The children enjoyed a shape scavenger hunt and made shape collages with various cutouts.
+                          Belle semaine au club ! Les enfants se sont dépensés lors des parcours de motricité et des jeux d’équipe.
                         </p>
                       </div>
                       <div className={"framer-1lb6met"} style={{ transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"}>
-                          Highlights:
+                          Au programme :
                         </h6>
                       </div>
                       <div className={"ssr-variant"}>
@@ -668,7 +668,7 @@ export default function ParentResourcesPage() {
                             </div>
                             <div className={"framer-1wkf046"} data-framer-name={"Key Feature 1"} style={{ "--extracted-r6o4lv": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112)))" }}>
-                                Shape scavenger hunt
+                                Parcours de motricité
                               </p>
                             </div>
                           </div>
@@ -682,7 +682,7 @@ export default function ParentResourcesPage() {
                             </div>
                             <div className={"framer-1wkf046"} data-framer-name={"Key Feature 1"} style={{ "--extracted-r6o4lv": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112)))" }}>
-                                Shape collage activity
+                                Jeux d’équipe
                               </p>
                             </div>
                           </div>
@@ -738,22 +738,22 @@ export default function ParentResourcesPage() {
                     <div className={"framer-18ow1l0"} data-framer-name={"Text"} name={"Text"}>
                       <div className={"framer-l5tkzq"} style={{ transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                          September 4
+                          Stages vacances
                         </p>
                       </div>
                       <div className={"framer-2156hi"} style={{ transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"}>
-                          Dear Parents,
+                          Chers parents,
                         </h6>
                       </div>
                       <div className={"framer-wdwpwz"} style={{ transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-1k2s06t"}>
-                          Today was all about creativity as the kids made their own paper plate animals. Each child created a unique animal and shared their creations with the class.
+                          Les stages des vacances affichent complet : une semaine de sport, de jeux et de bonne humeur pour les enfants.
                         </p>
                       </div>
                       <div className={"framer-1lb6met"} style={{ transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"}>
-                          Highlights:
+                          Au programme :
                         </h6>
                       </div>
                       <div className={"ssr-variant"}>
@@ -764,7 +764,7 @@ export default function ParentResourcesPage() {
                             </div>
                             <div className={"framer-1wkf046"} data-framer-name={"Key Feature 1"} style={{ "--extracted-r6o4lv": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112)))" }}>
-                                Paper plate animal crafts
+                                Stages multisports
                               </p>
                             </div>
                           </div>
@@ -778,7 +778,7 @@ export default function ParentResourcesPage() {
                             </div>
                             <div className={"framer-1wkf046"} data-framer-name={"Key Feature 1"} style={{ "--extracted-r6o4lv": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112)))" }}>
-                                Sharing and storytelling
+                                Encadrement par nos coachs
                               </p>
                             </div>
                           </div>
@@ -834,12 +834,12 @@ export default function ParentResourcesPage() {
                     <div className={"framer-18ow1l0"} data-framer-name={"Text"} name={"Text"}>
                       <div className={"framer-l5tkzq"} style={{ transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                          September 3
+                          Baby Spa
                         </p>
                       </div>
                       <div className={"framer-2156hi"} style={{ transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"}>
-                          Dear Parents,
+                          Chers parents,
                         </h6>
                       </div>
                       <div className={"framer-wdwpwz"} style={{ transform: "none" }}>
@@ -849,7 +849,7 @@ export default function ParentResourcesPage() {
                       </div>
                       <div className={"framer-1lb6met"} style={{ transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-14lyf0"} data-styles-preset={"iqdj89sBP"}>
-                          Highlights:
+                          Au programme :
                         </h6>
                       </div>
                       <div className={"ssr-variant"}>
@@ -874,7 +874,7 @@ export default function ParentResourcesPage() {
                             </div>
                             <div className={"framer-1wkf046"} data-framer-name={"Key Feature 1"} style={{ "--extracted-r6o4lv": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112)))" }}>
-                                Caterpillar-themed crafts
+                                Séances Baby Spa
                               </p>
                             </div>
                           </div>
@@ -920,7 +920,7 @@ export default function ParentResourcesPage() {
                   </div>
                   <div className={"framer-1wkf046"} data-framer-name={"Key Feature 1"} style={{ "--extracted-r6o4lv": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", transform: "none" }}>
                     <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112)))" }}>
-                      Stimulating sensory activities to foster curiosity and exploration.
+                      Détente et éveil aquatique pour les tout-petits.
                     </p>
                   </div>
                 </div>

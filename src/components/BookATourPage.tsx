@@ -64,12 +64,12 @@ export default function BookATourPage() {
                 </div>
                 <div className={"framer-17jw6bk"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                    Book
+                    Réserver
                   </h4>
                 </div>
                 <div className={"framer-1c393x1"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                    A Campus Tour
+                    une séance d’essai
                   </h4>
                 </div>
               </div>
@@ -83,7 +83,7 @@ export default function BookATourPage() {
                   <label className={"framer-1wm57n0"}>
                     <div className={"framer-ezo39a"} style={{ transform: "none" }}>
                       <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                        Contact Person
+                        Votre contact
                       </p>
                     </div>
                     <div className={"framer-form-text-input framer-form-input-wrapper framer-1n8qzw1 framer-form-text-input-type"}>

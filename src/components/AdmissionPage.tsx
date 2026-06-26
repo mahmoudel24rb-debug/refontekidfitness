@@ -228,7 +228,7 @@ export default function AdmissionPage() {
           <div className={"framer-2buz7x"} data-framer-name={"Header"} name={"Header"}>
             <div className={"framer-6svnhf"} style={{ transform: "none" }}>
               <h2 className={"framer-text framer-styles-preset-h971pb"} data-styles-preset={"CEhR1NBj_"} style={{ "--framer-text-alignment": "center" }}>
-                Admission
+                Inscription
               </h2>
             </div>
             <div data-framer-name={"red star"} name={"red star"} className={"framer-6hm5hy"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
@@ -276,12 +276,12 @@ export default function AdmissionPage() {
               </div>
               <div className={"framer-yvy5h2"} style={{ transform: "none" }}>
                 <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                  Our
+                  Au club
                 </h4>
               </div>
               <div className={"framer-1c7wvd1"} style={{ transform: "none" }}>
                 <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                  Admission Process
+                  Comment s’inscrire
                 </h4>
               </div>
             </div>
@@ -301,7 +301,7 @@ export default function AdmissionPage() {
                     </div>
                     <div className={"framer-1hx1far"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                        The first step in our admission process is reaching out to us. Whether through a phone call,.- email, or in-person visit, we provide all the essential information about our kindergarten and its programs.
+                        Première étape : prenez contact avec nous. Par téléphone, par email ou directement au club, nous vous donnons toutes les informations sur le Kid Sport Club et ses activités.
                       </p>
                     </div>
                     <div className={"framer-q1e18n"} data-framer-name={"Order"} style={{ backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", borderBottomLeftRadius: "50%", borderBottomRightRadius: "50%", borderTopLeftRadius: "50%", borderTopRightRadius: "50%", transform: "translate(-50%, -50%)" }}>
@@ -329,7 +329,7 @@ export default function AdmissionPage() {
                     </div>
                     <div className={"framer-1hx1far"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                        The first step in our admission process is reaching out to us. Whether through a phone call,.- email, or in-person visit, we provide all the essential information about our kindergarten and its programs.
+                        Première étape : prenez contact avec nous. Par téléphone, par email ou directement au club, nous vous donnons toutes les informations sur le Kid Sport Club et ses activités.
                       </p>
                     </div>
                     <div className={"framer-q1e18n"} data-framer-name={"Order"} style={{ backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", borderBottomLeftRadius: "50%", borderBottomRightRadius: "50%", borderTopLeftRadius: "50%", borderTopRightRadius: "50%", transform: "translate(-50%, -50%)" }}>
@@ -352,12 +352,12 @@ export default function AdmissionPage() {
                     </div>
                     <div className={"framer-iv5tvc"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                        Application
+                        La demande
                       </h5>
                     </div>
                     <div className={"framer-1hx1far"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                        Once you've gathered all the necessary information, the next step is submitting an application. Our easy-to-follow application form helps us understand your child's needs and start the enrollment process.
+                        Vous remplissez ensuite une courte fiche d’inscription : elle nous permet de connaître votre enfant et de préparer son arrivée au club.
                       </p>
                     </div>
                     <div className={"framer-q1e18n"} data-framer-name={"Order"} style={{ backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", borderBottomLeftRadius: "50%", borderBottomRightRadius: "50%", borderTopLeftRadius: "50%", borderTopRightRadius: "50%", transform: "translate(-50%, -50%)" }}>
@@ -380,12 +380,12 @@ export default function AdmissionPage() {
                     </div>
                     <div className={"framer-iv5tvc"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                        Application
+                        La demande
                       </h5>
                     </div>
                     <div className={"framer-1hx1far"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                        Once you've gathered all the necessary information, the next step is submitting an application. Our easy-to-follow application form helps us understand your child's needs and start the enrollment process.
+                        Vous remplissez ensuite une courte fiche d’inscription : elle nous permet de connaître votre enfant et de préparer son arrivée au club.
                       </p>
                     </div>
                     <div className={"framer-q1e18n"} data-framer-name={"Order"} style={{ backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", borderBottomLeftRadius: "50%", borderBottomRightRadius: "50%", borderTopLeftRadius: "50%", borderTopRightRadius: "50%", transform: "translate(-50%, -50%)" }}>
@@ -408,12 +408,12 @@ export default function AdmissionPage() {
                     </div>
                     <div className={"framer-iv5tvc"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                        Counselling
+                        La séance d’essai
                       </h5>
                     </div>
                     <div className={"framer-1hx1far"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                        After receiving your application, we schedule a counselling session to discuss your child's unique requirements, learning style, and how our programs can support their growth in a nurturing environment.
+                        Nous proposons une séance d’essai pour découvrir le club, rencontrer l’équipe et trouver l’activité la mieux adaptée à votre enfant.
                       </p>
                     </div>
                     <div className={"framer-q1e18n"} data-framer-name={"Order"} style={{ backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", borderBottomLeftRadius: "50%", borderBottomRightRadius: "50%", borderTopLeftRadius: "50%", borderTopRightRadius: "50%", transform: "translate(-50%, -50%)" }}>
@@ -436,12 +436,12 @@ export default function AdmissionPage() {
                     </div>
                     <div className={"framer-iv5tvc"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                        Counselling
+                        La séance d’essai
                       </h5>
                     </div>
                     <div className={"framer-1hx1far"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                        After receiving your application, we schedule a counselling session to discuss your child's unique requirements, learning style, and how our programs can support their growth in a nurturing environment.
+                        Nous proposons une séance d’essai pour découvrir le club, rencontrer l’équipe et trouver l’activité la mieux adaptée à votre enfant.
                       </p>
                     </div>
                     <div className={"framer-q1e18n"} data-framer-name={"Order"} style={{ backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", borderBottomLeftRadius: "50%", borderBottomRightRadius: "50%", borderTopLeftRadius: "50%", borderTopRightRadius: "50%", transform: "translate(-50%, -50%)" }}>
@@ -464,12 +464,12 @@ export default function AdmissionPage() {
                     </div>
                     <div className={"framer-iv5tvc"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                        Admission
+                        Inscription
                       </h5>
                     </div>
                     <div className={"framer-1hx1far"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                        Finally, once all the steps are completed, you'll receive confirmation of admission and soon start the classes. In our kindergarten family! We ensure a smooth transition for your child into our learning community.
+                        Une fois l’inscription confirmée, votre enfant peut démarrer ses séances. Bienvenue dans la famille du Kid Sport Club !
                       </p>
                     </div>
                     <div className={"framer-q1e18n"} data-framer-name={"Order"} style={{ backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", borderBottomLeftRadius: "50%", borderBottomRightRadius: "50%", borderTopLeftRadius: "50%", borderTopRightRadius: "50%", transform: "translate(-50%, -50%)" }}>
@@ -492,12 +492,12 @@ export default function AdmissionPage() {
                     </div>
                     <div className={"framer-iv5tvc"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                        Admission
+                        Inscription
                       </h5>
                     </div>
                     <div className={"framer-1hx1far"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                       <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                        Finally, once all the steps are completed, you'll receive confirmation of admission and soon start the classes. In our kindergarten family! We ensure a smooth transition for your child into our learning community.
+                        Une fois l’inscription confirmée, votre enfant peut démarrer ses séances. Bienvenue dans la famille du Kid Sport Club !
                       </p>
                     </div>
                     <div className={"framer-q1e18n"} data-framer-name={"Order"} style={{ backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", borderBottomLeftRadius: "50%", borderBottomRightRadius: "50%", borderTopLeftRadius: "50%", borderTopRightRadius: "50%", transform: "translate(-50%, -50%)" }}>
@@ -526,12 +526,12 @@ export default function AdmissionPage() {
             <div className={"framer-m05r92"} data-framer-name={"Title"} name={"Title"}>
               <div className={"framer-24z0q5"} style={{ transform: "none" }}>
                 <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center" }}>
-                  Our
+                  Au club
                 </h4>
               </div>
               <div className={"framer-10acb30"} style={{ transform: "none" }}>
                 <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                  Program Fees
+                  Nos tarifs
                 </h4>
               </div>
             </div>
@@ -542,7 +542,7 @@ export default function AdmissionPage() {
                     <div className={"framer-y4arny"} data-framer-name={"Text"}>
                       <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                          Toddler
+                          Baby Gym
                         </h6>
                       </div>
                       <div className={"framer-1g316zg"} data-framer-name={"Age & Deadline"}>
@@ -551,7 +551,7 @@ export default function AdmissionPage() {
                         </div>
                         <div className={"framer-m8i4ti"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Deadline: 10 September, 2024
+                            Âge : dès 3 mois
                           </p>
                         </div>
                       </div>
@@ -572,7 +572,7 @@ export default function AdmissionPage() {
                     <div className={"framer-y4arny"} data-framer-name={"Text"}>
                       <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                          Toddler
+                          Baby Gym
                         </h6>
                       </div>
                       <div className={"framer-1g316zg"} data-framer-name={"Age & Deadline"}>
@@ -581,7 +581,7 @@ export default function AdmissionPage() {
                         </div>
                         <div className={"framer-m8i4ti"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Deadline: 10 September, 2024
+                            Âge : dès 3 mois
                           </p>
                         </div>
                       </div>
@@ -602,18 +602,18 @@ export default function AdmissionPage() {
                     <div className={"framer-y4arny"} data-framer-name={"Text"}>
                       <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                          Pre-School
+                          Les P’tits Sportifs
                         </h6>
                       </div>
                       <div className={"framer-1g316zg"} data-framer-name={"Age & Deadline"}>
                         <div className={"framer-svztos"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Age limit: (2 - 3 years)
+                            Âge : 3 - 6 ans
                           </p>
                         </div>
                         <div className={"framer-m8i4ti"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Deadline: 10 September, 2024
+                            Âge : dès 3 mois
                           </p>
                         </div>
                       </div>
@@ -634,18 +634,18 @@ export default function AdmissionPage() {
                     <div className={"framer-y4arny"} data-framer-name={"Text"}>
                       <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                          Pre-School
+                          Les P’tits Sportifs
                         </h6>
                       </div>
                       <div className={"framer-1g316zg"} data-framer-name={"Age & Deadline"}>
                         <div className={"framer-svztos"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Age limit: (2 - 3 years)
+                            Âge : 3 - 6 ans
                           </p>
                         </div>
                         <div className={"framer-m8i4ti"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Deadline: 10 September, 2024
+                            Âge : dès 3 mois
                           </p>
                         </div>
                       </div>
@@ -666,18 +666,18 @@ export default function AdmissionPage() {
                     <div className={"framer-y4arny"} data-framer-name={"Text"}>
                       <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                          Kindergarten
+                          Les Sportifs
                         </h6>
                       </div>
                       <div className={"framer-1g316zg"} data-framer-name={"Age & Deadline"}>
                         <div className={"framer-svztos"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Age limit: (3 - 4 years)
+                            Âge : 6 - 10 ans
                           </p>
                         </div>
                         <div className={"framer-m8i4ti"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Deadline: 10 September, 2024
+                            Âge : dès 3 mois
                           </p>
                         </div>
                       </div>
@@ -698,18 +698,18 @@ export default function AdmissionPage() {
                     <div className={"framer-y4arny"} data-framer-name={"Text"}>
                       <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                          Kindergarten
+                          Les Sportifs
                         </h6>
                       </div>
                       <div className={"framer-1g316zg"} data-framer-name={"Age & Deadline"}>
                         <div className={"framer-svztos"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Age limit: (3 - 4 years)
+                            Âge : 6 - 10 ans
                           </p>
                         </div>
                         <div className={"framer-m8i4ti"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Deadline: 10 September, 2024
+                            Âge : dès 3 mois
                           </p>
                         </div>
                       </div>
@@ -730,18 +730,18 @@ export default function AdmissionPage() {
                     <div className={"framer-y4arny"} data-framer-name={"Text"}>
                       <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                          Pre - K Program
+                          Les Champions
                         </h6>
                       </div>
                       <div className={"framer-1g316zg"} data-framer-name={"Age & Deadline"}>
                         <div className={"framer-svztos"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Age limit: (4 - 5 years)
+                            Âge : 10 - 14 ans
                           </p>
                         </div>
                         <div className={"framer-m8i4ti"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Deadline: 10 September, 2024
+                            Âge : dès 3 mois
                           </p>
                         </div>
                       </div>
@@ -762,18 +762,18 @@ export default function AdmissionPage() {
                     <div className={"framer-y4arny"} data-framer-name={"Text"}>
                       <div className={"framer-1gh1w9m"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                         <h6 className={"framer-text framer-styles-preset-1nokzbz"} data-styles-preset={"yqhfyPQLe"}>
-                          Pre - K Program
+                          Les Champions
                         </h6>
                       </div>
                       <div className={"framer-1g316zg"} data-framer-name={"Age & Deadline"}>
                         <div className={"framer-svztos"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Age limit: (4 - 5 years)
+                            Âge : 10 - 14 ans
                           </p>
                         </div>
                         <div className={"framer-m8i4ti"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                            Deadline: 10 September, 2024
+                            Âge : dès 3 mois
                           </p>
                         </div>
                       </div>
@@ -793,7 +793,7 @@ export default function AdmissionPage() {
               <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"./admission#form"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                 <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                   <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
-                    Apply Now
+                    S’inscrire
                   </p>
                 </div>
                 <div className={"framer-1lg9yj-container"}>
@@ -824,7 +824,7 @@ export default function AdmissionPage() {
                 </div>
                 <div className={"framer-1lgwinu"} style={{ transform: "none" }}>
                   <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center" }}>
-                    Admission
+                    Inscription
                   </h4>
                 </div>
               </div>
@@ -832,7 +832,7 @@ export default function AdmissionPage() {
                 <label className={"framer-jzq91y"}>
                   <div className={"framer-1ex9624"} style={{ transform: "none" }}>
                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                      Contact Person
+                      Votre contact
                     </p>
                   </div>
                   <div className={"framer-form-text-input framer-form-input-wrapper framer-1awee0i framer-form-text-input-type"}>
