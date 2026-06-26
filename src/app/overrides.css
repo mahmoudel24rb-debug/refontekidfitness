@@ -6,9 +6,13 @@
 [data-framer-name='Logo'] {
   width: 96px !important;
   height: 52px !important;
+  /* Framer met image-rendering:pixelated (pour les icônes) -> logo pixelisé. */
+  image-rendering: auto !important;
 }
 [data-framer-name='Logo'] .svgContainer,
-[data-framer-name='Logo'] svg {
+[data-framer-name='Logo'] svg,
+[data-framer-name='Logo'] image {
   width: 100% !important;
   height: 100% !important;
+  image-rendering: auto !important;
 }
