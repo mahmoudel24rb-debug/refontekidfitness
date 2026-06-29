@@ -36,7 +36,7 @@ export default function HomePage() {
                       </div>
                       <div className={"framer-1e97lng"} style={{ transform: "none" }}>
                         <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"}>
-                          À Rochecorbon, le Kid Sport Club initie les enfants de 3 mois à 14 ans au sport, par le jeu et le mouvement.
+                          À Rochecorbon, le Kid Sport Club initie les enfants de 10 mois à 14 ans au sport, par le jeu et le mouvement.
                         </p>
                       </div>
                     </div>
@@ -342,12 +342,12 @@ export default function HomePage() {
                           </div>
                           <div className={"framer-b7bnb9"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              (dès 3 mois)
+                              (dès 10 mois)
                             </p>
                           </div>
                           <div className={"framer-ylcyci"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              Dès 3 mois : éveil moteur et sensoriel pour les tout-petits, en douceur et en confiance.
+                              Dès 10 mois : éveil moteur et sensoriel pour les tout-petits, en douceur et en confiance.
                             </p>
                           </div>
                         </div>
