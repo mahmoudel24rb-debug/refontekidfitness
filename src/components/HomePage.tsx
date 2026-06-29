@@ -1,308 +1,14 @@
 // Généré par framer-port.mjs — port FIDÈLE du SSR Framer (ne pas reconstruire, brancher Payload sur les noeuds de contenu).
 // Styles exacts : importer "framer.css" une seule fois (layout global).
 import './framer.css';
+import SiteHeader from './ksc/SiteHeader';
 
 export default function HomePage() {
   return (
     <>
       <div id={"main"}>
         <div className={"framer-JDlNv framer-oZnZ7 framer-DxfPq framer-OPLWG framer-JIYi9 framer-UiBmF framer-TCv20 framer-72rtr7"} style={{ minHeight: "100vh", width: "auto" }}>
-          <div className={"ssr-variant hidden-1z12sqx"}>
-            <div className={"framer-f4iubg-container"}>
-              <div className={"ssr-variant hidden-10l0lpx hidden-1woy1ar"}>
-                <nav className={"framer-8315z framer-epvch framer-v-epvch"} data-framer-name={"Desktop"} style={{ backgroundColor: "var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, rgb(251, 249, 240))", width: "100%" }}>
-                  <div className={"framer-1kmavi"} data-framer-name={"Limit"}>
-                    <div className={"framer-13iyn47"} data-framer-name={"Logo & Menu"}>
-                      <a data-framer-name={"Logo"} href={"./"} className={"framer-cgggxx framer-m0itgv"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
-                        <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
-                          <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 48 32"}>
-                            <image href={"/assets/ksc-logo.png"} width={"124"} height={"32"} preserveAspectRatio={"xMinYMid meet"} />
-                          </svg>
-                        </div>
-                      </a>
-                    </div>
-                    <div className={"framer-1m55s7i"} data-framer-name={"Link Wrapper"} style={{ opacity: "1" }}>
-                      <div className={"framer-939h5q-container"}>
-                        <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-yxaa9i framer-d3xhqn"} data-framer-name={"Desktop"} href={"./about-us"}>
-                          <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                            <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              À propos
-                            </p>
-                          </div>
-                        </a>
-                      </div>
-                      <div className={"framer-jvqzif-container"}>
-                        <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-yxaa9i framer-d3xhqn"} data-framer-name={"Desktop"} href={"./programs"}>
-                          <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                            <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              Activités
-                            </p>
-                          </div>
-                        </a>
-                      </div>
-                      <div className={"framer-16cjrkd-container"}>
-                        <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-yxaa9i framer-d3xhqn"} data-framer-name={"Desktop"} href={"./admission"}>
-                          <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                            <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              Inscription
-                            </p>
-                          </div>
-                        </a>
-                      </div>
-                      <div className={"framer-1pc0evj-container"}>
-                        <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-yxaa9i framer-d3xhqn"} data-framer-name={"Desktop"} href={"./parent-resources"}>
-                          <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                            <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              Infos parents
-                            </p>
-                          </div>
-                        </a>
-                      </div>
-                      <div className={"framer-12d67iv-container"}>
-                        <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-yxaa9i framer-d3xhqn"} data-framer-name={"Desktop"} href={"./contact"}>
-                          <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                            <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              Contact
-                            </p>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <div className={"framer-s7hsxf-container"} style={{ opacity: "1" }}>
-                      <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-14bqr5f framer-1hf9a6b"} data-framer-name={"Button Nav"} data-border={"true"} href={"./book-a-tour"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
-                        <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
-                          <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91)))" }}>
-                            Réserver un essai
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </nav>
-              </div>
-              <div className={"ssr-variant hidden-1woy1ar hidden-72rtr7"}>
-                <nav className={"framer-8315z framer-epvch framer-v-wdelvt"} data-framer-name={"Phone Close"} style={{ backgroundColor: "var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, rgb(251, 249, 240))", width: "100%" }}>
-                  <div className={"framer-1kmavi"} data-framer-name={"Limit"}>
-                    <div className={"framer-13iyn47"} data-framer-name={"Logo & Menu"}>
-                      <div className={"framer-1bes2uj-container"}>
-                        <div style={{ display: "contents" }} />
-                      </div>
-                      <a data-framer-name={"Logo"} href={"./"} className={"framer-cgggxx framer-m0itgv"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
-                        <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
-                          <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 48 32"}>
-                            <image href={"/assets/ksc-logo.png"} width={"124"} height={"32"} preserveAspectRatio={"xMinYMid meet"} />
-                          </svg>
-                        </div>
-                      </a>
-                    </div>
-                    <div className={"framer-1m55s7i"} data-framer-name={"Link Wrapper"} style={{ opacity: "0" }}>
-                      <div className={"framer-939h5q-container"}>
-                        <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-1egiqg8 framer-d3xhqn"} data-framer-name={"Phone"} href={"./about-us"} style={{ width: "100%" }}>
-                          <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                            <p className={"framer-text framer-styles-preset-ls868s"} data-styles-preset={"BkESJ3Zef"}>
-                              À propos
-                            </p>
-                          </div>
-                        </a>
-                      </div>
-                      <div className={"framer-jvqzif-container"}>
-                        <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-1egiqg8 framer-d3xhqn"} data-framer-name={"Phone"} href={"./programs"} style={{ width: "100%" }}>
-                          <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                            <p className={"framer-text framer-styles-preset-ls868s"} data-styles-preset={"BkESJ3Zef"}>
-                              Activités
-                            </p>
-                          </div>
-                        </a>
-                      </div>
-                      <div className={"framer-16cjrkd-container"}>
-                        <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-1egiqg8 framer-d3xhqn"} data-framer-name={"Phone"} href={"./admission"} style={{ width: "100%" }}>
-                          <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                            <p className={"framer-text framer-styles-preset-ls868s"} data-styles-preset={"BkESJ3Zef"}>
-                              Inscription
-                            </p>
-                          </div>
-                        </a>
-                      </div>
-                      <div className={"framer-1pc0evj-container"}>
-                        <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-1egiqg8 framer-d3xhqn"} data-framer-name={"Phone"} href={"./parent-resources"} style={{ width: "100%" }}>
-                          <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                            <p className={"framer-text framer-styles-preset-ls868s"} data-styles-preset={"BkESJ3Zef"}>
-                              Infos parents
-                            </p>
-                          </div>
-                        </a>
-                      </div>
-                      <div className={"framer-12d67iv-container"}>
-                        <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-1egiqg8 framer-d3xhqn"} data-framer-name={"Phone"} href={"./contact"} style={{ width: "100%" }}>
-                          <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                            <p className={"framer-text framer-styles-preset-ls868s"} data-styles-preset={"BkESJ3Zef"}>
-                              Contact
-                            </p>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <div className={"framer-s7hsxf-container"} style={{ opacity: "0" }}>
-                      <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-14bqr5f framer-1hf9a6b"} data-framer-name={"Button Nav"} data-border={"true"} href={"./book-a-tour"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
-                        <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
-                          <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91)))" }}>
-                            Réserver un essai
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </nav>
-              </div>
-              <div className={"ssr-variant hidden-10l0lpx hidden-72rtr7"}>
-                <nav className={"framer-8315z framer-epvch framer-v-1a8ygpt"} data-framer-name={"Laptop Scroll"} style={{ backgroundColor: "rgba(0, 0, 0, 0)", width: "100%" }}>
-                  <div className={"framer-1kmavi"} data-framer-name={"Limit"}>
-                    <div className={"framer-13iyn47"} data-framer-name={"Logo & Menu"}>
-                      <a data-framer-name={"Logo"} href={"./"} className={"framer-cgggxx framer-m0itgv"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
-                        <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
-                          <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 48 32"}>
-                            <image href={"/assets/ksc-logo.png"} width={"124"} height={"32"} preserveAspectRatio={"xMinYMid meet"} />
-                          </svg>
-                        </div>
-                      </a>
-                    </div>
-                    <div className={"framer-1m55s7i"} data-framer-name={"Link Wrapper"} style={{ opacity: "1" }}>
-                      <div className={"framer-939h5q-container"}>
-                        <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-yxaa9i framer-d3xhqn"} data-framer-name={"Desktop"} href={"./about-us"}>
-                          <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                            <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              À propos
-                            </p>
-                          </div>
-                        </a>
-                      </div>
-                      <div className={"framer-jvqzif-container"}>
-                        <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-yxaa9i framer-d3xhqn"} data-framer-name={"Desktop"} href={"./programs"}>
-                          <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                            <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              Activités
-                            </p>
-                          </div>
-                        </a>
-                      </div>
-                      <div className={"framer-16cjrkd-container"}>
-                        <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-yxaa9i framer-d3xhqn"} data-framer-name={"Desktop"} href={"./admission"}>
-                          <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                            <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              Inscription
-                            </p>
-                          </div>
-                        </a>
-                      </div>
-                      <div className={"framer-1pc0evj-container"}>
-                        <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-yxaa9i framer-d3xhqn"} data-framer-name={"Desktop"} href={"./parent-resources"}>
-                          <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                            <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              Infos parents
-                            </p>
-                          </div>
-                        </a>
-                      </div>
-                      <div className={"framer-12d67iv-container"}>
-                        <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-yxaa9i framer-d3xhqn"} data-framer-name={"Desktop"} href={"./contact"}>
-                          <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                            <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              Contact
-                            </p>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <div className={"framer-s7hsxf-container"} style={{ opacity: "1" }}>
-                      <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-14bqr5f framer-1hf9a6b"} data-framer-name={"Button Nav"} data-border={"true"} href={"./book-a-tour"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
-                        <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
-                          <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91)))" }}>
-                            Réserver un essai
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </nav>
-              </div>
-            </div>
-          </div>
-          <div className={"ssr-variant hidden-10l0lpx hidden-1woy1ar hidden-72rtr7"}>
-            <div className={"framer-f4iubg-container"}>
-              <nav className={"framer-8315z framer-epvch framer-v-wdelvt"} data-framer-name={"Phone Close"} style={{ backgroundColor: "var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, rgb(251, 249, 240))", width: "100%" }}>
-                <div className={"framer-1kmavi"} data-framer-name={"Limit"}>
-                  <div className={"framer-13iyn47"} data-framer-name={"Logo & Menu"}>
-                    <div className={"framer-1bes2uj-container"}>
-                      <div style={{ display: "contents" }} />
-                    </div>
-                    <a data-framer-name={"Logo"} href={"./"} className={"framer-cgggxx framer-m0itgv"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
-                      <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
-                        <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 48 32"}>
-                          <image href={"/assets/ksc-logo.png"} width={"124"} height={"32"} preserveAspectRatio={"xMinYMid meet"} />
-                        </svg>
-                      </div>
-                    </a>
-                  </div>
-                  <div className={"framer-1m55s7i"} data-framer-name={"Link Wrapper"} style={{ opacity: "0" }}>
-                    <div className={"framer-939h5q-container"}>
-                      <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-1egiqg8 framer-d3xhqn"} data-framer-name={"Phone"} href={"./about-us"} style={{ width: "100%" }}>
-                        <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                          <p className={"framer-text framer-styles-preset-ls868s"} data-styles-preset={"BkESJ3Zef"}>
-                            À propos
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                    <div className={"framer-jvqzif-container"}>
-                      <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-1egiqg8 framer-d3xhqn"} data-framer-name={"Phone"} href={"./programs"} style={{ width: "100%" }}>
-                        <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                          <p className={"framer-text framer-styles-preset-ls868s"} data-styles-preset={"BkESJ3Zef"}>
-                            Activités
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                    <div className={"framer-16cjrkd-container"}>
-                      <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-1egiqg8 framer-d3xhqn"} data-framer-name={"Phone"} href={"./admission"} style={{ width: "100%" }}>
-                        <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                          <p className={"framer-text framer-styles-preset-ls868s"} data-styles-preset={"BkESJ3Zef"}>
-                            Inscription
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                    <div className={"framer-1pc0evj-container"}>
-                      <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-1egiqg8 framer-d3xhqn"} data-framer-name={"Phone"} href={"./parent-resources"} style={{ width: "100%" }}>
-                        <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                          <p className={"framer-text framer-styles-preset-ls868s"} data-styles-preset={"BkESJ3Zef"}>
-                            Infos parents
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                    <div className={"framer-12d67iv-container"}>
-                      <a className={"framer-1Bnab framer-5BS8D framer-uWzCz framer-yxaa9i framer-v-1egiqg8 framer-d3xhqn"} data-framer-name={"Phone"} href={"./contact"} style={{ width: "100%" }}>
-                        <div className={"framer-1trqth1"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                          <p className={"framer-text framer-styles-preset-ls868s"} data-styles-preset={"BkESJ3Zef"}>
-                            Contact
-                          </p>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div className={"framer-s7hsxf-container"} style={{ opacity: "0" }}>
-                    <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-14bqr5f framer-1hf9a6b"} data-framer-name={"Button Nav"} data-border={"true"} href={"./book-a-tour"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
-                      <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
-                        <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-788f6179-055e-461e-aa99-ada78aaa1519, rgb(51, 55, 91)))" }}>
-                          Réserver un essai
-                        </p>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </nav>
-            </div>
-          </div>
+          <SiteHeader />
           <div className={"framer-19bh027"} data-framer-name={"Sticky"}>
             <main className={"framer-okomez"} data-framer-name={"Hero"} id={"hero"}>
               <div data-framer-name={"Line-Drawing"} className={"framer-9n5cfh hidden-10l0lpx"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
@@ -337,7 +43,7 @@ export default function HomePage() {
                     <div className={"framer-14fluox"} data-framer-name={"Button Wrapper"}>
                       <div className={"ssr-variant"}>
                         <div className={"framer-19ux50q-container"}>
-                          <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1jxt7ga framer-1hf9a6b"} data-framer-name={"Hero Green"} href={"./programs"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(230, 0, 126))", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
+                          <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1jxt7ga framer-1hf9a6b"} data-framer-name={"Hero Green"} href={"/nos-prestations"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(230, 0, 126))", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                             <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                 Nos activités
@@ -351,7 +57,7 @@ export default function HomePage() {
                       </div>
                       <div className={"ssr-variant"}>
                         <div className={"framer-cmejpq-container"}>
-                          <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"./admission"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
+                          <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"/nos-prestations"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                             <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
                                 S’inscrire
@@ -728,7 +434,7 @@ export default function HomePage() {
                   </div>
                   <div className={"ssr-variant"}>
                     <div className={"framer-jhdu3a-container"}>
-                      <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"./programs"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
+                      <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"/nos-prestations"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                         <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                           <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
                             Voir plus
@@ -2123,7 +1829,7 @@ export default function HomePage() {
                           </div>
                         </div>
                         <div className={"framer-pze6i8-container"}>
-                          <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"./testimonials"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
+                          <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"/"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                             <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
                                 Voir plus
@@ -2210,7 +1916,7 @@ export default function HomePage() {
                           </div>
                         </div>
                         <div className={"framer-pze6i8-container"}>
-                          <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"./testimonials"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
+                          <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"/"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                             <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
                                 Voir plus
@@ -2443,7 +2149,7 @@ export default function HomePage() {
                             </div>
                             <div className={"framer-fx18m4"} data-framer-name={"Button Wraper"}>
                               <div className={"framer-1o5mypz-container"}>
-                                <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1t61j7z framer-1hf9a6b"} data-framer-name={"White Button"} href={"./admission"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
+                                <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1t61j7z framer-1hf9a6b"} data-framer-name={"White Button"} href={"/nos-prestations"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                                   <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
                                       S’inscrire
@@ -2452,7 +2158,7 @@ export default function HomePage() {
                                 </a>
                               </div>
                               <div className={"framer-1q1b95b-container"}>
-                                <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"./programs"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
+                                <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"/nos-prestations"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                                   <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
                                       Nos activités
@@ -2555,7 +2261,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./about-us"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/qui-sommes-nous"}>
                                         À propos
                                       </a>
                                     </p>
@@ -2566,7 +2272,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./programs"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/nos-prestations"}>
                                         Activités
                                       </a>
                                     </p>
@@ -2577,7 +2283,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./admission"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/nos-prestations"}>
                                         Inscription
                                       </a>
                                     </p>
@@ -2588,7 +2294,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./parent-resources"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/faq"}>
                                         Infos parents
                                       </a>
                                     </p>
@@ -2599,7 +2305,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./contact"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/contact"}>
                                         Contact
                                       </a>
                                     </p>
@@ -2615,7 +2321,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./fees-breakdown"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/nos-prestations"}>
                                         Tarifs
                                       </a>
                                     </p>
@@ -2626,7 +2332,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./blog"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/blog"}>
                                         Actualités
                                       </a>
                                     </p>
@@ -2637,7 +2343,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./gallery"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/nos-prestations"}>
                                         Galerie
                                       </a>
                                     </p>
@@ -2648,7 +2354,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./testimonials"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/"}>
                                         Avis
                                       </a>
                                     </p>
@@ -2666,7 +2372,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./privacy-policy"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/confidentialite"}>
                                         Confidentialité
                                       </a>
                                     </p>
@@ -2741,7 +2447,7 @@ export default function HomePage() {
                             </div>
                             <div className={"framer-fx18m4"} data-framer-name={"Button Wraper"}>
                               <div className={"framer-1o5mypz-container"}>
-                                <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1t61j7z framer-1hf9a6b"} data-framer-name={"White Button"} href={"./admission"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", maxWidth: "100%", width: "100%", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
+                                <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1t61j7z framer-1hf9a6b"} data-framer-name={"White Button"} href={"/nos-prestations"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", maxWidth: "100%", width: "100%", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                                   <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
                                       S’inscrire
@@ -2750,7 +2456,7 @@ export default function HomePage() {
                                 </a>
                               </div>
                               <div className={"framer-1q1b95b-container"}>
-                                <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"./programs"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", maxWidth: "100%", width: "100%", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
+                                <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"/nos-prestations"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", maxWidth: "100%", width: "100%", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                                   <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
                                       Nos activités
@@ -2853,7 +2559,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./about-us"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/qui-sommes-nous"}>
                                         À propos
                                       </a>
                                     </p>
@@ -2864,7 +2570,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./programs"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/nos-prestations"}>
                                         Activités
                                       </a>
                                     </p>
@@ -2875,7 +2581,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./admission"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/nos-prestations"}>
                                         Inscription
                                       </a>
                                     </p>
@@ -2886,7 +2592,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./parent-resources"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/faq"}>
                                         Infos parents
                                       </a>
                                     </p>
@@ -2897,7 +2603,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./contact"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/contact"}>
                                         Contact
                                       </a>
                                     </p>
@@ -2910,7 +2616,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./fees-breakdown"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/nos-prestations"}>
                                         Tarifs
                                       </a>
                                     </p>
@@ -2921,7 +2627,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./blog"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/blog"}>
                                         Actualités
                                       </a>
                                     </p>
@@ -2932,7 +2638,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./gallery"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/nos-prestations"}>
                                         Galerie
                                       </a>
                                     </p>
@@ -2943,7 +2649,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./testimonials"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/"}>
                                         Avis
                                       </a>
                                     </p>
@@ -2961,7 +2667,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./privacy-policy"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/confidentialite"}>
                                         Confidentialité
                                       </a>
                                     </p>
@@ -3036,7 +2742,7 @@ export default function HomePage() {
                             </div>
                             <div className={"framer-fx18m4"} data-framer-name={"Button Wraper"}>
                               <div className={"framer-1o5mypz-container"}>
-                                <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1t61j7z framer-1hf9a6b"} data-framer-name={"White Button"} href={"./admission"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
+                                <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1t61j7z framer-1hf9a6b"} data-framer-name={"White Button"} href={"/nos-prestations"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                                   <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
                                       S’inscrire
@@ -3045,7 +2751,7 @@ export default function HomePage() {
                                 </a>
                               </div>
                               <div className={"framer-1q1b95b-container"}>
-                                <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"./programs"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
+                                <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"/nos-prestations"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                                   <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
                                       Nos activités
@@ -3148,7 +2854,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./about-us"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/qui-sommes-nous"}>
                                         À propos
                                       </a>
                                     </p>
@@ -3159,7 +2865,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./programs"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/nos-prestations"}>
                                         Activités
                                       </a>
                                     </p>
@@ -3170,7 +2876,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./admission"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/nos-prestations"}>
                                         Inscription
                                       </a>
                                     </p>
@@ -3181,7 +2887,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./parent-resources"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/faq"}>
                                         Infos parents
                                       </a>
                                     </p>
@@ -3192,7 +2898,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./contact"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/contact"}>
                                         Contact
                                       </a>
                                     </p>
@@ -3208,7 +2914,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./fees-breakdown"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/nos-prestations"}>
                                         Tarifs
                                       </a>
                                     </p>
@@ -3219,7 +2925,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./blog"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/blog"}>
                                         Actualités
                                       </a>
                                     </p>
@@ -3230,7 +2936,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./gallery"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/nos-prestations"}>
                                         Galerie
                                       </a>
                                     </p>
@@ -3241,7 +2947,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./testimonials"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/"}>
                                         Avis
                                       </a>
                                     </p>
@@ -3259,7 +2965,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./privacy-policy"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/confidentialite"}>
                                         Confidentialité
                                       </a>
                                     </p>
@@ -3334,7 +3040,7 @@ export default function HomePage() {
                             </div>
                             <div className={"framer-fx18m4"} data-framer-name={"Button Wraper"}>
                               <div className={"framer-1o5mypz-container"}>
-                                <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1t61j7z framer-1hf9a6b"} data-framer-name={"White Button"} href={"./admission"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
+                                <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1t61j7z framer-1hf9a6b"} data-framer-name={"White Button"} href={"/nos-prestations"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                                   <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
                                       S’inscrire
@@ -3343,7 +3049,7 @@ export default function HomePage() {
                                 </a>
                               </div>
                               <div className={"framer-1q1b95b-container"}>
-                                <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"./programs"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
+                                <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"/nos-prestations"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                                   <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
                                       Nos activités
@@ -3446,7 +3152,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./about-us"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/qui-sommes-nous"}>
                                         À propos
                                       </a>
                                     </p>
@@ -3457,7 +3163,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./programs"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/nos-prestations"}>
                                         Activités
                                       </a>
                                     </p>
@@ -3468,7 +3174,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./admission"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/nos-prestations"}>
                                         Inscription
                                       </a>
                                     </p>
@@ -3479,7 +3185,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./parent-resources"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/faq"}>
                                         Infos parents
                                       </a>
                                     </p>
@@ -3490,7 +3196,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./contact"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/contact"}>
                                         Contact
                                       </a>
                                     </p>
@@ -3506,7 +3212,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./fees-breakdown"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/nos-prestations"}>
                                         Tarifs
                                       </a>
                                     </p>
@@ -3517,7 +3223,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./blog"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/blog"}>
                                         Actualités
                                       </a>
                                     </p>
@@ -3528,7 +3234,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./gallery"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/nos-prestations"}>
                                         Galerie
                                       </a>
                                     </p>
@@ -3539,7 +3245,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./testimonials"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/"}>
                                         Avis
                                       </a>
                                     </p>
@@ -3557,7 +3263,7 @@ export default function HomePage() {
                                 <div className={"framer-n3R26 framer-5BS8D framer-OdaN4 framer-19r24ke framer-v-19r24ke"} data-framer-name={"Variant 1"}>
                                   <div className={"framer-fjvfw"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"./privacy-policy"}>
+                                      <a className={"framer-text framer-styles-preset-1h01746"} data-styles-preset={"jVwzG6Q9p"} href={"/confidentialite"}>
                                         Confidentialité
                                       </a>
                                     </p>
