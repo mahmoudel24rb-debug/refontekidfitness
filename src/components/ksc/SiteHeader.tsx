@@ -35,10 +35,12 @@ export default function SiteHeader() {
               onMouseEnter={() => item.sub && setPresOpen(true)} onMouseLeave={() => item.sub && setPresOpen(false)}>
               <a href={item.href} style={link}>{item.label}{item.sub ? ' ▾' : ''}</a>
               {item.sub && presOpen && (
-                <div style={{ position: 'absolute', top: '100%', left: '50%', transform: 'translateX(-50%)', marginTop: 12, background: '#fff', borderRadius: 12, padding: 16, minWidth: 230, boxShadow: '0 12px 32px rgba(8,22,70,.12)', display: 'flex', flexDirection: 'column', gap: 10, zIndex: 100 }}>
-                  {item.sub.map((s) => (
-                    <a key={s.href} href={s.href} style={{ ...link, fontSize: 15, fontWeight: 700 }}>{s.label}</a>
-                  ))}
+                <div style={{ position: 'absolute', top: '100%', left: '50%', transform: 'translateX(-50%)', paddingTop: 12, zIndex: 100 }}>
+                  <div style={{ background: '#fff', borderRadius: 12, padding: 16, minWidth: 230, boxShadow: '0 12px 32px rgba(8,22,70,.12)', display: 'flex', flexDirection: 'column', gap: 10 }}>
+                    {item.sub.map((s) => (
+                      <a key={s.href} href={s.href} style={{ ...link, fontSize: 15, fontWeight: 700 }}>{s.label}</a>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
