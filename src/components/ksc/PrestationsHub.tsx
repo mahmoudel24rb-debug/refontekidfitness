@@ -35,8 +35,9 @@ export default function PrestationsHub() {
             {PRESTATIONS.map((p, i) => (
               <a key={p.slug} href={`/nos-prestations/${p.slug}`}
                 style={{ display: 'flex', flexDirection: 'column', borderRadius: 18, overflow: 'hidden', textDecoration: 'none', color: 'inherit', border: '1px solid #ececec', background: '#fff', boxShadow: '0 6px 22px rgba(8,22,70,.05)' }}>
-                <div style={{ background: GRADS[i % GRADS.length], height: 132, display: 'flex', alignItems: 'flex-end', padding: 20 }}>
-                  <span style={{ background: 'rgba(255,255,255,.92)', color: '#081646', fontWeight: 700, fontSize: 13, padding: '5px 12px', borderRadius: 70 }}>{p.age}</span>
+                <div style={{ position: 'relative', height: 180 }}>
+                  <img src={`/assets/ksc/${p.slug}.webp`} alt={p.titre} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <span style={{ position: 'absolute', left: 16, bottom: 16, background: 'rgba(255,255,255,.94)', color: '#081646', fontWeight: 700, fontSize: 13, padding: '5px 12px', borderRadius: 70 }}>{p.age}</span>
                 </div>
                 <div style={{ padding: '24px 26px 28px', display: 'flex', flexDirection: 'column', flex: 1 }}>
                   <h2 style={{ fontSize: 23, fontWeight: 800, color: '#081646', margin: '0 0 10px' }}>{p.titre}</h2>

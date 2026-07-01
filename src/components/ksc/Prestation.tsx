@@ -26,6 +26,11 @@ export default function Prestation({ slug }: { slug: string }) {
           </div>
         </section>
 
+        {/* Photo bannière */}
+        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px', marginTop: -40 }}>
+          <img src={`/assets/ksc/${p.slug}.webp`} alt={p.titre} style={{ width: '100%', height: 'clamp(240px,38vw,420px)', objectFit: 'cover', borderRadius: 18, display: 'block', boxShadow: '0 16px 40px rgba(8,22,70,.18)' }} />
+        </div>
+
         {/* Corps */}
         <section style={{ maxWidth: 1100, margin: '0 auto', padding: '70px 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 48 }}>
           <div>
