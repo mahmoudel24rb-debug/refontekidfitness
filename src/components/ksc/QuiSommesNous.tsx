@@ -26,6 +26,11 @@ export default function QuiSommesNous() {
           </div>
         </section>
 
+        {/* Photo bannière */}
+        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px', marginTop: -40 }}>
+          <img src="/assets/ksc/stages-mercredi.webp" alt="Enfants en activité au Kid Sport Club" style={{ width: '100%', height: 'clamp(240px,38vw,420px)', objectFit: 'cover', borderRadius: 18, display: 'block', boxShadow: '0 16px 40px rgba(8,22,70,.18)' }} />
+        </div>
+
         <section style={{ maxWidth: 900, margin: '0 auto', padding: '72px 24px 40px' }}>
           <h2 style={{ fontSize: 'clamp(26px,3.5vw,36px)', fontWeight: 800, color: '#081646', margin: '0 0 18px' }}>Notre pédagogie</h2>
           <p style={{ fontSize: 18, lineHeight: 1.75, margin: '0 0 16px' }}>

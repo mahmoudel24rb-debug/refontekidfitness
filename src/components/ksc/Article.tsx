@@ -3,6 +3,7 @@ import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import InscriptionCTA from './InscriptionCTA'
 import { articleBySlug, ARTICLES } from './articles'
+import { ARTICLE_IMG } from './BlogKSC'
 
 export default function Article({ slug }: { slug: string }) {
   const a = articleBySlug(slug)
@@ -18,6 +19,9 @@ export default function Article({ slug }: { slug: string }) {
             <h1 style={{ fontSize: 'clamp(28px,4.5vw,46px)', fontWeight: 800, lineHeight: 1.1, margin: '16px 0 0' }}>{a.titre}</h1>
           </div>
         </section>
+        <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 24px', marginTop: -32 }}>
+          <img src={ARTICLE_IMG[slug]} alt={a.titre} style={{ width: '100%', height: 'clamp(220px,34vw,380px)', objectFit: 'cover', borderRadius: 18, display: 'block', boxShadow: '0 16px 40px rgba(8,22,70,.18)' }} />
+        </div>
         <article style={{ maxWidth: 740, margin: '0 auto', padding: '56px 24px 70px' }}>
           {a.paragraphes.map((p, i) => (
             <p key={i} style={{ fontSize: 18, lineHeight: 1.8, margin: '0 0 22px' }}>{p}</p>
