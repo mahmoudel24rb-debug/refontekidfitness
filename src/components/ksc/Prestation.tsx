@@ -4,13 +4,46 @@ import SiteFooter from './SiteFooter'
 import InscriptionCTA from './InscriptionCTA'
 import { PRESTATIONS, prestationBySlug } from './prestations'
 
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
+
 export default function Prestation({ slug }: { slug: string }) {
   const p = prestationBySlug(slug)
   if (!p) return null
   const autres = PRESTATIONS.filter((x) => x.slug !== slug).slice(0, 3)
 
+  // Données structurées : fil d'Ariane + service local (SEO Rochecorbon).
+  // NB : un schéma Event (stages/anniversaire) sera ajouté quand le client fournira des dates réelles.
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${SITE}/` },
+          { '@type': 'ListItem', position: 2, name: 'Nos prestations', item: `${SITE}/nos-prestations` },
+          { '@type': 'ListItem', position: 3, name: p.titre, item: `${SITE}/nos-prestations/${p.slug}` },
+        ],
+      },
+      {
+        '@type': 'Service',
+        name: `${p.titre} — Kid Sport Club`,
+        serviceType: p.motCle,
+        description: p.intro,
+        url: `${SITE}/nos-prestations/${p.slug}`,
+        areaServed: { '@type': 'City', name: 'Rochecorbon' },
+        provider: {
+          '@type': 'SportsActivityLocation',
+          name: 'Kid Sport Club',
+          telephone: '+33247444143',
+          address: { '@type': 'PostalAddress', streetAddress: '1 Quai de la Loire', postalCode: '37210', addressLocality: 'Rochecorbon', addressCountry: 'FR' },
+        },
+      },
+    ],
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <SiteHeader />
       <main style={{ background: '#fff', fontFamily: '"Inter", sans-serif' }}>
         {/* Hero */}

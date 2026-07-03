@@ -14,9 +14,30 @@ const GRADS = [
   'linear-gradient(135deg,#e6007e,#1060c8)',
 ]
 
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
+
 export default function PrestationsHub() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${SITE}/` },
+          { '@type': 'ListItem', position: 2, name: 'Nos prestations', item: `${SITE}/nos-prestations` },
+        ],
+      },
+      {
+        '@type': 'ItemList',
+        itemListElement: PRESTATIONS.map((p, i) => ({
+          '@type': 'ListItem', position: i + 1, name: p.titre, url: `${SITE}/nos-prestations/${p.slug}`,
+        })),
+      },
+    ],
+  }
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <SiteHeader />
       <main style={{ background: '#fff', fontFamily: '"Inter", sans-serif' }}>
         <section style={{ background: 'var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, #fbf9f0)', padding: '72px 24px', textAlign: 'center' }}>
