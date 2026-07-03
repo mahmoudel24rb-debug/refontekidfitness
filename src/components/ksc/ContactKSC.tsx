@@ -8,7 +8,7 @@ const field: React.CSSProperties = { width: '100%', padding: '13px 16px', border
 const label: React.CSSProperties = { display: 'block', fontWeight: 700, color: '#081646', marginBottom: 6, fontSize: 14 }
 
 const INFOS = [
-  { t: 'Téléphone', v: '02 47 44 41 43', href: 'tel:0247444143' },
+  { t: 'Téléphone', v: '02 47 44 41 43', href: 'tel:+33247444143' },
   { t: 'Email', v: 'kidfitnessrochecorbon@gmail.com', href: 'mailto:kidfitnessrochecorbon@gmail.com' },
   { t: 'Adresse', v: '1 Quai de la Loire, 37210 Rochecorbon', href: 'https://maps.google.com/?q=1+Quai+de+la+Loire+37210+Rochecorbon' },
 ]

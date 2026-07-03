@@ -27,6 +27,7 @@ export default function SiteFooter() {
           <a href="/qui-sommes-nous" style={link}>Qui sommes-nous</a>
           <a href="/nos-prestations" style={link}>Nos prestations</a>
           <a href="/faq" style={link}>FAQ</a>
+          <a href="/blog" style={link}>Blog</a>
           <a href="/contact" style={link}>Contact</a>
           <a href="/seance-essai" style={link}>Séance d’essai</a>
         </div>
@@ -39,7 +40,7 @@ export default function SiteFooter() {
         <div style={col}>
           <span style={title}>Infos</span>
           <a href="/contact" style={link}>1 Quai de la Loire, 37210 Rochecorbon</a>
-          <a href="tel:0247444143" style={link}>02 47 44 41 43</a>
+          <a href="tel:+33247444143" style={link}>02 47 44 41 43</a>
           <a href="mailto:kidfitnessrochecorbon@gmail.com" style={link}>kidfitnessrochecorbon@gmail.com</a>
           <span style={{ ...link, opacity: 0.92 }}>Lun–Ven : 9h30–12h30 / 16h–19h30</span>
           <span style={{ ...link, opacity: 0.92 }}>Samedi : 9h30–17h30</span>

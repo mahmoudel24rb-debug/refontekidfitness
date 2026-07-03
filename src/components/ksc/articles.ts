@@ -56,3 +56,10 @@ export const ARTICLES: Article[] = [
 ]
 
 export const articleBySlug = (slug: string) => ARTICLES.find((a) => a.slug === slug)
+
+// Format français « 22 juin 2026 » (sans dépendre de l'ICU du runtime).
+const MOIS_FR = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+export const formatDateFr = (iso: string) => {
+  const [y, m, d] = iso.split('-').map(Number)
+  return `${d} ${MOIS_FR[m - 1]} ${y}`
+}

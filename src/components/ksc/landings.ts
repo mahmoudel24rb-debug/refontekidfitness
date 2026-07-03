@@ -10,7 +10,7 @@ export type Landing = {
   sousTitre: string
   image: string
   points: { titre: string; texte: string }[]
-  preuve: { texte: string; auteur: string }
+  preuve?: { texte: string; auteur: string } // preuve sociale optionnelle — n'ajouter que de VRAIS avis clients
   ctaLabel: string // libellé du bouton principal (S'inscrire = Bodylink placeholder)
   reassurance: string[] // bandeau de réassurance (puces courtes)
 }
@@ -31,7 +31,6 @@ export const LANDINGS: Landing[] = [
       { titre: 'Encadré par des coachs', texte: 'Des animateurs diplômés mènent les jeux en toute sécurité, adaptés à l’âge des enfants.' },
       { titre: 'Espace privatisé + goûter', texte: 'Votre créneau rien que pour votre groupe, avec un espace pour souffler les bougies.' },
     ],
-    preuve: { texte: 'Un anniversaire au top, les enfants ont adoré et n’ont pas vu le temps passer !', auteur: 'Un parent — avis à confirmer' },
     ctaLabel: 'Réserver une date',
     reassurance: ['Espace sécurisé', 'Encadrement diplômé', 'De 3 à 14 ans', 'Au bord de la Loire'],
   },
@@ -50,7 +49,6 @@ export const LANDINGS: Landing[] = [
       { titre: 'Toutes les vacances', texte: 'Stages pendant les vacances scolaires et les mercredis (8h00 – 17h30).' },
       { titre: 'Groupes par âge', texte: 'Chaque enfant progresse à son rythme, dans un groupe adapté, en toute sécurité.' },
     ],
-    preuve: { texte: 'Mon fils réclame de revenir à chaque vacances, il adore les stages !', auteur: 'Un parent — avis à confirmer' },
     ctaLabel: 'Réserver une place',
     reassurance: ['Encadrement diplômé', 'Groupes par âge', 'Mercredis + vacances', 'Journée complète'],
   },

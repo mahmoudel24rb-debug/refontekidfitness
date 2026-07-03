@@ -1,7 +1,6 @@
 import React from 'react'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
-import InscriptionCTA from './InscriptionCTA'
 
 export const FAQ = [
   { q: 'À partir de quel âge mon enfant peut-il commencer ?', r: "Dès 10 mois avec la baby gym (séances parent-enfant), puis des cours adaptés à chaque tranche d'âge jusqu'à 14 ans." },
@@ -44,7 +43,7 @@ export default function Faq() {
         <section style={{ textAlign: 'center', padding: '20px 24px 80px' }}>
           <p style={{ fontSize: 17, margin: '0 0 22px' }}>Une autre question ? Venez nous voir ou contactez-nous.</p>
           <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <InscriptionCTA label="Réserver une séance d’essai" />
+            <a href="/seance-essai" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '15px 30px', borderRadius: 70, fontWeight: 700, fontSize: 16, textDecoration: 'none', color: '#fff', background: '#e6007e', border: '2px solid #e6007e' }}>Réserver une séance d’essai</a>
             <a href="/contact" style={{ display: 'inline-flex', alignItems: 'center', padding: '15px 30px', borderRadius: 70, fontWeight: 700, textDecoration: 'none', color: '#081646', border: '2px solid #081646' }}>Nous contacter</a>
           </div>
         </section>

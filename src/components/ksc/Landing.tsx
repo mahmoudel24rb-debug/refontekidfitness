@@ -57,11 +57,13 @@ export default function Landing({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* Preuve sociale */}
-      <section style={{ maxWidth: 820, margin: '0 auto', padding: '40px 24px 20px', textAlign: 'center' }}>
-        <p style={{ fontSize: 'clamp(20px,2.6vw,26px)', fontWeight: 700, color: '#081646', lineHeight: 1.5, margin: '0 0 14px' }}>&laquo;&nbsp;{l.preuve.texte}&nbsp;&raquo;</p>
-        <p style={{ color: '#e6007e', fontWeight: 700, margin: 0 }}>{l.preuve.auteur}</p>
-      </section>
+      {/* Preuve sociale — rendue uniquement si un vrai avis client est renseigné */}
+      {l.preuve && (
+        <section style={{ maxWidth: 820, margin: '0 auto', padding: '40px 24px 20px', textAlign: 'center' }}>
+          <p style={{ fontSize: 'clamp(20px,2.6vw,26px)', fontWeight: 700, color: '#081646', lineHeight: 1.5, margin: '0 0 14px' }}>&laquo;&nbsp;{l.preuve.texte}&nbsp;&raquo;</p>
+          <p style={{ color: '#e6007e', fontWeight: 700, margin: 0 }}>{l.preuve.auteur}</p>
+        </section>
+      )}
 
       {/* CTA final */}
       <section style={{ padding: '20px 24px 90px' }}>

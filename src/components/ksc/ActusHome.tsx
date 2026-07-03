@@ -5,7 +5,7 @@ import { ARTICLE_IMG } from './BlogKSC'
 // Bandeau « Actus & conseils » pour l'accueil (brief §4 : bandeau actus).
 // Affiche les 3 derniers articles + lien vers le blog. Maillage interne home -> blog.
 export default function ActusHome() {
-  const derniers = ARTICLES.slice(0, 3)
+  const derniers = [...ARTICLES].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3)
   return (
     <section style={{ background: '#fff', fontFamily: '"Inter", sans-serif', padding: '80px 24px' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -23,7 +23,10 @@ export default function ActusHome() {
               <div style={{ padding: '22px 24px 26px', display: 'flex', flexDirection: 'column', flex: 1 }}>
                 <h3 style={{ fontSize: 19, fontWeight: 800, color: '#081646', margin: '0 0 10px', lineHeight: 1.3 }}>{a.titre}</h3>
                 <p style={{ color: '#525c75', lineHeight: 1.6, margin: '0 0 16px', flex: 1 }}>{a.excerpt}</p>
-                <span style={{ color: '#e6007e', fontWeight: 700 }}>Lire l&rsquo;article &rarr;</span>
+                <span style={{ color: '#e6007e', fontWeight: 700 }}>
+                  Lire l&rsquo;article
+                  <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ verticalAlign: '-1px', marginLeft: 6 }}><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                </span>
               </div>
             </a>
           ))}

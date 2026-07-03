@@ -10,6 +10,7 @@ const NAV = [
   { label: 'Qui sommes-nous', href: '/qui-sommes-nous' },
   { label: 'Nos prestations', href: '/nos-prestations', sub: PRESTATIONS.map((p) => ({ label: p.titre, href: `/nos-prestations/${p.slug}` })) },
   { label: 'FAQ', href: '/faq' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -33,7 +34,12 @@ export default function SiteHeader() {
           {NAV.map((item) => (
             <div key={item.href} style={{ position: 'relative' }}
               onMouseEnter={() => item.sub && setPresOpen(true)} onMouseLeave={() => item.sub && setPresOpen(false)}>
-              <a href={item.href} style={link}>{item.label}{item.sub ? ' ▾' : ''}</a>
+              <a href={item.href} style={link}>
+                {item.label}
+                {item.sub && (
+                  <svg aria-hidden="true" width="10" height="7" viewBox="0 0 10 7" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: 6, verticalAlign: 'middle' }}><path d="M1 1.5l4 4 4-4" /></svg>
+                )}
+              </a>
               {item.sub && presOpen && (
                 <div style={{ position: 'absolute', top: '100%', left: '50%', transform: 'translateX(-50%)', paddingTop: 12, zIndex: 100 }}>
                   <div style={{ background: '#fff', borderRadius: 12, padding: 16, minWidth: 230, boxShadow: '0 12px 32px rgba(8,22,70,.12)', display: 'flex', flexDirection: 'column', gap: 10 }}>

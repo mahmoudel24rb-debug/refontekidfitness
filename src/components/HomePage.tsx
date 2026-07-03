@@ -4,6 +4,7 @@ import './framer.css';
 import SiteHeader from './ksc/SiteHeader';
 import SiteFooter from './ksc/SiteFooter';
 import ActusHome from './ksc/ActusHome';
+import { BODYLINK_URL } from './ksc/InscriptionCTA';
 
 export default function HomePage() {
   return (
@@ -45,7 +46,7 @@ export default function HomePage() {
                     <div className={"framer-14fluox"} data-framer-name={"Button Wrapper"}>
                       <div className={"ssr-variant"}>
                         <div className={"framer-19ux50q-container"}>
-                          <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1jxt7ga framer-1hf9a6b"} data-framer-name={"Hero Green"} href={"/contact"} data-bodylink={"placeholder"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(230, 0, 126))", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
+                          <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1jxt7ga framer-1hf9a6b"} data-framer-name={"Hero Green"} href={BODYLINK_URL} data-bodylink={"placeholder"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(230, 0, 126))", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                             <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                 S’inscrire
@@ -82,12 +83,12 @@ export default function HomePage() {
                           <div className={"framer-1ed0fw8"} data-framer-name={"Text"}>
                             <div className={"framer-sqq2et"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-n09wtz"} data-styles-preset={"b4OsDW1aO"}>
-                                500+
+                                7
                               </h5>
                             </div>
                             <div className={"framer-cc3bwz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"}>
-                                Activités sportives
+                                Prestations proposées
                               </p>
                             </div>
                           </div>
@@ -105,12 +106,12 @@ export default function HomePage() {
                           <div className={"framer-1ed0fw8"} data-framer-name={"Text"}>
                             <div className={"framer-sqq2et"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-n09wtz"} data-styles-preset={"b4OsDW1aO"}>
-                                500+
+                                7
                               </h5>
                             </div>
                             <div className={"framer-cc3bwz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"}>
-                                Activités sportives
+                                Prestations proposées
                               </p>
                             </div>
                           </div>
@@ -128,12 +129,12 @@ export default function HomePage() {
                           <div className={"framer-1ed0fw8"} data-framer-name={"Text"}>
                             <div className={"framer-sqq2et"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-n09wtz"} data-styles-preset={"b4OsDW1aO"}>
-                                2500+
+                                10 mois – 14 ans
                               </h5>
                             </div>
                             <div className={"framer-cc3bwz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"}>
-                                Enfants accueillis
+                                Tous les âges accueillis
                               </p>
                             </div>
                           </div>
@@ -151,12 +152,12 @@ export default function HomePage() {
                           <div className={"framer-1ed0fw8"} data-framer-name={"Text"}>
                             <div className={"framer-sqq2et"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-n09wtz"} data-styles-preset={"b4OsDW1aO"}>
-                                2500+
+                                10 mois – 14 ans
                               </h5>
                             </div>
                             <div className={"framer-cc3bwz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"}>
-                                Enfants accueillis
+                                Tous les âges accueillis
                               </p>
                             </div>
                           </div>
@@ -204,7 +205,7 @@ export default function HomePage() {
                     <li className={"ticker-item"} aria-hidden={"false"} aria-posinset={"1"} aria-setsize={"6"} style={{ flexGrow: "0", flexShrink: "0", position: "relative", height: "fit-content", width: "fit-content", transform: "none" }}>
                       <div className={"framer-1g5leeu"} style={{ transform: "none" }}>
                         <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} dir={"auto"} style={{ "--framer-text-color": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))" }}>
-                          DE 3 MOIS À 14 ANS
+                          DE 10 MOIS À 14 ANS
                         </h5>
                       </div>
                     </li>
@@ -268,7 +269,7 @@ export default function HomePage() {
                     <div className={"framer-149wiqx"} data-framer-name={"Rotation"} style={{ transform: "rotate(8deg)" }} />
                     <div className={"framer-1xy87xc"}>
                       <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                        <img decoding={"async"} loading={"lazy"} width={"6016"} height={"4016"} sizes={"(min-width: 1440px) 273px, (min-width: 1200px) and (max-width: 1439.98px) 273px, (min-width: 810px) and (max-width: 1199.98px) 273px, (max-width: 809.98px) 273px"} srcSet={"/assets/ksc/esprit-equipe.webp 512w,/assets/ksc/esprit-equipe.webp 1024w,/assets/ksc/esprit-equipe.webp 2048w,/assets/ksc/esprit-equipe.webp 4096w,/assets/ksc/esprit-equipe.webp 6016w"} src={"/assets/ksc/esprit-equipe.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                        <img decoding={"async"} loading={"lazy"} width={"6016"} height={"4016"} sizes={"(min-width: 1440px) 273px, (min-width: 1200px) and (max-width: 1439.98px) 273px, (min-width: 810px) and (max-width: 1199.98px) 273px, (max-width: 809.98px) 273px"} srcSet={"/assets/ksc/esprit-equipe.webp 512w,/assets/ksc/esprit-equipe.webp 1024w,/assets/ksc/esprit-equipe.webp 2048w,/assets/ksc/esprit-equipe.webp 4096w,/assets/ksc/esprit-equipe.webp 6016w"} src={"/assets/ksc/esprit-equipe.webp"} alt={"Enfants réunis en équipe au Kid Sport Club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                       </div>
                     </div>
                   </div>
@@ -293,7 +294,7 @@ export default function HomePage() {
                       </div>
                       <div className={"ssr-variant"}>
                         <div className={"framer-31b0pr-container"}>
-                          <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-8xagx7 framer-1hf9a6b"} data-framer-name={"Link"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "rgba(0, 0, 0, 0)", borderBottomLeftRadius: "0px", borderBottomRightRadius: "0px", borderTopLeftRadius: "0px", borderTopRightRadius: "0px" }}>
+                          <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-8xagx7 framer-1hf9a6b"} data-framer-name={"Link"} href={"/qui-sommes-nous"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "rgba(0, 0, 0, 0)", borderBottomLeftRadius: "0px", borderBottomRightRadius: "0px", borderTopLeftRadius: "0px", borderTopRightRadius: "0px" }}>
                             <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"}>
                                 En savoir plus
@@ -370,12 +371,12 @@ export default function HomePage() {
                           </div>
                           <div className={"framer-b7bnb9"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              (3 - 6 ans)
+                              (3 – 5 ans)
                             </p>
                           </div>
                           <div className={"framer-ylcyci"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              De 3 à 6 ans : parcours, motricité et premiers jeux sportifs pour se dépenser et progresser.
+                              De 3 à 5 ans : parcours, motricité et premiers jeux sportifs pour se dépenser et progresser.
                             </p>
                           </div>
                         </div>
@@ -422,12 +423,12 @@ export default function HomePage() {
                           </div>
                           <div className={"framer-b7bnb9"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              (10 - 14 ans)
+                              (11 – 14 ans)
                             </p>
                           </div>
                           <div className={"framer-ylcyci"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                             <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                              De 10 à 14 ans : perfectionnement, dépassement de soi et préparation physique, dans la bonne humeur.
+                              De 11 à 14 ans : perfectionnement, dépassement de soi et préparation physique, dans la bonne humeur.
                             </p>
                           </div>
                         </div>
@@ -485,7 +486,7 @@ export default function HomePage() {
                           <div className={"framer-gEYBK framer-5BS8D framer-1hz7il4 framer-v-o1mt7"} data-border={"true"} data-framer-name={"Active"} data-highlight={"true"} tabIndex={"0"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", borderBottomLeftRadius: "100px", borderBottomRightRadius: "100px", borderTopLeftRadius: "100px", borderTopRightRadius: "100px" }}>
                             <div className={"framer-13ih88m"} data-framer-name={"Title"} style={{ "--extracted-r6o4lv": "rgb(255, 255, 255)", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} dir={"auto"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, rgb(255, 255, 255))" }}>
-                                All
+                                Tout
                               </p>
                             </div>
                           </div>
@@ -534,7 +535,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/baby-spa.webp 512w,/assets/ksc/baby-spa.webp 1024w,/assets/ksc/baby-spa.webp 2048w,/assets/ksc/baby-spa.webp 4096w,/assets/ksc/baby-spa.webp 6000w"} src={"/assets/ksc/baby-spa.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/baby-spa.webp 512w,/assets/ksc/baby-spa.webp 1024w,/assets/ksc/baby-spa.webp 2048w,/assets/ksc/baby-spa.webp 4096w,/assets/ksc/baby-spa.webp 6000w"} src={"/assets/ksc/baby-spa.webp"} alt={"Bébé en éveil aquatique au Baby Spa du Kid Sport Club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -542,14 +543,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Vendredi
+                                      Dès 10 mois
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -575,7 +576,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"4032"} height={"2898"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/fit-parents-enfants.webp 512w,/assets/ksc/fit-parents-enfants.webp 1024w,/assets/ksc/fit-parents-enfants.webp 2048w,/assets/ksc/fit-parents-enfants.webp 4032w"} src={"/assets/ksc/fit-parents-enfants.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"4032"} height={"2898"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/fit-parents-enfants.webp 512w,/assets/ksc/fit-parents-enfants.webp 1024w,/assets/ksc/fit-parents-enfants.webp 2048w,/assets/ksc/fit-parents-enfants.webp 4032w"} src={"/assets/ksc/fit-parents-enfants.webp"} alt={"Parent et enfant pendant une séance Fit' parents/enfants"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -583,14 +584,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Mercredi
+                                      10 mois – 3 ans
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -616,7 +617,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/stages-vacances.webp 512w,/assets/ksc/stages-vacances.webp 1024w,/assets/ksc/stages-vacances.webp 2048w,/assets/ksc/stages-vacances.webp 4096w,/assets/ksc/stages-vacances.webp 6000w"} src={"/assets/ksc/stages-vacances.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/stages-vacances.webp 512w,/assets/ksc/stages-vacances.webp 1024w,/assets/ksc/stages-vacances.webp 2048w,/assets/ksc/stages-vacances.webp 4096w,/assets/ksc/stages-vacances.webp 6000w"} src={"/assets/ksc/stages-vacances.webp"} alt={"Enfants pendant un stage sportif des vacances scolaires"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -624,14 +625,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Jeudi
+                                      3 – 14 ans
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -657,7 +658,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"5760"} height={"3840"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/anniversaire.webp 512w,/assets/ksc/anniversaire.webp 1024w,/assets/ksc/anniversaire.webp 2048w,/assets/ksc/anniversaire.webp 4096w,/assets/ksc/anniversaire.webp 5760w"} src={"/assets/ksc/anniversaire.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"5760"} height={"3840"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/anniversaire.webp 512w,/assets/ksc/anniversaire.webp 1024w,/assets/ksc/anniversaire.webp 2048w,/assets/ksc/anniversaire.webp 4096w,/assets/ksc/anniversaire.webp 5760w"} src={"/assets/ksc/anniversaire.webp"} alt={"Enfants fêtant un anniversaire sportif au club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -665,14 +666,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Mardi
+                                      3 – 14 ans
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -698,7 +699,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"3000"} height={"2000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/stages-mercredi.webp 512w,/assets/ksc/stages-mercredi.webp 1024w,/assets/ksc/stages-mercredi.webp 2048w,/assets/ksc/stages-mercredi.webp 3000w"} src={"/assets/ksc/stages-mercredi.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"3000"} height={"2000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/stages-mercredi.webp 512w,/assets/ksc/stages-mercredi.webp 1024w,/assets/ksc/stages-mercredi.webp 2048w,/assets/ksc/stages-mercredi.webp 3000w"} src={"/assets/ksc/stages-mercredi.webp"} alt={"Enfants en activité lors d’un stage du mercredi"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -706,14 +707,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Lundi
+                                      3 – 14 ans
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -739,7 +740,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/collectivites.webp 512w,/assets/ksc/collectivites.webp 1024w,/assets/ksc/collectivites.webp 2048w,/assets/ksc/collectivites.webp 4096w,/assets/ksc/collectivites.webp 6000w"} src={"/assets/ksc/collectivites.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/collectivites.webp 512w,/assets/ksc/collectivites.webp 1024w,/assets/ksc/collectivites.webp 2048w,/assets/ksc/collectivites.webp 4096w,/assets/ksc/collectivites.webp 6000w"} src={"/assets/ksc/collectivites.webp"} alt={"Groupe d’enfants d’une collectivité accueilli au club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -747,14 +748,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Samedi
+                                      Sur devis
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -801,7 +802,7 @@ export default function HomePage() {
                           <div className={"framer-gEYBK framer-5BS8D framer-1hz7il4 framer-v-o1mt7"} data-border={"true"} data-framer-name={"Active"} data-highlight={"true"} tabIndex={"0"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", borderBottomLeftRadius: "100px", borderBottomRightRadius: "100px", borderTopLeftRadius: "100px", borderTopRightRadius: "100px" }}>
                             <div className={"framer-13ih88m"} data-framer-name={"Title"} style={{ "--extracted-r6o4lv": "rgb(255, 255, 255)", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} dir={"auto"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, rgb(255, 255, 255))" }}>
-                                All
+                                Tout
                               </p>
                             </div>
                           </div>
@@ -850,7 +851,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/baby-spa.webp 512w,/assets/ksc/baby-spa.webp 1024w,/assets/ksc/baby-spa.webp 2048w,/assets/ksc/baby-spa.webp 4096w,/assets/ksc/baby-spa.webp 6000w"} src={"/assets/ksc/baby-spa.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/baby-spa.webp 512w,/assets/ksc/baby-spa.webp 1024w,/assets/ksc/baby-spa.webp 2048w,/assets/ksc/baby-spa.webp 4096w,/assets/ksc/baby-spa.webp 6000w"} src={"/assets/ksc/baby-spa.webp"} alt={"Bébé en éveil aquatique au Baby Spa du Kid Sport Club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -858,14 +859,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Vendredi
+                                      Dès 10 mois
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -891,7 +892,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"4032"} height={"2898"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/fit-parents-enfants.webp 512w,/assets/ksc/fit-parents-enfants.webp 1024w,/assets/ksc/fit-parents-enfants.webp 2048w,/assets/ksc/fit-parents-enfants.webp 4032w"} src={"/assets/ksc/fit-parents-enfants.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"4032"} height={"2898"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/fit-parents-enfants.webp 512w,/assets/ksc/fit-parents-enfants.webp 1024w,/assets/ksc/fit-parents-enfants.webp 2048w,/assets/ksc/fit-parents-enfants.webp 4032w"} src={"/assets/ksc/fit-parents-enfants.webp"} alt={"Parent et enfant pendant une séance Fit' parents/enfants"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -899,14 +900,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Mercredi
+                                      10 mois – 3 ans
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -932,7 +933,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/stages-vacances.webp 512w,/assets/ksc/stages-vacances.webp 1024w,/assets/ksc/stages-vacances.webp 2048w,/assets/ksc/stages-vacances.webp 4096w,/assets/ksc/stages-vacances.webp 6000w"} src={"/assets/ksc/stages-vacances.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/stages-vacances.webp 512w,/assets/ksc/stages-vacances.webp 1024w,/assets/ksc/stages-vacances.webp 2048w,/assets/ksc/stages-vacances.webp 4096w,/assets/ksc/stages-vacances.webp 6000w"} src={"/assets/ksc/stages-vacances.webp"} alt={"Enfants pendant un stage sportif des vacances scolaires"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -940,14 +941,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Jeudi
+                                      3 – 14 ans
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -973,7 +974,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"5760"} height={"3840"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/anniversaire.webp 512w,/assets/ksc/anniversaire.webp 1024w,/assets/ksc/anniversaire.webp 2048w,/assets/ksc/anniversaire.webp 4096w,/assets/ksc/anniversaire.webp 5760w"} src={"/assets/ksc/anniversaire.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"5760"} height={"3840"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/anniversaire.webp 512w,/assets/ksc/anniversaire.webp 1024w,/assets/ksc/anniversaire.webp 2048w,/assets/ksc/anniversaire.webp 4096w,/assets/ksc/anniversaire.webp 5760w"} src={"/assets/ksc/anniversaire.webp"} alt={"Enfants fêtant un anniversaire sportif au club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -981,14 +982,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Mardi
+                                      3 – 14 ans
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -1014,7 +1015,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"3000"} height={"2000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/stages-mercredi.webp 512w,/assets/ksc/stages-mercredi.webp 1024w,/assets/ksc/stages-mercredi.webp 2048w,/assets/ksc/stages-mercredi.webp 3000w"} src={"/assets/ksc/stages-mercredi.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"3000"} height={"2000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/stages-mercredi.webp 512w,/assets/ksc/stages-mercredi.webp 1024w,/assets/ksc/stages-mercredi.webp 2048w,/assets/ksc/stages-mercredi.webp 3000w"} src={"/assets/ksc/stages-mercredi.webp"} alt={"Enfants en activité lors d’un stage du mercredi"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -1022,14 +1023,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Lundi
+                                      3 – 14 ans
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -1055,7 +1056,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/collectivites.webp 512w,/assets/ksc/collectivites.webp 1024w,/assets/ksc/collectivites.webp 2048w,/assets/ksc/collectivites.webp 4096w,/assets/ksc/collectivites.webp 6000w"} src={"/assets/ksc/collectivites.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/collectivites.webp 512w,/assets/ksc/collectivites.webp 1024w,/assets/ksc/collectivites.webp 2048w,/assets/ksc/collectivites.webp 4096w,/assets/ksc/collectivites.webp 6000w"} src={"/assets/ksc/collectivites.webp"} alt={"Groupe d’enfants d’une collectivité accueilli au club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -1063,14 +1064,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Samedi
+                                      Sur devis
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -1117,7 +1118,7 @@ export default function HomePage() {
                           <div className={"framer-gEYBK framer-5BS8D framer-1hz7il4 framer-v-o1mt7"} data-border={"true"} data-framer-name={"Active"} data-highlight={"true"} tabIndex={"0"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", borderBottomLeftRadius: "100px", borderBottomRightRadius: "100px", borderTopLeftRadius: "100px", borderTopRightRadius: "100px" }}>
                             <div className={"framer-13ih88m"} data-framer-name={"Title"} style={{ "--extracted-r6o4lv": "rgb(255, 255, 255)", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} dir={"auto"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, rgb(255, 255, 255))" }}>
-                                All
+                                Tout
                               </p>
                             </div>
                           </div>
@@ -1166,7 +1167,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/baby-spa.webp 512w,/assets/ksc/baby-spa.webp 1024w,/assets/ksc/baby-spa.webp 2048w,/assets/ksc/baby-spa.webp 4096w,/assets/ksc/baby-spa.webp 6000w"} src={"/assets/ksc/baby-spa.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/baby-spa.webp 512w,/assets/ksc/baby-spa.webp 1024w,/assets/ksc/baby-spa.webp 2048w,/assets/ksc/baby-spa.webp 4096w,/assets/ksc/baby-spa.webp 6000w"} src={"/assets/ksc/baby-spa.webp"} alt={"Bébé en éveil aquatique au Baby Spa du Kid Sport Club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -1174,14 +1175,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Vendredi
+                                      Dès 10 mois
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -1207,7 +1208,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"4032"} height={"2898"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/fit-parents-enfants.webp 512w,/assets/ksc/fit-parents-enfants.webp 1024w,/assets/ksc/fit-parents-enfants.webp 2048w,/assets/ksc/fit-parents-enfants.webp 4032w"} src={"/assets/ksc/fit-parents-enfants.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"4032"} height={"2898"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/fit-parents-enfants.webp 512w,/assets/ksc/fit-parents-enfants.webp 1024w,/assets/ksc/fit-parents-enfants.webp 2048w,/assets/ksc/fit-parents-enfants.webp 4032w"} src={"/assets/ksc/fit-parents-enfants.webp"} alt={"Parent et enfant pendant une séance Fit' parents/enfants"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -1215,14 +1216,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Mercredi
+                                      10 mois – 3 ans
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -1248,7 +1249,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/stages-vacances.webp 512w,/assets/ksc/stages-vacances.webp 1024w,/assets/ksc/stages-vacances.webp 2048w,/assets/ksc/stages-vacances.webp 4096w,/assets/ksc/stages-vacances.webp 6000w"} src={"/assets/ksc/stages-vacances.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/stages-vacances.webp 512w,/assets/ksc/stages-vacances.webp 1024w,/assets/ksc/stages-vacances.webp 2048w,/assets/ksc/stages-vacances.webp 4096w,/assets/ksc/stages-vacances.webp 6000w"} src={"/assets/ksc/stages-vacances.webp"} alt={"Enfants pendant un stage sportif des vacances scolaires"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -1256,14 +1257,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Jeudi
+                                      3 – 14 ans
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -1289,7 +1290,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"5760"} height={"3840"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/anniversaire.webp 512w,/assets/ksc/anniversaire.webp 1024w,/assets/ksc/anniversaire.webp 2048w,/assets/ksc/anniversaire.webp 4096w,/assets/ksc/anniversaire.webp 5760w"} src={"/assets/ksc/anniversaire.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"5760"} height={"3840"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/anniversaire.webp 512w,/assets/ksc/anniversaire.webp 1024w,/assets/ksc/anniversaire.webp 2048w,/assets/ksc/anniversaire.webp 4096w,/assets/ksc/anniversaire.webp 5760w"} src={"/assets/ksc/anniversaire.webp"} alt={"Enfants fêtant un anniversaire sportif au club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -1297,14 +1298,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Mardi
+                                      3 – 14 ans
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -1330,7 +1331,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"3000"} height={"2000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/stages-mercredi.webp 512w,/assets/ksc/stages-mercredi.webp 1024w,/assets/ksc/stages-mercredi.webp 2048w,/assets/ksc/stages-mercredi.webp 3000w"} src={"/assets/ksc/stages-mercredi.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"3000"} height={"2000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/stages-mercredi.webp 512w,/assets/ksc/stages-mercredi.webp 1024w,/assets/ksc/stages-mercredi.webp 2048w,/assets/ksc/stages-mercredi.webp 3000w"} src={"/assets/ksc/stages-mercredi.webp"} alt={"Enfants en activité lors d’un stage du mercredi"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -1338,14 +1339,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Lundi
+                                      3 – 14 ans
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -1371,7 +1372,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/collectivites.webp 512w,/assets/ksc/collectivites.webp 1024w,/assets/ksc/collectivites.webp 2048w,/assets/ksc/collectivites.webp 4096w,/assets/ksc/collectivites.webp 6000w"} src={"/assets/ksc/collectivites.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/collectivites.webp 512w,/assets/ksc/collectivites.webp 1024w,/assets/ksc/collectivites.webp 2048w,/assets/ksc/collectivites.webp 4096w,/assets/ksc/collectivites.webp 6000w"} src={"/assets/ksc/collectivites.webp"} alt={"Groupe d’enfants d’une collectivité accueilli au club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -1379,14 +1380,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Samedi
+                                      Sur devis
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -1433,7 +1434,7 @@ export default function HomePage() {
                           <div className={"framer-gEYBK framer-5BS8D framer-1hz7il4 framer-v-o1mt7"} data-border={"true"} data-framer-name={"Active"} data-highlight={"true"} tabIndex={"0"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-fbb687f5-36a6-434d-ba90-5015fee6487b, rgb(18, 42, 99))", borderBottomLeftRadius: "100px", borderBottomRightRadius: "100px", borderTopLeftRadius: "100px", borderTopRightRadius: "100px" }}>
                             <div className={"framer-13ih88m"} data-framer-name={"Title"} style={{ "--extracted-r6o4lv": "rgb(255, 255, 255)", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"} dir={"auto"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, rgb(255, 255, 255))" }}>
-                                All
+                                Tout
                               </p>
                             </div>
                           </div>
@@ -1482,7 +1483,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/baby-spa.webp 512w,/assets/ksc/baby-spa.webp 1024w,/assets/ksc/baby-spa.webp 2048w,/assets/ksc/baby-spa.webp 4096w,/assets/ksc/baby-spa.webp 6000w"} src={"/assets/ksc/baby-spa.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/baby-spa.webp 512w,/assets/ksc/baby-spa.webp 1024w,/assets/ksc/baby-spa.webp 2048w,/assets/ksc/baby-spa.webp 4096w,/assets/ksc/baby-spa.webp 6000w"} src={"/assets/ksc/baby-spa.webp"} alt={"Bébé en éveil aquatique au Baby Spa du Kid Sport Club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -1490,14 +1491,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Vendredi
+                                      Dès 10 mois
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -1523,7 +1524,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"4032"} height={"2898"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/fit-parents-enfants.webp 512w,/assets/ksc/fit-parents-enfants.webp 1024w,/assets/ksc/fit-parents-enfants.webp 2048w,/assets/ksc/fit-parents-enfants.webp 4032w"} src={"/assets/ksc/fit-parents-enfants.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"4032"} height={"2898"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/fit-parents-enfants.webp 512w,/assets/ksc/fit-parents-enfants.webp 1024w,/assets/ksc/fit-parents-enfants.webp 2048w,/assets/ksc/fit-parents-enfants.webp 4032w"} src={"/assets/ksc/fit-parents-enfants.webp"} alt={"Parent et enfant pendant une séance Fit' parents/enfants"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -1531,14 +1532,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Mercredi
+                                      10 mois – 3 ans
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -1564,7 +1565,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/stages-vacances.webp 512w,/assets/ksc/stages-vacances.webp 1024w,/assets/ksc/stages-vacances.webp 2048w,/assets/ksc/stages-vacances.webp 4096w,/assets/ksc/stages-vacances.webp 6000w"} src={"/assets/ksc/stages-vacances.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/stages-vacances.webp 512w,/assets/ksc/stages-vacances.webp 1024w,/assets/ksc/stages-vacances.webp 2048w,/assets/ksc/stages-vacances.webp 4096w,/assets/ksc/stages-vacances.webp 6000w"} src={"/assets/ksc/stages-vacances.webp"} alt={"Enfants pendant un stage sportif des vacances scolaires"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -1572,14 +1573,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Jeudi
+                                      3 – 14 ans
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -1605,7 +1606,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"5760"} height={"3840"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/anniversaire.webp 512w,/assets/ksc/anniversaire.webp 1024w,/assets/ksc/anniversaire.webp 2048w,/assets/ksc/anniversaire.webp 4096w,/assets/ksc/anniversaire.webp 5760w"} src={"/assets/ksc/anniversaire.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"5760"} height={"3840"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/anniversaire.webp 512w,/assets/ksc/anniversaire.webp 1024w,/assets/ksc/anniversaire.webp 2048w,/assets/ksc/anniversaire.webp 4096w,/assets/ksc/anniversaire.webp 5760w"} src={"/assets/ksc/anniversaire.webp"} alt={"Enfants fêtant un anniversaire sportif au club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -1613,14 +1614,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Mardi
+                                      3 – 14 ans
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -1646,7 +1647,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"3000"} height={"2000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/stages-mercredi.webp 512w,/assets/ksc/stages-mercredi.webp 1024w,/assets/ksc/stages-mercredi.webp 2048w,/assets/ksc/stages-mercredi.webp 3000w"} src={"/assets/ksc/stages-mercredi.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"3000"} height={"2000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/stages-mercredi.webp 512w,/assets/ksc/stages-mercredi.webp 1024w,/assets/ksc/stages-mercredi.webp 2048w,/assets/ksc/stages-mercredi.webp 3000w"} src={"/assets/ksc/stages-mercredi.webp"} alt={"Enfants en activité lors d’un stage du mercredi"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -1654,14 +1655,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Lundi
+                                      3 – 14 ans
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -1687,7 +1688,7 @@ export default function HomePage() {
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/collectivites.webp 512w,/assets/ksc/collectivites.webp 1024w,/assets/ksc/collectivites.webp 2048w,/assets/ksc/collectivites.webp 4096w,/assets/ksc/collectivites.webp 6000w"} src={"/assets/ksc/collectivites.webp"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/collectivites.webp 512w,/assets/ksc/collectivites.webp 1024w,/assets/ksc/collectivites.webp 2048w,/assets/ksc/collectivites.webp 4096w,/assets/ksc/collectivites.webp 6000w"} src={"/assets/ksc/collectivites.webp"} alt={"Groupe d’enfants d’une collectivité accueilli au club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -1695,14 +1696,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Samedi
+                                      Sur devis
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      3:00 PM - 4:00 PM
+                                      Créneaux : nous consulter
                                     </p>
                                   </div>
                                 </div>
@@ -1736,209 +1737,6 @@ export default function HomePage() {
                 </div>
               </div>
             </section>
-            <section className={"framer-10x9iwm"} data-framer-name={"Testimonials"}>
-              <div className={"framer-1ifo1f4"} data-framer-name={"Testimonial Slider Section"}>
-                <div className={"framer-1e7le41"} data-framer-name={"Limit"}>
-                  <div data-framer-name={"quote mark"} className={"framer-1sw2d6"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
-                    <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
-                      <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 112 96"}>
-                        <use href={"#svg1948298611_726"} />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className={"framer-16exp08"} data-framer-name={"Shape"}>
-                    <div data-framer-name={"Ellipse "} className={"framer-tpmuq8"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0" }}>
-                      <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
-                        <svg style={{ width: "100%", height: "100%" }}>
-                          <use href={"#svg11589070080"} />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={"ssr-variant hidden-10l0lpx hidden-1z12sqx"}>
-                    <div className={"framer-5tqwg5-container"}>
-                      <div className={"framer-77R4k framer-UiBmF framer-TCv20 framer-wv7x5f framer-v-wv7x5f"} data-framer-name={"Desktop 1"} style={{ width: "100%" }}>
-                        <div className={"framer-zqwt0o"} data-framer-name={"Title"}>
-                          <div className={"framer-1vnfzqj"} style={{ "--extracted-1eung3n": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                            <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center", "--framer-text-color": "var(--extracted-1eung3n, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                              Ils témoignent
-                            </h4>
-                          </div>
-                          <div className={"framer-1ncmnmx"} style={{ "--extracted-1eung3n": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                            <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center", "--framer-text-color": "var(--extracted-1eung3n, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                              Avis
-                            </h4>
-                          </div>
-                        </div>
-                        <div className={"framer-x4vcxs"} data-framer-name={"Testimonial Wrapper"}>
-                          <div className={"framer-gztrkn-container"}>
-                            <div className={"framer-jyvtl framer-JIYi9 framer-5BS8D framer-1hwrja9 framer-v-1hwrja9"} data-framer-name={"Testimonial"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
-                              <div className={"framer-lw0z7q"} data-framer-name={"BG"} style={{ backgroundColor: "rgba(255, 255, 255, 0.3)", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px", transform: "rotate(3deg)" }} />
-                              <div className={"framer-ei32f2"} data-framer-name={"Top"}>
-                                <div className={"framer-fkppsf"} style={{ borderBottomLeftRadius: "50%", borderBottomRightRadius: "50%", borderTopLeftRadius: "50%", borderTopRightRadius: "50%" }}>
-                                  <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                    <img decoding={"async"} loading={"lazy"} width={"90"} height={"90"} src={"/assets/framerusercontent.com/images/Vxca3HCLrtmdXDQzGQ0w5Nb0k.jpg"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
-                                  </div>
-                                </div>
-                                <div className={"framer-w3a2sm"} data-framer-name={"Title"}>
-                                  <div className={"framer-1x7fhze"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                      Sophie M.
-                                    </h5>
-                                  </div>
-                                  <div className={"framer-8ybygu"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                      Maman de Léa, 4 ans
-                                    </p>
-                                  </div>
-                                </div>
-                                <div data-framer-name={"“"} className={"framer-11f6jit"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
-                                  <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
-                                    <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 40 34"}>
-                                      <use href={"#svg1096321103_669"} />
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className={"framer-oiqkdp"} style={{ "--extracted-r6o4lv": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                <p className={"framer-text"} style={{ "--framer-font-size": "20px", "--framer-line-height": "32px", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70)))" }}>
-                                  Mon fils adore ses séances au Kid Sport Club ! L’équipe est bienveillante, les activités variées, et il en ressort toujours ravi. Je recommande à 100 %.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className={"framer-a50m00-container"} data-framer-name={"Image Card"} name={"Image Card"}>
-                            <div name={"Image Card"} className={"framer-jyvtl framer-JIYi9 framer-5BS8D framer-1hwrja9 framer-v-bfo15t"} data-framer-name={"Image Card"} style={{ backgroundColor: "rgba(0, 0, 0, 0)", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
-                              <div className={"framer-lw0z7q"} data-framer-name={"BG"} style={{ backgroundColor: "rgba(255, 255, 255, 0.3)", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px", transform: "rotate(3deg)" }} />
-                              <div className={"framer-11t831z"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
-                                <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                  <img decoding={"async"} loading={"lazy"} src={"/assets/framerusercontent.com/images/Vxca3HCLrtmdXDQzGQ0w5Nb0k.jpg"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className={"framer-18iyfav"} data-framer-name={"Arrow Wrapper"}>
-                          <div className={"framer-1mx5vyc"} data-framer-name={"Arrow Left"} data-highlight={"true"} tabIndex={"0"} style={{ backgroundColor: "rgb(255, 255, 255)", borderBottomLeftRadius: "50%", borderBottomRightRadius: "50%", borderTopLeftRadius: "50%", borderTopRightRadius: "50%" }}>
-                            <div className={"framer-1owihs0-container"}>
-                              <div style={{ display: "contents" }} />
-                            </div>
-                          </div>
-                          <div className={"framer-1bvkiqk"} data-framer-name={"Arrow Right"} data-highlight={"true"} tabIndex={"0"} style={{ backgroundColor: "rgb(255, 255, 255)", borderBottomLeftRadius: "50%", borderBottomRightRadius: "50%", borderTopLeftRadius: "50%", borderTopRightRadius: "50%" }}>
-                            <div className={"framer-1sfiuv9-container"}>
-                              <div style={{ display: "contents" }} />
-                            </div>
-                          </div>
-                        </div>
-                        <div className={"framer-pze6i8-container"}>
-                          <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"/"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
-                            <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
-                              <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
-                                Voir plus
-                              </p>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={"ssr-variant hidden-1woy1ar hidden-72rtr7"}>
-                    <div className={"framer-5tqwg5-container"}>
-                      <div className={"framer-77R4k framer-UiBmF framer-TCv20 framer-wv7x5f framer-v-l5g6ej"} data-framer-name={"Phone 1"} style={{ width: "100%" }}>
-                        <div className={"framer-zqwt0o"} data-framer-name={"Title"}>
-                          <div className={"framer-1vnfzqj"} style={{ "--extracted-1eung3n": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                            <h4 className={"framer-text framer-styles-preset-10ofw0b"} data-styles-preset={"Ks8ax5XhD"} style={{ "--framer-text-alignment": "center", "--framer-text-color": "var(--extracted-1eung3n, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                              Ils témoignent
-                            </h4>
-                          </div>
-                          <div className={"framer-1ncmnmx"} style={{ "--extracted-1eung3n": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                            <h4 className={"framer-text framer-styles-preset-1fruokq"} data-styles-preset={"oeKkMxxkx"} style={{ "--framer-text-alignment": "center", "--framer-text-color": "var(--extracted-1eung3n, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
-                              Avis
-                            </h4>
-                          </div>
-                        </div>
-                        <div className={"framer-x4vcxs"} data-framer-name={"Testimonial Wrapper"}>
-                          <div className={"framer-gztrkn-container"}>
-                            <div className={"framer-jyvtl framer-JIYi9 framer-5BS8D framer-1hwrja9 framer-v-1hwrja9"} data-framer-name={"Testimonial"} style={{ backgroundColor: "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
-                              <div className={"framer-lw0z7q"} data-framer-name={"BG"} style={{ backgroundColor: "rgba(255, 255, 255, 0.3)", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px", transform: "rotate(3deg)" }} />
-                              <div className={"framer-ei32f2"} data-framer-name={"Top"}>
-                                <div className={"framer-fkppsf"} style={{ borderBottomLeftRadius: "50%", borderBottomRightRadius: "50%", borderTopLeftRadius: "50%", borderTopRightRadius: "50%" }}>
-                                  <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                    <img decoding={"async"} loading={"lazy"} width={"90"} height={"90"} src={"/assets/framerusercontent.com/images/Vxca3HCLrtmdXDQzGQ0w5Nb0k.jpg"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
-                                  </div>
-                                </div>
-                                <div className={"framer-w3a2sm"} data-framer-name={"Title"}>
-                                  <div className={"framer-1x7fhze"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                      Sophie M.
-                                    </h5>
-                                  </div>
-                                  <div className={"framer-8ybygu"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                      Maman de Léa, 4 ans
-                                    </p>
-                                  </div>
-                                </div>
-                                <div data-framer-name={"“"} className={"framer-11f6jit"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
-                                  <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
-                                    <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 40 34"}>
-                                      <use href={"#svg1096321103_669"} />
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className={"framer-oiqkdp"} style={{ "--extracted-r6o4lv": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                <p className={"framer-text"} style={{ "--framer-font-size": "20px", "--framer-line-height": "32px", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70)))" }}>
-                                  Mon fils adore ses séances au Kid Sport Club ! L’équipe est bienveillante, les activités variées, et il en ressort toujours ravi. Je recommande à 100 %.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className={"framer-a50m00-container"} data-framer-name={"Image Card"} name={"Image Card"}>
-                            <div name={"Image Card"} className={"framer-jyvtl framer-JIYi9 framer-5BS8D framer-1hwrja9 framer-v-bfo15t"} data-framer-name={"Image Card"} style={{ backgroundColor: "rgba(0, 0, 0, 0)", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
-                              <div className={"framer-lw0z7q"} data-framer-name={"BG"} style={{ backgroundColor: "rgba(255, 255, 255, 0.3)", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px", transform: "rotate(3deg)" }} />
-                              <div className={"framer-11t831z"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
-                                <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                  <img decoding={"async"} loading={"lazy"} src={"/assets/framerusercontent.com/images/Vxca3HCLrtmdXDQzGQ0w5Nb0k.jpg"} alt={""} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className={"framer-18iyfav"} data-framer-name={"Arrow Wrapper"}>
-                          <div className={"framer-1mx5vyc"} data-framer-name={"Arrow Left"} data-highlight={"true"} tabIndex={"0"} style={{ backgroundColor: "rgb(255, 255, 255)", borderBottomLeftRadius: "50%", borderBottomRightRadius: "50%", borderTopLeftRadius: "50%", borderTopRightRadius: "50%" }}>
-                            <div className={"framer-1owihs0-container"}>
-                              <div style={{ display: "contents" }} />
-                            </div>
-                          </div>
-                          <div className={"framer-1bvkiqk"} data-framer-name={"Arrow Right"} data-highlight={"true"} tabIndex={"0"} style={{ backgroundColor: "rgb(255, 255, 255)", borderBottomLeftRadius: "50%", borderBottomRightRadius: "50%", borderTopLeftRadius: "50%", borderTopRightRadius: "50%" }}>
-                            <div className={"framer-1sfiuv9-container"}>
-                              <div style={{ display: "contents" }} />
-                            </div>
-                          </div>
-                        </div>
-                        <div className={"framer-pze6i8-container"}>
-                          <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"/"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
-                            <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
-                              <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
-                                Voir plus
-                              </p>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div data-framer-name={"Exclude Icon"} className={"framer-4aacu7"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
-                    <div className={"svgContainer"} style={{ width: "100%", height: "100%", aspectRatio: "inherit" }}>
-                      <svg style={{ width: "100%", height: "100%" }} viewBox={"0 0 55 55"}>
-                        <use href={"#svg1714458378_811"} />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
             <section className={"framer-sqkxnh"} data-framer-name={"FAQ"}>
               <div className={"framer-8mor2s"} data-framer-name={"Container"}>
                 <div className={"framer-4g13wg"} data-framer-name={"Title"}>
@@ -1957,7 +1755,7 @@ export default function HomePage() {
                   <div className={"framer-1lgj23h"}>
                     <div className={"ssr-variant hidden-10l0lpx"}>
                       <div className={"framer-1lj6kr1-container"}>
-                        <div className={"framer-Ewg2r framer-JIYi9 framer-5BS8D framer-17jmyw framer-v-17jmyw"} data-border={"true"} data-framer-name={"Close"} data-highlight={"true"} tabIndex={"0"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-c2e34719-b7f3-48fe-b6dc-c98270809dd0, rgb(248, 251, 254))", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
+                        <a href={"/faq"} className={"framer-Ewg2r framer-JIYi9 framer-5BS8D framer-17jmyw framer-v-17jmyw"} data-border={"true"} data-framer-name={"Close"} data-highlight={"true"} tabIndex={"0"} style={{ textDecoration: "none", color: "inherit", "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-c2e34719-b7f3-48fe-b6dc-c98270809dd0, rgb(248, 251, 254))", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                           <div className={"framer-leylit"} data-framer-name={"Top"}>
                             <div className={"framer-168rtzx"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-alignment": "left" }}>
@@ -1968,12 +1766,12 @@ export default function HomePage() {
                               <div style={{ display: "contents" }} />
                             </div>
                           </div>
-                        </div>
+                        </a>
                       </div>
                     </div>
                     <div className={"ssr-variant hidden-1woy1ar hidden-72rtr7 hidden-1z12sqx"}>
                       <div className={"framer-1lj6kr1-container"}>
-                        <div className={"framer-Ewg2r framer-JIYi9 framer-5BS8D framer-17jmyw framer-v-rr125s"} data-border={"true"} data-framer-name={"Phone Closed"} data-highlight={"true"} tabIndex={"0"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-c2e34719-b7f3-48fe-b6dc-c98270809dd0, rgb(248, 251, 254))", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
+                        <a href={"/faq"} className={"framer-Ewg2r framer-JIYi9 framer-5BS8D framer-17jmyw framer-v-rr125s"} data-border={"true"} data-framer-name={"Phone Closed"} data-highlight={"true"} tabIndex={"0"} style={{ textDecoration: "none", color: "inherit", "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-c2e34719-b7f3-48fe-b6dc-c98270809dd0, rgb(248, 251, 254))", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                           <div className={"framer-leylit"} data-framer-name={"Top"}>
                             <div className={"framer-168rtzx"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-alignment": "left" }}>
@@ -1984,14 +1782,14 @@ export default function HomePage() {
                               <div style={{ display: "contents" }} />
                             </div>
                           </div>
-                        </div>
+                        </a>
                       </div>
                     </div>
                   </div>
                   <div className={"framer-1lgj23h"}>
                     <div className={"ssr-variant hidden-10l0lpx"}>
                       <div className={"framer-1lj6kr1-container"}>
-                        <div className={"framer-Ewg2r framer-JIYi9 framer-5BS8D framer-17jmyw framer-v-17jmyw"} data-border={"true"} data-framer-name={"Close"} data-highlight={"true"} tabIndex={"0"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-c2e34719-b7f3-48fe-b6dc-c98270809dd0, rgb(248, 251, 254))", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
+                        <a href={"/faq"} className={"framer-Ewg2r framer-JIYi9 framer-5BS8D framer-17jmyw framer-v-17jmyw"} data-border={"true"} data-framer-name={"Close"} data-highlight={"true"} tabIndex={"0"} style={{ textDecoration: "none", color: "inherit", "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-c2e34719-b7f3-48fe-b6dc-c98270809dd0, rgb(248, 251, 254))", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                           <div className={"framer-leylit"} data-framer-name={"Top"}>
                             <div className={"framer-168rtzx"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-alignment": "left" }}>
@@ -2002,12 +1800,12 @@ export default function HomePage() {
                               <div style={{ display: "contents" }} />
                             </div>
                           </div>
-                        </div>
+                        </a>
                       </div>
                     </div>
                     <div className={"ssr-variant hidden-1woy1ar hidden-72rtr7 hidden-1z12sqx"}>
                       <div className={"framer-1lj6kr1-container"}>
-                        <div className={"framer-Ewg2r framer-JIYi9 framer-5BS8D framer-17jmyw framer-v-rr125s"} data-border={"true"} data-framer-name={"Phone Closed"} data-highlight={"true"} tabIndex={"0"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-c2e34719-b7f3-48fe-b6dc-c98270809dd0, rgb(248, 251, 254))", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
+                        <a href={"/faq"} className={"framer-Ewg2r framer-JIYi9 framer-5BS8D framer-17jmyw framer-v-rr125s"} data-border={"true"} data-framer-name={"Phone Closed"} data-highlight={"true"} tabIndex={"0"} style={{ textDecoration: "none", color: "inherit", "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-c2e34719-b7f3-48fe-b6dc-c98270809dd0, rgb(248, 251, 254))", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                           <div className={"framer-leylit"} data-framer-name={"Top"}>
                             <div className={"framer-168rtzx"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-alignment": "left" }}>
@@ -2018,14 +1816,14 @@ export default function HomePage() {
                               <div style={{ display: "contents" }} />
                             </div>
                           </div>
-                        </div>
+                        </a>
                       </div>
                     </div>
                   </div>
                   <div className={"framer-1lgj23h"}>
                     <div className={"ssr-variant hidden-10l0lpx"}>
                       <div className={"framer-1lj6kr1-container"}>
-                        <div className={"framer-Ewg2r framer-JIYi9 framer-5BS8D framer-17jmyw framer-v-17jmyw"} data-border={"true"} data-framer-name={"Close"} data-highlight={"true"} tabIndex={"0"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-c2e34719-b7f3-48fe-b6dc-c98270809dd0, rgb(248, 251, 254))", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
+                        <a href={"/faq"} className={"framer-Ewg2r framer-JIYi9 framer-5BS8D framer-17jmyw framer-v-17jmyw"} data-border={"true"} data-framer-name={"Close"} data-highlight={"true"} tabIndex={"0"} style={{ textDecoration: "none", color: "inherit", "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-c2e34719-b7f3-48fe-b6dc-c98270809dd0, rgb(248, 251, 254))", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                           <div className={"framer-leylit"} data-framer-name={"Top"}>
                             <div className={"framer-168rtzx"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-alignment": "left" }}>
@@ -2036,12 +1834,12 @@ export default function HomePage() {
                               <div style={{ display: "contents" }} />
                             </div>
                           </div>
-                        </div>
+                        </a>
                       </div>
                     </div>
                     <div className={"ssr-variant hidden-1woy1ar hidden-72rtr7 hidden-1z12sqx"}>
                       <div className={"framer-1lj6kr1-container"}>
-                        <div className={"framer-Ewg2r framer-JIYi9 framer-5BS8D framer-17jmyw framer-v-rr125s"} data-border={"true"} data-framer-name={"Phone Closed"} data-highlight={"true"} tabIndex={"0"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-c2e34719-b7f3-48fe-b6dc-c98270809dd0, rgb(248, 251, 254))", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
+                        <a href={"/faq"} className={"framer-Ewg2r framer-JIYi9 framer-5BS8D framer-17jmyw framer-v-rr125s"} data-border={"true"} data-framer-name={"Phone Closed"} data-highlight={"true"} tabIndex={"0"} style={{ textDecoration: "none", color: "inherit", "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-c2e34719-b7f3-48fe-b6dc-c98270809dd0, rgb(248, 251, 254))", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                           <div className={"framer-leylit"} data-framer-name={"Top"}>
                             <div className={"framer-168rtzx"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-alignment": "left" }}>
@@ -2052,14 +1850,14 @@ export default function HomePage() {
                               <div style={{ display: "contents" }} />
                             </div>
                           </div>
-                        </div>
+                        </a>
                       </div>
                     </div>
                   </div>
                   <div className={"framer-1lgj23h"}>
                     <div className={"ssr-variant hidden-10l0lpx"}>
                       <div className={"framer-1lj6kr1-container"}>
-                        <div className={"framer-Ewg2r framer-JIYi9 framer-5BS8D framer-17jmyw framer-v-17jmyw"} data-border={"true"} data-framer-name={"Close"} data-highlight={"true"} tabIndex={"0"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-c2e34719-b7f3-48fe-b6dc-c98270809dd0, rgb(248, 251, 254))", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
+                        <a href={"/faq"} className={"framer-Ewg2r framer-JIYi9 framer-5BS8D framer-17jmyw framer-v-17jmyw"} data-border={"true"} data-framer-name={"Close"} data-highlight={"true"} tabIndex={"0"} style={{ textDecoration: "none", color: "inherit", "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-c2e34719-b7f3-48fe-b6dc-c98270809dd0, rgb(248, 251, 254))", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                           <div className={"framer-leylit"} data-framer-name={"Top"}>
                             <div className={"framer-168rtzx"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-alignment": "left" }}>
@@ -2070,12 +1868,12 @@ export default function HomePage() {
                               <div style={{ display: "contents" }} />
                             </div>
                           </div>
-                        </div>
+                        </a>
                       </div>
                     </div>
                     <div className={"ssr-variant hidden-1woy1ar hidden-72rtr7 hidden-1z12sqx"}>
                       <div className={"framer-1lj6kr1-container"}>
-                        <div className={"framer-Ewg2r framer-JIYi9 framer-5BS8D framer-17jmyw framer-v-rr125s"} data-border={"true"} data-framer-name={"Phone Closed"} data-highlight={"true"} tabIndex={"0"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-c2e34719-b7f3-48fe-b6dc-c98270809dd0, rgb(248, 251, 254))", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
+                        <a href={"/faq"} className={"framer-Ewg2r framer-JIYi9 framer-5BS8D framer-17jmyw framer-v-rr125s"} data-border={"true"} data-framer-name={"Phone Closed"} data-highlight={"true"} tabIndex={"0"} style={{ textDecoration: "none", color: "inherit", "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "var(--token-c2e34719-b7f3-48fe-b6dc-c98270809dd0, rgb(248, 251, 254))", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                           <div className={"framer-leylit"} data-framer-name={"Top"}>
                             <div className={"framer-168rtzx"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-alignment": "left" }}>
@@ -2086,10 +1884,19 @@ export default function HomePage() {
                               <div style={{ display: "contents" }} />
                             </div>
                           </div>
-                        </div>
+                        </a>
                       </div>
                     </div>
                   </div>
+                </div>
+                <div style={{ display: "flex", justifyContent: "center", width: "100%", paddingTop: "16px" }}>
+                  <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-336m18 framer-1hf9a6b"} data-framer-name={"Secondary "} data-border={"true"} href={"/faq"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-866b3572-5e63-45f6-bc85-ab2ac7b1afe1, rgb(89, 91, 112))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", backgroundColor: "rgba(255, 255, 255, 0)", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
+                    <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--variable-reference-uryPfyK63-rNlYn_Jv1)", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", transform: "none" }}>
+                      <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--variable-reference-uryPfyK63-rNlYn_Jv1))" }}>
+                        Toutes les questions
+                      </p>
+                    </div>
+                  </a>
                 </div>
               </div>
               <div data-framer-name={"Intersect"} className={"framer-1ok0wro"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>

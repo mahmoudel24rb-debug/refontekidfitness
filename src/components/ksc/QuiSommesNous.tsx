@@ -1,7 +1,6 @@
 import React from 'react'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
-import InscriptionCTA from './InscriptionCTA'
 
 const VALEURS = [
   { t: 'La psychomotricité', d: "Nos activités reposent sur l'apprentissage moteur : chaque jeu, chaque parcours aide l'enfant à développer son équilibre, sa coordination et sa confiance." },
@@ -61,7 +60,7 @@ export default function QuiSommesNous() {
             Des animateurs et coachs diplômés, formés à l'encadrement des enfants, qui mettent l'énergie et la bienveillance au cœur de chaque séance.
             <em> (Présentation de l'équipe à venir.)</em>
           </p>
-          <InscriptionCTA label="Réserver une séance d’essai" />
+          <a href="/seance-essai" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '15px 30px', borderRadius: 70, fontWeight: 700, fontSize: 16, textDecoration: 'none', color: '#fff', background: '#e6007e', border: '2px solid #e6007e' }}>Réserver une séance d’essai</a>
         </section>
       </main>
       <SiteFooter />

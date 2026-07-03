@@ -79,7 +79,9 @@ export default function Prestation({ slug }: { slug: string }) {
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 14 }}>
               {p.benefices.map((b) => (
                 <li key={b} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', color: '#404a63', fontSize: 17, lineHeight: 1.5 }}>
-                  <span aria-hidden style={{ flexShrink: 0, width: 22, height: 22, borderRadius: '50%', background: '#e6007e', color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 800, marginTop: 2 }}>✓</span>
+                  <span aria-hidden style={{ flexShrink: 0, width: 22, height: 22, borderRadius: '50%', background: '#e6007e', color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: 2 }}>
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
+                  </span>
                   {b}
                 </li>
               ))}
@@ -96,7 +98,10 @@ export default function Prestation({ slug }: { slug: string }) {
                 <a key={a.slug} href={`/nos-prestations/${a.slug}`} style={{ background: '#fff', border: '1px solid #ececec', borderRadius: 14, padding: 24, textDecoration: 'none', color: 'inherit' }}>
                   <h3 style={{ fontSize: 19, fontWeight: 800, color: '#081646', margin: '0 0 8px' }}>{a.titre}</h3>
                   <p style={{ color: '#525c75', fontSize: 15, lineHeight: 1.5, margin: '0 0 14px' }}>{a.accroche}</p>
-                  <span style={{ color: '#e6007e', fontWeight: 700, fontSize: 15 }}>Découvrir →</span>
+                  <span style={{ color: '#e6007e', fontWeight: 700, fontSize: 15 }}>
+                    Découvrir
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ verticalAlign: '-1px', marginLeft: 5 }}><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                  </span>
                 </a>
               ))}
             </div>

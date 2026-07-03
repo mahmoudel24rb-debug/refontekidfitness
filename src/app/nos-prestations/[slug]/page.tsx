@@ -12,6 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${p.titre} (${p.age}) à Rochecorbon | Kid Sport Club`,
     description: `${p.accroche} ${p.motCle} au Kid Sport Club de Rochecorbon, près de Tours.`,
+    alternates: { canonical: `/nos-prestations/${p.slug}` },
   }
 }
 

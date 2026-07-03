@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const a = articleBySlug(slug)
   if (!a) return { title: 'Blog — Kid Sport Club' }
-  return { title: `${a.titre} | Kid Sport Club`, description: a.excerpt }
+  return { title: `${a.titre} | Kid Sport Club`, description: a.excerpt, alternates: { canonical: `/blog/${a.slug}` } }
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

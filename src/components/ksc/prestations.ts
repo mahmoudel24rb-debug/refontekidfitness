@@ -21,7 +21,7 @@ export const PRESTATIONS: Prestation[] = [
     intro: "Besoin de faire garder votre enfant quelques heures ? Notre garderie l’accueille dans un cadre sportif et bienveillant, encadré par notre équipe. Plus qu’une simple garde : un moment d’activité et de jeu.",
     benefices: ['Accueil ponctuel et flexible', 'Encadrement diplômé et bienveillant', 'Activités motrices et jeux adaptés', 'Cadre sécurisé au bord de la Loire'],
     creneaux: 'Selon les horaires du club — nous consulter.',
-    image: '/assets/beauregard/community.webp',
+    image: '/assets/ksc/garderie.webp',
     motCle: 'garderie Rochecorbon',
   },
   {
@@ -32,7 +32,7 @@ export const PRESTATIONS: Prestation[] = [
     intro: "Pendant les vacances scolaires et les mercredis, le Kid Sport Club propose des stages sportifs multi-activités. Vos enfants se dépensent, découvrent de nouveaux sports et se font des copains, encadrés par nos coachs.",
     benefices: ['Stages pendant toutes les vacances scolaires', 'Stages les mercredis (8h00 – 17h30)', 'Multi-activités sportives variées', 'Groupes par âge, encadrement diplômé'],
     creneaux: 'Vacances scolaires + mercredis 8h00 – 17h30.',
-    image: '/assets/beauregard/cardio.webp',
+    image: '/assets/ksc/stages-vacances.webp',
     motCle: 'stage sportif enfant vacances Tours',
   },
   {
@@ -43,7 +43,7 @@ export const PRESTATIONS: Prestation[] = [
     intro: "Offrez à votre enfant un anniversaire inoubliable ! Jeux sportifs, parcours et activités encadrées dans notre espace dédié, suivis du goûter. Une formule clé en main, vous n’avez plus qu’à profiter.",
     benefices: ['Formule clé en main', 'Jeux et parcours sportifs encadrés', 'Espace privatisé + goûter', 'Souvenirs garantis pour les enfants'],
     creneaux: 'Sur réservation — nous contacter.',
-    image: '/assets/beauregard/nature.webp',
+    image: '/assets/ksc/anniversaire.webp',
     motCle: 'anniversaire enfant Tours',
   },
   {
@@ -54,7 +54,7 @@ export const PRESTATIONS: Prestation[] = [
     intro: "Dès 10 mois, la baby gym éveille bébé au mouvement : parcours adaptés, manipulation, jeux sensoriels. Une séance à partager avec un parent, pour développer la motricité en douceur et en confiance.",
     benefices: ['Éveil moteur et sensoriel', 'Séances parent-enfant', 'Matériel adapté aux tout-petits', 'En douceur, au rythme de l’enfant'],
     creneaux: 'Plusieurs créneaux par semaine — nous consulter.',
-    image: '/assets/beauregard/stretch.webp',
+    image: '/assets/ksc/cours-10-36-mois.webp',
     motCle: 'baby gym Tours',
   },
   {
@@ -65,7 +65,7 @@ export const PRESTATIONS: Prestation[] = [
     intro: "De 3 à 5 ans, place à l’éveil sportif : parcours de motricité, jeux collectifs et activités variées. Les enfants développent coordination, équilibre et confiance en eux, tout en s’amusant.",
     benefices: ['Parcours et jeux de motricité', 'Coordination et équilibre', 'Premiers jeux collectifs', 'Confiance et autonomie'],
     creneaux: 'Plusieurs créneaux par semaine — nous consulter.',
-    image: '/assets/beauregard/fonctionnel.webp',
+    image: '/assets/ksc/cours-3-5-ans.webp',
     motCle: 'éveil sportif 3-5 ans',
   },
   {
@@ -76,7 +76,7 @@ export const PRESTATIONS: Prestation[] = [
     intro: "De 6 à 10 ans, les enfants s’initient à de multiples sports : ils gagnent en habileté, en autonomie et en esprit d’équipe. Une approche ludique qui donne le goût de l’effort et du collectif.",
     benefices: ['Initiation à de multiples sports', 'Esprit d’équipe et collectif', 'Habileté et condition physique', 'Encadrement diplômé'],
     creneaux: 'Plusieurs créneaux par semaine — nous consulter.',
-    image: '/assets/beauregard/cross.webp',
+    image: '/assets/ksc/cours-6-10-ans.webp',
     motCle: 'multisports enfant Tours',
   },
   {
@@ -87,7 +87,7 @@ export const PRESTATIONS: Prestation[] = [
     intro: "De 11 à 14 ans, les ados se dépensent et se dépassent : cross training, cardio, renforcement, boxe. Un cadre motivant pour garder la forme, canaliser son énergie et progresser, dans la bonne humeur.",
     benefices: ['Cross training, cardio, boxe', 'Préparation physique', 'Dépassement de soi', 'Ambiance motivante et encadrée'],
     creneaux: 'Plusieurs créneaux par semaine — nous consulter.',
-    image: '/assets/beauregard/boxe.webp',
+    image: '/assets/ksc/cours-11-14-ans.webp',
     motCle: 'sport ado Tours',
   },
 ]

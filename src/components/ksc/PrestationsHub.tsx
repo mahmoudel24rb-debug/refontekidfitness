@@ -63,7 +63,10 @@ export default function PrestationsHub() {
                 <div style={{ padding: '24px 26px 28px', display: 'flex', flexDirection: 'column', flex: 1 }}>
                   <h2 style={{ fontSize: 23, fontWeight: 800, color: '#081646', margin: '0 0 10px' }}>{p.titre}</h2>
                   <p style={{ color: '#525c75', lineHeight: 1.6, margin: '0 0 20px', flex: 1 }}>{p.accroche}</p>
-                  <span style={{ color: '#e6007e', fontWeight: 700 }}>Découvrir →</span>
+                  <span style={{ color: '#e6007e', fontWeight: 700 }}>
+                    Découvrir
+                    <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ verticalAlign: '-1px', marginLeft: 6 }}><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                  </span>
                 </div>
               </a>
             ))}
