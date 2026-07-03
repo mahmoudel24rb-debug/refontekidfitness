@@ -44,8 +44,8 @@ export default function QuiSommesNous() {
           </p>
         </section>
 
-        <section style={{ maxWidth: 1100, margin: '0 auto', padding: '20px 24px 80px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 22 }}>
+        <section style={{ maxWidth: 900, margin: '0 auto', padding: '20px 24px 80px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,400px),1fr))', gap: 22 }}>
             {VALEURS.map((v) => (
               <div key={v.t} style={{ background: 'var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, #fbf9f0)', borderRadius: 16, padding: 30 }}>
                 <h3 style={{ fontSize: 21, fontWeight: 800, color: '#081646', margin: '0 0 12px' }}>{v.t}</h3>

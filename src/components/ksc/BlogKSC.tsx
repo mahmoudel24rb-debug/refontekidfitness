@@ -19,8 +19,8 @@ export default function BlogKSC() {
           <p style={{ color: '#e6007e', fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase', fontSize: 14, margin: '0 0 14px' }}>Blog & actualités</p>
           <h1 style={{ fontSize: 'clamp(32px,5vw,52px)', fontWeight: 800, color: '#081646', letterSpacing: '-0.02em', margin: 0 }}>Conseils & actus du club</h1>
         </section>
-        <section style={{ maxWidth: 1100, margin: '0 auto', padding: '60px 24px 90px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 26 }}>
+        <section style={{ maxWidth: 940, margin: '0 auto', padding: '60px 24px 90px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,410px),1fr))', gap: 26 }}>
             {ARTICLES.map((a, i) => (
               <a key={a.slug} href={`/blog/${a.slug}`} style={{ display: 'flex', flexDirection: 'column', borderRadius: 18, overflow: 'hidden', textDecoration: 'none', color: 'inherit', border: '1px solid #ececec', background: '#fff' }}>
                 <img src={ARTICLE_IMG[a.slug]} alt={a.titre} loading="lazy" style={{ width: '100%', height: 160, objectFit: 'cover', display: 'block' }} />
