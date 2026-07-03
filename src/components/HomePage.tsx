@@ -1928,10 +1928,10 @@ export default function HomePage() {
                 </div>
               </div>
             </section>
-            <ActusHome />
-            <SiteFooter />
           </div>
         </div>
+        <ActusHome />
+        <SiteFooter />
         <div id={"overlay"} />
       </div>
     </>
