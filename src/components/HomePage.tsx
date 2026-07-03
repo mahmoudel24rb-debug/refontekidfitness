@@ -189,7 +189,7 @@ export default function HomePage() {
                   <div className={"ssr-variant"}>
                     <div className={"framer-1mo52hc"} data-framer-name={"Kid Image"}>
                       <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                        <img decoding={"async"} width={"1096"} height={"1164"} sizes={"(min-width: 1440px) 548px, (min-width: 1200px) and (max-width: 1439.98px) 548px, (max-width: 809.98px) 274px, (min-width: 810px) and (max-width: 1199.98px) 378.5155px"} srcSet={"/assets/ksc/hero.webp 964w,/assets/ksc/hero.webp 1096w"} src={"/assets/ksc/hero.webp"} alt={null} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                        <img decoding={"async"} width={"1096"} height={"1164"} sizes={"(min-width: 1440px) 548px, (min-width: 1200px) and (max-width: 1439.98px) 548px, (max-width: 809.98px) 274px, (min-width: 810px) and (max-width: 1199.98px) 378.5155px"} srcSet={"/assets/ksc/hero.webp 964w,/assets/ksc/hero.webp 1096w"} src={"/assets/ksc/hero.webp"} alt={"Enfant qui saute de joie au Kid Sport Club"} style={{ display: "block", width: "100%", height: "112%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center bottom", objectFit: "contain" }} />
                       </div>
                     </div>
                   </div>
