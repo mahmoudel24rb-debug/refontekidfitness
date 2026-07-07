@@ -26,6 +26,7 @@ export default function SiteFooter() {
           <a href="/" style={link}>Accueil</a>
           <a href="/qui-sommes-nous" style={link}>Qui sommes-nous</a>
           <a href="/nos-prestations" style={link}>Nos prestations</a>
+          <a href="/tarifs" style={link}>Tarifs</a>
           <a href="/faq" style={link}>FAQ</a>
           <a href="/blog" style={link}>Blog</a>
           <a href="/contact" style={link}>Contact</a>

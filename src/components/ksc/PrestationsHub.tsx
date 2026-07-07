@@ -46,7 +46,7 @@ export default function PrestationsHub() {
             Le sport des enfants, sous toutes ses formes
           </h1>
           <p style={{ color: '#404a63', fontSize: 18, lineHeight: 1.6, maxWidth: 720, margin: '0 auto' }}>
-            De la baby gym dès 10 mois au sport ado, en passant par la garderie, les stages et les anniversaires :
+            De la baby gym dès 10 mois au sport ado, en passant par les mercredis sportifs, les stages et les anniversaires :
             au Kid Sport Club de Rochecorbon, chaque enfant trouve son activité.
           </p>
         </section>
@@ -57,7 +57,7 @@ export default function PrestationsHub() {
               <a key={p.slug} href={`/nos-prestations/${p.slug}`}
                 style={{ display: 'flex', flexDirection: 'column', borderRadius: 18, overflow: 'hidden', textDecoration: 'none', color: 'inherit', border: '1px solid #ececec', background: '#fff', boxShadow: '0 6px 22px rgba(8,22,70,.05)' }}>
                 <div style={{ position: 'relative', height: 180 }}>
-                  <img src={`/assets/ksc/${p.slug}.webp`} alt={p.titre} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <img src={p.image} alt={p.titre} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                   <span style={{ position: 'absolute', left: 16, bottom: 16, background: 'rgba(255,255,255,.94)', color: '#081646', fontWeight: 700, fontSize: 13, padding: '5px 12px', borderRadius: 70 }}>{p.age}</span>
                 </div>
                 <div style={{ padding: '24px 26px 28px', display: 'flex', flexDirection: 'column', flex: 1 }}>

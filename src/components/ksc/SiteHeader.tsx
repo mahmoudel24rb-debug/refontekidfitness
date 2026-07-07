@@ -9,6 +9,7 @@ const NAV = [
   { label: 'Accueil', href: '/' },
   { label: 'Qui sommes-nous', href: '/qui-sommes-nous' },
   { label: 'Nos prestations', href: '/nos-prestations', sub: PRESTATIONS.map((p) => ({ label: p.titre, href: `/nos-prestations/${p.slug}` })) },
+  { label: 'Tarifs', href: '/tarifs' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },

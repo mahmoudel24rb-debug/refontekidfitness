@@ -14,7 +14,7 @@ export const metadata = {
     template: '%s',
   },
   description:
-    "Le club de sport des enfants de 10 mois à 14 ans à Rochecorbon (près de Tours) : baby gym, cours, stages, garderie et anniversaires sportifs.",
+    "Le club de sport des enfants de 10 mois à 14 ans à Rochecorbon (près de Tours) : baby gym, cours, stages, mercredis sportifs et anniversaires sportifs.",
   openGraph: {
     type: 'website',
     locale: 'fr_FR',

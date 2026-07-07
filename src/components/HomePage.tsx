@@ -531,88 +531,7 @@ export default function HomePage() {
                     </div>
                     <div className={"framer-g8cmae"}>
                       <div className={"framer-fbic46"}>
-                        <div className={"framer-13ykv9g-container"}>
-                          <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
-                            <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
-                              <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/baby-spa.webp 512w,/assets/ksc/baby-spa.webp 1024w,/assets/ksc/baby-spa.webp 2048w,/assets/ksc/baby-spa.webp 4096w,/assets/ksc/baby-spa.webp 6000w"} src={"/assets/ksc/baby-spa.webp"} alt={"Bébé en éveil aquatique au Baby Spa du Kid Sport Club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
-                              </div>
-                            </div>
-                            <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
-                              <div className={"framer-16viq9n"} data-framer-name={"Day & Time"}>
-                                <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
-                                  <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Dès 10 mois
-                                    </p>
-                                  </div>
-                                </div>
-                                <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
-                                  <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      Créneaux : nous consulter
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className={"framer-nal0mo"} data-framer-name={"Title"}>
-                                <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Baby Spa
-                                  </h5>
-                                </div>
-                                <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                    Détente et éveil aquatique pour les bébés, dans une eau chauffée et sécurisée.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className={"framer-fbic46"}>
-                        <div className={"framer-13ykv9g-container"}>
-                          <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
-                            <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
-                              <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"4032"} height={"2898"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/fit-parents-enfants.webp 512w,/assets/ksc/fit-parents-enfants.webp 1024w,/assets/ksc/fit-parents-enfants.webp 2048w,/assets/ksc/fit-parents-enfants.webp 4032w"} src={"/assets/ksc/fit-parents-enfants.webp"} alt={"Parent et enfant pendant une séance Fit' parents/enfants"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
-                              </div>
-                            </div>
-                            <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
-                              <div className={"framer-16viq9n"} data-framer-name={"Day & Time"}>
-                                <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
-                                  <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      10 mois – 3 ans
-                                    </p>
-                                  </div>
-                                </div>
-                                <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
-                                  <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      Créneaux : nous consulter
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className={"framer-nal0mo"} data-framer-name={"Title"}>
-                                <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Fit’ parents/enfants
-                                  </h5>
-                                </div>
-                                <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                    Une séance de sport à partager en famille, pour bouger et se renforcer ensemble.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className={"framer-fbic46"}>
+                        <a href="/nos-prestations/stages-vacances" style={{ display: "contents", color: "inherit", textDecoration: "none" }}>
                         <div className={"framer-13ykv9g-container"}>
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
@@ -640,7 +559,7 @@ export default function HomePage() {
                               <div className={"framer-nal0mo"} data-framer-name={"Title"}>
                                 <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                   <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Stages sportifs
+                                    Stages vacances
                                   </h5>
                                 </div>
                                 <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
@@ -652,8 +571,10 @@ export default function HomePage() {
                             </div>
                           </div>
                         </div>
+                      </a>
                       </div>
                       <div className={"framer-fbic46"}>
+                        <a href="/nos-prestations/anniversaire" style={{ display: "contents", color: "inherit", textDecoration: "none" }}>
                         <div className={"framer-13ykv9g-container"}>
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
@@ -681,25 +602,27 @@ export default function HomePage() {
                               <div className={"framer-nal0mo"} data-framer-name={"Title"}>
                                 <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                   <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Anniversaires sportifs
+                                    Anniversaire
                                   </h5>
                                 </div>
                                 <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                    Fêtez l’anniversaire de votre enfant au club : jeux, sport et goûter, en toute sécurité.
+                                    Un anniversaire clé en main : jeux sportifs, gâteau, déco et boissons, jusqu’à 10 enfants.
                                   </p>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
+                      </a>
                       </div>
                       <div className={"framer-fbic46"}>
+                        <a href="/nos-prestations/mercredis-sportifs" style={{ display: "contents", color: "inherit", textDecoration: "none" }}>
                         <div className={"framer-13ykv9g-container"}>
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"3000"} height={"2000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/stages-mercredi.webp 512w,/assets/ksc/stages-mercredi.webp 1024w,/assets/ksc/stages-mercredi.webp 2048w,/assets/ksc/stages-mercredi.webp 3000w"} src={"/assets/ksc/stages-mercredi.webp"} alt={"Enfants en activité lors d’un stage du mercredi"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"3000"} height={"2000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/mercredis-sportifs.webp 512w,/assets/ksc/mercredis-sportifs.webp 1024w,/assets/ksc/mercredis-sportifs.webp 2048w,/assets/ksc/mercredis-sportifs.webp 3000w"} src={"/assets/ksc/mercredis-sportifs.webp"} alt={"Enfants au sport lors des Mercredis Sportifs du club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -707,14 +630,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      3 – 14 ans
+                                      Tous âges
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      Créneaux : nous consulter
+                                      Tous les mercredis
                                     </p>
                                   </div>
                                 </div>
@@ -722,59 +645,19 @@ export default function HomePage() {
                               <div className={"framer-nal0mo"} data-framer-name={"Title"}>
                                 <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                   <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Stages du mercredi
+                                    Mercredis Sportifs
                                   </h5>
                                 </div>
                                 <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                    Le mercredi de 8h00 à 17h30 : sport, jeux et détente pour les enfants.
+                                    Tous les mercredis, votre enfant fait du sport au club.
                                   </p>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div className={"framer-fbic46"}>
-                        <div className={"framer-13ykv9g-container"}>
-                          <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
-                            <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
-                              <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/collectivites.webp 512w,/assets/ksc/collectivites.webp 1024w,/assets/ksc/collectivites.webp 2048w,/assets/ksc/collectivites.webp 4096w,/assets/ksc/collectivites.webp 6000w"} src={"/assets/ksc/collectivites.webp"} alt={"Groupe d’enfants d’une collectivité accueilli au club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
-                              </div>
-                            </div>
-                            <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
-                              <div className={"framer-16viq9n"} data-framer-name={"Day & Time"}>
-                                <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
-                                  <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Sur devis
-                                    </p>
-                                  </div>
-                                </div>
-                                <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
-                                  <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      Créneaux : nous consulter
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className={"framer-nal0mo"} data-framer-name={"Title"}>
-                                <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Collectivités & maternelles
-                                  </h5>
-                                </div>
-                                <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                    Écoles, assistantes maternelles et collectivités accueillies pour des séances adaptées.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                      </a>
                       </div>
                       <div className={"framer-14iijv0-container"} style={{ transform: "translateX(-50%)" }} />
                     </div>
@@ -847,88 +730,7 @@ export default function HomePage() {
                     </div>
                     <div className={"framer-g8cmae"}>
                       <div className={"framer-fbic46"}>
-                        <div className={"framer-13ykv9g-container"}>
-                          <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
-                            <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
-                              <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/baby-spa.webp 512w,/assets/ksc/baby-spa.webp 1024w,/assets/ksc/baby-spa.webp 2048w,/assets/ksc/baby-spa.webp 4096w,/assets/ksc/baby-spa.webp 6000w"} src={"/assets/ksc/baby-spa.webp"} alt={"Bébé en éveil aquatique au Baby Spa du Kid Sport Club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
-                              </div>
-                            </div>
-                            <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
-                              <div className={"framer-16viq9n"} data-framer-name={"Day & Time"}>
-                                <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
-                                  <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Dès 10 mois
-                                    </p>
-                                  </div>
-                                </div>
-                                <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
-                                  <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      Créneaux : nous consulter
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className={"framer-nal0mo"} data-framer-name={"Title"}>
-                                <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Baby Spa
-                                  </h5>
-                                </div>
-                                <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                    Détente et éveil aquatique pour les bébés, dans une eau chauffée et sécurisée.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className={"framer-fbic46"}>
-                        <div className={"framer-13ykv9g-container"}>
-                          <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
-                            <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
-                              <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"4032"} height={"2898"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/fit-parents-enfants.webp 512w,/assets/ksc/fit-parents-enfants.webp 1024w,/assets/ksc/fit-parents-enfants.webp 2048w,/assets/ksc/fit-parents-enfants.webp 4032w"} src={"/assets/ksc/fit-parents-enfants.webp"} alt={"Parent et enfant pendant une séance Fit' parents/enfants"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
-                              </div>
-                            </div>
-                            <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
-                              <div className={"framer-16viq9n"} data-framer-name={"Day & Time"}>
-                                <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
-                                  <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      10 mois – 3 ans
-                                    </p>
-                                  </div>
-                                </div>
-                                <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
-                                  <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      Créneaux : nous consulter
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className={"framer-nal0mo"} data-framer-name={"Title"}>
-                                <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Fit’ parents/enfants
-                                  </h5>
-                                </div>
-                                <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                    Une séance de sport à partager en famille, pour bouger et se renforcer ensemble.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className={"framer-fbic46"}>
+                        <a href="/nos-prestations/stages-vacances" style={{ display: "contents", color: "inherit", textDecoration: "none" }}>
                         <div className={"framer-13ykv9g-container"}>
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
@@ -956,7 +758,7 @@ export default function HomePage() {
                               <div className={"framer-nal0mo"} data-framer-name={"Title"}>
                                 <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                   <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Stages sportifs
+                                    Stages vacances
                                   </h5>
                                 </div>
                                 <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
@@ -968,8 +770,10 @@ export default function HomePage() {
                             </div>
                           </div>
                         </div>
+                      </a>
                       </div>
                       <div className={"framer-fbic46"}>
+                        <a href="/nos-prestations/anniversaire" style={{ display: "contents", color: "inherit", textDecoration: "none" }}>
                         <div className={"framer-13ykv9g-container"}>
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
@@ -997,25 +801,27 @@ export default function HomePage() {
                               <div className={"framer-nal0mo"} data-framer-name={"Title"}>
                                 <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                   <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Anniversaires sportifs
+                                    Anniversaire
                                   </h5>
                                 </div>
                                 <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                    Fêtez l’anniversaire de votre enfant au club : jeux, sport et goûter, en toute sécurité.
+                                    Un anniversaire clé en main : jeux sportifs, gâteau, déco et boissons, jusqu’à 10 enfants.
                                   </p>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
+                      </a>
                       </div>
                       <div className={"framer-fbic46"}>
+                        <a href="/nos-prestations/mercredis-sportifs" style={{ display: "contents", color: "inherit", textDecoration: "none" }}>
                         <div className={"framer-13ykv9g-container"}>
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"3000"} height={"2000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/stages-mercredi.webp 512w,/assets/ksc/stages-mercredi.webp 1024w,/assets/ksc/stages-mercredi.webp 2048w,/assets/ksc/stages-mercredi.webp 3000w"} src={"/assets/ksc/stages-mercredi.webp"} alt={"Enfants en activité lors d’un stage du mercredi"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"3000"} height={"2000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/mercredis-sportifs.webp 512w,/assets/ksc/mercredis-sportifs.webp 1024w,/assets/ksc/mercredis-sportifs.webp 2048w,/assets/ksc/mercredis-sportifs.webp 3000w"} src={"/assets/ksc/mercredis-sportifs.webp"} alt={"Enfants au sport lors des Mercredis Sportifs du club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -1023,14 +829,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      3 – 14 ans
+                                      Tous âges
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      Créneaux : nous consulter
+                                      Tous les mercredis
                                     </p>
                                   </div>
                                 </div>
@@ -1038,59 +844,19 @@ export default function HomePage() {
                               <div className={"framer-nal0mo"} data-framer-name={"Title"}>
                                 <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                   <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Stages du mercredi
+                                    Mercredis Sportifs
                                   </h5>
                                 </div>
                                 <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                    Le mercredi de 8h00 à 17h30 : sport, jeux et détente pour les enfants.
+                                    Tous les mercredis, votre enfant fait du sport au club.
                                   </p>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div className={"framer-fbic46"}>
-                        <div className={"framer-13ykv9g-container"}>
-                          <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
-                            <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
-                              <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/collectivites.webp 512w,/assets/ksc/collectivites.webp 1024w,/assets/ksc/collectivites.webp 2048w,/assets/ksc/collectivites.webp 4096w,/assets/ksc/collectivites.webp 6000w"} src={"/assets/ksc/collectivites.webp"} alt={"Groupe d’enfants d’une collectivité accueilli au club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
-                              </div>
-                            </div>
-                            <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
-                              <div className={"framer-16viq9n"} data-framer-name={"Day & Time"}>
-                                <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
-                                  <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Sur devis
-                                    </p>
-                                  </div>
-                                </div>
-                                <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
-                                  <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      Créneaux : nous consulter
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className={"framer-nal0mo"} data-framer-name={"Title"}>
-                                <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Collectivités & maternelles
-                                  </h5>
-                                </div>
-                                <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                    Écoles, assistantes maternelles et collectivités accueillies pour des séances adaptées.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                      </a>
                       </div>
                       <div className={"framer-14iijv0-container"} style={{ transform: "translateX(-50%)" }} />
                     </div>
@@ -1163,88 +929,7 @@ export default function HomePage() {
                     </div>
                     <div className={"framer-g8cmae"}>
                       <div className={"framer-fbic46"}>
-                        <div className={"framer-13ykv9g-container"}>
-                          <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
-                            <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
-                              <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/baby-spa.webp 512w,/assets/ksc/baby-spa.webp 1024w,/assets/ksc/baby-spa.webp 2048w,/assets/ksc/baby-spa.webp 4096w,/assets/ksc/baby-spa.webp 6000w"} src={"/assets/ksc/baby-spa.webp"} alt={"Bébé en éveil aquatique au Baby Spa du Kid Sport Club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
-                              </div>
-                            </div>
-                            <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
-                              <div className={"framer-16viq9n"} data-framer-name={"Day & Time"}>
-                                <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
-                                  <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Dès 10 mois
-                                    </p>
-                                  </div>
-                                </div>
-                                <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
-                                  <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      Créneaux : nous consulter
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className={"framer-nal0mo"} data-framer-name={"Title"}>
-                                <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Baby Spa
-                                  </h5>
-                                </div>
-                                <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                    Détente et éveil aquatique pour les bébés, dans une eau chauffée et sécurisée.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className={"framer-fbic46"}>
-                        <div className={"framer-13ykv9g-container"}>
-                          <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
-                            <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
-                              <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"4032"} height={"2898"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/fit-parents-enfants.webp 512w,/assets/ksc/fit-parents-enfants.webp 1024w,/assets/ksc/fit-parents-enfants.webp 2048w,/assets/ksc/fit-parents-enfants.webp 4032w"} src={"/assets/ksc/fit-parents-enfants.webp"} alt={"Parent et enfant pendant une séance Fit' parents/enfants"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
-                              </div>
-                            </div>
-                            <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
-                              <div className={"framer-16viq9n"} data-framer-name={"Day & Time"}>
-                                <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
-                                  <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      10 mois – 3 ans
-                                    </p>
-                                  </div>
-                                </div>
-                                <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
-                                  <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      Créneaux : nous consulter
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className={"framer-nal0mo"} data-framer-name={"Title"}>
-                                <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Fit’ parents/enfants
-                                  </h5>
-                                </div>
-                                <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                    Une séance de sport à partager en famille, pour bouger et se renforcer ensemble.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className={"framer-fbic46"}>
+                        <a href="/nos-prestations/stages-vacances" style={{ display: "contents", color: "inherit", textDecoration: "none" }}>
                         <div className={"framer-13ykv9g-container"}>
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
@@ -1272,7 +957,7 @@ export default function HomePage() {
                               <div className={"framer-nal0mo"} data-framer-name={"Title"}>
                                 <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                   <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Stages sportifs
+                                    Stages vacances
                                   </h5>
                                 </div>
                                 <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
@@ -1284,8 +969,10 @@ export default function HomePage() {
                             </div>
                           </div>
                         </div>
+                      </a>
                       </div>
                       <div className={"framer-fbic46"}>
+                        <a href="/nos-prestations/anniversaire" style={{ display: "contents", color: "inherit", textDecoration: "none" }}>
                         <div className={"framer-13ykv9g-container"}>
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
@@ -1313,25 +1000,27 @@ export default function HomePage() {
                               <div className={"framer-nal0mo"} data-framer-name={"Title"}>
                                 <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                   <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Anniversaires sportifs
+                                    Anniversaire
                                   </h5>
                                 </div>
                                 <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                    Fêtez l’anniversaire de votre enfant au club : jeux, sport et goûter, en toute sécurité.
+                                    Un anniversaire clé en main : jeux sportifs, gâteau, déco et boissons, jusqu’à 10 enfants.
                                   </p>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
+                      </a>
                       </div>
                       <div className={"framer-fbic46"}>
+                        <a href="/nos-prestations/mercredis-sportifs" style={{ display: "contents", color: "inherit", textDecoration: "none" }}>
                         <div className={"framer-13ykv9g-container"}>
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"3000"} height={"2000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/stages-mercredi.webp 512w,/assets/ksc/stages-mercredi.webp 1024w,/assets/ksc/stages-mercredi.webp 2048w,/assets/ksc/stages-mercredi.webp 3000w"} src={"/assets/ksc/stages-mercredi.webp"} alt={"Enfants en activité lors d’un stage du mercredi"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"3000"} height={"2000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/mercredis-sportifs.webp 512w,/assets/ksc/mercredis-sportifs.webp 1024w,/assets/ksc/mercredis-sportifs.webp 2048w,/assets/ksc/mercredis-sportifs.webp 3000w"} src={"/assets/ksc/mercredis-sportifs.webp"} alt={"Enfants au sport lors des Mercredis Sportifs du club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -1339,14 +1028,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      3 – 14 ans
+                                      Tous âges
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      Créneaux : nous consulter
+                                      Tous les mercredis
                                     </p>
                                   </div>
                                 </div>
@@ -1354,59 +1043,19 @@ export default function HomePage() {
                               <div className={"framer-nal0mo"} data-framer-name={"Title"}>
                                 <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                   <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Stages du mercredi
+                                    Mercredis Sportifs
                                   </h5>
                                 </div>
                                 <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                    Le mercredi de 8h00 à 17h30 : sport, jeux et détente pour les enfants.
+                                    Tous les mercredis, votre enfant fait du sport au club.
                                   </p>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div className={"framer-fbic46"}>
-                        <div className={"framer-13ykv9g-container"}>
-                          <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
-                            <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
-                              <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/collectivites.webp 512w,/assets/ksc/collectivites.webp 1024w,/assets/ksc/collectivites.webp 2048w,/assets/ksc/collectivites.webp 4096w,/assets/ksc/collectivites.webp 6000w"} src={"/assets/ksc/collectivites.webp"} alt={"Groupe d’enfants d’une collectivité accueilli au club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
-                              </div>
-                            </div>
-                            <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
-                              <div className={"framer-16viq9n"} data-framer-name={"Day & Time"}>
-                                <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
-                                  <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Sur devis
-                                    </p>
-                                  </div>
-                                </div>
-                                <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
-                                  <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      Créneaux : nous consulter
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className={"framer-nal0mo"} data-framer-name={"Title"}>
-                                <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Collectivités & maternelles
-                                  </h5>
-                                </div>
-                                <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                    Écoles, assistantes maternelles et collectivités accueillies pour des séances adaptées.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                      </a>
                       </div>
                       <div className={"framer-14iijv0-container"} style={{ transform: "translateX(-50%)" }} />
                     </div>
@@ -1479,88 +1128,7 @@ export default function HomePage() {
                     </div>
                     <div className={"framer-g8cmae"}>
                       <div className={"framer-fbic46"}>
-                        <div className={"framer-13ykv9g-container"}>
-                          <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
-                            <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
-                              <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/baby-spa.webp 512w,/assets/ksc/baby-spa.webp 1024w,/assets/ksc/baby-spa.webp 2048w,/assets/ksc/baby-spa.webp 4096w,/assets/ksc/baby-spa.webp 6000w"} src={"/assets/ksc/baby-spa.webp"} alt={"Bébé en éveil aquatique au Baby Spa du Kid Sport Club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
-                              </div>
-                            </div>
-                            <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
-                              <div className={"framer-16viq9n"} data-framer-name={"Day & Time"}>
-                                <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
-                                  <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Dès 10 mois
-                                    </p>
-                                  </div>
-                                </div>
-                                <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
-                                  <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      Créneaux : nous consulter
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className={"framer-nal0mo"} data-framer-name={"Title"}>
-                                <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Baby Spa
-                                  </h5>
-                                </div>
-                                <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                    Détente et éveil aquatique pour les bébés, dans une eau chauffée et sécurisée.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className={"framer-fbic46"}>
-                        <div className={"framer-13ykv9g-container"}>
-                          <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
-                            <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
-                              <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"4032"} height={"2898"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/fit-parents-enfants.webp 512w,/assets/ksc/fit-parents-enfants.webp 1024w,/assets/ksc/fit-parents-enfants.webp 2048w,/assets/ksc/fit-parents-enfants.webp 4032w"} src={"/assets/ksc/fit-parents-enfants.webp"} alt={"Parent et enfant pendant une séance Fit' parents/enfants"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
-                              </div>
-                            </div>
-                            <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
-                              <div className={"framer-16viq9n"} data-framer-name={"Day & Time"}>
-                                <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
-                                  <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      10 mois – 3 ans
-                                    </p>
-                                  </div>
-                                </div>
-                                <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
-                                  <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      Créneaux : nous consulter
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className={"framer-nal0mo"} data-framer-name={"Title"}>
-                                <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Fit’ parents/enfants
-                                  </h5>
-                                </div>
-                                <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                    Une séance de sport à partager en famille, pour bouger et se renforcer ensemble.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className={"framer-fbic46"}>
+                        <a href="/nos-prestations/stages-vacances" style={{ display: "contents", color: "inherit", textDecoration: "none" }}>
                         <div className={"framer-13ykv9g-container"}>
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
@@ -1588,7 +1156,7 @@ export default function HomePage() {
                               <div className={"framer-nal0mo"} data-framer-name={"Title"}>
                                 <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                   <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Stages sportifs
+                                    Stages vacances
                                   </h5>
                                 </div>
                                 <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
@@ -1600,8 +1168,10 @@ export default function HomePage() {
                             </div>
                           </div>
                         </div>
+                      </a>
                       </div>
                       <div className={"framer-fbic46"}>
+                        <a href="/nos-prestations/anniversaire" style={{ display: "contents", color: "inherit", textDecoration: "none" }}>
                         <div className={"framer-13ykv9g-container"}>
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
@@ -1629,25 +1199,27 @@ export default function HomePage() {
                               <div className={"framer-nal0mo"} data-framer-name={"Title"}>
                                 <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                   <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Anniversaires sportifs
+                                    Anniversaire
                                   </h5>
                                 </div>
                                 <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                    Fêtez l’anniversaire de votre enfant au club : jeux, sport et goûter, en toute sécurité.
+                                    Un anniversaire clé en main : jeux sportifs, gâteau, déco et boissons, jusqu’à 10 enfants.
                                   </p>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
+                      </a>
                       </div>
                       <div className={"framer-fbic46"}>
+                        <a href="/nos-prestations/mercredis-sportifs" style={{ display: "contents", color: "inherit", textDecoration: "none" }}>
                         <div className={"framer-13ykv9g-container"}>
                           <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
                             <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
                               <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"3000"} height={"2000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/stages-mercredi.webp 512w,/assets/ksc/stages-mercredi.webp 1024w,/assets/ksc/stages-mercredi.webp 2048w,/assets/ksc/stages-mercredi.webp 3000w"} src={"/assets/ksc/stages-mercredi.webp"} alt={"Enfants en activité lors d’un stage du mercredi"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
+                                <img decoding={"async"} width={"3000"} height={"2000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/mercredis-sportifs.webp 512w,/assets/ksc/mercredis-sportifs.webp 1024w,/assets/ksc/mercredis-sportifs.webp 2048w,/assets/ksc/mercredis-sportifs.webp 3000w"} src={"/assets/ksc/mercredis-sportifs.webp"} alt={"Enfants au sport lors des Mercredis Sportifs du club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
                               </div>
                             </div>
                             <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
@@ -1655,14 +1227,14 @@ export default function HomePage() {
                                 <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
                                   <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      3 – 14 ans
+                                      Tous âges
                                     </p>
                                   </div>
                                 </div>
                                 <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
                                   <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                     <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      Créneaux : nous consulter
+                                      Tous les mercredis
                                     </p>
                                   </div>
                                 </div>
@@ -1670,59 +1242,19 @@ export default function HomePage() {
                               <div className={"framer-nal0mo"} data-framer-name={"Title"}>
                                 <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                   <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Stages du mercredi
+                                    Mercredis Sportifs
                                   </h5>
                                 </div>
                                 <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                                   <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                    Le mercredi de 8h00 à 17h30 : sport, jeux et détente pour les enfants.
+                                    Tous les mercredis, votre enfant fait du sport au club.
                                   </p>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div className={"framer-fbic46"}>
-                        <div className={"framer-13ykv9g-container"}>
-                          <div className={"framer-KYYqf framer-M1e60 framer-JIYi9 framer-5BS8D framer-k4bzjz framer-v-k4bzjz"} data-border={"true"} data-framer-name={"Variant 1"} style={{ "--border-bottom-width": "1px", "--border-color": "var(--token-b3069982-89a8-4b09-8494-b9ff6cfd0669, rgb(8, 22, 70))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", width: "100%", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px", borderTopLeftRadius: "30px", borderTopRightRadius: "30px" }}>
-                            <div className={"framer-1h2isy7"} data-framer-name={"Image"} style={{ borderBottomLeftRadius: "16px", borderBottomRightRadius: "16px", borderTopLeftRadius: "16px", borderTopRightRadius: "16px" }}>
-                              <div style={{ position: "absolute", borderRadius: "inherit", cornerShape: "inherit", top: "0", right: "0", bottom: "0", left: "0" }}>
-                                <img decoding={"async"} width={"6000"} height={"4000"} sizes={"(min-width: 1440px) calc(max((min(max(100vw, 1px) - 240px, 1440px) - 60px) / 3, 50px) - 48px), (max-width: 809.98px) calc(max(min(max(100vw, 1px) - 40px, 1440px), 50px) - 48px), (min-width: 1200px) and (max-width: 1439.98px) calc(max((min(max(100vw, 1px) - 120px, 1440px) - 60px) / 3, 50px) - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(max((min(max(100vw, 1px) - 80px, 1440px) - 30px) / 2, 50px) - 48px)"} srcSet={"/assets/ksc/collectivites.webp 512w,/assets/ksc/collectivites.webp 1024w,/assets/ksc/collectivites.webp 2048w,/assets/ksc/collectivites.webp 4096w,/assets/ksc/collectivites.webp 6000w"} src={"/assets/ksc/collectivites.webp"} alt={"Groupe d’enfants d’une collectivité accueilli au club"} style={{ display: "block", width: "100%", height: "100%", borderRadius: "inherit", cornerShape: "inherit", objectPosition: "center", objectFit: "cover" }} />
-                              </div>
-                            </div>
-                            <div className={"framer-1sonb3u"} data-framer-name={"Text Wrapper"}>
-                              <div className={"framer-16viq9n"} data-framer-name={"Day & Time"}>
-                                <div className={"framer-o7cd2u"} data-framer-name={"Day"}>
-                                  <div className={"framer-1homctf"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "left" }}>
-                                      Sur devis
-                                    </p>
-                                  </div>
-                                </div>
-                                <div className={"framer-cz0ytf"} data-framer-name={"Time"}>
-                                  <div className={"framer-lqgpqt"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                    <p className={"framer-text framer-styles-preset-14a4ztw"} data-styles-preset={"Fu4PEkdvq"} style={{ "--framer-text-alignment": "right" }}>
-                                      Créneaux : nous consulter
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className={"framer-nal0mo"} data-framer-name={"Title"}>
-                                <div className={"framer-1kqngu6"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"}>
-                                    Collectivités & maternelles
-                                  </h5>
-                                </div>
-                                <div className={"framer-19r7sbz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
-                                  <p className={"framer-text framer-styles-preset-1k2s06t"} data-styles-preset={"uXoMYZPg0"}>
-                                    Écoles, assistantes maternelles et collectivités accueillies pour des séances adaptées.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                      </a>
                       </div>
                       <div className={"framer-14iijv0-container"} style={{ transform: "translateX(-50%)" }} />
                     </div>

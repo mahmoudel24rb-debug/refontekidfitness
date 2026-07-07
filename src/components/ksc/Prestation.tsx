@@ -61,7 +61,7 @@ export default function Prestation({ slug }: { slug: string }) {
 
         {/* Photo bannière */}
         <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px', marginTop: -40 }}>
-          <img src={`/assets/ksc/${p.slug}.webp`} alt={p.titre} style={{ width: '100%', height: 'clamp(240px,38vw,420px)', objectFit: 'cover', borderRadius: 18, display: 'block', boxShadow: '0 16px 40px rgba(8,22,70,.18)' }} />
+          <img src={p.image} alt={p.titre} style={{ width: '100%', height: 'clamp(240px,38vw,420px)', objectFit: 'cover', borderRadius: 18, display: 'block', boxShadow: '0 16px 40px rgba(8,22,70,.18)' }} />
         </div>
 
         {/* Corps */}
@@ -72,6 +72,13 @@ export default function Prestation({ slug }: { slug: string }) {
             <div style={{ background: 'var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, #fbf9f0)', borderRadius: 14, padding: '20px 24px' }}>
               <p style={{ margin: 0, color: '#081646', fontWeight: 700 }}>Créneaux</p>
               <p style={{ margin: '6px 0 0', color: '#525c75' }}>{p.creneaux}</p>
+            </div>
+            <div style={{ background: '#e6007e', color: '#fff', borderRadius: 14, padding: '20px 24px', marginTop: 16 }}>
+              <p style={{ margin: 0, fontWeight: 700, opacity: 0.9 }}>Tarif</p>
+              <p style={{ margin: '6px 0 0', fontSize: 22, fontWeight: 800 }}>{p.prix}</p>
+              <p style={{ margin: '10px 0 0', fontSize: 13, opacity: 0.9 }}>
+                <a href="/tarifs" style={{ color: '#fff', textDecoration: 'underline' }}>Voir tous les tarifs</a>
+              </p>
             </div>
           </div>
           <div>
