@@ -7,7 +7,10 @@ const nextConfig: NextConfig = {
   // Le code métier qu'on écrit à la main reste vérifié dans l'éditeur.
   typescript: { ignoreBuildErrors: true },
   async redirects() {
+    // NB: modification 2026-07-07 — invalide le cache de build Vercel qui avait
+    // resservi un routes-manifest périmé (redirection garderie absente en prod).
     return [
+      { source: '/nos-prestations/garderie', destination: '/nos-prestations/mercredis-sportifs', permanent: true },
       { source: '/about-us', destination: '/qui-sommes-nous', permanent: true },
       { source: '/programs', destination: '/nos-prestations', permanent: true },
       { source: '/admission', destination: '/nos-prestations', permanent: true },
