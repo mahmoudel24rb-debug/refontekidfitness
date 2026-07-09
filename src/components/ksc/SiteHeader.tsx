@@ -26,13 +26,13 @@ export default function SiteHeader() {
   const [presOpen, setPresOpen] = useState(false)
   return (
     <header style={{ background: 'var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, #fbf9f0)', fontFamily: '"Inter", sans-serif' }}>
-      <div style={{ maxWidth: 1320, margin: '0 auto', padding: '14px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
+      <div className="ksc-header-inner" style={{ maxWidth: 1480, margin: '0 auto', padding: '18px 44px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 56 }}>
         <a href="/" aria-label="Kid Sport Club — accueil" style={{ display: 'block', flexShrink: 0 }}>
-          <img src="/assets/ksc-logo.png" alt="Kid Sport Club" style={{ height: 52, width: 'auto', display: 'block' }} />
+          <img src="/assets/ksc-logo.png" alt="Kid Sport Club" style={{ height: 60, width: 'auto', display: 'block' }} />
         </a>
 
         {/* Nav desktop */}
-        <nav className="ksc-nav-desktop" style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
+        <nav className="ksc-nav-desktop" style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
           {NAV.map((item) => (
             <div key={item.href} style={{ position: 'relative' }}
               onMouseEnter={() => item.sub && setPresOpen(true)} onMouseLeave={() => item.sub && setPresOpen(false)}>
@@ -55,9 +55,9 @@ export default function SiteHeader() {
           ))}
         </nav>
 
-        <div className="ksc-cta-desktop" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+        <div className="ksc-cta-desktop" style={{ display: 'flex', alignItems: 'center', gap: 22 }}>
           <a href="/seance-essai" style={{ ...link, fontWeight: 700 }}>Séance d’essai</a>
-          <InscriptionCTA style={{ padding: '13px 24px', fontSize: 15 }} />
+          <InscriptionCTA style={{ padding: '14px 28px', fontSize: 15 }} />
         </div>
 
         {/* Burger mobile */}
@@ -89,6 +89,8 @@ export default function SiteHeader() {
         @media (max-width: 980px) {
           .ksc-nav-desktop, .ksc-cta-desktop { display: none !important; }
           .ksc-burger { display: block !important; }
+          /* les 44px de respiration du desktop mangeraient la largeur sur mobile */
+          .ksc-header-inner { padding-left: 20px !important; padding-right: 20px !important; }
         }
         @media (min-width: 981px) { .ksc-mobile-panel { display: none !important; } }
       `}</style>

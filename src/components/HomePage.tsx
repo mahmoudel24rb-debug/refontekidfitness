@@ -10,8 +10,10 @@ export default function HomePage() {
   return (
     <>
       <div id={"main"}>
+        {/* Header hors du wrapper Framer : à l'intérieur, ce dernier le comprimait
+            (1077px au lieu de 1440). Même correctif que pour ActusHome/SiteFooter. */}
+        <SiteHeader />
         <div className={"framer-JDlNv framer-oZnZ7 framer-DxfPq framer-OPLWG framer-JIYi9 framer-UiBmF framer-TCv20 framer-72rtr7"} style={{ minHeight: "100vh", width: "auto" }}>
-          <SiteHeader />
           <div className={"framer-19bh027"} data-framer-name={"Sticky"}>
             <main className={"framer-okomez"} data-framer-name={"Hero"} id={"hero"}>
               <div data-framer-name={"Line-Drawing"} className={"framer-9n5cfh hidden-10l0lpx"} aria-hidden={"true"} style={{ imageRendering: "pixelated", flexShrink: "0", fill: "black", color: "black" }}>
