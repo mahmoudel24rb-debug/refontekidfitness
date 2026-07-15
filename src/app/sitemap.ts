@@ -6,7 +6,7 @@ const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
-    '', '/qui-sommes-nous', '/nos-prestations', '/faq', '/contact', '/seance-essai', '/blog',
+    '', '/qui-sommes-nous', '/nos-prestations', '/tarifs', '/planning', '/faq', '/contact', '/seance-essai', '/blog',
     '/mentions-legales', '/confidentialite', '/cookies', '/cgv',
     ...PRESTATIONS.map((p) => `/nos-prestations/${p.slug}`),
     ...ARTICLES.map((a) => `/blog/${a.slug}`),

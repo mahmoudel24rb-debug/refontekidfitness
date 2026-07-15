@@ -11,7 +11,7 @@ export type Landing = {
   image: string
   points: { titre: string; texte: string }[]
   preuve?: { texte: string; auteur: string } // preuve sociale optionnelle — n'ajouter que de VRAIS avis clients
-  ctaLabel: string // libellé du bouton principal (S'inscrire = Bodylink placeholder)
+  ctaLabel: string // libellé du bouton principal (S'inscrire = placeholder inscription en ligne)
   reassurance: string[] // bandeau de réassurance (puces courtes)
 }
 
@@ -46,7 +46,7 @@ export const LANDINGS: Landing[] = [
     image: '/assets/ksc/stages-vacances.webp',
     points: [
       { titre: 'Multi-activités', texte: 'Un programme varié chaque jour : motricité, jeux collectifs, parcours et défis.' },
-      { titre: 'Toutes les vacances', texte: 'Stages pendant les vacances scolaires et les mercredis (8h00 – 17h30).' },
+      { titre: 'Toutes les vacances', texte: 'Stages pendant les vacances scolaires, et les Mercredis Sportifs pendant l’année scolaire.' },
       { titre: 'Groupes par âge', texte: 'Chaque enfant progresse à son rythme, dans un groupe adapté, en toute sécurité.' },
     ],
     ctaLabel: 'Réserver une place',

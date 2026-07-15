@@ -6,6 +6,20 @@ import { PRESTATIONS, prestationBySlug } from './prestations'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 
+// Rend « voir le planning » cliquable (lien /planning) dans le bloc Créneaux.
+function Creneaux({ texte }: { texte: string }) {
+  const marqueur = 'voir le planning'
+  const i = texte.indexOf(marqueur)
+  if (i === -1) return <>{texte}</>
+  return (
+    <>
+      {texte.slice(0, i)}
+      <a href="/planning" style={{ color: '#e6007e', fontWeight: 700 }}>voir le planning</a>
+      {texte.slice(i + marqueur.length)}
+    </>
+  )
+}
+
 export default function Prestation({ slug }: { slug: string }) {
   const p = prestationBySlug(slug)
   if (!p) return null
@@ -71,7 +85,7 @@ export default function Prestation({ slug }: { slug: string }) {
             <p style={{ color: '#404a63', fontSize: 17, lineHeight: 1.75, margin: '0 0 28px' }}>{p.intro}</p>
             <div style={{ background: 'var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, #fbf9f0)', borderRadius: 14, padding: '20px 24px' }}>
               <p style={{ margin: 0, color: '#081646', fontWeight: 700 }}>Créneaux</p>
-              <p style={{ margin: '6px 0 0', color: '#525c75' }}>{p.creneaux}</p>
+              <p style={{ margin: '6px 0 0', color: '#525c75' }}><Creneaux texte={p.creneaux} /></p>
             </div>
             <div style={{ background: '#e6007e', color: '#fff', borderRadius: 14, padding: '20px 24px', marginTop: 16 }}>
               <p style={{ margin: 0, fontWeight: 700, opacity: 0.9 }}>Tarif</p>

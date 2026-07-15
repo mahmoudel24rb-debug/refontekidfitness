@@ -40,7 +40,11 @@ const localBusiness = {
   telephone: '+33247444143',
   email: 'kidfitnessrochecorbon@gmail.com',
   url: SITE,
-  openingHours: ['Mo-Fr 09:30-12:30', 'Mo-Fr 16:00-19:30', 'Sa 09:30-17:30'],
+  // Horaires MàJ récap client : Lun–Ven 9h00–19h30 sans coupure · Samedi 9h30–12h30.
+  openingHoursSpecification: [
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:00', closes: '19:30' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:30', closes: '12:30' },
+  ],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -5,6 +5,9 @@ import React from 'react'
 // EN PROD : remplacer BODYLINK_URL par l'URL/parcours Bodylink réel (ou brancher
 // un onClick d'ouverture du module). C'est le SEUL endroit à modifier.
 export const BODYLINK_URL = '/contact'
+// Alias neutre pour les autres composants : le nom de l'outil d'inscription
+// (jargon interne) ne doit apparaître qu'ici.
+export const INSCRIPTION_URL = BODYLINK_URL
 
 type Props = {
   label?: string

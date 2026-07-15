@@ -4,7 +4,8 @@ import './framer.css';
 import SiteHeader from './ksc/SiteHeader';
 import SiteFooter from './ksc/SiteFooter';
 import ActusHome from './ksc/ActusHome';
-import { BODYLINK_URL } from './ksc/InscriptionCTA';
+import AvisParents from './ksc/AvisParents';
+import { INSCRIPTION_URL } from './ksc/InscriptionCTA';
 
 export default function HomePage() {
   return (
@@ -48,7 +49,7 @@ export default function HomePage() {
                     <div className={"framer-14fluox"} data-framer-name={"Button Wrapper"}>
                       <div className={"ssr-variant"}>
                         <div className={"framer-19ux50q-container"}>
-                          <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1jxt7ga framer-1hf9a6b"} data-framer-name={"Hero Green"} href={BODYLINK_URL} data-bodylink={"placeholder"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(230, 0, 126))", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
+                          <a className={"framer-3qE1p framer-CvaDL framer-TMFp6 framer-1kbhlz5 framer-v-1jxt7ga framer-1hf9a6b"} data-framer-name={"Hero Green"} href={INSCRIPTION_URL} data-inscription={"placeholder"} style={{ "--border-bottom-width": "0px", "--border-color": "rgba(0, 0, 0, 0)", "--border-left-width": "0px", "--border-right-width": "0px", "--border-style": "solid", "--border-top-width": "0px", backgroundColor: "var(--token-79291dd2-1190-43c1-89c1-42f3d3b2860a, rgb(230, 0, 126))", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", borderTopLeftRadius: "12px", borderTopRightRadius: "12px" }}>
                             <div className={"framer-oof4xq"} style={{ "--extracted-r6o4lv": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "--variable-reference-uryPfyK63-rNlYn_Jv1": "var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255))", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-ee3jw3"} data-styles-preset={"d2_XrBlDp"} style={{ "--framer-text-color": "var(--extracted-r6o4lv, var(--token-ce18055f-bbbe-4a53-a731-e618b46c3b0e, rgb(255, 255, 255)))" }}>
                                 S’inscrire
@@ -85,12 +86,12 @@ export default function HomePage() {
                           <div className={"framer-1ed0fw8"} data-framer-name={"Text"}>
                             <div className={"framer-sqq2et"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-n09wtz"} data-styles-preset={"b4OsDW1aO"}>
-                                7
+                                + de 10
                               </h5>
                             </div>
                             <div className={"framer-cc3bwz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"}>
-                                Prestations proposées
+                                Activités proposées
                               </p>
                             </div>
                           </div>
@@ -108,12 +109,12 @@ export default function HomePage() {
                           <div className={"framer-1ed0fw8"} data-framer-name={"Text"}>
                             <div className={"framer-sqq2et"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-n09wtz"} data-styles-preset={"b4OsDW1aO"}>
-                                7
+                                + de 10
                               </h5>
                             </div>
                             <div className={"framer-cc3bwz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"}>
-                                Prestations proposées
+                                Activités proposées
                               </p>
                             </div>
                           </div>
@@ -131,12 +132,12 @@ export default function HomePage() {
                           <div className={"framer-1ed0fw8"} data-framer-name={"Text"}>
                             <div className={"framer-sqq2et"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-n09wtz"} data-styles-preset={"b4OsDW1aO"}>
-                                10 mois – 14 ans
+                                + de 600
                               </h5>
                             </div>
                             <div className={"framer-cc3bwz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"}>
-                                Tous les âges accueillis
+                                Enfants accueillis par an
                               </p>
                             </div>
                           </div>
@@ -154,12 +155,12 @@ export default function HomePage() {
                           <div className={"framer-1ed0fw8"} data-framer-name={"Text"}>
                             <div className={"framer-sqq2et"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-n09wtz"} data-styles-preset={"b4OsDW1aO"}>
-                                10 mois – 14 ans
+                                + de 600
                               </h5>
                             </div>
                             <div className={"framer-cc3bwz"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <p className={"framer-text framer-styles-preset-1d6on7b"} data-styles-preset={"g8rJF4oHh"}>
-                                Tous les âges accueillis
+                                Enfants accueillis par an
                               </p>
                             </div>
                           </div>
@@ -1293,7 +1294,7 @@ export default function HomePage() {
                           <div className={"framer-leylit"} data-framer-name={"Top"}>
                             <div className={"framer-168rtzx"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-alignment": "left" }}>
-                                Comment se passe une première séance d’essai ?
+                                Puis-je assister à une séance d’essai avant de m’inscrire ?
                               </h5>
                             </div>
                             <div className={"framer-4cf4mj-container"} style={{ transform: "none" }}>
@@ -1309,7 +1310,7 @@ export default function HomePage() {
                           <div className={"framer-leylit"} data-framer-name={"Top"}>
                             <div className={"framer-168rtzx"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-alignment": "left" }}>
-                                Comment se passe une première séance d’essai ?
+                                Puis-je assister à une séance d’essai avant de m’inscrire ?
                               </h5>
                             </div>
                             <div className={"framer-4cf4mj-container"} style={{ transform: "none" }}>
@@ -1327,7 +1328,7 @@ export default function HomePage() {
                           <div className={"framer-leylit"} data-framer-name={"Top"}>
                             <div className={"framer-168rtzx"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-alignment": "left" }}>
-                                À partir de quel âge mon enfant peut-il venir ?
+                                À partir de quel âge mon enfant peut-il commencer ?
                               </h5>
                             </div>
                             <div className={"framer-4cf4mj-container"} style={{ transform: "none" }}>
@@ -1343,7 +1344,7 @@ export default function HomePage() {
                           <div className={"framer-leylit"} data-framer-name={"Top"}>
                             <div className={"framer-168rtzx"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-alignment": "left" }}>
-                                À partir de quel âge mon enfant peut-il venir ?
+                                À partir de quel âge mon enfant peut-il commencer ?
                               </h5>
                             </div>
                             <div className={"framer-4cf4mj-container"} style={{ transform: "none" }}>
@@ -1361,7 +1362,7 @@ export default function HomePage() {
                           <div className={"framer-leylit"} data-framer-name={"Top"}>
                             <div className={"framer-168rtzx"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-alignment": "left" }}>
-                                Comment réserver un anniversaire sportif ?
+                                Comment organiser l’anniversaire de mon enfant chez vous ?
                               </h5>
                             </div>
                             <div className={"framer-4cf4mj-container"} style={{ transform: "none" }}>
@@ -1377,7 +1378,7 @@ export default function HomePage() {
                           <div className={"framer-leylit"} data-framer-name={"Top"}>
                             <div className={"framer-168rtzx"} style={{ "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", transform: "none" }}>
                               <h5 className={"framer-text framer-styles-preset-1pa5d9r"} data-styles-preset={"kvcB0mldQ"} style={{ "--framer-text-alignment": "left" }}>
-                                Comment réserver un anniversaire sportif ?
+                                Comment organiser l’anniversaire de mon enfant chez vous ?
                               </h5>
                             </div>
                             <div className={"framer-4cf4mj-container"} style={{ transform: "none" }}>
@@ -1464,6 +1465,8 @@ export default function HomePage() {
             </section>
           </div>
         </div>
+        {/* Sections hors wrapper Framer (il comprimerait leur largeur) — même correctif que ActusHome/SiteFooter. */}
+        <AvisParents />
         <ActusHome />
         <SiteFooter />
         <div id={"overlay"} />

@@ -2,16 +2,32 @@ import React from 'react'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 
+// Q/R du récap client — recopiées telles quelles (la réponse « inscription » a été
+// validée sans le jargon interne du doc client).
 export const FAQ = [
-  { q: 'À partir de quel âge mon enfant peut-il commencer ?', r: "Dès 10 mois avec la baby gym (séances parent-enfant), puis des cours adaptés à chaque tranche d'âge jusqu'à 14 ans." },
-  { q: 'Peut-on essayer avant de s’inscrire ?', r: "Oui ! Nous proposons une séance d'essai pour découvrir le club, rencontrer l'équipe et trouver l'activité qui convient le mieux à votre enfant." },
-  { q: 'Mon enfant n’a jamais fait de sport, est-ce un problème ?', r: "Pas du tout. Tout est basé sur le jeu et l'éveil moteur, au rythme de chacun. L'objectif est le plaisir de bouger, pas la performance." },
-  { q: 'Comment se passe l’encadrement et la sécurité ?', r: "Les enfants sont répartis en groupes par âge, encadrés par une équipe diplômée, avec du matériel adapté et un espace sécurisé." },
-  { q: 'Proposez-vous des stages pendant les vacances ?', r: "Oui, des stages sportifs multi-activités pendant toutes les vacances scolaires, ainsi que les mercredis (8h00 – 17h30)." },
-  { q: 'Peut-on organiser un anniversaire au club ?', r: "Oui, nous proposons une formule anniversaire clé en main : jeux et parcours sportifs encadrés, espace privatisé et goûter." },
-  { q: 'Comment s’inscrire et régler ?', r: "Inscriptions à l'année pour les cours, et à la carte pour les stages et anniversaires. L'inscription et le paiement en ligne seront bientôt disponibles ; en attendant, contactez-nous." },
-  { q: 'Où se trouve le club et quels sont les horaires ?', r: "Au 1 Quai de la Loire, 37210 Rochecorbon (près de Tours). Du lundi au vendredi 9h30–12h30 et 16h00–19h30, le samedi 9h30–17h30." },
+  { q: 'À partir de quel âge mon enfant peut-il commencer ?', r: "Dès 10 mois, avec nos cours adaptés aux tout-petits, jusqu’à 14 ans." },
+  { q: 'Puis-je assister à une séance d’essai avant de m’inscrire ?', r: "Oui, la séance d’essai est gratuite. Elle se réserve directement auprès de notre équipe, qui vous recontacte pour fixer le créneau." },
+  { q: 'Comment s’inscrire à un cours à l’année ?', r: "L’inscription se fait en ligne ou directement auprès de notre équipe, qui vous accompagne dans le choix de la formule adaptée à votre enfant." },
+  { q: 'Quels sont vos tarifs ?', r: "Nos formules démarrent à 29,90 €/mois (1 cours/semaine, engagement 10 mois). Nous proposons aussi une formule illimitée, une carte de 10 séances, ainsi que des tarifs spécifiques pour les Mercredis Sportifs, les stages vacances et les anniversaires. Le détail complet est disponible sur notre page tarifs." },
+  { q: 'Les Mercredis Sportifs, qu’est-ce que c’est exactement ?', r: "Une journée sportive et encadrée, tous les mercredis de l’année scolaire (hors vacances d’été), pour 95 €/mois." },
+  { q: 'Proposez-vous des stages pendant les vacances scolaires ?', r: "Oui, à la journée (35 €) ou à la semaine (150 €), avec des activités sportives variées encadrées par notre équipe." },
+  { q: 'Comment organiser l’anniversaire de mon enfant chez vous ?', r: "Formule de 2h pour un maximum de 10 enfants, à 250 €. Le gâteau, la décoration et les boissons sont inclus — vous n’avez rien à prévoir." },
+  { q: 'Le club est-il uniquement à Rochecorbon ?', r: "Oui, Kid Sport Club est basé exclusivement à Rochecorbon (1 Quai de la Loire, 37210 Rochecorbon)." },
 ]
+
+// Rend « page tarifs » cliquable (lien /tarifs) — le JSON-LD garde le texte brut.
+function Reponse({ texte }: { texte: string }) {
+  const marqueur = 'page tarifs'
+  const i = texte.indexOf(marqueur)
+  if (i === -1) return <>{texte}</>
+  return (
+    <>
+      {texte.slice(0, i)}
+      <a href="/tarifs" style={{ color: '#e6007e', fontWeight: 700 }}>page tarifs</a>
+      {texte.slice(i + marqueur.length)}
+    </>
+  )
+}
 
 export default function Faq() {
   const jsonLd = {
@@ -35,7 +51,7 @@ export default function Faq() {
               <summary style={{ cursor: 'pointer', listStyle: 'none', fontSize: 19, fontWeight: 700, color: '#081646', display: 'flex', justifyContent: 'space-between', gap: 16 }}>
                 {f.q}<span aria-hidden style={{ color: '#e6007e' }}>+</span>
               </summary>
-              <p style={{ margin: '14px 0 0', lineHeight: 1.7, fontSize: 16 }}>{f.r}</p>
+              <p style={{ margin: '14px 0 0', lineHeight: 1.7, fontSize: 16 }}><Reponse texte={f.r} /></p>
             </details>
           ))}
         </section>

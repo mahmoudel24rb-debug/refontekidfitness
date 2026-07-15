@@ -15,7 +15,7 @@ const INFOS = [
 
 export default function ContactKSC() {
   const [sent, setSent] = useState(false)
-  // PLACEHOLDER : aucun envoi (pas de CRM en preview). À brancher en prod.
+  // PLACEHOLDER : aucun envoi en preview (outil interne non branché). À brancher en prod.
   const onSubmit = (e: React.FormEvent) => { e.preventDefault(); setSent(true) }
 
   return (
@@ -38,7 +38,7 @@ export default function ContactKSC() {
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: 22, color: '#081646' }}>
-            <strong>Horaires :</strong> Lun–Ven 9h30–12h30 et 16h00–19h30 · Samedi 9h30–17h30
+            <strong>Horaires :</strong> Lun–Ven : 9h00–19h30 (sans coupure) · Samedi : 9h30–12h30
           </div>
         </section>
 

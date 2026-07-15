@@ -12,7 +12,7 @@ const label: React.CSSProperties = { display: 'block', fontWeight: 700, color: '
 
 export default function SeanceEssai() {
   const [sent, setSent] = useState(false)
-  // PLACEHOLDER : aucun envoi (pas de CRM/Bodylink en preview). À brancher en prod.
+  // PLACEHOLDER : aucun envoi en preview (outil interne non branché). À brancher en prod.
   const onSubmit = (e: React.FormEvent) => { e.preventDefault(); setSent(true) }
 
   return (
@@ -24,12 +24,15 @@ export default function SeanceEssai() {
             <p style={{ fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase', fontSize: 14, opacity: 0.9, margin: '0 0 14px' }}>Séance d’essai</p>
             <h1 style={{ fontSize: 'clamp(32px,5vw,52px)', fontWeight: 800, lineHeight: 1.05, margin: '0 0 16px' }}>Venez essayer, c’est la meilleure façon de découvrir</h1>
             <p style={{ fontSize: 18, lineHeight: 1.6, opacity: 0.95, margin: 0 }}>
-              Réservez une séance d’essai : votre enfant découvre l’activité, vous rencontrez l’équipe, et vous décidez ensuite.
+              Réservez une séance d’essai gratuite : votre enfant découvre l’activité, vous rencontrez l’équipe, et vous décidez ensuite.
             </p>
           </div>
         </section>
 
         <section style={{ maxWidth: 620, margin: '0 auto', padding: '60px 24px 80px' }}>
+          <p style={{ margin: '0 0 28px', lineHeight: 1.7, fontSize: 16, textAlign: 'center' }}>
+            La séance d’essai est gratuite. Votre demande est traitée directement par notre équipe, qui vous recontacte pour fixer le créneau.
+          </p>
           {sent ? (
             <div style={{ background: 'var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, #fbf9f0)', borderRadius: 16, padding: 40, textAlign: 'center' }}>
               <h2 style={{ color: '#081646', fontSize: 24, fontWeight: 800, margin: '0 0 10px' }}>Merci !</h2>

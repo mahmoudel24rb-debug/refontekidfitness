@@ -72,6 +72,14 @@ export default function PrestationsHub() {
             ))}
           </div>
 
+          {/* Fit' Parents/Enfants : moment intégré aux cours, PAS une prestation (pas de carte dans la grille). */}
+          <div style={{ marginTop: 40, background: 'var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, #fbf9f0)', borderLeft: '4px solid #e6007e', borderRadius: 14, padding: '26px 30px' }}>
+            <h2 style={{ fontSize: 20, fontWeight: 800, color: '#081646', margin: '0 0 10px' }}>Fit&rsquo; Parents/Enfants — intégré à nos cours</h2>
+            <p style={{ color: '#404a63', lineHeight: 1.65, margin: 0 }}>
+              Un moment de sport à partager en famille. Parents et enfants bougent ensemble à travers des exercices ludiques et complices — une manière différente de se retrouver, entre jeu et activité physique.
+            </p>
+          </div>
+
           <div style={{ textAlign: 'center', marginTop: 64, background: 'var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, #fbf9f0)', borderRadius: 20, padding: '54px 24px' }}>
             <h2 style={{ fontSize: 'clamp(26px,3.5vw,38px)', fontWeight: 800, color: '#081646', margin: '0 0 14px' }}>Prêt à inscrire votre enfant ?</h2>
             <p style={{ color: '#404a63', fontSize: 17, margin: '0 0 28px' }}>Première séance d’essai pour découvrir le club.</p>

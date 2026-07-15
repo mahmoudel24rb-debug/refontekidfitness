@@ -6,12 +6,13 @@ import { PRESTATIONS } from './prestations'
 
 // Header KSC partagé (nouvelles pages). Charte : fond crème, logo, nav, CTA magenta.
 // Pas d'entrée « Accueil » (le logo y renvoie) ni « Contact » (présent au footer, et
-// le CTA « S'inscrire » y mène tant que Bodylink n'est pas branché) : le header est
-// réservé aux deux chemins de conversion — séance d'essai (lead) et inscription.
+// le CTA « S'inscrire » y mène tant que l'inscription en ligne n'est pas branchée) :
+// le header est réservé aux deux chemins de conversion — séance d'essai et inscription.
 const NAV = [
   { label: 'Qui sommes-nous', href: '/qui-sommes-nous' },
   { label: 'Nos prestations', href: '/nos-prestations', sub: PRESTATIONS.map((p) => ({ label: p.titre, href: `/nos-prestations/${p.slug}` })) },
   { label: 'Tarifs', href: '/tarifs' },
+  { label: 'Planning', href: '/planning' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Blog', href: '/blog' },
 ]

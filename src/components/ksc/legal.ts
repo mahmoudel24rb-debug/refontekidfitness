@@ -5,7 +5,9 @@ import type { LegalContent } from './LegalPage'
 export const MENTIONS_LEGALES: LegalContent = {
   titre: 'Mentions légales',
   sections: [
-    { h: 'Éditeur du site', p: "Kid Sport Club\n1 Quai de la Loire, 37210 Rochecorbon\nTéléphone : 02 47 44 41 43\nEmail : kidfitnessrochecorbon@gmail.com\n[Forme juridique, capital, SIRET, RCS, directeur de la publication — à compléter.]" },
+    // Éditeur : SAS Parc Beauregard (récap client). Pas de responsable de publication
+    // nommé publiquement — le client ne veut pas de nom : « le représentant légal de la société ».
+    { h: 'Éditeur du site', p: "Kid Sport Club — un établissement de la SAS Parc Beauregard\nSIREN : 932 593 452\n1 Quai de la Loire, 37210 Rochecorbon\nTéléphone : 02 47 44 41 43\nEmail : kidfitnessrochecorbon@gmail.com\nDirecteur de la publication : le représentant légal de la société." },
     { h: 'Hébergement', p: "Site hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA." },
     { h: 'Propriété intellectuelle', p: "L'ensemble des contenus de ce site (textes, visuels, logo) est la propriété de Kid Sport Club, sauf mention contraire. Toute reproduction est interdite sans autorisation." },
   ],

@@ -2,12 +2,72 @@ import React from 'react'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 
+// Pictogrammes SVG inline (pas d'emoji) — un par valeur, stroke currentColor.
+const ICONES: Record<string, React.ReactNode> = {
+  Bienveillance: (
+    <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z" />
+    </svg>
+  ),
+  Sécurité: (
+    <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    </svg>
+  ),
+  Plaisir: (
+    <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+      <line x1="9" y1="9" x2="9.01" y2="9" />
+      <line x1="15" y1="9" x2="15.01" y2="9" />
+    </svg>
+  ),
+  Diversité: (
+    <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="3" width="7" height="7" rx="1.5" />
+      <circle cx="17.5" cy="6.5" r="3.5" />
+      <path d="M6.5 14l3.5 7h-7z" />
+      <rect x="14" y="14" width="7" height="7" rx="3.5" />
+    </svg>
+  ),
+}
+
+// Valeurs — textes du récap client (recopiés tels quels).
 const VALEURS = [
-  { t: 'La psychomotricité', d: "Nos activités reposent sur l'apprentissage moteur : chaque jeu, chaque parcours aide l'enfant à développer son équilibre, sa coordination et sa confiance." },
-  { t: 'Le plaisir avant tout', d: "On ne « fait pas du sport », on s'amuse. Le jeu est notre méthode : c'est en s'amusant que les enfants progressent et reviennent avec le sourire." },
-  { t: 'La sécurité', d: "Espaces adaptés, matériel aux normes, encadrement diplômé et groupes par âge : un cadre où les parents déposent leur enfant en toute confiance." },
-  { t: "L'esprit club", d: "Plus qu'une salle : un club où l'enfant a ses repères, ses copains et son sentiment d'appartenance, au bord de la Loire à Rochecorbon." },
+  { t: 'Bienveillance', d: 'chaque enfant progresse à son rythme, sans pression ni comparaison' },
+  { t: 'Sécurité', d: 'un encadrement professionnel et des équipements adaptés à chaque tranche d’âge' },
+  { t: 'Plaisir', d: 'le jeu et la découverte avant la performance' },
+  { t: 'Diversité', d: 'une multitude d’activités pour que chaque enfant trouve ce qui lui correspond' },
 ]
+
+// Équipe — textes du récap client. Monogrammes en attendant les photos ; photos à venir (client).
+const EQUIPE = [
+  {
+    nom: 'Magatte Lam',
+    initiales: 'ML',
+    d: 'Coach à Kid Sport Club, Magatte apporte une énergie solaire à chaque séance. Toujours professionnelle, elle sait créer un cadre à la fois rassurant et stimulant pour que les enfants prennent plaisir à bouger.',
+  },
+  {
+    nom: 'Emma Villecroze',
+    initiales: 'EV',
+    d: 'Diplômée depuis 2 ans, Emma accompagne les enfants avec douceur et professionnalisme. Attentive à chacun, elle veille à ce que chaque séance soit un moment de progrès et de plaisir partagé.',
+  },
+  {
+    nom: 'Matéo Nozal',
+    initiales: 'MN',
+    d: 'Également coach à Fitness Beauregard (Hyrox / cours collectifs), Matéo intervient aussi auprès des enfants de Kid Sport Club, avec la même exigence bienveillante qui le caractérise.',
+  },
+]
+
+// Monogramme SVG : cercle marine, initiales blanches (pas de photo pour l'instant).
+function Monogramme({ initiales, nom }: { initiales: string; nom: string }) {
+  return (
+    <svg role="img" aria-label={nom} width="88" height="88" viewBox="0 0 88 88" style={{ display: 'block', margin: '0 auto 18px' }}>
+      <circle cx="44" cy="44" r="44" fill="#081646" />
+      <text x="44" y="45" textAnchor="middle" dominantBaseline="central" fill="#fff" fontFamily='"Inter", sans-serif' fontWeight="800" fontSize="30">{initiales}</text>
+    </svg>
+  )
+}
 
 export default function QuiSommesNous() {
   return (
@@ -30,16 +90,14 @@ export default function QuiSommesNous() {
           <img src="/assets/ksc/stages-mercredi.webp" alt="Enfants en activité au Kid Sport Club" style={{ width: '100%', height: 'clamp(240px,38vw,420px)', objectFit: 'cover', borderRadius: 18, display: 'block', boxShadow: '0 16px 40px rgba(8,22,70,.18)' }} />
         </div>
 
+        {/* Texte du récap client — recopié tel quel. */}
         <section style={{ maxWidth: 900, margin: '0 auto', padding: '72px 24px 40px' }}>
           <h2 style={{ fontSize: 'clamp(26px,3.5vw,36px)', fontWeight: 800, color: '#081646', margin: '0 0 18px' }}>Notre pédagogie</h2>
           <p style={{ fontSize: 18, lineHeight: 1.75, margin: '0 0 16px' }}>
-            Le Kid Sport Club s'appuie sur la <strong>psychomotricité</strong> et l'<strong>apprentissage moteur</strong> : avant d'être une
-            performance, le sport est un formidable outil de développement. À travers des parcours, des jeux collectifs et des activités
-            adaptées à chaque âge, l'enfant gagne en motricité, en autonomie et en confiance.
+            Kid Sport Club est né de la volonté de proposer aux enfants de 10 mois à 14 ans un espace où le sport devient un vecteur d’épanouissement, de confiance en soi et de socialisation. Installé à Rochecorbon, le club accompagne chaque enfant à son rythme, de la découverte des premiers mouvements jusqu’à une pratique sportive plus structurée à l’adolescence.
           </p>
           <p style={{ fontSize: 18, lineHeight: 1.75, margin: 0 }}>
-            De la baby gym parent-enfant dès 10 mois jusqu'au sport ado, chaque tranche d'âge a son programme, encadré par une équipe
-            diplômée et passionnée.
+            Notre pédagogie s’appuie sur les principes de la psychomotricité : chaque activité est pensée pour développer la motricité, la coordination et la confiance en soi de l’enfant, dans un cadre ludique et sécurisant. Nous croyons qu’un enfant qui prend plaisir à bouger construit des bases solides pour toute sa vie.
           </p>
         </section>
 
@@ -47,6 +105,7 @@ export default function QuiSommesNous() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,400px),1fr))', gap: 22 }}>
             {VALEURS.map((v) => (
               <div key={v.t} style={{ background: 'var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, #fbf9f0)', borderRadius: 16, padding: 30 }}>
+                <span style={{ color: '#e6007e', display: 'inline-block', marginBottom: 12 }}>{ICONES[v.t]}</span>
                 <h3 style={{ fontSize: 21, fontWeight: 800, color: '#081646', margin: '0 0 12px' }}>{v.t}</h3>
                 <p style={{ lineHeight: 1.6, margin: 0 }}>{v.d}</p>
               </div>
@@ -56,10 +115,18 @@ export default function QuiSommesNous() {
 
         <section style={{ background: 'var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, #fbf9f0)', padding: '70px 24px', textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(24px,3vw,34px)', fontWeight: 800, color: '#081646', margin: '0 0 12px' }}>Notre équipe</h2>
-          <p style={{ fontSize: 17, maxWidth: 640, margin: '0 auto 28px' }}>
-            Des animateurs et coachs diplômés, formés à l'encadrement des enfants, qui mettent l'énergie et la bienveillance au cœur de chaque séance.
-            <em> (Présentation de l'équipe à venir.)</em>
+          <p style={{ fontSize: 17, maxWidth: 640, margin: '0 auto 36px' }}>
+            Des animateurs et coachs diplômés, formés à l&rsquo;encadrement des enfants, qui mettent l&rsquo;énergie et la bienveillance au cœur de chaque séance.
           </p>
+          <div style={{ maxWidth: 1100, margin: '0 auto 36px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 22, textAlign: 'center' }}>
+            {EQUIPE.map((c) => (
+              <div key={c.nom} style={{ background: '#fff', border: '1px solid #ececec', borderRadius: 16, padding: '32px 28px', boxShadow: '0 6px 22px rgba(8,22,70,.05)' }}>
+                <Monogramme initiales={c.initiales} nom={c.nom} />
+                <h3 style={{ fontSize: 20, fontWeight: 800, color: '#081646', margin: '0 0 12px' }}>{c.nom}</h3>
+                <p style={{ lineHeight: 1.65, margin: 0, fontSize: 15.5 }}>{c.d}</p>
+              </div>
+            ))}
+          </div>
           <a href="/seance-essai" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '15px 30px', borderRadius: 70, fontWeight: 700, fontSize: 16, textDecoration: 'none', color: '#fff', background: '#e6007e', border: '2px solid #e6007e' }}>Réserver une séance d’essai</a>
         </section>
       </main>

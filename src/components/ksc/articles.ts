@@ -11,32 +11,36 @@ export type Article = {
 export const ARTICLES: Article[] = [
   {
     slug: 'a-quel-age-sport-enfant',
-    titre: 'À quel âge faire faire du sport à son enfant ?',
-    excerpt: "Dès les premiers mois, le mouvement participe au développement de l'enfant. On fait le point, âge par âge.",
+    titre: 'À quel âge inscrire son enfant au sport ?',
+    excerpt: "De la motricité dès 10 mois à la multisport dès 6 ans : l'essentiel est d'adapter l'activité à l'âge et au rythme de l'enfant, jamais l'inverse.",
     date: '2026-06-01',
     paragraphes: [
-      "Beaucoup de parents se demandent à partir de quand initier leur enfant au sport. La bonne nouvelle : il n'est jamais trop tôt pour bouger ! Dès 10 mois, la baby gym, sous forme de jeux et de parcours adaptés, éveille la motricité du tout-petit.",
+      // Chapo = texte du récap client, recopié tel quel.
+      "Le sport peut commencer très tôt : dès 10 mois, les activités de motricité stimulent le développement moteur du tout-petit sans notion de performance. Entre 3 et 5 ans, l'enfant affine sa coordination à travers le jeu. À partir de 6 ans, la multisport permet de découvrir plusieurs disciplines avant, éventuellement, de se spécialiser vers 11-14 ans. L'essentiel : adapter l'activité à l'âge et au rythme de l'enfant, jamais l'inverse.",
       "Entre 3 et 5 ans, l'enfant développe son équilibre et sa coordination à travers l'éveil sportif. De 6 à 10 ans, il découvre de multiples sports et l'esprit d'équipe. Dès 11 ans, place au sport ado pour se dépenser et se dépasser.",
       "L'essentiel : respecter le rythme de l'enfant et privilégier le plaisir. C'est toute la philosophie du Kid Sport Club.",
     ],
   },
   {
     slug: 'bienfaits-motricite-tout-petit',
-    titre: 'Les bienfaits de la motricité chez le tout-petit',
-    excerpt: "Équilibre, confiance, autonomie : pourquoi l'activité motrice est essentielle au développement des plus jeunes.",
+    titre: 'Pourquoi la motricité est essentielle chez le jeune enfant',
+    excerpt: "Ramper, sauter, grimper, lancer : le mouvement construit l'équilibre, la confiance et la base de nombreux apprentissages scolaires.",
     date: '2026-06-08',
     paragraphes: [
-      "La motricité ne se résume pas à « faire du sport ». Chez le tout-petit, ramper, grimper, sauter ou manipuler des objets construit le cerveau autant que le corps.",
+      // Chapo = texte du récap client, recopié tel quel.
+      "La motricité globale et fine ne se développe pas toute seule : elle se construit à travers le mouvement, le jeu et la répétition. Ramper, sauter, grimper, lancer... chaque activité physique aide l'enfant à mieux connaître son corps, à gagner en équilibre et en confiance. C'est aussi la base de nombreux apprentissages scolaires (écriture, concentration, repérage dans l'espace).",
       "À travers la psychomotricité, l'enfant gagne en équilibre, en coordination et en confiance en lui. Il apprend aussi à connaître son corps et ses limites, dans un cadre sécurisé.",
-      "Au Kid Sport Club, chaque séance de baby gym est pensée comme un moment d'éveil partagé entre l'enfant et son parent.",
+      "Au Kid Sport Club, chaque séance de baby gym est pensée comme un moment d'éveil, que les parents sont invités à partager lors de certaines séances.",
     ],
   },
   {
     slug: 'idees-anniversaire-sportif-enfant',
-    titre: 'Idées d’anniversaire sportif pour enfant',
-    excerpt: "Envie d'un anniversaire qui bouge ? Nos idées pour une fête sportive réussie, sans stress pour les parents.",
+    titre: 'Organiser l’anniversaire sportif de son enfant',
+    excerpt: "Une fête qui bouge, sans logistique pour les parents : activités encadrées, gâteau et décoration, tout est pensé pour que l'enfant profite à 100%.",
     date: '2026-06-15',
     paragraphes: [
+      // Chapo = texte du récap client, recopié tel quel.
+      "Envie de changer des anniversaires classiques ? Une formule sportive permet aux enfants de se dépenser, de jouer ensemble et de repartir avec plein de souvenirs — sans que les parents aient à gérer la logistique. Activités encadrées, gâteau, décoration : tout est pensé pour que l'enfant profite à 100% de sa journée.",
       "Un anniversaire sportif, c'est l'assurance d'enfants ravis… et fatigués le soir ! Parcours d'obstacles, jeux d'équipe, ateliers ludiques : les possibilités sont nombreuses.",
       "L'avantage d'une formule clé en main : vous ne vous occupez de rien. Espace privatisé, animation encadrée et goûter compris — il ne reste qu'à profiter.",
       "Au Kid Sport Club de Rochecorbon, nous organisons des anniversaires sportifs adaptés à l'âge des enfants. Contactez-nous pour réserver.",
@@ -44,13 +48,15 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'enfants-vacances-scolaires',
-    titre: 'Que faire des enfants pendant les vacances scolaires ?',
-    excerpt: "Stages sportifs, journées actives, encadrement : des solutions pour des vacances qui bougent.",
+    titre: 'Bien préparer les vacances de son enfant',
+    excerpt: "Une activité sportive encadrée, à la journée ou à la semaine : de quoi rythmer les vacances et faire le plein de rencontres.",
     date: '2026-06-22',
     paragraphes: [
+      // Chapo = texte du récap client, recopié tel quel.
+      "Les vacances scolaires sont l'occasion idéale pour proposer à son enfant une activité sportive encadrée et stimulante, à la journée ou à la semaine. Cela permet de rythmer les vacances, de maintenir une activité physique régulière, et de favoriser les rencontres avec d'autres enfants — tout en offrant aux parents une solution de garde active et sécurisée.",
       "Les vacances scolaires sont parfois un casse-tête pour les parents qui travaillent. Les stages sportifs sont une solution idéale : les enfants se dépensent, s'amusent et se font des copains.",
       "Encadrés par des animateurs diplômés, ils découvrent une variété d'activités tout au long de la semaine, dans un cadre sécurisé.",
-      "Le Kid Sport Club propose des stages pendant toutes les vacances scolaires, ainsi que les mercredis (8h00 – 17h30). Pensez à réserver à l'avance, les places sont limitées.",
+      "Le Kid Sport Club propose des stages pendant toutes les vacances scolaires, ainsi que les Mercredis Sportifs pendant l'année scolaire. Pensez à réserver à l'avance, les places sont limitées.",
     ],
   },
 ]
