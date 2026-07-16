@@ -1,4 +1,6 @@
 import React from 'react'
+import Underline from './Underline'
+import { KSC, display, kicker } from './ui'
 
 // Section « Avis de parents » (home) — 3 avis réels fournis dans le récap client,
 // recopiés tels quels. Les noms n'ont pas été fournis : attribution neutre.
@@ -15,7 +17,7 @@ function Etoiles() {
   return (
     <div aria-label="5 étoiles sur 5" role="img" style={{ display: 'flex', gap: 4, marginBottom: 16 }}>
       {[0, 1, 2, 3, 4].map((i) => (
-        <svg key={i} aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="#e6007e">
+        <svg key={i} aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill={KSC.magenta}>
           <path d="M12 2l2.9 6.26 6.6.7-4.95 4.53 1.37 6.51L12 16.7 6.08 20l1.37-6.51L2.5 8.96l6.6-.7z" />
         </svg>
       ))}
@@ -25,20 +27,20 @@ function Etoiles() {
 
 export default function AvisParents() {
   return (
-    <section style={{ background: 'var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, #fbf9f0)', fontFamily: '"Inter", sans-serif', padding: '80px 24px' }}>
+    <section style={{ background: KSC.cream2, fontFamily: KSC.fontBody, padding: '80px 24px' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
-          <p style={{ color: '#e6007e', fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase', fontSize: 14, margin: '0 0 10px' }}>Ils nous font confiance</p>
-          <h2 style={{ fontSize: 'clamp(26px,3.5vw,40px)', fontWeight: 800, color: '#081646', letterSpacing: '-0.02em', margin: 0 }}>Avis de parents</h2>
+          <p style={{ ...kicker, color: KSC.magenta, margin: '0 0 10px' }}>Ils nous font confiance</p>
+          <h2 style={{ ...display, fontSize: 'clamp(26px,3.5vw,40px)', fontWeight: 800, color: KSC.marine, margin: 0 }}>Avis de <Underline>parents</Underline></h2>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 26, alignItems: 'stretch' }}>
           {AVIS.map((texte, i) => (
-            <figure key={i} style={{ background: '#fff', border: '1px solid #ececec', borderRadius: 18, padding: '30px 30px 26px', margin: 0, display: 'flex', flexDirection: 'column', boxShadow: '0 6px 22px rgba(8,22,70,.05)' }}>
+            <figure key={i} className="ksc-card ksc-reveal" style={{ padding: '30px 30px 26px', margin: 0, display: 'flex', flexDirection: 'column' }}>
               <Etoiles />
               <blockquote style={{ margin: '0 0 18px', color: '#404a63', lineHeight: 1.65, fontSize: 15.5, flex: 1 }}>
                 « {texte} »
               </blockquote>
-              <figcaption style={{ color: '#081646', fontWeight: 700, fontSize: 14 }}>Parent d’un enfant du club</figcaption>
+              <figcaption style={{ color: KSC.marine, fontWeight: 700, fontSize: 14 }}>Parent d’un enfant du club</figcaption>
             </figure>
           ))}
         </div>

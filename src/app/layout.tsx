@@ -1,9 +1,25 @@
 import React from 'react'
+import { Baloo_2, Inter } from 'next/font/google'
 
 // Le CSS SSR exact de Framer (reset + styles globaux) — importé une seule fois ici.
 import '@/components/framer.css'
 import './overrides.css'
 import SvgSprite from '@/components/SvgSprite'
+
+// Typographie de la charte : Baloo 2 (display, titres) + Inter (texte courant).
+// Fontes variables Google auto-hébergées par next/font (aucune requête externe au runtime).
+const display = Baloo_2({
+  subsets: ['latin', 'latin-ext'],
+  weight: ['600', '700', '800'],
+  variable: '--font-display',
+  display: 'swap',
+})
+const body = Inter({
+  subsets: ['latin', 'latin-ext'],
+  weight: ['400', '600', '700'],
+  variable: '--font-body',
+  display: 'swap',
+})
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 
@@ -49,7 +65,7 @@ const localBusiness = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr">
+    <html lang="fr" className={`${display.variable} ${body.variable}`}>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }} />
         <SvgSprite />

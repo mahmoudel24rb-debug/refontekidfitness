@@ -1,5 +1,50 @@
-/* Correctifs Kid Sport Club sur le port Kinderly. */
+/* ============================================================
+   Kid Sport Club — couche de charte « club sportif enfants »
+   (tokens, boutons, cartes, badges, header/footer, animations)
+   + correctifs historiques sur le port Framer de la home.
+   Miroir TS des tokens : src/components/ksc/ui.ts
+   ============================================================ */
 
+/* ---------- 1. Tokens ---------- */
+:root {
+  --ksc-marine: #081646;
+  --ksc-navy2: #122a63;
+  --ksc-magenta: #e6007e;
+  --ksc-magenta-hover: #c4006b;
+  --ksc-magenta-light: #ff5aa8; /* magenta clair : kickers/liens sur fond marine (AA) */
+  --ksc-royal: #1060c8;
+  --ksc-cream: #fbf9f0;
+  --ksc-cream2: #f5f1e3;
+  --ksc-white: #fff;
+  --ksc-border: #eae5d6;
+  --ksc-radius-card: 16px;
+  --ksc-radius-pill: 70px;
+  --ksc-shadow-sm: 0 2px 8px rgba(8, 22, 70, 0.06);
+  --ksc-shadow-md: 0 12px 28px rgba(8, 22, 70, 0.12);
+  --ksc-focus-ring: rgba(16, 96, 200, 0.45);
+}
+
+/* ---------- 2. Base ---------- */
+/* Inter (next/font) partout par défaut ; la home Framer garde ses presets. */
+body {
+  font-family: var(--font-body), Inter, sans-serif !important;
+  background: var(--ksc-cream);
+}
+
+/* Focus visible — règle globale (clavier), ring royal 3px offset 2px. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--ksc-focus-ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ---------- 3. Correctif logo (historique, ne pas retirer) ---------- */
 /* Logo KSC : l'ancien wordmark "Kinderly" tenait dans ~124x32. Le logo écusson
    KSC (ratio ~1.5) a besoin de plus de hauteur. On agrandit le conteneur du logo
    (header) ; l'image est en preserveAspectRatio meet donc elle reste nette. */
@@ -15,4 +60,306 @@
   width: 100% !important;
   height: 100% !important;
   image-rendering: auto !important;
+}
+
+/* ---------- 4. Boutons (système unique) ---------- */
+.ksc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body), Inter, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  padding: 15px 30px;
+  border-radius: var(--ksc-radius-pill);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+/* Primaire : pill magenta. */
+.ksc-btn--primary {
+  background: var(--ksc-magenta);
+  border-color: var(--ksc-magenta);
+  color: #fff;
+}
+.ksc-btn--primary:hover {
+  background: var(--ksc-magenta-hover);
+  border-color: var(--ksc-magenta-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--ksc-shadow-md);
+}
+/* Secondaire : outline marine (sur fonds clairs). */
+.ksc-btn--secondary {
+  background: transparent;
+  border-color: var(--ksc-marine);
+  color: var(--ksc-marine);
+}
+.ksc-btn--secondary:hover {
+  background: var(--ksc-marine);
+  color: var(--ksc-cream);
+}
+/* Secondaire sur fond marine : outline crème. */
+.ksc-btn--cream {
+  background: transparent;
+  border-color: var(--ksc-cream);
+  color: var(--ksc-cream);
+}
+.ksc-btn--cream:hover {
+  background: var(--ksc-cream);
+  color: var(--ksc-marine);
+}
+/* Variante claire (fond blanc) — conservée pour compat. */
+.ksc-btn--light {
+  background: #fff;
+  border-color: #fff;
+  color: var(--ksc-marine);
+}
+.ksc-btn--light:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--ksc-shadow-md);
+}
+
+/* Tertiaire : lien magenta « Lire l'article → », flèche qui glisse au hover. */
+.ksc-link-arrow {
+  color: var(--ksc-magenta);
+  font-weight: 700;
+  text-decoration: none;
+}
+.ksc-link-arrow svg {
+  transition: transform 180ms ease;
+}
+.ksc-link-arrow:hover svg,
+a:hover > .ksc-link-arrow svg,
+.ksc-card:hover .ksc-link-arrow svg {
+  transform: translateX(3px);
+}
+
+/* ---------- 5. Cartes ---------- */
+.ksc-card {
+  background: var(--ksc-white);
+  border: 1px solid var(--ksc-border);
+  border-radius: var(--ksc-radius-card);
+  box-shadow: var(--ksc-shadow-sm);
+  overflow: hidden;
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+.ksc-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--ksc-shadow-md);
+}
+.ksc-card img {
+  transition: transform 200ms ease;
+}
+.ksc-card:hover img {
+  transform: scale(1.03);
+}
+
+/* ---------- 6. Badge d'âge (info parents) ---------- */
+.ksc-age-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(16, 96, 200, 0.1);
+  color: var(--ksc-royal);
+  font-family: var(--font-body), Inter, sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1;
+  padding: 6px 12px;
+  border-radius: var(--ksc-radius-pill);
+  white-space: nowrap;
+}
+/* Sur fond marine (hero prestation) : le royal ne contraste pas, variante claire. */
+.ksc-age-badge--dark {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+
+/* ---------- 7. FAQ — accordéons <details>/<summary> ---------- */
+.ksc-faq-item {
+  border-bottom: 1px solid var(--ksc-border);
+}
+.ksc-faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 4px;
+  font-family: var(--font-display), 'Baloo 2', sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  color: var(--ksc-marine);
+}
+.ksc-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.ksc-faq-icon {
+  flex-shrink: 0;
+  color: var(--ksc-magenta);
+  transition: transform 200ms ease;
+}
+.ksc-faq-item[open] .ksc-faq-icon {
+  transform: rotate(45deg); /* le « + » devient « × » */
+}
+.ksc-faq-item .ksc-faq-answer {
+  margin: 0;
+  padding: 0 4px 24px;
+  line-height: 1.7;
+  font-size: 16px;
+  color: #404a63;
+}
+
+/* ---------- 8. Header sticky ---------- */
+.ksc-header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+.ksc-header.is-scrolled {
+  background: rgba(251, 249, 240, 0.97) !important;
+  box-shadow: var(--ksc-shadow-sm);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+/* Liens nav : soulignement magenta animé (scaleX). */
+.ksc-nav-link {
+  position: relative;
+}
+.ksc-nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--ksc-magenta);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 180ms ease;
+}
+.ksc-nav-link:hover::after,
+.ksc-nav-link:focus-visible::after,
+.ksc-nav-link[aria-current='page']::after {
+  transform: scaleX(1);
+}
+/* Le panneau mobile ne doit pas dépasser l'écran sous le header sticky. */
+.ksc-mobile-panel {
+  max-height: calc(100vh - 96px);
+  overflow-y: auto;
+}
+
+/* ---------- 9. Footer marine ---------- */
+.ksc-footer a {
+  color: rgba(251, 249, 240, 0.85);
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+.ksc-footer a:hover {
+  color: var(--ksc-magenta-light);
+}
+
+/* ---------- 10. Soulignement « swash » des H2 de section ---------- */
+.ksc-underline {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+.ksc-underline > svg {
+  position: absolute;
+  left: 2%;
+  bottom: -0.28em;
+  width: 96%;
+  height: 0.22em;
+  pointer-events: none;
+}
+
+/* ---------- 11. Apparition au scroll ---------- */
+/* Masqué seulement si JS actif ET pas de reduced-motion : sans JS ou avec
+   reduced-motion, le contenu reste simplement visible, sans transform. */
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  .ksc-reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 500ms ease-out,
+      transform 500ms ease-out;
+  }
+  .ksc-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  /* Une carte révélée doit pouvoir reprendre son hover translateY(-3px). */
+  .ksc-card.ksc-reveal.is-visible:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/* ---------- 12. Home (port Framer) — interventions chirurgicales ---------- */
+/* 12a. Police display (Baloo 2 via next/font) sur le H1 du hero et les titres
+   de section du wrapper Framer. Les presets sont des classes stables générées
+   par le port ; on ne touche qu'aux variables typo, les tailles restent. */
+h1.framer-styles-preset-tus4j9, /* H1 hero l.1 « Le club sport des enfants » */
+h1.framer-styles-preset-ffc2o1, /* H1 hero l.2 « Bouger, grandir, s'épanouir » */
+h4.framer-styles-preset-10ofw0b, /* titres de section l.1 (« Bienvenue au », « Au club », « Questions ») */
+h4.framer-styles-preset-1fruokq  /* titres de section l.2 (« Kid Sport Club ! », « Nos activités », …) */ {
+  --framer-font-family: var(--font-display), 'Baloo 2', sans-serif !important;
+  --framer-font-family-bold: var(--font-display), 'Baloo 2', sans-serif !important;
+  --framer-font-weight: 700 !important;
+}
+
+/* 12b. Flottement doux du garçon détouré du hero (img hero.webp). */
+@media (prefers-reduced-motion: no-preference) {
+  .framer-1mo52hc {
+    animation: ksc-float 6s ease-in-out infinite;
+  }
+}
+@keyframes ksc-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ---------- 13. prefers-reduced-motion : aucune animation, aucun transform ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .ksc-btn,
+  .ksc-card,
+  .ksc-card img,
+  .ksc-link-arrow svg,
+  .ksc-faq-icon,
+  .ksc-nav-link::after,
+  .ksc-header,
+  .framer-1mo52hc {
+    transition: none !important;
+    animation: none !important;
+  }
+  .ksc-btn:hover,
+  .ksc-btn--primary:hover,
+  .ksc-btn--light:hover,
+  .ksc-card:hover,
+  .ksc-card:hover img,
+  .ksc-card:hover .ksc-link-arrow svg,
+  .ksc-link-arrow:hover svg {
+    transform: none !important;
+  }
 }

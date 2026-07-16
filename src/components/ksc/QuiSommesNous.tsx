@@ -1,6 +1,9 @@
 import React from 'react'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
+import TerrainLines from './TerrainLines'
+import Underline from './Underline'
+import { KSC, display, kicker } from './ui'
 
 // Pictogrammes SVG inline (pas d'emoji) — un par valeur, stroke currentColor.
 const ICONES: Record<string, React.ReactNode> = {
@@ -63,8 +66,8 @@ const EQUIPE = [
 function Monogramme({ initiales, nom }: { initiales: string; nom: string }) {
   return (
     <svg role="img" aria-label={nom} width="88" height="88" viewBox="0 0 88 88" style={{ display: 'block', margin: '0 auto 18px' }}>
-      <circle cx="44" cy="44" r="44" fill="#081646" />
-      <text x="44" y="45" textAnchor="middle" dominantBaseline="central" fill="#fff" fontFamily='"Inter", sans-serif' fontWeight="800" fontSize="30">{initiales}</text>
+      <circle cx="44" cy="44" r="44" fill={KSC.marine} />
+      <text x="44" y="45" textAnchor="middle" dominantBaseline="central" fill="#fff" fontFamily="var(--font-body), Inter, sans-serif" fontWeight="800" fontSize="30">{initiales}</text>
     </svg>
   )
 }
@@ -73,12 +76,14 @@ export default function QuiSommesNous() {
   return (
     <>
       <SiteHeader />
-      <main style={{ background: '#fff', fontFamily: '"Inter", sans-serif', color: '#404a63' }}>
-        <section style={{ background: 'linear-gradient(135deg,#e6007e,#1060c8)', color: '#fff', padding: '84px 24px', textAlign: 'center' }}>
-          <div style={{ maxWidth: 820, margin: '0 auto' }}>
-            <p style={{ fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase', fontSize: 14, opacity: 0.9, margin: '0 0 14px' }}>Qui sommes-nous</p>
-            <h1 style={{ fontSize: 'clamp(34px,5vw,56px)', fontWeight: 800, lineHeight: 1.05, letterSpacing: '-0.02em', margin: '0 0 18px' }}>Le club de sport des enfants</h1>
-            <p style={{ fontSize: 19, lineHeight: 1.6, opacity: 0.95, margin: 0 }}>
+      <main style={{ background: KSC.cream, fontFamily: KSC.fontBody, color: '#404a63' }}>
+        {/* Hero marine + lignes de terrain */}
+        <section style={{ position: 'relative', background: KSC.marine, color: KSC.cream, padding: '84px 24px 120px', textAlign: 'center', overflow: 'hidden' }}>
+          <TerrainLines />
+          <div style={{ position: 'relative', maxWidth: 820, margin: '0 auto' }}>
+            <p style={{ ...kicker, color: KSC.magentaLight, margin: '0 0 14px' }}>Qui sommes-nous</p>
+            <h1 style={{ ...display, fontSize: 'clamp(34px,5vw,56px)', fontWeight: 800, lineHeight: 1.08, margin: '0 0 18px', color: KSC.cream }}>Le club de sport des enfants</h1>
+            <p style={{ fontSize: 19, lineHeight: 1.6, color: 'rgba(251,249,240,.8)', margin: 0 }}>
               À Rochecorbon, le Kid Sport Club initie les enfants de 10 mois à 14 ans au sport et au mouvement,
               par le jeu, dans un cadre bienveillant et sécurisé.
             </p>
@@ -86,13 +91,13 @@ export default function QuiSommesNous() {
         </section>
 
         {/* Photo bannière */}
-        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px', marginTop: -40 }}>
-          <img src="/assets/ksc/stages-mercredi.webp" alt="Enfants en activité au Kid Sport Club" style={{ width: '100%', height: 'clamp(240px,38vw,420px)', objectFit: 'cover', borderRadius: 18, display: 'block', boxShadow: '0 16px 40px rgba(8,22,70,.18)' }} />
+        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px', marginTop: -40, position: 'relative' }}>
+          <img src="/assets/ksc/stages-mercredi.webp" alt="Enfants en activité au Kid Sport Club" style={{ width: '100%', height: 'clamp(240px,38vw,420px)', objectFit: 'cover', borderRadius: KSC.radiusCard, display: 'block', boxShadow: KSC.shadowMd }} />
         </div>
 
         {/* Texte du récap client — recopié tel quel. */}
-        <section style={{ maxWidth: 900, margin: '0 auto', padding: '72px 24px 40px' }}>
-          <h2 style={{ fontSize: 'clamp(26px,3.5vw,36px)', fontWeight: 800, color: '#081646', margin: '0 0 18px' }}>Notre pédagogie</h2>
+        <section className="ksc-reveal" style={{ maxWidth: 900, margin: '0 auto', padding: '72px 24px 40px' }}>
+          <h2 style={{ ...display, fontSize: 'clamp(26px,3.5vw,36px)', fontWeight: 800, color: KSC.marine, margin: '0 0 18px' }}>Notre <Underline>pédagogie</Underline></h2>
           <p style={{ fontSize: 18, lineHeight: 1.75, margin: '0 0 16px' }}>
             Kid Sport Club est né de la volonté de proposer aux enfants de 10 mois à 14 ans un espace où le sport devient un vecteur d’épanouissement, de confiance en soi et de socialisation. Installé à Rochecorbon, le club accompagne chaque enfant à son rythme, de la découverte des premiers mouvements jusqu’à une pratique sportive plus structurée à l’adolescence.
           </p>
@@ -104,30 +109,30 @@ export default function QuiSommesNous() {
         <section style={{ maxWidth: 900, margin: '0 auto', padding: '20px 24px 80px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,400px),1fr))', gap: 22 }}>
             {VALEURS.map((v) => (
-              <div key={v.t} style={{ background: 'var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, #fbf9f0)', borderRadius: 16, padding: 30 }}>
-                <span style={{ color: '#e6007e', display: 'inline-block', marginBottom: 12 }}>{ICONES[v.t]}</span>
-                <h3 style={{ fontSize: 21, fontWeight: 800, color: '#081646', margin: '0 0 12px' }}>{v.t}</h3>
+              <div key={v.t} className="ksc-card ksc-reveal" style={{ padding: 30 }}>
+                <span style={{ color: KSC.royal, display: 'inline-block', marginBottom: 12 }}>{ICONES[v.t]}</span>
+                <h3 style={{ ...display, fontSize: 21, fontWeight: 700, color: KSC.marine, margin: '0 0 12px' }}>{v.t}</h3>
                 <p style={{ lineHeight: 1.6, margin: 0 }}>{v.d}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section style={{ background: 'var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, #fbf9f0)', padding: '70px 24px', textAlign: 'center' }}>
-          <h2 style={{ fontSize: 'clamp(24px,3vw,34px)', fontWeight: 800, color: '#081646', margin: '0 0 12px' }}>Notre équipe</h2>
+        <section style={{ background: KSC.cream2, padding: '70px 24px', textAlign: 'center' }}>
+          <h2 style={{ ...display, fontSize: 'clamp(24px,3vw,34px)', fontWeight: 800, color: KSC.marine, margin: '0 0 12px' }}>Notre <Underline>équipe</Underline></h2>
           <p style={{ fontSize: 17, maxWidth: 640, margin: '0 auto 36px' }}>
             Des animateurs et coachs diplômés, formés à l&rsquo;encadrement des enfants, qui mettent l&rsquo;énergie et la bienveillance au cœur de chaque séance.
           </p>
           <div style={{ maxWidth: 1100, margin: '0 auto 36px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 22, textAlign: 'center' }}>
             {EQUIPE.map((c) => (
-              <div key={c.nom} style={{ background: '#fff', border: '1px solid #ececec', borderRadius: 16, padding: '32px 28px', boxShadow: '0 6px 22px rgba(8,22,70,.05)' }}>
+              <div key={c.nom} className="ksc-card ksc-reveal" style={{ padding: '32px 28px' }}>
                 <Monogramme initiales={c.initiales} nom={c.nom} />
-                <h3 style={{ fontSize: 20, fontWeight: 800, color: '#081646', margin: '0 0 12px' }}>{c.nom}</h3>
+                <h3 style={{ ...display, fontSize: 20, fontWeight: 700, color: KSC.marine, margin: '0 0 12px' }}>{c.nom}</h3>
                 <p style={{ lineHeight: 1.65, margin: 0, fontSize: 15.5 }}>{c.d}</p>
               </div>
             ))}
           </div>
-          <a href="/seance-essai" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '15px 30px', borderRadius: 70, fontWeight: 700, fontSize: 16, textDecoration: 'none', color: '#fff', background: '#e6007e', border: '2px solid #e6007e' }}>Réserver une séance d’essai</a>
+          <a href="/seance-essai" className="ksc-btn ksc-btn--primary">Réserver une séance d’essai</a>
         </section>
       </main>
       <SiteFooter />

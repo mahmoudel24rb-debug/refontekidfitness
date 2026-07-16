@@ -11,36 +11,22 @@ export const INSCRIPTION_URL = BODYLINK_URL
 
 type Props = {
   label?: string
-  variant?: 'primary' | 'light' | 'outline'
+  variant?: 'primary' | 'light' | 'outline' | 'cream'
   style?: React.CSSProperties
 }
 
-const base: React.CSSProperties = {
-  display: 'inline-flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  gap: 8,
-  fontFamily: '"Inter", sans-serif',
-  fontWeight: 700,
-  fontSize: 16,
-  lineHeight: 1,
-  padding: '15px 30px',
-  borderRadius: 70,
-  textDecoration: 'none',
-  whiteSpace: 'nowrap',
-  cursor: 'pointer',
-  transition: 'opacity .15s ease',
-}
-
-const variants: Record<string, React.CSSProperties> = {
-  primary: { background: '#e6007e', color: '#fff', border: '2px solid #e6007e' },
-  light: { background: '#fff', color: '#081646', border: '2px solid #fff' },
-  outline: { background: 'transparent', color: '#081646', border: '2px solid #081646' },
+// Système de boutons unique de la charte : classes .ksc-btn définies dans
+// overrides.css (pill, transitions et hovers y compris reduced-motion).
+const variantClass: Record<string, string> = {
+  primary: 'ksc-btn--primary',
+  light: 'ksc-btn--light',
+  outline: 'ksc-btn--secondary',
+  cream: 'ksc-btn--cream',
 }
 
 export default function InscriptionCTA({ label = "S’inscrire", variant = 'primary', style }: Props) {
   return (
-    <a href={BODYLINK_URL} data-bodylink="placeholder" style={{ ...base, ...variants[variant], ...style }}>
+    <a href={BODYLINK_URL} data-bodylink="placeholder" className={`ksc-btn ${variantClass[variant]}`} style={style}>
       {label}
     </a>
   )

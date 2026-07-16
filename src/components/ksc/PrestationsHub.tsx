@@ -2,17 +2,11 @@ import React from 'react'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import InscriptionCTA from './InscriptionCTA'
+import HeroMarine from './HeroMarine'
+import TerrainLines from './TerrainLines'
+import Underline from './Underline'
+import { KSC, display } from './ui'
 import { PRESTATIONS } from './prestations'
-
-const GRADS = [
-  'linear-gradient(135deg,#e6007e,#1060c8)',
-  'linear-gradient(135deg,#1060c8,#081646)',
-  'linear-gradient(135deg,#e6007e,#081646)',
-  'linear-gradient(135deg,#1060c8,#e6007e)',
-  'linear-gradient(135deg,#081646,#1060c8)',
-  'linear-gradient(135deg,#081646,#e6007e)',
-  'linear-gradient(135deg,#e6007e,#1060c8)',
-]
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 
@@ -39,31 +33,27 @@ export default function PrestationsHub() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <SiteHeader />
-      <main style={{ background: '#fff', fontFamily: '"Inter", sans-serif' }}>
-        <section style={{ background: 'var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, #fbf9f0)', padding: '72px 24px', textAlign: 'center' }}>
-          <p style={{ color: '#e6007e', fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase', fontSize: 14, margin: '0 0 14px' }}>Nos prestations</p>
-          <h1 style={{ fontSize: 'clamp(32px,5vw,54px)', fontWeight: 800, color: '#081646', letterSpacing: '-0.02em', lineHeight: 1.05, margin: '0 0 18px' }}>
-            Le sport des enfants, sous toutes ses formes
-          </h1>
-          <p style={{ color: '#404a63', fontSize: 18, lineHeight: 1.6, maxWidth: 720, margin: '0 auto' }}>
-            De la baby gym dès 10 mois au sport ado, en passant par les mercredis sportifs, les stages et les anniversaires :
-            au Kid Sport Club de Rochecorbon, chaque enfant trouve son activité.
-          </p>
-        </section>
+      <main style={{ background: KSC.cream, fontFamily: KSC.fontBody }}>
+        <HeroMarine
+          kicker="Nos prestations"
+          title="Le sport des enfants, sous toutes ses formes"
+          sub={<>De la baby gym dès 10 mois au sport ado, en passant par les mercredis sportifs, les stages et les anniversaires :
+            au Kid Sport Club de Rochecorbon, chaque enfant trouve son activité.</>}
+        />
 
         <section style={{ maxWidth: 1200, margin: '0 auto', padding: '64px 24px 90px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px,1fr))', gap: 26 }}>
-            {PRESTATIONS.map((p, i) => (
-              <a key={p.slug} href={`/nos-prestations/${p.slug}`}
-                style={{ display: 'flex', flexDirection: 'column', borderRadius: 18, overflow: 'hidden', textDecoration: 'none', color: 'inherit', border: '1px solid #ececec', background: '#fff', boxShadow: '0 6px 22px rgba(8,22,70,.05)' }}>
-                <div style={{ position: 'relative', height: 180 }}>
+            {PRESTATIONS.map((p) => (
+              <a key={p.slug} href={`/nos-prestations/${p.slug}`} className="ksc-card ksc-reveal"
+                style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none', color: 'inherit' }}>
+                <div style={{ position: 'relative', height: 180, overflow: 'hidden' }}>
                   <img src={p.image} alt={p.titre} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                  <span style={{ position: 'absolute', left: 16, bottom: 16, background: 'rgba(255,255,255,.94)', color: '#081646', fontWeight: 700, fontSize: 13, padding: '5px 12px', borderRadius: 70 }}>{p.age}</span>
                 </div>
                 <div style={{ padding: '24px 26px 28px', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                  <h2 style={{ fontSize: 23, fontWeight: 800, color: '#081646', margin: '0 0 10px' }}>{p.titre}</h2>
+                  <span className="ksc-age-badge" style={{ alignSelf: 'flex-start', marginBottom: 12 }}>{p.age}</span>
+                  <h2 style={{ ...display, fontSize: 23, fontWeight: 700, color: KSC.marine, margin: '0 0 10px' }}>{p.titre}</h2>
                   <p style={{ color: '#525c75', lineHeight: 1.6, margin: '0 0 20px', flex: 1 }}>{p.accroche}</p>
-                  <span style={{ color: '#e6007e', fontWeight: 700 }}>
+                  <span className="ksc-link-arrow">
                     Découvrir
                     <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ verticalAlign: '-1px', marginLeft: 6 }}><path d="M5 12h14M13 6l6 6-6 6" /></svg>
                   </span>
@@ -73,19 +63,23 @@ export default function PrestationsHub() {
           </div>
 
           {/* Fit' Parents/Enfants : moment intégré aux cours, PAS une prestation (pas de carte dans la grille). */}
-          <div style={{ marginTop: 40, background: 'var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, #fbf9f0)', borderLeft: '4px solid #e6007e', borderRadius: 14, padding: '26px 30px' }}>
-            <h2 style={{ fontSize: 20, fontWeight: 800, color: '#081646', margin: '0 0 10px' }}>Fit&rsquo; Parents/Enfants — intégré à nos cours</h2>
+          <div className="ksc-reveal" style={{ marginTop: 40, background: KSC.cream2, borderLeft: `4px solid ${KSC.magenta}`, borderRadius: KSC.radiusCard, padding: '26px 30px' }}>
+            <h2 style={{ ...display, fontSize: 20, fontWeight: 700, color: KSC.marine, margin: '0 0 10px' }}>Fit&rsquo; Parents/Enfants — intégré à nos cours</h2>
             <p style={{ color: '#404a63', lineHeight: 1.65, margin: 0 }}>
               Un moment de sport à partager en famille. Parents et enfants bougent ensemble à travers des exercices ludiques et complices — une manière différente de se retrouver, entre jeu et activité physique.
             </p>
           </div>
 
-          <div style={{ textAlign: 'center', marginTop: 64, background: 'var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, #fbf9f0)', borderRadius: 20, padding: '54px 24px' }}>
-            <h2 style={{ fontSize: 'clamp(26px,3.5vw,38px)', fontWeight: 800, color: '#081646', margin: '0 0 14px' }}>Prêt à inscrire votre enfant ?</h2>
-            <p style={{ color: '#404a63', fontSize: 17, margin: '0 0 28px' }}>Première séance d’essai pour découvrir le club.</p>
-            <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-              <InscriptionCTA />
-              <a href="/seance-essai" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '15px 30px', borderRadius: 70, fontWeight: 700, fontSize: 16, textDecoration: 'none', color: '#081646', border: '2px solid #081646' }}>Réserver une séance d’essai</a>
+          {/* Bloc CTA marine + lignes de terrain */}
+          <div className="ksc-reveal" style={{ position: 'relative', textAlign: 'center', marginTop: 64, background: KSC.marine, color: KSC.cream, borderRadius: KSC.radiusCard, padding: '54px 24px', overflow: 'hidden' }}>
+            <TerrainLines />
+            <div style={{ position: 'relative' }}>
+              <h2 style={{ ...display, fontSize: 'clamp(26px,3.5vw,38px)', fontWeight: 800, margin: '0 0 14px' }}>Prêt à inscrire votre <Underline>enfant&nbsp;?</Underline></h2>
+              <p style={{ color: 'rgba(251,249,240,.8)', fontSize: 17, margin: '0 0 28px' }}>Première séance d’essai pour découvrir le club.</p>
+              <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
+                <InscriptionCTA />
+                <a href="/seance-essai" className="ksc-btn ksc-btn--cream">Réserver une séance d’essai</a>
+              </div>
             </div>
           </div>
         </section>

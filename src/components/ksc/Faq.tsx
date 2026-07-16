@@ -1,6 +1,8 @@
 import React from 'react'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
+import HeroMarine from './HeroMarine'
+import { KSC } from './ui'
 
 // Q/R du récap client — recopiées telles quelles (la réponse « inscription » a été
 // validée sans le jargon interne du doc client).
@@ -23,7 +25,7 @@ function Reponse({ texte }: { texte: string }) {
   return (
     <>
       {texte.slice(0, i)}
-      <a href="/tarifs" style={{ color: '#e6007e', fontWeight: 700 }}>page tarifs</a>
+      <a href="/tarifs" style={{ color: KSC.magenta, fontWeight: 700 }}>page tarifs</a>
       {texte.slice(i + marqueur.length)}
     </>
   )
@@ -39,19 +41,18 @@ export default function Faq() {
     <>
       <SiteHeader />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <main style={{ background: '#fff', fontFamily: '"Inter", sans-serif', color: '#404a63' }}>
-        <section style={{ background: 'var(--token-6a7314fd-fc42-4b6f-a276-ad0adb001906, #fbf9f0)', padding: '72px 24px', textAlign: 'center' }}>
-          <p style={{ color: '#e6007e', fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase', fontSize: 14, margin: '0 0 14px' }}>FAQ</p>
-          <h1 style={{ fontSize: 'clamp(32px,5vw,52px)', fontWeight: 800, color: '#081646', letterSpacing: '-0.02em', margin: 0 }}>Vos questions, nos réponses</h1>
-        </section>
+      <main style={{ background: KSC.cream, fontFamily: KSC.fontBody, color: '#404a63' }}>
+        <HeroMarine kicker="FAQ" title="Vos questions, nos réponses" padding="72px 24px" />
 
         <section style={{ maxWidth: 820, margin: '0 auto', padding: '56px 24px 30px' }}>
           {FAQ.map((f) => (
-            <details key={f.q} style={{ borderBottom: '1px solid #eceae2', padding: '20px 0' }}>
-              <summary style={{ cursor: 'pointer', listStyle: 'none', fontSize: 19, fontWeight: 700, color: '#081646', display: 'flex', justifyContent: 'space-between', gap: 16 }}>
-                {f.q}<span aria-hidden style={{ color: '#e6007e' }}>+</span>
+            <details key={f.q} className="ksc-faq-item ksc-reveal">
+              <summary>
+                {f.q}
+                {/* Icône « + » qui pivote en « × » à l'ouverture (details[open]). */}
+                <svg className="ksc-faq-icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M12 5v14M5 12h14" /></svg>
               </summary>
-              <p style={{ margin: '14px 0 0', lineHeight: 1.7, fontSize: 16 }}><Reponse texte={f.r} /></p>
+              <p className="ksc-faq-answer"><Reponse texte={f.r} /></p>
             </details>
           ))}
         </section>
@@ -59,8 +60,8 @@ export default function Faq() {
         <section style={{ textAlign: 'center', padding: '20px 24px 80px' }}>
           <p style={{ fontSize: 17, margin: '0 0 22px' }}>Une autre question ? Venez nous voir ou contactez-nous.</p>
           <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="/seance-essai" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '15px 30px', borderRadius: 70, fontWeight: 700, fontSize: 16, textDecoration: 'none', color: '#fff', background: '#e6007e', border: '2px solid #e6007e' }}>Réserver une séance d’essai</a>
-            <a href="/contact" style={{ display: 'inline-flex', alignItems: 'center', padding: '15px 30px', borderRadius: 70, fontWeight: 700, textDecoration: 'none', color: '#081646', border: '2px solid #081646' }}>Nous contacter</a>
+            <a href="/seance-essai" className="ksc-btn ksc-btn--primary">Réserver une séance d’essai</a>
+            <a href="/contact" className="ksc-btn ksc-btn--secondary">Nous contacter</a>
           </div>
         </section>
       </main>
