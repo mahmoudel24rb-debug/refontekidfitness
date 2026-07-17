@@ -232,10 +232,10 @@ a:hover > .ksc-link-arrow svg,
     box-shadow 180ms ease;
 }
 .ksc-header.is-scrolled {
-  background: rgba(251, 249, 240, 0.97) !important;
+  /* Fond OPAQUE : la version translucide + blur laissait deviner le texte
+     qui défile dessous (rendu « fantôme » signalé sur certains écrans). */
+  background: var(--ksc-cream, #fbf9f0) !important;
   box-shadow: var(--ksc-shadow-sm);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
 }
 /* Liens nav : soulignement magenta animé (scaleX). */
 .ksc-nav-link {
@@ -312,16 +312,22 @@ a:hover > .ksc-link-arrow svg,
 }
 
 /* ---------- 12. Home (port Framer) — interventions chirurgicales ---------- */
-/* 12a. Police display (Baloo 2 via next/font) sur le H1 du hero et les titres
-   de section du wrapper Framer. Les presets sont des classes stables générées
-   par le port ; on ne touche qu'aux variables typo, les tailles restent. */
-h1.framer-styles-preset-tus4j9, /* H1 hero l.1 « Le club sport des enfants » */
-h1.framer-styles-preset-ffc2o1, /* H1 hero l.2 « Bouger, grandir, s'épanouir » */
-h4.framer-styles-preset-10ofw0b, /* titres de section l.1 (« Bienvenue au », « Au club », « Questions ») */
-h4.framer-styles-preset-1fruokq  /* titres de section l.2 (« Kid Sport Club ! », « Nos activités », …) */ {
-  --framer-font-family: var(--font-display), 'Baloo 2', sans-serif !important;
-  --framer-font-family-bold: var(--font-display), 'Baloo 2', sans-serif !important;
-  --framer-font-weight: 700 !important;
+/* 12a. SUPPRIMÉ (incident prod 2026-07-16) : le swap de police des titres Framer
+   (Baloo sur les presets h1/h4) changeait les métriques du texte alors que les
+   sections du port ont des hauteurs calculées pour la police d'origine. Sur
+   certains viewports (~1536px, scaling Windows 125 %), la section bleue passait
+   par-dessus les stats du hero. La home garde la typo du template ; Baloo reste
+   sur toutes les pages intérieures (composants ksc). Ne pas réintroduire sans
+   recalculer les hauteurs des sections Framer. */
+
+/* 12c. Hero home : boîte Framer à hauteur FIXE avec enfants en absolu — le
+   contenu s'arrête à ~3px du bord bas ; toute variation de métrique de police
+   (DPI, scaling Windows 125 %) fait passer les stats sous la section bleue qui
+   suit (incident prod 2026-07-16). height:auto est inopérant (enfants absolus).
+   Remède : marge de sécurité de 56px entre le hero et la section suivante, à
+   toutes les largeurs. Ne pas réduire. */
+.framer-oZnZ7 [data-framer-name='Hero'] + * {
+  margin-top: 56px !important;
 }
 
 /* 12b. Flottement doux du garçon détouré du hero (img hero.webp). */
