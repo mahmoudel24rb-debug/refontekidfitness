@@ -346,6 +346,184 @@ a:hover > .ksc-link-arrow svg,
   }
 }
 
+/* ============================================================
+   14. Refonte v2 — composition (hero 2 colonnes, mosaïque,
+   tarif vedette, formulaires, blog featured, planning, finitions)
+   ============================================================ */
+
+/* 14a. Micro-finitions globales */
+::selection {
+  background: var(--ksc-magenta);
+  color: #fff;
+}
+[id] {
+  scroll-margin-top: 96px; /* ancres sous le header sticky */
+}
+/* Tracking resserré des très grands titres display (>= 40px rendus). */
+.ksc-display-xl {
+  letter-spacing: -0.02em;
+}
+
+/* 14b. Hero v2 — 2 colonnes avec image (HeroMarine `image`). Flux normal :
+   grid 1 colonne mobile (image SOUS le texte), 2 colonnes >= 900px. */
+.ksc-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.ksc-hero-media {
+  position: relative;
+}
+.ksc-hero-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 24px;
+  /* ombre portée marine profonde (photo sur fond marine) */
+  box-shadow: 0 24px 48px rgba(4, 10, 34, 0.45);
+}
+/* Badge d'âge flottant sur le coin haut-gauche de la photo (pill courte :
+   décoration ancrée à l'image, hauteur auto, aucun risque de recouvrement). */
+.ksc-hero-media-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: var(--ksc-white);
+  color: var(--ksc-marine);
+  box-shadow: var(--ksc-shadow-md);
+}
+@media (min-width: 900px) {
+  .ksc-hero-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px;
+  }
+  .ksc-hero-media {
+    transform: rotate(-2deg); /* statique (pas une animation), 0 en mobile */
+  }
+}
+
+/* 14c. Hub prestations — mosaïque image-first.
+   Mobile 1 col, tablette 2 cols, desktop 6 pistes : cartes normales span 2
+   (3 par rangée), cartes larges span 3 (2 par rangée). */
+.ksc-mosaic {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 680px) {
+  .ksc-mosaic {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .ksc-mosaic {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .ksc-mosaic > * {
+    grid-column: span 2;
+  }
+  .ksc-mosaic > .ksc-mosaic-wide {
+    grid-column: span 3;
+  }
+}
+/* Voile supplémentaire au hover (l'overlay d'image s'intensifie légèrement). */
+.ksc-img-boost {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent, rgba(8, 22, 70, 0.35));
+  opacity: 0;
+  transition: opacity 200ms ease;
+  pointer-events: none;
+}
+.ksc-card:hover .ksc-img-boost {
+  opacity: 1;
+}
+
+/* 14d. Tarifs — carte vedette « Illimité ». Scale desktop uniquement,
+   jamais de hauteur fixe. Spécificité renforcée pour survivre à
+   .ksc-reveal.is-visible { transform: none }. */
+.ksc-tarif-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ksc-magenta);
+  color: #fff;
+  font-family: var(--font-body), Inter, sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1;
+  padding: 7px 14px;
+  border-radius: var(--ksc-radius-pill);
+  white-space: nowrap;
+}
+@media (min-width: 1024px) {
+  .ksc-tarif-featured,
+  .ksc-tarif-featured.ksc-reveal.is-visible {
+    transform: scale(1.03);
+  }
+  .ksc-tarif-featured:hover,
+  .ksc-tarif-featured.ksc-reveal.is-visible:hover {
+    transform: scale(1.03) translateY(-3px);
+  }
+}
+
+/* 14e. Formulaires premium — carte formulaire + colonne réassurance. */
+.ksc-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+}
+@media (min-width: 960px) {
+  .ksc-form-grid {
+    grid-template-columns: 7fr 5fr;
+    gap: 56px;
+  }
+}
+
+/* 14f. Blog — carte « featured » horizontale (image gauche 45 %). */
+.ksc-featured {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.ksc-featured-img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+@media (min-width: 900px) {
+  .ksc-featured {
+    grid-template-columns: 45fr 55fr;
+  }
+  .ksc-featured-img {
+    aspect-ratio: auto;
+  }
+}
+/* Liens internes du corps d'article (les boutons .ksc-btn gardent leur style). */
+.ksc-article-body a:not(.ksc-btn) {
+  color: var(--ksc-magenta);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* 14g. Planning — jours en 2 colonnes desktop, 1 colonne mobile. */
+.ksc-planning-grid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 1024px) {
+  .ksc-planning-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 /* ---------- 13. prefers-reduced-motion : aucune animation, aucun transform ---------- */
 @media (prefers-reduced-motion: reduce) {
   .ksc-btn,
@@ -355,6 +533,7 @@ a:hover > .ksc-link-arrow svg,
   .ksc-faq-icon,
   .ksc-nav-link::after,
   .ksc-header,
+  .ksc-img-boost,
   .framer-1mo52hc {
     transition: none !important;
     animation: none !important;

@@ -1,9 +1,11 @@
 import React from 'react'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
-import TerrainLines from './TerrainLines'
+import HeroMarine from './HeroMarine'
+import CtaBand from './CtaBand'
+import WaveDivider from './WaveDivider'
 import Underline from './Underline'
-import { KSC, display, kicker } from './ui'
+import { KSC, display } from './ui'
 
 // Pictogrammes SVG inline (pas d'emoji) — un par valeur, stroke currentColor.
 const ICONES: Record<string, React.ReactNode> = {
@@ -77,26 +79,20 @@ export default function QuiSommesNous() {
     <>
       <SiteHeader />
       <main style={{ background: KSC.cream, fontFamily: KSC.fontBody, color: '#404a63' }}>
-        {/* Hero marine + lignes de terrain */}
-        <section style={{ position: 'relative', background: KSC.marine, color: KSC.cream, padding: '84px 24px 120px', textAlign: 'center', overflow: 'hidden' }}>
-          <TerrainLines />
-          <div style={{ position: 'relative', maxWidth: 820, margin: '0 auto' }}>
-            <p style={{ ...kicker, color: KSC.magentaLight, margin: '0 0 14px' }}>Qui sommes-nous</p>
-            <h1 style={{ ...display, fontSize: 'clamp(34px,5vw,56px)', fontWeight: 800, lineHeight: 1.08, margin: '0 0 18px', color: KSC.cream }}>Le club de sport des enfants</h1>
-            <p style={{ fontSize: 19, lineHeight: 1.6, color: 'rgba(251,249,240,.8)', margin: 0 }}>
-              À Rochecorbon, le Kid Sport Club initie les enfants de 10 mois à 14 ans au sport et au mouvement,
-              par le jeu, dans un cadre bienveillant et sécurisé.
-            </p>
-          </div>
-        </section>
-
-        {/* Photo bannière */}
-        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px', marginTop: -40, position: 'relative' }}>
-          <img src="/assets/ksc/stages-mercredi.webp" alt="Enfants en activité au Kid Sport Club" style={{ width: '100%', height: 'clamp(240px,38vw,420px)', objectFit: 'cover', borderRadius: KSC.radiusCard, display: 'block', boxShadow: KSC.shadowMd }} />
-        </div>
+        {/* Hero v2 : 2 colonnes avec la photo existante de la page */}
+        <HeroMarine
+          kicker="Qui sommes-nous"
+          title="Le club de sport des enfants"
+          sub={<>À Rochecorbon, le Kid Sport Club initie les enfants de 10 mois à 14 ans au sport et au mouvement,
+            par le jeu, dans un cadre bienveillant et sécurisé.</>}
+          image="/assets/ksc/stages-mercredi.webp"
+          imageAlt="Enfants en activité au Kid Sport Club"
+          badge="10 mois – 14 ans"
+          padding="72px 24px 84px"
+        />
 
         {/* Texte du récap client — recopié tel quel. */}
-        <section className="ksc-reveal" style={{ maxWidth: 900, margin: '0 auto', padding: '72px 24px 40px' }}>
+        <section className="ksc-reveal" style={{ maxWidth: 900, margin: '0 auto', padding: '72px 24px 64px' }}>
           <h2 style={{ ...display, fontSize: 'clamp(26px,3.5vw,36px)', fontWeight: 800, color: KSC.marine, margin: '0 0 18px' }}>Notre <Underline>pédagogie</Underline></h2>
           <p style={{ fontSize: 18, lineHeight: 1.75, margin: '0 0 16px' }}>
             Kid Sport Club est né de la volonté de proposer aux enfants de 10 mois à 14 ans un espace où le sport devient un vecteur d’épanouissement, de confiance en soi et de socialisation. Installé à Rochecorbon, le club accompagne chaque enfant à son rythme, de la découverte des premiers mouvements jusqu’à une pratique sportive plus structurée à l’adolescence.
@@ -106,8 +102,11 @@ export default function QuiSommesNous() {
           </p>
         </section>
 
-        <section style={{ maxWidth: 900, margin: '0 auto', padding: '20px 24px 80px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,400px),1fr))', gap: 22 }}>
+        <WaveDivider colorTop={KSC.cream} colorBottom={KSC.white} />
+
+        {/* Valeurs — fond blanc */}
+        <section style={{ background: KSC.white, padding: '48px 24px 70px' }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,270px),1fr))', gap: 22 }}>
             {VALEURS.map((v) => (
               <div key={v.t} className="ksc-card ksc-reveal" style={{ padding: 30 }}>
                 <span style={{ color: KSC.royal, display: 'inline-block', marginBottom: 12 }}>{ICONES[v.t]}</span>
@@ -118,12 +117,14 @@ export default function QuiSommesNous() {
           </div>
         </section>
 
-        <section style={{ background: KSC.cream2, padding: '70px 24px', textAlign: 'center' }}>
+        <WaveDivider colorTop={KSC.white} colorBottom={KSC.cream2} />
+
+        <section style={{ background: KSC.cream2, padding: '48px 24px 70px', textAlign: 'center' }}>
           <h2 style={{ ...display, fontSize: 'clamp(24px,3vw,34px)', fontWeight: 800, color: KSC.marine, margin: '0 0 12px' }}>Notre <Underline>équipe</Underline></h2>
           <p style={{ fontSize: 17, maxWidth: 640, margin: '0 auto 36px' }}>
             Des animateurs et coachs diplômés, formés à l&rsquo;encadrement des enfants, qui mettent l&rsquo;énergie et la bienveillance au cœur de chaque séance.
           </p>
-          <div style={{ maxWidth: 1100, margin: '0 auto 36px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 22, textAlign: 'center' }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 22, textAlign: 'center' }}>
             {EQUIPE.map((c) => (
               <div key={c.nom} className="ksc-card ksc-reveal" style={{ padding: '32px 28px' }}>
                 <Monogramme initiales={c.initiales} nom={c.nom} />
@@ -132,8 +133,14 @@ export default function QuiSommesNous() {
               </div>
             ))}
           </div>
-          <a href="/seance-essai" className="ksc-btn ksc-btn--primary">Réserver une séance d’essai</a>
         </section>
+
+        <WaveDivider colorTop={KSC.cream2} colorBottom={KSC.marine} />
+
+        {/* Bande CTA pré-footer (texte existant de la page : le bouton) */}
+        <CtaBand>
+          <a href="/seance-essai" className="ksc-btn ksc-btn--primary">Réserver une séance d’essai</a>
+        </CtaBand>
       </main>
       <SiteFooter />
     </>

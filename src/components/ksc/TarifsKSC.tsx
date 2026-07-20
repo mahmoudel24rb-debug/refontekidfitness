@@ -3,7 +3,8 @@ import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import InscriptionCTA from './InscriptionCTA'
 import HeroMarine from './HeroMarine'
-import TerrainLines from './TerrainLines'
+import CtaBand from './CtaBand'
+import WaveDivider from './WaveDivider'
 import Underline from './Underline'
 import { KSC, display } from './ui'
 
@@ -25,18 +26,37 @@ const PRESTATIONS_TARIFS: Tarif[] = [
   { titre: 'Anniversaire', prix: '250 € / 2h', detail: 'Max 10 enfants, gâteau + déco + boissons inclus' },
 ]
 
+// Carte « Illimité » (49,90) mise en avant : bordure magenta, badge chevauchant,
+// légère scale desktop (classe .ksc-tarif-featured, PAS de hauteur fixe).
+const FEATURED_TITRE = 'Illimité'
+
 function Groupe({ titre, items }: { titre: React.ReactNode; items: Tarif[] }) {
   return (
-    <div style={{ marginBottom: 48 }}>
-      <h2 style={{ ...display, fontSize: 'clamp(24px,3vw,32px)', fontWeight: 800, color: KSC.marine, margin: '0 0 24px' }}>{titre}</h2>
+    <div>
+      <h2 style={{ ...display, fontSize: 'clamp(24px,3vw,32px)', fontWeight: 800, color: KSC.marine, margin: '0 0 30px' }}>{titre}</h2>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px,1fr))', gap: 20 }}>
-        {items.map((t) => (
-          <div key={t.titre} className="ksc-card ksc-reveal" style={{ padding: '26px 28px', display: 'flex', flexDirection: 'column', gap: 10 }}>
-            <h3 style={{ ...display, fontSize: 18, fontWeight: 700, color: KSC.marine, margin: 0, lineHeight: 1.3 }}>{t.titre}</h3>
-            <p style={{ fontSize: 26, fontWeight: 800, color: KSC.magenta, margin: 0 }}>{t.prix}</p>
-            <p style={{ fontSize: 14, color: '#525c75', margin: 0, lineHeight: 1.5 }}>{t.detail}</p>
-          </div>
-        ))}
+        {items.map((t) => {
+          const featured = t.titre === FEATURED_TITRE
+          return (
+            <div
+              key={t.titre}
+              className={`ksc-card ksc-reveal${featured ? ' ksc-tarif-featured' : ''}`}
+              style={{
+                padding: '28px 28px 26px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 12,
+                alignItems: 'flex-start',
+                ...(featured ? { position: 'relative', overflow: 'visible', border: `2px solid ${KSC.magenta}`, background: KSC.white } : {}),
+              }}
+            >
+              {featured && <span className="ksc-tarif-badge">La plus choisie</span>}
+              <h3 style={{ ...display, fontSize: 18, fontWeight: 700, color: KSC.marine, margin: 0, lineHeight: 1.3 }}>{t.titre}</h3>
+              <p style={{ ...display, fontSize: 'clamp(32px,3vw,38px)', fontWeight: 800, color: KSC.magenta, margin: 0, lineHeight: 1.15 }}>{t.prix}</p>
+              <span style={{ background: KSC.cream2, color: '#525c75', fontSize: 13, fontWeight: 600, lineHeight: 1.4, padding: '6px 13px', borderRadius: KSC.radiusPill }}>{t.detail}</span>
+            </div>
+          )
+        })}
       </div>
     </div>
   )
@@ -63,29 +83,33 @@ export default function TarifsKSC() {
           padding="72px 24px"
         />
 
-        <section style={{ maxWidth: 1100, margin: '0 auto', padding: '64px 24px 40px' }}>
+        {/* Abonnements — fond crème */}
+        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '64px 24px 70px' }}>
           <Groupe titre={<Underline>Abonnements</Underline>} items={ABONNEMENTS} />
-          <Groupe titre={<Underline>Prestations</Underline>} items={PRESTATIONS_TARIFS} />
-
-          <p style={{ color: '#525c75', fontSize: 14, fontStyle: 'italic', margin: '8px 0 0' }}>
-            Les réservations en ligne sont confirmées par notre équipe.
-          </p>
         </section>
 
-        <section style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px 90px' }}>
-          {/* Bloc CTA marine + lignes de terrain */}
-          <div className="ksc-reveal" style={{ position: 'relative', textAlign: 'center', background: KSC.marine, color: KSC.cream, borderRadius: KSC.radiusCard, padding: '54px 24px', overflow: 'hidden' }}>
-            <TerrainLines />
-            <div style={{ position: 'relative' }}>
-              <h2 style={{ ...display, fontSize: 'clamp(26px,3.5vw,38px)', fontWeight: 800, margin: '0 0 14px' }}>Prêt à inscrire votre <Underline>enfant&nbsp;?</Underline></h2>
-              <p style={{ color: 'rgba(251,249,240,.8)', fontSize: 17, margin: '0 0 28px' }}>Rejoignez le club ou venez d’abord tester une séance.</p>
-              <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-                <InscriptionCTA />
-                <a href="/seance-essai" className="ksc-btn ksc-btn--cream">Réserver une séance d’essai</a>
-              </div>
-            </div>
+        <WaveDivider colorTop={KSC.cream} colorBottom={KSC.white} />
+
+        {/* Prestations — fond blanc */}
+        <section style={{ background: KSC.white, padding: '48px 24px 70px' }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+            <Groupe titre={<Underline>Prestations</Underline>} items={PRESTATIONS_TARIFS} />
+            <p style={{ color: '#525c75', fontSize: 14, fontStyle: 'italic', margin: '26px 0 0' }}>
+              Les réservations en ligne sont confirmées par notre équipe.
+            </p>
           </div>
         </section>
+
+        <WaveDivider colorTop={KSC.white} colorBottom={KSC.marine} />
+
+        {/* Bande CTA pré-footer (textes existants de la page) */}
+        <CtaBand
+          title={<>Prêt à inscrire votre <Underline>enfant&nbsp;?</Underline></>}
+          sub="Rejoignez le club ou venez d’abord tester une séance."
+        >
+          <InscriptionCTA />
+          <a href="/seance-essai" className="ksc-btn ksc-btn--cream">Réserver une séance d’essai</a>
+        </CtaBand>
       </main>
       <SiteFooter />
     </>

@@ -57,6 +57,14 @@ export default function SiteFooter() {
         </div>
       </div>
 
+      {/* Badge localisation (info existante), au-dessus de la barre légale */}
+      <div style={{ position: 'relative', maxWidth: 1320, margin: '0 auto', padding: '0 24px 26px', display: 'flex', justifyContent: 'center' }}>
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: 'rgba(251,249,240,.6)', fontSize: 13.5, fontWeight: 600 }}>
+          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" /><circle cx="12" cy="10" r="3" /></svg>
+          Club à Rochecorbon — bord de Loire
+        </span>
+      </div>
+
       <div style={{ position: 'relative', background: '#0a1a4f', padding: '18px 24px', textAlign: 'center', fontSize: 13, color: 'rgba(251,249,240,.75)' }}>
         <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 8 }}>
           <a href="/mentions-legales" style={{ fontSize: 13 }}>Mentions légales</a>

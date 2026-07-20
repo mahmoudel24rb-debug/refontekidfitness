@@ -2,6 +2,8 @@ import React from 'react'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import HeroMarine from './HeroMarine'
+import CtaBand from './CtaBand'
+import WaveDivider from './WaveDivider'
 import { KSC } from './ui'
 
 // Q/R du récap client — recopiées telles quelles (la réponse « inscription » a été
@@ -44,7 +46,7 @@ export default function Faq() {
       <main style={{ background: KSC.cream, fontFamily: KSC.fontBody, color: '#404a63' }}>
         <HeroMarine kicker="FAQ" title="Vos questions, nos réponses" padding="72px 24px" />
 
-        <section style={{ maxWidth: 820, margin: '0 auto', padding: '56px 24px 30px' }}>
+        <section style={{ maxWidth: 820, margin: '0 auto', padding: '56px 24px 70px' }}>
           {FAQ.map((f) => (
             <details key={f.q} className="ksc-faq-item ksc-reveal">
               <summary>
@@ -57,13 +59,13 @@ export default function Faq() {
           ))}
         </section>
 
-        <section style={{ textAlign: 'center', padding: '20px 24px 80px' }}>
-          <p style={{ fontSize: 17, margin: '0 0 22px' }}>Une autre question ? Venez nous voir ou contactez-nous.</p>
-          <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="/seance-essai" className="ksc-btn ksc-btn--primary">Réserver une séance d’essai</a>
-            <a href="/contact" className="ksc-btn ksc-btn--secondary">Nous contacter</a>
-          </div>
-        </section>
+        <WaveDivider colorTop={KSC.cream} colorBottom={KSC.marine} />
+
+        {/* Bande CTA pré-footer (textes existants de la page) */}
+        <CtaBand title="Une autre question ?" sub="Venez nous voir ou contactez-nous.">
+          <a href="/seance-essai" className="ksc-btn ksc-btn--primary">Réserver une séance d’essai</a>
+          <a href="/contact" className="ksc-btn ksc-btn--cream">Nous contacter</a>
+        </CtaBand>
       </main>
       <SiteFooter />
     </>
