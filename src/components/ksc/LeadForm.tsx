@@ -1,7 +1,6 @@
 'use client'
 
-import React, { Suspense, useState } from 'react'
-import { useSearchParams } from 'next/navigation'
+import React, { useState } from 'react'
 import { Check } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
@@ -10,6 +9,9 @@ import FormField from './FormField'
 // Formulaire de capture de lead (landings Meta Ads + Contact + Séance d'essai).
 // - ≤ 5 champs (standard conversion), honeypot anti-bots, UTM capturés depuis
 //   l'URL et transmis avec le lead (traçabilité campagne -> prospect).
+//   NB : les UTM sont lus AU SUBMIT via window.location.search (pas de
+//   useSearchParams : il forcerait une frontière Suspense et sortirait le
+//   formulaire du HTML statique prérendu).
 // - Poste sur /api/lead ; état succès inline + dataLayer.push({event:'lead'})
 //   (préparation pixel/CAPI — aucun cookie posé ici).
 // - RGPD : first-party, mention de consentement + lien Confidentialité.
@@ -31,8 +33,7 @@ type Props = {
   className?: string
 }
 
-function LeadFormInner({ source, landing, ctaLabel = 'Envoyer', compact, withEmail, className }: Props) {
-  const params = useSearchParams()
+export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compact, withEmail, className }: Props) {
   const [etat, setEtat] = useState<'idle' | 'envoi' | 'ok' | 'erreur'>('idle')
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -40,6 +41,9 @@ function LeadFormInner({ source, landing, ctaLabel = 'Envoyer', compact, withEma
     if (etat === 'envoi') return
     const form = e.currentTarget
     const data = new FormData(form)
+    // UTM lus au moment de l'envoi (les paramètres de l'annonce restent dans
+    // l'URL pendant toute la visite de la landing).
+    const params = new URLSearchParams(window.location.search)
     setEtat('envoi')
     try {
       const res = await fetch('/api/lead', {
@@ -116,14 +120,5 @@ function LeadFormInner({ source, landing, ctaLabel = 'Envoyer', compact, withEma
         </p>
       </div>
     </form>
-  )
-}
-
-export default function LeadForm(props: Props) {
-  // useSearchParams impose une frontière Suspense (rendu statique Next).
-  return (
-    <Suspense fallback={null}>
-      <LeadFormInner {...props} />
-    </Suspense>
   )
 }
