@@ -1,14 +1,26 @@
 import React from 'react'
+import { ArrowRight, Check } from 'lucide-react'
+
+import { Button } from '@/components/ui/button'
+import { Card, cardInteractive } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import InscriptionCTA from './InscriptionCTA'
 import HeroMarine from './HeroMarine'
 import TerrainLines from './TerrainLines'
+import Section from './Section'
+import Container from './Container'
+import SectionHeading from './SectionHeading'
 import Underline from './Underline'
-import { KSC, display } from './ui'
 import { PRESTATIONS, prestationBySlug } from '@/data/prestations'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
+
+const cardLink = cn(
+  'group overflow-hidden rounded-lg border border-border bg-card text-card-foreground shadow-sm',
+  cardInteractive
+)
 
 // Rend « voir le planning » cliquable (lien /planning) dans le bloc Créneaux.
 function Creneaux({ texte }: { texte: string }) {
@@ -18,7 +30,7 @@ function Creneaux({ texte }: { texte: string }) {
   return (
     <>
       {texte.slice(0, i)}
-      <a href="/planning" style={{ color: KSC.magenta, fontWeight: 700 }}>voir le planning</a>
+      <a href="/planning" className="font-bold text-magenta underline-offset-4 hover:underline">voir le planning</a>
       {texte.slice(i + marqueur.length)}
     </>
   )
@@ -63,8 +75,8 @@ export default function Prestation({ slug }: { slug: string }) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <SiteHeader />
-      <main style={{ background: KSC.cream, fontFamily: KSC.fontBody }}>
-        {/* Hero v2 : 2 colonnes, photo de la prestation + badge d'âge sur l'image */}
+      <main>
+        {/* Hero : 2 colonnes, photo de la prestation + badge d'âge sur l'image */}
         <HeroMarine
           kicker="Nos prestations"
           title={p.titre}
@@ -75,29 +87,30 @@ export default function Prestation({ slug }: { slug: string }) {
           padding="72px 24px 128px"
         >
           <InscriptionCTA />
-          <a href="/seance-essai" className="ksc-btn ksc-btn--cream">Séance d’essai</a>
+          <Button asChild variant="outlineCream">
+            <a href="/seance-essai">Séance d’essai</a>
+          </Button>
         </HeroMarine>
 
-        {/* Carte chevauchante (« pull-up card ») : Le principe / Les bénéfices.
-            Flux normal (marge négative + position relative), hauteur auto. */}
-        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
-          <div className="ksc-reveal" style={{ position: 'relative', zIndex: 2, marginTop: -56, background: KSC.white, border: `1px solid ${KSC.border}`, borderRadius: 24, boxShadow: KSC.shadowMd, padding: 'clamp(28px,4vw,48px)' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,300px),1fr))', gap: '40px 56px' }}>
+        {/* Carte chevauchante (« pull-up card ») : Le principe / Les bénéfices. */}
+        <div className="px-6">
+          <Card className="relative z-10 mx-auto -mt-14 max-w-[1200px] gap-0 p-[clamp(28px,4vw,48px)] shadow-md">
+            <div className="grid gap-x-14 gap-y-10 lg:grid-cols-2">
               <div>
-                <h2 style={{ ...display, fontSize: 28, fontWeight: 800, color: KSC.marine, margin: '0 0 18px' }}>Le <Underline>principe</Underline></h2>
-                <p style={{ color: '#404a63', fontSize: 17, lineHeight: 1.75, margin: '0 0 24px' }}>{p.intro}</p>
-                <div style={{ background: KSC.cream, border: `1px solid ${KSC.border}`, borderRadius: 12, padding: '18px 22px' }}>
-                  <p style={{ margin: 0, color: KSC.marine, fontWeight: 700 }}>Créneaux</p>
-                  <p style={{ margin: '6px 0 0', color: '#525c75' }}><Creneaux texte={p.creneaux} /></p>
+                <h2 className="mb-[18px] font-heading text-[28px] font-extrabold text-marine">Le <Underline>principe</Underline></h2>
+                <p className="mb-6 text-[17px] leading-relaxed text-ink">{p.intro}</p>
+                <div className="rounded-md border border-border bg-cream p-5">
+                  <p className="font-bold text-marine">Créneaux</p>
+                  <p className="mt-1.5 text-muted-foreground"><Creneaux texte={p.creneaux} /></p>
                 </div>
               </div>
               <div>
-                <h2 style={{ ...display, fontSize: 28, fontWeight: 800, color: KSC.marine, margin: '0 0 18px' }}>Les <Underline>bénéfices</Underline></h2>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 16 }}>
+                <h2 className="mb-[18px] font-heading text-[28px] font-extrabold text-marine">Les <Underline>bénéfices</Underline></h2>
+                <ul className="flex flex-col gap-4">
                   {p.benefices.map((b) => (
-                    <li key={b} style={{ display: 'flex', gap: 14, alignItems: 'flex-start', color: '#404a63', fontSize: 17, lineHeight: 1.5 }}>
-                      <span aria-hidden style={{ flexShrink: 0, width: 28, height: 28, borderRadius: '50%', background: KSC.magenta, color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
+                    <li key={b} className="flex items-start gap-3.5 text-[17px] leading-snug text-ink">
+                      <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-magenta text-white">
+                        <Check size={14} strokeWidth={3} aria-hidden="true" />
                       </span>
                       {b}
                     </li>
@@ -107,43 +120,43 @@ export default function Prestation({ slug }: { slug: string }) {
             </div>
 
             {/* Bloc Tarif : carte marine, prix display, TerrainLines discret, CTA magenta */}
-            <div style={{ position: 'relative', background: KSC.marine, color: KSC.cream, borderRadius: KSC.radiusCard, padding: 'clamp(24px,3vw,34px)', marginTop: 'clamp(32px,4vw,44px)', overflow: 'hidden' }}>
+            <div className="relative mt-[clamp(32px,4vw,44px)] overflow-hidden rounded-lg bg-marine p-6 text-cream">
               <TerrainLines opacity={0.05} />
-              <div style={{ position: 'relative', display: 'flex', flexWrap: 'wrap', gap: '20px 32px', alignItems: 'center', justifyContent: 'space-between' }}>
+              <div className="relative flex flex-wrap items-center justify-between gap-x-8 gap-y-5">
                 <div>
-                  <p style={{ margin: 0, fontWeight: 700, color: 'rgba(251,249,240,.8)' }}>Tarif</p>
-                  <p style={{ ...display, margin: '6px 0 0', fontSize: 'clamp(30px,3.4vw,38px)', fontWeight: 800, lineHeight: 1.15 }}>{p.prix}</p>
-                  <p style={{ margin: '10px 0 0', fontSize: 14 }}>
-                    <a href="/tarifs" style={{ color: KSC.cream, textDecoration: 'underline', textUnderlineOffset: 3 }}>Voir tous les tarifs</a>
+                  <p className="font-bold text-cream/80">Tarif</p>
+                  <p className="mt-1.5 font-heading text-[clamp(30px,3.4vw,38px)] font-extrabold leading-[1.15]">{p.prix}</p>
+                  <p className="mt-2.5 text-sm">
+                    <a href="/tarifs" className="text-cream underline underline-offset-[3px]">Voir tous les tarifs</a>
                   </p>
                 </div>
                 <InscriptionCTA />
               </div>
             </div>
-          </div>
-        </section>
+          </Card>
+        </div>
 
         {/* Autres prestations (maillage interne) */}
-        <section style={{ background: KSC.cream2, padding: '64px 24px', marginTop: 70 }}>
-          <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-            <h2 style={{ ...display, fontSize: 26, fontWeight: 800, color: KSC.marine, margin: '0 0 28px', textAlign: 'center' }}>Découvrez <Underline>aussi</Underline></h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 20 }}>
+        <Section tone="cream2" className="mt-[70px]">
+          <Container>
+            <SectionHeading underline className="mb-7 text-center text-[26px]">Découvrez aussi</SectionHeading>
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {autres.map((a) => (
-                <a key={a.slug} href={`/nos-prestations/${a.slug}`} className="ksc-card ksc-reveal" style={{ padding: 24, textDecoration: 'none', color: 'inherit' }}>
-                  <h3 style={{ ...display, fontSize: 19, fontWeight: 700, color: KSC.marine, margin: '0 0 8px' }}>{a.titre}</h3>
-                  <p style={{ color: '#525c75', fontSize: 15, lineHeight: 1.5, margin: '0 0 14px' }}>{a.accroche}</p>
-                  <span className="ksc-link-arrow" style={{ fontSize: 15 }}>
+                <a key={a.slug} href={`/nos-prestations/${a.slug}`} className={cn(cardLink, 'flex flex-col p-6')}>
+                  <h3 className="mb-2 font-heading text-[19px] font-bold text-marine">{a.titre}</h3>
+                  <p className="mb-3.5 flex-1 text-[15px] leading-snug text-muted-foreground">{a.accroche}</p>
+                  <span className="inline-flex items-center gap-1.5 font-bold text-magenta">
                     Découvrir
-                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ verticalAlign: '-1px', marginLeft: 5 }}><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                    <ArrowRight size={14} aria-hidden="true" className="transition-transform group-hover:translate-x-[3px]" />
                   </span>
                 </a>
               ))}
             </div>
-            <div style={{ textAlign: 'center', marginTop: 36 }}>
-              <a href="/nos-prestations" style={{ color: KSC.marine, fontWeight: 700, textDecoration: 'underline' }}>Voir toutes nos prestations</a>
+            <div className="mt-9 text-center">
+              <a href="/nos-prestations" className="font-bold text-marine underline underline-offset-[3px]">Voir toutes nos prestations</a>
             </div>
-          </div>
-        </section>
+          </Container>
+        </Section>
       </main>
       <SiteFooter />
     </>

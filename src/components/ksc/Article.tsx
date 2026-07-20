@@ -1,11 +1,22 @@
 import React from 'react'
+import { ArrowRight, ChevronLeft } from 'lucide-react'
+
+import { Button } from '@/components/ui/button'
+import { cardInteractive } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import HeroMarine from './HeroMarine'
 import TerrainLines from './TerrainLines'
-import Underline from './Underline'
-import { KSC, display } from './ui'
+import Section from './Section'
+import Container from './Container'
+import SectionHeading from './SectionHeading'
 import { articleBySlug, ARTICLES, ARTICLE_IMG, formatDateFr } from '@/data/articles'
+
+const cardLink = cn(
+  'group overflow-hidden rounded-lg border border-border bg-card text-card-foreground shadow-sm',
+  cardInteractive
+)
 
 export default function Article({ slug }: { slug: string }) {
   const a = articleBySlug(slug)
@@ -16,12 +27,12 @@ export default function Article({ slug }: { slug: string }) {
   return (
     <>
       <SiteHeader />
-      <main style={{ background: KSC.cream, fontFamily: KSC.fontBody, color: '#404a63' }}>
-        {/* Hero v2 avec image de couverture */}
+      <main>
+        {/* Hero avec image de couverture */}
         <HeroMarine
           kicker={
-            <a href="/blog" style={{ color: KSC.magentaLight, textDecoration: 'none' }}>
-              <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ verticalAlign: '-1px', marginRight: 5 }}><path d="M19 12H5M11 18l-6-6 6-6" /></svg>
+            <a href="/blog" className="inline-flex items-center gap-1 text-magenta-light hover:text-magenta">
+              <ChevronLeft size={14} aria-hidden="true" />
               Blog
             </a>
           }
@@ -32,38 +43,45 @@ export default function Article({ slug }: { slug: string }) {
           padding="64px 24px 72px"
         />
 
-        {/* Corps : chapo 19px medium, largeur de lecture 680px, liens stylés (.ksc-article-body) */}
-        <article className="ksc-article-body" style={{ maxWidth: 680, margin: '0 auto', padding: '56px 24px 70px' }}>
-          <p style={{ fontSize: 19, fontWeight: 500, color: KSC.marine, lineHeight: 1.7, margin: '0 0 26px' }}>{chapo}</p>
-          {suite.map((p, i) => (
-            <p key={i} style={{ fontSize: 17, lineHeight: 1.8, margin: '0 0 22px' }}>{p}</p>
-          ))}
-          {/* Encart CTA marine + lignes de terrain */}
-          <div style={{ position: 'relative', background: KSC.marine, color: KSC.cream, borderRadius: KSC.radiusCard, padding: 32, textAlign: 'center', marginTop: 20, overflow: 'hidden' }}>
-            <TerrainLines />
-            <div style={{ position: 'relative' }}>
-              <p style={{ ...display, fontWeight: 700, fontSize: 20, margin: '0 0 18px' }}>Envie d’essayer le Kid Sport Club ?</p>
-              <a href="/seance-essai" className="ksc-btn ksc-btn--primary">Réserver une séance d’essai</a>
+        {/* Corps : chapo 19px medium, largeur de lecture 680px, liens magenta */}
+        <Section tone="cream">
+          <article className="mx-auto max-w-[680px] [&_a]:text-magenta [&_a]:underline-offset-4 [&_a:hover]:underline">
+            <p className="mb-6 text-[19px] font-medium leading-relaxed text-marine">{chapo}</p>
+            {suite.map((p, i) => (
+              <p key={i} className="mb-5 text-[17px] leading-relaxed text-ink">{p}</p>
+            ))}
+            {/* Encart CTA marine + lignes de terrain */}
+            <div className="relative mt-5 overflow-hidden rounded-lg bg-marine p-8 text-center text-cream">
+              <TerrainLines />
+              <div className="relative">
+                <p className="mb-[18px] font-heading text-xl font-bold text-cream">Envie d’essayer le Kid Sport Club ?</p>
+                <Button asChild variant="primary">
+                  <a href="/seance-essai">Réserver une séance d’essai</a>
+                </Button>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
+        </Section>
 
-        <section style={{ background: KSC.cream2, padding: '56px 24px' }}>
-          <div style={{ maxWidth: 1000, margin: '0 auto' }}>
-            <h2 style={{ ...display, fontSize: 24, fontWeight: 800, color: KSC.marine, textAlign: 'center', margin: '0 0 26px' }}>À lire <Underline>aussi</Underline></h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 18 }}>
+        {/* À lire aussi */}
+        <Section tone="cream2">
+          <Container className="max-w-[1000px]">
+            <SectionHeading underline className="mb-7 text-center text-2xl">
+              À lire aussi
+            </SectionHeading>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {autres.map((x) => (
-                <a key={x.slug} href={`/blog/${x.slug}`} className="ksc-card ksc-reveal" style={{ padding: 22, textDecoration: 'none', color: 'inherit' }}>
-                  <h3 style={{ ...display, fontSize: 17, fontWeight: 700, color: KSC.marine, margin: '0 0 8px', lineHeight: 1.3 }}>{x.titre}</h3>
-                  <span className="ksc-link-arrow" style={{ fontSize: 14 }}>
+                <a key={x.slug} href={`/blog/${x.slug}`} className={cn(cardLink, 'flex flex-col p-6')}>
+                  <h3 className="mb-2 font-heading text-[17px] font-bold leading-snug text-marine">{x.titre}</h3>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-bold text-magenta">
                     Lire
-                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ verticalAlign: '-1px', marginLeft: 5 }}><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                    <ArrowRight size={13} aria-hidden="true" className="transition-transform group-hover:translate-x-[3px]" />
                   </span>
                 </a>
               ))}
             </div>
-          </div>
-        </section>
+          </Container>
+        </Section>
       </main>
       <SiteFooter />
     </>
