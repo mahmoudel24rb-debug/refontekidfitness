@@ -1,34 +1,25 @@
 import React from 'react'
+import { Plus } from 'lucide-react'
+
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import HeroMarine from './HeroMarine'
 import CtaBand from './CtaBand'
 import WaveDivider from './WaveDivider'
+import { Button } from '@/components/ui/button'
 import { KSC } from './ui'
-
-// Q/R du récap client — recopiées telles quelles (la réponse « inscription » a été
-// validée sans le jargon interne du doc client).
-export const FAQ = [
-  { q: 'À partir de quel âge mon enfant peut-il commencer ?', r: "Dès 10 mois, avec nos cours adaptés aux tout-petits, jusqu’à 14 ans." },
-  { q: 'Puis-je assister à une séance d’essai avant de m’inscrire ?', r: "Oui, la séance d’essai est gratuite. Elle se réserve directement auprès de notre équipe, qui vous recontacte pour fixer le créneau." },
-  { q: 'Comment s’inscrire à un cours à l’année ?', r: "L’inscription se fait en ligne ou directement auprès de notre équipe, qui vous accompagne dans le choix de la formule adaptée à votre enfant." },
-  { q: 'Quels sont vos tarifs ?', r: "Nos formules démarrent à 29,90 €/mois (1 cours/semaine, engagement 10 mois). Nous proposons aussi une formule illimitée, une carte de 10 séances, ainsi que des tarifs spécifiques pour les Mercredis Sportifs, les stages vacances et les anniversaires. Le détail complet est disponible sur notre page tarifs." },
-  { q: 'Les Mercredis Sportifs, qu’est-ce que c’est exactement ?', r: "Une journée sportive et encadrée, tous les mercredis de l’année scolaire (hors vacances d’été), pour 95 €/mois." },
-  { q: 'Proposez-vous des stages pendant les vacances scolaires ?', r: "Oui, à la journée (35 €) ou à la semaine (150 €), avec des activités sportives variées encadrées par notre équipe." },
-  { q: 'Comment organiser l’anniversaire de mon enfant chez vous ?', r: "Formule de 2h pour un maximum de 10 enfants, à 250 €. Le gâteau, la décoration et les boissons sont inclus — vous n’avez rien à prévoir." },
-  { q: 'Le club est-il uniquement à Rochecorbon ?', r: "Oui, Kid Sport Club est basé exclusivement à Rochecorbon (1 Quai de la Loire, 37210 Rochecorbon)." },
-]
+import { FAQ, type FaqItem } from '@/data/faq'
 
 // Rend « page tarifs » cliquable (lien /tarifs) — le JSON-LD garde le texte brut.
-function Reponse({ texte }: { texte: string }) {
+function Reponse({ item }: { item: FaqItem }) {
   const marqueur = 'page tarifs'
-  const i = texte.indexOf(marqueur)
-  if (i === -1) return <>{texte}</>
+  const i = item.lienTarifs ? item.r.indexOf(marqueur) : -1
+  if (i === -1) return <>{item.r}</>
   return (
     <>
-      {texte.slice(0, i)}
-      <a href="/tarifs" style={{ color: KSC.magenta, fontWeight: 700 }}>page tarifs</a>
-      {texte.slice(i + marqueur.length)}
+      {item.r.slice(0, i)}
+      <a href="/tarifs" className="font-bold text-magenta hover:text-magenta-hover">page tarifs</a>
+      {item.r.slice(i + marqueur.length)}
     </>
   )
 }
@@ -43,18 +34,18 @@ export default function Faq() {
     <>
       <SiteHeader />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <main style={{ background: KSC.cream, fontFamily: KSC.fontBody, color: '#404a63' }}>
+      <main className="bg-cream text-ink">
         <HeroMarine kicker="FAQ" title="Vos questions, nos réponses" padding="72px 24px" />
 
-        <section style={{ maxWidth: 820, margin: '0 auto', padding: '56px 24px 70px' }}>
+        <section className="mx-auto max-w-[820px] px-6 pt-14 pb-[70px]">
           {FAQ.map((f) => (
-            <details key={f.q} className="ksc-faq-item ksc-reveal">
-              <summary>
+            <details key={f.q} className="group border-b border-border">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-6 font-heading text-[19px] font-bold text-marine [&::-webkit-details-marker]:hidden">
                 {f.q}
                 {/* Icône « + » qui pivote en « × » à l'ouverture (details[open]). */}
-                <svg className="ksc-faq-icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M12 5v14M5 12h14" /></svg>
+                <Plus aria-hidden="true" className="size-[18px] shrink-0 text-magenta transition-transform group-open:rotate-45" />
               </summary>
-              <p className="ksc-faq-answer"><Reponse texte={f.r} /></p>
+              <p className="pb-6 leading-relaxed"><Reponse item={f} /></p>
             </details>
           ))}
         </section>
@@ -63,8 +54,12 @@ export default function Faq() {
 
         {/* Bande CTA pré-footer (textes existants de la page) */}
         <CtaBand title="Une autre question ?" sub="Venez nous voir ou contactez-nous.">
-          <a href="/seance-essai" className="ksc-btn ksc-btn--primary">Réserver une séance d’essai</a>
-          <a href="/contact" className="ksc-btn ksc-btn--cream">Nous contacter</a>
+          <Button asChild variant="primary">
+            <a href="/seance-essai">Réserver une séance d’essai</a>
+          </Button>
+          <Button asChild variant="outlineCream">
+            <a href="/contact">Nous contacter</a>
+          </Button>
         </CtaBand>
       </main>
       <SiteFooter />
