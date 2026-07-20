@@ -1,76 +1,97 @@
 import React from 'react'
-import { PRESTATIONS } from '@/data/prestations'
-import TerrainLines from './TerrainLines'
-import Reveal from './Reveal'
-import { KSC, display } from './ui'
+import { MapPin } from 'lucide-react'
 
-// Footer KSC partagé (nouvelles pages). Fond marine secondaire (--ksc-navy2),
-// lignes de terrain en filigrane, liens crème 85 % -> magenta clair au hover
-// (classe .ksc-footer, overrides.css). Le magenta ne sert plus de fond.
-const col: React.CSSProperties = { display: 'flex', flexDirection: 'column', gap: 10 }
-const link: React.CSSProperties = { fontSize: 15, alignSelf: 'flex-start' }
-const title: React.CSSProperties = { ...display, color: KSC.cream, fontWeight: 700, fontSize: 17, marginBottom: 6 }
+import { FOOTER_NAV, LEGAL_NAV } from '@/data/nav'
+import { PRESTATIONS } from '@/data/prestations'
+import { cn } from '@/lib/utils'
+import Reveal from './Reveal'
+import TerrainLines from './TerrainLines'
+
+// Footer KSC partagé — Tailwind intégral (l'ex-section §9 d'overrides.css
+// est purgée). Fond marine secondaire (navy), lignes de terrain en filigrane,
+// liens crème 85 % -> magenta clair au hover, barre légale plus sombre,
+// badge de localisation Rochecorbon au-dessus de la barre légale.
+const linkCls = 'self-start text-[15px] text-cream/85 transition-colors duration-150 hover:text-magenta-light'
+const colTitleCls = 'mb-1.5 font-heading text-[17px] font-bold text-cream'
 
 export default function SiteFooter() {
   return (
-    <footer className="ksc-footer" style={{ position: 'relative', background: KSC.navy2, color: KSC.cream, fontFamily: KSC.fontBody, overflow: 'hidden' }}>
+    <footer className="relative overflow-hidden bg-navy text-cream">
       <TerrainLines opacity={0.045} />
-      {/* Observer global des apparitions au scroll (.ksc-reveal) — voir Reveal.tsx. */}
+      {/* Observer global des apparitions au scroll (.ksc-reveal) — encore
+          référencé par les pages non migrées (phases 4-5), voir Reveal.tsx. */}
       <Reveal />
-      <div style={{ position: 'relative', maxWidth: 1320, margin: '0 auto', padding: '64px 24px 28px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 40 }}>
-        <div style={{ ...col, gap: 16 }}>
-          <span style={{ ...display, fontSize: 24, fontWeight: 800, color: KSC.cream }}>Kid Sport Club</span>
-          <p style={{ margin: 0, color: 'rgba(251,249,240,.85)', lineHeight: 1.6, maxWidth: 280 }}>
+      <div className="relative mx-auto grid max-w-[1320px] grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-10 px-6 pt-16 pb-7">
+        <div className="flex flex-col gap-4">
+          <span className="font-heading text-2xl font-extrabold text-cream">Kid Sport Club</span>
+          {/* text-xs : parité avec le rendu actuel (taille héritée du body 12px
+              de framer.css) — à réévaluer à la purge Framer (phase 3d). */}
+          <p className="max-w-[280px] text-xs leading-[1.6] text-cream/85">
             Le club de sport des enfants de 10 mois à 14 ans, à Rochecorbon — bouger, grandir, s’épanouir.
           </p>
-          <div style={{ display: 'flex', gap: 12 }}>
-            <a href="https://www.facebook.com" aria-label="Facebook" style={{ ...link, fontWeight: 700 }}>Facebook</a>
-            <a href="https://www.instagram.com" aria-label="Instagram" style={{ ...link, fontWeight: 700 }}>Instagram</a>
+          <div className="flex gap-3">
+            <a href="https://www.facebook.com" aria-label="Facebook" className={cn(linkCls, 'font-bold')}>
+              Facebook
+            </a>
+            <a href="https://www.instagram.com" aria-label="Instagram" className={cn(linkCls, 'font-bold')}>
+              Instagram
+            </a>
           </div>
         </div>
 
-        <div style={col}>
-          <span style={title}>Navigation</span>
-          <a href="/" style={link}>Accueil</a>
-          <a href="/qui-sommes-nous" style={link}>Qui sommes-nous</a>
-          <a href="/nos-prestations" style={link}>Nos prestations</a>
-          <a href="/tarifs" style={link}>Tarifs</a>
-          <a href="/planning" style={link}>Planning</a>
-          <a href="/faq" style={link}>FAQ</a>
-          <a href="/blog" style={link}>Blog</a>
-          <a href="/contact" style={link}>Contact</a>
-          <a href="/seance-essai" style={link}>Séance d’essai</a>
+        <div className="flex flex-col gap-2.5">
+          <span className={colTitleCls}>Navigation</span>
+          {FOOTER_NAV.map((l) => (
+            <a key={l.href} href={l.href} className={linkCls}>
+              {l.label}
+            </a>
+          ))}
         </div>
 
-        <div style={col}>
-          <span style={title}>Nos prestations</span>
-          {PRESTATIONS.map((p) => <a key={p.slug} href={`/nos-prestations/${p.slug}`} style={link}>{p.titre}</a>)}
+        <div className="flex flex-col gap-2.5">
+          <span className={colTitleCls}>Nos prestations</span>
+          {PRESTATIONS.map((p) => (
+            <a key={p.slug} href={`/nos-prestations/${p.slug}`} className={linkCls}>
+              {p.titre}
+            </a>
+          ))}
         </div>
 
-        <div style={col}>
-          <span style={title}>Infos</span>
-          <a href="/contact" style={link}>1 Quai de la Loire, 37210 Rochecorbon</a>
-          <a href="tel:+33247444143" style={link}>02 47 44 41 43</a>
-          <a href="mailto:kidfitnessrochecorbon@gmail.com" style={link}>kidfitnessrochecorbon@gmail.com</a>
-          <span style={{ ...link, color: 'rgba(251,249,240,.85)' }}>Lun–Ven : 9h00–19h30 (sans coupure)</span>
-          <span style={{ ...link, color: 'rgba(251,249,240,.85)' }}>Samedi : 9h30–12h30</span>
+        <div className="flex flex-col gap-2.5">
+          <span className={colTitleCls}>Infos</span>
+          <a href="/contact" className={linkCls}>
+            1 Quai de la Loire, 37210 Rochecorbon
+          </a>
+          <a href="tel:+33247444143" className={linkCls}>
+            02 47 44 41 43
+          </a>
+          <a href="mailto:kidfitnessrochecorbon@gmail.com" className={linkCls}>
+            kidfitnessrochecorbon@gmail.com
+          </a>
+          <span className="self-start text-[15px] text-cream/85">Lun–Ven : 9h00–19h30 (sans coupure)</span>
+          <span className="self-start text-[15px] text-cream/85">Samedi : 9h30–12h30</span>
         </div>
       </div>
 
       {/* Badge localisation (info existante), au-dessus de la barre légale */}
-      <div style={{ position: 'relative', maxWidth: 1320, margin: '0 auto', padding: '0 24px 26px', display: 'flex', justifyContent: 'center' }}>
-        <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: 'rgba(251,249,240,.6)', fontSize: 13.5, fontWeight: 600 }}>
-          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" /><circle cx="12" cy="10" r="3" /></svg>
+      <div className="relative mx-auto flex max-w-[1320px] justify-center px-6 pb-[26px]">
+        <span className="inline-flex items-center gap-2 text-[13.5px] font-semibold text-cream/60">
+          <MapPin size={15} aria-hidden="true" />
           Club à Rochecorbon — bord de Loire
         </span>
       </div>
 
-      <div style={{ position: 'relative', background: '#0a1a4f', padding: '18px 24px', textAlign: 'center', fontSize: 13, color: 'rgba(251,249,240,.75)' }}>
-        <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 8 }}>
-          <a href="/mentions-legales" style={{ fontSize: 13 }}>Mentions légales</a>
-          <a href="/confidentialite" style={{ fontSize: 13 }}>Confidentialité</a>
-          <a href="/cookies" style={{ fontSize: 13 }}>Cookies</a>
-          <a href="/cgv" style={{ fontSize: 13 }}>CGV</a>
+      <div className="relative bg-[#0a1a4f] px-6 py-[18px] text-center text-[13px] text-cream/75">
+        <div className="mb-2 flex flex-wrap justify-center gap-4">
+          {LEGAL_NAV.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="text-[13px] text-cream/85 transition-colors duration-150 hover:text-magenta-light"
+            >
+              {l.label}
+            </a>
+          ))}
         </div>
         © 2026 Kid Sport Club Rochecorbon. Tous droits réservés. Réalisé par DGL Agency.
       </div>
