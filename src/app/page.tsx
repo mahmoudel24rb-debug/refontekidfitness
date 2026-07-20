@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import HomePage from '@/components/HomePage'
+import Home from '@/components/home/Home'
 
 // Metadata dédiée Accueil (mot-clé focus : club de sport enfant Rochecorbon).
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
 }
 
-// Port fidèle du DOM SSR Kinderly (page entière, #main). Recolorisation charte KSC à suivre.
-export default function Home() {
-  return <HomePage />
+// Accueil reconstruit en composants Tailwind (remplace le port Framer HomePage).
+export default function Page() {
+  return <Home />
 }
