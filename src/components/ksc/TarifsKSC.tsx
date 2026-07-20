@@ -1,60 +1,60 @@
 import React from 'react'
+
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import InscriptionCTA from './InscriptionCTA'
 import HeroMarine from './HeroMarine'
 import CtaBand from './CtaBand'
 import WaveDivider from './WaveDivider'
+import Section from './Section'
+import Container from './Container'
+import SectionHeading from './SectionHeading'
 import Underline from './Underline'
-import { KSC, display } from './ui'
+import { ABONNEMENTS, PRESTATIONS_TARIFS, FEATURED_TITRE, type Tarif } from '@/data/tarifs'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 
-type Tarif = { titre: string; prix: string; detail: string }
-
-const ABONNEMENTS: Tarif[] = [
-  { titre: '1 cours / semaine', prix: '29,90 €/mois', detail: 'Engagement 10 mois' },
-  { titre: '1 cours / semaine, sans engagement', prix: '39,90 €/mois', detail: '+10 €/mois' },
-  { titre: 'Illimité', prix: '49,90 €/mois', detail: 'Engagement 10 mois' },
-  { titre: 'Illimité, sans engagement', prix: '59,90 €/mois', detail: '+10 €/mois' },
-  { titre: 'Carte 10 séances', prix: '190 €', detail: 'Payable en 1 fois, nominative, valable 6 mois' },
-]
-
-const PRESTATIONS_TARIFS: Tarif[] = [
-  { titre: 'Mercredis Sportifs', prix: '95 €/mois', detail: 'Tous les mercredis, sur 10 mois (hors vacances d’été)' },
-  { titre: 'Stages vacances', prix: '35 €/jour ou 150 €/semaine', detail: 'Pendant les vacances scolaires' },
-  { titre: 'Anniversaire', prix: '250 € / 2h', detail: 'Max 10 enfants, gâteau + déco + boissons inclus' },
-]
-
-// Carte « Illimité » (49,90) mise en avant : bordure magenta, badge chevauchant,
-// légère scale desktop (classe .ksc-tarif-featured, PAS de hauteur fixe).
-const FEATURED_TITRE = 'Illimité'
-
-function Groupe({ titre, items }: { titre: React.ReactNode; items: Tarif[] }) {
+function Groupe({ heading, items }: { heading: string; items: Tarif[] }) {
   return (
     <div>
-      <h2 style={{ ...display, fontSize: 'clamp(24px,3vw,32px)', fontWeight: 800, color: KSC.marine, margin: '0 0 30px' }}>{titre}</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px,1fr))', gap: 20 }}>
+      <SectionHeading underline className="mb-8 text-[clamp(24px,3vw,32px)]">
+        {heading}
+      </SectionHeading>
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((t) => {
           const featured = t.titre === FEATURED_TITRE
           return (
-            <div
+            <Card
               key={t.titre}
-              className={`ksc-card ksc-reveal${featured ? ' ksc-tarif-featured' : ''}`}
-              style={{
-                padding: '28px 28px 26px',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 12,
-                alignItems: 'flex-start',
-                ...(featured ? { position: 'relative', overflow: 'visible', border: `2px solid ${KSC.magenta}`, background: KSC.white } : {}),
-              }}
+              className={cn(
+                'items-start gap-3 p-7',
+                featured &&
+                  'relative overflow-visible border-2 border-magenta lg:scale-[1.03]'
+              )}
             >
-              {featured && <span className="ksc-tarif-badge">La plus choisie</span>}
-              <h3 style={{ ...display, fontSize: 18, fontWeight: 700, color: KSC.marine, margin: 0, lineHeight: 1.3 }}>{t.titre}</h3>
-              <p style={{ ...display, fontSize: 'clamp(32px,3vw,38px)', fontWeight: 800, color: KSC.magenta, margin: 0, lineHeight: 1.15 }}>{t.prix}</p>
-              <span style={{ background: KSC.cream2, color: '#525c75', fontSize: 13, fontWeight: 600, lineHeight: 1.4, padding: '6px 13px', borderRadius: KSC.radiusPill }}>{t.detail}</span>
-            </div>
+              {featured && (
+                // Badge à cheval sur le bord haut (décoratif absolu autorisé).
+                <Badge
+                  variant="brand"
+                  className="absolute -top-3.5 left-1/2 -translate-x-1/2"
+                >
+                  La plus choisie
+                </Badge>
+              )}
+              <h3 className="font-heading text-lg font-bold leading-snug text-marine">
+                {t.titre}
+              </h3>
+              <p className="font-heading text-[38px] font-extrabold leading-[1.15] text-magenta">
+                {t.prix}
+              </p>
+              <span className="rounded-full bg-cream-2 px-3.5 py-1.5 text-[13px] font-semibold leading-snug text-muted-foreground">
+                {t.detail}
+              </span>
+            </Card>
           )
         })}
       </div>
@@ -75,7 +75,7 @@ export default function TarifsKSC() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <SiteHeader />
-      <main style={{ background: KSC.cream, fontFamily: KSC.fontBody }}>
+      <main>
         <HeroMarine
           kicker="Tarifs"
           title="Nos tarifs, en toute transparence"
@@ -84,23 +84,23 @@ export default function TarifsKSC() {
         />
 
         {/* Abonnements — fond crème */}
-        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '64px 24px 70px' }}>
-          <Groupe titre={<Underline>Abonnements</Underline>} items={ABONNEMENTS} />
-        </section>
-
-        <WaveDivider colorTop={KSC.cream} colorBottom={KSC.white} />
+        <Section tone="cream">
+          <Container>
+            <Groupe heading="Abonnements" items={ABONNEMENTS} />
+          </Container>
+        </Section>
 
         {/* Prestations — fond blanc */}
-        <section style={{ background: KSC.white, padding: '48px 24px 70px' }}>
-          <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-            <Groupe titre={<Underline>Prestations</Underline>} items={PRESTATIONS_TARIFS} />
-            <p style={{ color: '#525c75', fontSize: 14, fontStyle: 'italic', margin: '26px 0 0' }}>
+        <Section tone="white">
+          <Container>
+            <Groupe heading="Prestations" items={PRESTATIONS_TARIFS} />
+            <p className="mt-7 text-sm italic text-muted-foreground">
               Les réservations en ligne sont confirmées par notre équipe.
             </p>
-          </div>
-        </section>
+          </Container>
+        </Section>
 
-        <WaveDivider colorTop={KSC.white} colorBottom={KSC.marine} />
+        <WaveDivider colorTop="var(--card)" colorBottom="var(--ksc-marine)" />
 
         {/* Bande CTA pré-footer (textes existants de la page) */}
         <CtaBand
@@ -108,7 +108,9 @@ export default function TarifsKSC() {
           sub="Rejoignez le club ou venez d’abord tester une séance."
         >
           <InscriptionCTA />
-          <a href="/seance-essai" className="ksc-btn ksc-btn--cream">Réserver une séance d’essai</a>
+          <Button asChild variant="outlineCream">
+            <a href="/seance-essai">Réserver une séance d’essai</a>
+          </Button>
         </CtaBand>
       </main>
       <SiteFooter />
