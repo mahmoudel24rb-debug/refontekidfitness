@@ -50,7 +50,9 @@ export default function Activites() {
                   sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
                   className="object-cover"
                 />
-                <Badge variant="age" className="absolute left-3 top-3">
+                {/* Sur photo : pastille blanche opaque (la variante `age` en
+                    royal/10 % est illisible sur une image chargée). */}
+                <Badge variant="neutral" className="absolute left-3 top-3 text-royal shadow-sm">
                   {carte.badge}
                 </Badge>
               </div>
