@@ -25,23 +25,13 @@
 }
 
 /* ---------- 2. Base ---------- */
-/* Inter (next/font) partout par défaut ; la home Framer garde ses presets. */
+/* Inter (next/font) partout par défaut ; la home Framer garde ses presets.
+   NB : cette règle body reste ici (non-layerée, avec !important) tant que
+   framer.css vit — elle meurt avec lui en phase 3d. Le focus-visible global,
+   ::selection et scroll-margin ont été PORTÉS dans globals.css (source unique). */
 body {
   font-family: var(--font-body), Inter, sans-serif !important;
   background: var(--ksc-cream);
-}
-
-/* Focus visible — règle globale (clavier), ring royal 3px offset 2px. */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible,
-summary:focus-visible,
-[tabindex]:focus-visible {
-  outline: 3px solid var(--ksc-focus-ring);
-  outline-offset: 2px;
-  border-radius: 4px;
 }
 
 /* ---------- 3. Correctif logo (historique, ne pas retirer) ---------- */
@@ -351,14 +341,8 @@ a:hover > .ksc-link-arrow svg,
    tarif vedette, formulaires, blog featured, planning, finitions)
    ============================================================ */
 
-/* 14a. Micro-finitions globales */
-::selection {
-  background: var(--ksc-magenta);
-  color: #fff;
-}
-[id] {
-  scroll-margin-top: 96px; /* ancres sous le header sticky */
-}
+/* 14a. Micro-finitions globales — ::selection et scroll-margin PORTÉS dans
+   globals.css (source unique, phase 0 refonte fondations). */
 /* Tracking resserré des très grands titres display (>= 40px rendus). */
 .ksc-display-xl {
   letter-spacing: -0.02em;

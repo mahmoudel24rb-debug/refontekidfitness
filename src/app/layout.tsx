@@ -1,10 +1,15 @@
 import React from 'react'
 import { Baloo_2, Inter } from 'next/font/google'
 
-// Le CSS SSR exact de Framer (reset + styles globaux) — importé une seule fois ici.
+// Ordre des imports CSS voulu (coexistence pendant la migration Tailwind) :
+// globals.css est layeré (@layer Tailwind) -> le legacy non-layeré qui suit
+// (framer.css, overrides.css) garde la priorité en cascade, donc zéro régression
+// sur l'existant tant que le démantèlement n'est pas terminé.
+import './globals.css'
 import '@/components/framer.css'
 import './overrides.css'
 import SvgSprite from '@/components/SvgSprite'
+
 
 // Typographie de la charte : Baloo 2 (display, titres) + Inter (texte courant).
 // Fontes variables Google auto-hébergées par next/font (aucune requête externe au runtime).
