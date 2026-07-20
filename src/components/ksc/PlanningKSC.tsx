@@ -1,10 +1,15 @@
 import React from 'react'
+
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import HeroMarine from './HeroMarine'
 import CtaBand from './CtaBand'
 import WaveDivider from './WaveDivider'
-import { KSC, display } from './ui'
+import Section from './Section'
+import Container from './Container'
 import { PLANNING } from '@/data/planning'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
@@ -25,7 +30,7 @@ export default function PlanningKSC() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <SiteHeader />
-      <main style={{ background: KSC.cream, fontFamily: KSC.fontBody, color: '#404a63' }}>
+      <main>
         <HeroMarine
           kicker="Planning"
           title="Le planning des cours"
@@ -34,59 +39,71 @@ export default function PlanningKSC() {
           maxWidth={760}
         />
 
-        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '56px 24px 20px' }}>
-          {/* Légende des tranches d'âge (pills royal) */}
-          <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 32 }}>
-            {TRANCHES.map((t) => (
-              <span key={t} className="ksc-age-badge" style={{ fontSize: 14, padding: '8px 14px' }}>{t}</span>
-            ))}
-          </div>
+        <Section tone="cream">
+          <Container>
+            {/* Légende des tranches d'âge (pills royal) */}
+            <div className="mb-8 flex flex-wrap justify-center gap-2.5">
+              {TRANCHES.map((t) => (
+                <Badge key={t} variant="age" className="px-3.5 py-2 text-sm">
+                  {t}
+                </Badge>
+              ))}
+            </div>
 
-          {/* Jours : 2 colonnes desktop, 1 colonne mobile (grid, hauteurs auto) */}
-          <div className="ksc-planning-grid">
-            {PLANNING.map((j) => {
-              const nb = j.salles.reduce((n, s) => n + s.creneaux.length, 0)
-              return (
-                <div key={j.jour} className="ksc-reveal" style={{ background: KSC.white, border: `1px solid ${KSC.border}`, borderRadius: 24, boxShadow: KSC.shadowSm, padding: '26px 28px', display: 'flex', flexDirection: 'column', gap: 18 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 14, flexWrap: 'wrap' }}>
-                    <h2 style={{ ...display, fontSize: 26, fontWeight: 800, color: KSC.marine, margin: 0 }}>{j.jour}</h2>
-                    {/* Pastille : nombre de créneaux du jour */}
-                    <span style={{ background: KSC.cream2, color: KSC.marine, fontSize: 13, fontWeight: 700, lineHeight: 1, padding: '7px 13px', borderRadius: KSC.radiusPill, whiteSpace: 'nowrap' }}>
-                      {nb} {nb > 1 ? 'créneaux' : 'créneau'}
-                    </span>
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-                    {j.salles.map((s) => (
-                      <div key={s.salle} style={{ background: KSC.cream, borderRadius: 12, padding: '18px 20px' }}>
-                        <h3 style={{ fontFamily: KSC.fontBody, fontSize: 13, fontWeight: 800, color: KSC.magenta, textTransform: 'uppercase', letterSpacing: '.05em', margin: '0 0 12px' }}>{s.salle}</h3>
-                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                          {s.creneaux.map((c) => (
-                            <li key={`${c.heure}-${c.activite}`} style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap', lineHeight: 1.4 }}>
-                              {/* Heure en pill marine */}
-                              <span style={{ background: KSC.marine, color: '#fff', fontWeight: 700, fontSize: 13, lineHeight: 1, padding: '6px 11px', borderRadius: KSC.radiusPill, whiteSpace: 'nowrap' }}>{c.heure}</span>
-                              <strong style={{ color: KSC.marine, fontWeight: 700, fontSize: 15.5 }}>{c.activite}</strong>
-                              {c.age && <span className="ksc-age-badge">{c.age}</span>}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-          <p style={{ fontSize: 14, fontStyle: 'italic', color: '#525c75', margin: '26px 0 0', textAlign: 'center' }}>
-            Planning de la rentrée de septembre 2026 — susceptible d&rsquo;évoluer.
-          </p>
-        </section>
+            {/* Jours : 2 colonnes desktop, 1 colonne mobile (hauteurs auto) */}
+            <div className="grid gap-6 lg:grid-cols-2">
+              {PLANNING.map((j) => {
+                const nb = j.salles.reduce((n, s) => n + s.creneaux.length, 0)
+                return (
+                  <Card key={j.jour} className="gap-4 p-7">
+                    <div className="flex flex-wrap items-center justify-between gap-3.5">
+                      <h2 className="font-heading text-[26px] font-extrabold text-marine">{j.jour}</h2>
+                      {/* Pastille : nombre de créneaux du jour */}
+                      <span className="whitespace-nowrap rounded-full bg-cream-2 px-3 py-1.5 text-[13px] font-bold text-marine">
+                        {nb} {nb > 1 ? 'créneaux' : 'créneau'}
+                      </span>
+                    </div>
+                    <div className="flex flex-col gap-3.5">
+                      {j.salles.map((s) => (
+                        <div key={s.salle} className="rounded-md bg-cream-2 p-4">
+                          <h3 className="mb-3 text-[13px] font-extrabold uppercase tracking-[.05em] text-magenta">
+                            {s.salle}
+                          </h3>
+                          <ul className="flex flex-col gap-2.5">
+                            {s.creneaux.map((c) => (
+                              <li
+                                key={`${c.heure}-${c.activite}`}
+                                className="flex flex-wrap items-center gap-2.5 leading-snug"
+                              >
+                                {/* Heure en pill marine */}
+                                <span className="whitespace-nowrap rounded-full bg-marine px-2.5 py-1 text-[13px] font-bold text-cream">
+                                  {c.heure}
+                                </span>
+                                <strong className="text-[15.5px] font-bold text-marine">{c.activite}</strong>
+                                {c.age && <Badge variant="age">{c.age}</Badge>}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </Card>
+                )
+              })}
+            </div>
+            <p className="mt-7 text-center text-sm italic text-muted-foreground">
+              Planning de la rentrée de septembre 2026 — susceptible d’évoluer.
+            </p>
+          </Container>
+        </Section>
 
-        <div style={{ height: 44 }} aria-hidden="true" />
-        <WaveDivider colorTop={KSC.cream} colorBottom={KSC.marine} />
+        <WaveDivider colorTop="var(--ksc-cream)" colorBottom="var(--ksc-marine)" />
 
         {/* Bande CTA pré-footer (texte existant de la page : le bouton) */}
         <CtaBand>
-          <a href="/seance-essai" className="ksc-btn ksc-btn--primary">Réserver une séance d’essai</a>
+          <Button asChild variant="primary">
+            <a href="/seance-essai">Réserver une séance d’essai</a>
+          </Button>
         </CtaBand>
       </main>
       <SiteFooter />
