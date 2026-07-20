@@ -1,18 +1,31 @@
 import React from 'react'
+import Image from 'next/image'
+import { ArrowRight } from 'lucide-react'
+
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { cardInteractive } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import InscriptionCTA from './InscriptionCTA'
 import HeroMarine from './HeroMarine'
 import CtaBand from './CtaBand'
 import WaveDivider from './WaveDivider'
+import Section from './Section'
+import Container from './Container'
 import Underline from './Underline'
-import { KSC, display } from './ui'
 import { PRESTATIONS } from '@/data/prestations'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 
 // Les 2 prestations phares (1re rangée) en cartes larges de la mosaïque.
 const WIDE_SLUGS = ['mercredis-sportifs', 'stages-vacances']
+
+const cardLink = cn(
+  'group flex flex-col overflow-hidden rounded-lg border border-border bg-card text-card-foreground shadow-sm',
+  cardInteractive
+)
 
 export default function PrestationsHub() {
   const jsonLd = {
@@ -34,7 +47,7 @@ export default function PrestationsHub() {
     ],
   }
 
-  // Mosaïque : cartes larges d'abord (rangée 1), puis les autres (rangées de 3).
+  // Mosaïque : cartes larges d'abord (rangée 1), puis les autres.
   const larges = PRESTATIONS.filter((p) => WIDE_SLUGS.includes(p.slug))
   const normales = PRESTATIONS.filter((p) => !WIDE_SLUGS.includes(p.slug))
 
@@ -42,7 +55,7 @@ export default function PrestationsHub() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <SiteHeader />
-      <main style={{ background: KSC.cream, fontFamily: KSC.fontBody }}>
+      <main>
         <HeroMarine
           kicker="Nos prestations"
           title="Le sport des enfants, sous toutes ses formes"
@@ -51,59 +64,59 @@ export default function PrestationsHub() {
         />
 
         {/* Mosaïque image-first */}
-        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '64px 24px 70px' }}>
-          <div className="ksc-mosaic">
-            {[...larges, ...normales].map((p) => {
-              const wide = WIDE_SLUGS.includes(p.slug)
-              return (
-                <a
-                  key={p.slug}
-                  href={`/nos-prestations/${p.slug}`}
-                  className={`ksc-card ksc-reveal${wide ? ' ksc-mosaic-wide' : ''}`}
-                  style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none', color: 'inherit' }}
-                >
-                  <div style={{ position: 'relative', overflow: 'hidden' }}>
-                    <img
-                      src={p.image}
-                      alt=""
-                      loading="lazy"
-                      style={{ width: '100%', aspectRatio: wide ? '16 / 9' : '4 / 3', objectFit: 'cover', display: 'block' }}
-                    />
-                    {/* Voile hover (l'overlay s'intensifie légèrement) */}
-                    <div className="ksc-img-boost" aria-hidden="true" />
-                    {/* Overlay dégradé bas (overlay d'IMAGE) + titre/badge posés sur l'image */}
-                    <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start', gap: 10, padding: '18px 20px', background: 'linear-gradient(transparent, rgba(8,22,70,.82))' }}>
-                      <span className="ksc-age-badge ksc-age-badge--dark">{p.age}</span>
-                      <h2 style={{ ...display, fontSize: 24, fontWeight: 800, lineHeight: 1.15, color: '#fff', margin: 0 }}>{p.titre}</h2>
+        <Section tone="cream">
+          <Container>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
+              {[...larges, ...normales].map((p) => {
+                const wide = WIDE_SLUGS.includes(p.slug)
+                return (
+                  <a
+                    key={p.slug}
+                    href={`/nos-prestations/${p.slug}`}
+                    className={cn(cardLink, wide ? 'lg:col-span-3' : 'lg:col-span-2')}
+                  >
+                    <div className={cn('relative', wide ? 'aspect-[16/9]' : 'aspect-[4/3]')}>
+                      <Image
+                        src={p.image}
+                        alt=""
+                        fill
+                        sizes="(min-width: 1024px) 40vw, (min-width: 640px) 50vw, calc(100vw - 48px)"
+                        className="object-cover"
+                      />
+                      {/* Overlay dégradé (overlay d'IMAGE) + titre/badge posés sur l'image */}
+                      <div className="absolute inset-0 flex flex-col items-start justify-end gap-2.5 bg-gradient-to-t from-marine/80 to-transparent p-5">
+                        <Badge variant="ageDark">{p.age}</Badge>
+                        <h2 className="font-heading text-2xl font-extrabold leading-tight text-white">{p.titre}</h2>
+                      </div>
                     </div>
-                  </div>
-                  {/* Zone texte réduite : accroche + lien */}
-                  <div style={{ padding: '18px 20px 22px', display: 'flex', flexDirection: 'column', gap: 12, flex: 1 }}>
-                    <p style={{ color: '#525c75', lineHeight: 1.55, margin: 0, flex: 1 }}>{p.accroche}</p>
-                    <span className="ksc-link-arrow" style={{ fontSize: 15 }}>
-                      Découvrir
-                      <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ verticalAlign: '-1px', marginLeft: 6 }}><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-                    </span>
-                  </div>
-                </a>
-              )
-            })}
-          </div>
-        </section>
+                    {/* Zone texte : accroche + lien */}
+                    <div className="flex flex-1 flex-col gap-3 p-5">
+                      <p className="flex-1 leading-relaxed text-muted-foreground">{p.accroche}</p>
+                      <span className="inline-flex items-center gap-1.5 font-bold text-magenta">
+                        Découvrir
+                        <ArrowRight size={14} aria-hidden="true" className="transition-transform group-hover:translate-x-[3px]" />
+                      </span>
+                    </div>
+                  </a>
+                )
+              })}
+            </div>
+          </Container>
+        </Section>
 
-        <WaveDivider colorTop={KSC.cream} colorBottom={KSC.white} />
+        {/* Fit' Parents/Enfants : moment intégré aux cours, PAS une prestation. */}
+        <Section tone="cream">
+          <Container>
+            <div className="rounded-lg border-l-4 border-magenta bg-cream-2 p-8">
+              <h2 className="mb-2.5 font-heading text-xl font-bold text-marine">Fit’ Parents/Enfants — intégré à nos cours</h2>
+              <p className="leading-relaxed text-ink">
+                Un moment de sport à partager en famille. Parents et enfants bougent ensemble à travers des exercices ludiques et complices — une manière différente de se retrouver, entre jeu et activité physique.
+              </p>
+            </div>
+          </Container>
+        </Section>
 
-        {/* Fit' Parents/Enfants : moment intégré aux cours, PAS une prestation (pas de carte dans la grille). */}
-        <section style={{ background: KSC.white, padding: '48px 24px 70px' }}>
-          <div className="ksc-reveal" style={{ maxWidth: 1200, margin: '0 auto', background: KSC.cream2, borderLeft: `4px solid ${KSC.magenta}`, borderRadius: KSC.radiusCard, padding: '26px 30px' }}>
-            <h2 style={{ ...display, fontSize: 20, fontWeight: 700, color: KSC.marine, margin: '0 0 10px' }}>Fit&rsquo; Parents/Enfants — intégré à nos cours</h2>
-            <p style={{ color: '#404a63', lineHeight: 1.65, margin: 0 }}>
-              Un moment de sport à partager en famille. Parents et enfants bougent ensemble à travers des exercices ludiques et complices — une manière différente de se retrouver, entre jeu et activité physique.
-            </p>
-          </div>
-        </section>
-
-        <WaveDivider colorTop={KSC.white} colorBottom={KSC.marine} />
+        <WaveDivider colorTop="var(--ksc-cream)" colorBottom="var(--ksc-marine)" />
 
         {/* Bande CTA pré-footer (textes existants de la page) */}
         <CtaBand
@@ -111,7 +124,9 @@ export default function PrestationsHub() {
           sub="Première séance d’essai pour découvrir le club."
         >
           <InscriptionCTA />
-          <a href="/seance-essai" className="ksc-btn ksc-btn--cream">Réserver une séance d’essai</a>
+          <Button asChild variant="outlineCream">
+            <a href="/seance-essai">Réserver une séance d’essai</a>
+          </Button>
         </CtaBand>
       </main>
       <SiteFooter />
