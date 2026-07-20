@@ -1,36 +1,63 @@
-// Gabarit Landing réutilisable (brief §3) — pages hors menu pour campagnes Meta/Google Ads,
-// événements, offres. NON indexées (noindex) et hors sitemap pour ne pas cannibaliser le SEO.
-// Pour créer une nouvelle landing : ajouter une entrée ici, la route /landing/<slug> se génère seule.
-// Sections optionnelles (rendues seulement si renseignées) : etapes, tarif, avis (les 3 vrais
-// avis parents), faq (questions piochées dans data/faq par intitulé exact), catalogue (blocs
-// de TOUTES les prestations avec CTA vers le calendrier CRM — cf. CRM_INSCRIPTION_URL).
+// Landings Meta Ads (hors menu, noindex, hors sitemap — brief §3).
+// Deux gabarits :
+// - variant 'lead' : capture du lead SUR la page (formulaire hero + sticky mobile,
+//   UN objectif par page, message match annonce -> h1). Standard lead-gen Meta.
+// - variant 'catalogue' : toutes les prestations en blocs, CTA -> calendrier CRM.
+// Créer une variante de campagne = ajouter une entrée ici (h1 = hook de l'annonce).
 export type Landing = {
   slug: string
+  variant: 'lead' | 'catalogue'
   metaTitle: string
   metaDescription: string
-  eyebrow: string // sur-titre (accroche courte)
+  eyebrow: string
   h1: string
   sousTitre: string
   image: string
-  points: { titre: string; texte: string }[]
-  preuve?: { texte: string; auteur: string } // preuve sociale optionnelle — n'ajouter que de VRAIS avis clients
-  ctaLabel: string // libellé du bouton principal (S'inscrire = placeholder inscription en ligne)
-  reassurance: string[] // bandeau de réassurance (puces courtes)
-  /** « Comment ça se passe » — 3 étapes max, dérivées de textes validés uniquement. */
+  /** 3 puces bénéfices condensées du hero (variant lead). */
+  heroBullets?: string[]
+  /** Libellé du bouton du formulaire de lead. */
+  formCtaLabel?: string
+  points?: { titre: string; texte: string }[]
+  ctaLabel: string
+  reassurance: string[]
   etapes?: { titre: string; texte: string }[]
-  /** Bloc tarif réel (jamais de prix inventé). */
   tarif?: { prix: string; details: string[] }
-  /** Affiche les 3 vrais avis parents (data/avis). */
   avis?: boolean
-  /** Intitulés EXACTS de questions de data/faq à afficher en accordéons. */
   faq?: string[]
-  /** Landing catalogue : blocs de toutes les prestations, CTA -> calendrier CRM. */
-  catalogue?: boolean
 }
 
 export const LANDINGS: Landing[] = [
   {
+    // Lead magnet principal des campagnes Meta : l'essai gratuit (validé client).
+    slug: 'essai-gratuit',
+    variant: 'lead',
+    metaTitle: 'Séance d’essai gratuite — Kid Sport Club Rochecorbon',
+    metaDescription:
+      "Réservez une séance d'essai gratuite au Kid Sport Club de Rochecorbon : votre enfant découvre l'activité, vous rencontrez l'équipe, et vous décidez ensuite.",
+    eyebrow: 'Séance d’essai gratuite · 10 mois – 14 ans',
+    h1: 'Venez essayer, c’est gratuit',
+    sousTitre:
+      "Votre enfant découvre l'activité, vous rencontrez l'équipe, et vous décidez ensuite. La séance d'essai est gratuite et sans engagement.",
+    image: '/assets/ksc/esprit-equipe.webp',
+    heroBullets: ['Gratuite et sans engagement', 'Réponse rapide de l’équipe', 'On vous trouve le bon créneau'],
+    formCtaLabel: 'Réserver ma séance gratuite',
+    ctaLabel: 'Réserver ma séance gratuite',
+    reassurance: ['Encadrement diplômé', 'De 10 mois à 14 ans', 'Groupes par âge', 'Au bord de la Loire'],
+    etapes: [
+      { titre: 'Dites-nous qui vient', texte: 'Prénom, téléphone, âge de votre enfant : 30 secondes suffisent.' },
+      { titre: 'On vous rappelle', texte: 'Votre demande est traitée directement par notre équipe, qui vous recontacte pour fixer le créneau.' },
+      { titre: 'Votre enfant essaie', texte: 'Il découvre l’activité, vous rencontrez l’équipe, et vous décidez ensuite.' },
+    ],
+    avis: true,
+    faq: [
+      'Puis-je assister à une séance d’essai avant de m’inscrire ?',
+      'À partir de quel âge mon enfant peut-il commencer ?',
+      'Quels sont vos tarifs ?',
+    ],
+  },
+  {
     slug: 'anniversaire-sportif',
+    variant: 'lead',
     metaTitle: 'Anniversaire sportif enfant à Rochecorbon — Kid Sport Club',
     metaDescription:
       "Offrez un anniversaire sportif inoubliable à votre enfant à Rochecorbon : jeux, parcours, espace privatisé et goûter. Formule clé en main encadrée. Réservez votre date.",
@@ -39,11 +66,8 @@ export const LANDINGS: Landing[] = [
     sousTitre:
       "Jeux, parcours et défis sportifs encadrés par nos coachs, dans un espace rien que pour vous, suivis du goûter. Vous n'avez qu'à profiter, on s'occupe de tout.",
     image: '/assets/ksc/anniversaire.webp',
-    points: [
-      { titre: 'Formule clé en main', texte: 'Animation, matériel et espace privatisé : tout est prévu, vous venez les mains dans les poches.' },
-      { titre: 'Encadré par des coachs', texte: 'Des animateurs diplômés mènent les jeux en toute sécurité, adaptés à l’âge des enfants.' },
-      { titre: 'Espace privatisé + goûter', texte: 'Votre créneau rien que pour votre groupe, avec un espace pour souffler les bougies.' },
-    ],
+    heroBullets: ['Formule clé en main', 'Gâteau + déco + boissons inclus', 'Jusqu’à 10 enfants, espace privatisé'],
+    formCtaLabel: 'Réserver une date',
     ctaLabel: 'Réserver une date',
     reassurance: ['Espace sécurisé', 'Encadrement diplômé', 'De 3 à 14 ans', 'Au bord de la Loire'],
     etapes: [
@@ -60,6 +84,7 @@ export const LANDINGS: Landing[] = [
   },
   {
     slug: 'stage-vacances',
+    variant: 'lead',
     metaTitle: 'Stage sportif enfant pendant les vacances à Rochecorbon — Kid Sport Club',
     metaDescription:
       "Occupez vos enfants pendant les vacances à Rochecorbon : stages sportifs multi-activités, encadrés, par groupes d'âge. Mercredis et vacances scolaires. Places limitées.",
@@ -68,11 +93,8 @@ export const LANDINGS: Landing[] = [
     sousTitre:
       "Une semaine de sport, de jeux et de copains : vos enfants se dépensent et découvrent de nouveaux sports, encadrés par nos coachs, du matin au soir.",
     image: '/assets/ksc/stages-vacances.webp',
-    points: [
-      { titre: 'Multi-activités', texte: 'Un programme varié chaque jour : motricité, jeux collectifs, parcours et défis.' },
-      { titre: 'Toutes les vacances', texte: 'Stages pendant les vacances scolaires, et les Mercredis Sportifs pendant l’année scolaire.' },
-      { titre: 'Groupes par âge', texte: 'Chaque enfant progresse à son rythme, dans un groupe adapté, en toute sécurité.' },
-    ],
+    heroBullets: ['Multisport, jeux d’équipe, ateliers', 'À la journée ou à la semaine', 'Groupes par âge, encadrement diplômé'],
+    formCtaLabel: 'Réserver une place',
     ctaLabel: 'Réserver une place',
     reassurance: ['Encadrement diplômé', 'Groupes par âge', 'Mercredis + vacances', 'Journée complète'],
     etapes: [
@@ -88,10 +110,10 @@ export const LANDINGS: Landing[] = [
     ],
   },
   {
-    // Landing « catalogue » demandée par le client : toutes les prestations en
-    // blocs, chaque bouton d'inscription ouvrira le calendrier du CRM
-    // (CRM_INSCRIPTION_URL, placeholder « # » en attendant le lien).
+    // Landing « catalogue » (demande client) : toutes les prestations en blocs,
+    // chaque bouton ouvrira le calendrier du CRM (CRM_INSCRIPTION_URL, placeholder).
     slug: 'prestations',
+    variant: 'catalogue',
     metaTitle: 'Inscriptions — toutes nos prestations | Kid Sport Club Rochecorbon',
     metaDescription:
       "Inscrivez votre enfant au Kid Sport Club de Rochecorbon : cours par âge dès 10 mois, Mercredis Sportifs, stages vacances et anniversaires. Choisissez votre prestation.",
@@ -100,10 +122,8 @@ export const LANDINGS: Landing[] = [
     sousTitre:
       'De la baby gym dès 10 mois au sport ado, en passant par les mercredis sportifs, les stages et les anniversaires : au Kid Sport Club de Rochecorbon, chaque enfant trouve son activité.',
     image: '/assets/ksc/esprit-equipe.webp',
-    points: [],
     ctaLabel: 'S’inscrire',
     reassurance: ['Encadrement diplômé', 'De 10 mois à 14 ans', 'Groupes par âge', 'Au bord de la Loire'],
-    catalogue: true,
     avis: true,
     faq: [
       'Puis-je assister à une séance d’essai avant de m’inscrire ?',

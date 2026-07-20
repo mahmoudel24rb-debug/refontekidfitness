@@ -16,9 +16,36 @@ import { Button } from '@/components/ui/button'
 const POINTS = ['Gratuite et sans engagement', 'Réponse rapide de l’équipe', 'On vous trouve le bon créneau']
 
 export default function SeanceEssai() {
-  const [sent, setSent] = useState(false)
-  // PLACEHOLDER : aucun envoi en preview (outil interne non branché). À brancher en prod.
-  const onSubmit = (e: React.FormEvent) => { e.preventDefault(); setSent(true) }
+  const [etat, setEtat] = useState<'idle' | 'envoi' | 'ok' | 'erreur'>('idle')
+  const sent = etat === 'ok'
+  // Envoi réel vers /api/lead (transféré au CRM via LEAD_WEBHOOK_URL quand posée).
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (etat === 'envoi') return
+    const data = new FormData(e.currentTarget)
+    setEtat('envoi')
+    try {
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          source: 'seance-essai',
+          prenom: data.get('prenom'),
+          nom: data.get('nom') || undefined,
+          email: data.get('email') || undefined,
+          telephone: data.get('tel'),
+          ageEnfant: data.get('age') || undefined,
+          message: data.get('msg') || undefined,
+        }),
+      })
+      if (!res.ok) throw new Error(String(res.status))
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push({ event: 'lead', source: 'seance-essai' })
+      setEtat('ok')
+    } catch {
+      setEtat('erreur')
+    }
+  }
 
   return (
     <>
@@ -39,7 +66,7 @@ export default function SeanceEssai() {
               {sent ? (
                 <div className="py-5 text-center">
                   <h2 className="mb-2.5! font-heading text-2xl font-extrabold text-marine">Merci !</h2>
-                  <p className="leading-relaxed">Votre demande est bien notée. Nous vous recontactons rapidement pour fixer la séance d’essai.<br /><em>(Formulaire de démonstration — la transmission sera activée à la mise en ligne.)</em></p>
+                  <p className="leading-relaxed">Votre demande est bien notée. Nous vous recontactons rapidement pour fixer la séance d’essai.</p>
                 </div>
               ) : (
                 <form onSubmit={onSubmit} className="flex flex-col gap-[18px]">
@@ -51,7 +78,14 @@ export default function SeanceEssai() {
                   <FormField id="tel" label="Téléphone" type="tel" required />
                   <FormField id="age" label="Âge de l’enfant" placeholder="ex. 4 ans" />
                   <FormField id="msg" label="Votre message (optionnel)" as="textarea" rows={4} />
-                  <Button type="submit" className="w-full">Demander ma séance d’essai</Button>
+                  <Button type="submit" className="w-full" disabled={etat === 'envoi'}>
+                    {etat === 'envoi' ? 'Envoi en cours…' : 'Demander ma séance d’essai'}
+                  </Button>
+                  {etat === 'erreur' && (
+                    <p className="m-0! text-sm font-semibold text-destructive">
+                      L’envoi a échoué. Réessayez, ou appelez-nous au 02 47 44 41 43.
+                    </p>
+                  )}
                   <p className="m-0! text-center text-[13px] opacity-70">Ou appelez-nous au 02 47 44 41 43.</p>
                 </form>
               )}

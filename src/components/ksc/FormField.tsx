@@ -6,15 +6,18 @@ import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 
 // Champ de formulaire KSC (Label + Input ou Textarea) — dédouble les champs
-// copiés-collés de ContactKSC / SeanceEssai.
+// copiés-collés de ContactKSC / SeanceEssai. `name` par défaut = id (les
+// formulaires à ids préfixés — ex. LeadForm — passent un name explicite).
 type FormFieldProps = {
   id: string
   label: string
   as?: 'input' | 'textarea'
   type?: string
+  name?: string
   required?: boolean
   placeholder?: string
   rows?: number
+  autoComplete?: string
   className?: string
 }
 
@@ -25,9 +28,11 @@ export default function FormField({
   label,
   as = 'input',
   type = 'text',
+  name,
   required = false,
   placeholder,
   rows,
+  autoComplete,
   className,
 }: FormFieldProps) {
   return (
@@ -38,19 +43,21 @@ export default function FormField({
       {as === 'textarea' ? (
         <Textarea
           id={id}
-          name={id}
+          name={name ?? id}
           required={required}
           placeholder={placeholder}
           rows={rows}
+          autoComplete={autoComplete}
           className={cn(fieldClasses, 'min-h-[140px]')}
         />
       ) : (
         <Input
           id={id}
-          name={id}
+          name={name ?? id}
           type={type}
           required={required}
           placeholder={placeholder}
+          autoComplete={autoComplete}
           className={cn(fieldClasses, 'h-[52px]')}
         />
       )}

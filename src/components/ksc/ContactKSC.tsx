@@ -18,9 +18,35 @@ const INFOS = [
 ]
 
 export default function ContactKSC() {
-  const [sent, setSent] = useState(false)
-  // PLACEHOLDER : aucun envoi en preview (outil interne non branché). À brancher en prod.
-  const onSubmit = (e: React.FormEvent) => { e.preventDefault(); setSent(true) }
+  const [etat, setEtat] = useState<'idle' | 'envoi' | 'ok' | 'erreur'>('idle')
+  const sent = etat === 'ok'
+  // Envoi réel vers /api/lead (transféré au CRM via LEAD_WEBHOOK_URL quand posée).
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (etat === 'envoi') return
+    const data = new FormData(e.currentTarget)
+    setEtat('envoi')
+    try {
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          source: 'contact',
+          prenom: data.get('p'),
+          nom: data.get('n') || undefined,
+          email: data.get('e') || undefined,
+          telephone: data.get('t') || undefined,
+          message: data.get('m') || undefined,
+        }),
+      })
+      if (!res.ok) throw new Error(String(res.status))
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push({ event: 'lead', source: 'contact' })
+      setEtat('ok')
+    } catch {
+      setEtat('erreur')
+    }
+  }
 
   return (
     <>
@@ -40,7 +66,7 @@ export default function ContactKSC() {
             <div className="rounded-lg border border-border bg-white p-[clamp(26px,4vw,44px)] shadow-md">
               <h2 className="mb-6! font-heading text-[26px] font-extrabold text-marine">Envoyez-nous un <Underline>message</Underline></h2>
               {sent ? (
-                <p className="m-0! leading-relaxed"><strong className="text-marine">Merci !</strong> Votre message est bien noté, nous revenons vers vous rapidement.<br /><em>(Formulaire de démonstration — la transmission sera activée à la mise en ligne.)</em></p>
+                <p className="m-0! leading-relaxed"><strong className="text-marine">Merci !</strong> Votre message est bien noté, nous revenons vers vous rapidement.</p>
               ) : (
                 <form onSubmit={onSubmit} className="flex flex-col gap-[18px]">
                   <div className="grid gap-[18px] [grid-template-columns:repeat(auto-fit,minmax(200px,1fr))]">
@@ -50,7 +76,14 @@ export default function ContactKSC() {
                   <FormField id="e" label="Email" type="email" required />
                   <FormField id="t" label="Téléphone" type="tel" />
                   <FormField id="m" label="Message" as="textarea" rows={5} required />
-                  <Button type="submit" className="w-full">Envoyer</Button>
+                  <Button type="submit" className="w-full" disabled={etat === 'envoi'}>
+                    {etat === 'envoi' ? 'Envoi en cours…' : 'Envoyer'}
+                  </Button>
+                  {etat === 'erreur' && (
+                    <p className="m-0! text-sm font-semibold text-destructive">
+                      L’envoi a échoué. Réessayez, ou appelez-nous au 02 47 44 41 43.
+                    </p>
+                  )}
                 </form>
               )}
             </div>
