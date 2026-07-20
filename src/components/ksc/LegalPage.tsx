@@ -1,24 +1,28 @@
 import React from 'react'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
-import { KSC, display } from './ui'
+import HeroMarine from './HeroMarine'
 import type { LegalContent } from '@/data/legal'
 
+// Gabarit typographique sobre des pages légales (mentions, CGV, confidentialité,
+// cookies) : bandeau HeroMarine + corps texte étroit. Aucune donnée en dur —
+// tout vient de @/data/legal.
 export default function LegalPage({ content }: { content: LegalContent }) {
   return (
     <>
       <SiteHeader />
-      <main style={{ background: KSC.cream, fontFamily: KSC.fontBody, color: '#404a63' }}>
-        <section style={{ maxWidth: 820, margin: '0 auto', padding: '90px 24px 80px' }}>
-          <h1 style={{ ...display, fontSize: 'clamp(30px,4.5vw,44px)', fontWeight: 800, color: KSC.marine, margin: '0 0 18px' }}>{content.titre}</h1>
-          {content.intro && <p style={{ fontSize: 17, lineHeight: 1.7, margin: '0 0 28px' }}>{content.intro}</p>}
-          <p style={{ fontSize: 13, color: '#9aa1b2', margin: '0 0 36px', fontStyle: 'italic' }}>
+      <main className="bg-cream text-ink">
+        <HeroMarine title={content.titre} padding="72px 24px" />
+
+        <section className="mx-auto max-w-[760px] px-6 py-14">
+          {content.intro && <p className="mb-6! text-[17px] leading-relaxed">{content.intro}</p>}
+          <p className="mb-9! text-[13px] italic text-muted-foreground">
             Contenu type à faire valider par le client / un conseil juridique avant la mise en ligne.
           </p>
           {content.sections.map((s) => (
-            <div key={s.h} style={{ marginBottom: 28 }}>
-              <h2 style={{ ...display, fontSize: 21, fontWeight: 700, color: KSC.marine, margin: '0 0 10px' }}>{s.h}</h2>
-              <p style={{ fontSize: 16, lineHeight: 1.7, margin: 0, whiteSpace: 'pre-line' }}>{s.p}</p>
+            <div key={s.h}>
+              <h2 className="mt-10! mb-3! font-heading text-xl">{s.h}</h2>
+              <p className="mb-4! leading-relaxed whitespace-pre-line">{s.p}</p>
             </div>
           ))}
         </section>
