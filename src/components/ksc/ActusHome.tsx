@@ -1,37 +1,53 @@
 import React from 'react'
-import Underline from './Underline'
-import { KSC, display, kicker } from './ui'
-import { ARTICLES, ARTICLE_IMG } from '@/data/articles'
+import Image from 'next/image'
 
-// Bandeau « Actus & conseils » pour l'accueil (brief §4 : bandeau actus).
-// Affiche les 3 derniers articles + lien vers le blog. Maillage interne home -> blog.
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import Kicker from './Kicker'
+import SectionHeading from './SectionHeading'
+import LinkArrow from './LinkArrow'
+import { ARTICLES, ARTICLE_IMG, formatDateFr } from '@/data/articles'
+
+// Bandeau « Actus & conseils » pour l'accueil : 3 derniers articles + lien blog.
+// Maillage interne home -> blog. Tri par date décroissante.
 export default function ActusHome() {
   const derniers = [...ARTICLES].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3)
   return (
-    <section style={{ background: KSC.cream, fontFamily: KSC.fontBody, padding: '80px 24px' }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-        <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 20, flexWrap: 'wrap', marginBottom: 34 }}>
+    <section className="bg-cream px-6 py-20">
+      <div className="mx-auto max-w-[1200px]">
+        <div className="mb-9 flex flex-wrap items-end justify-between gap-5">
           <div>
-            <p style={{ ...kicker, color: KSC.magenta, margin: '0 0 10px' }}>Actus &amp; conseils</p>
-            <h2 style={{ ...display, fontSize: 'clamp(26px,3.5vw,40px)', fontWeight: 800, color: KSC.marine, margin: 0 }}>Le blog du <Underline>club</Underline></h2>
+            <Kicker className="mb-2.5">Actus &amp; conseils</Kicker>
+            <SectionHeading underline className="text-[clamp(26px,3.5vw,40px)]">
+              Le blog du club
+            </SectionHeading>
           </div>
-          <a href="/blog" className="ksc-btn ksc-btn--secondary" style={{ padding: '12px 24px', fontSize: 15 }}>Tous les articles</a>
+          <Button asChild variant="outline" size="sm">
+            <a href="/blog">Tous les articles</a>
+          </Button>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 26 }}>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {derniers.map((a) => (
-            <a key={a.slug} href={`/blog/${a.slug}`} className="ksc-card ksc-reveal" style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none', color: 'inherit' }}>
-              <div style={{ height: 170, overflow: 'hidden' }}>
-                <img src={ARTICLE_IMG[a.slug]} alt={a.titre} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <Card key={a.slug} className="gap-0 p-0">
+              <div className="relative aspect-[16/9]">
+                <Image
+                  src={ARTICLE_IMG[a.slug]}
+                  alt={a.titre}
+                  fill
+                  sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, calc(100vw - 48px)"
+                  className="object-cover"
+                />
               </div>
-              <div style={{ padding: '22px 24px 26px', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                <h3 style={{ ...display, fontSize: 19, fontWeight: 700, color: KSC.marine, margin: '0 0 10px', lineHeight: 1.3 }}>{a.titre}</h3>
-                <p style={{ color: '#525c75', lineHeight: 1.6, margin: '0 0 16px', flex: 1 }}>{a.excerpt}</p>
-                <span className="ksc-link-arrow">
-                  Lire l&rsquo;article
-                  <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ verticalAlign: '-1px', marginLeft: 6 }}><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-                </span>
+              <div className="flex flex-1 flex-col items-start gap-2.5 p-6">
+                <Badge variant="neutral">
+                  <time dateTime={a.date}>{formatDateFr(a.date)}</time>
+                </Badge>
+                <h3 className="font-heading text-[19px] font-bold leading-snug text-marine">{a.titre}</h3>
+                <p className="flex-1 leading-relaxed text-muted-foreground">{a.excerpt}</p>
+                <LinkArrow href={`/blog/${a.slug}`}>Lire l’article</LinkArrow>
               </div>
-            </a>
+            </Card>
           ))}
         </div>
       </div>
