@@ -1,11 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Le port fidèle Kinderly est du markup généré (vendored) avec du CSS Framer
-  // non-standard (cornerShape, variables --framer-*) : on n'impose pas le
-  // type-check/lint sur ce code, sinon le build échoue sur ces propriétés.
-  // Le code métier qu'on écrit à la main reste vérifié dans l'éditeur.
-  typescript: { ignoreBuildErrors: true },
+  // Type-check ACTIF au build : le port Framer vendored (seule raison
+  // historique de le désactiver) a été purgé lors de la refonte des fondations.
+  typescript: { ignoreBuildErrors: false },
   async redirects() {
     // NB: modification 2026-07-07 — invalide le cache de build Vercel qui avait
     // resservi un routes-manifest périmé (redirection garderie absente en prod).

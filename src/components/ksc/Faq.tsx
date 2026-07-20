@@ -7,7 +7,7 @@ import HeroMarine from './HeroMarine'
 import CtaBand from './CtaBand'
 import WaveDivider from './WaveDivider'
 import { Button } from '@/components/ui/button'
-import { KSC } from './ui'
+
 import { FAQ, type FaqItem } from '@/data/faq'
 
 // Rend « page tarifs » cliquable (lien /tarifs) — le JSON-LD garde le texte brut.
@@ -50,7 +50,7 @@ export default function Faq() {
           ))}
         </section>
 
-        <WaveDivider colorTop={KSC.cream} colorBottom={KSC.marine} />
+        <WaveDivider colorTop="var(--ksc-cream)" colorBottom="var(--ksc-marine)" />
 
         {/* Bande CTA pré-footer (textes existants de la page) */}
         <CtaBand title="Une autre question ?" sub="Venez nous voir ou contactez-nous.">

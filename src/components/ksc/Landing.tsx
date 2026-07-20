@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import { Check } from 'lucide-react'
 
@@ -19,9 +20,9 @@ export default function Landing({ slug }: { slug: string }) {
       {/* Barre de marque minimale */}
       <header className="bg-cream">
         <div className="mx-auto flex max-w-[1120px] items-center justify-between gap-4 px-6 py-3.5">
-          <a href="/" aria-label="Kid Sport Club — accueil" className="block shrink-0">
+          <Link href="/" aria-label="Kid Sport Club — accueil" className="block shrink-0">
             <Image src="/assets/ksc-logo.png" alt="Kid Sport Club" width={640} height={427} className="block h-12 w-auto" />
-          </a>
+          </Link>
           <div className="flex items-center gap-4">
             <a href="tel:+33247444143" className="text-[15px] font-bold text-marine">02 47 44 41 43</a>
             <InscriptionCTA label={l.ctaLabel} size="sm" />

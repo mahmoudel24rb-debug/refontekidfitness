@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 
 import { Badge } from '@/components/ui/badge'
@@ -24,7 +25,7 @@ export default function ActusHome() {
             </SectionHeading>
           </div>
           <Button asChild variant="outline" size="sm">
-            <a href="/blog">Tous les articles</a>
+            <Link href="/blog">Tous les articles</Link>
           </Button>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

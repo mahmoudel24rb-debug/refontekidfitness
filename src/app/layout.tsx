@@ -1,14 +1,11 @@
 import React from 'react'
 import { Baloo_2, Inter } from 'next/font/google'
 
-// Ordre des imports CSS voulu (coexistence pendant la migration Tailwind) :
-// globals.css est layeré (@layer Tailwind) -> le legacy non-layeré qui suit
-// (framer.css, overrides.css) garde la priorité en cascade, donc zéro régression
-// sur l'existant tant que le démantèlement n'est pas terminé.
+// Fondation unique : Tailwind v4 + thème charte KSC (globals.css).
+// Le port Framer (framer.css, SvgSprite, HomePage vendored) a été purgé
+// à la fin de la refonte des fondations — la home est reconstruite en
+// composants propres (src/components/home/).
 import './globals.css'
-import '@/components/framer.css'
-import './overrides.css'
-import SvgSprite from '@/components/SvgSprite'
 
 
 // Typographie de la charte : Baloo 2 (display, titres) + Inter (texte courant).
@@ -73,7 +70,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="fr" className={`${display.variable} ${body.variable}`}>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }} />
-        <SvgSprite />
         {children}
       </body>
     </html>

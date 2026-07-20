@@ -4,7 +4,6 @@ import { MapPin } from 'lucide-react'
 import { FOOTER_NAV, LEGAL_NAV } from '@/data/nav'
 import { PRESTATIONS } from '@/data/prestations'
 import { cn } from '@/lib/utils'
-import Reveal from './Reveal'
 import TerrainLines from './TerrainLines'
 
 // Footer KSC partagé — Tailwind intégral (l'ex-section §9 d'overrides.css
@@ -18,9 +17,6 @@ export default function SiteFooter() {
   return (
     <footer className="relative overflow-hidden bg-navy text-cream">
       <TerrainLines opacity={0.045} />
-      {/* Observer global des apparitions au scroll (.ksc-reveal) — encore
-          référencé par les pages non migrées (phases 4-5), voir Reveal.tsx. */}
-      <Reveal />
       <div className="relative mx-auto grid max-w-[1320px] grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-10 px-6 pt-16 pb-7">
         <div className="flex flex-col gap-4">
           <span className="font-heading text-2xl font-extrabold text-cream">Kid Sport Club</span>

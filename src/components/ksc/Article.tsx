@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { ArrowRight, ChevronLeft } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
@@ -31,10 +32,10 @@ export default function Article({ slug }: { slug: string }) {
         {/* Hero avec image de couverture */}
         <HeroMarine
           kicker={
-            <a href="/blog" className="inline-flex items-center gap-1 text-magenta-light hover:text-magenta">
+            <Link href="/blog" className="inline-flex items-center gap-1 text-magenta-light hover:text-magenta">
               <ChevronLeft size={14} aria-hidden="true" />
               Blog
-            </a>
+            </Link>
           }
           title={a.titre}
           sub={<>Publié le <time dateTime={a.date}>{formatDateFr(a.date)}</time></>}

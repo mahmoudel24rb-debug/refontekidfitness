@@ -6,12 +6,18 @@ import React from 'react'
 // Sobre : uniquement les H2 de section, jamais les titres de cartes.
 export default function Underline({ children }: { children: React.ReactNode }) {
   return (
-    <span className="ksc-underline">
+    <span className="relative inline-block whitespace-nowrap">
       {children}
-      <svg aria-hidden="true" viewBox="0 0 120 10" preserveAspectRatio="none" fill="none">
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 120 10"
+        preserveAspectRatio="none"
+        fill="none"
+        className="pointer-events-none absolute left-[2%] -bottom-[0.28em] h-[0.22em] w-[96%]"
+      >
         <path
           d="M3 7.5 Q 32 2.5 62 5 T 117 4"
-          stroke="#e6007e"
+          stroke="var(--ksc-magenta)"
           strokeWidth="3"
           strokeLinecap="round"
         />

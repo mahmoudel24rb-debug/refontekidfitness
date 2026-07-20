@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
@@ -153,7 +154,7 @@ export default function Prestation({ slug }: { slug: string }) {
               ))}
             </div>
             <div className="mt-9 text-center">
-              <a href="/nos-prestations" className="font-bold text-marine underline underline-offset-[3px]">Voir toutes nos prestations</a>
+              <Link href="/nos-prestations" className="font-bold text-marine underline underline-offset-[3px]">Voir toutes nos prestations</Link>
             </div>
           </Container>
         </Section>

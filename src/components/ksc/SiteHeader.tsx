@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { ChevronDown, Menu } from 'lucide-react'
@@ -61,7 +62,7 @@ export default function SiteHeader() {
   return (
     <header className={cn('sticky top-0 z-50 bg-cream transition-shadow duration-150', scrolled && 'shadow-sm')}>
       <div className="mx-auto flex max-w-[1480px] items-center justify-between gap-8 px-5 py-[18px] lg:gap-14 lg:px-11">
-        <a href="/" aria-label="Kid Sport Club — accueil" className="block shrink-0">
+        <Link href="/" aria-label="Kid Sport Club — accueil" className="block shrink-0">
           <Image
             src="/assets/ksc-logo.png"
             alt="Kid Sport Club"
@@ -70,7 +71,7 @@ export default function SiteHeader() {
             priority
             className="block h-[60px] w-auto"
           />
-        </a>
+        </Link>
 
         {/* Nav desktop */}
         <NavigationMenu
