@@ -1,5 +1,5 @@
 import React from 'react'
-import { PRESTATIONS } from './prestations'
+import { PRESTATIONS } from '@/data/prestations'
 import TerrainLines from './TerrainLines'
 import Reveal from './Reveal'
 import { KSC, display } from './ui'

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
-import { PRESTATIONS } from '@/components/ksc/prestations'
-import { ARTICLES } from '@/components/ksc/articles'
+import { PRESTATIONS } from '@/data/prestations'
+import { ARTICLES } from '@/data/articles'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 

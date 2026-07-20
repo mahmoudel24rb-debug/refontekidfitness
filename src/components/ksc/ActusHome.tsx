@@ -1,8 +1,7 @@
 import React from 'react'
 import Underline from './Underline'
 import { KSC, display, kicker } from './ui'
-import { ARTICLES } from './articles'
-import { ARTICLE_IMG } from './BlogKSC'
+import { ARTICLES, ARTICLE_IMG } from '@/data/articles'
 
 // Bandeau « Actus & conseils » pour l'accueil (brief §4 : bandeau actus).
 // Affiche les 3 derniers articles + lien vers le blog. Maillage interne home -> blog.

@@ -61,6 +61,15 @@ export const ARTICLES: Article[] = [
   },
 ]
 
+// Visuel de chaque article (webp du dossier /assets/ksc) — partagé entre
+// BlogKSC (featured + grille), Article (hero + JSON-LD) et ActusHome.
+export const ARTICLE_IMG: Record<string, string> = {
+  'a-quel-age-sport-enfant': '/assets/ksc/cours-10-36-mois.webp',
+  'bienfaits-motricite-tout-petit': '/assets/ksc/cours-3-5-ans.webp',
+  'idees-anniversaire-sportif-enfant': '/assets/ksc/anniversaire.webp',
+  'enfants-vacances-scolaires': '/assets/ksc/stages-vacances.webp',
+}
+
 export const articleBySlug = (slug: string) => ARTICLES.find((a) => a.slug === slug)
 
 // Format français « 22 juin 2026 » (sans dépendre de l'ICU du runtime).

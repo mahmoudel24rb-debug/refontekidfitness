@@ -6,7 +6,7 @@ import HeroMarine from './HeroMarine'
 import TerrainLines from './TerrainLines'
 import Underline from './Underline'
 import { KSC, display } from './ui'
-import { PRESTATIONS, prestationBySlug } from './prestations'
+import { PRESTATIONS, prestationBySlug } from '@/data/prestations'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 

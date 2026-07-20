@@ -1,5 +1,5 @@
 import LegalPage from '@/components/ksc/LegalPage';
-import { MENTIONS_LEGALES } from '@/components/ksc/legal'
+import { MENTIONS_LEGALES } from '@/data/legal'
 
 export const metadata = {
   title: "Mentions légales — Kid Sport Club",

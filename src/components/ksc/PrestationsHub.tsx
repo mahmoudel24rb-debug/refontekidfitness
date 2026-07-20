@@ -7,7 +7,7 @@ import CtaBand from './CtaBand'
 import WaveDivider from './WaveDivider'
 import Underline from './Underline'
 import { KSC, display } from './ui'
-import { PRESTATIONS } from './prestations'
+import { PRESTATIONS } from '@/data/prestations'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 

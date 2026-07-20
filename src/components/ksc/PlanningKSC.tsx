@@ -5,7 +5,7 @@ import HeroMarine from './HeroMarine'
 import CtaBand from './CtaBand'
 import WaveDivider from './WaveDivider'
 import { KSC, display } from './ui'
-import { PLANNING } from './planning'
+import { PLANNING } from '@/data/planning'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 

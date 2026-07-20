@@ -4,14 +4,7 @@ import SiteFooter from './SiteFooter'
 import HeroMarine from './HeroMarine'
 import WaveDivider from './WaveDivider'
 import { KSC, display } from './ui'
-import { ARTICLES, formatDateFr } from './articles'
-
-export const ARTICLE_IMG: Record<string, string> = {
-  'a-quel-age-sport-enfant': '/assets/ksc/cours-10-36-mois.webp',
-  'bienfaits-motricite-tout-petit': '/assets/ksc/cours-3-5-ans.webp',
-  'idees-anniversaire-sportif-enfant': '/assets/ksc/anniversaire.webp',
-  'enfants-vacances-scolaires': '/assets/ksc/stages-vacances.webp',
-}
+import { ARTICLES, ARTICLE_IMG, formatDateFr } from '@/data/articles'
 
 // Pill de date (crème) — partagée entre la carte featured et la grille.
 function DatePill({ date }: { date: string }) {

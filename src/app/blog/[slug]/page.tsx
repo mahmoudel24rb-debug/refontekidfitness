@@ -1,5 +1,5 @@
 import Article from '@/components/ksc/Article'
-import { ARTICLES, articleBySlug } from '@/components/ksc/articles'
+import { ARTICLES, articleBySlug } from '@/data/articles'
 
 export function generateStaticParams() {
   return ARTICLES.map((a) => ({ slug: a.slug }))

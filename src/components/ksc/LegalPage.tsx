@@ -2,8 +2,7 @@ import React from 'react'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import { KSC, display } from './ui'
-
-export type LegalContent = { titre: string; intro?: string; sections: { h: string; p: string }[] }
+import type { LegalContent } from '@/data/legal'
 
 export default function LegalPage({ content }: { content: LegalContent }) {
   return (

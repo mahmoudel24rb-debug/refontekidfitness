@@ -1,5 +1,5 @@
 import LegalPage from '@/components/ksc/LegalPage';
-import { CGV } from '@/components/ksc/legal'
+import { CGV } from '@/data/legal'
 
 export const metadata = {
   title: "CGV — Kid Sport Club",

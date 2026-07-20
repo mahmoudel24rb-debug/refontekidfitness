@@ -5,8 +5,7 @@ import HeroMarine from './HeroMarine'
 import TerrainLines from './TerrainLines'
 import Underline from './Underline'
 import { KSC, display } from './ui'
-import { articleBySlug, ARTICLES, formatDateFr } from './articles'
-import { ARTICLE_IMG } from './BlogKSC'
+import { articleBySlug, ARTICLES, ARTICLE_IMG, formatDateFr } from '@/data/articles'
 
 export default function Article({ slug }: { slug: string }) {
   const a = articleBySlug(slug)

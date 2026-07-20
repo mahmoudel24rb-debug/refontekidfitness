@@ -1,5 +1,5 @@
 import LegalPage from '@/components/ksc/LegalPage';
-import { COOKIES } from '@/components/ksc/legal'
+import { COOKIES } from '@/data/legal'
 
 export const metadata = {
   title: "Gestion des cookies — Kid Sport Club",

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Landing from '@/components/ksc/Landing'
-import { LANDINGS, landingBySlug } from '@/components/ksc/landings'
+import { LANDINGS, landingBySlug } from '@/data/landings'
 
 export function generateStaticParams() {
   return LANDINGS.map((l) => ({ slug: l.slug }))

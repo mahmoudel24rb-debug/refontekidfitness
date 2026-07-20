@@ -1,5 +1,5 @@
 import Prestation from '@/components/ksc/Prestation'
-import { PRESTATIONS, prestationBySlug } from '@/components/ksc/prestations'
+import { PRESTATIONS, prestationBySlug } from '@/data/prestations'
 
 export function generateStaticParams() {
   return PRESTATIONS.map((p) => ({ slug: p.slug }))

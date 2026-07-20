@@ -4,7 +4,7 @@ import TerrainLines from './TerrainLines'
 import Reveal from './Reveal'
 import Underline from './Underline'
 import { KSC, display, kicker } from './ui'
-import { landingBySlug } from './landings'
+import { landingBySlug } from '@/data/landings'
 
 // Gabarit Landing (conversion-first, sans navigation pour limiter les fuites).
 // Barre de marque minimale (logo + tél + CTA), hero marine + lignes de terrain,

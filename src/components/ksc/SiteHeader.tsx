@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import InscriptionCTA from './InscriptionCTA'
-import { PRESTATIONS } from './prestations'
+import { PRESTATIONS } from '@/data/prestations'
 import { KSC } from './ui'
 
 // Header KSC partagé (nouvelles pages). Charte : fond crème, logo, nav, CTA magenta.

@@ -1,4 +1,5 @@
-import type { LegalContent } from './LegalPage'
+// Type des contenus légaux (consommé par components/ksc/LegalPage.tsx).
+export type LegalContent = { titre: string; intro?: string; sections: { h: string; p: string }[] }
 
 // Contenus légaux PLACEHOLDER (à compléter/valider par le client). NAP : Kid Sport
 // Club, 1 Quai de la Loire, 37210 Rochecorbon — 02 47 44 41 43.

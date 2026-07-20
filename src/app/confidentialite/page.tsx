@@ -1,5 +1,5 @@
 import LegalPage from '@/components/ksc/LegalPage';
-import { CONFIDENTIALITE } from '@/components/ksc/legal'
+import { CONFIDENTIALITE } from '@/data/legal'
 
 export const metadata = {
   title: "Politique de confidentialité — Kid Sport Club",
