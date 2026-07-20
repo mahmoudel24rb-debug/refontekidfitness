@@ -1,38 +1,55 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import { ChevronDown, Menu } from 'lucide-react'
+import { NavigationMenu as NavigationMenuPrimitive } from 'radix-ui'
+
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from '@/components/ui/navigation-menu'
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
+import { NAV } from '@/data/nav'
+import { cn } from '@/lib/utils'
 import InscriptionCTA from './InscriptionCTA'
-import { PRESTATIONS } from '@/data/prestations'
-import { KSC } from './ui'
 
-// Header KSC partagé (nouvelles pages). Charte : fond crème, logo, nav, CTA magenta.
-// Structure/dimensions validées client — ne pas les changer. Ajouts charte :
-// sticky + fond crème 97 % / ombre / blur au scroll, soulignement magenta animé,
-// lien actif magenta, sous-menu radius 16 + ombre md.
-// Pas d'entrée « Accueil » (le logo y renvoie) ni « Contact » (présent au footer, et
-// le CTA « S'inscrire » y mène tant que l'inscription en ligne n'est pas branchée) :
-// le header est réservé aux deux chemins de conversion — séance d'essai et inscription.
-const NAV = [
-  { label: 'Qui sommes-nous', href: '/qui-sommes-nous' },
-  { label: 'Nos prestations', href: '/nos-prestations', sub: PRESTATIONS.map((p) => ({ label: p.titre, href: `/nos-prestations/${p.slug}` })) },
-  { label: 'Tarifs', href: '/tarifs' },
-  { label: 'Planning', href: '/planning' },
-  { label: 'FAQ', href: '/faq' },
-  { label: 'Blog', href: '/blog' },
-]
+// Header KSC partagé. Charte : fond crème, logo, nav, CTA magenta.
+// Dimensions validées client — ne pas les changer : conteneur max-w 1480,
+// padding 18px/44px desktop (20px latéral mobile), logo h-60px, gap nav 32,
+// gap CTA 22. Sticky opaque + ombre au scroll. Breakpoint mobile : lg (1024).
+// Desktop : navigation-menu Radix (sous-menu Prestations au hover/focus
+// clavier, clic = navigation vers le hub). Mobile : burger -> sheet à droite
+// (fermeture Esc/overlay native Radix, scroll lock inclus).
 
-const link: React.CSSProperties = {
-  color: KSC.marine, fontFamily: KSC.fontBody, fontWeight: 600, fontSize: 16,
-  textDecoration: 'none', whiteSpace: 'nowrap',
-}
+// Lien nav : marine semi-gras, soulignement magenta animé (scaleX) au
+// hover/focus, lien actif magenta (aria-current) — ex-.ksc-nav-link.
+const navLinkCls =
+  'relative whitespace-nowrap text-base font-semibold text-marine transition-colors ' +
+  'after:absolute after:inset-x-0 after:-bottom-[5px] after:h-0.5 after:rounded-full after:bg-magenta ' +
+  'after:origin-left after:scale-x-0 after:transition-transform after:duration-150 ' +
+  'hover:after:scale-x-100 focus-visible:after:scale-x-100 ' +
+  'aria-[current=page]:text-magenta aria-[current=page]:after:scale-x-100'
+
+// Neutralise le style « pill » par défaut du NavigationMenuLink shadcn
+// (fond muted au hover/focus) : ici le feedback est le soulignement magenta.
+const navLinkResetCls = 'rounded-none p-0 bg-transparent hover:bg-transparent focus:bg-transparent'
+
+// Liens du panneau mobile (sheet).
+const mobileLinkCls = 'block py-3 text-[17px] font-semibold text-marine aria-[current=page]:text-magenta'
+const mobileSubLinkCls = 'py-2 text-[15px] font-semibold text-marine aria-[current=page]:text-magenta'
 
 export default function SiteHeader() {
-  const [open, setOpen] = useState(false)
-  const [presOpen, setPresOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  // Sous-menu desktop contrôlé : Radix l'ouvre au hover, on ajoute l'ouverture
+  // au focus clavier (le déclencheur est un lien, Entrée = navigation).
+  const [openMenu, setOpenMenu] = useState('')
   const pathname = usePathname()
-  const isActive = (href: string) => (pathname === href || (href !== '/' && pathname?.startsWith(`${href}/`)))
+  const isActive = (href: string) => pathname === href || (href !== '/' && pathname?.startsWith(`${href}/`))
+  const current = (href: string): 'page' | undefined => (isActive(href) ? 'page' : undefined)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -42,79 +59,125 @@ export default function SiteHeader() {
   }, [])
 
   return (
-    <header className={`ksc-header${scrolled ? ' is-scrolled' : ''}`} style={{ background: KSC.cream, fontFamily: KSC.fontBody }}>
-      <div className="ksc-header-inner" style={{ maxWidth: 1480, margin: '0 auto', padding: '18px 44px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 56 }}>
-        <a href="/" aria-label="Kid Sport Club — accueil" style={{ display: 'block', flexShrink: 0 }}>
-          <img src="/assets/ksc-logo.png" alt="Kid Sport Club" style={{ height: 60, width: 'auto', display: 'block' }} />
+    <header className={cn('sticky top-0 z-50 bg-cream transition-shadow duration-150', scrolled && 'shadow-sm')}>
+      <div className="mx-auto flex max-w-[1480px] items-center justify-between gap-8 px-5 py-[18px] lg:gap-14 lg:px-11">
+        <a href="/" aria-label="Kid Sport Club — accueil" className="block shrink-0">
+          <Image
+            src="/assets/ksc-logo.png"
+            alt="Kid Sport Club"
+            width={640}
+            height={427}
+            priority
+            className="block h-[60px] w-auto"
+          />
         </a>
 
         {/* Nav desktop */}
-        <nav className="ksc-nav-desktop" style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
-          {NAV.map((item) => (
-            <div key={item.href} style={{ position: 'relative' }}
-              onMouseEnter={() => item.sub && setPresOpen(true)} onMouseLeave={() => item.sub && setPresOpen(false)}>
-              <a href={item.href} className="ksc-nav-link"
-                aria-current={isActive(item.href) ? 'page' : undefined}
-                style={{ ...link, color: isActive(item.href) ? KSC.magenta : KSC.marine }}>
-                {item.label}
-                {item.sub && (
-                  <svg aria-hidden="true" width="10" height="7" viewBox="0 0 10 7" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: 6, verticalAlign: 'middle' }}><path d="M1 1.5l4 4 4-4" /></svg>
+        <NavigationMenu
+          viewport={false}
+          delayDuration={0}
+          value={openMenu}
+          onValueChange={setOpenMenu}
+          className="hidden lg:flex"
+        >
+          <NavigationMenuList className="gap-8">
+            {NAV.map((item) => (
+              <NavigationMenuItem key={item.href} value={item.href}>
+                {item.sub ? (
+                  <>
+                    {/* Déclencheur = vrai lien (asChild) : hover/focus ouvre le
+                        sous-menu, clic/Entrée navigue vers le hub prestations. */}
+                    <NavigationMenuPrimitive.Trigger asChild onFocus={() => setOpenMenu(item.href)}>
+                      <a
+                        href={item.href}
+                        aria-current={current(item.href)}
+                        className={cn(navLinkCls, 'inline-flex items-center gap-1.5')}
+                      >
+                        {item.label}
+                        <ChevronDown className="size-3" aria-hidden="true" />
+                      </a>
+                    </NavigationMenuPrimitive.Trigger>
+                    {/* pt-3 = pont de survol entre le lien et le panneau. */}
+                    <NavigationMenuPrimitive.Content className="absolute top-full left-1/2 z-50 -translate-x-1/2 pt-3">
+                      <ul className="flex min-w-[230px] flex-col items-start gap-2.5 rounded-lg border border-border bg-white p-4 shadow-md">
+                        {item.sub.map((s) => (
+                          <li key={s.href}>
+                            <NavigationMenuLink asChild>
+                              <a
+                                href={s.href}
+                                aria-current={current(s.href)}
+                                className={cn(navLinkCls, navLinkResetCls, 'text-[15px] font-bold')}
+                              >
+                                {s.label}
+                              </a>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </NavigationMenuPrimitive.Content>
+                  </>
+                ) : (
+                  <NavigationMenuLink asChild>
+                    <a href={item.href} aria-current={current(item.href)} className={cn(navLinkCls, navLinkResetCls)}>
+                      {item.label}
+                    </a>
+                  </NavigationMenuLink>
                 )}
-              </a>
-              {item.sub && presOpen && (
-                <div style={{ position: 'absolute', top: '100%', left: '50%', transform: 'translateX(-50%)', paddingTop: 12, zIndex: 100 }}>
-                  <div style={{ background: KSC.white, borderRadius: KSC.radiusCard, border: `1px solid ${KSC.border}`, padding: 16, minWidth: 230, boxShadow: KSC.shadowMd, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                    {item.sub.map((s) => (
-                      <a key={s.href} href={s.href} className="ksc-nav-link"
-                        aria-current={isActive(s.href) ? 'page' : undefined}
-                        style={{ ...link, fontSize: 15, fontWeight: 700, alignSelf: 'flex-start', color: isActive(s.href) ? KSC.magenta : KSC.marine }}>{s.label}</a>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </nav>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
 
-        <div className="ksc-cta-desktop" style={{ display: 'flex', alignItems: 'center', gap: 22 }}>
-          <a href="/seance-essai" className="ksc-nav-link" style={{ ...link, fontWeight: 700, color: isActive('/seance-essai') ? KSC.magenta : KSC.marine }}>Séance d’essai</a>
+        {/* CTAs desktop */}
+        <div className="hidden items-center gap-[22px] lg:flex">
+          <a href="/seance-essai" aria-current={current('/seance-essai')} className={cn(navLinkCls, 'font-bold')}>
+            Séance d’essai
+          </a>
           <InscriptionCTA size="sm" />
         </div>
 
-        {/* Burger mobile */}
-        <button className="ksc-burger" aria-label="Menu" aria-expanded={open} onClick={() => setOpen((v) => !v)}
-          style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', flexShrink: 0 }}>
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={KSC.marine} strokeWidth="2.2" strokeLinecap="round"><path d="M3 6h18M3 12h18M3 18h18" /></svg>
-        </button>
-      </div>
-
-      {/* Panneau mobile */}
-      {open && (
-        <div className="ksc-mobile-panel" style={{ borderTop: `1px solid ${KSC.border}`, background: KSC.cream, padding: '12px 24px 24px', display: 'flex', flexDirection: 'column', gap: 4 }}>
-          {NAV.map((item) => (
-            <div key={item.href}>
-              <a href={item.href} style={{ ...link, display: 'block', padding: '12px 0', fontSize: 17, color: isActive(item.href) ? KSC.magenta : KSC.marine }}>{item.label}</a>
-              {item.sub && (
-                <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: 16, borderLeft: `2px solid ${KSC.magenta}`, marginBottom: 8 }}>
-                  {item.sub.map((s) => <a key={s.href} href={s.href} style={{ ...link, padding: '8px 0', fontSize: 15, color: isActive(s.href) ? KSC.magenta : KSC.marine }}>{s.label}</a>)}
+        {/* Burger mobile -> sheet à droite */}
+        <Sheet>
+          <SheetTrigger asChild>
+            <button
+              type="button"
+              aria-label="Menu"
+              className="inline-flex size-10 shrink-0 items-center justify-center rounded-full text-marine transition-colors duration-150 hover:bg-cream-2 lg:hidden"
+            >
+              <Menu className="size-7" aria-hidden="true" />
+            </button>
+          </SheetTrigger>
+          <SheetContent side="right" aria-describedby={undefined} className="gap-0 overflow-y-auto bg-cream p-6 pt-12">
+            <SheetTitle className="sr-only">Menu</SheetTitle>
+            <nav className="flex flex-col gap-1" aria-label="Navigation principale">
+              {NAV.map((item) => (
+                <div key={item.href}>
+                  <a href={item.href} aria-current={current(item.href)} className={mobileLinkCls}>
+                    {item.label}
+                  </a>
+                  {item.sub && (
+                    <div className="mb-2 flex flex-col border-l-2 border-magenta pl-4">
+                      {item.sub.map((s) => (
+                        <a key={s.href} href={s.href} aria-current={current(s.href)} className={mobileSubLinkCls}>
+                          {s.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-          ))}
-          <a href="/seance-essai" style={{ ...link, padding: '12px 0', fontWeight: 700 }}>Séance d’essai</a>
-          <InscriptionCTA className="mt-2 w-full" />
-        </div>
-      )}
-
-      <style>{`
-        @media (max-width: 980px) {
-          .ksc-nav-desktop, .ksc-cta-desktop { display: none !important; }
-          .ksc-burger { display: block !important; }
-          /* les 44px de respiration du desktop mangeraient la largeur sur mobile */
-          .ksc-header-inner { padding-left: 20px !important; padding-right: 20px !important; }
-        }
-        @media (min-width: 981px) { .ksc-mobile-panel { display: none !important; } }
-      `}</style>
+              ))}
+              <a
+                href="/seance-essai"
+                aria-current={current('/seance-essai')}
+                className="block py-3 text-base font-bold text-marine aria-[current=page]:text-magenta"
+              >
+                Séance d’essai
+              </a>
+              <InscriptionCTA className="mt-2 w-full" />
+            </nav>
+          </SheetContent>
+        </Sheet>
+      </div>
     </header>
   )
 }
