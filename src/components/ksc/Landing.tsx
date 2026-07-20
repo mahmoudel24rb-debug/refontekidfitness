@@ -22,7 +22,7 @@ export default function Landing({ slug }: { slug: string }) {
           <a href="/" aria-label="Kid Sport Club — accueil"><img src="/assets/ksc-logo.png" alt="Kid Sport Club" style={{ height: 48, width: 'auto', display: 'block' }} /></a>
           <div style={{ display: 'flex', alignItems: 'center', gap: 18 }}>
             <a href="tel:+33247444143" style={{ color: KSC.marine, fontWeight: 700, textDecoration: 'none', fontSize: 15 }}>02 47 44 41 43</a>
-            <InscriptionCTA label={l.ctaLabel} style={{ padding: '12px 22px', fontSize: 15 }} />
+            <InscriptionCTA label={l.ctaLabel} size="sm" className="px-[22px] py-3" />
           </div>
         </div>
       </header>

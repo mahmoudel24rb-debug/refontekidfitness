@@ -78,7 +78,7 @@ export default function SiteHeader() {
 
         <div className="ksc-cta-desktop" style={{ display: 'flex', alignItems: 'center', gap: 22 }}>
           <a href="/seance-essai" className="ksc-nav-link" style={{ ...link, fontWeight: 700, color: isActive('/seance-essai') ? KSC.magenta : KSC.marine }}>Séance d’essai</a>
-          <InscriptionCTA style={{ padding: '14px 28px', fontSize: 15 }} />
+          <InscriptionCTA size="sm" />
         </div>
 
         {/* Burger mobile */}
@@ -102,7 +102,7 @@ export default function SiteHeader() {
             </div>
           ))}
           <a href="/seance-essai" style={{ ...link, padding: '12px 0', fontWeight: 700 }}>Séance d’essai</a>
-          <InscriptionCTA style={{ marginTop: 8, width: '100%' }} />
+          <InscriptionCTA className="mt-2 w-full" />
         </div>
       )}
 

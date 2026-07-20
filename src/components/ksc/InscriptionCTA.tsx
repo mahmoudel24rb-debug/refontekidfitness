@@ -1,33 +1,29 @@
 import React from 'react'
 
-// CTA « S'inscrire » — PLACEHOLDER. Pour la preview GitHub/Vercel, le bouton
-// renvoie simplement vers /contact (n'envoie rien, pas de vente en ligne).
-// EN PROD : remplacer BODYLINK_URL par l'URL/parcours Bodylink réel (ou brancher
-// un onClick d'ouverture du module). C'est le SEUL endroit à modifier.
-export const BODYLINK_URL = '/contact'
-// Alias neutre pour les autres composants : le nom de l'outil d'inscription
-// (jargon interne) ne doit apparaître qu'ici.
-export const INSCRIPTION_URL = BODYLINK_URL
+import { Button } from '@/components/ui/button'
+import { INSCRIPTION_URL } from '@/data/site'
+
+// CTA « S'inscrire » : Button KSC (pill) pointant vers INSCRIPTION_URL
+// (placeholder /contact — la vraie URL d'inscription se branche dans
+// src/data/site.ts, seul endroit à modifier en prod).
+//
+// Réexport transitoire : HomePage.tsx (port Framer, intouchable jusqu'à la
+// phase 3) importe INSCRIPTION_URL depuis ce module.
+export { INSCRIPTION_URL }
 
 type Props = {
   label?: string
-  variant?: 'primary' | 'light' | 'outline' | 'cream'
-  style?: React.CSSProperties
+  variant?: React.ComponentProps<typeof Button>['variant']
+  size?: React.ComponentProps<typeof Button>['size']
+  className?: string
 }
 
-// Système de boutons unique de la charte : classes .ksc-btn définies dans
-// overrides.css (pill, transitions et hovers y compris reduced-motion).
-const variantClass: Record<string, string> = {
-  primary: 'ksc-btn--primary',
-  light: 'ksc-btn--light',
-  outline: 'ksc-btn--secondary',
-  cream: 'ksc-btn--cream',
-}
-
-export default function InscriptionCTA({ label = "S’inscrire", variant = 'primary', style }: Props) {
+export default function InscriptionCTA({ label = 'S’inscrire', variant = 'primary', size = 'default', className }: Props) {
   return (
-    <a href={BODYLINK_URL} data-bodylink="placeholder" className={`ksc-btn ${variantClass[variant]}`} style={style}>
-      {label}
-    </a>
+    <Button asChild variant={variant} size={size} className={className}>
+      <a href={INSCRIPTION_URL} data-inscription="placeholder">
+        {label}
+      </a>
+    </Button>
   )
 }
