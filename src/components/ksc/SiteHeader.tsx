@@ -26,7 +26,7 @@ import InscriptionCTA from './InscriptionCTA'
 // (fermeture Esc/overlay native Radix, scroll lock inclus).
 
 // Lien nav : marine semi-gras, soulignement magenta animé (scaleX) au
-// hover/focus, lien actif magenta (aria-current) — ex-.ksc-nav-link.
+// hover/focus, lien actif magenta (aria-current) — ex-§8 d'overrides.css.
 const navLinkCls =
   'relative whitespace-nowrap text-base font-semibold text-marine transition-colors ' +
   'after:absolute after:inset-x-0 after:-bottom-[5px] after:h-0.5 after:rounded-full after:bg-magenta ' +

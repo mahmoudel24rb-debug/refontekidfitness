@@ -212,58 +212,11 @@ a:hover > .ksc-link-arrow svg,
   color: #404a63;
 }
 
-/* ---------- 8. Header sticky ---------- */
-.ksc-header {
-  position: sticky;
-  top: 0;
-  z-index: 900;
-  transition:
-    background-color 180ms ease,
-    box-shadow 180ms ease;
-}
-.ksc-header.is-scrolled {
-  /* Fond OPAQUE : la version translucide + blur laissait deviner le texte
-     qui défile dessous (rendu « fantôme » signalé sur certains écrans). */
-  background: var(--ksc-cream, #fbf9f0) !important;
-  box-shadow: var(--ksc-shadow-sm);
-}
-/* Liens nav : soulignement magenta animé (scaleX). */
-.ksc-nav-link {
-  position: relative;
-}
-.ksc-nav-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -5px;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--ksc-magenta);
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 180ms ease;
-}
-.ksc-nav-link:hover::after,
-.ksc-nav-link:focus-visible::after,
-.ksc-nav-link[aria-current='page']::after {
-  transform: scaleX(1);
-}
-/* Le panneau mobile ne doit pas dépasser l'écran sous le header sticky. */
-.ksc-mobile-panel {
-  max-height: calc(100vh - 96px);
-  overflow-y: auto;
-}
+/* ---------- 8. Header sticky — PURGÉ (phase 2) : SiteHeader est passé en
+   Tailwind (sticky, soulignement magenta animé et panneau mobile inclus). */
 
-/* ---------- 9. Footer marine ---------- */
-.ksc-footer a {
-  color: rgba(251, 249, 240, 0.85);
-  text-decoration: none;
-  transition: color 180ms ease;
-}
-.ksc-footer a:hover {
-  color: var(--ksc-magenta-light);
-}
+/* ---------- 9. Footer marine — PURGÉ (phase 2) : SiteFooter est passé en
+   Tailwind (liens crème 85 % -> magenta clair au hover). */
 
 /* ---------- 10. Soulignement « swash » des H2 de section ---------- */
 .ksc-underline {
