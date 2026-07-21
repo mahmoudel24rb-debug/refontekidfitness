@@ -4,50 +4,81 @@ import React, { useEffect, useState } from 'react'
 import { Phone } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
+import { COORDONNEES } from '@/data/site'
 
 // Barre CTA collante bas d'écran, mobile uniquement (standard landing Meta :
-// l'action principale reste à un pouce du pouce). Visible une fois la cible
-// (#lead-form ou section prestations) sortie de l'écran, masquée quand elle
-// est visible. Aucune animation (sobriété + reduced-motion).
-export default function StickyCtaBar({ href, label }: { href: string; label: string }) {
+// l'action principale reste à un pouce du pouce). Elle observe UNE OU PLUSIEURS
+// cibles (par défaut, la cible du lien) : masquée dès qu'AU MOINS UNE cible est
+// visible, affichée seulement quand TOUTES sont hors écran. Les landings lead
+// passent les deux formulaires (#lead-form du hero + #lead-form-final de fin de
+// page) ; le catalogue passe la section prestations.
+// Aucune animation (sobriété + reduced-motion).
+export default function StickyCtaBar({
+  href,
+  label,
+  targets,
+}: {
+  href: string
+  label: string
+  targets?: string[]
+}) {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const selecteur = href.startsWith('#') ? href : '#lead-form'
-    let io: IntersectionObserver | undefined
-    let essais = 0
-    let timer: ReturnType<typeof setTimeout> | undefined
-    let fallbackScroll: (() => void) | undefined
+    const selecteurs = (targets && targets.length > 0 ? targets : [href]).filter((s) =>
+      s.startsWith('#'),
+    )
+    if (selecteurs.length === 0) {
+      // Aucune ancre observable : repli simple au scroll.
+      const onScroll = () => setVisible(window.scrollY > 480)
+      onScroll()
+      window.addEventListener('scroll', onScroll, { passive: true })
+      return () => window.removeEventListener('scroll', onScroll)
+    }
 
-    // La cible peut apparaître APRÈS le montage (LeadForm est derrière une
-    // frontière Suspense, le temps que useSearchParams se résolve) : on
-    // réessaie brièvement avant de basculer sur le repli au scroll.
-    const attacher = () => {
+    // État d'intersection par cible : la barre est visible quand AUCUNE cible
+    // n'est à l'écran (toutes hors écran).
+    const etats = new Map<string, boolean>(selecteurs.map((s) => [s, false]))
+    const recalculer = () => setVisible(![...etats.values()].some(Boolean))
+
+    const observers: IntersectionObserver[] = []
+    let fallbackScroll: (() => void) | undefined
+    const timers: Array<ReturnType<typeof setTimeout>> = []
+
+    // Une cible peut apparaître après le montage : on réessaie brièvement.
+    const attacher = (selecteur: string, essais = 0) => {
       const cible = document.querySelector(selecteur)
       if (cible) {
-        io = new IntersectionObserver(([entry]) => setVisible(!entry.isIntersecting), {
-          rootMargin: '0px 0px -20% 0px',
-        })
+        const io = new IntersectionObserver(
+          ([entry]) => {
+            etats.set(selecteur, entry.isIntersecting)
+            recalculer()
+          },
+          { rootMargin: '0px 0px -20% 0px' },
+        )
         io.observe(cible)
+        observers.push(io)
         return
       }
-      if (essais++ < 20) {
-        timer = setTimeout(attacher, 100)
+      if (essais < 20) {
+        timers.push(setTimeout(() => attacher(selecteur, essais + 1), 100))
         return
       }
-      // Cible introuvable (ex. ancre d'une page sans formulaire) : repli.
-      fallbackScroll = () => setVisible(window.scrollY > 480)
-      fallbackScroll()
-      window.addEventListener('scroll', fallbackScroll, { passive: true })
+      // Cible introuvable : repli au scroll (une seule fois suffit).
+      if (!fallbackScroll) {
+        fallbackScroll = () => setVisible(window.scrollY > 480)
+        fallbackScroll()
+        window.addEventListener('scroll', fallbackScroll, { passive: true })
+      }
     }
-    attacher()
+    selecteurs.forEach((s) => attacher(s))
 
     return () => {
-      io?.disconnect()
-      if (timer) clearTimeout(timer)
+      observers.forEach((io) => io.disconnect())
+      timers.forEach((t) => clearTimeout(t))
       if (fallbackScroll) window.removeEventListener('scroll', fallbackScroll)
     }
-  }, [href])
+  }, [href, targets])
 
   if (!visible) return null
 
@@ -58,7 +89,7 @@ export default function StickyCtaBar({ href, label }: { href: string; label: str
           <a href={href}>{label}</a>
         </Button>
         <Button asChild size="sm" variant="outline" aria-label="Appeler le club">
-          <a href="tel:+33247444143">
+          <a href={COORDONNEES.telephoneHref}>
             <Phone size={16} aria-hidden="true" />
             Appeler
           </a>

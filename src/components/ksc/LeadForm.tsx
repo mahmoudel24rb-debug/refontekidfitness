@@ -30,10 +30,13 @@ type Props = {
   compact?: boolean
   /** avec champ email (page Contact) */
   withEmail?: boolean
+  /** id du <form> (défaut 'lead-form'). Le 2e formulaire de fin de page
+   *  utilise 'lead-form-final' pour être observé par la StickyCtaBar. */
+  formId?: string
   className?: string
 }
 
-export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compact, withEmail, className }: Props) {
+export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compact, withEmail, formId = 'lead-form', className }: Props) {
   const [etat, setEtat] = useState<'idle' | 'envoi' | 'ok' | 'erreur'>('idle')
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -78,7 +81,7 @@ export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compac
 
   if (etat === 'ok') {
     return (
-      <div className={className} id="lead-form">
+      <div className={className} id={formId}>
         <div className="flex flex-col items-center gap-3 rounded-lg bg-card p-8 text-center shadow-md">
           <span className="grid size-12 place-items-center rounded-full bg-magenta text-white">
             <Check size={24} strokeWidth={3} aria-hidden="true" />
@@ -91,7 +94,7 @@ export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compac
   }
 
   return (
-    <form onSubmit={onSubmit} className={className} id="lead-form" noValidate={false}>
+    <form onSubmit={onSubmit} className={className} id={formId} noValidate={false}>
       <div className="flex flex-col gap-4 rounded-lg bg-card p-6 shadow-md sm:p-7">
         <FormField id={`${source}-prenom`} name="prenom" label="Prénom du parent" required autoComplete="given-name" />
         <FormField id={`${source}-tel`} name="telephone" label="Téléphone" type="tel" required autoComplete="tel" />
