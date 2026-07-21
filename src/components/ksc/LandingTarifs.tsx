@@ -24,14 +24,16 @@ export default function LandingTarifs({
         </SectionHeading>
 
         <p className="mb-4 text-[13px] font-extrabold uppercase tracking-[.06em] text-magenta">Abonnements</p>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Flux centré (pas de grille rigide) : 5 cartes -> 3 + 2 CENTRÉES,
+            jamais de case vide en bout de rangée. */}
+        <div className="flex flex-wrap justify-center gap-5">
           {ABONNEMENTS.map((t) => {
             const featured = t.titre === FEATURED_TITRE
             return (
               <Card
                 key={t.titre}
                 className={cn(
-                  'items-start gap-3 p-7',
+                  'w-full items-start gap-3 p-7 sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]',
                   featured && 'relative overflow-visible border-2 border-magenta lg:scale-[1.03]',
                 )}
               >
