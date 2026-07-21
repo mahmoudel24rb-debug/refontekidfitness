@@ -92,9 +92,9 @@ export const LANDINGS: Landing[] = [
       avisIndex: 2,
       extrait: 'les cours sont adaptés et les encadrants d’une bienveillance qu’on apprécie en tant que parent',
     },
+    // 5 images = mosaïque pleine (1 grande 2x2 + 4 petites, deux rangées exactes).
     galerie: [
       { src: '/assets/ksc/baby-spa.webp', alt: 'Tout-petit lors d’une séance d’éveil au Kid Sport Club' },
-      { src: '/assets/ksc/cours-10-36-mois.webp', alt: 'Baby gym pour les tout-petits' },
       { src: '/assets/ksc/cours-3-5-ans.webp', alt: 'Enfants de 3 à 5 ans en parcours de motricité' },
       { src: '/assets/ksc/cours-6-10-ans.webp', alt: 'Enfants de 6 à 10 ans en activité multisport' },
       { src: '/assets/ksc/cours-11-14-ans.webp', alt: 'Préados en séance de sport' },
@@ -153,10 +153,12 @@ export const LANDINGS: Landing[] = [
       avisIndex: 0,
       extrait: 'Les moniteurs sont à l’écoute et très gentils. Je recommande à 300.',
     },
+    // 5 images = mosaïque pleine (1 grande 2x2 + 4 petites, deux rangées exactes).
     galerie: [
       { src: '/assets/ksc/esprit-equipe.webp', alt: 'Groupe d’enfants réunis au Kid Sport Club' },
       { src: '/assets/ksc/cours-6-10-ans.webp', alt: 'Enfants de 6 à 10 ans en jeu sportif' },
       { src: '/assets/ksc/cours-11-14-ans.webp', alt: 'Préados en pleine activité' },
+      { src: '/assets/ksc/collectivites.webp', alt: 'Groupe d’enfants lors d’une activité collective' },
       { src: '/assets/ksc/fit-parents-enfants.webp', alt: 'Familles en activité au club' },
     ],
     equipe: true,
@@ -237,7 +239,10 @@ export const LANDINGS: Landing[] = [
     stats: [...STATS_BASE, RENTREE_STAT],
     tarifsEtendus: true,
     planning: true,
+    // 5 images = mosaïque pleine ; mercredis-sportifs réutilisée sciemment (la
+    // vignette du catalogue est petite, la photo mérite un grand format ici).
     galerie: [
+      { src: '/assets/ksc/mercredis-sportifs.webp', alt: 'Enfants pendant les Mercredis Sportifs' },
       { src: '/assets/ksc/baby-spa.webp', alt: 'Tout-petit lors d’une séance d’éveil' },
       { src: '/assets/ksc/fit-parents-enfants.webp', alt: 'Parents et enfants en activité ensemble' },
       { src: '/assets/ksc/collectivites.webp', alt: 'Groupe d’enfants lors d’une activité collective' },
