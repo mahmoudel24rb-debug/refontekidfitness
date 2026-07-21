@@ -8,24 +8,44 @@ import { Badge } from '@/components/ui/badge'
 import LeadForm from './LeadForm'
 import StickyCtaBar from './StickyCtaBar'
 import TerrainLines from './TerrainLines'
+import WaveDivider from './WaveDivider'
 import Underline from './Underline'
+import Section from './Section'
+import Container from './Container'
+import StatsBand from './StatsBand'
+import EditorialSplit from './EditorialSplit'
+import InclusionsChecklist from './InclusionsChecklist'
+import LandingAgeGroups from './LandingAgeGroups'
+import LandingGallery from './LandingGallery'
+import LandingPlanningStrip from './LandingPlanningStrip'
+import LandingTeam from './LandingTeam'
+import LandingTarifs from './LandingTarifs'
+import LandingPlace from './LandingPlace'
+import PullQuote from './PullQuote'
 import { landingBySlug } from '@/data/landings'
-import { PRESTATIONS } from '@/data/prestations'
+import { PRESTATIONS, prestationBySlug } from '@/data/prestations'
 import { AVIS } from '@/data/avis'
 import { FAQ } from '@/data/faq'
-import { CRM_INSCRIPTION_URL } from '@/data/site'
+import { HOME } from '@/data/home'
+import { CRM_INSCRIPTION_URL, COORDONNEES } from '@/data/site'
 
 // Landing Meta Ads — deux gabarits pilotés par data/landings.ts :
-// - 'lead' : capture du lead SUR la page. UN objectif par page : le formulaire
-//   (hero à droite, atteint en < 1 scroll sur mobile), répété via ancres + sticky
-//   bar mobile. Pas de nav, pas de CTA concurrent (le tél reste : 2e canal).
+// - 'lead' : capture du lead SUR la page (formulaire hero + formulaire final),
+//   répété via ancres + sticky bar mobile. Pas de nav, pas de CTA concurrent.
 // - 'catalogue' : les 7 prestations en blocs, CTA par bloc -> calendrier CRM.
-// noindex géré au niveau page ; hors sitemap.
+// Enrichissement structurel : chaque page enchaîne des blocs de contenu déjà
+// validé (stats, spotlight, tranches, planning, galerie, avis mis en scène,
+// équipe, tarifs, lieu). ZÉRO copy neuf. noindex géré au niveau page ; hors
+// sitemap.
 export default function Landing({ slug }: { slug: string }) {
   const l = landingBySlug(slug)
   if (!l) return null
   const isLead = l.variant === 'lead'
   const cible = isLead ? '#lead-form' : '#prestations'
+  const stickyLabel = isLead ? (l.formCtaLabel ?? l.ctaLabel) : 'Choisir une prestation'
+  const stickyTargets = isLead ? ['#lead-form', '#lead-form-final'] : ['#prestations']
+  const pullQuoteCta = isLead ? (l.formCtaLabel ?? l.ctaLabel) : 'Choisir une prestation'
+  const spotlight = l.spotlightSlug ? prestationBySlug(l.spotlightSlug) : undefined
   const faqItems = (l.faq ?? [])
     .map((q) => FAQ.find((item) => item.q === q))
     .filter((x): x is NonNullable<typeof x> => Boolean(x))
@@ -38,7 +58,7 @@ export default function Landing({ slug }: { slug: string }) {
           <Link href="/" aria-label="Kid Sport Club — accueil" className="block shrink-0">
             <Image src="/assets/ksc-logo.png" alt="Kid Sport Club" width={640} height={427} className="block h-12 w-auto" />
           </Link>
-          <a href="tel:+33247444143" className="text-[15px] font-bold text-marine">02 47 44 41 43</a>
+          <a href={COORDONNEES.telephoneHref} className="text-[15px] font-bold text-marine">{COORDONNEES.telephone}</a>
         </div>
       </header>
 
@@ -105,6 +125,43 @@ export default function Landing({ slug }: { slug: string }) {
         </div>
       </div>
 
+      {/* Bienvenue (catalogue) — EditorialSplit HOME.bienvenue, sans CTA de fuite */}
+      {l.bienvenue && (
+        <EditorialSplit
+          tone="cream"
+          title={`${HOME.bienvenue.titreLigne1} ${HOME.bienvenue.titreLigne2}`}
+          texte={HOME.bienvenue.texte}
+          image="/assets/ksc/stages-mercredi.webp"
+          imageAlt="Enfants en activité au Kid Sport Club"
+        />
+      )}
+
+      {/* Spotlight prestation (lead anniversaire/stage) */}
+      {spotlight && (
+        <EditorialSplit
+          tone="cream"
+          reverse
+          title={spotlight.accroche}
+          texte={spotlight.intro}
+          bullets={l.slug === 'stage-vacances' ? spotlight.benefices : undefined}
+          image={spotlight.image}
+          imageAlt={spotlight.titre}
+        />
+      )}
+
+      {/* Ce qui est inclus (anniversaire) */}
+      {l.inclusions && (
+        <InclusionsChecklist
+          tone="white"
+          items={l.inclusions.items}
+          image={l.inclusions.image}
+          imageAlt="Table d’anniversaire dressée au Kid Sport Club"
+        />
+      )}
+
+      {/* Tranches d'âge (essai, prestations) */}
+      {l.tranches && <LandingAgeGroups tone="white" />}
+
       {/* Catalogue de prestations — CTA par bloc -> calendrier CRM */}
       {!isLead && (
         <section id="prestations" className="mx-auto max-w-[1120px] scroll-mt-6 px-6 pt-16 pb-6">
@@ -145,10 +202,16 @@ export default function Landing({ slug }: { slug: string }) {
         </section>
       )}
 
+      {/* Bande de chiffres (StatsBand marine) */}
+      {l.stats && l.stats.length > 0 && <StatsBand stats={l.stats} />}
+
+      {/* Catalogue de tarifs complet (prestations) */}
+      {l.tarifsEtendus && <LandingTarifs tone="cream" />}
+
       {/* Comment ça se passe — étapes numérotées */}
       {l.etapes && l.etapes.length > 0 && (
-        <section className="bg-white px-6 py-14">
-          <div className="mx-auto max-w-[1120px]">
+        <Section tone="white">
+          <Container>
             <h2 className="mb-9 text-center font-heading text-[clamp(24px,3vw,34px)] font-extrabold text-marine">
               Comment ça se <Underline>passe</Underline>
             </h2>
@@ -161,13 +224,13 @@ export default function Landing({ slug }: { slug: string }) {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
+          </Container>
+        </Section>
       )}
 
       {/* Tarif réel */}
       {l.tarif && (
-        <section className="px-6 py-12">
+        <Section tone="cream" className="py-12 md:py-12">
           <div className="relative mx-auto max-w-[720px] overflow-hidden rounded-lg bg-marine px-8 py-10 text-center text-cream">
             <TerrainLines opacity={0.05} />
             <div className="relative">
@@ -183,13 +246,35 @@ export default function Landing({ slug }: { slug: string }) {
               </Button>
             </div>
           </div>
-        </section>
+        </Section>
+      )}
+
+      {/* --- Bas de page : l'ordre galerie/planning et la position de la
+          citation diffèrent entre lead et catalogue (cf. séquences du plan). --- */}
+      {isLead ? (
+        <>
+          {l.pullQuote && (
+            <PullQuote tone="cream2" avisIndex={l.pullQuote.avisIndex} extrait={l.pullQuote.extrait} href={cible} ctaLabel={pullQuoteCta} />
+          )}
+          {l.galerie && l.galerie.length > 0 && <LandingGallery tone="white" images={l.galerie} />}
+          {l.planning && <LandingPlanningStrip tone="cream2" />}
+          {l.equipe && <LandingTeam tone="cream" withValeurs={l.valeurs} />}
+        </>
+      ) : (
+        <>
+          {l.planning && <LandingPlanningStrip tone="cream2" />}
+          {l.galerie && l.galerie.length > 0 && <LandingGallery tone="white" images={l.galerie} />}
+          {l.equipe && <LandingTeam tone="cream" withValeurs={l.valeurs} />}
+          {l.pullQuote && (
+            <PullQuote tone="white" avisIndex={l.pullQuote.avisIndex} extrait={l.pullQuote.extrait} href={cible} ctaLabel={pullQuoteCta} />
+          )}
+        </>
       )}
 
       {/* Vrais avis parents */}
       {l.avis && (
-        <section className="bg-cream-2 px-6 py-14">
-          <div className="mx-auto max-w-[1120px]">
+        <Section tone="cream2">
+          <Container>
             <p className="mb-2 text-center text-sm font-bold uppercase tracking-[.06em] text-magenta">Ils nous font confiance</p>
             <h2 className="mb-9 text-center font-heading text-[clamp(24px,3vw,34px)] font-extrabold text-marine">
               Avis de <Underline>parents</Underline>
@@ -207,13 +292,13 @@ export default function Landing({ slug }: { slug: string }) {
                 </figure>
               ))}
             </div>
-          </div>
-        </section>
+          </Container>
+        </Section>
       )}
 
       {/* Mini-FAQ */}
       {faqItems.length > 0 && (
-        <section className="px-6 py-14">
+        <Section tone="cream">
           <div className="mx-auto max-w-[820px]">
             <h2 className="mb-8 text-center font-heading text-[clamp(24px,3vw,34px)] font-extrabold text-marine">
               Questions <Underline>fréquentes</Underline>
@@ -228,31 +313,80 @@ export default function Landing({ slug }: { slug: string }) {
               </details>
             ))}
           </div>
-        </section>
+        </Section>
       )}
 
-      {/* CTA final : renvoie vers L'objectif unique de la page */}
-      <section className="px-6 pt-2 pb-[72px]">
-        <div className="relative mx-auto max-w-[1120px] overflow-hidden rounded-lg bg-marine px-6 py-12 text-center text-cream">
-          <TerrainLines />
-          <div className="relative">
-            <h2 className="mb-3.5 font-heading text-[clamp(26px,3.4vw,38px)] font-extrabold text-cream">
-              Prêt à <Underline>réserver&nbsp;?</Underline>
-            </h2>
-            <p className="mb-7 text-[17px] text-cream/80">
-              {isLead ? '30 secondes suffisent — notre équipe vous rappelle très vite.' : 'Choisissez votre prestation, ou appelez-nous.'}
-            </p>
-            <div className="flex flex-wrap justify-center gap-3.5">
-              <Button asChild>
-                <a href={cible}>{isLead ? (l.formCtaLabel ?? l.ctaLabel) : 'Choisir une prestation'}</a>
-              </Button>
-              <Button asChild variant="outlineCream">
-                <a href="tel:+33247444143">02 47 44 41 43</a>
-              </Button>
+      {/* Où nous trouver */}
+      {l.lieu && <LandingPlace tone="white" />}
+
+      {/* Formulaire final complet (variant lead) : remplace l'ancien CTA-ancre. */}
+      {isLead && l.formFinal ? (
+        <>
+          <WaveDivider colorTop="var(--card)" colorBottom="var(--ksc-marine)" />
+          <section className="relative overflow-hidden bg-marine px-6 py-16 text-cream">
+            <TerrainLines />
+            <Container className="relative">
+              <div className="grid items-center gap-10 lg:grid-cols-2">
+                <div>
+                  <h2 className="mb-3.5 font-heading text-[clamp(26px,3.4vw,38px)] font-extrabold text-cream">
+                    Prêt à <Underline>réserver&nbsp;?</Underline>
+                  </h2>
+                  <p className="mb-6 text-[17px] text-cream/80">
+                    30 secondes suffisent — notre équipe vous rappelle très vite.
+                  </p>
+                  {l.heroBullets && (
+                    <ul className="mb-7 flex flex-col gap-2.5">
+                      {l.heroBullets.map((b) => (
+                        <li key={b} className="flex items-start gap-2.5">
+                          <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-magenta text-white">
+                            <Check size={12} strokeWidth={3.5} aria-hidden="true" />
+                          </span>
+                          <span className="font-semibold text-cream">{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <Button asChild variant="outlineCream">
+                    <a href={COORDONNEES.telephoneHref}>{COORDONNEES.telephone}</a>
+                  </Button>
+                </div>
+                <div>
+                  <LeadForm
+                    formId="lead-form-final"
+                    source={`landing-${l.slug}-final`}
+                    landing={l.slug}
+                    ctaLabel={l.formCtaLabel ?? l.ctaLabel}
+                    withEmail
+                  />
+                </div>
+              </div>
+            </Container>
+          </section>
+        </>
+      ) : (
+        !isLead && (
+          // CTA final du catalogue : renvoie vers l'objectif unique de la page.
+          <Section tone="cream" className="pt-2 pb-[72px] md:pb-[72px]">
+            <div className="relative mx-auto max-w-[1120px] overflow-hidden rounded-lg bg-marine px-6 py-12 text-center text-cream">
+              <TerrainLines />
+              <div className="relative">
+                <h2 className="mb-3.5 font-heading text-[clamp(26px,3.4vw,38px)] font-extrabold text-cream">
+                  Prêt à <Underline>réserver&nbsp;?</Underline>
+                </h2>
+                <p className="mb-7 text-[17px] text-cream/80">Choisissez votre prestation, ou appelez-nous.</p>
+                <div className="flex flex-wrap justify-center gap-3.5">
+                  <Button asChild>
+                    <a href={cible}>Choisir une prestation</a>
+                  </Button>
+                  <Button asChild variant="outlineCream">
+                    <a href={COORDONNEES.telephoneHref}>{COORDONNEES.telephone}</a>
+                  </Button>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </Section>
+        )
+      )}
 
       {/* Pied minimal (légal) */}
       <footer className="bg-cream-2 px-6 py-6 text-center text-sm">
@@ -264,7 +398,7 @@ export default function Landing({ slug }: { slug: string }) {
         </p>
       </footer>
 
-      <StickyCtaBar href={cible} label={isLead ? (l.formCtaLabel ?? l.ctaLabel) : 'Choisir une prestation'} />
+      <StickyCtaBar href={cible} label={stickyLabel} targets={stickyTargets} />
     </div>
   )
 }
