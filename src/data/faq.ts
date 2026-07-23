@@ -16,6 +16,6 @@ export const FAQ: FaqItem[] = [
   { q: 'Quels sont vos tarifs ?', r: "Nos formules démarrent à 29,90 €/mois (1 cours/semaine, engagement 10 mois). Nous proposons aussi une formule illimitée, une carte de 10 séances, ainsi que des tarifs spécifiques pour les Mercredis Sportifs, les stages vacances et les anniversaires. Le détail complet est disponible sur notre page tarifs.", lienTarifs: true },
   { q: 'Les Mercredis Sportifs, qu’est-ce que c’est exactement ?', r: "Une journée sportive et encadrée, tous les mercredis de l’année scolaire (hors vacances d’été), pour 95 €/mois." },
   { q: 'Proposez-vous des stages pendant les vacances scolaires ?', r: "Oui, à la journée (35 €) ou à la semaine (150 €), avec des activités sportives variées encadrées par notre équipe." },
-  { q: 'Comment organiser l’anniversaire de mon enfant chez vous ?', r: "Formule de 2h pour un maximum de 10 enfants, à 250 €. Le gâteau, la décoration et les boissons sont inclus — vous n’avez rien à prévoir." },
+  { q: 'Comment organiser l’anniversaire de mon enfant chez vous ?', r: "Formule de 2h pour un maximum de 10 enfants, à 250 €. Le gâteau, la décoration et les boissons sont inclus : vous n’avez rien à prévoir." },
   { q: 'Le club est-il uniquement à Rochecorbon ?', r: "Oui, Kid Sport Club est basé exclusivement à Rochecorbon (1 Quai de la Loire, 37210 Rochecorbon)." },
 ]

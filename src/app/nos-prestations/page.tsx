@@ -1,7 +1,7 @@
 import PrestationsHub from '@/components/ksc/PrestationsHub'
 
 export const metadata = {
-  title: 'Nos prestations — activités enfants à Rochecorbon | Kid Sport Club',
+  title: 'Nos activités : sport enfants à Rochecorbon | Kid Sport Club',
   description:
     "Mercredis sportifs, stages, anniversaires et cours de sport pour enfants de 10 mois à 14 ans au Kid Sport Club de Rochecorbon (près de Tours).",
   alternates: { canonical: '/nos-prestations' },

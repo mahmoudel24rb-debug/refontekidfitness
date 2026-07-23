@@ -3,6 +3,7 @@ import { MapPin } from 'lucide-react'
 
 import { FOOTER_NAV, LEGAL_NAV } from '@/data/nav'
 import { PRESTATIONS } from '@/data/prestations'
+import { COORDONNEES, HORAIRES } from '@/data/site'
 import { cn } from '@/lib/utils'
 import TerrainLines from './TerrainLines'
 
@@ -23,7 +24,7 @@ export default function SiteFooter() {
           {/* text-xs : parité avec le rendu actuel (taille héritée du body 12px
               de framer.css) — à réévaluer à la purge Framer (phase 3d). */}
           <p className="max-w-[280px] text-xs leading-[1.6] text-cream/85">
-            Le club de sport des enfants de 10 mois à 14 ans, à Rochecorbon — bouger, grandir, s’épanouir.
+            Le club de sport des enfants de 10 mois à 14 ans, à Rochecorbon : bouger, grandir, s’épanouir.
           </p>
           <div className="flex gap-3">
             <a href="https://www.facebook.com" aria-label="Facebook" className={cn(linkCls, 'font-bold')}>
@@ -45,7 +46,7 @@ export default function SiteFooter() {
         </div>
 
         <div className="flex flex-col gap-2.5">
-          <span className={colTitleCls}>Nos prestations</span>
+          <span className={colTitleCls}>Nos activités</span>
           {PRESTATIONS.map((p) => (
             <a key={p.slug} href={`/nos-prestations/${p.slug}`} className={linkCls}>
               {p.titre}
@@ -56,16 +57,17 @@ export default function SiteFooter() {
         <div className="flex flex-col gap-2.5">
           <span className={colTitleCls}>Infos</span>
           <a href="/contact" className={linkCls}>
-            1 Quai de la Loire, 37210 Rochecorbon
+            {COORDONNEES.adresse}
           </a>
-          <a href="tel:+33247444143" className={linkCls}>
-            02 47 44 41 43
+          <a href={COORDONNEES.telephoneHref} className={linkCls}>
+            {COORDONNEES.telephone}
           </a>
-          <a href="mailto:kidfitnessrochecorbon@gmail.com" className={linkCls}>
-            kidfitnessrochecorbon@gmail.com
+          <a href={COORDONNEES.emailHref} className={linkCls}>
+            {COORDONNEES.email}
           </a>
-          <span className="self-start text-[15px] text-cream/85">Lun–Ven : 9h00–19h30 (sans coupure)</span>
-          <span className="self-start text-[15px] text-cream/85">Samedi : 9h30–12h30</span>
+          {HORAIRES.split(' · ').map((ligne) => (
+            <span key={ligne} className="self-start text-[15px] text-cream/85">{ligne}</span>
+          ))}
         </div>
       </div>
 
@@ -73,7 +75,7 @@ export default function SiteFooter() {
       <div className="relative mx-auto flex max-w-[1320px] justify-center px-6 pb-[26px]">
         <span className="inline-flex items-center gap-2 text-[13.5px] font-semibold text-cream/60">
           <MapPin size={15} aria-hidden="true" />
-          Club à Rochecorbon — bord de Loire
+          Club à Rochecorbon, bord de Loire
         </span>
       </div>
 

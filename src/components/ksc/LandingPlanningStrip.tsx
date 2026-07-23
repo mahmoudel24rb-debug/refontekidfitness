@@ -45,7 +45,7 @@ export default function LandingPlanningStrip({
           })}
         </div>
         <p className="mt-7 text-center text-sm italic text-muted-foreground">
-          Planning de la rentrée de septembre 2026 — susceptible d’évoluer.
+          Planning de la rentrée de septembre 2026, susceptible d’évoluer.
         </p>
       </Container>
     </Section>

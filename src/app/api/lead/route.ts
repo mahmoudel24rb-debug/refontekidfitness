@@ -15,6 +15,7 @@ type LeadPayload = {
   telephone?: string
   email?: string
   ageEnfant?: string
+  creneau?: string
   message?: string
   utm?: Partial<Record<'source' | 'medium' | 'campaign' | 'content' | 'term', string>>
   website?: string // honeypot
@@ -46,6 +47,7 @@ export async function POST(req: Request) {
     telephone: borné(body.telephone, MAX.court),
     email: borné(body.email, MAX.court) || undefined,
     ageEnfant: borné(body.ageEnfant, MAX.court) || undefined,
+    creneau: borné(body.creneau, MAX.court) || undefined,
     message: borné(body.message, MAX.message) || undefined,
     utm: {
       source: borné(body.utm?.source, MAX.court) || undefined,

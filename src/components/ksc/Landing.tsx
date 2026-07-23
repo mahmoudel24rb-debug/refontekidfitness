@@ -42,6 +42,9 @@ export default function Landing({ slug }: { slug: string }) {
   if (!l) return null
   const isLead = l.variant === 'lead'
   const cible = isLead ? '#lead-form' : '#prestations'
+  // CTA du header : ancré vers l'objectif de la page. Libellé court (le
+  // formCtaLabel est repris s'il tient, sinon un libellé généralisé).
+  const headerCta = isLead ? (l.formCtaLabel && l.formCtaLabel.length <= 18 ? l.formCtaLabel : 'Réserver') : 'S’inscrire'
   const stickyLabel = isLead ? (l.formCtaLabel ?? l.ctaLabel) : 'Choisir une prestation'
   const stickyTargets = isLead ? ['#lead-form', '#lead-form-final'] : ['#prestations']
   const pullQuoteCta = isLead ? (l.formCtaLabel ?? l.ctaLabel) : 'Choisir une prestation'
@@ -55,10 +58,12 @@ export default function Landing({ slug }: { slug: string }) {
       {/* Barre de marque minimale : logo + appel. Aucun lien de fuite. */}
       <header className="bg-cream">
         <div className="mx-auto flex max-w-[1120px] items-center justify-between gap-4 px-6 py-3.5">
-          <Link href="/" aria-label="Kid Sport Club — accueil" className="block shrink-0">
+          <Link href="/" aria-label="Kid Sport Club, accueil" className="block shrink-0">
             <Image src="/assets/ksc-logo.png" alt="Kid Sport Club" width={640} height={427} className="block h-12 w-auto" />
           </Link>
-          <a href={COORDONNEES.telephoneHref} className="text-[15px] font-bold text-marine">{COORDONNEES.telephone}</a>
+          <Button asChild size="sm">
+            <a href={cible}>{headerCta}</a>
+          </Button>
         </div>
       </header>
 
@@ -332,7 +337,7 @@ export default function Landing({ slug }: { slug: string }) {
                     Prêt à <Underline>réserver&nbsp;?</Underline>
                   </h2>
                   <p className="mb-6 text-[17px] text-cream/80">
-                    30 secondes suffisent — notre équipe vous rappelle très vite.
+                    30 secondes suffisent, notre équipe vous rappelle très vite.
                   </p>
                   {l.heroBullets && (
                     <ul className="mb-7 flex flex-col gap-2.5">
@@ -387,16 +392,6 @@ export default function Landing({ slug }: { slug: string }) {
           </Section>
         )
       )}
-
-      {/* Pied minimal (légal) */}
-      <footer className="bg-cream-2 px-6 py-6 text-center text-sm">
-        <p className="mb-2 font-bold text-marine">Kid Sport Club — 1 Quai de la Loire, 37210 Rochecorbon</p>
-        <p className="text-muted-foreground">
-          <a href="/mentions-legales" className="text-muted-foreground hover:text-marine">Mentions légales</a> ·{' '}
-          <a href="/confidentialite" className="text-muted-foreground hover:text-marine">Confidentialité</a> ·{' '}
-          <a href="/cgv" className="text-muted-foreground hover:text-marine">CGV</a>
-        </p>
-      </footer>
 
       <StickyCtaBar href={cible} label={stickyLabel} targets={stickyTargets} />
     </div>

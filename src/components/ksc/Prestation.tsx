@@ -14,7 +14,9 @@ import Section from './Section'
 import Container from './Container'
 import SectionHeading from './SectionHeading'
 import Underline from './Underline'
+import LeadForm from './LeadForm'
 import { PRESTATIONS, prestationBySlug } from '@/data/prestations'
+import { creneauxPourPrestation } from '@/data/creneaux'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 
@@ -41,6 +43,8 @@ export default function Prestation({ slug }: { slug: string }) {
   const p = prestationBySlug(slug)
   if (!p) return null
   const autres = PRESTATIONS.filter((x) => x.slug !== slug).slice(0, 3)
+  const creneaux = creneauxPourPrestation(slug)
+  const estCours614 = slug === 'cours-6-10-ans' || slug === 'cours-11-14-ans'
 
   // Données structurées : fil d'Ariane + service local (SEO Rochecorbon).
   // NB : un schéma Event (stages/anniversaire) sera ajouté quand le client fournira des dates réelles.
@@ -51,13 +55,13 @@ export default function Prestation({ slug }: { slug: string }) {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${SITE}/` },
-          { '@type': 'ListItem', position: 2, name: 'Nos prestations', item: `${SITE}/nos-prestations` },
+          { '@type': 'ListItem', position: 2, name: 'Nos activités', item: `${SITE}/nos-prestations` },
           { '@type': 'ListItem', position: 3, name: p.titre, item: `${SITE}/nos-prestations/${p.slug}` },
         ],
       },
       {
         '@type': 'Service',
-        name: `${p.titre} — Kid Sport Club`,
+        name: `${p.titre}, Kid Sport Club`,
         serviceType: p.motCle,
         description: p.intro,
         url: `${SITE}/nos-prestations/${p.slug}`,
@@ -79,7 +83,7 @@ export default function Prestation({ slug }: { slug: string }) {
       <main>
         {/* Hero : 2 colonnes, photo de la prestation + badge d'âge sur l'image */}
         <HeroMarine
-          kicker="Nos prestations"
+          kicker="Nos activités"
           title={p.titre}
           sub={p.accroche}
           image={p.image}
@@ -99,11 +103,7 @@ export default function Prestation({ slug }: { slug: string }) {
             <div className="grid gap-x-14 gap-y-10 lg:grid-cols-2">
               <div>
                 <h2 className="mb-[18px] font-heading text-[28px] font-extrabold text-marine">Le <Underline>principe</Underline></h2>
-                <p className="mb-6 text-[17px] leading-relaxed text-ink">{p.intro}</p>
-                <div className="rounded-md border border-border bg-cream p-5">
-                  <p className="font-bold text-marine">Créneaux</p>
-                  <p className="mt-1.5 text-muted-foreground"><Creneaux texte={p.creneaux} /></p>
-                </div>
+                <p className="text-[17px] leading-relaxed text-ink">{p.intro}</p>
               </div>
               <div>
                 <h2 className="mb-[18px] font-heading text-[28px] font-extrabold text-marine">Les <Underline>bénéfices</Underline></h2>
@@ -136,6 +136,45 @@ export default function Prestation({ slug }: { slug: string }) {
             </div>
           </Card>
         </div>
+
+        {/* Réserver : demande de place directement sur la fiche (LeadForm). */}
+        <Section tone="cream" id="reserver" className="mt-[70px] scroll-mt-6">
+          <Container className="max-w-[1100px]">
+            <SectionHeading underline className="mb-3 text-center text-[26px]">Réserver</SectionHeading>
+            <p className="mx-auto mb-9 max-w-[560px] text-center text-muted-foreground">
+              Laissez-nous vos coordonnées : notre équipe vous recontacte pour organiser la venue de votre enfant.
+            </p>
+            <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
+              {/* Rappel prix + créneaux / lien planning */}
+              <div className="rounded-lg border border-border bg-cream p-6 lg:p-8">
+                <p className="text-sm font-bold uppercase tracking-[.04em] text-magenta">Tarif</p>
+                <p className="mt-1 font-heading text-[clamp(26px,3vw,32px)] font-extrabold text-marine">{p.prix}</p>
+                <p className="mt-1.5 text-sm">
+                  <a href="/tarifs" className="font-bold text-magenta underline-offset-4 hover:underline">Voir tous les tarifs</a>
+                </p>
+                <div className="mt-5 border-t border-border pt-5">
+                  <p className="font-bold text-marine">Créneaux</p>
+                  <p className="mt-1.5 text-muted-foreground"><Creneaux texte={p.creneaux} /></p>
+                </div>
+              </div>
+              {/* Formulaire de demande */}
+              <div>
+                {estCours614 && (
+                  <p className="mb-3 inline-flex rounded-full bg-cream-2 px-3.5 py-1.5 text-sm font-bold text-marine">
+                    Créneaux 6-14 ans
+                  </p>
+                )}
+                <LeadForm
+                  source={`prestation-${slug}`}
+                  landing={slug}
+                  withEmail
+                  creneaux={creneaux}
+                  ctaLabel="Demander une place"
+                />
+              </div>
+            </div>
+          </Container>
+        </Section>
 
         {/* Autres prestations (maillage interne) */}
         <Section tone="cream2" className="mt-[70px]">

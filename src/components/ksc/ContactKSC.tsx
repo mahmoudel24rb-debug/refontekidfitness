@@ -10,11 +10,12 @@ import Underline from './Underline'
 import RoundIcon from './RoundIcon'
 import FormField from './FormField'
 import { Button } from '@/components/ui/button'
+import { COORDONNEES, HORAIRES } from '@/data/site'
 
 const INFOS = [
-  { t: 'Téléphone', v: '02 47 44 41 43', href: 'tel:+33247444143', icon: <Phone className="size-[18px]" /> },
-  { t: 'Email', v: 'kidfitnessrochecorbon@gmail.com', href: 'mailto:kidfitnessrochecorbon@gmail.com', icon: <Mail className="size-[18px]" /> },
-  { t: 'Adresse', v: '1 Quai de la Loire, 37210 Rochecorbon', href: 'https://maps.google.com/?q=1+Quai+de+la+Loire+37210+Rochecorbon', icon: <MapPin className="size-[18px]" /> },
+  { t: 'Téléphone', v: COORDONNEES.telephone, href: COORDONNEES.telephoneHref, icon: <Phone className="size-[18px]" /> },
+  { t: 'Email', v: COORDONNEES.email, href: COORDONNEES.emailHref, icon: <Mail className="size-[18px]" /> },
+  { t: 'Adresse', v: COORDONNEES.adresse, href: COORDONNEES.adresseHref, icon: <MapPin className="size-[18px]" /> },
 ]
 
 export default function ContactKSC() {
@@ -103,7 +104,7 @@ export default function ContactKSC() {
                 <div className="flex items-start gap-3.5">
                   <RoundIcon><Clock className="size-[18px]" /></RoundIcon>
                   <p className="m-0! font-semibold leading-relaxed text-marine">
-                    <strong>Horaires :</strong> Lun–Ven : 9h00–19h30 (sans coupure) · Samedi : 9h30–12h30
+                    <strong>Horaires :</strong> {HORAIRES}
                   </p>
                 </div>
               </div>
@@ -111,8 +112,8 @@ export default function ContactKSC() {
               <h2 className="mb-4! font-heading text-[22px] font-extrabold text-marine">Nous <Underline>trouver</Underline></h2>
               <div className="overflow-hidden rounded-lg border border-border">
                 <iframe
-                  title="Plan — Kid Sport Club Rochecorbon"
-                  src="https://maps.google.com/maps?q=1%20Quai%20de%20la%20Loire%2037210%20Rochecorbon&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  title={COORDONNEES.mapTitle}
+                  src={COORDONNEES.mapsEmbedUrl}
                   className="block h-80 w-full border-0"
                   loading="lazy"
                 />

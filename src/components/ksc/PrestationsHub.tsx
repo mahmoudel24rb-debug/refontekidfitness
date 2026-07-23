@@ -35,7 +35,7 @@ export default function PrestationsHub() {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${SITE}/` },
-          { '@type': 'ListItem', position: 2, name: 'Nos prestations', item: `${SITE}/nos-prestations` },
+          { '@type': 'ListItem', position: 2, name: 'Nos activités', item: `${SITE}/nos-prestations` },
         ],
       },
       {
@@ -57,7 +57,7 @@ export default function PrestationsHub() {
       <SiteHeader />
       <main>
         <HeroMarine
-          kicker="Nos prestations"
+          kicker="Nos activités"
           title="Le sport des enfants, sous toutes ses formes"
           sub={<>De la baby gym dès 10 mois au sport ado, en passant par les mercredis sportifs, les stages et les anniversaires :
             au Kid Sport Club de Rochecorbon, chaque enfant trouve son activité.</>}
@@ -108,9 +108,9 @@ export default function PrestationsHub() {
         <Section tone="cream">
           <Container>
             <div className="rounded-lg border-l-4 border-magenta bg-cream-2 p-8">
-              <h2 className="mb-2.5 font-heading text-xl font-bold text-marine">Fit’ Parents/Enfants — intégré à nos cours</h2>
+              <h2 className="mb-2.5 font-heading text-xl font-bold text-marine">Fit’ Parents/Enfants, intégré à nos cours</h2>
               <p className="leading-relaxed text-ink">
-                Un moment de sport à partager en famille. Parents et enfants bougent ensemble à travers des exercices ludiques et complices — une manière différente de se retrouver, entre jeu et activité physique.
+                Un moment de sport à partager en famille. Parents et enfants bougent ensemble à travers des exercices ludiques et complices, une manière différente de se retrouver, entre jeu et activité physique.
               </p>
             </div>
           </Container>

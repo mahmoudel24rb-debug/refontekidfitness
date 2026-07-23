@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { Check } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
+import { Label } from '@/components/ui/label'
 import FormField from './FormField'
 
 // Formulaire de capture de lead (landings Meta Ads + Contact + Séance d'essai).
@@ -30,13 +31,15 @@ type Props = {
   compact?: boolean
   /** avec champ email (page Contact) */
   withEmail?: boolean
+  /** Options de créneau (fiches prestation) : ajoute un <select> optionnel. */
+  creneaux?: { value: string; label: string }[]
   /** id du <form> (défaut 'lead-form'). Le 2e formulaire de fin de page
    *  utilise 'lead-form-final' pour être observé par la StickyCtaBar. */
   formId?: string
   className?: string
 }
 
-export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compact, withEmail, formId = 'lead-form', className }: Props) {
+export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compact, withEmail, creneaux, formId = 'lead-form', className }: Props) {
   const [etat, setEtat] = useState<'idle' | 'envoi' | 'ok' | 'erreur'>('idle')
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -59,6 +62,7 @@ export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compac
           telephone: data.get('telephone'),
           email: data.get('email') || undefined,
           ageEnfant: data.get('ageEnfant') || undefined,
+          creneau: data.get('creneau') || undefined,
           message: data.get('message') || undefined,
           website: data.get('website') || undefined,
           utm: {
@@ -100,6 +104,24 @@ export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compac
         <FormField id={`${source}-tel`} name="telephone" label="Téléphone" type="tel" required autoComplete="tel" />
         {withEmail && <FormField id={`${source}-email`} name="email" label="Email" type="email" autoComplete="email" />}
         <FormField id={`${source}-age`} name="ageEnfant" label="Âge de l’enfant" placeholder="ex. 4 ans" />
+        {creneaux && creneaux.length > 0 && (
+          <div className="grid gap-2">
+            <Label htmlFor={`${source}-creneau`} className="text-sm font-semibold text-marine">
+              Créneau souhaité (optionnel)
+            </Label>
+            <select
+              id={`${source}-creneau`}
+              name="creneau"
+              defaultValue=""
+              className="h-[52px] rounded-xl border-[1.5px] border-input bg-[#fdfcf7] px-4 text-base text-ink"
+            >
+              <option value="">Je ne sais pas encore</option>
+              {creneaux.map((c) => (
+                <option key={c.value} value={c.value}>{c.label}</option>
+              ))}
+            </select>
+          </div>
+        )}
         {!compact && (
           <FormField id={`${source}-msg`} name="message" label="Votre message (optionnel)" as="textarea" rows={3} />
         )}

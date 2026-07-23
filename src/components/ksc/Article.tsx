@@ -23,8 +23,10 @@ export default function Article({ slug }: { slug: string }) {
   const a = articleBySlug(slug)
   if (!a) return null
   const autres = ARTICLES.filter((x) => x.slug !== slug).slice(0, 3)
-  // Chapo (1er paragraphe) mis en avant, suite en corps de texte.
-  const [chapo, ...suite] = a.paragraphes
+  // Corps : blocs (paragraphes + intertitres h2) ; fallback paragraphes plats.
+  const blocs = a.blocs ?? a.paragraphes.map((texte) => ({ t: 'p' as const, texte }))
+  // Le 1er paragraphe est mis en avant en chapô.
+  const chapoIndex = blocs.findIndex((b) => b.t === 'p')
   return (
     <>
       <SiteHeader />
@@ -44,13 +46,18 @@ export default function Article({ slug }: { slug: string }) {
           padding="64px 24px 72px"
         />
 
-        {/* Corps : chapo 19px medium, largeur de lecture 680px, liens magenta */}
+        {/* Corps : chapo 19px medium, intertitres h2, largeur de lecture 68ch */}
         <Section tone="cream">
-          <article className="mx-auto max-w-[680px] [&_a]:text-magenta [&_a]:underline-offset-4 [&_a:hover]:underline">
-            <p className="mb-6 text-[19px] font-medium leading-relaxed text-marine">{chapo}</p>
-            {suite.map((p, i) => (
-              <p key={i} className="mb-5 text-[17px] leading-relaxed text-ink">{p}</p>
-            ))}
+          <article className="mx-auto max-w-[68ch] [&_a]:text-magenta [&_a]:underline-offset-4 [&_a:hover]:underline">
+            {blocs.map((b, i) =>
+              b.t === 'h2' ? (
+                <h2 key={i} className="mt-10 mb-3 font-heading text-2xl font-bold text-marine">{b.texte}</h2>
+              ) : i === chapoIndex ? (
+                <p key={i} className="mb-6 text-[19px] font-medium leading-relaxed text-marine">{b.texte}</p>
+              ) : (
+                <p key={i} className="mb-5 text-[18px] leading-8 text-ink">{b.texte}</p>
+              ),
+            )}
             {/* Encart CTA marine + lignes de terrain */}
             <div className="relative mt-5 overflow-hidden rounded-lg bg-marine p-8 text-center text-cream">
               <TerrainLines />
