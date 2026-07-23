@@ -35,7 +35,7 @@ export default function PrestationsHub() {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${SITE}/` },
-          { '@type': 'ListItem', position: 2, name: 'Nos prestations', item: `${SITE}/nos-prestations` },
+          { '@type': 'ListItem', position: 2, name: 'Nos activités', item: `${SITE}/nos-prestations` },
         ],
       },
       {
@@ -57,7 +57,7 @@ export default function PrestationsHub() {
       <SiteHeader />
       <main>
         <HeroMarine
-          kicker="Nos prestations"
+          kicker="Nos activités"
           title="Le sport des enfants, sous toutes ses formes"
           sub={<>De la baby gym dès 10 mois au sport ado, en passant par les mercredis sportifs, les stages et les anniversaires :
             au Kid Sport Club de Rochecorbon, chaque enfant trouve son activité.</>}

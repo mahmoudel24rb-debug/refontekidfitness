@@ -55,7 +55,7 @@ export default function Prestation({ slug }: { slug: string }) {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${SITE}/` },
-          { '@type': 'ListItem', position: 2, name: 'Nos prestations', item: `${SITE}/nos-prestations` },
+          { '@type': 'ListItem', position: 2, name: 'Nos activités', item: `${SITE}/nos-prestations` },
           { '@type': 'ListItem', position: 3, name: p.titre, item: `${SITE}/nos-prestations/${p.slug}` },
         ],
       },
@@ -83,7 +83,7 @@ export default function Prestation({ slug }: { slug: string }) {
       <main>
         {/* Hero : 2 colonnes, photo de la prestation + badge d'âge sur l'image */}
         <HeroMarine
-          kicker="Nos prestations"
+          kicker="Nos activités"
           title={p.titre}
           sub={p.accroche}
           image={p.image}

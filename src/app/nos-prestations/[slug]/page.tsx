@@ -8,7 +8,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const p = prestationBySlug(slug)
-  if (!p) return { title: 'Nos prestations | Kid Sport Club' }
+  if (!p) return { title: 'Nos activités | Kid Sport Club' }
   return {
     title: `${p.titre} (${p.age}) à Rochecorbon | Kid Sport Club`,
     description: `${p.accroche} ${p.motCle} au Kid Sport Club de Rochecorbon, près de Tours.`,
