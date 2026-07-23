@@ -1,11 +1,16 @@
 // Articles blog — cluster éditorial du brief (§6). Corps = PLACEHOLDER rédactionnel
 // (à enrichir/valider). Slugs pensés SEO.
+// Bloc de contenu d'un article : paragraphe ou intertitre h2. Le corps est
+// rendu à partir de `blocs` (fallback sur `paragraphes` si absent).
+export type Bloc = { t: 'h2'; texte: string } | { t: 'p'; texte: string }
+
 export type Article = {
   slug: string
   titre: string
   excerpt: string
   date: string
   paragraphes: string[]
+  blocs?: Bloc[]
 }
 
 export const ARTICLES: Article[] = [
@@ -60,6 +65,42 @@ export const ARTICLES: Article[] = [
     ],
   },
 ]
+
+// Intertitres h2 (sobres, descriptifs — à valider par le client), insérés
+// AVANT le paragraphe d'index indiqué. Aucun paragraphe n'est modifié : les
+// `blocs` ci-dessous sont construits mécaniquement à partir de `paragraphes`.
+const INTERTITRES: Record<string, { avant: number; texte: string }[]> = {
+  'a-quel-age-sport-enfant': [
+    { avant: 1, texte: 'Une activité pour chaque âge' },
+    { avant: 2, texte: 'Respecter le rythme de l’enfant' },
+  ],
+  'bienfaits-motricite-tout-petit': [
+    { avant: 1, texte: 'Ce que la motricité développe' },
+    { avant: 2, texte: 'La motricité au Kid Sport Club' },
+  ],
+  'idees-anniversaire-sportif-enfant': [
+    { avant: 1, texte: 'Des activités qui plaisent aux enfants' },
+    { avant: 2, texte: 'Une formule clé en main' },
+    { avant: 3, texte: 'L’anniversaire sportif au Kid Sport Club' },
+  ],
+  'enfants-vacances-scolaires': [
+    { avant: 1, texte: 'Une solution pour les parents' },
+    { avant: 2, texte: 'Un encadrement diplômé' },
+    { avant: 3, texte: 'Stages et Mercredis Sportifs au Kid Sport Club' },
+  ],
+}
+
+// Construction des `blocs` : chaque paragraphe devient un bloc p (inchangé),
+// et les intertitres h2 sont insérés avant leur index cible.
+for (const a of ARTICLES) {
+  const inter = INTERTITRES[a.slug] ?? []
+  const blocs: Bloc[] = []
+  a.paragraphes.forEach((texte, i) => {
+    for (const it of inter) if (it.avant === i) blocs.push({ t: 'h2', texte: it.texte })
+    blocs.push({ t: 'p', texte })
+  })
+  a.blocs = blocs
+}
 
 // Visuel de chaque article (webp du dossier /assets/ksc) — partagé entre
 // BlogKSC (featured + grille), Article (hero + JSON-LD) et ActusHome.
