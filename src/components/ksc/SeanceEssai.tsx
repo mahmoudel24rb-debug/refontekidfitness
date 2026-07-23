@@ -1,14 +1,15 @@
-'use client'
-
-import React, { useState } from 'react'
+import React from 'react'
 import { Check, Phone, Mail, MapPin, Clock } from 'lucide-react'
 
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import HeroMarine from './HeroMarine'
 import RoundIcon from './RoundIcon'
-import FormField from './FormField'
-import { Button } from '@/components/ui/button'
+import LeadForm from './LeadForm'
+import PullQuote from './PullQuote'
+import LandingTeam from './LandingTeam'
+import AvisParents from './AvisParents'
+import { COORDONNEES, HORAIRES } from '@/data/site'
 
 // Points de réassurance — reformulés à partir du texte existant de la page
 // (« La séance d'essai est gratuite. Votre demande est traitée directement par
@@ -16,37 +17,6 @@ import { Button } from '@/components/ui/button'
 const POINTS = ['Gratuite et sans engagement', 'Réponse rapide de l’équipe', 'On vous trouve le bon créneau']
 
 export default function SeanceEssai() {
-  const [etat, setEtat] = useState<'idle' | 'envoi' | 'ok' | 'erreur'>('idle')
-  const sent = etat === 'ok'
-  // Envoi réel vers /api/lead (transféré au CRM via LEAD_WEBHOOK_URL quand posée).
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    if (etat === 'envoi') return
-    const data = new FormData(e.currentTarget)
-    setEtat('envoi')
-    try {
-      const res = await fetch('/api/lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          source: 'seance-essai',
-          prenom: data.get('prenom'),
-          nom: data.get('nom') || undefined,
-          email: data.get('email') || undefined,
-          telephone: data.get('tel'),
-          ageEnfant: data.get('age') || undefined,
-          message: data.get('msg') || undefined,
-        }),
-      })
-      if (!res.ok) throw new Error(String(res.status))
-      window.dataLayer = window.dataLayer || []
-      window.dataLayer.push({ event: 'lead', source: 'seance-essai' })
-      setEtat('ok')
-    } catch {
-      setEtat('erreur')
-    }
-  }
-
   return (
     <>
       <SiteHeader />
@@ -61,34 +31,10 @@ export default function SeanceEssai() {
 
         <section className="mx-auto max-w-[1200px] px-6 pt-16 pb-[90px]">
           <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[7fr_5fr] lg:gap-14">
-            {/* Carte formulaire */}
-            <div className="rounded-lg border border-border bg-white p-[clamp(26px,4vw,44px)] shadow-md">
-              {sent ? (
-                <div className="py-5 text-center">
-                  <h2 className="mb-2.5! font-heading text-2xl font-extrabold text-marine">Merci !</h2>
-                  <p className="leading-relaxed">Votre demande est bien notée. Nous vous recontactons rapidement pour fixer la séance d’essai.</p>
-                </div>
-              ) : (
-                <form onSubmit={onSubmit} className="flex flex-col gap-[18px]">
-                  <div className="grid gap-[18px] [grid-template-columns:repeat(auto-fit,minmax(200px,1fr))]">
-                    <FormField id="prenom" label="Prénom du parent" required />
-                    <FormField id="nom" label="Nom" required />
-                  </div>
-                  <FormField id="email" label="Email" type="email" required />
-                  <FormField id="tel" label="Téléphone" type="tel" required />
-                  <FormField id="age" label="Âge de l’enfant" placeholder="ex. 4 ans" />
-                  <FormField id="msg" label="Votre message (optionnel)" as="textarea" rows={4} />
-                  <Button type="submit" className="w-full" disabled={etat === 'envoi'}>
-                    {etat === 'envoi' ? 'Envoi en cours…' : 'Demander ma séance d’essai'}
-                  </Button>
-                  {etat === 'erreur' && (
-                    <p className="m-0! text-sm font-semibold text-destructive">
-                      L’envoi a échoué. Réessayez, ou appelez-nous au 02 47 44 41 43.
-                    </p>
-                  )}
-                  <p className="m-0! text-center text-[13px] opacity-70">Ou appelez-nous au 02 47 44 41 43.</p>
-                </form>
-              )}
+            {/* Formulaire unifié (LeadForm) + rappel téléphone sous le form */}
+            <div>
+              <LeadForm source="seance-essai" withEmail ctaLabel="Demander ma séance d’essai" />
+              <p className="mt-4 text-center text-[13px] opacity-70">Ou appelez-nous au {COORDONNEES.telephone}.</p>
             </div>
 
             {/* Colonne réassurance */}
@@ -109,28 +55,37 @@ export default function SeanceEssai() {
               </ul>
 
               <div className="flex flex-col gap-[18px]">
-                <a href="tel:+33247444143" className="flex items-center gap-3.5 font-semibold text-marine no-underline">
+                <a href={COORDONNEES.telephoneHref} className="flex items-center gap-3.5 font-semibold text-marine no-underline">
                   <RoundIcon><Phone className="size-[18px]" /></RoundIcon>
-                  02 47 44 41 43
+                  {COORDONNEES.telephone}
                 </a>
-                <a href="mailto:kidfitnessrochecorbon@gmail.com" className="flex items-center gap-3.5 font-semibold text-marine no-underline [overflow-wrap:anywhere]">
+                <a href={COORDONNEES.emailHref} className="flex items-center gap-3.5 font-semibold text-marine no-underline [overflow-wrap:anywhere]">
                   <RoundIcon><Mail className="size-[18px]" /></RoundIcon>
-                  kidfitnessrochecorbon@gmail.com
+                  {COORDONNEES.email}
                 </a>
-                <a href="https://maps.google.com/?q=1+Quai+de+la+Loire+37210+Rochecorbon" className="flex items-center gap-3.5 font-semibold text-marine no-underline">
+                <a href={COORDONNEES.adresseHref} className="flex items-center gap-3.5 font-semibold text-marine no-underline">
                   <RoundIcon><MapPin className="size-[18px]" /></RoundIcon>
-                  1 Quai de la Loire, 37210 Rochecorbon
+                  {COORDONNEES.adresse}
                 </a>
                 <div className="flex items-start gap-3.5">
                   <RoundIcon><Clock className="size-[18px]" /></RoundIcon>
-                  <p className="m-0! font-semibold leading-relaxed text-marine">
-                    Lun–Ven : 9h00–19h30 (sans coupure)<br />Samedi : 9h30–12h30
-                  </p>
+                  <p className="m-0! font-semibold leading-relaxed text-marine">{HORAIRES}</p>
                 </div>
               </div>
             </aside>
           </div>
         </section>
+
+        {/* Réassurance : citation parent, équipe (valeurs), avis */}
+        <PullQuote
+          tone="cream2"
+          avisIndex={2}
+          extrait="les cours sont adaptés et les encadrants d’une bienveillance qu’on apprécie en tant que parent"
+          href="#lead-form"
+          ctaLabel="Demander ma séance d’essai"
+        />
+        <LandingTeam tone="cream" withValeurs />
+        <AvisParents />
       </main>
       <SiteFooter />
     </>

@@ -3,6 +3,7 @@ import { MapPin } from 'lucide-react'
 
 import { FOOTER_NAV, LEGAL_NAV } from '@/data/nav'
 import { PRESTATIONS } from '@/data/prestations'
+import { COORDONNEES, HORAIRES } from '@/data/site'
 import { cn } from '@/lib/utils'
 import TerrainLines from './TerrainLines'
 
@@ -56,16 +57,17 @@ export default function SiteFooter() {
         <div className="flex flex-col gap-2.5">
           <span className={colTitleCls}>Infos</span>
           <a href="/contact" className={linkCls}>
-            1 Quai de la Loire, 37210 Rochecorbon
+            {COORDONNEES.adresse}
           </a>
-          <a href="tel:+33247444143" className={linkCls}>
-            02 47 44 41 43
+          <a href={COORDONNEES.telephoneHref} className={linkCls}>
+            {COORDONNEES.telephone}
           </a>
-          <a href="mailto:kidfitnessrochecorbon@gmail.com" className={linkCls}>
-            kidfitnessrochecorbon@gmail.com
+          <a href={COORDONNEES.emailHref} className={linkCls}>
+            {COORDONNEES.email}
           </a>
-          <span className="self-start text-[15px] text-cream/85">Lun–Ven : 9h00–19h30 (sans coupure)</span>
-          <span className="self-start text-[15px] text-cream/85">Samedi : 9h30–12h30</span>
+          {HORAIRES.split(' · ').map((ligne) => (
+            <span key={ligne} className="self-start text-[15px] text-cream/85">{ligne}</span>
+          ))}
         </div>
       </div>
 
