@@ -111,7 +111,7 @@ export default function ContactKSC() {
               <h2 className="mb-4! font-heading text-[22px] font-extrabold text-marine">Nous <Underline>trouver</Underline></h2>
               <div className="overflow-hidden rounded-lg border border-border">
                 <iframe
-                  title="Plan — Kid Sport Club Rochecorbon"
+                  title="Plan | Kid Sport Club Rochecorbon"
                   src="https://maps.google.com/maps?q=1%20Quai%20de%20la%20Loire%2037210%20Rochecorbon&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   className="block h-80 w-full border-0"
                   loading="lazy"

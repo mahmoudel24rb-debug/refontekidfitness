@@ -57,7 +57,7 @@ export default function Prestation({ slug }: { slug: string }) {
       },
       {
         '@type': 'Service',
-        name: `${p.titre} — Kid Sport Club`,
+        name: `${p.titre}, Kid Sport Club`,
         serviceType: p.motCle,
         description: p.intro,
         url: `${SITE}/nos-prestations/${p.slug}`,

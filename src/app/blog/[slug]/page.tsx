@@ -8,7 +8,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const a = articleBySlug(slug)
-  if (!a) return { title: 'Blog — Kid Sport Club' }
+  if (!a) return { title: 'Blog | Kid Sport Club' }
   return { title: `${a.titre} | Kid Sport Club`, description: a.excerpt, alternates: { canonical: `/blog/${a.slug}` } }
 }
 

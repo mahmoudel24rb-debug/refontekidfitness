@@ -40,9 +40,9 @@ export const ARTICLES: Article[] = [
     date: '2026-06-15',
     paragraphes: [
       // Chapo = texte du récap client, recopié tel quel.
-      "Envie de changer des anniversaires classiques ? Une formule sportive permet aux enfants de se dépenser, de jouer ensemble et de repartir avec plein de souvenirs — sans que les parents aient à gérer la logistique. Activités encadrées, gâteau, décoration : tout est pensé pour que l'enfant profite à 100% de sa journée.",
+      "Envie de changer des anniversaires classiques ? Une formule sportive permet aux enfants de se dépenser, de jouer ensemble et de repartir avec plein de souvenirs, sans que les parents aient à gérer la logistique. Activités encadrées, gâteau, décoration : tout est pensé pour que l'enfant profite à 100% de sa journée.",
       "Un anniversaire sportif, c'est l'assurance d'enfants ravis… et fatigués le soir ! Parcours d'obstacles, jeux d'équipe, ateliers ludiques : les possibilités sont nombreuses.",
-      "L'avantage d'une formule clé en main : vous ne vous occupez de rien. Espace privatisé, animation encadrée et goûter compris — il ne reste qu'à profiter.",
+      "L'avantage d'une formule clé en main : vous ne vous occupez de rien. Espace privatisé, animation encadrée et goûter compris : il ne reste qu'à profiter.",
       "Au Kid Sport Club de Rochecorbon, nous organisons des anniversaires sportifs adaptés à l'âge des enfants. Contactez-nous pour réserver.",
     ],
   },
@@ -53,7 +53,7 @@ export const ARTICLES: Article[] = [
     date: '2026-06-22',
     paragraphes: [
       // Chapo = texte du récap client, recopié tel quel.
-      "Les vacances scolaires sont l'occasion idéale pour proposer à son enfant une activité sportive encadrée et stimulante, à la journée ou à la semaine. Cela permet de rythmer les vacances, de maintenir une activité physique régulière, et de favoriser les rencontres avec d'autres enfants — tout en offrant aux parents une solution de garde active et sécurisée.",
+      "Les vacances scolaires sont l'occasion idéale pour proposer à son enfant une activité sportive encadrée et stimulante, à la journée ou à la semaine. Cela permet de rythmer les vacances, de maintenir une activité physique régulière, et de favoriser les rencontres avec d'autres enfants, tout en offrant aux parents une solution de garde active et sécurisée.",
       "Les vacances scolaires sont parfois un casse-tête pour les parents qui travaillent. Les stages sportifs sont une solution idéale : les enfants se dépensent, s'amusent et se font des copains.",
       "Encadrés par des animateurs diplômés, ils découvrent une variété d'activités tout au long de la semaine, dans un cadre sécurisé.",
       "Le Kid Sport Club propose des stages pendant toutes les vacances scolaires, ainsi que les Mercredis Sportifs pendant l'année scolaire. Pensez à réserver à l'avance, les places sont limitées.",

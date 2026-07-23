@@ -23,7 +23,7 @@ export default function SiteFooter() {
           {/* text-xs : parité avec le rendu actuel (taille héritée du body 12px
               de framer.css) — à réévaluer à la purge Framer (phase 3d). */}
           <p className="max-w-[280px] text-xs leading-[1.6] text-cream/85">
-            Le club de sport des enfants de 10 mois à 14 ans, à Rochecorbon — bouger, grandir, s’épanouir.
+            Le club de sport des enfants de 10 mois à 14 ans, à Rochecorbon : bouger, grandir, s’épanouir.
           </p>
           <div className="flex gap-3">
             <a href="https://www.facebook.com" aria-label="Facebook" className={cn(linkCls, 'font-bold')}>
@@ -73,7 +73,7 @@ export default function SiteFooter() {
       <div className="relative mx-auto flex max-w-[1320px] justify-center px-6 pb-[26px]">
         <span className="inline-flex items-center gap-2 text-[13.5px] font-semibold text-cream/60">
           <MapPin size={15} aria-hidden="true" />
-          Club à Rochecorbon — bord de Loire
+          Club à Rochecorbon, bord de Loire
         </span>
       </div>
 

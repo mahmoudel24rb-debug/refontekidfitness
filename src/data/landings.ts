@@ -69,7 +69,7 @@ export const LANDINGS: Landing[] = [
     // Lead magnet principal des campagnes Meta : l'essai gratuit (validé client).
     slug: 'essai-gratuit',
     variant: 'lead',
-    metaTitle: 'Séance d’essai gratuite — Kid Sport Club Rochecorbon',
+    metaTitle: 'Séance d’essai gratuite | Kid Sport Club Rochecorbon',
     metaDescription:
       "Réservez une séance d'essai gratuite au Kid Sport Club de Rochecorbon : votre enfant découvre l'activité, vous rencontrez l'équipe, et vous décidez ensuite.",
     eyebrow: 'Séance d’essai gratuite · 10 mois – 14 ans',
@@ -118,7 +118,7 @@ export const LANDINGS: Landing[] = [
   {
     slug: 'anniversaire-sportif',
     variant: 'lead',
-    metaTitle: 'Anniversaire sportif enfant à Rochecorbon — Kid Sport Club',
+    metaTitle: 'Anniversaire sportif enfant à Rochecorbon | Kid Sport Club',
     metaDescription:
       "Offrez un anniversaire sportif inoubliable à votre enfant à Rochecorbon : jeux, parcours, espace privatisé et goûter. Formule clé en main encadrée. Réservez votre date.",
     eyebrow: 'Anniversaire clé en main · 3 – 14 ans',
@@ -132,7 +132,7 @@ export const LANDINGS: Landing[] = [
     reassurance: ['Espace sécurisé', 'Encadrement diplômé', 'De 3 à 14 ans', 'Au bord de la Loire'],
     etapes: [
       { titre: 'Réservez votre créneau', texte: 'Choisissez votre date : l’espace est privatisé pour votre groupe.' },
-      { titre: 'On prépare tout', texte: 'Gâteau, décoration et boissons sont inclus — vous n’avez rien à préparer.' },
+      { titre: 'On prépare tout', texte: 'Gâteau, décoration et boissons sont inclus : vous n’avez rien à préparer.' },
       { titre: 'Deux heures de jeux', texte: 'Jusqu’à 10 enfants profitent d’activités sportives et de jeux encadrés par notre équipe.' },
     ],
     tarif: { prix: '250 € / 2h', details: ['Max 10 enfants', 'Gâteau + déco + boissons inclus'] },
@@ -175,7 +175,7 @@ export const LANDINGS: Landing[] = [
   {
     slug: 'stage-vacances',
     variant: 'lead',
-    metaTitle: 'Stage sportif enfant pendant les vacances à Rochecorbon — Kid Sport Club',
+    metaTitle: 'Stage sportif enfant pendant les vacances à Rochecorbon | Kid Sport Club',
     metaDescription:
       "Occupez vos enfants pendant les vacances à Rochecorbon : stages sportifs multi-activités, encadrés, par groupes d'âge. Mercredis et vacances scolaires. Places limitées.",
     eyebrow: 'Vacances & mercredis · 3 – 14 ans',
@@ -224,7 +224,7 @@ export const LANDINGS: Landing[] = [
     // chaque bouton ouvrira le calendrier du CRM (CRM_INSCRIPTION_URL, placeholder).
     slug: 'prestations',
     variant: 'catalogue',
-    metaTitle: 'Inscriptions — toutes nos prestations | Kid Sport Club Rochecorbon',
+    metaTitle: 'Inscriptions : toutes nos prestations | Kid Sport Club Rochecorbon',
     metaDescription:
       "Inscrivez votre enfant au Kid Sport Club de Rochecorbon : cours par âge dès 10 mois, Mercredis Sportifs, stages vacances et anniversaires. Choisissez votre prestation.",
     eyebrow: 'Inscriptions · 10 mois – 14 ans',

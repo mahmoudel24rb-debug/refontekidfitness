@@ -27,7 +27,7 @@ export const COORDONNEES = {
   adresseHref: 'https://maps.google.com/?q=1+Quai+de+la+Loire+37210+Rochecorbon',
   mapsEmbedUrl:
     'https://maps.google.com/maps?q=1%20Quai%20de%20la%20Loire%2037210%20Rochecorbon&t=&z=15&ie=UTF8&iwloc=&output=embed',
-  mapTitle: 'Plan — Kid Sport Club Rochecorbon',
+  mapTitle: 'Plan | Kid Sport Club Rochecorbon',
 } as const
 
 // Horaires — valeur telle qu'affichée dans ContactKSC (le libellé « Horaires »

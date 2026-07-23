@@ -12,7 +12,7 @@ import { LANDINGS } from '@/data/landings'
 // apparaît ici automatiquement. noindex, hors menu, hors sitemap, comme les
 // landings elles-mêmes.
 export const metadata: Metadata = {
-  title: 'Landing pages — répertoire interne',
+  title: 'Landing pages | répertoire interne',
   robots: { index: false, follow: false },
 }
 
@@ -25,7 +25,7 @@ export default function LandingIndex() {
           <div>
             <h1 className="font-heading text-2xl font-extrabold text-marine">Landing pages</h1>
             <p className="text-sm text-muted-foreground">
-              Répertoire interne ({LANDINGS.length}) — pages hors menu, non indexées, pour campagnes Meta/Google Ads.
+              Répertoire interne ({LANDINGS.length}), pages hors menu, non indexées, pour campagnes Meta/Google Ads.
             </p>
           </div>
         </div>
@@ -55,7 +55,7 @@ export default function LandingIndex() {
         </div>
 
         <p className="mt-8 text-sm text-muted-foreground">
-          Nouvelle landing = une entrée dans <code className="rounded bg-cream-2 px-1.5 py-0.5 font-mono text-[13px]">src/data/landings.ts</code> — elle apparaîtra ici automatiquement.
+          Nouvelle landing = une entrée dans <code className="rounded bg-cream-2 px-1.5 py-0.5 font-mono text-[13px]">src/data/landings.ts</code>, elle apparaîtra ici automatiquement.
         </p>
       </div>
     </main>
