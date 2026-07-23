@@ -16,7 +16,7 @@ export type NavItem = {
 export const NAV: NavItem[] = [
   { label: 'Qui sommes-nous', href: '/qui-sommes-nous' },
   {
-    label: 'Nos prestations',
+    label: 'Nos activités',
     href: '/nos-prestations',
     sub: PRESTATIONS.map((p) => ({ label: p.titre, href: `/nos-prestations/${p.slug}` })),
   },

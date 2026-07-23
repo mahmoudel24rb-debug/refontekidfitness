@@ -45,7 +45,7 @@ export default function SiteFooter() {
         </div>
 
         <div className="flex flex-col gap-2.5">
-          <span className={colTitleCls}>Nos prestations</span>
+          <span className={colTitleCls}>Nos activités</span>
           {PRESTATIONS.map((p) => (
             <a key={p.slug} href={`/nos-prestations/${p.slug}`} className={linkCls}>
               {p.titre}
