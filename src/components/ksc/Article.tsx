@@ -48,7 +48,9 @@ export default function Article({ slug }: { slug: string }) {
 
         {/* Corps : chapo 19px medium, intertitres h2, largeur de lecture 68ch */}
         <Section tone="cream">
-          <article className="mx-auto max-w-[68ch] [&_a]:text-magenta [&_a]:underline-offset-4 [&_a:hover]:underline">
+          {/* NB : les règles de lien excluent les boutons (data-slot=button),
+              sinon le sélecteur descendant écrase leur text-white (rose sur rose). */}
+          <article className="mx-auto max-w-[68ch] [&_a:not([data-slot=button])]:text-magenta [&_a:not([data-slot=button])]:underline-offset-4 [&_a:not([data-slot=button]):hover]:underline">
             {blocs.map((b, i) =>
               b.t === 'h2' ? (
                 <h2 key={i} className="mt-10 mb-3 font-heading text-2xl font-bold text-marine">{b.texte}</h2>

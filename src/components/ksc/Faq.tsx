@@ -11,7 +11,8 @@ import { Button } from '@/components/ui/button'
 import { FAQ, type FaqItem } from '@/data/faq'
 
 // Rend « page tarifs » cliquable (lien /tarifs) — le JSON-LD garde le texte brut.
-function Reponse({ item }: { item: FaqItem }) {
+// Exporté : réutilisé par l'accordéon FAQ de la page d'accueil (FaqHome).
+export function Reponse({ item }: { item: FaqItem }) {
   const marqueur = 'page tarifs'
   const i = item.lienTarifs ? item.r.indexOf(marqueur) : -1
   if (i === -1) return <>{item.r}</>
