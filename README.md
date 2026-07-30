@@ -1,5 +1,26 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Payload CMS 3 — mode fallback (aucune base pour l'instant)
+
+Le contenu éditorial est administrable via Payload 3, **mais aucune base n'est
+provisionnée aujourd'hui**. Conséquences, à connaître avant de tester :
+
+- **Sans `DATABASE_URL`, le site fonctionne exactement comme avant** : `npm run
+  build`, `npx tsc --noEmit`, `npm run lint` et les 31 pages prérendues sont
+  identiques, sans aucune variable d'environnement.
+- **`/admin` ne fonctionne PAS sans base : c'est attendu.** L'écran de connexion
+  a besoin de la table `users` ; il renverra une erreur de connexion Postgres
+  tant que `DATABASE_URL` n'est pas posée. Ce n'est pas une régression.
+- Les pages lisent `src/lib/contenu.ts` : chaque fetcher n'appelle Payload que si
+  une URL de base est définie, dans un `try/catch`, et **retombe sur les fichiers
+  `src/data/*`** si la base est absente, injoignable ou si la collection est
+  vide. Ces fichiers restent la source de secours permanente et la source des
+  seeds (`scripts/seed-ksc.mjs`, non destructif).
+- Les pages concernées sont en ISR (`revalidate = 60`).
+
+Détails, liste des collections et **checklist du jour où la base Neon arrive** :
+voir `DOCUMENTATION.md` § 11. Variables d'environnement : `.env.example`.
+
 ## Getting Started
 
 First, run the development server:
