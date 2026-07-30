@@ -7,17 +7,15 @@ import SectionHeading from '@/components/ksc/SectionHeading'
 import { Reponse } from '@/components/ksc/Faq'
 import { Button } from '@/components/ui/button'
 import { HOME } from '@/data/home'
-import { FAQ } from '@/data/faq'
+import { faqParQuestions, getFaq } from '@/lib/contenu'
 
 // « Questions fréquentes » (accueil) — accordéon : la réponse s'ouvre sous la
 // question sans quitter la page (même mécanique details/summary que /faq).
 // Les réponses viennent de data/faq.ts (source unique de la page FAQ) ; le CTA
 // « Toutes les questions » reste le chemin vers la FAQ complète.
-export default function FaqHome() {
+export default async function FaqHome() {
   const { faqHome } = HOME
-  const items = faqHome.questions
-    .map((q) => FAQ.find((f) => f.q === q))
-    .filter((f): f is NonNullable<typeof f> => Boolean(f))
+  const items = faqParQuestions(await getFaq(), faqHome.questions)
   return (
     <Section tone="white">
       <Container className="mx-auto flex max-w-[860px] flex-col gap-8">

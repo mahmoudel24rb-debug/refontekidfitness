@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react'
 import { Phone } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
-import { COORDONNEES } from '@/data/site'
 
 // Barre CTA collante bas d'écran, mobile uniquement (standard landing Meta :
 // l'action principale reste à un pouce du pouce). Elle observe UNE OU PLUSIEURS
@@ -13,14 +12,18 @@ import { COORDONNEES } from '@/data/site'
 // passent les deux formulaires (#lead-form du hero + #lead-form-final de fin de
 // page) ; le catalogue passe la section prestations.
 // Aucune animation (sobriété + reduced-motion).
+// Composant client : le numéro d'appel est passé EN PROP par la page serveur
+// (global `parametres`, repli src/data/site.ts) — pas de lecture de contenu ici.
 export default function StickyCtaBar({
   href,
   label,
   targets,
+  telephoneHref,
 }: {
   href: string
   label: string
   targets?: string[]
+  telephoneHref: string
 }) {
   const [visible, setVisible] = useState(false)
 
@@ -89,7 +92,7 @@ export default function StickyCtaBar({
           <a href={href}>{label}</a>
         </Button>
         <Button asChild size="sm" variant="outline" aria-label="Appeler le club">
-          <a href={COORDONNEES.telephoneHref}>
+          <a href={telephoneHref}>
             <Phone size={16} aria-hidden="true" />
             Appeler
           </a>

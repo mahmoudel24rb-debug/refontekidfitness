@@ -10,14 +10,15 @@ import CtaBand from './CtaBand'
 import WaveDivider from './WaveDivider'
 import Section from './Section'
 import Container from './Container'
-import { PLANNING } from '@/data/planning'
+import { getPlanning } from '@/lib/contenu'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 
 // Tranches d'âge présentes dans le planning (légende), dans l'ordre croissant.
 const TRANCHES = ['10-36 mois', '3-5 ans', '6-14 ans']
 
-export default function PlanningKSC() {
+export default async function PlanningKSC() {
+  const planning = await getPlanning()
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -52,7 +53,7 @@ export default function PlanningKSC() {
 
             {/* Jours : 2 colonnes desktop, 1 colonne mobile (hauteurs auto) */}
             <div className="grid gap-6 lg:grid-cols-2">
-              {PLANNING.map((j) => {
+              {planning.map((j) => {
                 const nb = j.salles.reduce((n, s) => n + s.creneaux.length, 0)
                 return (
                   <Card key={j.jour} className="gap-4 p-7">

@@ -29,12 +29,12 @@ Le site cible **les parents** (rassurer, donner envie, convertir) avec trois obj
 |---|---|---|
 | Framework | Next.js (App Router, Turbopack) | 16.2.9 |
 | Runtime UI | React / React DOM | 19.2.4 |
-| CMS | **Aucun** (full code, statique/SSG) | — |
+| CMS | Payload 3 + `@payloadcms/db-postgres` — **en mode fallback, sans base pour l'instant** (cf. §11) | 3.85.1 |
 | Images | `sharp` (hors runtime, scripts de conversion webp / détourage) | — |
 | Langage | TypeScript | ^5 |
 | Lint | ESLint + `eslint-config-next` | 16.2.9 |
 
-**Décision de stack** : contrairement au socle habituel de l'agence (WordPress + Oxygen, évoqué au brief §7), on a retenu **Next.js en full code sans CMS** — même socle que Beauregard, aligné avec le choix de Mahmoud « on commence en full code sans CMS et on ajoute plus tard ». Perf/Core Web Vitals au top, mobile-first, statique. Un CMS pourra être ajouté ultérieurement si le besoin d'édition client apparaît.
+**Décision de stack** : contrairement au socle habituel de l'agence (WordPress + Oxygen, évoqué au brief §7), on a retenu **Next.js en full code sans CMS** — même socle que Beauregard, aligné avec le choix de Mahmoud « on commence en full code sans CMS et on ajoute plus tard ». Perf/Core Web Vitals au top, mobile-first, statique. **MàJ 2026-07-30** : Payload 3 a été intégré (même socle que Beauregard) en *mode fallback strict* — le contenu éditorial devient administrable dès qu'une base Neon existe, et le site continue de servir les fichiers `src/data/*` tant qu'elle n'existe pas. Voir §11.
 
 ### Config notable (`next.config.ts`)
 - `typescript.ignoreBuildErrors: true` : **obligatoire**. Le port Kinderly est du markup vendored avec du CSS Framer non-standard (`cornerShape`, variables `--framer-*`). Le code métier écrit à la main reste vérifié dans l'éditeur.
@@ -173,10 +173,13 @@ npm run start        # sert le build
 ```
 
 ### Variables d'environnement
-Le site est **statique, sans base de données ni secret**. Une seule variable optionnelle :
+**Toutes optionnelles** : sans aucune variable, le site build et rend exactement le même contenu (cf. §11). Gabarit : `.env.example`.
 | Variable | Rôle | Défaut |
 |---|---|---|
 | `NEXT_PUBLIC_SITE_URL` | URL canonique utilisée par le sitemap, les canoniques et le JSON-LD | `https://kidsportclub.fr` |
+| `DATABASE_URL` | Base Postgres (Neon) de Payload. Absente → contenu servi depuis `src/data/*`, `/admin` inopérant | *(absente)* |
+| `PAYLOAD_SECRET` | Signature des sessions de l'admin Payload. **À poser en production.** | `dev-secret-ksc` |
+| `LEAD_WEBHOOK_URL` | Webhook Make/CRM de `/api/lead`. Absente → accusé de réception sans transfert | *(absente)* |
 
 ### Vercel
 - Déploiement **automatique** à chaque push sur `main` → URL de preview `refontekidfitness.vercel.app`.
@@ -374,3 +377,122 @@ Pages légales : Mentions légales · Confidentialité · Cookies · CGV
 - [ ] **Stack** : WordPress + Oxygen par défaut, ou autre choix ? *(Tranché : Next.js full code.)*
 - [ ] **Page « Séance d'essai »** : à conserver ou non dans l'arbo ? *(Conservée.)*
 - [ ] **Multilingue** : FR uniquement confirmé ?
+
+---
+
+## 11. Payload CMS 3 — contenu administrable, en mode fallback
+
+> Ajouté le 2026-07-30 (branche `payload-ksc`). **Aucune base de données n'est
+> provisionnée à ce stade** : le CMS est intégré, prêt, et totalement inerte tant
+> que `DATABASE_URL` n'existe pas.
+
+### 11.1 Principe : fallback strict
+
+Le site ne dépend d'aucune variable d'environnement. La couche d'accès
+`src/lib/contenu.ts` est le SEUL point de lecture du contenu éditorial :
+
+1. si aucune URL de base n'est définie (`DATABASE_URL`, `DATABASE_URL_UNPOOLED`,
+   `POSTGRES_URL_NON_POOLING`) → lecture directe des fichiers `src/data/*` ;
+2. sinon, lecture Payload dans un `try/catch` avec import dynamique du client ;
+3. **repli sur `src/data/*`** si la base est injoignable, le schéma absent, ou si
+   la collection est **vide** (`docs.length === 0`) ;
+4. pour le global `parametres`, le repli est **champ par champ** : un champ vidé
+   dans l'admin ne vide pas le site.
+
+Les fichiers `src/data/*` restent donc à la fois la source de secours permanente
+et la source des seeds. Les résultats sont mémorisés par requête (`cache` de
+React) : plusieurs composants d'une même page ne déclenchent qu'une lecture.
+
+Les pages qui exposent ce contenu sont en **ISR (`export const revalidate = 60`)**.
+Sans base, elles prérendent exactement le contenu actuel : le markup des 31 pages
+statiques est identique à celui d'avant l'intégration (vérifié par diff HTML).
+
+### 11.2 `/admin` ne fonctionne pas sans base — attendu
+
+L'écran de connexion Payload interroge la table `users`. Sans `DATABASE_URL`, il
+renvoie une erreur de connexion Postgres. **Ce n'est pas une régression** : c'est
+la conséquence directe de l'absence de base, et cela n'affecte aucune page
+publique (aucune ne dépend de Payload pour s'afficher).
+
+### 11.3 Collections et global
+
+Admin en français (`i18n` fr), groupe « Contenu » sauf mention contraire.
+
+| Collection | `useAsTitle` | Champs | Source / seed |
+|---|---|---|---|
+| `prestations` (Activités) | `titre` | titre, slug (unique), age, accroche, intro, benefices (array de texte), prix, creneauxTexte, motCle, image (upload, opt.), ordre | `src/data/prestations.ts` (7 fiches) |
+| `planning` (Créneaux) | `activite` | jour (select L→S), salle, heure, activite, age (select `10-36 mois` / `3-5 ans` / `6-14 ans`, opt.), ordre, actif (défaut vrai) | `src/data/planning.ts` (aplati) |
+| `tarifs` | `titre` | type (abonnement/prestation), titre, prix, detail, enAvant, ordre | `src/data/tarifs.ts` |
+| `faq` | `question` | question, reponse, lienTarifs, ordre | `src/data/faq.ts` (8 Q/R) |
+| `avis` | `auteur` | texte, auteur, ordre | `src/data/avis.ts` (3 verbatims) |
+| `equipe` | `nom` | nom, initiales, bio, photo (upload, opt.), ordre | `src/data/equipe.ts` (`EQUIPE`) |
+| `articles` | `titre` | titre, slug (unique), excerpt, date, blocs (array `t` p/h2 + texte), image (upload, opt.), publie (défaut vrai), ordre | `src/data/articles.ts` (4 articles, blocs finaux) |
+| `media` (upload, sharp) | — | alt | — |
+| `users` (auth) | `email` | role (admin/éditeur), nom | — (créé à la main) |
+| **global `parametres`** | — | coordonnees (telephone, telephoneHref, email, emailHref, adresse, adresseHref, mapsEmbedUrl, mapTitle), horaires, inscriptionUrl, crmInscriptionUrl | `src/data/site.ts` |
+
+Comportements notables :
+- `enAvant` remplace la constante `FEATURED_TITRE` (badge « La plus choisie »).
+- `image` / `photo` vides → le visuel statique actuel est conservé (`/assets/ksc/…`,
+  `ARTICLE_IMG`) ; une photo de coach chargée s'affiche en rond `object-cover`,
+  sinon le monogramme d'initiales est maintenu.
+- `lienTarifs` rend cliquables les mots « page tarifs » de la réponse ; le JSON-LD
+  `FAQPage` continue de sérialiser le texte brut.
+- `PullQuote` masque sa section si l'avis édité ne contient plus l'extrait cité
+  (garde-fou volontaire : pas de fausse citation).
+- Le blog et l'accueil trient toujours par date décroissante ; `ordre` sert de
+  référence pour « À lire aussi » et le sitemap.
+
+### 11.4 Ce qui reste volontairement en code
+
+- `src/data/home.ts` (tous les textes de l'accueil : héros, bienvenue, tranches
+  d'âge, activités, libellés du bloc FAQ), `src/data/landings.ts` (gabarits de
+  campagne), `src/data/legal.ts`, `src/data/nav.ts`, `VALEURS`
+  (`src/data/equipe.ts`), les listes d'icônes et le mapping
+  slug → tranche d'âge de `src/data/creneaux.ts`.
+- La nav du header : `SiteHeader` est un composant client, son sous-menu
+  « Nos activités » suit `src/data/nav.ts` (la colonne du footer, elle, suit la
+  collection `prestations`).
+- `INSCRIPTION_URL` (bouton « S'inscrire ») : rendu dans l'en-tête, donc côté
+  client — il suit toujours `src/data/site.ts`. Le champ `inscriptionUrl` du
+  global est réservé pour le jour où l'inscription en ligne est branchée.
+  `crmInscriptionUrl`, lui, est bien lu par la landing catalogue.
+- `/api/lead`, les formulaires (`LeadForm`, `ContactForm`), les sources trackées,
+  le JSON-LD et les metaTitles : inchangés.
+
+### 11.5 Seed
+
+`scripts/seed-ksc.mjs` (`npm run seed`) peuple **toutes** les collections et le
+global depuis `src/data/*`. **Non destructif** : chaque collection n'est remplie
+que si elle est vide (`count === 0`), le global que si ses coordonnées sont
+vides ; le script est rejouable. Il n'a pas encore été exécuté (pas de base).
+
+### 11.6 Checklist du jour où la base Neon arrive
+
+1. **Créer la base** Neon (via l'intégration Vercel de préférence : elle pose
+   `DATABASE_URL`, `DATABASE_URL_UNPOOLED`, `POSTGRES_URL_NON_POOLING`).
+2. **`.env`** en local (et non `.env.local`) : `DATABASE_URL=…` +
+   `PAYLOAD_SECRET=<chaîne longue aléatoire>`. La CLI Payload (`npm run seed`,
+   `generate:types`) ne lit que `.env` ; Next lit `.env` aussi, donc un seul
+   fichier suffit pour les deux.
+3. **Pousser le schéma** : `npm run dev` avec la base configurée (Payload crée /
+   migre les tables au démarrage). Vérifier les 9 collections + le global dans
+   `/admin`.
+4. **Créer le premier utilisateur admin** : ouvrir `http://localhost:3000/admin`
+   → écran « Create first user » → renseigner email + mot de passe, puis mettre
+   son champ **Rôle** sur « Admin (DGL) ». Créer ensuite le compte client en
+   « Éditeur ».
+5. **Seeder** : `npm run seed`. Contrôler le log (une ligne par collection) puis
+   comparer `/planning`, `/tarifs`, `/faq`, `/blog` au rendu actuel.
+6. **Vercel** : poser `DATABASE_URL` (+ `PAYLOAD_SECRET`, et `LEAD_WEBHOOK_URL`
+   si le CRM est prêt) dans Settings → Environment Variables, pour Production ET
+   Preview. Redéployer **sans cache de build** (piège connu du projet : un
+   `routes-manifest` périmé).
+7. **Ne jamais mettre `payload migrate` dans le build CI** (piège connu :
+   le build Vercel ne doit pas écrire en base).
+8. **Uploads** : le filesystem Vercel est éphémère. Avant que le client charge
+   les photos des coachs en production, brancher un stockage
+   (`@payloadcms/storage-vercel-blob` + `BLOB_READ_WRITE_TOKEN`, comme sur
+   Beauregard). En local, les fichiers vont dans `/media` (ignoré par Git).
+9. **Après toute modification de la config** : `npm run generate:types` et
+   `npm run generate:importmap`, puis committer les fichiers générés.

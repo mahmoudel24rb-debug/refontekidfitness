@@ -9,14 +9,15 @@ import LeadForm from './LeadForm'
 import PullQuote from './PullQuote'
 import LandingTeam from './LandingTeam'
 import AvisParents from './AvisParents'
-import { COORDONNEES, HORAIRES } from '@/data/site'
+import { getParametres } from '@/lib/contenu'
 
 // Points de réassurance — reformulés à partir du texte existant de la page
 // (« La séance d'essai est gratuite. Votre demande est traitée directement par
 // notre équipe, qui vous recontacte pour fixer le créneau. »).
 const POINTS = ['Gratuite et sans engagement', 'Réponse rapide de l’équipe', 'On vous trouve le bon créneau']
 
-export default function SeanceEssai() {
+export default async function SeanceEssai() {
+  const { coordonnees, horaires } = await getParametres()
   return (
     <>
       <SiteHeader />
@@ -34,7 +35,7 @@ export default function SeanceEssai() {
             {/* Formulaire unifié (LeadForm) + rappel téléphone sous le form */}
             <div>
               <LeadForm source="seance-essai" withEmail ctaLabel="Demander ma séance d’essai" />
-              <p className="mt-4 text-center text-[13px] opacity-70">Ou appelez-nous au {COORDONNEES.telephone}.</p>
+              <p className="mt-4 text-center text-[13px] opacity-70">Ou appelez-nous au {coordonnees.telephone}.</p>
             </div>
 
             {/* Colonne réassurance */}
@@ -55,21 +56,21 @@ export default function SeanceEssai() {
               </ul>
 
               <div className="flex flex-col gap-[18px]">
-                <a href={COORDONNEES.telephoneHref} className="flex items-center gap-3.5 font-semibold text-marine no-underline">
+                <a href={coordonnees.telephoneHref} className="flex items-center gap-3.5 font-semibold text-marine no-underline">
                   <RoundIcon><Phone className="size-[18px]" /></RoundIcon>
-                  {COORDONNEES.telephone}
+                  {coordonnees.telephone}
                 </a>
-                <a href={COORDONNEES.emailHref} className="flex items-center gap-3.5 font-semibold text-marine no-underline [overflow-wrap:anywhere]">
+                <a href={coordonnees.emailHref} className="flex items-center gap-3.5 font-semibold text-marine no-underline [overflow-wrap:anywhere]">
                   <RoundIcon><Mail className="size-[18px]" /></RoundIcon>
-                  {COORDONNEES.email}
+                  {coordonnees.email}
                 </a>
-                <a href={COORDONNEES.adresseHref} className="flex items-center gap-3.5 font-semibold text-marine no-underline">
+                <a href={coordonnees.adresseHref} className="flex items-center gap-3.5 font-semibold text-marine no-underline">
                   <RoundIcon><MapPin className="size-[18px]" /></RoundIcon>
-                  {COORDONNEES.adresse}
+                  {coordonnees.adresse}
                 </a>
                 <div className="flex items-start gap-3.5">
                   <RoundIcon><Clock className="size-[18px]" /></RoundIcon>
-                  <p className="m-0! font-semibold leading-relaxed text-marine">{HORAIRES}</p>
+                  <p className="m-0! font-semibold leading-relaxed text-marine">{horaires}</p>
                 </div>
               </div>
             </aside>

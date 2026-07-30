@@ -13,11 +13,13 @@ import Section from './Section'
 import Container from './Container'
 import SectionHeading from './SectionHeading'
 import RoundIcon from './RoundIcon'
-import { VALEURS, EQUIPE } from '@/data/equipe'
+import { VALEURS } from '@/data/equipe'
+import { getEquipe } from '@/lib/contenu'
 
 const ICONES: Record<string, LucideIcon> = { Heart, Shield, Smile, Blocks }
 
-export default function QuiSommesNous() {
+export default async function QuiSommesNous() {
+  const equipe = await getEquipe()
   return (
     <>
       <SiteHeader />
@@ -94,14 +96,24 @@ export default function QuiSommesNous() {
               </p>
             </div>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {EQUIPE.map((c) => (
+              {equipe.map((c) => (
                 <Card key={c.nom} className="items-center gap-3 p-8 text-center">
-                  <div
-                    aria-hidden="true"
-                    className="grid size-16 place-items-center rounded-full bg-marine font-heading text-xl font-bold text-cream"
-                  >
-                    {c.initiales}
-                  </div>
+                  {c.photo ? (
+                    <Image
+                      src={c.photo}
+                      alt={c.photoAlt ?? c.nom}
+                      width={64}
+                      height={64}
+                      className="size-16 rounded-full object-cover"
+                    />
+                  ) : (
+                    <div
+                      aria-hidden="true"
+                      className="grid size-16 place-items-center rounded-full bg-marine font-heading text-xl font-bold text-cream"
+                    >
+                      {c.initiales}
+                    </div>
+                  )}
                   <h3 className="font-heading text-xl font-bold text-marine">{c.nom}</h3>
                   <p className="text-[15.5px] leading-relaxed text-ink">{c.bio}</p>
                 </Card>

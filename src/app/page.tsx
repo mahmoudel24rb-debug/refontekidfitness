@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
 import Home from '@/components/home/Home'
 
+// ISR : FAQ, avis, équipe et articles administrables.
+// Sans base, le contenu prérendu est celui des fichiers src/data.
+export const revalidate = 60
+
 // Metadata dédiée Accueil (mot-clé focus : club de sport enfant Rochecorbon).
 export const metadata: Metadata = {
   title: 'Club de sport enfant à Rochecorbon (Tours) | Kid Sport Club',

@@ -15,7 +15,7 @@ import WaveDivider from './WaveDivider'
 import Section from './Section'
 import Container from './Container'
 import Underline from './Underline'
-import { PRESTATIONS } from '@/data/prestations'
+import { getPrestations } from '@/lib/contenu'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 
@@ -27,7 +27,8 @@ const cardLink = cn(
   cardInteractive
 )
 
-export default function PrestationsHub() {
+export default async function PrestationsHub() {
+  const prestations = await getPrestations()
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -40,7 +41,7 @@ export default function PrestationsHub() {
       },
       {
         '@type': 'ItemList',
-        itemListElement: PRESTATIONS.map((p, i) => ({
+        itemListElement: prestations.map((p, i) => ({
           '@type': 'ListItem', position: i + 1, name: p.titre, url: `${SITE}/nos-prestations/${p.slug}`,
         })),
       },
@@ -48,8 +49,8 @@ export default function PrestationsHub() {
   }
 
   // Mosaïque : cartes larges d'abord (rangée 1), puis les autres.
-  const larges = PRESTATIONS.filter((p) => WIDE_SLUGS.includes(p.slug))
-  const normales = PRESTATIONS.filter((p) => !WIDE_SLUGS.includes(p.slug))
+  const larges = prestations.filter((p) => WIDE_SLUGS.includes(p.slug))
+  const normales = prestations.filter((p) => !WIDE_SLUGS.includes(p.slug))
 
   return (
     <>

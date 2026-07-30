@@ -14,11 +14,11 @@ import Section from './Section'
 import Container from './Container'
 import SectionHeading from './SectionHeading'
 import Underline from './Underline'
-import { ABONNEMENTS, PRESTATIONS_TARIFS, FEATURED_TITRE, type Tarif } from '@/data/tarifs'
+import { getTarifs, type TarifVue } from '@/lib/contenu'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 
-function Groupe({ heading, items }: { heading: string; items: Tarif[] }) {
+function Groupe({ heading, items }: { heading: string; items: TarifVue[] }) {
   return (
     <div>
       <SectionHeading underline className="mb-8 text-[clamp(24px,3vw,32px)]">
@@ -26,7 +26,7 @@ function Groupe({ heading, items }: { heading: string; items: Tarif[] }) {
       </SectionHeading>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((t) => {
-          const featured = t.titre === FEATURED_TITRE
+          const featured = t.enAvant
           return (
             <Card
               key={t.titre}
@@ -62,7 +62,8 @@ function Groupe({ heading, items }: { heading: string; items: Tarif[] }) {
   )
 }
 
-export default function TarifsKSC() {
+export default async function TarifsKSC() {
+  const tarifs = await getTarifs()
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -86,14 +87,14 @@ export default function TarifsKSC() {
         {/* Abonnements — fond crème */}
         <Section tone="cream">
           <Container>
-            <Groupe heading="Abonnements" items={ABONNEMENTS} />
+            <Groupe heading="Abonnements" items={tarifs.abonnements} />
           </Container>
         </Section>
 
         {/* Prestations — fond blanc */}
         <Section tone="white">
           <Container>
-            <Groupe heading="Prestations" items={PRESTATIONS_TARIFS} />
+            <Groupe heading="Prestations" items={tarifs.prestations} />
             <p className="mt-7 text-sm italic text-muted-foreground">
               Les réservations en ligne sont confirmées par notre équipe.
             </p>

@@ -1,9 +1,13 @@
+import { withPayload } from "@payloadcms/next/withPayload";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   // Type-check ACTIF au build : le port Framer vendored (seule raison
   // historique de le désactiver) a été purgé lors de la refonte des fondations.
   typescript: { ignoreBuildErrors: false },
+  // NB : pas de `images.localPatterns` — le définir bloquerait tous les autres
+  // chemins locaux (400). Les médias Payload (/api/media/file/**) comme les
+  // visuels de /public/assets sont des chemins locaux, autorisés par défaut.
   async redirects() {
     // NB: modification 2026-07-07 — invalide le cache de build Vercel qui avait
     // resservi un routes-manifest périmé (redirection garderie absente en prod).
@@ -22,4 +26,6 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+// withPayload : alias @payload-config, packages serveur externes (sharp, pg…)
+// et route group (payload). `devBundleServerPackages: false` garde le dev rapide.
+export default withPayload(nextConfig, { devBundleServerPackages: false });

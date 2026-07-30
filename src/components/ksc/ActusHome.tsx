@@ -8,12 +8,14 @@ import { Card } from '@/components/ui/card'
 import Kicker from './Kicker'
 import SectionHeading from './SectionHeading'
 import LinkArrow from './LinkArrow'
-import { ARTICLES, ARTICLE_IMG, formatDateFr } from '@/data/articles'
+import { formatDateFr } from '@/data/articles'
+import { getArticles } from '@/lib/contenu'
 
 // Bandeau « Actus & conseils » pour l'accueil : 3 derniers articles + lien blog.
 // Maillage interne home -> blog. Tri par date décroissante.
-export default function ActusHome() {
-  const derniers = [...ARTICLES].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3)
+export default async function ActusHome() {
+  const articles = await getArticles()
+  const derniers = [...articles].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3)
   return (
     <section className="bg-cream px-6 py-20">
       <div className="mx-auto max-w-[1200px]">
@@ -33,7 +35,7 @@ export default function ActusHome() {
             <Card key={a.slug} className="gap-0 p-0">
               <div className="relative aspect-[16/9]">
                 <Image
-                  src={ARTICLE_IMG[a.slug]}
+                  src={a.image}
                   alt={a.titre}
                   fill
                   sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, calc(100vw - 48px)"

@@ -10,7 +10,8 @@ import SiteFooter from './SiteFooter'
 import HeroMarine from './HeroMarine'
 import Section from './Section'
 import Container from './Container'
-import { ARTICLES, ARTICLE_IMG, formatDateFr } from '@/data/articles'
+import { formatDateFr } from '@/data/articles'
+import { getArticles } from '@/lib/contenu'
 
 // Affordance « Lire l'article » non-cliquable (la carte entière est le lien —
 // pas de <a> imbriqué). La flèche glisse au survol de la carte (group).
@@ -29,8 +30,9 @@ const cardLink = cn(
   cardInteractive
 )
 
-export default function BlogKSC() {
-  const tries = [...ARTICLES].sort((a, b) => b.date.localeCompare(a.date))
+export default async function BlogKSC() {
+  const articles = await getArticles()
+  const tries = [...articles].sort((a, b) => b.date.localeCompare(a.date))
   const [featured, ...autres] = tries
 
   return (
@@ -45,7 +47,7 @@ export default function BlogKSC() {
             <a href={`/blog/${featured.slug}`} className={cn(cardLink, 'grid lg:grid-cols-[45fr_55fr]')}>
               <div className="relative aspect-[16/10] lg:aspect-auto">
                 <Image
-                  src={ARTICLE_IMG[featured.slug]}
+                  src={featured.image}
                   alt={featured.titre}
                   fill
                   sizes="(min-width: 1024px) 540px, calc(100vw - 48px)"
@@ -74,7 +76,7 @@ export default function BlogKSC() {
                 <a key={a.slug} href={`/blog/${a.slug}`} className={cn(cardLink, 'flex flex-col')}>
                   <div className="relative aspect-[16/10]">
                     <Image
-                      src={ARTICLE_IMG[a.slug]}
+                      src={a.image}
                       alt={a.titre}
                       fill
                       sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, calc(100vw - 48px)"

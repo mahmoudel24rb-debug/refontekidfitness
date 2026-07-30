@@ -23,11 +23,8 @@ import LandingTarifs from './LandingTarifs'
 import LandingPlace from './LandingPlace'
 import PullQuote from './PullQuote'
 import { landingBySlug } from '@/data/landings'
-import { PRESTATIONS, prestationBySlug } from '@/data/prestations'
-import { AVIS } from '@/data/avis'
-import { FAQ } from '@/data/faq'
 import { HOME } from '@/data/home'
-import { CRM_INSCRIPTION_URL, COORDONNEES } from '@/data/site'
+import { faqParQuestions, getAvis, getFaq, getParametres, getPrestations } from '@/lib/contenu'
 
 // Landing Meta Ads — deux gabarits pilotés par data/landings.ts :
 // - 'lead' : capture du lead SUR la page (formulaire hero + formulaire final),
@@ -37,9 +34,15 @@ import { CRM_INSCRIPTION_URL, COORDONNEES } from '@/data/site'
 // validé (stats, spotlight, tranches, planning, galerie, avis mis en scène,
 // équipe, tarifs, lieu). ZÉRO copy neuf. noindex géré au niveau page ; hors
 // sitemap.
-export default function Landing({ slug }: { slug: string }) {
+export default async function Landing({ slug }: { slug: string }) {
   const l = landingBySlug(slug)
   if (!l) return null
+  const [prestations, avis, faq, { coordonnees, crmInscriptionUrl }] = await Promise.all([
+    getPrestations(),
+    getAvis(),
+    getFaq(),
+    getParametres(),
+  ])
   const isLead = l.variant === 'lead'
   const cible = isLead ? '#lead-form' : '#prestations'
   // CTA du header : ancré vers l'objectif de la page. Libellé court (le
@@ -48,10 +51,10 @@ export default function Landing({ slug }: { slug: string }) {
   const stickyLabel = isLead ? (l.formCtaLabel ?? l.ctaLabel) : 'Choisir une prestation'
   const stickyTargets = isLead ? ['#lead-form', '#lead-form-final'] : ['#prestations']
   const pullQuoteCta = isLead ? (l.formCtaLabel ?? l.ctaLabel) : 'Choisir une prestation'
-  const spotlight = l.spotlightSlug ? prestationBySlug(l.spotlightSlug) : undefined
-  const faqItems = (l.faq ?? [])
-    .map((q) => FAQ.find((item) => item.q === q))
-    .filter((x): x is NonNullable<typeof x> => Boolean(x))
+  const spotlight = l.spotlightSlug
+    ? prestations.find((p) => p.slug === l.spotlightSlug)
+    : undefined
+  const faqItems = l.faq && l.faq.length > 0 ? faqParQuestions(faq, l.faq) : []
 
   return (
     <div className="bg-cream pb-16 text-ink lg:pb-0">
@@ -174,7 +177,7 @@ export default function Landing({ slug }: { slug: string }) {
             Choisissez votre <Underline>prestation</Underline>
           </h2>
           <div className="flex flex-col gap-8">
-            {PRESTATIONS.map((p, i) => (
+            {prestations.map((p, i) => (
               <article key={p.slug} className="grid overflow-hidden rounded-lg border border-border bg-card shadow-sm lg:grid-cols-[2fr_3fr]">
                 <div className={`relative min-h-[220px] ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <Image src={p.image} alt={p.titre} fill sizes="(min-width: 1024px) 40vw, calc(100vw - 48px)" className="object-cover" />
@@ -197,7 +200,7 @@ export default function Landing({ slug }: { slug: string }) {
                     <p className="font-heading text-xl font-extrabold text-magenta">{p.prix}</p>
                     {/* Placeholder calendrier CRM — à brancher via CRM_INSCRIPTION_URL (data/site.ts). */}
                     <Button asChild size="sm">
-                      <a href={CRM_INSCRIPTION_URL} data-crm="placeholder">S’inscrire</a>
+                      <a href={crmInscriptionUrl} data-crm="placeholder">S’inscrire</a>
                     </Button>
                   </div>
                 </div>
@@ -285,15 +288,15 @@ export default function Landing({ slug }: { slug: string }) {
               Avis de <Underline>parents</Underline>
             </h2>
             <div className="grid gap-6 lg:grid-cols-3">
-              {AVIS.map((a) => (
-                <figure key={a.slice(0, 40)} className="flex flex-col gap-4 rounded-lg border border-border bg-card p-7 shadow-sm">
+              {avis.map((a) => (
+                <figure key={a.texte.slice(0, 40)} className="flex flex-col gap-4 rounded-lg border border-border bg-card p-7 shadow-sm">
                   <div className="flex gap-1" aria-label="5 étoiles sur 5">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star key={i} size={16} className="fill-magenta text-magenta" aria-hidden="true" />
                     ))}
                   </div>
-                  <blockquote className="text-[15px] leading-relaxed">«&nbsp;{a}&nbsp;»</blockquote>
-                  <figcaption className="mt-auto text-sm font-semibold text-marine">Parent d’un enfant du club</figcaption>
+                  <blockquote className="text-[15px] leading-relaxed">«&nbsp;{a.texte}&nbsp;»</blockquote>
+                  <figcaption className="mt-auto text-sm font-semibold text-marine">{a.auteur}</figcaption>
                 </figure>
               ))}
             </div>
@@ -352,7 +355,7 @@ export default function Landing({ slug }: { slug: string }) {
                     </ul>
                   )}
                   <Button asChild variant="outlineCream">
-                    <a href={COORDONNEES.telephoneHref}>{COORDONNEES.telephone}</a>
+                    <a href={coordonnees.telephoneHref}>{coordonnees.telephone}</a>
                   </Button>
                 </div>
                 <div>
@@ -384,7 +387,7 @@ export default function Landing({ slug }: { slug: string }) {
                     <a href={cible}>Choisir une prestation</a>
                   </Button>
                   <Button asChild variant="outlineCream">
-                    <a href={COORDONNEES.telephoneHref}>{COORDONNEES.telephone}</a>
+                    <a href={coordonnees.telephoneHref}>{coordonnees.telephone}</a>
                   </Button>
                 </div>
               </div>
@@ -393,7 +396,12 @@ export default function Landing({ slug }: { slug: string }) {
         )
       )}
 
-      <StickyCtaBar href={cible} label={stickyLabel} targets={stickyTargets} />
+      <StickyCtaBar
+        href={cible}
+        label={stickyLabel}
+        targets={stickyTargets}
+        telephoneHref={coordonnees.telephoneHref}
+      />
     </div>
   )
 }

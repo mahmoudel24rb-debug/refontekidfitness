@@ -5,22 +5,22 @@ import Section from './Section'
 import Container from './Container'
 import SectionHeading from './SectionHeading'
 import RoundIcon from './RoundIcon'
-import { COORDONNEES, HORAIRES } from '@/data/site'
+import { getParametres } from '@/lib/contenu'
 
 // « Où nous trouver » : coordonnées (RoundIcon Phone/Mail/MapPin + Clock) et
 // carte Google Maps (attributs repris de ContactKSC : mêmes URL/title, lazy).
-// Toutes les valeurs proviennent de COORDONNEES/HORAIRES (site.ts).
-const INFOS = [
-  { t: 'Téléphone', v: COORDONNEES.telephone, href: COORDONNEES.telephoneHref, icon: <Phone className="size-[18px]" /> },
-  { t: 'Email', v: COORDONNEES.email, href: COORDONNEES.emailHref, icon: <Mail className="size-[18px]" /> },
-  { t: 'Adresse', v: COORDONNEES.adresse, href: COORDONNEES.adresseHref, icon: <MapPin className="size-[18px]" /> },
-]
-
-export default function LandingPlace({
+// Toutes les valeurs proviennent du global `parametres` (repli site.ts).
+export default async function LandingPlace({
   tone = 'white',
 }: {
   tone?: 'cream' | 'cream2' | 'white'
 }) {
+  const { coordonnees, horaires } = await getParametres()
+  const INFOS = [
+    { t: 'Téléphone', v: coordonnees.telephone, href: coordonnees.telephoneHref, icon: <Phone className="size-[18px]" /> },
+    { t: 'Email', v: coordonnees.email, href: coordonnees.emailHref, icon: <Mail className="size-[18px]" /> },
+    { t: 'Adresse', v: coordonnees.adresse, href: coordonnees.adresseHref, icon: <MapPin className="size-[18px]" /> },
+  ]
   return (
     <Section tone={tone}>
       <Container>
@@ -49,15 +49,15 @@ export default function LandingPlace({
                 <Clock className="size-[18px]" />
               </RoundIcon>
               <p className="font-semibold leading-relaxed text-marine">
-                <strong>Horaires :</strong> {HORAIRES}
+                <strong>Horaires :</strong> {horaires}
               </p>
             </div>
           </div>
 
           <div className="overflow-hidden rounded-lg border border-border">
             <iframe
-              title={COORDONNEES.mapTitle}
-              src={COORDONNEES.mapsEmbedUrl}
+              title={coordonnees.mapTitle}
+              src={coordonnees.mapsEmbedUrl}
               className="block h-80 w-full border-0"
               loading="lazy"
             />
