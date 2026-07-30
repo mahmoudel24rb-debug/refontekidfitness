@@ -7,6 +7,8 @@
 
    Prerequis : DATABASE_URL definie ET schema pousse en base
    (le premier `npm run dev` avec la base cree/migre les tables).
+   ATTENTION : la CLI Payload lit `.env` (pas `.env.local`, que seul Next lit).
+   Mettre donc DATABASE_URL / PAYLOAD_SECRET dans `.env` — Next le lit aussi.
 
    Usage : npm run seed
        ou : npm run payload -- run scripts/seed-ksc.mjs
@@ -169,7 +171,14 @@ async function run() {
   )
 
   // 8. Global `parametres` ----------------------------------------------------
-  const actuel = await payload.findGlobal({ slug: 'parametres' })
+  // findGlobal sur un global jamais enregistre renvoie ses valeurs par defaut ;
+  // on tolere malgre tout une erreur pour ne pas perdre les 7 etapes ci-dessus.
+  let actuel = null
+  try {
+    actuel = await payload.findGlobal({ slug: 'parametres' })
+  } catch {
+    actuel = null
+  }
   if (actuel?.coordonnees?.telephone) {
     console.log('- parametres : deja renseigne — ignore')
   } else {

@@ -471,8 +471,10 @@ vides ; le script est rejouable. Il n'a pas encore été exécuté (pas de base)
 
 1. **Créer la base** Neon (via l'intégration Vercel de préférence : elle pose
    `DATABASE_URL`, `DATABASE_URL_UNPOOLED`, `POSTGRES_URL_NON_POOLING`).
-2. **`.env.local`** en local : `DATABASE_URL=…` + `PAYLOAD_SECRET=<chaîne longue
-   aléatoire>`.
+2. **`.env`** en local (et non `.env.local`) : `DATABASE_URL=…` +
+   `PAYLOAD_SECRET=<chaîne longue aléatoire>`. La CLI Payload (`npm run seed`,
+   `generate:types`) ne lit que `.env` ; Next lit `.env` aussi, donc un seul
+   fichier suffit pour les deux.
 3. **Pousser le schéma** : `npm run dev` avec la base configurée (Payload crée /
    migre les tables au démarrage). Vérifier les 9 collections + le global dans
    `/admin`.
