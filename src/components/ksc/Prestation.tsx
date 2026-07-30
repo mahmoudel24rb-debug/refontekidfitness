@@ -15,8 +15,8 @@ import Container from './Container'
 import SectionHeading from './SectionHeading'
 import Underline from './Underline'
 import LeadForm from './LeadForm'
-import { PRESTATIONS, prestationBySlug } from '@/data/prestations'
 import { creneauxPourPrestation } from '@/data/creneaux'
+import { getPlanningPlat, getPrestations } from '@/lib/contenu'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 
@@ -39,11 +39,12 @@ function Creneaux({ texte }: { texte: string }) {
   )
 }
 
-export default function Prestation({ slug }: { slug: string }) {
-  const p = prestationBySlug(slug)
+export default async function Prestation({ slug }: { slug: string }) {
+  const [prestations, planning] = await Promise.all([getPrestations(), getPlanningPlat()])
+  const p = prestations.find((x) => x.slug === slug)
   if (!p) return null
-  const autres = PRESTATIONS.filter((x) => x.slug !== slug).slice(0, 3)
-  const creneaux = creneauxPourPrestation(slug)
+  const autres = prestations.filter((x) => x.slug !== slug).slice(0, 3)
+  const creneaux = creneauxPourPrestation(slug, planning)
   const estCours614 = slug === 'cours-6-10-ans' || slug === 'cours-11-14-ans'
 
   // Données structurées : fil d'Ariane + service local (SEO Rochecorbon).

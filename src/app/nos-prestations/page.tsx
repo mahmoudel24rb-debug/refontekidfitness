@@ -1,5 +1,9 @@
 import PrestationsHub from '@/components/ksc/PrestationsHub'
 
+// ISR : activités administrables (collection `prestations`).
+// Sans base, le contenu prérendu est celui des fichiers src/data.
+export const revalidate = 60
+
 export const metadata = {
   title: 'Nos activités : sport enfants à Rochecorbon | Kid Sport Club',
   description:

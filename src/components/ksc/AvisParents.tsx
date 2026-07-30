@@ -4,9 +4,10 @@ import { Star } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import Kicker from './Kicker'
 import SectionHeading from './SectionHeading'
-import { AVIS } from '@/data/avis'
+import { getAvis } from '@/lib/contenu'
 
-export default function AvisParents() {
+export default async function AvisParents() {
+  const avis = await getAvis()
   return (
     <section className="bg-cream-2 px-6 py-20">
       <div className="mx-auto max-w-[1200px]">
@@ -17,7 +18,7 @@ export default function AvisParents() {
           </SectionHeading>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {AVIS.map((texte, i) => (
+          {avis.map((a, i) => (
             <Card key={i} className="gap-0 p-8">
               <div role="img" aria-label="5 étoiles sur 5" className="mb-4 flex gap-1">
                 {[0, 1, 2, 3, 4].map((s) => (
@@ -25,9 +26,9 @@ export default function AvisParents() {
                 ))}
               </div>
               <blockquote className="mb-[18px] flex-1 text-[15.5px] leading-relaxed text-ink">
-                « {texte} »
+                « {a.texte} »
               </blockquote>
-              <p className="text-sm font-bold text-marine">Parent d’un enfant du club</p>
+              <p className="text-sm font-bold text-marine">{a.auteur}</p>
             </Card>
           ))}
         </div>

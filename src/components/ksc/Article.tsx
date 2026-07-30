@@ -12,19 +12,21 @@ import TerrainLines from './TerrainLines'
 import Section from './Section'
 import Container from './Container'
 import SectionHeading from './SectionHeading'
-import { articleBySlug, ARTICLES, ARTICLE_IMG, formatDateFr } from '@/data/articles'
+import { formatDateFr } from '@/data/articles'
+import { getArticles } from '@/lib/contenu'
 
 const cardLink = cn(
   'group overflow-hidden rounded-lg border border-border bg-card text-card-foreground shadow-sm',
   cardInteractive
 )
 
-export default function Article({ slug }: { slug: string }) {
-  const a = articleBySlug(slug)
+export default async function Article({ slug }: { slug: string }) {
+  const articles = await getArticles()
+  const a = articles.find((x) => x.slug === slug)
   if (!a) return null
-  const autres = ARTICLES.filter((x) => x.slug !== slug).slice(0, 3)
-  // Corps : blocs (paragraphes + intertitres h2) ; fallback paragraphes plats.
-  const blocs = a.blocs ?? a.paragraphes.map((texte) => ({ t: 'p' as const, texte }))
+  const autres = articles.filter((x) => x.slug !== slug).slice(0, 3)
+  // Corps : blocs (paragraphes + intertitres h2), dans l'ordre de lecture.
+  const blocs = a.blocs
   // Le 1er paragraphe est mis en avant en chapô.
   const chapoIndex = blocs.findIndex((b) => b.t === 'p')
   return (
@@ -41,7 +43,7 @@ export default function Article({ slug }: { slug: string }) {
           }
           title={a.titre}
           sub={<>Publié le <time dateTime={a.date}>{formatDateFr(a.date)}</time></>}
-          image={ARTICLE_IMG[slug]}
+          image={a.image}
           imageAlt={a.titre}
           padding="64px 24px 72px"
         />

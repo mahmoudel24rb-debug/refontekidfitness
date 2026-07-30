@@ -1,4 +1,4 @@
-import { PLANNING } from './planning'
+import type { CreneauPlat } from '@/lib/contenu'
 
 // Options de créneau proposées dans le formulaire des fiches prestation.
 // Mapping slug de prestation -> tranche d'âge du planning (planning.ts) :
@@ -18,22 +18,18 @@ const AGE_PAR_SLUG: Record<string, string> = {
 
 export type CreneauOption = { value: string; label: string }
 
-// Aplatit PLANNING en options « {Jour} {heure}, {activite} ({salle}) »
+// Construit les options « {Jour} {heure}, {activite} ({salle}) »
 // (ex. « Lundi 17h, Cross Boxe (Salle Kid) ») pour la tranche d'âge de la
-// prestation. Retourne [] si la prestation n'a pas de sélecteur.
-export function creneauxPourPrestation(slug: string): CreneauOption[] {
+// prestation, à partir du planning DÉJÀ CHARGÉ (getPlanningPlat) : les fiches
+// sont des composants serveur, les créneaux sont ensuite passés en props au
+// LeadForm. Retourne [] si la prestation n'a pas de sélecteur.
+export function creneauxPourPrestation(slug: string, planning: CreneauPlat[]): CreneauOption[] {
   const age = AGE_PAR_SLUG[slug]
   if (!age) return []
-  const options: CreneauOption[] = []
-  for (const jour of PLANNING) {
-    for (const salle of jour.salles) {
-      for (const c of salle.creneaux) {
-        if (c.age === age) {
-          const label = `${jour.jour} ${c.heure}, ${c.activite} (${salle.salle})`
-          options.push({ value: label, label })
-        }
-      }
-    }
-  }
-  return options
+  return planning
+    .filter((c) => c.age === age)
+    .map((c) => {
+      const label = `${c.jour} ${c.heure}, ${c.activite} (${c.salle})`
+      return { value: label, label }
+    })
 }

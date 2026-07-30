@@ -4,16 +4,17 @@ import { Badge } from '@/components/ui/badge'
 import Section from './Section'
 import Container from './Container'
 import SectionHeading from './SectionHeading'
-import { PLANNING } from '@/data/planning'
+import { getPlanning } from '@/lib/contenu'
 
 // Rail « Rentrée » : cartes-jour condensées du planning de septembre 2026.
 // Scroll-snap horizontal sur mobile, grille 3×2 sur desktop. Chaque créneau
 // affiche l'heure, l'activité et la tranche d'âge (données planning.ts).
-export default function LandingPlanningStrip({
+export default async function LandingPlanningStrip({
   tone = 'cream2',
 }: {
   tone?: 'cream' | 'cream2' | 'white'
 }) {
+  const planning = await getPlanning()
   return (
     <Section tone={tone}>
       <Container>
@@ -21,7 +22,7 @@ export default function LandingPlanningStrip({
           Rentrée
         </SectionHeading>
         <div className="-mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-3 [scrollbar-width:thin] md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 md:pb-0">
-          {PLANNING.map((j) => {
+          {planning.map((j) => {
             const creneaux = j.salles.flatMap((s) => s.creneaux)
             return (
               <div

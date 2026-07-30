@@ -95,7 +95,8 @@ export const Articles: CollectionConfig = {
       defaultValue: 0,
       admin: {
         position: 'sidebar',
-        description: 'Départage deux articles publiés le même jour (le blog trie par date décroissante).',
+        description:
+          'Ordre de référence (blocs « À lire aussi », sitemap). Le hub du blog et l’accueil affichent toujours les articles du plus récent au plus ancien.',
       },
     },
   ],

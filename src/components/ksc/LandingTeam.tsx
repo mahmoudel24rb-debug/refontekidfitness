@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import { Heart, Shield, Smile, Blocks, type LucideIcon } from 'lucide-react'
 
 import { Card } from '@/components/ui/card'
@@ -6,7 +7,8 @@ import Section from './Section'
 import Container from './Container'
 import SectionHeading from './SectionHeading'
 import RoundIcon from './RoundIcon'
-import { EQUIPE, VALEURS } from '@/data/equipe'
+import { VALEURS } from '@/data/equipe'
+import { getEquipe } from '@/lib/contenu'
 
 // Équipe (pattern QuiSommesNous) : titre + intro + 3 cartes monogrammes.
 // Option `withValeurs` : bandeau horizontal des 4 valeurs du club.
@@ -15,13 +17,14 @@ const ICONES: Record<string, LucideIcon> = { Heart, Shield, Smile, Blocks }
 const INTRO =
   'Des animateurs et coachs diplômés, formés à l’encadrement des enfants, qui mettent l’énergie et la bienveillance au cœur de chaque séance.'
 
-export default function LandingTeam({
+export default async function LandingTeam({
   withValeurs = false,
   tone = 'cream',
 }: {
   withValeurs?: boolean
   tone?: 'cream' | 'cream2' | 'white'
 }) {
+  const equipe = await getEquipe()
   return (
     <Section tone={tone}>
       <Container>
@@ -32,14 +35,24 @@ export default function LandingTeam({
           <p className="text-[17px] text-ink">{INTRO}</p>
         </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {EQUIPE.map((c) => (
+          {equipe.map((c) => (
             <Card key={c.nom} className="items-center gap-3 p-8 text-center">
-              <div
-                aria-hidden="true"
-                className="grid size-16 place-items-center rounded-full bg-marine font-heading text-xl font-bold text-cream"
-              >
-                {c.initiales}
-              </div>
+              {c.photo ? (
+                <Image
+                  src={c.photo}
+                  alt={c.photoAlt ?? c.nom}
+                  width={64}
+                  height={64}
+                  className="size-16 rounded-full object-cover"
+                />
+              ) : (
+                <div
+                  aria-hidden="true"
+                  className="grid size-16 place-items-center rounded-full bg-marine font-heading text-xl font-bold text-cream"
+                >
+                  {c.initiales}
+                </div>
+              )}
               <h3 className="font-heading text-xl font-bold text-marine">{c.nom}</h3>
               <p className="text-[15.5px] leading-relaxed text-ink">{c.bio}</p>
             </Card>

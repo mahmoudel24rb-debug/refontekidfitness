@@ -338,11 +338,13 @@ export type ArticleVue = {
 const jourIso = (valeur: unknown) => String(valeur ?? '').slice(0, 10)
 
 export const getArticles = cache(async (): Promise<ArticleVue[]> => {
+  // Ordre de référence (« À lire aussi », sitemap) : le champ `ordre`, puis la
+  // date. Le hub /blog et l'accueil retrient eux-mêmes par date décroissante.
   const docs = await depuisPayload('articles', async (payload) => {
     const { docs } = await payload.find({
       collection: 'articles',
       limit: 200,
-      sort: ['-date', 'ordre'],
+      sort: ['ordre', 'date'],
       depth: 1,
       where: { publie: { not_equals: false } },
     })
@@ -357,7 +359,7 @@ export const getArticles = cache(async (): Promise<ArticleVue[]> => {
       date: a.date,
       blocs: a.blocs ?? a.paragraphes.map((texte) => ({ t: 'p' as const, texte })),
       image: ARTICLE_IMG[a.slug] ?? '',
-    })).sort((a, b) => b.date.localeCompare(a.date))
+    }))
   }
 
   return docs.map((d) => ({

@@ -6,16 +6,18 @@ import { cn } from '@/lib/utils'
 import Section from './Section'
 import Container from './Container'
 import SectionHeading from './SectionHeading'
-import { ABONNEMENTS, PRESTATIONS_TARIFS, FEATURED_TITRE } from '@/data/tarifs'
+import { getTarifs } from '@/lib/contenu'
 
 // « Les tarifs » (catalogue) : 5 cartes d'abonnement (« La plus choisie » sur
-// Illimité) + 3 lignes prestations. Données strictement issues de tarifs.ts ;
-// les sous-libellés « Abonnements » / « Prestations » proviennent de TarifsKSC.
-export default function LandingTarifs({
+// Illimité) + 3 lignes prestations. Données strictement issues de la collection
+// `tarifs` (repli tarifs.ts) ; les sous-libellés « Abonnements » /
+// « Prestations » proviennent de TarifsKSC.
+export default async function LandingTarifs({
   tone = 'cream',
 }: {
   tone?: 'cream' | 'cream2' | 'white'
 }) {
+  const tarifs = await getTarifs()
   return (
     <Section tone={tone}>
       <Container>
@@ -27,8 +29,8 @@ export default function LandingTarifs({
         {/* Flux centré (pas de grille rigide) : 5 cartes -> 3 + 2 CENTRÉES,
             jamais de case vide en bout de rangée. */}
         <div className="flex flex-wrap justify-center gap-5">
-          {ABONNEMENTS.map((t) => {
-            const featured = t.titre === FEATURED_TITRE
+          {tarifs.abonnements.map((t) => {
+            const featured = t.enAvant
             return (
               <Card
                 key={t.titre}
@@ -54,7 +56,7 @@ export default function LandingTarifs({
 
         <p className="mt-10 mb-4 text-[13px] font-extrabold uppercase tracking-[.06em] text-magenta">Prestations</p>
         <div className="flex flex-col gap-3">
-          {PRESTATIONS_TARIFS.map((t) => (
+          {tarifs.prestations.map((t) => (
             <div
               key={t.titre}
               className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-border bg-card p-5 shadow-sm"

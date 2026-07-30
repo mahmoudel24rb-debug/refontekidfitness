@@ -8,7 +8,8 @@ import CtaBand from './CtaBand'
 import WaveDivider from './WaveDivider'
 import { Button } from '@/components/ui/button'
 
-import { FAQ, type FaqItem } from '@/data/faq'
+import type { FaqItem } from '@/data/faq'
+import { getFaq } from '@/lib/contenu'
 
 // Rend « page tarifs » cliquable (lien /tarifs) — le JSON-LD garde le texte brut.
 // Exporté : réutilisé par l'accordéon FAQ de la page d'accueil (FaqHome).
@@ -25,11 +26,12 @@ export function Reponse({ item }: { item: FaqItem }) {
   )
 }
 
-export default function Faq() {
+export default async function Faq() {
+  const faq = await getFaq()
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: FAQ.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.r } })),
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.r } })),
   }
   return (
     <>
@@ -39,7 +41,7 @@ export default function Faq() {
         <HeroMarine kicker="FAQ" title="Vos questions, nos réponses" padding="72px 24px" />
 
         <section className="mx-auto max-w-[820px] px-6 pt-14 pb-[70px]">
-          {FAQ.map((f) => (
+          {faq.map((f) => (
             <details key={f.q} className="group border-b border-border">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-6 font-heading text-[19px] font-bold text-marine [&::-webkit-details-marker]:hidden">
                 {f.q}

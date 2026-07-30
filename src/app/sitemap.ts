@@ -1,15 +1,18 @@
 import type { MetadataRoute } from 'next'
-import { PRESTATIONS } from '@/data/prestations'
-import { ARTICLES } from '@/data/articles'
+import { getArticles, getPrestations } from '@/lib/contenu'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+// Les fiches et les articles suivent le contenu administrable (repli src/data).
+export const revalidate = 60
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const [prestations, articles] = await Promise.all([getPrestations(), getArticles()])
   const routes = [
     '', '/qui-sommes-nous', '/nos-prestations', '/tarifs', '/planning', '/faq', '/contact', '/seance-essai', '/blog',
     '/mentions-legales', '/confidentialite', '/cookies', '/cgv',
-    ...PRESTATIONS.map((p) => `/nos-prestations/${p.slug}`),
-    ...ARTICLES.map((a) => `/blog/${a.slug}`),
+    ...prestations.map((p) => `/nos-prestations/${p.slug}`),
+    ...articles.map((a) => `/blog/${a.slug}`),
   ]
   return routes.map((path) => ({
     url: `${SITE}${path}`,

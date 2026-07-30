@@ -3,15 +3,15 @@ import { Star } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import Section from './Section'
-import { AVIS } from '@/data/avis'
+import { getAvis } from '@/lib/contenu'
 
 // Citation mise en scène : un extrait VERBATIM d'un avis parent (sous-chaîne de
-// AVIS[i]), 5 étoiles magenta, attribution neutre + CTA vers l'objectif de la
-// page. Garde de cohérence en dev : l'extrait DOIT être une sous-chaîne exacte
-// de l'avis source (apostrophes typographiques comprises).
-const ATTRIBUTION = 'Parent d’un enfant du club'
-
-export default function PullQuote({
+// l'avis n° `avisIndex`), 5 étoiles magenta, attribution du parent + CTA vers
+// l'objectif de la page. GARDE-FOU : l'extrait doit être une sous-chaîne exacte
+// de l'avis source (apostrophes typographiques comprises) ; si l'avis est
+// modifié dans l'admin et ne contient plus l'extrait, la section se masque
+// plutôt que d'afficher une citation qui n'existe plus.
+export default async function PullQuote({
   avisIndex,
   extrait,
   href,
@@ -24,8 +24,13 @@ export default function PullQuote({
   ctaLabel: string
   tone?: 'cream' | 'cream2' | 'white'
 }) {
-  if (process.env.NODE_ENV !== 'production' && !AVIS[avisIndex]?.includes(extrait)) {
-    console.warn(`[PullQuote] extrait absent de AVIS[${avisIndex}] : « ${extrait} »`)
+  const avis = await getAvis()
+  const source = avis[avisIndex]
+  if (!source?.texte.includes(extrait)) {
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn(`[PullQuote] extrait absent de l'avis n° ${avisIndex} : « ${extrait} » — section masquée`)
+    }
+    return null
   }
 
   return (
@@ -39,7 +44,7 @@ export default function PullQuote({
         <blockquote className="font-heading text-[clamp(22px,3vw,30px)] font-bold leading-snug text-marine">
           «&nbsp;{extrait}&nbsp;»
         </blockquote>
-        <p className="mt-5 text-sm font-semibold text-muted-foreground">{ATTRIBUTION}</p>
+        <p className="mt-5 text-sm font-semibold text-muted-foreground">{source.auteur}</p>
         <div className="mt-8">
           <Button asChild>
             <a href={href}>{ctaLabel}</a>

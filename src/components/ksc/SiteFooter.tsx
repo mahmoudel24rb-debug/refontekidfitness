@@ -2,8 +2,7 @@ import React from 'react'
 import { MapPin } from 'lucide-react'
 
 import { FOOTER_NAV, LEGAL_NAV } from '@/data/nav'
-import { PRESTATIONS } from '@/data/prestations'
-import { COORDONNEES, HORAIRES } from '@/data/site'
+import { getParametres, getPrestations } from '@/lib/contenu'
 import { cn } from '@/lib/utils'
 import TerrainLines from './TerrainLines'
 
@@ -14,7 +13,11 @@ import TerrainLines from './TerrainLines'
 const linkCls = 'self-start text-[15px] text-cream/85 transition-colors duration-150 hover:text-magenta-light'
 const colTitleCls = 'mb-1.5 font-heading text-[17px] font-bold text-cream'
 
-export default function SiteFooter() {
+export default async function SiteFooter() {
+  const [prestations, { coordonnees, horaires }] = await Promise.all([
+    getPrestations(),
+    getParametres(),
+  ])
   return (
     <footer className="relative overflow-hidden bg-navy text-cream">
       <TerrainLines opacity={0.045} />
@@ -47,7 +50,7 @@ export default function SiteFooter() {
 
         <div className="flex flex-col gap-2.5">
           <span className={colTitleCls}>Nos activités</span>
-          {PRESTATIONS.map((p) => (
+          {prestations.map((p) => (
             <a key={p.slug} href={`/nos-prestations/${p.slug}`} className={linkCls}>
               {p.titre}
             </a>
@@ -57,15 +60,15 @@ export default function SiteFooter() {
         <div className="flex flex-col gap-2.5">
           <span className={colTitleCls}>Infos</span>
           <a href="/contact" className={linkCls}>
-            {COORDONNEES.adresse}
+            {coordonnees.adresse}
           </a>
-          <a href={COORDONNEES.telephoneHref} className={linkCls}>
-            {COORDONNEES.telephone}
+          <a href={coordonnees.telephoneHref} className={linkCls}>
+            {coordonnees.telephone}
           </a>
-          <a href={COORDONNEES.emailHref} className={linkCls}>
-            {COORDONNEES.email}
+          <a href={coordonnees.emailHref} className={linkCls}>
+            {coordonnees.email}
           </a>
-          {HORAIRES.split(' · ').map((ligne) => (
+          {horaires.split(' · ').map((ligne) => (
             <span key={ligne} className="self-start text-[15px] text-cream/85">{ligne}</span>
           ))}
         </div>

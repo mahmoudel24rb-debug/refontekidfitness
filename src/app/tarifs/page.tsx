@@ -1,5 +1,9 @@
 import TarifsKSC from '@/components/ksc/TarifsKSC'
 
+// ISR : tarifs administrables (collection `tarifs`).
+// Sans base, le contenu prérendu est celui des fichiers src/data.
+export const revalidate = 60
+
 export const metadata = {
   title: 'Tarifs : abonnements et prestations | Kid Sport Club',
   description:

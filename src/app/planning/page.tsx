@@ -1,5 +1,9 @@
 import PlanningKSC from '@/components/ksc/PlanningKSC'
 
+// ISR : créneaux administrables (collection `planning`).
+// Sans base, le contenu prérendu est celui des fichiers src/data.
+export const revalidate = 60
+
 export const metadata = {
   title: 'Planning des cours | Kid Sport Club Rochecorbon',
   description:

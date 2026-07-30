@@ -2,6 +2,10 @@ import type { Metadata } from 'next'
 import Landing from '@/components/ksc/Landing'
 import { LANDINGS, landingBySlug } from '@/data/landings'
 
+// ISR : activités, tarifs, planning, avis, FAQ et coordonnées administrables.
+// Sans base, le contenu prérendu est celui des fichiers src/data.
+export const revalidate = 60
+
 export function generateStaticParams() {
   return LANDINGS.map((l) => ({ slug: l.slug }))
 }
