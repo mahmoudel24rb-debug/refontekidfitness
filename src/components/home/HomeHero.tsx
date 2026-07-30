@@ -86,7 +86,7 @@ export default function HomeHero() {
           <Image
             src={hero.image.src}
             alt={hero.image.alt}
-            width={582}
+            width={810}
             height={1080}
             priority
             sizes="(min-width:1024px) 45vw, 80vw"

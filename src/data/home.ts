@@ -18,7 +18,7 @@ export const HOME = {
       { valeur: '+ de 10', label: 'Activités proposées' },
       { valeur: '+ de 600', label: 'Enfants accueillis par an' },
     ],
-    image: { src: '/assets/ksc/hero.webp', alt: 'Enfant qui saute de joie au Kid Sport Club' },
+    image: { src: '/assets/ksc/mascotte-hero.webp', alt: 'La mascotte écureuil du Kid Sport Club' },
   },
 
   bienvenue: {
