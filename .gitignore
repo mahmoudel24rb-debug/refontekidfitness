@@ -32,9 +32,14 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+# ... sauf le gabarit documenté, versionné volontairement (aucune valeur réelle).
+!.env.example
 
 # vercel
 .vercel
+
+# uploads Payload en local (le stockage de prod sera branché avec la base)
+/media
 
 # typescript
 *.tsbuildinfo
