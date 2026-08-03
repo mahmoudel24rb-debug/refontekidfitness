@@ -2,6 +2,7 @@ import React from 'react'
 import { Star } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
+import AvisAvatar from './AvisAvatar'
 import Section from './Section'
 import { getAvis } from '@/lib/contenu'
 
@@ -44,7 +45,11 @@ export default async function PullQuote({
         <blockquote className="font-heading text-[clamp(22px,3vw,30px)] font-bold leading-snug text-marine">
           «&nbsp;{extrait}&nbsp;»
         </blockquote>
-        <p className="mt-5 text-sm font-semibold text-muted-foreground">{source.auteur}</p>
+        {/* Attribution : avatar illustré (même mapping que les cartes d'avis) */}
+        <div className="mt-5 flex flex-col items-center gap-2">
+          <AvisAvatar index={avisIndex} size={44} />
+          <p className="text-sm font-semibold text-muted-foreground">{source.auteur}</p>
+        </div>
         <div className="mt-8">
           <Button asChild>
             <a href={href}>{ctaLabel}</a>

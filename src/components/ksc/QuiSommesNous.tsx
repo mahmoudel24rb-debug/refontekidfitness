@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-import { Heart, Shield, Smile, Blocks, type LucideIcon } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
@@ -12,11 +11,7 @@ import WaveDivider from './WaveDivider'
 import Section from './Section'
 import Container from './Container'
 import SectionHeading from './SectionHeading'
-import RoundIcon from './RoundIcon'
-import { VALEURS } from '@/data/equipe'
 import { getEquipe } from '@/lib/contenu'
-
-const ICONES: Record<string, LucideIcon> = { Heart, Shield, Smile, Blocks }
 
 export default async function QuiSommesNous() {
   const equipe = await getEquipe()
@@ -60,26 +55,6 @@ export default async function QuiSommesNous() {
                   className="object-cover"
                 />
               </div>
-            </div>
-          </Container>
-        </Section>
-
-        {/* Valeurs — fond blanc */}
-        <Section tone="white">
-          <Container>
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {VALEURS.map((v) => {
-                const Icon = ICONES[v.icone]
-                return (
-                  <Card key={v.nom} className="items-start gap-3 p-8">
-                    <RoundIcon>
-                      <Icon size={20} aria-hidden="true" />
-                    </RoundIcon>
-                    <h3 className="font-heading text-xl font-bold text-marine">{v.nom}</h3>
-                    <p className="leading-relaxed text-ink">{v.texte}</p>
-                  </Card>
-                )
-              })}
             </div>
           </Container>
         </Section>

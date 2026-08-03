@@ -113,6 +113,15 @@ export const ARTICLE_IMG: Record<string, string> = {
 
 export const articleBySlug = (slug: string) => ARTICLES.find((a) => a.slug === slug)
 
+/**
+ * Temps de lecture d'un article, en minutes (base 200 mots/minute, minimum 1).
+ * Calculé sur le corps réel de l'article, intertitres compris.
+ */
+export function tempsLecture(blocs: Bloc[]) {
+  const mots = blocs.reduce((n, b) => n + b.texte.trim().split(/\s+/).filter(Boolean).length, 0)
+  return Math.max(1, Math.round(mots / 200))
+}
+
 // Format français « 22 juin 2026 » (sans dépendre de l'ICU du runtime).
 const MOIS_FR = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
 export const formatDateFr = (iso: string) => {

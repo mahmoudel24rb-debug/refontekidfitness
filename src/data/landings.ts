@@ -54,8 +54,6 @@ export type Landing = {
   planning?: boolean
   /** Bloc équipe (3 coachs). */
   equipe?: boolean
-  /** Bandeau des 4 valeurs (avec le bloc équipe). */
-  valeurs?: boolean
   /** Catalogue de tarifs complet (LandingTarifs). */
   tarifsEtendus?: boolean
   /** Bloc « Où nous trouver » (coordonnées + carte). */
@@ -102,7 +100,6 @@ export const LANDINGS: Landing[] = [
     ],
     planning: true,
     equipe: true,
-    valeurs: true,
     lieu: true,
     formFinal: true,
     avis: true,
@@ -207,7 +204,6 @@ export const LANDINGS: Landing[] = [
       { src: '/assets/ksc/collectivites.webp', alt: 'Groupe d’enfants lors d’une activité collective' },
     ],
     equipe: true,
-    valeurs: true,
     lieu: true,
     formFinal: true,
     avis: true,
@@ -249,7 +245,6 @@ export const LANDINGS: Landing[] = [
       { src: '/assets/ksc/hero.webp', alt: 'Enfant plein d’énergie au Kid Sport Club' },
     ],
     equipe: true,
-    valeurs: true,
     pullQuote: {
       avisIndex: 2,
       extrait:

@@ -1,16 +1,7 @@
-// Valeurs et équipe du Kid Sport Club — textes du récap client, recopiés tels
-// quels. `icone` référence un pictogramme lucide (rendu par QuiSommesNous).
+// Équipe du Kid Sport Club — textes du récap client, recopiés tels quels.
 // Monogrammes (initiales) en attendant les photos fournies par le client.
 
-export type Valeur = { nom: string; texte: string; icone: 'Heart' | 'Shield' | 'Smile' | 'Blocks' }
 export type Coach = { nom: string; bio: string; initiales: string }
-
-export const VALEURS: Valeur[] = [
-  { nom: 'Bienveillance', texte: 'chaque enfant progresse à son rythme, sans pression ni comparaison', icone: 'Heart' },
-  { nom: 'Sécurité', texte: 'un encadrement professionnel et des équipements adaptés à chaque tranche d’âge', icone: 'Shield' },
-  { nom: 'Plaisir', texte: 'le jeu et la découverte avant la performance', icone: 'Smile' },
-  { nom: 'Diversité', texte: 'une multitude d’activités pour que chaque enfant trouve ce qui lui correspond', icone: 'Blocks' },
-]
 
 export const EQUIPE: Coach[] = [
   {

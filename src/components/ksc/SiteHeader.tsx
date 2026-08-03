@@ -37,7 +37,13 @@ const navLinkCls =
 
 // Neutralise le style « pill » par défaut du NavigationMenuLink shadcn
 // (fond muted au hover/focus) : ici le feedback est le soulignement magenta.
-const navLinkResetCls = 'rounded-none p-0 bg-transparent hover:bg-transparent focus:bg-transparent'
+// `text-base` : la base shadcn impose text-sm (14px) alors que le déclencheur à
+// sous-menu, qui n'est pas un NavigationMenuLink, reste à 16px. Ces classes sont
+// passées en `className` du NavigationMenuLink (et non sur le <a> enfant) pour
+// que `cn`/twMerge les fusionne réellement : en asChild, Radix se contente de
+// concaténer les deux chaînes et c'est alors text-sm qui l'emporte.
+const navLinkResetCls =
+  'rounded-none p-0 text-base bg-transparent hover:bg-transparent focus:bg-transparent'
 
 // Liens du panneau mobile (sheet).
 const mobileLinkCls = 'block py-3 text-[17px] font-semibold text-marine aria-[current=page]:text-magenta'
@@ -48,6 +54,9 @@ export default function SiteHeader() {
   // Sous-menu desktop contrôlé : Radix l'ouvre au hover, on ajoute l'ouverture
   // au focus clavier (le déclencheur est un lien, Entrée = navigation).
   const [openMenu, setOpenMenu] = useState('')
+  // Panneau à 2 volets : tranche d'âge survolée (ou focalisée au clavier) dont
+  // les activités s'affichent dans le volet droit.
+  const [hoveredSub, setHoveredSub] = useState('')
   const pathname = usePathname()
   const isActive = (href: string) => pathname === href || (href !== '/' && pathname?.startsWith(`${href}/`))
   const current = (href: string): 'page' | undefined => (isActive(href) ? 'page' : undefined)
@@ -82,7 +91,13 @@ export default function SiteHeader() {
           className="hidden lg:flex"
         >
           <NavigationMenuList className="gap-8">
-            {NAV.map((item) => (
+            {NAV.map((item) => {
+              // Volet droit : la tranche survolée/focalisée, à défaut la
+              // première tranche détaillée du sous-menu.
+              const detaillees = item.sub?.filter((s) => s.disciplines?.length) ?? []
+              const detail = detaillees.find((s) => s.href === hoveredSub) ?? detaillees[0]
+              const detailHref = detail?.href
+              return (
               <NavigationMenuItem key={item.href} value={item.href}>
                 {item.sub ? (
                   <>
@@ -98,34 +113,66 @@ export default function SiteHeader() {
                         <ChevronDown className="size-3" aria-hidden="true" />
                       </a>
                     </NavigationMenuPrimitive.Trigger>
-                    {/* pt-3 = pont de survol entre le lien et le panneau. */}
+                    {/* pt-3 = pont de survol entre le lien et le panneau.
+                        Panneau à 2 volets : les activités à gauche, les
+                        activités détaillées de la tranche survolée à droite. */}
                     <NavigationMenuPrimitive.Content className="absolute top-full left-1/2 z-50 -translate-x-1/2 pt-3">
-                      <ul className="flex min-w-[230px] flex-col items-start gap-2.5 rounded-lg border border-border bg-white p-4 shadow-md">
-                        {item.sub.map((s) => (
-                          <li key={s.href}>
-                            <NavigationMenuLink asChild>
-                              <a
-                                href={s.href}
-                                aria-current={current(s.href)}
-                                className={cn(navLinkCls, navLinkResetCls, 'text-[15px] font-bold')}
+                      <div className="flex w-[640px] max-w-[calc(100vw-40px)] rounded-lg border border-border bg-white shadow-md">
+                        <ul className="flex w-[46%] shrink-0 flex-col items-start gap-2.5 border-r border-border p-4">
+                          {item.sub.map((s) => (
+                            <li key={s.href}>
+                              <NavigationMenuLink
+                                asChild
+                                className={cn(
+                                  navLinkCls,
+                                  navLinkResetCls,
+                                  'text-[15px] font-bold',
+                                  s.disciplines && s.href === detailHref && 'text-magenta',
+                                )}
                               >
-                                {s.label}
-                              </a>
-                            </NavigationMenuLink>
-                          </li>
-                        ))}
-                      </ul>
+                                <a
+                                  href={s.href}
+                                  aria-current={current(s.href)}
+                                  onMouseEnter={() => s.disciplines && setHoveredSub(s.href)}
+                                  onFocus={() => s.disciplines && setHoveredSub(s.href)}
+                                >
+                                  {s.label}
+                                </a>
+                              </NavigationMenuLink>
+                            </li>
+                          ))}
+                        </ul>
+                        {/* Volet droit : activités de la tranche survolée. */}
+                        <div className="min-w-0 flex-1 bg-cream/60 p-4">
+                          <p className="mb-2.5 px-1 text-[11px] font-extrabold uppercase tracking-[.06em] text-muted-foreground">
+                            {detail?.label ?? 'Au programme'}
+                          </p>
+                          <ul className="grid grid-cols-2 gap-x-6 gap-y-1.5">
+                            {(detail?.disciplines ?? []).map((d) => (
+                              <li key={d.href}>
+                                <NavigationMenuLink
+                                  asChild
+                                  className={cn(navLinkCls, navLinkResetCls, 'text-[13.5px] font-semibold')}
+                                >
+                                  <a href={d.href}>{d.label}</a>
+                                </NavigationMenuLink>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
                     </NavigationMenuPrimitive.Content>
                   </>
                 ) : (
-                  <NavigationMenuLink asChild>
-                    <a href={item.href} aria-current={current(item.href)} className={cn(navLinkCls, navLinkResetCls)}>
+                  <NavigationMenuLink asChild className={cn(navLinkCls, navLinkResetCls)}>
+                    <a href={item.href} aria-current={current(item.href)}>
                       {item.label}
                     </a>
                   </NavigationMenuLink>
                 )}
               </NavigationMenuItem>
-            ))}
+              )
+            })}
           </NavigationMenuList>
         </NavigationMenu>
 
@@ -159,9 +206,26 @@ export default function SiteHeader() {
                   {item.sub && (
                     <div className="mb-2 flex flex-col border-l-2 border-magenta pl-4">
                       {item.sub.map((s) => (
-                        <a key={s.href} href={s.href} aria-current={current(s.href)} className={mobileSubLinkCls}>
-                          {s.label}
-                        </a>
+                        <div key={s.href}>
+                          <a href={s.href} aria-current={current(s.href)} className={mobileSubLinkCls}>
+                            {s.label}
+                          </a>
+                          {/* Activités de la tranche : simple liste indentée. */}
+                          {s.disciplines && s.disciplines.length > 0 && (
+                            <ul className="mb-1 flex flex-col pl-3.5">
+                              {s.disciplines.map((d) => (
+                                <li key={d.href}>
+                                  <a
+                                    href={d.href}
+                                    className="block py-1 text-[14px] font-medium text-muted-foreground"
+                                  >
+                                    {d.label}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
                       ))}
                     </div>
                   )}
