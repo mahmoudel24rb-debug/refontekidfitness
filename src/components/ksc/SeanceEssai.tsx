@@ -77,7 +77,7 @@ export default async function SeanceEssai() {
           </div>
         </section>
 
-        {/* Réassurance : citation parent, équipe (valeurs), avis */}
+        {/* Réassurance : citation parent, équipe, avis */}
         <PullQuote
           tone="cream2"
           avisIndex={2}
@@ -85,7 +85,7 @@ export default async function SeanceEssai() {
           href="#lead-form"
           ctaLabel="Demander ma séance d’essai"
         />
-        <LandingTeam tone="cream" withValeurs />
+        <LandingTeam tone="cream" />
         <AvisParents />
       </main>
       <SiteFooter />

@@ -266,13 +266,13 @@ export default async function Landing({ slug }: { slug: string }) {
           )}
           {l.galerie && l.galerie.length > 0 && <LandingGallery tone="white" images={l.galerie} />}
           {l.planning && <LandingPlanningStrip tone="cream2" />}
-          {l.equipe && <LandingTeam tone="cream" withValeurs={l.valeurs} />}
+          {l.equipe && <LandingTeam tone="cream" />}
         </>
       ) : (
         <>
           {l.planning && <LandingPlanningStrip tone="cream2" />}
           {l.galerie && l.galerie.length > 0 && <LandingGallery tone="white" images={l.galerie} />}
-          {l.equipe && <LandingTeam tone="cream" withValeurs={l.valeurs} />}
+          {l.equipe && <LandingTeam tone="cream" />}
           {l.pullQuote && (
             <PullQuote tone="white" avisIndex={l.pullQuote.avisIndex} extrait={l.pullQuote.extrait} href={cible} ctaLabel={pullQuoteCta} />
           )}

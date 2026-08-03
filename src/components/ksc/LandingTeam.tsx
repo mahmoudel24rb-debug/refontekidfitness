@@ -1,27 +1,20 @@
 import React from 'react'
 import Image from 'next/image'
-import { Heart, Shield, Smile, Blocks, type LucideIcon } from 'lucide-react'
 
 import { Card } from '@/components/ui/card'
 import Section from './Section'
 import Container from './Container'
 import SectionHeading from './SectionHeading'
-import RoundIcon from './RoundIcon'
-import { VALEURS } from '@/data/equipe'
 import { getEquipe } from '@/lib/contenu'
 
 // Équipe (pattern QuiSommesNous) : titre + intro + 3 cartes monogrammes.
-// Option `withValeurs` : bandeau horizontal des 4 valeurs du club.
 // Titre/intro repris de la page « Qui sommes-nous » (composant existant).
-const ICONES: Record<string, LucideIcon> = { Heart, Shield, Smile, Blocks }
 const INTRO =
   'Des animateurs et coachs diplômés, formés à l’encadrement des enfants, qui mettent l’énergie et la bienveillance au cœur de chaque séance.'
 
 export default async function LandingTeam({
-  withValeurs = false,
   tone = 'cream',
 }: {
-  withValeurs?: boolean
   tone?: 'cream' | 'cream2' | 'white'
 }) {
   const equipe = await getEquipe()
@@ -58,28 +51,6 @@ export default async function LandingTeam({
             </Card>
           ))}
         </div>
-
-        {withValeurs && (
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {VALEURS.map((v) => {
-              const Icon = ICONES[v.icone]
-              return (
-                <div
-                  key={v.nom}
-                  className="flex items-start gap-3.5 rounded-lg border border-border bg-card p-5 shadow-sm"
-                >
-                  <RoundIcon>
-                    <Icon size={20} aria-hidden="true" />
-                  </RoundIcon>
-                  <div>
-                    <h4 className="font-heading text-lg font-bold text-marine">{v.nom}</h4>
-                    <p className="text-[14.5px] leading-relaxed text-ink">{v.texte}</p>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        )}
       </Container>
     </Section>
   )
