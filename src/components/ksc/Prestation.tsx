@@ -4,7 +4,7 @@ import { ArrowRight, Check } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Card, cardInteractive } from '@/components/ui/card'
-import { cn } from '@/lib/utils'
+import { cn, slugifie } from '@/lib/utils'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import InscriptionCTA from './InscriptionCTA'
@@ -137,6 +137,27 @@ export default async function Prestation({ slug }: { slug: string }) {
             </div>
           </Card>
         </div>
+
+        {/* Les activités de la tranche d'âge (4 fiches cours uniquement).
+            Chaque bloc porte l'ancre visée par le sous-menu et les chips du hub. */}
+        {p.disciplines && p.disciplines.length > 0 && (
+          <Section tone="white" className="mt-[70px]">
+            <Container className="max-w-[1100px]">
+              <SectionHeading underline className="mb-3 text-center text-[26px]">Les activités</SectionHeading>
+              <p className="mx-auto mb-9 max-w-[620px] text-center text-muted-foreground">
+                Ce que votre enfant pratique au fil des séances de cette tranche d’âge.
+              </p>
+              <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+                {p.disciplines.map((d) => (
+                  <div key={d.nom} id={slugifie(d.nom)} className="scroll-mt-24">
+                    <h3 className="mb-2 font-heading text-xl font-bold text-marine">{d.nom}</h3>
+                    <p className="leading-relaxed text-ink">{d.description}</p>
+                  </div>
+                ))}
+              </div>
+            </Container>
+          </Section>
+        )}
 
         {/* Réserver : demande de place directement sur la fiche (LeadForm). */}
         <Section tone="cream" id="reserver" className="mt-[70px] scroll-mt-6">
