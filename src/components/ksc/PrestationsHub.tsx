@@ -1,11 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
-import { ArrowRight } from 'lucide-react'
+import { Check } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { cardInteractive } from '@/components/ui/card'
-import { cn } from '@/lib/utils'
+import { cn, slugifie } from '@/lib/utils'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import InscriptionCTA from './InscriptionCTA'
@@ -18,14 +17,6 @@ import Underline from './Underline'
 import { getPrestations } from '@/lib/contenu'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
-
-// Les 2 prestations phares (1re rangée) en cartes larges de la mosaïque.
-const WIDE_SLUGS = ['mercredis-sportifs', 'stages-vacances']
-
-const cardLink = cn(
-  'group flex flex-col overflow-hidden rounded-lg border border-border bg-card text-card-foreground shadow-sm',
-  cardInteractive
-)
 
 export default async function PrestationsHub() {
   const prestations = await getPrestations()
@@ -48,10 +39,6 @@ export default async function PrestationsHub() {
     ],
   }
 
-  // Mosaïque : cartes larges d'abord (rangée 1), puis les autres.
-  const larges = prestations.filter((p) => WIDE_SLUGS.includes(p.slug))
-  const normales = prestations.filter((p) => !WIDE_SLUGS.includes(p.slug))
-
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -64,51 +51,92 @@ export default async function PrestationsHub() {
             au Kid Sport Club de Rochecorbon, chaque enfant trouve son activité.</>}
         />
 
-        {/* Mosaïque image-first */}
-        <Section tone="cream">
-          <Container>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
-              {[...larges, ...normales].map((p) => {
-                const wide = WIDE_SLUGS.includes(p.slug)
-                return (
-                  <a
-                    key={p.slug}
-                    href={`/nos-prestations/${p.slug}`}
-                    className={cn(cardLink, wide ? 'lg:col-span-3' : 'lg:col-span-2')}
+        {/* Une section détaillée par activité, image et texte alternés.
+            Fonds crème / crème 2 en alternance pour rythmer la lecture. */}
+        {prestations.map((p, i) => {
+          const inverse = i % 2 === 1
+          return (
+            <Section key={p.slug} tone={inverse ? 'cream2' : 'cream'} id={p.slug} className="scroll-mt-24">
+              <Container>
+                <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+                  {/* Image grand format, côté alterné en desktop */}
+                  <div
+                    className={cn(
+                      'relative aspect-[4/3] overflow-hidden rounded-lg shadow-md',
+                      inverse && 'lg:order-2',
+                    )}
                   >
-                    <div className={cn('relative', wide ? 'aspect-[16/9]' : 'aspect-[4/3]')}>
-                      <Image
-                        src={p.image}
-                        alt=""
-                        fill
-                        sizes="(min-width: 1024px) 40vw, (min-width: 640px) 50vw, calc(100vw - 48px)"
-                        className="object-cover"
-                      />
-                      {/* Overlay dégradé (overlay d'IMAGE) + titre/badge posés sur l'image */}
-                      <div className="absolute inset-0 flex flex-col items-start justify-end gap-2.5 bg-gradient-to-t from-marine/80 to-transparent p-5">
-                        <Badge variant="ageDark">{p.age}</Badge>
-                        <h2 className="font-heading text-2xl font-extrabold leading-tight text-white">{p.titre}</h2>
+                    <Image
+                      src={p.image}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 46vw, calc(100vw - 48px)"
+                      className="object-cover"
+                    />
+                  </div>
+
+                  {/* Colonne texte : badge âge, titre, intro, bénéfices, prix, CTA */}
+                  <div className={cn(inverse && 'lg:order-1')}>
+                    <Badge variant="age">{p.age}</Badge>
+                    <h2 className="mt-3.5 font-heading text-[clamp(26px,3.4vw,34px)] font-extrabold leading-tight text-marine">
+                      {p.titre}
+                    </h2>
+                    <p className="mt-4 text-[17px] leading-relaxed text-ink">{p.intro}</p>
+
+                    <ul className="mt-6 flex flex-col gap-3">
+                      {p.benefices.map((b) => (
+                        <li key={b} className="flex items-start gap-3.5 text-[16.5px] leading-snug text-ink">
+                          <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-magenta text-white">
+                            <Check size={13} strokeWidth={3} aria-hidden="true" />
+                          </span>
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Les activités de la tranche : raccourcis vers les ancres
+                        de la fiche (uniquement les 4 cours par âge). */}
+                    {p.disciplines && p.disciplines.length > 0 && (
+                      <div className="mt-6">
+                        <p className="mb-2.5 text-sm font-bold uppercase tracking-[.04em] text-marine">
+                          Au programme
+                        </p>
+                        <ul className="flex flex-wrap gap-2">
+                          {p.disciplines.map((d) => (
+                            <li key={d.nom}>
+                              <a
+                                href={`/nos-prestations/${p.slug}#${slugifie(d.nom)}`}
+                                className="inline-flex rounded-full border border-border bg-white px-3.5 py-1.5 text-[13px] font-bold text-marine transition-colors hover:border-magenta hover:text-magenta"
+                              >
+                                {d.nom}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
+                    )}
+
+                    <p className="mt-6 font-heading text-[clamp(22px,2.6vw,26px)] font-extrabold text-magenta">
+                      {p.prix}
+                    </p>
+
+                    <div className="mt-5 flex flex-wrap gap-3.5">
+                      <Button asChild variant="primary">
+                        <a href={`/nos-prestations/${p.slug}`}>Voir la fiche</a>
+                      </Button>
+                      <InscriptionCTA variant="outline" />
                     </div>
-                    {/* Zone texte : accroche + lien */}
-                    <div className="flex flex-1 flex-col gap-3 p-5">
-                      <p className="flex-1 leading-relaxed text-muted-foreground">{p.accroche}</p>
-                      <span className="inline-flex items-center gap-1.5 font-bold text-magenta">
-                        Découvrir
-                        <ArrowRight size={14} aria-hidden="true" className="transition-transform group-hover:translate-x-[3px]" />
-                      </span>
-                    </div>
-                  </a>
-                )
-              })}
-            </div>
-          </Container>
-        </Section>
+                  </div>
+                </div>
+              </Container>
+            </Section>
+          )
+        })}
 
         {/* Fit' Parents/Enfants : moment intégré aux cours, PAS une prestation. */}
-        <Section tone="cream">
+        <Section tone={prestations.length % 2 === 1 ? 'cream2' : 'cream'}>
           <Container>
-            <div className="rounded-lg border-l-4 border-magenta bg-cream-2 p-8">
+            <div className="rounded-lg border-l-4 border-magenta bg-white p-8">
               <h2 className="mb-2.5 font-heading text-xl font-bold text-marine">Fit’ Parents/Enfants, intégré à nos cours</h2>
               <p className="leading-relaxed text-ink">
                 Un moment de sport à partager en famille. Parents et enfants bougent ensemble à travers des exercices ludiques et complices, une manière différente de se retrouver, entre jeu et activité physique.
@@ -117,7 +145,10 @@ export default async function PrestationsHub() {
           </Container>
         </Section>
 
-        <WaveDivider colorTop="var(--ksc-cream)" colorBottom="var(--ksc-marine)" />
+        <WaveDivider
+          colorTop={prestations.length % 2 === 1 ? 'var(--ksc-cream2)' : 'var(--ksc-cream)'}
+          colorBottom="var(--ksc-marine)"
+        />
 
         {/* Bande CTA pré-footer (textes existants de la page) */}
         <CtaBand
