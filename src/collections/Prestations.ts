@@ -65,6 +65,20 @@ export const Prestations: CollectionConfig = {
       fields: [{ name: 'texte', label: 'Texte', type: 'text', required: true }],
     },
     {
+      name: 'disciplines',
+      label: 'Activités de la tranche',
+      type: 'array',
+      labels: { singular: 'Activité', plural: 'Activités' },
+      admin: {
+        description:
+          'Uniquement pour les 4 cours par tranche d’âge : le détail des activités pratiquées. Chaque activité devient un bloc ancré de la fiche et une entrée du sous-menu « Nos activités ».',
+      },
+      fields: [
+        { name: 'nom', label: 'Nom', type: 'text', required: true },
+        { name: 'description', label: 'Description', type: 'textarea', required: true },
+      ],
+    },
+    {
       name: 'prix',
       label: 'Prix affiché',
       type: 'text',

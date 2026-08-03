@@ -99,19 +99,29 @@ export const getPrestations = cache(async (): Promise<PrestationVue[]> => {
   })
   if (!docs) return PRESTATIONS
 
-  return docs.map((d) => ({
-    slug: d.slug,
-    titre: d.titre,
-    age: d.age,
-    accroche: d.accroche,
-    intro: d.intro,
-    benefices: (d.benefices ?? []).map((b) => b.texte),
-    creneaux: d.creneauxTexte,
-    prix: d.prix,
-    // Photo chargée dans l'admin, sinon le visuel statique de la fiche.
-    image: urlMedia(d.image) ?? PRESTATIONS.find((p) => p.slug === d.slug)?.image ?? '',
-    motCle: d.motCle,
-  }))
+  return docs.map((d) => {
+    const fichier = PRESTATIONS.find((p) => p.slug === d.slug)
+    // Les disciplines n'existent pas encore en base (champ additif) : tant que
+    // l'admin ne les a pas remplies, on sert celles du fichier de données.
+    const disciplines = (d.disciplines ?? []).map((x) => ({
+      nom: x.nom,
+      description: x.description,
+    }))
+    return {
+      slug: d.slug,
+      titre: d.titre,
+      age: d.age,
+      accroche: d.accroche,
+      intro: d.intro,
+      benefices: (d.benefices ?? []).map((b) => b.texte),
+      creneaux: d.creneauxTexte,
+      prix: d.prix,
+      // Photo chargée dans l'admin, sinon le visuel statique de la fiche.
+      image: urlMedia(d.image) ?? fichier?.image ?? '',
+      motCle: d.motCle,
+      disciplines: disciplines.length > 0 ? disciplines : fichier?.disciplines,
+    }
+  })
 })
 
 export const getPrestation = cache(async (slug: string): Promise<PrestationVue | undefined> => {

@@ -1,5 +1,12 @@
 // Les 7 prestations Kid Sport Club (brief Victor Lucien-Brun).
 // Contenu rédigé FR orienté parents. Prix/photos = à fournir par le client.
+
+// Une discipline pratiquée dans une tranche d'âge (4 fiches « cours » only).
+// Le nom sert d'ancre sur la fiche : /nos-prestations/[slug]#[slugifie(nom)].
+// Descriptions rédigées en interne : À FAIRE VALIDER par le club avant mise en
+// ligne (certaines disciplines peuvent ne plus être proposées).
+export type Discipline = { nom: string; description: string }
+
 export type Prestation = {
   slug: string
   titre: string
@@ -11,6 +18,7 @@ export type Prestation = {
   prix: string
   image: string
   motCle: string // mot-clé SEO focus
+  disciplines?: Discipline[]
 }
 
 export const PRESTATIONS: Prestation[] = [
@@ -61,6 +69,33 @@ export const PRESTATIONS: Prestation[] = [
     prix: 'À partir de 29,90 €/mois',
     image: '/assets/ksc/cours-10-36-mois.webp',
     motCle: 'baby gym Tours',
+    disciplines: [
+      {
+        nom: 'Gym maman bébé',
+        description:
+          'Un temps de sport partagé entre le parent et son bébé. Les exercices permettent de reprendre une activité physique en douceur tout en gardant son enfant tout près de soi, dans une ambiance complice.',
+      },
+      {
+        nom: 'Baby éveil',
+        description:
+          'Une séance d’éveil sensoriel rythmée par la musique et les comptines. Le tout-petit écoute, manipule et imite : autant d’occasions de découvrir des sons, des mots et les tout premiers échanges.',
+      },
+      {
+        nom: 'Baby Gym & Dance',
+        description:
+          'Le mouvement et le rythme réunis dans une même séance. Parcours de motricité, jeux dansés et petit matériel adapté développent l’équilibre et la coordination dès le plus jeune âge.',
+      },
+      {
+        nom: 'Accueil Assistantes Maternelles',
+        description:
+          'Un créneau réservé aux assistantes maternelles et à leurs groupes d’enfants. La salle est aménagée pour l’éveil moteur des tout-petits, dans un espace calme et sécurisé.',
+      },
+      {
+        nom: 'Baby Rugby',
+        description:
+          'Une première approche du ballon ovale, sans contact et entièrement sous forme de jeux. L’enfant court, attrape, porte et apprend à partager l’espace avec les autres.',
+      },
+    ],
   },
   {
     slug: 'cours-3-5-ans',
@@ -73,6 +108,28 @@ export const PRESTATIONS: Prestation[] = [
     prix: 'À partir de 29,90 €/mois',
     image: '/assets/ksc/cours-3-5-ans.webp',
     motCle: 'éveil sportif 3-5 ans',
+    disciplines: [
+      {
+        nom: 'Kid Gym & Dance',
+        description:
+          'La danse et la gymnastique se répondent dans des enchaînements simples que l’enfant explore librement. Il gagne en coordination, en équilibre et en souplesse tout en s’exprimant en musique.',
+      },
+      {
+        nom: 'Kid Training & Boxing',
+        description:
+          'Une initiation ludique aux premiers gestes techniques, toujours sans contact. Les ateliers alternent déplacements, précision et petits circuits, de quoi canaliser l’énergie du groupe.',
+      },
+      {
+        nom: 'Sports de Ballon',
+        description:
+          'Football, rugby, handball, volley : l’enfant découvre plusieurs ballons et leurs règles simplifiées, et apprend surtout à jouer avec les autres.',
+      },
+      {
+        nom: 'Multisports',
+        description:
+          'Une séance différente à chaque fois : ballons, raquettes, parcours, jeux d’opposition. De quoi essayer largement avant de savoir ce qui plaît le plus.',
+      },
+    ],
   },
   {
     slug: 'cours-6-10-ans',
@@ -85,6 +142,48 @@ export const PRESTATIONS: Prestation[] = [
     prix: 'À partir de 29,90 €/mois',
     image: '/assets/ksc/cours-6-10-ans.webp',
     motCle: 'multisports enfant Tours',
+    disciplines: [
+      {
+        nom: 'Fun Fit Zumba',
+        description:
+          'Du fitness dansé sur des musiques entraînantes, sans aucune notion de performance. Les chorégraphies s’apprennent pas à pas, dans une ambiance joyeuse.',
+      },
+      {
+        nom: 'Pompom Girl',
+        description:
+          'Jeux de coordination, portés simples et mini-chorégraphies montées ensemble. Le groupe apprend à se synchroniser puis à présenter son travail.',
+      },
+      {
+        nom: 'Cross Training & Boxing',
+        description:
+          'Des circuits variés pour construire les bases physiques : gainage, déplacements, cardio, complétés par des techniques de boxe sans contact.',
+      },
+      {
+        nom: 'Gym acrobatique',
+        description:
+          'Roulades, équilibres, premières figures : les acrobaties s’apprennent progressivement, avec parade et matériel adapté au niveau de chacun.',
+      },
+      {
+        nom: 'Sports de Ballon',
+        description:
+          'Football, handball, rugby et volley en alternance. Le jeu se structure : placement, passes, respect des règles et des coéquipiers.',
+      },
+      {
+        nom: 'Fit’ Family',
+        description:
+          'Une séance à vivre en duo parent-enfant. Défis sportifs, relais et ateliers en équipe : on s’encourage et on progresse ensemble.',
+      },
+      {
+        nom: 'Sports de Combat',
+        description:
+          'Initiation au judo, à la boxe et au karaté, centrée sur le respect du partenaire, la maîtrise de soi et la confiance.',
+      },
+      {
+        nom: 'Kid coaching',
+        description:
+          'Un accompagnement plus individualisé pour l’enfant qui a besoin d’un objectif à lui : reprise d’activité, confiance, progression à son rythme.',
+      },
+    ],
   },
   {
     slug: 'cours-11-14-ans',
@@ -97,6 +196,43 @@ export const PRESTATIONS: Prestation[] = [
     prix: 'À partir de 29,90 €/mois',
     image: '/assets/ksc/cours-11-14-ans.webp',
     motCle: 'sport ado Tours',
+    disciplines: [
+      {
+        nom: 'Fitness',
+        description:
+          'Des séances dynamiques et variées, calibrées pour un corps en pleine croissance : renforcement, cardio et mobilité, avec des intensités adaptées à l’âge.',
+      },
+      {
+        nom: 'Cross Training & Boxing',
+        description:
+          'Des circuits plus structurés qu’en primaire, complétés par du travail technique de boxe sans contact. L’ado apprend à doser son effort et à suivre sa progression.',
+      },
+      {
+        nom: 'Fit’ Family',
+        description:
+          'Le rendez-vous sportif parent-ado : défis à deux, relais et ateliers en équipe, pour bouger ensemble sans esprit de compétition.',
+      },
+      {
+        nom: 'Gym acrobatique',
+        description:
+          'Perfectionnement des figures et travail des enchaînements complets, avec le gainage et la souplesse nécessaires pour les réaliser en sécurité.',
+      },
+      {
+        nom: 'Sports de Ballon',
+        description:
+          'Pratique confirmée du football, du handball, du rugby et du volley : placement, tactique, arbitrage et matchs à effectif réduit.',
+      },
+      {
+        nom: 'Pompom Girl',
+        description:
+          'Des chorégraphies complètes à mémoriser, avec des mouvements plus dynamiques et un vrai travail de groupe jusqu’à la présentation.',
+      },
+      {
+        nom: 'Zumba family',
+        description:
+          'Une séance de danse fitness ouverte aux ados et à leurs parents : rythme soutenu, chorégraphies accessibles et beaucoup de bonne humeur.',
+      },
+    ],
   },
 ]
 

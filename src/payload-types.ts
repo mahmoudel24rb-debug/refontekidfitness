@@ -170,6 +170,16 @@ export interface Prestation {
       }[]
     | null;
   /**
+   * Uniquement pour les 4 cours par tranche d’âge : le détail des activités pratiquées. Chaque activité devient un bloc ancré de la fiche et une entrée du sous-menu « Nos activités ».
+   */
+  disciplines?:
+    | {
+        nom: string;
+        description: string;
+        id?: string | null;
+      }[]
+    | null;
+  /**
    * Ex. : « 95 €/mois », « À partir de 29,90 €/mois ».
    */
   prix: string;
@@ -514,6 +524,13 @@ export interface PrestationsSelect<T extends boolean = true> {
     | T
     | {
         texte?: T;
+        id?: T;
+      };
+  disciplines?:
+    | T
+    | {
+        nom?: T;
+        description?: T;
         id?: T;
       };
   prix?: T;

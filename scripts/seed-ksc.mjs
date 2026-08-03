@@ -61,6 +61,7 @@ async function run() {
       accroche: p.accroche,
       intro: p.intro,
       benefices: p.benefices.map((texte) => ({ texte })),
+      disciplines: (p.disciplines ?? []).map(({ nom, description }) => ({ nom, description })),
       prix: p.prix,
       creneauxTexte: p.creneaux,
       motCle: p.motCle,
