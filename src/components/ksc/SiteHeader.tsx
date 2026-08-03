@@ -37,7 +37,13 @@ const navLinkCls =
 
 // Neutralise le style « pill » par défaut du NavigationMenuLink shadcn
 // (fond muted au hover/focus) : ici le feedback est le soulignement magenta.
-const navLinkResetCls = 'rounded-none p-0 bg-transparent hover:bg-transparent focus:bg-transparent'
+// `text-base` : la base shadcn impose text-sm (14px) alors que le déclencheur à
+// sous-menu, qui n'est pas un NavigationMenuLink, reste à 16px. Ces classes sont
+// passées en `className` du NavigationMenuLink (et non sur le <a> enfant) pour
+// que `cn`/twMerge les fusionne réellement : en asChild, Radix se contente de
+// concaténer les deux chaînes et c'est alors text-sm qui l'emporte.
+const navLinkResetCls =
+  'rounded-none p-0 text-base bg-transparent hover:bg-transparent focus:bg-transparent'
 
 // Liens du panneau mobile (sheet).
 const mobileLinkCls = 'block py-3 text-[17px] font-semibold text-marine aria-[current=page]:text-magenta'
@@ -103,12 +109,11 @@ export default function SiteHeader() {
                       <ul className="flex min-w-[230px] flex-col items-start gap-2.5 rounded-lg border border-border bg-white p-4 shadow-md">
                         {item.sub.map((s) => (
                           <li key={s.href}>
-                            <NavigationMenuLink asChild>
-                              <a
-                                href={s.href}
-                                aria-current={current(s.href)}
-                                className={cn(navLinkCls, navLinkResetCls, 'text-[15px] font-bold')}
-                              >
+                            <NavigationMenuLink
+                              asChild
+                              className={cn(navLinkCls, navLinkResetCls, 'text-[15px] font-bold')}
+                            >
+                              <a href={s.href} aria-current={current(s.href)}>
                                 {s.label}
                               </a>
                             </NavigationMenuLink>
@@ -118,8 +123,8 @@ export default function SiteHeader() {
                     </NavigationMenuPrimitive.Content>
                   </>
                 ) : (
-                  <NavigationMenuLink asChild>
-                    <a href={item.href} aria-current={current(item.href)} className={cn(navLinkCls, navLinkResetCls)}>
+                  <NavigationMenuLink asChild className={cn(navLinkCls, navLinkResetCls)}>
+                    <a href={item.href} aria-current={current(item.href)}>
                       {item.label}
                     </a>
                   </NavigationMenuLink>
