@@ -2,6 +2,7 @@ import React from 'react'
 import { Star } from 'lucide-react'
 
 import { Card } from '@/components/ui/card'
+import AvisAvatar from './AvisAvatar'
 import Kicker from './Kicker'
 import SectionHeading from './SectionHeading'
 import { getAvis } from '@/lib/contenu'
@@ -28,7 +29,11 @@ export default async function AvisParents() {
               <blockquote className="mb-[18px] flex-1 text-[15.5px] leading-relaxed text-ink">
                 « {a.texte} »
               </blockquote>
-              <p className="text-sm font-bold text-marine">{a.auteur}</p>
+              {/* Pied de carte : avatar illustré + auteur */}
+              <div className="flex items-center gap-3 border-t border-border pt-4">
+                <AvisAvatar index={i} />
+                <p className="text-sm font-bold text-marine">{a.auteur}</p>
+              </div>
             </Card>
           ))}
         </div>
