@@ -4,7 +4,7 @@ import { Check } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { cn, slugifie } from '@/lib/utils'
+import { cn } from '@/lib/utils'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import InscriptionCTA from './InscriptionCTA'
@@ -94,8 +94,8 @@ export default async function PrestationsHub() {
                       ))}
                     </ul>
 
-                    {/* Les activités de la tranche : raccourcis vers les ancres
-                        de la fiche (uniquement les 4 cours par âge). */}
+                    {/* Les activités de la tranche : raccourcis vers leurs
+                        pages dédiées (uniquement les 4 cours par âge). */}
                     {p.disciplines && p.disciplines.length > 0 && (
                       <div className="mt-6">
                         <p className="mb-2.5 text-sm font-bold uppercase tracking-[.04em] text-marine">
@@ -103,9 +103,9 @@ export default async function PrestationsHub() {
                         </p>
                         <ul className="flex flex-wrap gap-2">
                           {p.disciplines.map((d) => (
-                            <li key={d.nom}>
+                            <li key={d.slug}>
                               <a
-                                href={`/nos-prestations/${p.slug}#${slugifie(d.nom)}`}
+                                href={`/nos-prestations/${p.slug}/${d.slug}`}
                                 className="inline-flex rounded-full border border-border bg-white px-3.5 py-1.5 text-[13px] font-bold text-marine transition-colors hover:border-magenta hover:text-magenta"
                               >
                                 {d.nom}

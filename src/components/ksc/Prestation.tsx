@@ -4,7 +4,7 @@ import { ArrowRight, Check } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Card, cardInteractive } from '@/components/ui/card'
-import { cn, slugifie } from '@/lib/utils'
+import { cn } from '@/lib/utils'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import InscriptionCTA from './InscriptionCTA'
@@ -139,7 +139,8 @@ export default async function Prestation({ slug }: { slug: string }) {
         </div>
 
         {/* Les activités de la tranche d'âge (4 fiches cours uniquement).
-            Chaque bloc porte l'ancre visée par le sous-menu et les chips du hub. */}
+            Chaque carte mène à la page de l'activité et conserve l'ancre
+            historique (id = slug) pour les liens déjà diffusés. */}
         {p.disciplines && p.disciplines.length > 0 && (
           <Section tone="white" className="mt-[70px]">
             <Container className="max-w-[1100px]">
@@ -147,12 +148,21 @@ export default async function Prestation({ slug }: { slug: string }) {
               <p className="mx-auto mb-9 max-w-[620px] text-center text-muted-foreground">
                 Ce que votre enfant pratique au fil des séances de cette tranche d’âge.
               </p>
-              <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+              <div className="grid gap-5 sm:grid-cols-2">
                 {p.disciplines.map((d) => (
-                  <div key={d.nom} id={slugifie(d.nom)} className="scroll-mt-24">
+                  <a
+                    key={d.slug}
+                    id={d.slug}
+                    href={`/nos-prestations/${p.slug}/${d.slug}`}
+                    className={cn(cardLink, 'flex scroll-mt-24 flex-col p-6')}
+                  >
                     <h3 className="mb-2 font-heading text-xl font-bold text-marine">{d.nom}</h3>
-                    <p className="leading-relaxed text-ink">{d.description}</p>
-                  </div>
+                    <p className="mb-3.5 flex-1 leading-relaxed text-ink">{d.accroche}</p>
+                    <span className="inline-flex items-center gap-1.5 font-bold text-magenta">
+                      En savoir plus
+                      <ArrowRight size={14} aria-hidden="true" className="transition-transform group-hover:translate-x-[3px]" />
+                    </span>
+                  </a>
                 ))}
               </div>
             </Container>

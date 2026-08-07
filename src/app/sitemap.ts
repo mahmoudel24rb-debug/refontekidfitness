@@ -11,7 +11,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routes = [
     '', '/qui-sommes-nous', '/nos-prestations', '/tarifs', '/planning', '/faq', '/contact', '/seance-essai', '/blog',
     '/mentions-legales', '/confidentialite', '/cookies', '/cgv',
-    ...prestations.map((p) => `/nos-prestations/${p.slug}`),
+    ...prestations.flatMap((p) => [
+      `/nos-prestations/${p.slug}`,
+      // Une page par activité de la tranche d'âge (4 cours = 24 URLs).
+      ...(p.disciplines ?? []).map((d) => `/nos-prestations/${p.slug}/${d.slug}`),
+    ]),
     ...articles.map((a) => `/blog/${a.slug}`),
   ]
   return routes.map((path) => ({
