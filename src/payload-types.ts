@@ -170,12 +170,41 @@ export interface Prestation {
       }[]
     | null;
   /**
-   * Uniquement pour les 4 cours par tranche d’âge : le détail des activités pratiquées. Chaque activité devient un bloc ancré de la fiche et une entrée du sous-menu « Nos activités ».
+   * Uniquement pour les 4 cours par tranche d’âge : le détail des activités pratiquées. Chaque activité a sa propre page /nos-prestations/[cours]/[activité], une carte sur la fiche du cours et une entrée du sous-menu « Nos activités ».
    */
   disciplines?:
     | {
         nom: string;
+        /**
+         * Segment d’URL de la page de l’activité. Ex. : kid-gym-et-dance → /nos-prestations/cours-3-5-ans/kid-gym-et-dance. Laisser vide pour le déduire du nom. Ne pas modifier une fois la page en ligne.
+         */
+        slug?: string | null;
+        /**
+         * Résumé court : sous-titre du hero de la page de l’activité, texte de sa carte sur la fiche du cours.
+         */
         description: string;
+        /**
+         * Corps de la page de l’activité : 2 paragraphes. Vide, le texte de src/data/prestations.ts est servi.
+         */
+        intro?:
+          | {
+              texte: string;
+              id?: string | null;
+            }[]
+          | null;
+        /**
+         * Liste à puces cochées de la page (3 à 5 lignes courtes).
+         */
+        benefices?:
+          | {
+              texte: string;
+              id?: string | null;
+            }[]
+          | null;
+        /**
+         * Un paragraphe : à quels enfants cette activité s’adresse.
+         */
+        pourQui?: string | null;
         id?: string | null;
       }[]
     | null;
@@ -530,7 +559,21 @@ export interface PrestationsSelect<T extends boolean = true> {
     | T
     | {
         nom?: T;
+        slug?: T;
         description?: T;
+        intro?:
+          | T
+          | {
+              texte?: T;
+              id?: T;
+            };
+        benefices?:
+          | T
+          | {
+              texte?: T;
+              id?: T;
+            };
+        pourQui?: T;
         id?: T;
       };
   prix?: T;
