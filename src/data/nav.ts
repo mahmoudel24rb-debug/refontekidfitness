@@ -1,5 +1,4 @@
 import { PRESTATIONS } from './prestations'
-import { slugifie } from '@/lib/utils'
 
 // Navigation du site — source unique pour SiteHeader (nav principale) et
 // SiteFooter (colonne « Navigation » + barre légale).
@@ -26,16 +25,16 @@ export const NAV: NavItem[] = [
   {
     label: 'Nos activités',
     href: '/nos-prestations',
-    // 2e niveau : les activités des 4 cours par tranche d'âge, en liens
-    // d'ancre vers les blocs correspondants de la fiche. Le header est un
-    // composant client : la liste vient du fichier de données (les fiches
-    // servies par Payload utilisent les mêmes noms, donc les mêmes ancres).
+    // 2e niveau : les activités des 4 cours par tranche d'âge, chacune avec sa
+    // page /nos-prestations/[cours]/[activité]. Le header est un composant
+    // client : la liste vient du fichier de données (les fiches servies par
+    // Payload portent les mêmes noms, donc les mêmes slugs).
     sub: PRESTATIONS.map((p) => ({
       label: p.titre,
       href: `/nos-prestations/${p.slug}`,
       disciplines: p.disciplines?.map((d) => ({
         label: d.nom,
-        href: `/nos-prestations/${p.slug}#${slugifie(d.nom)}`,
+        href: `/nos-prestations/${p.slug}/${d.slug}`,
       })),
     })),
   },

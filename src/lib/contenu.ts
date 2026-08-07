@@ -9,6 +9,7 @@ import { PLANNING, type JourPlanning } from '@/data/planning'
 import { PRESTATIONS, type Prestation } from '@/data/prestations'
 import { ABONNEMENTS, FEATURED_TITRE, PRESTATIONS_TARIFS, type Tarif } from '@/data/tarifs'
 import { COORDONNEES, CRM_INSCRIPTION_URL, HORAIRES, INSCRIPTION_URL } from '@/data/site'
+import { slugifie } from './utils'
 
 /**
  * COUCHE D'ACCÈS AU CONTENU — à n'utiliser que côté serveur.
@@ -101,12 +102,23 @@ export const getPrestations = cache(async (): Promise<PrestationVue[]> => {
 
   return docs.map((d) => {
     const fichier = PRESTATIONS.find((p) => p.slug === d.slug)
-    // Les disciplines n'existent pas encore en base (champ additif) : tant que
-    // l'admin ne les a pas remplies, on sert celles du fichier de données.
-    const disciplines = (d.disciplines ?? []).map((x) => ({
-      nom: x.nom,
-      description: x.description,
-    }))
+    // Activités de la tranche. Les champs longs (slug, présentation, bénéfices,
+    // « pour qui ») sont ADDITIFS : tant que la base ne les porte pas, chacun
+    // retombe sur le fichier de données, activité par activité et champ par
+    // champ (l'appariement se fait par nom, comme le script de remplissage).
+    const disciplines = (d.disciplines ?? []).map((x) => {
+      const df = fichier?.disciplines?.find((y) => y.nom === x.nom)
+      const intro = (x.intro ?? []).map((i) => i.texte).filter(Boolean)
+      const benefices = (x.benefices ?? []).map((b) => b.texte).filter(Boolean)
+      return {
+        nom: x.nom,
+        slug: texteOu(x.slug, df?.slug ?? slugifie(x.nom)),
+        accroche: texteOu(x.description, df?.accroche ?? ''),
+        intro: intro.length > 0 ? intro : (df?.intro ?? []),
+        benefices: benefices.length > 0 ? benefices : (df?.benefices ?? []),
+        pourQui: texteOu(x.pourQui, df?.pourQui ?? ''),
+      }
+    })
     return {
       slug: d.slug,
       titre: d.titre,

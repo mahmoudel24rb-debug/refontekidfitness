@@ -117,7 +117,7 @@ export default function SiteHeader() {
                         Panneau à 2 volets : les activités à gauche, les
                         activités détaillées de la tranche survolée à droite. */}
                     <NavigationMenuPrimitive.Content className="absolute top-full left-1/2 z-50 -translate-x-1/2 pt-3">
-                      <div className="flex w-[640px] max-w-[calc(100vw-40px)] rounded-lg border border-border bg-white shadow-md">
+                      <div className="flex w-[720px] max-w-[calc(100vw-40px)] rounded-lg border border-border bg-white shadow-md">
                         <ul className="flex w-[46%] shrink-0 flex-col items-start gap-2.5 border-r border-border p-4">
                           {item.sub.map((s) => (
                             <li key={s.href}>
@@ -147,12 +147,21 @@ export default function SiteHeader() {
                           <p className="mb-2.5 px-1 text-[11px] font-extrabold uppercase tracking-[.06em] text-muted-foreground">
                             {detail?.label ?? 'Au programme'}
                           </p>
-                          <ul className="grid grid-cols-2 gap-x-6 gap-y-1.5">
+                          {/* Libellés longs (« Accueil Assistantes Maternelles ») :
+                              le `whitespace-nowrap` de navLinkCls est neutralisé par
+                              `whitespace-normal` (twMerge fusionne bien le groupe
+                              whitespace-*), les colonnes sont en minmax(0,1fr) et
+                              le lien passe en `block` pour que le texte s'y replie. */}
+                          <ul className="grid grid-cols-[repeat(2,minmax(0,1fr))] gap-x-6 gap-y-2">
                             {(detail?.disciplines ?? []).map((d) => (
-                              <li key={d.href}>
+                              <li key={d.href} className="min-w-0">
                                 <NavigationMenuLink
                                   asChild
-                                  className={cn(navLinkCls, navLinkResetCls, 'text-[13.5px] font-semibold')}
+                                  className={cn(
+                                    navLinkCls,
+                                    navLinkResetCls,
+                                    'block whitespace-normal text-[13.5px] font-semibold leading-snug',
+                                  )}
                                 >
                                   <a href={d.href}>{d.label}</a>
                                 </NavigationMenuLink>

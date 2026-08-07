@@ -71,11 +71,57 @@ export const Prestations: CollectionConfig = {
       labels: { singular: 'Activité', plural: 'Activités' },
       admin: {
         description:
-          'Uniquement pour les 4 cours par tranche d’âge : le détail des activités pratiquées. Chaque activité devient un bloc ancré de la fiche et une entrée du sous-menu « Nos activités ».',
+          'Uniquement pour les 4 cours par tranche d’âge : le détail des activités pratiquées. Chaque activité a sa propre page /nos-prestations/[cours]/[activité], une carte sur la fiche du cours et une entrée du sous-menu « Nos activités ».',
       },
       fields: [
         { name: 'nom', label: 'Nom', type: 'text', required: true },
-        { name: 'description', label: 'Description', type: 'textarea', required: true },
+        {
+          name: 'slug',
+          label: 'Slug (URL)',
+          type: 'text',
+          // Volontairement NON requis : le champ est additif sur une table déjà
+          // peuplée (une colonne NOT NULL casserait la mise à jour du schéma).
+          // Vide, le site recalcule le slug depuis le nom (même règle qu'avant).
+          admin: {
+            description:
+              'Segment d’URL de la page de l’activité. Ex. : kid-gym-et-dance → /nos-prestations/cours-3-5-ans/kid-gym-et-dance. Laisser vide pour le déduire du nom. Ne pas modifier une fois la page en ligne.',
+          },
+        },
+        {
+          name: 'description',
+          label: 'Accroche',
+          type: 'textarea',
+          required: true,
+          admin: {
+            description:
+              'Résumé court : sous-titre du hero de la page de l’activité, texte de sa carte sur la fiche du cours.',
+          },
+        },
+        {
+          name: 'intro',
+          label: 'Présentation',
+          type: 'array',
+          labels: { singular: 'Paragraphe', plural: 'Paragraphes' },
+          admin: {
+            description:
+              'Corps de la page de l’activité : 2 paragraphes. Vide, le texte de src/data/prestations.ts est servi.',
+          },
+          fields: [{ name: 'texte', label: 'Texte', type: 'textarea', required: true }],
+        },
+        {
+          name: 'benefices',
+          label: 'Les bénéfices',
+          type: 'array',
+          labels: { singular: 'Bénéfice', plural: 'Bénéfices' },
+          admin: { description: 'Liste à puces cochées de la page (3 à 5 lignes courtes).' },
+          fields: [{ name: 'texte', label: 'Texte', type: 'text', required: true }],
+        },
+        {
+          name: 'pourQui',
+          label: 'Pour qui ?',
+          type: 'textarea',
+          admin: { description: 'Un paragraphe : à quels enfants cette activité s’adresse.' },
+        },
       ],
     },
     {
