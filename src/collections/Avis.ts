@@ -26,8 +26,16 @@ export const Avis: CollectionConfig = {
       name: 'auteur',
       label: 'Signature',
       type: 'text',
-      defaultValue: 'Parent d’un enfant du club',
-      admin: { description: 'Attribution affichée sous l’avis. Laisser la mention neutre par défaut si le parent n’a pas donné son nom.' },
+      admin: { description: 'Nom du parent tel qu’il apparaît sur son avis Google (prénom en premier, casse propre).' },
+    },
+    {
+      name: 'photo',
+      label: 'Photo (chemin)',
+      type: 'text',
+      admin: {
+        description:
+          'Chemin d’une photo déposée dans public/assets/ksc/avis (ex. /assets/ksc/avis/celine.webp). Vide = avatar illustré.',
+      },
     },
     {
       name: 'ordre',

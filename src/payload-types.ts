@@ -342,9 +342,13 @@ export interface Avi {
   id: number;
   texte: string;
   /**
-   * Attribution affichée sous l’avis. Laisser la mention neutre par défaut si le parent n’a pas donné son nom.
+   * Nom du parent tel qu’il apparaît sur son avis Google (prénom en premier, casse propre).
    */
   auteur?: string | null;
+  /**
+   * Chemin d’une photo déposée dans public/assets/ksc/avis (ex. /assets/ksc/avis/celine.webp). Vide = avatar illustré.
+   */
+  photo?: string | null;
   ordre?: number | null;
   updatedAt: string;
   createdAt: string;
@@ -632,6 +636,7 @@ export interface FaqSelect<T extends boolean = true> {
 export interface AvisSelect<T extends boolean = true> {
   texte?: T;
   auteur?: T;
+  photo?: T;
   ordre?: T;
   updatedAt?: T;
   createdAt?: T;

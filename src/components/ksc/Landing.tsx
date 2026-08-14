@@ -5,6 +5,7 @@ import { Check, Plus, Star } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import AvisAvatar from './AvisAvatar'
 import LeadForm from './LeadForm'
 import StickyCtaBar from './StickyCtaBar'
 import TerrainLines from './TerrainLines'
@@ -287,8 +288,9 @@ export default async function Landing({ slug }: { slug: string }) {
             <h2 className="mb-9 text-center font-heading text-[clamp(24px,3vw,34px)] font-extrabold text-marine">
               Avis de <Underline>parents</Underline>
             </h2>
-            <div className="grid gap-6 lg:grid-cols-3">
-              {avis.map((a) => (
+            {/* 6 avis : 3 colonnes x 2 rangées sur grand écran, 2 colonnes en tablette. */}
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {avis.map((a, index) => (
                 <figure key={a.texte.slice(0, 40)} className="flex flex-col gap-4 rounded-lg border border-border bg-card p-7 shadow-sm">
                   <div className="flex gap-1" aria-label="5 étoiles sur 5">
                     {Array.from({ length: 5 }).map((_, i) => (
@@ -296,7 +298,10 @@ export default async function Landing({ slug }: { slug: string }) {
                     ))}
                   </div>
                   <blockquote className="text-[15px] leading-relaxed">«&nbsp;{a.texte}&nbsp;»</blockquote>
-                  <figcaption className="mt-auto text-sm font-semibold text-marine">{a.auteur}</figcaption>
+                  <figcaption className="mt-auto flex items-center gap-3 text-sm font-semibold text-marine">
+                    <AvisAvatar index={index} photo={a.photo} size={36} />
+                    {a.auteur}
+                  </figcaption>
                 </figure>
               ))}
             </div>
