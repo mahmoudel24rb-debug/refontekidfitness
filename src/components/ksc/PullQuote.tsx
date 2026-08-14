@@ -45,9 +45,9 @@ export default async function PullQuote({
         <blockquote className="font-heading text-[clamp(22px,3vw,30px)] font-bold leading-snug text-marine">
           «&nbsp;{extrait}&nbsp;»
         </blockquote>
-        {/* Attribution : avatar illustré (même mapping que les cartes d'avis) */}
+        {/* Attribution : nom réel du parent + sa photo (même avatar que les cartes d'avis) */}
         <div className="mt-5 flex flex-col items-center gap-2">
-          <AvisAvatar index={avisIndex} size={44} />
+          <AvisAvatar index={avisIndex} photo={source.photo} size={44} />
           <p className="text-sm font-semibold text-muted-foreground">{source.auteur}</p>
         </div>
         <div className="mt-8">

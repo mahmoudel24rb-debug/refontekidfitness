@@ -28,8 +28,6 @@ import { EQUIPE } from '../src/data/equipe.ts'
 import { ARTICLES } from '../src/data/articles.ts'
 import { COORDONNEES, HORAIRES, INSCRIPTION_URL, CRM_INSCRIPTION_URL } from '../src/data/site.ts'
 
-const AUTEUR_AVIS = 'Parent d’un enfant du club'
-
 /** Insere `lignes` dans `collection` uniquement si celle-ci est vide. */
 async function peupler(payload, collection, lignes, libelle) {
   const { totalDocs } = await payload.count({ collection })
@@ -134,7 +132,7 @@ async function run() {
   await peupler(
     payload,
     'avis',
-    AVIS.map((texte, i) => ({ texte, auteur: AUTEUR_AVIS, ordre: i })),
+    AVIS.map((a, i) => ({ texte: a.texte, auteur: a.auteur, photo: a.photo ?? '', ordre: i })),
     'avis',
   )
 

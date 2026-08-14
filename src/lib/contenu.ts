@@ -296,18 +296,46 @@ export function faqParQuestions(faq: FaqItem[], questions: readonly string[]): F
 // Avis de parents
 // ---------------------------------------------------------------------------
 
-export type AvisVue = { texte: string; auteur: string }
+export type AvisVue = {
+  texte: string
+  /** Nom réel de l'auteur de l'avis Google (normalisé, prénom en premier). */
+  auteur: string
+  /** Photo de profil publique ; sinon avatar illustré (par index). */
+  photo?: string
+}
 
-// Attribution neutre par défaut (aucun nom fourni par les parents).
-const AUTEUR_DEFAUT = 'Parent d’un enfant du club'
+/**
+ * Chemin de photo d'avis accepté : un fichier du dossier public dédié. Une
+ * saisie hors de ce dossier est ignorée (l'avatar illustré prend le relais)
+ * plutôt que de produire une image cassée.
+ */
+const PHOTO_AVIS = /^\/assets\/ksc\/avis\/[a-z0-9-]+\.(webp|jpg|png)$/
+const photoValide = (chemin: unknown): string | undefined =>
+  typeof chemin === 'string' && PHOTO_AVIS.test(chemin) ? chemin : undefined
+
+/** Retrouve l'avis fichier correspondant à un doc (appariement par le texte). */
+const avisFichier = (texte: unknown) => {
+  const debut = String(texte ?? '').slice(0, 40)
+  return debut.length > 0 ? AVIS.find((a) => a.texte.startsWith(debut)) : undefined
+}
 
 export const getAvis = cache(async (): Promise<AvisVue[]> => {
   const docs = await depuisPayload('avis', async (payload) => {
     const { docs } = await payload.find({ collection: 'avis', limit: 100, sort: 'ordre' })
     return docs
   })
-  if (!docs) return AVIS.map((texte) => ({ texte, auteur: AUTEUR_DEFAUT }))
-  return docs.map((d) => ({ texte: d.texte, auteur: texteOu(d.auteur, AUTEUR_DEFAUT) }))
+  if (!docs) return AVIS.map((a) => ({ texte: a.texte, auteur: a.auteur, photo: a.photo }))
+  // Auteur et photo sont ADDITIFS : tant que la base ne les porte pas, chacun
+  // retombe sur le fichier de données, avis par avis (appariement par le début
+  // du texte, comme scripts/maj-avis-reels.mjs).
+  return docs.map((d) => {
+    const fichier = avisFichier(d.texte)
+    return {
+      texte: d.texte,
+      auteur: texteOu(d.auteur, fichier?.auteur ?? ''),
+      photo: photoValide(d.photo) ?? fichier?.photo,
+    }
+  })
 })
 
 // ---------------------------------------------------------------------------

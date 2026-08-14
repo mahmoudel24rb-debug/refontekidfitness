@@ -18,6 +18,7 @@ export default async function AvisParents() {
             Avis de parents
           </SectionHeading>
         </div>
+        {/* 6 avis Google : 3 colonnes x 2 rangées sur grand écran. */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {avis.map((a, i) => (
             <Card key={i} className="gap-0 p-8">
@@ -29,9 +30,9 @@ export default async function AvisParents() {
               <blockquote className="mb-[18px] flex-1 text-[15.5px] leading-relaxed text-ink">
                 « {a.texte} »
               </blockquote>
-              {/* Pied de carte : avatar illustré + auteur */}
+              {/* Pied de carte : photo du parent (ou avatar illustré) + nom */}
               <div className="flex items-center gap-3 border-t border-border pt-4">
-                <AvisAvatar index={i} />
+                <AvisAvatar index={i} photo={a.photo} />
                 <p className="text-sm font-bold text-marine">{a.auteur}</p>
               </div>
             </Card>
