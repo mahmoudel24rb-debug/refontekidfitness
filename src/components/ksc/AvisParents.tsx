@@ -32,7 +32,7 @@ export default async function AvisParents() {
               </blockquote>
               {/* Pied de carte : photo du parent (ou avatar illustré) + nom */}
               <div className="flex items-center gap-3 border-t border-border pt-4">
-                <AvisAvatar index={i} photo={a.photo} />
+                <AvisAvatar auteur={a.auteur} index={i} photo={a.photo} />
                 <p className="text-sm font-bold text-marine">{a.auteur}</p>
               </div>
             </Card>

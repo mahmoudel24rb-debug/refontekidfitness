@@ -299,7 +299,7 @@ export default async function Landing({ slug }: { slug: string }) {
                   </div>
                   <blockquote className="text-[15px] leading-relaxed">«&nbsp;{a.texte}&nbsp;»</blockquote>
                   <figcaption className="mt-auto flex items-center gap-3 text-sm font-semibold text-marine">
-                    <AvisAvatar index={index} photo={a.photo} size={36} />
+                    <AvisAvatar auteur={a.auteur} index={index} photo={a.photo} size={36} />
                     {a.auteur}
                   </figcaption>
                 </figure>

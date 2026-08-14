@@ -47,7 +47,7 @@ export default async function PullQuote({
         </blockquote>
         {/* Attribution : nom réel du parent + sa photo (même avatar que les cartes d'avis) */}
         <div className="mt-5 flex flex-col items-center gap-2">
-          <AvisAvatar index={avisIndex} photo={source.photo} size={44} />
+          <AvisAvatar auteur={source.auteur} index={avisIndex} photo={source.photo} size={44} />
           <p className="text-sm font-semibold text-muted-foreground">{source.auteur}</p>
         </div>
         <div className="mt-8">
