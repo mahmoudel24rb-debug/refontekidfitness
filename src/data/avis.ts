@@ -1,9 +1,9 @@
-// Avis de parents (home, séance d'essai, landings) — 6 avis Google 5 étoiles
+// Avis de parents (home, séance d'essai, landings) : 6 avis Google 5 étoiles
 // RÉELS de la fiche du club, avec le nom et la photo publics de leur auteur.
 //
 // Les TROIS PREMIERS textes proviennent du récap client (versions relues par le
 // club des avis de Céline, Cécile Poirier et Marion Dreux) : ils sont recopiés
-// au caractère près et NE DOIVENT PAS ÊTRE MODIFIÉS — les extraits mis en scène
+// au caractère près et NE DOIVENT PAS ÊTRE MODIFIÉS : les extraits mis en scène
 // par PullQuote (src/data/landings.ts, SeanceEssai) sont des sous-chaînes
 // exactes de ces textes et la citation se masque au moindre écart.
 //
