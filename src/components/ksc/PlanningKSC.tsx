@@ -8,13 +8,26 @@ import CtaBand from './CtaBand'
 import WaveDivider from './WaveDivider'
 import Section from './Section'
 import Container from './Container'
-import PlanningCalendarKSC from './PlanningCalendarKSC'
+import CalendrierPlanning from './CalendrierPlanning'
 import { getPlanningPlat } from '@/lib/contenu'
+import { heureEnMinutes, type CreneauCal } from '@/lib/planningLayout'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 
 export default async function PlanningKSC() {
-  const creneaux = await getPlanningPlat()
+  const plat = await getPlanningPlat()
+  // Passage à la forme attendue par le calendrier : un identifiant stable et
+  // l'heure convertie en minutes (le composant client ne fait aucun parsing).
+  const creneaux: CreneauCal[] = plat.map((c, i) => ({
+    id: `${c.jour}-${c.heure}-${c.activite}-${i}`,
+    jour: c.jour,
+    salle: c.salle,
+    activite: c.activite,
+    heure: c.heure,
+    debutMin: heureEnMinutes(c.heure),
+    duree: c.duree,
+    age: c.age,
+  }))
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -38,9 +51,10 @@ export default async function PlanningKSC() {
 
         <Section tone="cream" className="overflow-visible">
           <Container>
-            {/* Calendrier de la semaine : 6 colonnes, tri par heure, couleurs
-                par tranche d'âge (le rendu détaillé vit dans son composant). */}
-            <PlanningCalendarKSC creneaux={creneaux} />
+            {/* Calendrier « Semaine type » : vues Semaine / Jour / Liste, blocs
+                posés à la minute, couleurs par tranche d'âge (le rendu détaillé
+                vit dans CalendrierPlanning et ses composants enfants). */}
+            <CalendrierPlanning creneaux={creneaux} />
             <p className="mt-7 text-center text-sm italic text-muted-foreground">
               Planning de la rentrée de septembre 2026, susceptible d’évoluer.
             </p>
