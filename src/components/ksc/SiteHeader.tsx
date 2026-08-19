@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { ChevronDown, Menu } from 'lucide-react'
+import { ChevronDown, Menu, Plus } from 'lucide-react'
 import { NavigationMenu as NavigationMenuPrimitive } from 'radix-ui'
 
 import {
@@ -237,24 +237,48 @@ export default function SiteHeader() {
                   {item.sub && (
                     <div className="mb-2 flex flex-col border-l-2 border-magenta pl-4">
                       {item.sub.map((s) => (
-                        <div key={s.href}>
-                          <a href={s.href} aria-current={current(s.href)} className={mobileSubLinkCls}>
+                        // La ligne est `relative` pour recevoir le chevron : le
+                        // NOM reste un lien direct vers la fiche de la tranche,
+                        // le TOGGLE est un <summary> distinct posé à sa droite
+                        // (les deux ne doivent pas se disputer le même tap).
+                        <div key={s.href} className="relative">
+                          <a
+                            href={s.href}
+                            aria-current={current(s.href)}
+                            className={cn(mobileSubLinkCls, 'block', s.disciplines?.length && 'pr-11')}
+                          >
                             {s.label}
                           </a>
-                          {/* Activités de la tranche : simple liste indentée. */}
+                          {/* Activités de la tranche : repliées par défaut.
+                              Idiome maison details/summary (cf. Faq.tsx), pas de
+                              dépendance supplémentaire. Le <summary> est bien le
+                              premier enfant du <details> (HTML valide) et n'est
+                              superposé à la ligne que visuellement ; la liste,
+                              elle, se déplie dans le flux, sous la ligne. */}
                           {s.disciplines && s.disciplines.length > 0 && (
-                            <ul className="mb-1 flex flex-col pl-3.5">
-                              {s.disciplines.map((d) => (
-                                <li key={d.href}>
-                                  <a
-                                    href={d.href}
-                                    className="block py-1 text-[14px] font-medium text-muted-foreground"
-                                  >
-                                    {d.label}
-                                  </a>
-                                </li>
-                              ))}
-                            </ul>
+                            <details className="group">
+                              <summary
+                                aria-label={`Afficher les activités ${s.label}`}
+                                className="absolute right-0 top-0 flex h-[38px] w-10 cursor-pointer list-none items-center justify-center rounded-full text-magenta [&::-webkit-details-marker]:hidden"
+                              >
+                                <Plus
+                                  aria-hidden="true"
+                                  className="size-[18px] transition-transform group-open:rotate-45"
+                                />
+                              </summary>
+                              <ul className="mb-1 flex flex-col pl-3.5">
+                                {s.disciplines.map((d) => (
+                                  <li key={d.href}>
+                                    <a
+                                      href={d.href}
+                                      className="block py-1 text-[14px] font-medium text-muted-foreground"
+                                    >
+                                      {d.label}
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            </details>
                           )}
                         </div>
                       ))}
