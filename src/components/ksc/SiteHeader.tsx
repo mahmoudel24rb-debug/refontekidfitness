@@ -87,15 +87,23 @@ export default function SiteHeader() {
           viewport={false}
           delayDuration={0}
           value={openMenu}
-          onValueChange={setOpenMenu}
+          // À la fermeture, la tranche survolée est oubliée : le panneau
+          // rouvre toujours vierge (pas de tranche surlignée, pas de volet
+          // droit), au lieu de rejouer le dernier survol.
+          onValueChange={(v) => {
+            setOpenMenu(v)
+            if (!v) setHoveredSub('')
+          }}
           className="hidden lg:flex"
         >
           <NavigationMenuList className="gap-8">
             {NAV.map((item) => {
-              // Volet droit : la tranche survolée/focalisée, à défaut la
-              // première tranche détaillée du sous-menu.
+              // Volet droit : UNIQUEMENT la tranche réellement survolée ou
+              // focalisée. Aucune présélection : tant que le visiteur n'a
+              // survolé aucune tranche, le panneau n'affiche que le volet
+              // gauche et rien n'est surligné.
               const detaillees = item.sub?.filter((s) => s.disciplines?.length) ?? []
-              const detail = detaillees.find((s) => s.href === hoveredSub) ?? detaillees[0]
+              const detail = detaillees.find((s) => s.href === hoveredSub)
               const detailHref = detail?.href
               return (
               <NavigationMenuItem key={item.href} value={item.href}>
@@ -115,10 +123,22 @@ export default function SiteHeader() {
                     </NavigationMenuPrimitive.Trigger>
                     {/* pt-3 = pont de survol entre le lien et le panneau.
                         Panneau à 2 volets : les activités à gauche, les
-                        activités détaillées de la tranche survolée à droite. */}
+                        activités détaillées de la tranche survolée à droite.
+                        Sans tranche survolée, le volet droit n'existe pas et le
+                        panneau se réduit à la largeur du volet gauche. */}
                     <NavigationMenuPrimitive.Content className="absolute top-full left-1/2 z-50 -translate-x-1/2 pt-3">
-                      <div className="flex w-[720px] max-w-[calc(100vw-40px)] rounded-lg border border-border bg-white shadow-md">
-                        <ul className="flex w-[46%] shrink-0 flex-col items-start gap-2.5 border-r border-border p-4">
+                      <div
+                        className={cn(
+                          'flex max-w-[calc(100vw-40px)] rounded-lg border border-border bg-white shadow-md',
+                          detail ? 'w-[720px]' : 'w-[330px]',
+                        )}
+                      >
+                        <ul
+                          className={cn(
+                            'flex flex-col items-start gap-2.5 p-4',
+                            detail ? 'w-[46%] shrink-0 border-r border-border' : 'w-full',
+                          )}
+                        >
                           {item.sub.map((s) => (
                             <li key={s.href}>
                               <NavigationMenuLink
@@ -143,9 +163,10 @@ export default function SiteHeader() {
                           ))}
                         </ul>
                         {/* Volet droit : activités de la tranche survolée. */}
+                        {detail && (
                         <div className="min-w-0 flex-1 bg-cream/60 p-4">
                           <p className="mb-2.5 px-1 text-[11px] font-extrabold uppercase tracking-[.06em] text-muted-foreground">
-                            {detail?.label ?? 'Au programme'}
+                            {detail.label}
                           </p>
                           {/* Libellés longs (« Accueil Assistantes Maternelles ») :
                               le `whitespace-nowrap` de navLinkCls est neutralisé par
@@ -153,7 +174,7 @@ export default function SiteHeader() {
                               whitespace-*), les colonnes sont en minmax(0,1fr) et
                               le lien passe en `block` pour que le texte s'y replie. */}
                           <ul className="grid grid-cols-[repeat(2,minmax(0,1fr))] gap-x-6 gap-y-2">
-                            {(detail?.disciplines ?? []).map((d) => (
+                            {(detail.disciplines ?? []).map((d) => (
                               <li key={d.href} className="min-w-0">
                                 <NavigationMenuLink
                                   asChild
@@ -169,6 +190,7 @@ export default function SiteHeader() {
                             ))}
                           </ul>
                         </div>
+                        )}
                       </div>
                     </NavigationMenuPrimitive.Content>
                   </>
