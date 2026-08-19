@@ -310,6 +310,19 @@ export interface Tarif {
    */
   detail: string;
   /**
+   * Points listés sous le prix, avec une coche magenta. Uniquement sur les cartes d’abonnement.
+   */
+  avantages?:
+    | {
+        texte: string;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Pastille en tête de carte. Vide : éclair par défaut.
+   */
+  icone?: ('zap' | 'layers2' | 'layers3' | 'carte') | null;
+  /**
    * Badge « La plus choisie » et bordure magenta. Une seule carte à la fois.
    */
   enAvant?: boolean | null;
@@ -617,6 +630,13 @@ export interface TarifsSelect<T extends boolean = true> {
   titre?: T;
   prix?: T;
   detail?: T;
+  avantages?:
+    | T
+    | {
+        texte?: T;
+        id?: T;
+      };
+  icone?: T;
   enAvant?: T;
   ordre?: T;
   updatedAt?: T;

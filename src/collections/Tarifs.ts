@@ -10,7 +10,7 @@ export const Tarifs: CollectionConfig = {
   labels: { singular: 'Tarif', plural: 'Tarifs' },
   admin: {
     useAsTitle: 'titre',
-    defaultColumns: ['titre', 'type', 'prix', 'enAvant', 'ordre'],
+    defaultColumns: ['titre', 'type', 'prix', 'icone', 'enAvant', 'ordre'],
     group: 'Contenu',
   },
   access: {
@@ -46,6 +46,32 @@ export const Tarifs: CollectionConfig = {
       type: 'text',
       required: true,
       admin: { description: 'Mention sous le prix. Ex. : « Engagement 10 mois ».' },
+    },
+    {
+      name: 'avantages',
+      label: 'Avantages',
+      type: 'array',
+      labels: { singular: 'Avantage', plural: 'Avantages' },
+      admin: {
+        description:
+          'Points listés sous le prix, avec une coche magenta. Uniquement sur les cartes d’abonnement.',
+      },
+      fields: [{ name: 'texte', label: 'Texte', type: 'text', required: true }],
+    },
+    {
+      name: 'icone',
+      label: 'Icône',
+      type: 'select',
+      options: [
+        { label: 'Éclair', value: 'zap' },
+        { label: 'Deux calques', value: 'layers2' },
+        { label: 'Trois calques', value: 'layers3' },
+        { label: 'Carte', value: 'carte' },
+      ],
+      admin: {
+        position: 'sidebar',
+        description: 'Pastille en tête de carte. Vide : éclair par défaut.',
+      },
     },
     {
       name: 'enAvant',
