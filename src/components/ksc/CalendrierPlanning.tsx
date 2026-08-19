@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
@@ -40,24 +40,39 @@ const VUES: { cle: Vue; libelle: string }[] = [
 const btnCls =
   'inline-flex items-center gap-2 rounded-full border border-transparent px-4 py-2 text-[14px] font-bold text-marine transition-colors duration-150 disabled:cursor-default disabled:opacity-45'
 
-export default function CalendrierPlanning({ creneaux }: CalendrierPlanningProps) {
-  const [vue, setVue] = useState<Vue>('semaine')
-  const [jourActif, setJourActif] = useState<string>(JOURS[0])
-  // Jour courant : calculé APRÈS montage uniquement. Le rendu serveur ne connaît
-  // pas le fuseau du visiteur, le calculer pendant le rendu créerait un
-  // décalage d'hydratation.
-  const [aujourdhui, setAujourdhui] = useState<string | null>(null)
-  const boutonsVue = useRef<(HTMLButtonElement | null)[]>([])
+// Deux valeurs n'existent qu'au navigateur : le jour courant (le serveur ne
+// connaît pas le fuseau du visiteur) et la largeur de l'écran. Elles sont lues
+// par useSyncExternalStore avec un instantané SERVEUR neutre — pas d'état posé
+// dans un effet, donc pas de rendu en cascade au montage ni d'écart
+// d'hydratation. Les fonctions vivent hors du composant pour rester stables.
+const AUCUN_ABONNEMENT = () => () => {}
 
-  useEffect(() => {
-    const index = new Date().getDay() // 0 = dimanche
-    const jour = index >= 1 && index <= 6 ? JOURS[index - 1] : null
-    setAujourdhui(jour)
-    if (jour) setJourActif(jour)
-    // Sur petit écran, la semaine complète est illisible d'un coup : on ouvre
-    // sur la vue Jour, positionnée sur le jour courant.
-    if (window.matchMedia('(max-width: 1023px)').matches) setVue('jour')
-  }, [])
+const jourCourant = (): string | null => {
+  const i = new Date().getDay() // 0 = dimanche
+  return i >= 1 && i <= 6 ? JOURS[i - 1] : null
+}
+const aucunJour = () => null
+
+const PETIT_ECRAN = '(max-width: 1023px)'
+const abonnerPetitEcran = (rappel: () => void) => {
+  const mq = window.matchMedia(PETIT_ECRAN)
+  mq.addEventListener('change', rappel)
+  return () => mq.removeEventListener('change', rappel)
+}
+const estPetitEcran = () => window.matchMedia(PETIT_ECRAN).matches
+const pasPetitEcran = () => false
+
+export default function CalendrierPlanning({ creneaux }: CalendrierPlanningProps) {
+  const aujourdhui = useSyncExternalStore(AUCUN_ABONNEMENT, jourCourant, aucunJour)
+  const petitEcran = useSyncExternalStore(abonnerPetitEcran, estPetitEcran, pasPetitEcran)
+
+  // Vue et jour : le choix explicite du visiteur l'emporte, sinon on retombe
+  // sur le défaut déduit du contexte (vue Jour sur petit écran, jour courant).
+  const [vueChoisie, setVueChoisie] = useState<Vue | null>(null)
+  const vue: Vue = vueChoisie ?? (petitEcran ? 'jour' : 'semaine')
+  const [jourChoisi, setJourChoisi] = useState<string | null>(null)
+  const jourActif = jourChoisi ?? aujourdhui ?? JOURS[0]
+  const boutonsVue = useRef<(HTMLButtonElement | null)[]>([])
 
   // Filtre : sélection vide = tout visible. Les bornes de l'axe et la légende
   // restent calculées sur l'ENSEMBLE des créneaux, pour que la grille ne se
@@ -120,7 +135,7 @@ export default function CalendrierPlanning({ creneaux }: CalendrierPlanningProps
   const indexJour = JOURS.indexOf(jourActif)
   const allerAuJour = (delta: number) => {
     const cible = indexJour + delta
-    if (cible >= 0 && cible < JOURS.length) setJourActif(JOURS[cible])
+    if (cible >= 0 && cible < JOURS.length) setJourChoisi(JOURS[cible])
   }
 
   // Groupe de boutons : une seule tabulation, flèches pour changer de vue
@@ -129,7 +144,7 @@ export default function CalendrierPlanning({ creneaux }: CalendrierPlanningProps
     if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return
     e.preventDefault()
     const suivant = (i + (e.key === 'ArrowRight' ? 1 : VUES.length - 1)) % VUES.length
-    setVue(VUES[suivant].cle)
+    setVueChoisie(VUES[suivant].cle)
     boutonsVue.current[suivant]?.focus()
   }
 
@@ -151,7 +166,7 @@ export default function CalendrierPlanning({ creneaux }: CalendrierPlanningProps
               }}
               aria-pressed={vue === v.cle}
               tabIndex={vue === v.cle ? 0 : -1}
-              onClick={() => setVue(v.cle)}
+              onClick={() => setVueChoisie(v.cle)}
               onKeyDown={(e) => naviguerVues(e, i)}
               className={cn(
                 btnCls,
@@ -166,7 +181,7 @@ export default function CalendrierPlanning({ creneaux }: CalendrierPlanningProps
           <span className="sr-only">Choisir la vue</span>
           <select
             value={vue}
-            onChange={(e) => setVue(e.target.value as Vue)}
+            onChange={(e) => setVueChoisie(e.target.value as Vue)}
             className="w-full cursor-pointer rounded-xl border border-border bg-white px-3.5 py-2.5 text-[15px] font-bold text-marine"
           >
             {VUES.map((v) => (
@@ -234,7 +249,7 @@ export default function CalendrierPlanning({ creneaux }: CalendrierPlanningProps
                 key={j}
                 type="button"
                 aria-pressed={j === jourActif}
-                onClick={() => setJourActif(j)}
+                onClick={() => setJourChoisi(j)}
                 className={cn(
                   'shrink-0 rounded-full border px-4 py-2 text-[14px] font-bold transition-colors duration-150',
                   j === jourActif
@@ -248,7 +263,16 @@ export default function CalendrierPlanning({ creneaux }: CalendrierPlanningProps
           </div>
           <button
             type="button"
-            onClick={() => aujourdhui && setJourActif(aujourdhui)}
+            onClick={() => allerAuJour(1)}
+            disabled={indexJour >= JOURS.length - 1}
+            aria-label="Jour suivant"
+            className="inline-flex size-9 shrink-0 items-center justify-center rounded-full border border-border bg-white text-marine disabled:opacity-35"
+          >
+            <ChevronRight className="size-[18px]" aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            onClick={() => aujourdhui && setJourChoisi(aujourdhui)}
             disabled={!aujourdhui}
             className={cn(btnCls, 'ml-auto border-border bg-white hover:bg-cream-2')}
           >

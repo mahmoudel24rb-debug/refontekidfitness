@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from 'react'
 import { ArrowRight } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
@@ -35,17 +35,25 @@ export type PopoverCreneauProps = {
 
 const MARGE = 10
 
+// Largeur d'écran : lue par useSyncExternalStore avec un instantané serveur
+// neutre (jamais de feuille basse dans le HTML rendu côté serveur) plutôt que
+// posée en état dans un effet. Fonctions hors composant pour rester stables.
+const FEUILLE = '(max-width: 639px)'
+const abonnerFeuille = (rappel: () => void) => {
+  const mq = window.matchMedia(FEUILLE)
+  mq.addEventListener('change', rappel)
+  return () => mq.removeEventListener('change', rappel)
+}
+const enFeuilleClient = () => window.matchMedia(FEUILLE).matches
+const enFeuilleServeur = () => false
+
 export default function PopoverCreneau({ creneau, rect, mode, onFermer }: PopoverCreneauProps) {
   const boite = useRef<HTMLDivElement>(null)
-  const [feuille, setFeuille] = useState(false)
+  const feuille = useSyncExternalStore(abonnerFeuille, enFeuilleClient, enFeuilleServeur)
   const [pos, setPos] = useState<{ top: number; left: number }>({
     top: rect.bottom + 8,
     left: rect.left,
   })
-
-  useEffect(() => {
-    setFeuille(window.matchMedia('(max-width: 639px)').matches)
-  }, [])
 
   useLayoutEffect(() => {
     if (feuille) return
