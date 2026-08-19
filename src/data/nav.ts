@@ -16,10 +16,11 @@ export type NavItem = {
   sub?: NavSubItem[]
 }
 
-// Nav principale (header). Pas d'entrée « Accueil » (le logo y renvoie) ni
+// Nav principale (header). Pas d'entrée « Accueil » (le logo y renvoie), ni
 // « Contact » (présent au footer, et le CTA « S'inscrire » y mène tant que
-// l'inscription en ligne n'est pas branchée) : le header est réservé aux deux
-// chemins de conversion — séance d'essai et inscription.
+// l'inscription en ligne n'est pas branchée), ni « Blog » (retiré du header à
+// la demande du client — il reste accessible depuis le footer) : le header est
+// réservé aux deux chemins de conversion — séance d'essai et inscription.
 export const NAV: NavItem[] = [
   { label: 'Qui sommes-nous', href: '/qui-sommes-nous' },
   {
@@ -41,14 +42,20 @@ export const NAV: NavItem[] = [
   { label: 'Tarifs', href: '/tarifs' },
   { label: 'Planning', href: '/planning' },
   { label: 'FAQ', href: '/faq' },
-  { label: 'Blog', href: '/blog' },
 ]
 
-// Colonne « Navigation » du footer : nav complète (Accueil en tête,
-// Contact et Séance d'essai en fin), sans les sous-menus.
+// Colonne « Navigation » du footer. Liste EXPLICITE, et non plus un spread de
+// NAV : le footer doit garder « Blog », que le header n'expose plus. Ordre
+// inchangé (Accueil en tête, Blog après FAQ, Contact et Séance d'essai en fin),
+// sans les sous-menus.
 export const FOOTER_NAV: { label: string; href: string }[] = [
   { label: 'Accueil', href: '/' },
-  ...NAV.map(({ label, href }) => ({ label, href })),
+  { label: 'Qui sommes-nous', href: '/qui-sommes-nous' },
+  { label: 'Nos activités', href: '/nos-prestations' },
+  { label: 'Tarifs', href: '/tarifs' },
+  { label: 'Planning', href: '/planning' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
   { label: 'Séance d’essai', href: '/seance-essai' },
 ]

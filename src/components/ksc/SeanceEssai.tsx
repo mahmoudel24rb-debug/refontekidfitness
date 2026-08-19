@@ -9,7 +9,7 @@ import LeadForm from './LeadForm'
 import PullQuote from './PullQuote'
 import LandingTeam from './LandingTeam'
 import AvisParents from './AvisParents'
-import { getParametres } from '@/lib/contenu'
+import { getParametres, getPrestations } from '@/lib/contenu'
 
 // Points de réassurance — reformulés à partir du texte existant de la page
 // (« La séance d'essai est gratuite. Votre demande est traitée directement par
@@ -17,7 +17,13 @@ import { getParametres } from '@/lib/contenu'
 const POINTS = ['Gratuite et sans engagement', 'Réponse rapide de l’équipe', 'On vous trouve le bon créneau']
 
 export default async function SeanceEssai() {
-  const { coordonnees, horaires } = await getParametres()
+  const [{ coordonnees, horaires }, prestations] = await Promise.all([
+    getParametres(),
+    getPrestations(),
+  ])
+  // Les 7 prestations, dans l'ordre du catalogue : le parent dit ce qu'il veut
+  // faire tester, l'équipe rappelle avec le bon créneau en tête.
+  const activites = prestations.map((p) => p.titre)
   return (
     <>
       <SiteHeader />
@@ -34,7 +40,12 @@ export default async function SeanceEssai() {
           <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[7fr_5fr] lg:gap-14">
             {/* Formulaire unifié (LeadForm) + rappel téléphone sous le form */}
             <div>
-              <LeadForm source="seance-essai" withEmail ctaLabel="Demander ma séance d’essai" />
+              <LeadForm
+                source="seance-essai"
+                withEmail
+                activites={activites}
+                ctaLabel="Demander ma séance d’essai"
+              />
               <p className="mt-4 text-center text-[13px] opacity-70">Ou appelez-nous au {coordonnees.telephone}.</p>
             </div>
 

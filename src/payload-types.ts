@@ -272,6 +272,10 @@ export interface Planning {
   heure: string;
   activite: string;
   /**
+   * Hauteur du bloc dans le calendrier de la semaine. 60 minutes par défaut ; à ajuster si le cours dure 45 ou 90 minutes.
+   */
+  duree?: number | null;
+  /**
    * Optionnelle. Elle affiche la pastille d’âge et fait remonter le créneau dans le formulaire des fiches activités.
    */
   age?: ('10-36 mois' | '3-5 ans' | '6-14 ans') | null;
@@ -305,6 +309,19 @@ export interface Tarif {
    * Mention sous le prix. Ex. : « Engagement 10 mois ».
    */
   detail: string;
+  /**
+   * Points listés sous le prix, avec une coche magenta. Uniquement sur les cartes d’abonnement.
+   */
+  avantages?:
+    | {
+        texte: string;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Pastille en tête de carte. Vide : éclair par défaut.
+   */
+  icone?: ('zap' | 'layers2' | 'layers3' | 'carte') | null;
   /**
    * Badge « La plus choisie » et bordure magenta. Une seule carte à la fois.
    */
@@ -597,6 +614,7 @@ export interface PlanningSelect<T extends boolean = true> {
   salle?: T;
   heure?: T;
   activite?: T;
+  duree?: T;
   age?: T;
   ordre?: T;
   actif?: T;
@@ -612,6 +630,13 @@ export interface TarifsSelect<T extends boolean = true> {
   titre?: T;
   prix?: T;
   detail?: T;
+  avantages?:
+    | T
+    | {
+        texte?: T;
+        id?: T;
+      };
+  icone?: T;
   enAvant?: T;
   ordre?: T;
   updatedAt?: T;

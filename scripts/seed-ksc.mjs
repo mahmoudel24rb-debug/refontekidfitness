@@ -82,6 +82,8 @@ async function run() {
           heure: c.heure,
           activite: c.activite,
           ...(c.age ? { age: c.age } : {}),
+          // Duree du bloc dans le calendrier de la semaine (60 min par defaut).
+          duree: c.duree ?? 60,
           ordre: ordre++,
           actif: true,
         })
@@ -100,6 +102,8 @@ async function run() {
         titre: t.titre,
         prix: t.prix,
         detail: t.detail,
+        avantages: (t.avantages ?? []).map((texte) => ({ texte })),
+        ...(t.icone ? { icone: t.icone } : {}),
         enAvant: t.titre === FEATURED_TITRE,
         ordre: i,
       })),
@@ -108,6 +112,8 @@ async function run() {
         titre: t.titre,
         prix: t.prix,
         detail: t.detail,
+        avantages: (t.avantages ?? []).map((texte) => ({ texte })),
+        ...(t.icone ? { icone: t.icone } : {}),
         enAvant: false,
         ordre: i,
       })),

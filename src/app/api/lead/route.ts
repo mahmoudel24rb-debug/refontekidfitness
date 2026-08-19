@@ -15,6 +15,8 @@ type LeadPayload = {
   telephone?: string
   email?: string
   ageEnfant?: string
+  /** Activité que le parent veut faire tester (page Séance d'essai). */
+  activite?: string
   creneau?: string
   message?: string
   utm?: Partial<Record<'source' | 'medium' | 'campaign' | 'content' | 'term', string>>
@@ -47,6 +49,7 @@ export async function POST(req: Request) {
     telephone: borné(body.telephone, MAX.court),
     email: borné(body.email, MAX.court) || undefined,
     ageEnfant: borné(body.ageEnfant, MAX.court) || undefined,
+    activite: borné(body.activite, MAX.court) || undefined,
     creneau: borné(body.creneau, MAX.court) || undefined,
     message: borné(body.message, MAX.message) || undefined,
     utm: {

@@ -151,7 +151,14 @@ export type CreneauPlat = {
   heure: string
   activite: string
   age?: string
+  /** Durée en minutes (60 par défaut) : hauteur du bloc dans le calendrier. */
+  duree: number
 }
+
+/** Durée d'un créneau : le champ Payload/fichier s'il est renseigné, sinon 60. */
+const DUREE_DEFAUT = 60
+const duree = (valeur: unknown) =>
+  typeof valeur === 'number' && valeur > 0 ? valeur : DUREE_DEFAUT
 
 const JOURS = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
 const indexJour = (jour: string) => {
@@ -178,6 +185,7 @@ export const getPlanningPlat = cache(async (): Promise<CreneauPlat[]> => {
         heure: d.heure,
         activite: d.activite,
         age: d.age ?? undefined,
+        duree: duree(d.duree),
       }))
     : // Fallback : aplatissement de la structure jour -> salles -> créneaux.
       PLANNING.flatMap((j) =>
@@ -188,6 +196,7 @@ export const getPlanningPlat = cache(async (): Promise<CreneauPlat[]> => {
             heure: c.heure,
             activite: c.activite,
             age: c.age,
+            duree: duree(c.duree),
           })),
         ),
       )
@@ -216,7 +225,7 @@ export const getPlanning = cache(async (): Promise<JourPlanning[]> => {
       salle = { salle: c.salle, creneaux: [] }
       jour.salles.push(salle)
     }
-    salle.creneaux.push({ heure: c.heure, activite: c.activite, age: c.age })
+    salle.creneaux.push({ heure: c.heure, activite: c.activite, age: c.age, duree: c.duree })
   }
   return jours
 })
@@ -225,7 +234,7 @@ export const getPlanning = cache(async (): Promise<JourPlanning[]> => {
 // Tarifs
 // ---------------------------------------------------------------------------
 
-export type TarifVue = Tarif & { enAvant: boolean }
+export type TarifVue = Tarif & { avantages: string[]; enAvant: boolean }
 
 export type TarifsVue = {
   abonnements: TarifVue[]
@@ -240,22 +249,36 @@ export const getTarifs = cache(async (): Promise<TarifsVue> => {
 
   if (!docs) {
     // `FEATURED_TITRE` (data/tarifs.ts) devient la case « Mettre en avant ».
-    const marquer = (t: Tarif): TarifVue => ({ ...t, enAvant: t.titre === FEATURED_TITRE })
+    const marquer = (t: Tarif): TarifVue => ({
+      ...t,
+      avantages: t.avantages ?? [],
+      enAvant: t.titre === FEATURED_TITRE,
+    })
     return {
       abonnements: ABONNEMENTS.map(marquer),
       prestations: PRESTATIONS_TARIFS.map(marquer),
     }
   }
 
+  // Avantages et icône sont ADDITIFS : tant que la base ne les porte pas,
+  // chacun retombe sur le fichier de données, tarif par tarif (appariement par
+  // le titre, comme scripts/fill-avantages-tarifs.mjs).
+  const FICHIER = [...ABONNEMENTS, ...PRESTATIONS_TARIFS]
   const vue = (type: 'abonnement' | 'prestation') =>
     docs
       .filter((d) => d.type === type)
-      .map((d) => ({
-        titre: d.titre,
-        prix: d.prix,
-        detail: d.detail,
-        enAvant: Boolean(d.enAvant),
-      }))
+      .map((d) => {
+        const fichier = FICHIER.find((t) => t.titre === d.titre)
+        const avantages = (d.avantages ?? []).map((a) => a.texte).filter(Boolean)
+        return {
+          titre: d.titre,
+          prix: d.prix,
+          detail: d.detail,
+          avantages: avantages.length > 0 ? avantages : (fichier?.avantages ?? []),
+          icone: (d.icone ?? undefined) ?? fichier?.icone,
+          enAvant: Boolean(d.enAvant),
+        }
+      })
 
   return { abonnements: vue('abonnement'), prestations: vue('prestation') }
 })

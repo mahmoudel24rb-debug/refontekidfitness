@@ -11,7 +11,7 @@ export const Planning: CollectionConfig = {
   labels: { singular: 'Créneau', plural: 'Planning' },
   admin: {
     useAsTitle: 'activite',
-    defaultColumns: ['jour', 'salle', 'heure', 'activite', 'age', 'ordre', 'actif'],
+    defaultColumns: ['jour', 'salle', 'heure', 'activite', 'age', 'duree', 'ordre', 'actif'],
     group: 'Contenu',
     description: 'Un créneau par ligne. L’ordre s’applique à l’intérieur de chaque journée.',
   },
@@ -47,6 +47,19 @@ export const Planning: CollectionConfig = {
       admin: { description: 'Ex. : 10h30, 17h, 9h15.' },
     },
     { name: 'activite', label: 'Activité', type: 'text', required: true },
+    {
+      name: 'duree',
+      label: 'Durée (minutes)',
+      type: 'number',
+      defaultValue: 60,
+      min: 15,
+      max: 600,
+      admin: {
+        position: 'sidebar',
+        description:
+          'Hauteur du bloc dans le calendrier de la semaine. 60 minutes par défaut ; à ajuster si le cours dure 45 ou 90 minutes.',
+      },
+    },
     {
       name: 'age',
       label: 'Tranche d’âge',

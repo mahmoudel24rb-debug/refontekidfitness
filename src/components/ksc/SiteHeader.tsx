@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { ChevronDown, Menu } from 'lucide-react'
+import { ChevronDown, Menu, Plus } from 'lucide-react'
 import { NavigationMenu as NavigationMenuPrimitive } from 'radix-ui'
 
 import {
@@ -13,6 +13,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from '@/components/ui/navigation-menu'
+import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { NAV } from '@/data/nav'
 import { cn } from '@/lib/utils'
@@ -87,15 +88,23 @@ export default function SiteHeader() {
           viewport={false}
           delayDuration={0}
           value={openMenu}
-          onValueChange={setOpenMenu}
+          // À la fermeture, la tranche survolée est oubliée : le panneau
+          // rouvre toujours vierge (pas de tranche surlignée, pas de volet
+          // droit), au lieu de rejouer le dernier survol.
+          onValueChange={(v) => {
+            setOpenMenu(v)
+            if (!v) setHoveredSub('')
+          }}
           className="hidden lg:flex"
         >
           <NavigationMenuList className="gap-8">
             {NAV.map((item) => {
-              // Volet droit : la tranche survolée/focalisée, à défaut la
-              // première tranche détaillée du sous-menu.
+              // Volet droit : UNIQUEMENT la tranche réellement survolée ou
+              // focalisée. Aucune présélection : tant que le visiteur n'a
+              // survolé aucune tranche, le panneau n'affiche que le volet
+              // gauche et rien n'est surligné.
               const detaillees = item.sub?.filter((s) => s.disciplines?.length) ?? []
-              const detail = detaillees.find((s) => s.href === hoveredSub) ?? detaillees[0]
+              const detail = detaillees.find((s) => s.href === hoveredSub)
               const detailHref = detail?.href
               return (
               <NavigationMenuItem key={item.href} value={item.href}>
@@ -115,10 +124,22 @@ export default function SiteHeader() {
                     </NavigationMenuPrimitive.Trigger>
                     {/* pt-3 = pont de survol entre le lien et le panneau.
                         Panneau à 2 volets : les activités à gauche, les
-                        activités détaillées de la tranche survolée à droite. */}
+                        activités détaillées de la tranche survolée à droite.
+                        Sans tranche survolée, le volet droit n'existe pas et le
+                        panneau se réduit à la largeur du volet gauche. */}
                     <NavigationMenuPrimitive.Content className="absolute top-full left-1/2 z-50 -translate-x-1/2 pt-3">
-                      <div className="flex w-[720px] max-w-[calc(100vw-40px)] rounded-lg border border-border bg-white shadow-md">
-                        <ul className="flex w-[46%] shrink-0 flex-col items-start gap-2.5 border-r border-border p-4">
+                      <div
+                        className={cn(
+                          'flex max-w-[calc(100vw-40px)] rounded-lg border border-border bg-white shadow-md',
+                          detail ? 'w-[720px]' : 'w-[330px]',
+                        )}
+                      >
+                        <ul
+                          className={cn(
+                            'flex flex-col items-start gap-2.5 p-4',
+                            detail ? 'w-[46%] shrink-0 border-r border-border' : 'w-full',
+                          )}
+                        >
                           {item.sub.map((s) => (
                             <li key={s.href}>
                               <NavigationMenuLink
@@ -143,9 +164,10 @@ export default function SiteHeader() {
                           ))}
                         </ul>
                         {/* Volet droit : activités de la tranche survolée. */}
+                        {detail && (
                         <div className="min-w-0 flex-1 bg-cream/60 p-4">
                           <p className="mb-2.5 px-1 text-[11px] font-extrabold uppercase tracking-[.06em] text-muted-foreground">
-                            {detail?.label ?? 'Au programme'}
+                            {detail.label}
                           </p>
                           {/* Libellés longs (« Accueil Assistantes Maternelles ») :
                               le `whitespace-nowrap` de navLinkCls est neutralisé par
@@ -153,7 +175,7 @@ export default function SiteHeader() {
                               whitespace-*), les colonnes sont en minmax(0,1fr) et
                               le lien passe en `block` pour que le texte s'y replie. */}
                           <ul className="grid grid-cols-[repeat(2,minmax(0,1fr))] gap-x-6 gap-y-2">
-                            {(detail?.disciplines ?? []).map((d) => (
+                            {(detail.disciplines ?? []).map((d) => (
                               <li key={d.href} className="min-w-0">
                                 <NavigationMenuLink
                                   asChild
@@ -169,6 +191,7 @@ export default function SiteHeader() {
                             ))}
                           </ul>
                         </div>
+                        )}
                       </div>
                     </NavigationMenuPrimitive.Content>
                   </>
@@ -185,11 +208,12 @@ export default function SiteHeader() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* CTAs desktop */}
+        {/* CTAs desktop : les deux chemins de conversion, en boutons — l'essai
+            en outline marine (secondaire), l'inscription en magenta plein. */}
         <div className="hidden items-center gap-[22px] lg:flex">
-          <a href="/seance-essai" aria-current={current('/seance-essai')} className={cn(navLinkCls, 'font-bold')}>
-            Séance d’essai
-          </a>
+          <Button asChild variant="outline" size="sm">
+            <a href="/seance-essai">Séance d’essai</a>
+          </Button>
           <InscriptionCTA size="sm" />
         </div>
 
@@ -215,24 +239,48 @@ export default function SiteHeader() {
                   {item.sub && (
                     <div className="mb-2 flex flex-col border-l-2 border-magenta pl-4">
                       {item.sub.map((s) => (
-                        <div key={s.href}>
-                          <a href={s.href} aria-current={current(s.href)} className={mobileSubLinkCls}>
+                        // La ligne est `relative` pour recevoir le chevron : le
+                        // NOM reste un lien direct vers la fiche de la tranche,
+                        // le TOGGLE est un <summary> distinct posé à sa droite
+                        // (les deux ne doivent pas se disputer le même tap).
+                        <div key={s.href} className="relative">
+                          <a
+                            href={s.href}
+                            aria-current={current(s.href)}
+                            className={cn(mobileSubLinkCls, 'block', s.disciplines?.length && 'pr-11')}
+                          >
                             {s.label}
                           </a>
-                          {/* Activités de la tranche : simple liste indentée. */}
+                          {/* Activités de la tranche : repliées par défaut.
+                              Idiome maison details/summary (cf. Faq.tsx), pas de
+                              dépendance supplémentaire. Le <summary> est bien le
+                              premier enfant du <details> (HTML valide) et n'est
+                              superposé à la ligne que visuellement ; la liste,
+                              elle, se déplie dans le flux, sous la ligne. */}
                           {s.disciplines && s.disciplines.length > 0 && (
-                            <ul className="mb-1 flex flex-col pl-3.5">
-                              {s.disciplines.map((d) => (
-                                <li key={d.href}>
-                                  <a
-                                    href={d.href}
-                                    className="block py-1 text-[14px] font-medium text-muted-foreground"
-                                  >
-                                    {d.label}
-                                  </a>
-                                </li>
-                              ))}
-                            </ul>
+                            <details className="group">
+                              <summary
+                                aria-label={`Afficher les activités ${s.label}`}
+                                className="absolute right-0 top-0 flex h-[38px] w-10 cursor-pointer list-none items-center justify-center rounded-full text-magenta [&::-webkit-details-marker]:hidden"
+                              >
+                                <Plus
+                                  aria-hidden="true"
+                                  className="size-[18px] transition-transform group-open:rotate-45"
+                                />
+                              </summary>
+                              <ul className="mb-1 flex flex-col pl-3.5">
+                                {s.disciplines.map((d) => (
+                                  <li key={d.href}>
+                                    <a
+                                      href={d.href}
+                                      className="block py-1 text-[14px] font-medium text-muted-foreground"
+                                    >
+                                      {d.label}
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            </details>
                           )}
                         </div>
                       ))}
@@ -240,13 +288,9 @@ export default function SiteHeader() {
                   )}
                 </div>
               ))}
-              <a
-                href="/seance-essai"
-                aria-current={current('/seance-essai')}
-                className="block py-3 text-base font-bold text-marine aria-[current=page]:text-magenta"
-              >
-                Séance d’essai
-              </a>
+              <Button asChild variant="outline" className="mt-3 w-full">
+                <a href="/seance-essai">Séance d’essai</a>
+              </Button>
               <InscriptionCTA className="mt-2 w-full" />
             </nav>
           </SheetContent>
