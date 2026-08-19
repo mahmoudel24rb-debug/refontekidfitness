@@ -82,6 +82,8 @@ async function run() {
           heure: c.heure,
           activite: c.activite,
           ...(c.age ? { age: c.age } : {}),
+          // Duree du bloc dans le calendrier de la semaine (60 min par defaut).
+          duree: c.duree ?? 60,
           ordre: ordre++,
           actif: true,
         })

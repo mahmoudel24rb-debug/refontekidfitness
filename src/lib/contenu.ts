@@ -151,7 +151,14 @@ export type CreneauPlat = {
   heure: string
   activite: string
   age?: string
+  /** Durée en minutes (60 par défaut) : hauteur du bloc dans le calendrier. */
+  duree: number
 }
+
+/** Durée d'un créneau : le champ Payload/fichier s'il est renseigné, sinon 60. */
+const DUREE_DEFAUT = 60
+const duree = (valeur: unknown) =>
+  typeof valeur === 'number' && valeur > 0 ? valeur : DUREE_DEFAUT
 
 const JOURS = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
 const indexJour = (jour: string) => {
@@ -178,6 +185,7 @@ export const getPlanningPlat = cache(async (): Promise<CreneauPlat[]> => {
         heure: d.heure,
         activite: d.activite,
         age: d.age ?? undefined,
+        duree: duree(d.duree),
       }))
     : // Fallback : aplatissement de la structure jour -> salles -> créneaux.
       PLANNING.flatMap((j) =>
@@ -188,6 +196,7 @@ export const getPlanningPlat = cache(async (): Promise<CreneauPlat[]> => {
             heure: c.heure,
             activite: c.activite,
             age: c.age,
+            duree: duree(c.duree),
           })),
         ),
       )
@@ -216,7 +225,7 @@ export const getPlanning = cache(async (): Promise<JourPlanning[]> => {
       salle = { salle: c.salle, creneaux: [] }
       jour.salles.push(salle)
     }
-    salle.creneaux.push({ heure: c.heure, activite: c.activite, age: c.age })
+    salle.creneaux.push({ heure: c.heure, activite: c.activite, age: c.age, duree: c.duree })
   }
   return jours
 })

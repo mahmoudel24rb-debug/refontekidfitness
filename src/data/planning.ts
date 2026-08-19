@@ -2,7 +2,9 @@
 // telles quelles. Activités enfants uniquement : les créneaux internes
 // (« Dispo Kid / IPMS ») et l'activité adulte « Pole Dance » ont été volontairement
 // omis à la demande du client — ne pas les ajouter.
-export type Creneau = { heure: string; activite: string; age?: string }
+// `duree` : minutes, pour la hauteur du bloc dans le calendrier de la semaine.
+// Absente = 60 minutes (valeur par défaut du champ Payload homonyme).
+export type Creneau = { heure: string; activite: string; age?: string; duree?: number }
 export type SallePlanning = { salle: string; creneaux: Creneau[] }
 export type JourPlanning = { jour: string; salles: SallePlanning[] }
 
