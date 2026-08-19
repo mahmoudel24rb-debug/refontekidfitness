@@ -13,6 +13,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from '@/components/ui/navigation-menu'
+import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { NAV } from '@/data/nav'
 import { cn } from '@/lib/utils'
@@ -207,11 +208,12 @@ export default function SiteHeader() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* CTAs desktop */}
+        {/* CTAs desktop : les deux chemins de conversion, en boutons — l'essai
+            en outline marine (secondaire), l'inscription en magenta plein. */}
         <div className="hidden items-center gap-[22px] lg:flex">
-          <a href="/seance-essai" aria-current={current('/seance-essai')} className={cn(navLinkCls, 'font-bold')}>
-            Séance d’essai
-          </a>
+          <Button asChild variant="outline" size="sm">
+            <a href="/seance-essai">Séance d’essai</a>
+          </Button>
           <InscriptionCTA size="sm" />
         </div>
 
@@ -286,13 +288,9 @@ export default function SiteHeader() {
                   )}
                 </div>
               ))}
-              <a
-                href="/seance-essai"
-                aria-current={current('/seance-essai')}
-                className="block py-3 text-base font-bold text-marine aria-[current=page]:text-magenta"
-              >
-                Séance d’essai
-              </a>
+              <Button asChild variant="outline" className="mt-3 w-full">
+                <a href="/seance-essai">Séance d’essai</a>
+              </Button>
               <InscriptionCTA className="mt-2 w-full" />
             </nav>
           </SheetContent>
