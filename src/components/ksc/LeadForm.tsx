@@ -33,13 +33,15 @@ type Props = {
   withEmail?: boolean
   /** Options de créneau (fiches prestation) : ajoute un <select> optionnel. */
   creneaux?: { value: string; label: string }[]
+  /** Activités proposées (page Séance d'essai) : ajoute un <select> optionnel. */
+  activites?: string[]
   /** id du <form> (défaut 'lead-form'). Le 2e formulaire de fin de page
    *  utilise 'lead-form-final' pour être observé par la StickyCtaBar. */
   formId?: string
   className?: string
 }
 
-export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compact, withEmail, creneaux, formId = 'lead-form', className }: Props) {
+export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compact, withEmail, creneaux, activites, formId = 'lead-form', className }: Props) {
   const [etat, setEtat] = useState<'idle' | 'envoi' | 'ok' | 'erreur'>('idle')
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -62,6 +64,7 @@ export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compac
           telephone: data.get('telephone'),
           email: data.get('email') || undefined,
           ageEnfant: data.get('ageEnfant') || undefined,
+          activite: data.get('activite') || undefined,
           creneau: data.get('creneau') || undefined,
           message: data.get('message') || undefined,
           website: data.get('website') || undefined,
@@ -104,6 +107,24 @@ export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compac
         <FormField id={`${source}-tel`} name="telephone" label="Téléphone" type="tel" required autoComplete="tel" />
         {withEmail && <FormField id={`${source}-email`} name="email" label="Email" type="email" autoComplete="email" />}
         <FormField id={`${source}-age`} name="ageEnfant" label="Âge de l’enfant" placeholder="ex. 4 ans" />
+        {activites && activites.length > 0 && (
+          <div className="grid gap-2">
+            <Label htmlFor={`${source}-activite`} className="text-sm font-semibold text-marine">
+              Quelle activité voulez-vous tester ? (optionnel)
+            </Label>
+            <select
+              id={`${source}-activite`}
+              name="activite"
+              defaultValue=""
+              className="h-[52px] rounded-xl border-[1.5px] border-input bg-[#fdfcf7] px-4 text-base text-ink"
+            >
+              <option value="">Je ne sais pas encore</option>
+              {activites.map((a) => (
+                <option key={a} value={a}>{a}</option>
+              ))}
+            </select>
+          </div>
+        )}
         {creneaux && creneaux.length > 0 && (
           <div className="grid gap-2">
             <Label htmlFor={`${source}-creneau`} className="text-sm font-semibold text-marine">
