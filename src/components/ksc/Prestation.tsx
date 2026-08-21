@@ -5,6 +5,7 @@ import { ArrowRight, Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, cardInteractive } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
+import { classesCarte } from '@/lib/grilleCartes'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import InscriptionCTA from './InscriptionCTA'
@@ -46,6 +47,7 @@ export default async function Prestation({ slug }: { slug: string }) {
   const autres = prestations.filter((x) => x.slug !== slug).slice(0, 3)
   const creneaux = creneauxPourPrestation(slug, planning)
   const estCours614 = slug === 'cours-6-10-ans' || slug === 'cours-11-14-ans'
+  const nbDisciplines = p.disciplines?.length ?? 0
 
   // Données structurées : fil d'Ariane + service local (SEO Rochecorbon).
   // NB : un schéma Event (stages/anniversaire) sera ajouté quand le client fournira des dates réelles.
@@ -138,7 +140,7 @@ export default async function Prestation({ slug }: { slug: string }) {
           </Card>
         </div>
 
-        {/* Les activités de la tranche d'âge (4 fiches cours uniquement).
+        {/* Les activités de la tranche d'âge (nombre variable selon la fiche).
             Chaque carte mène à la page de l'activité et conserve l'ancre
             historique (id = slug) pour les liens déjà diffusés. */}
         {p.disciplines && p.disciplines.length > 0 && (
@@ -148,13 +150,19 @@ export default async function Prestation({ slug }: { slug: string }) {
               <p className="mx-auto mb-9 max-w-[620px] text-center text-muted-foreground">
                 Ce que votre enfant pratique au fil des séances de cette tranche d’âge.
               </p>
-              <div className="grid gap-5 sm:grid-cols-2">
+              {/* Flux centré : la dernière rangée incomplète reste centrée
+                  (5 -> 2 + 2 + 1, 7 -> 2 + 2 + 2 + 1). */}
+              <div className="flex flex-wrap justify-center gap-5">
                 {p.disciplines.map((d) => (
                   <a
                     key={d.slug}
                     id={d.slug}
                     href={`/nos-prestations/${p.slug}/${d.slug}`}
-                    className={cn(cardLink, 'flex scroll-mt-24 flex-col p-6')}
+                    className={cn(
+                      cardLink,
+                      'flex scroll-mt-24 flex-col p-6',
+                      classesCarte(nbDisciplines, 2, 5),
+                    )}
                   >
                     <h3 className="mb-2 font-heading text-xl font-bold text-marine">{d.nom}</h3>
                     <p className="mb-3.5 flex-1 leading-relaxed text-ink">{d.accroche}</p>
@@ -212,9 +220,15 @@ export default async function Prestation({ slug }: { slug: string }) {
         <Section tone="cream2" className="mt-[70px]">
           <Container>
             <SectionHeading underline className="mb-7 text-center text-[26px]">Découvrez aussi</SectionHeading>
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {/* Flux centré : en tablette la 3e carte se centre sous les deux
+                premières au lieu de laisser un trou. */}
+            <div className="flex flex-wrap justify-center gap-5">
               {autres.map((a) => (
-                <a key={a.slug} href={`/nos-prestations/${a.slug}`} className={cn(cardLink, 'flex flex-col p-6')}>
+                <a
+                  key={a.slug}
+                  href={`/nos-prestations/${a.slug}`}
+                  className={cn(cardLink, 'flex flex-col p-6', classesCarte(autres.length, 3, 5))}
+                >
                   <h3 className="mb-2 font-heading text-[19px] font-bold text-marine">{a.titre}</h3>
                   <p className="mb-3.5 flex-1 text-[15px] leading-snug text-muted-foreground">{a.accroche}</p>
                   <span className="inline-flex items-center gap-1.5 font-bold text-magenta">
