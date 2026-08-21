@@ -53,7 +53,9 @@ function CarteTarif({ tarif, className }: { tarif: TarifVue; className?: string 
   return (
     <Card
       className={cn(
-        'h-full items-start gap-0 p-7',
+        // Pas de h-full : dans le flux flex centré, une hauteur explicite
+        // désactive l'étirement (stretch) qui égalise les cartes par rangée.
+        'items-start gap-0 p-7',
         featured && 'relative overflow-visible border-2 border-magenta',
         className,
       )}
