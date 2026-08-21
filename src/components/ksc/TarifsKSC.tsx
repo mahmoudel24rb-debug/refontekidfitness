@@ -156,7 +156,7 @@ export default async function TarifsKSC() {
             {/* Flux centré : 5 cartes -> 3 + 2 CENTRÉES en desktop, 2 + 2 + 1
                 centrée en tablette, jamais de case vide en bout de rangée. La
                 base Untitled passe à 3 colonnes en xl (1280) ; le conteneur KSC
-                plafonne à 1200px, la bascule est donc avancée à lg (1024) —
+                plafonne à 1200px, la bascule est donc avancée à lg (1024),
                 sinon un écran 1536 en zoom 125 % (1229 px CSS) resterait à
                 2 colonnes. Pas d'overflow-hidden ici : le badge « La plus
                 choisie » déborde en haut de sa carte. */}
