@@ -5,6 +5,8 @@ import { Check, Plus, Star } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { cn } from '@/lib/utils'
+import { classesCarte } from '@/lib/grilleCartes'
 import AvisAvatar from './AvisAvatar'
 import LeadForm from './LeadForm'
 import StickyCtaBar from './StickyCtaBar'
@@ -288,10 +290,18 @@ export default async function Landing({ slug }: { slug: string }) {
             <h2 className="mb-9 text-center font-heading text-[clamp(24px,3vw,34px)] font-extrabold text-marine">
               Avis de <Underline>parents</Underline>
             </h2>
-            {/* 6 avis : 3 colonnes x 2 rangées sur grand écran, 2 colonnes en tablette. */}
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {/* 6 avis : 3 colonnes x 2 rangées sur grand écran, 2 colonnes en
+                tablette. Flux centré pour que toute dernière rangée incomplète
+                reste centrée. */}
+            <div className="flex flex-wrap justify-center gap-6">
               {avis.map((a, index) => (
-                <figure key={a.texte.slice(0, 40)} className="flex flex-col gap-4 rounded-lg border border-border bg-card p-7 shadow-sm">
+                <figure
+                  key={a.texte.slice(0, 40)}
+                  className={cn(
+                    'flex flex-col gap-4 rounded-lg border border-border bg-card p-7 shadow-sm',
+                    classesCarte(avis.length, 3, 6),
+                  )}
+                >
                   <div className="flex gap-1" aria-label="5 étoiles sur 5">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star key={i} size={16} className="fill-magenta text-magenta" aria-hidden="true" />

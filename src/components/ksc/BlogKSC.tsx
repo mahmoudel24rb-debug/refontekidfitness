@@ -11,6 +11,7 @@ import Container from './Container'
 import CarteArticle, { MetaArticle, ReadMore, cardLink } from './CarteArticle'
 import { tempsLecture } from '@/data/articles'
 import { getArticles } from '@/lib/contenu'
+import { classesCarte } from '@/lib/grilleCartes'
 
 // Les briques de carte (MetaArticle, ReadMore, cardLink) vivent dans
 // CarteArticle : le « À lire aussi » d'un article rend exactement les mêmes.
@@ -77,9 +78,14 @@ export default async function BlogKSC() {
         {autres.length > 0 && (
           <Section tone="cream2">
             <Container>
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {/* Flux centré : la dernière rangée incomplète reste centrée. */}
+              <div className="flex flex-wrap justify-center gap-6">
                 {autres.map((a) => (
-                  <CarteArticle key={a.slug} article={a} />
+                  <CarteArticle
+                    key={a.slug}
+                    article={a}
+                    className={classesCarte(autres.length, 3, 6)}
+                  />
                 ))}
               </div>
             </Container>

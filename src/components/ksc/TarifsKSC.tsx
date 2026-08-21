@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
+import { classesCarte } from '@/lib/grilleCartes'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import InscriptionCTA from './InscriptionCTA'
@@ -47,13 +48,16 @@ function PastilleIcone({ icone }: { icone?: IconeTarif }) {
 }
 
 /** Une carte d'abonnement. */
-function CarteTarif({ tarif }: { tarif: TarifVue }) {
+function CarteTarif({ tarif, className }: { tarif: TarifVue; className?: string }) {
   const featured = tarif.enAvant
   return (
     <Card
       className={cn(
-        'h-full items-start gap-0 p-7',
+        // Pas de h-full : dans le flux flex centré, une hauteur explicite
+        // désactive l'étirement (stretch) qui égalise les cartes par rangée.
+        'items-start gap-0 p-7',
         featured && 'relative overflow-visible border-2 border-magenta',
+        className,
       )}
     >
       {featured && (
@@ -151,13 +155,20 @@ export default async function TarifsKSC() {
                 engagement. Dans tous les cas, la première séance d’essai est gratuite.
               </p>
             </div>
-            {/* 5 cartes : 3 puis 2 en desktop. La base Untitled passe à 3
-                colonnes en xl (1280) ; le conteneur KSC plafonne à 1200px, la
-                bascule est donc avancée à lg (1024) — sinon un écran 1536 en
-                zoom 125 % (1229 px CSS) resterait à 2 colonnes. */}
-            <div className="mt-12 grid w-full grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 lg:mt-16 lg:grid-cols-3">
+            {/* Flux centré : 5 cartes -> 3 + 2 CENTRÉES en desktop, 2 + 2 + 1
+                centrée en tablette, jamais de case vide en bout de rangée. La
+                base Untitled passe à 3 colonnes en xl (1280) ; le conteneur KSC
+                plafonne à 1200px, la bascule est donc avancée à lg (1024),
+                sinon un écran 1536 en zoom 125 % (1229 px CSS) resterait à
+                2 colonnes. Pas d'overflow-hidden ici : le badge « La plus
+                choisie » déborde en haut de sa carte. */}
+            <div className="mt-12 flex w-full flex-wrap justify-center gap-6 lg:mt-16">
               {tarifs.abonnements.map((t) => (
-                <CarteTarif key={t.titre} tarif={t} />
+                <CarteTarif
+                  key={t.titre}
+                  tarif={t}
+                  className={classesCarte(tarifs.abonnements.length, 3, 6)}
+                />
               ))}
             </div>
           </Container>

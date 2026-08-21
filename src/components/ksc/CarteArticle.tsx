@@ -51,16 +51,19 @@ export default function CarteArticle({
   niveau = 'h2',
   lignesExtrait = 3,
   sizes = '(min-width: 1024px) 380px, (min-width: 640px) 50vw, calc(100vw - 48px)',
+  className,
 }: {
   article: ArticleVue
   /** Niveau du titre, à accorder au plan de la page qui l'affiche. */
   niveau?: 'h2' | 'h3'
   lignesExtrait?: 2 | 3
   sizes?: string
+  /** Largeur imposée par la grille d'accueil (voir lib/grilleCartes). */
+  className?: string
 }) {
   const Titre = niveau
   return (
-    <a href={`/blog/${article.slug}`} className={cn(cardLink, 'flex flex-col')}>
+    <a href={`/blog/${article.slug}`} className={cn(cardLink, 'flex flex-col', className)}>
       <div className="relative aspect-[16/10]">
         <Image src={article.image} alt={article.titre} fill sizes={sizes} className="object-cover" />
       </div>
