@@ -3,6 +3,8 @@ import Image from 'next/image'
 
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
+import { classesCarte } from '@/lib/grilleCartes'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import HeroMarine from './HeroMarine'
@@ -70,9 +72,13 @@ export default async function QuiSommesNous() {
                 Des animateurs et coachs diplômés, formés à l’encadrement des enfants, qui mettent l’énergie et la bienveillance au cœur de chaque séance.
               </p>
             </div>
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {/* Flux centré : la dernière rangée incomplète reste centrée. */}
+            <div className="flex flex-wrap justify-center gap-5">
               {equipe.map((c) => (
-                <Card key={c.nom} className="items-center gap-3 p-8 text-center">
+                <Card
+                  key={c.nom}
+                  className={cn('items-center gap-3 p-8 text-center', classesCarte(equipe.length, 3, 5))}
+                >
                   {c.photo ? (
                     <Image
                       src={c.photo}

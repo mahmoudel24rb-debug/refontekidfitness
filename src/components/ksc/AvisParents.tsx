@@ -2,6 +2,8 @@ import React from 'react'
 import { Star } from 'lucide-react'
 
 import { Card } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
+import { classesCarte } from '@/lib/grilleCartes'
 import AvisAvatar from './AvisAvatar'
 import Kicker from './Kicker'
 import SectionHeading from './SectionHeading'
@@ -18,10 +20,11 @@ export default async function AvisParents() {
             Avis de parents
           </SectionHeading>
         </div>
-        {/* 6 avis Google : 3 colonnes x 2 rangées sur grand écran. */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* 6 avis Google : 3 colonnes x 2 rangées sur grand écran. Flux centré
+            pour que toute dernière rangée incomplète reste centrée. */}
+        <div className="flex flex-wrap justify-center gap-6">
           {avis.map((a, i) => (
-            <Card key={i} className="gap-0 p-8">
+            <Card key={i} className={cn('gap-0 p-8', classesCarte(avis.length, 3, 6))}>
               <div role="img" aria-label="5 étoiles sur 5" className="mb-4 flex gap-1">
                 {[0, 1, 2, 3, 4].map((s) => (
                   <Star key={s} aria-hidden="true" className="size-4 fill-magenta text-magenta" />

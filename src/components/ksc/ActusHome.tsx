@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
+import { classesCarte } from '@/lib/grilleCartes'
 import Kicker from './Kicker'
 import SectionHeading from './SectionHeading'
 import LinkArrow from './LinkArrow'
@@ -30,9 +32,11 @@ export default async function ActusHome() {
             <Link href="/blog">Tous les articles</Link>
           </Button>
         </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Flux centré : en tablette la 3e carte se centre sous les deux
+            premières au lieu de laisser un trou. */}
+        <div className="flex flex-wrap justify-center gap-6">
           {derniers.map((a) => (
-            <Card key={a.slug} className="gap-0 p-0">
+            <Card key={a.slug} className={cn('gap-0 p-0', classesCarte(derniers.length, 3, 6))}>
               <div className="relative aspect-[16/9]">
                 <Image
                   src={a.image}

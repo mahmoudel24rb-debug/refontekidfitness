@@ -13,6 +13,7 @@ import SectionHeading from './SectionHeading'
 import CarteArticle, { MetaArticle } from './CarteArticle'
 import { tempsLecture } from '@/data/articles'
 import { getArticles } from '@/lib/contenu'
+import { classesCarte } from '@/lib/grilleCartes'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 
@@ -113,9 +114,16 @@ export default async function Article({ slug }: { slug: string }) {
               <SectionHeading underline className="mb-7 text-center text-2xl">
                 À lire aussi
               </SectionHeading>
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {/* Flux centré : la dernière rangée incomplète reste centrée. */}
+              <div className="flex flex-wrap justify-center gap-6">
                 {autres.map((x) => (
-                  <CarteArticle key={x.slug} article={x} niveau="h3" lignesExtrait={2} />
+                  <CarteArticle
+                    key={x.slug}
+                    article={x}
+                    niveau="h3"
+                    lignesExtrait={2}
+                    className={classesCarte(autres.length, 3, 6)}
+                  />
                 ))}
               </div>
             </Container>

@@ -2,6 +2,8 @@ import React from 'react'
 import Image from 'next/image'
 
 import { Card } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
+import { classesCarte } from '@/lib/grilleCartes'
 import Section from './Section'
 import Container from './Container'
 import SectionHeading from './SectionHeading'
@@ -27,9 +29,13 @@ export default async function LandingTeam({
           </SectionHeading>
           <p className="text-[17px] text-ink">{INTRO}</p>
         </div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Flux centré : la dernière rangée incomplète reste centrée. */}
+        <div className="flex flex-wrap justify-center gap-5">
           {equipe.map((c) => (
-            <Card key={c.nom} className="items-center gap-3 p-8 text-center">
+            <Card
+              key={c.nom}
+              className={cn('items-center gap-3 p-8 text-center', classesCarte(equipe.length, 3, 5))}
+            >
               {c.photo ? (
                 <Image
                   src={c.photo}

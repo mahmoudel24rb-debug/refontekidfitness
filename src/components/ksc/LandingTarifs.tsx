@@ -3,6 +3,7 @@ import React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Card } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
+import { classesCarte } from '@/lib/grilleCartes'
 import Section from './Section'
 import Container from './Container'
 import SectionHeading from './SectionHeading'
@@ -35,7 +36,8 @@ export default async function LandingTarifs({
               <Card
                 key={t.titre}
                 className={cn(
-                  'w-full items-start gap-3 p-7 sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]',
+                  'items-start gap-3 p-7',
+                  classesCarte(tarifs.abonnements.length, 3, 5),
                   featured && 'relative overflow-visible border-2 border-magenta lg:scale-[1.03]',
                 )}
               >
