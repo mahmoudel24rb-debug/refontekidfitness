@@ -1,5 +1,5 @@
 import React from 'react'
-import { Check, CreditCard, Layers2, Layers3, Zap } from 'lucide-react'
+import { CalendarDays, Check, CreditCard, Layers2, Layers3, Sun, Zap } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -33,6 +33,8 @@ const ICONES: Record<IconeTarif, React.ComponentType<{ className?: string }>> = 
   layers2: Layers2,
   layers3: Layers3,
   carte: CreditCard,
+  calendrier: CalendarDays,
+  vacances: Sun,
 }
 
 function PastilleIcone({ icone }: { icone?: IconeTarif }) {

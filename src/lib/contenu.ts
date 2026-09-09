@@ -234,7 +234,7 @@ export const getPlanning = cache(async (): Promise<JourPlanning[]> => {
 // Tarifs
 // ---------------------------------------------------------------------------
 
-export type TarifVue = Tarif & { avantages: string[]; enAvant: boolean }
+export type TarifVue = Tarif & { avantages: string[]; enAvant: boolean; prioritaire: boolean }
 
 export type TarifsVue = {
   abonnements: TarifVue[]
@@ -253,6 +253,7 @@ export const getTarifs = cache(async (): Promise<TarifsVue> => {
       ...t,
       avantages: t.avantages ?? [],
       enAvant: t.titre === FEATURED_TITRE,
+      prioritaire: Boolean(t.prioritaire),
     })
     return {
       abonnements: ABONNEMENTS.map(marquer),
@@ -260,9 +261,10 @@ export const getTarifs = cache(async (): Promise<TarifsVue> => {
     }
   }
 
-  // Avantages et icône sont ADDITIFS : tant que la base ne les porte pas,
-  // chacun retombe sur le fichier de données, tarif par tarif (appariement par
-  // le titre, comme scripts/fill-avantages-tarifs.mjs).
+  // Avantages, icône et « formule prioritaire » sont ADDITIFS : tant que la base
+  // ne les porte pas, chacun retombe sur le fichier de données, tarif par tarif
+  // (appariement par le titre, comme scripts/fill-avantages-tarifs.mjs et
+  // scripts/fill-tarifs-prioritaires.mjs).
   const FICHIER = [...ABONNEMENTS, ...PRESTATIONS_TARIFS]
   const vue = (type: 'abonnement' | 'prestation') =>
     docs
@@ -277,6 +279,7 @@ export const getTarifs = cache(async (): Promise<TarifsVue> => {
           avantages: avantages.length > 0 ? avantages : (fichier?.avantages ?? []),
           icone: (d.icone ?? undefined) ?? fichier?.icone,
           enAvant: Boolean(d.enAvant),
+          prioritaire: Boolean(d.prioritaire ?? fichier?.prioritaire),
         }
       })
 
