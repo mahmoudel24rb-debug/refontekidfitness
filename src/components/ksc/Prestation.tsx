@@ -16,6 +16,7 @@ import Container from './Container'
 import SectionHeading from './SectionHeading'
 import Underline from './Underline'
 import LeadForm from './LeadForm'
+import DerouleJournee from './DerouleJournee'
 import { creneauxPourPrestation } from '@/data/creneaux'
 import { getParametres, getPlanningPlat, getPrestations, telephoneJsonLd } from '@/lib/contenu'
 
@@ -143,6 +144,12 @@ export default async function Prestation({ slug }: { slug: string }) {
             </div>
           </Card>
         </div>
+
+        {/* Déroulé de la journée : uniquement les fiches qui en ont un
+            (Mercredis Sportifs, Stages vacances). */}
+        {p.deroule && p.deroule.length > 0 && (
+          <DerouleJournee etapes={p.deroule} intro={p.derouleIntro} note={p.derouleNote} />
+        )}
 
         {/* Les activités de la tranche d'âge (nombre variable selon la fiche).
             Chaque carte mène à la page de l'activité et conserve l'ancre
