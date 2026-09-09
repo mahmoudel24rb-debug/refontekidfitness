@@ -157,7 +157,7 @@ export default async function TarifsKSC() {
           padding="72px 24px"
         />
 
-        {/* Nos formules — en-tête de section aligné à gauche puis grille de
+        {/* Nos formules : en-tête de section aligné à gauche puis grille de
             cartes complètes (les 4 formules prioritaires). */}
         <Section tone="cream">
           <Container>
@@ -181,7 +181,7 @@ export default async function TarifsKSC() {
           </Container>
         </Section>
 
-        {/* Autres formules — fond blanc, lignes compactes : ni pastille, ni
+        {/* Autres formules, fond blanc : lignes compactes, ni pastille, ni
             liste d'avantages, un simple lien d'inscription. */}
         <Section tone="white">
           <Container>
