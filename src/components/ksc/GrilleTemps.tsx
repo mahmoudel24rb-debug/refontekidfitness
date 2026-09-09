@@ -9,9 +9,12 @@ import {
   formatDuree,
   formatFin,
   formatHeure,
+  libelleReservation,
+  lienReservation,
   poserJour,
   sansHeure,
   type CreneauCal,
+  type LiensReservation,
 } from '@/lib/planningLayout'
 
 // Timeline du calendrier : en-têtes de jours, rangée « Horaire à confirmer »,
@@ -29,6 +32,10 @@ import {
 //
 // Tailles de police : jamais sous 13px, y compris dans un cluster à 3 colonnes
 // (le texte s'y coupe en ellipse, l'aperçu au survol donne le détail complet).
+//
+// Chaque bloc est un LIEN vers la réservation en ligne de sa tranche d'âge,
+// ouvert dans un nouvel onglet : le clic réserve, il n'ouvre plus de fiche.
+// L'aperçu au survol reste, purement informatif.
 
 export type GrilleTempsProps = {
   /** 6 jours en vue Semaine, 1 seul en vue Jour. */
@@ -40,25 +47,16 @@ export type GrilleTempsProps = {
   aujourdhui?: string | null
   /** « compact » = blocs de la semaine, « detailed » = vue Jour. */
   variante?: 'compact' | 'detailed'
-  /** Ouvre la fiche épinglée (clic ou Entrée). */
-  onOuvrir?: (creneau: CreneauCal, ancre: HTMLElement) => void
+  /** Liens de réservation en ligne, par tranche d'âge. */
+  liensReservation: LiensReservation
   /** Aperçu au survol : élément survolé, ou null quand le pointeur sort. */
   onApercu?: (creneau: CreneauCal | null, ancre: HTMLElement | null) => void
-  /** Identifiant du créneau dont la fiche est ouverte. */
-  ouvertId?: string | null
 }
 
 const heuresDeAxe = (debut: number, fin: number) => {
   const liste: number[] = []
   for (let h = debut; h <= fin; h += 60) liste.push(h)
   return liste
-}
-
-/** « Baby Gym, lundi 10h30, 1h, Salle Kid » */
-export function libelleBloc(c: CreneauCal): string {
-  const jour = c.jour.toLowerCase()
-  if (c.debutMin === null) return `${c.activite}, ${jour}, horaire à confirmer, ${c.salle}`
-  return `${c.activite}, ${jour} ${formatHeure(c.debutMin)}, ${formatDuree(c.duree)}, ${c.salle}`
 }
 
 // Gouttière des heures : collée à gauche pendant le défilement horizontal.
@@ -70,17 +68,17 @@ export default function GrilleTemps({
   bornes,
   aujourdhui = null,
   variante = 'compact',
-  onOuvrir,
+  liensReservation,
   onApercu,
-  ouvertId = null,
 }: GrilleTempsProps) {
-  // Attributs communs aux blocs et aux mini-cartes : chacun ouvre la même fiche.
+  // Attributs communs aux blocs et aux mini-cartes : chacun mène à la
+  // réservation de sa tranche d'âge, et fait apparaître l'aperçu au survol.
   const interactions = (c: CreneauCal) => ({
-    'aria-haspopup': 'dialog' as const,
-    'aria-expanded': ouvertId === c.id,
-    'aria-label': libelleBloc(c),
-    onClick: (e: React.MouseEvent<HTMLButtonElement>) => onOuvrir?.(c, e.currentTarget),
-    onMouseEnter: (e: React.MouseEvent<HTMLButtonElement>) => onApercu?.(c, e.currentTarget),
+    href: lienReservation(c.age, liensReservation),
+    target: '_blank',
+    rel: 'noopener noreferrer',
+    'aria-label': libelleReservation(c),
+    onMouseEnter: (e: React.MouseEvent<HTMLAnchorElement>) => onApercu?.(c, e.currentTarget),
     onMouseLeave: () => onApercu?.(null, null),
   })
   const axe = bornes ?? bornesAxe(creneaux)
@@ -139,11 +137,10 @@ export default function GrilleTemps({
                   {attente.map((c) => {
                     const coul = couleurAge(c.age)
                     return (
-                      <button
+                      <a
                         key={c.id}
-                        type="button"
                         data-creneau-attente
-                        className="flex w-full cursor-pointer flex-col gap-0.5 rounded-md border border-dashed bg-white px-2.5 py-2 text-left"
+                        className="flex w-full flex-col gap-0.5 rounded-md border border-dashed bg-white px-2.5 py-2 text-left"
                         {...interactions(c)}
                         style={{ borderColor: coul.pleine, color: coul.texte }}
                       >
@@ -156,7 +153,7 @@ export default function GrilleTemps({
                           />
                           {c.salle}
                         </span>
-                      </button>
+                      </a>
                     )
                   })}
                 </div>
@@ -208,14 +205,20 @@ export default function GrilleTemps({
                   // La plage complète « 17h – 18h » ne tient que si le bloc est
                   // large : seul, ou à deux dans la colonne pleine page.
                   const heurePleine = p.cols === 1 || (variante === 'detailed' && p.cols === 2)
+                  // Bloc de 45 min = 0,75 × --hpx, soit 43px à 60px d'heure :
+                  // la place de DEUX lignes à 13px. On y sacrifie la salle (que
+                  // l'aperçu donne) et on resserre le rembourrage vertical.
+                  const court = c.duree < 60
                   return (
-                    <button
+                    <a
                       key={c.id}
-                      type="button"
                       data-creneau
                       data-activite={c.activite}
                       data-cols={p.cols}
-                      className="absolute flex cursor-pointer flex-col gap-px overflow-hidden rounded-md border-0 border-l-[3px] px-2 py-1.5 text-left animate-in fade-in-0 duration-150 hover:brightness-[.97] [&>span]:block [&>span]:overflow-hidden [&>span]:text-ellipsis [&>span]:whitespace-nowrap"
+                      className={cn(
+                        'absolute flex flex-col gap-px overflow-hidden rounded-md border-0 border-l-[3px] px-2 text-left animate-in fade-in-0 duration-150 hover:brightness-[.97] [&>span]:block [&>span]:overflow-hidden [&>span]:text-ellipsis [&>span]:whitespace-nowrap',
+                        court ? 'py-1' : 'py-1.5',
+                      )}
                       {...interactions(c)}
                       style={{
                         top: `calc((${p.debut} - ${axe.debut}) / 60 * var(--hpx))`,
@@ -235,12 +238,12 @@ export default function GrilleTemps({
                         {variante === 'detailed' && heurePleine ? ` · ${formatDuree(c.duree)}` : ''}
                       </span>
                       <span className="text-[13.5px] font-semibold leading-tight">{c.activite}</span>
-                      {compresse ? null : (
+                      {compresse || court ? null : (
                         <span className="text-[13px] leading-tight opacity-80">
                           {heurePleine ? c.salle : c.salle.replace(/^Salle /, '')}
                         </span>
                       )}
-                    </button>
+                    </a>
                   )
                 })}
               </div>

@@ -151,6 +151,21 @@ export function formatDuree(minutes: number): string {
 }
 
 /**
+ * Libellé accessible du lien de réservation d'un créneau : « Réserver Baby Gym,
+ * lundi 10h30, 45 min, Salle Kid (nouvel onglet) ». La mention « (nouvel
+ * onglet) » est portée par l'aria-label, la réservation s'ouvrant hors du site.
+ * Partagé par la grille et la vue Liste : un seul libellé pour tout /planning.
+ */
+export function libelleReservation(c: CreneauCal): string {
+  const jour = c.jour.toLowerCase()
+  const quand =
+    c.debutMin === null
+      ? `${jour}, horaire à confirmer`
+      : `${jour} ${formatHeure(c.debutMin)}, ${formatDuree(c.duree)}`
+  return `Réserver ${c.activite}, ${quand}, ${c.salle} (nouvel onglet)`
+}
+
+/**
  * Bornes de l'axe horaire, dérivées des données (heure pleine inférieure du
  * premier début, heure pleine supérieure de la dernière fin).
  * Repli 9h -> 20h si aucun créneau n'est horodaté.
