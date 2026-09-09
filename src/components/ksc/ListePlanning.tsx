@@ -1,29 +1,35 @@
 'use client'
 
 import React from 'react'
+import { ExternalLink } from 'lucide-react'
 
 import {
   couleurAge,
   formatDuree,
   formatFin,
   formatHeure,
-  liensTranche,
+  libelleReservation,
+  lienReservation,
   poserJour,
   sansHeure,
   type CreneauCal,
+  type LiensReservation,
 } from '@/lib/planningLayout'
 
 // Vue Liste : les créneaux groupés par jour, du lundi au samedi.
 // Transposition du PlanningListe de Parc Beauregard. Les lignes ne sont PAS
-// cliquables : seuls les liens de fiche le sont, pour ne pas piéger la
-// navigation clavier sur une liste de 25 entrées.
+// cliquables : seul le lien « Réserver » de la ligne l'est, pour ne pas piéger
+// la navigation clavier sur une liste de 25 entrées.
 
 export default function ListePlanning({
   jours,
   creneaux,
+  liensReservation,
 }: {
   jours: string[]
   creneaux: CreneauCal[]
+  /** Liens de réservation en ligne, par tranche d'âge. */
+  liensReservation: LiensReservation
 }) {
   const groupes = jours
     .map((jour) => {
@@ -40,20 +46,21 @@ export default function ListePlanning({
     )
   }
 
-  // Un créneau « 6-14 ans » renvoie vers DEUX fiches : les liens sont donc
-  // rendus en ligne, séparés, et non par un unique « Voir le cours ».
-  const liens = (c: CreneauCal) => (
-    <span className="flex flex-wrap justify-end gap-x-4 gap-y-1">
-      {liensTranche(c.age).map((l) => (
-        <a
-          key={l.href}
-          href={l.href}
-          className="whitespace-nowrap text-[14px] font-bold text-magenta hover:underline"
-        >
-          {l.label}
-        </a>
-      ))}
-    </span>
+  // Un seul lien par ligne : la réservation en ligne de la tranche d'âge du
+  // créneau, ouverte dans un nouvel onglet. Le libellé visible reste court
+  // (« Réserver ») ; l'aria-label, lui, nomme le créneau entier.
+  const lien = (c: CreneauCal) => (
+    <a
+      href={lienReservation(c.age, liensReservation)}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={libelleReservation(c)}
+      data-lien-reservation
+      className="inline-flex items-center gap-1.5 whitespace-nowrap text-[14px] font-bold text-magenta hover:underline"
+    >
+      Réserver
+      <ExternalLink className="size-3.5 shrink-0" aria-hidden="true" />
+    </a>
   )
 
   return (
@@ -87,7 +94,7 @@ export default function ListePlanning({
                       {formatDuree(c.duree)} · {c.salle} · {coul.label}
                     </span>
                   </span>
-                  <span className="col-start-3 sm:col-start-4">{liens(c)}</span>
+                  <span className="col-start-3 flex justify-end sm:col-start-4">{lien(c)}</span>
                 </li>
               )
             })}
@@ -111,7 +118,7 @@ export default function ListePlanning({
                       {c.salle} · {coul.label}
                     </span>
                   </span>
-                  <span className="col-start-3 sm:col-start-4">{liens(c)}</span>
+                  <span className="col-start-3 flex justify-end sm:col-start-4">{lien(c)}</span>
                 </li>
               )
             })}
