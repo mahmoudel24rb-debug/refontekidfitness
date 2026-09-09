@@ -32,7 +32,12 @@ export function optionCreneau(c: CreneauPlat): CreneauOption {
 export function creneauxPourPrestation(slug: string, planning: CreneauPlat[]): CreneauOption[] {
   const age = AGE_PAR_SLUG[slug]
   if (!age) return []
-  return planning.filter((c) => c.age === age).map(optionCreneau)
+  // Les créneaux sans tranche d'âge (Pompom et Zumba du mercredi) relèvent du
+  // 6-14 ans (même lien de réservation) : proposés sur ces deux fiches.
+  return planning
+    .filter((c) => c.age === age || (age === '6-14 ans' && !c.age))
+    .sort((a, b) => rangCreneau(a) - rangCreneau(b))
+    .map(optionCreneau)
 }
 
 /** Jour (ordre du planning) puis heure : ordre de lecture d'une liste de créneaux. */
