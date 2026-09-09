@@ -23,6 +23,14 @@ export type Discipline = {
   pourQui: string
 }
 
+// Une étape du déroulé de la journée (Mercredis Sportifs, Stages vacances).
+export type EtapeDeroule = {
+  /** Ex. : « 7h30 – 10h00 ». */
+  horaire: string
+  titre: string
+  description: string
+}
+
 export type Prestation = {
   slug: string
   titre: string
@@ -35,7 +43,54 @@ export type Prestation = {
   image: string
   motCle: string // mot-clé SEO focus
   disciplines?: Discipline[]
+  /** Phrase d'introduction du déroulé de la journée (optionnelle). */
+  derouleIntro?: string
+  /** Étapes de la journée, dans l'ordre. Absent : pas de section déroulé. */
+  deroule?: EtapeDeroule[]
+  /** Note affichée sous les étapes du déroulé. */
+  derouleNote?: string
 }
+
+// Déroulé de la journée des Mercredis Sportifs et des Stages vacances : mêmes
+// étapes et mêmes descriptifs de part et d'autre, seul l'horaire d'accueil
+// change (7h30 le mercredi, 8h00 pendant les vacances). Textes fournis par le
+// club, repris tels quels.
+const derouleJournee = (debutAccueil: string): EtapeDeroule[] => [
+  {
+    horaire: `${debutAccueil} – 10h00`,
+    titre: 'Accueil échelonné',
+    description:
+      'Les enfants sont accueillis progressivement par nos coachs, sous surveillance constante.',
+  },
+  {
+    horaire: '10h00 – 12h00',
+    titre: 'Activités physiques encadrées',
+    description:
+      "Séances sportives animées par nos coachs, avec accès aux cours dispensés dans l'établissement selon les envies de l'enfant et sa tranche d'âge.",
+  },
+  {
+    horaire: '12h00 – 14h00',
+    titre: 'Pause déjeuner & temps calme',
+    description:
+      "Repas tiré du sac (à prévoir par les familles), frigo et micro-ondes à disposition sur place. Les coachs déjeunent avec les enfants et les accompagnent pour faire chauffer leur repas et tout ce dont ils ont besoin. Suivi d'un temps calme, libre ou d'une sieste selon les besoins de l'enfant.",
+  },
+  {
+    horaire: '14h00 – 16h00',
+    titre: 'Activités physiques encadrées',
+    description:
+      'Nouvelle séquence sportive, dans la continuité de la matinée, toujours encadrée par nos coachs.',
+  },
+  {
+    horaire: '16h00 – 18h00',
+    titre: 'Goûter & départ échelonné',
+    description:
+      "Goûter à prévoir par les familles. Les enfants repartent au fur et à mesure, selon l'horaire choisi par les parents.",
+  },
+]
+
+// Note commune aux deux déroulés.
+const DEROULE_NOTE =
+  'Tout au long de la journée, les enfants restent sous la surveillance constante de nos coachs.'
 
 export const PRESTATIONS: Prestation[] = [
   {
@@ -49,6 +104,8 @@ export const PRESTATIONS: Prestation[] = [
     prix: '95 €/mois',
     image: '/assets/ksc/mercredis-sportifs.webp',
     motCle: 'mercredis sportifs enfant Rochecorbon',
+    deroule: derouleJournee('7h30'),
+    derouleNote: DEROULE_NOTE,
   },
   {
     slug: 'stages-vacances',
@@ -61,6 +118,9 @@ export const PRESTATIONS: Prestation[] = [
     prix: '35 €/jour · 150 €/semaine',
     image: '/assets/ksc/stages-vacances.webp',
     motCle: 'stage sportif enfant vacances Tours',
+    derouleIntro: 'Même principe que les Mercredis Sportifs, avec un accueil dès 8h00.',
+    deroule: derouleJournee('8h00'),
+    derouleNote: DEROULE_NOTE,
   },
   {
     slug: 'anniversaire',

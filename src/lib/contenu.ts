@@ -81,6 +81,11 @@ const altMedia = (media: unknown): string | undefined => {
 const texteOu = (valeur: unknown, defaut: string) =>
   typeof valeur === 'string' && valeur.trim().length > 0 ? valeur : defaut
 
+// Variante pour les champs optionnels : rien en base ET rien au fichier laisse
+// la propriété à `undefined`, et le bloc correspondant n'est pas rendu.
+const texteOptionnel = (valeur: unknown, defaut?: string) =>
+  typeof valeur === 'string' && valeur.trim().length > 0 ? valeur : defaut
+
 // ---------------------------------------------------------------------------
 // Activités (prestations)
 // ---------------------------------------------------------------------------
@@ -119,6 +124,13 @@ export const getPrestations = cache(async (): Promise<PrestationVue[]> => {
         pourQui: texteOu(x.pourQui, df?.pourQui ?? ''),
       }
     })
+    // Déroulé de la journée : champ ADDITIF, comme les autres. Tant que la base
+    // ne le porte pas, la fiche sert le déroulé du fichier de données.
+    const deroule = (d.deroule ?? []).map((e) => ({
+      horaire: e.horaire,
+      titre: e.titre,
+      description: e.description,
+    }))
     return {
       slug: d.slug,
       titre: d.titre,
@@ -132,6 +144,9 @@ export const getPrestations = cache(async (): Promise<PrestationVue[]> => {
       image: urlMedia(d.image) ?? fichier?.image ?? '',
       motCle: d.motCle,
       disciplines: disciplines.length > 0 ? disciplines : fichier?.disciplines,
+      derouleIntro: texteOptionnel(d.derouleIntro, fichier?.derouleIntro),
+      deroule: deroule.length > 0 ? deroule : fichier?.deroule,
+      derouleNote: texteOptionnel(d.derouleNote, fichier?.derouleNote),
     }
   })
 })

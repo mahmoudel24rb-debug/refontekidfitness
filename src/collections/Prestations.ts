@@ -65,6 +65,42 @@ export const Prestations: CollectionConfig = {
       fields: [{ name: 'texte', label: 'Texte', type: 'text', required: true }],
     },
     {
+      name: 'derouleIntro',
+      label: 'Déroulé : phrase d’introduction',
+      type: 'text',
+      admin: {
+        description:
+          'Optionnelle, affichée au-dessus des étapes. Ex. : « Même principe que les Mercredis Sportifs, avec un accueil dès 8h00. »',
+      },
+    },
+    {
+      name: 'deroule',
+      label: 'Déroulé de la journée',
+      type: 'array',
+      labels: { singular: 'Étape', plural: 'Étapes' },
+      admin: {
+        description:
+          'Uniquement pour les Mercredis Sportifs et les Stages vacances : les étapes de la journée, dans l’ordre. Liste vide : la section n’est pas affichée sur la fiche.',
+      },
+      fields: [
+        {
+          name: 'horaire',
+          label: 'Horaire',
+          type: 'text',
+          required: true,
+          admin: { description: 'Ex. : « 7h30 – 10h00 ».' },
+        },
+        { name: 'titre', label: 'Titre', type: 'text', required: true },
+        { name: 'description', label: 'Description', type: 'textarea', required: true },
+      ],
+    },
+    {
+      name: 'derouleNote',
+      label: 'Déroulé : note de fin',
+      type: 'text',
+      admin: { description: 'Phrase affichée sous les étapes, en italique.' },
+    },
+    {
       name: 'disciplines',
       label: 'Activités de la tranche',
       type: 'array',
