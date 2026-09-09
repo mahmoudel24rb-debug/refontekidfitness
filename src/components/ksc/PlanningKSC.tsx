@@ -9,13 +9,16 @@ import WaveDivider from './WaveDivider'
 import Section from './Section'
 import Container from './Container'
 import CalendrierPlanning from './CalendrierPlanning'
-import { getPlanningPlat } from '@/lib/contenu'
+import { getParametres, getPlanningPlat } from '@/lib/contenu'
 import { heureEnMinutes, type CreneauCal } from '@/lib/planningLayout'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 
 export default async function PlanningKSC() {
   const plat = await getPlanningPlat()
+  // Liens de réservation en ligne (Paramètres du site) : lus ICI, côté serveur,
+  // et passés en props, le calendrier étant un composant client.
+  const { reservation } = await getParametres()
   // Passage à la forme attendue par le calendrier : un identifiant stable et
   // l'heure convertie en minutes (le composant client ne fait aucun parsing).
   const creneaux: CreneauCal[] = plat.map((c, i) => ({
@@ -53,8 +56,9 @@ export default async function PlanningKSC() {
           <Container>
             {/* Calendrier « Semaine type » : vues Semaine / Jour / Liste, blocs
                 posés à la minute, couleurs par tranche d'âge (le rendu détaillé
-                vit dans CalendrierPlanning et ses composants enfants). */}
-            <CalendrierPlanning creneaux={creneaux} />
+                vit dans CalendrierPlanning et ses composants enfants). Chaque
+                créneau est un lien vers la réservation en ligne de sa tranche. */}
+            <CalendrierPlanning creneaux={creneaux} liensReservation={reservation} />
             <p className="mt-7 text-center text-sm italic text-muted-foreground">
               Planning de la rentrée de septembre 2026, susceptible d’évoluer.
             </p>

@@ -10,7 +10,7 @@ export const Tarifs: CollectionConfig = {
   labels: { singular: 'Tarif', plural: 'Tarifs' },
   admin: {
     useAsTitle: 'titre',
-    defaultColumns: ['titre', 'type', 'prix', 'icone', 'enAvant', 'ordre'],
+    defaultColumns: ['titre', 'type', 'prix', 'icone', 'prioritaire', 'enAvant', 'ordre'],
     group: 'Contenu',
   },
   access: {
@@ -67,10 +67,23 @@ export const Tarifs: CollectionConfig = {
         { label: 'Deux calques', value: 'layers2' },
         { label: 'Trois calques', value: 'layers3' },
         { label: 'Carte', value: 'carte' },
+        { label: 'Calendrier', value: 'calendrier' },
+        { label: 'Soleil (vacances)', value: 'vacances' },
       ],
       admin: {
         position: 'sidebar',
         description: 'Pastille en tête de carte. Vide : éclair par défaut.',
+      },
+    },
+    {
+      name: 'prioritaire',
+      label: 'Formule prioritaire',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: {
+        position: 'sidebar',
+        description:
+          'Coché : la formule est présentée en carte complète dans « Nos formules » sur la page Tarifs. Décoché : elle apparaît en ligne compacte dans « Autres formules ».',
       },
     },
     {

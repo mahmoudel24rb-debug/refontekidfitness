@@ -8,7 +8,13 @@ import { FAQ, type FaqItem } from '@/data/faq'
 import { PLANNING, type JourPlanning } from '@/data/planning'
 import { PRESTATIONS, type Prestation } from '@/data/prestations'
 import { ABONNEMENTS, FEATURED_TITRE, PRESTATIONS_TARIFS, type Tarif } from '@/data/tarifs'
-import { COORDONNEES, CRM_INSCRIPTION_URL, HORAIRES, INSCRIPTION_URL } from '@/data/site'
+import {
+  COORDONNEES,
+  CRM_INSCRIPTION_URL,
+  HORAIRES,
+  INSCRIPTION_URL,
+  RESERVATION_URLS,
+} from '@/data/site'
 import { slugifie } from './utils'
 
 /**
@@ -81,6 +87,11 @@ const altMedia = (media: unknown): string | undefined => {
 const texteOu = (valeur: unknown, defaut: string) =>
   typeof valeur === 'string' && valeur.trim().length > 0 ? valeur : defaut
 
+// Variante pour les champs optionnels : rien en base ET rien au fichier laisse
+// la propriété à `undefined`, et le bloc correspondant n'est pas rendu.
+const texteOptionnel = (valeur: unknown, defaut?: string) =>
+  typeof valeur === 'string' && valeur.trim().length > 0 ? valeur : defaut
+
 // ---------------------------------------------------------------------------
 // Activités (prestations)
 // ---------------------------------------------------------------------------
@@ -117,8 +128,17 @@ export const getPrestations = cache(async (): Promise<PrestationVue[]> => {
         intro: intro.length > 0 ? intro : (df?.intro ?? []),
         benefices: benefices.length > 0 ? benefices : (df?.benefices ?? []),
         pourQui: texteOu(x.pourQui, df?.pourQui ?? ''),
+        duree: typeof x.duree === 'number' && x.duree > 0 ? x.duree : df?.duree,
+        activitePlanning: texteOptionnel(x.activitePlanning, df?.activitePlanning),
       }
     })
+    // Déroulé de la journée : champ ADDITIF, comme les autres. Tant que la base
+    // ne le porte pas, la fiche sert le déroulé du fichier de données.
+    const deroule = (d.deroule ?? []).map((e) => ({
+      horaire: e.horaire,
+      titre: e.titre,
+      description: e.description,
+    }))
     return {
       slug: d.slug,
       titre: d.titre,
@@ -132,6 +152,10 @@ export const getPrestations = cache(async (): Promise<PrestationVue[]> => {
       image: urlMedia(d.image) ?? fichier?.image ?? '',
       motCle: d.motCle,
       disciplines: disciplines.length > 0 ? disciplines : fichier?.disciplines,
+      noteDisciplines: texteOptionnel(d.noteDisciplines, fichier?.noteDisciplines),
+      derouleIntro: texteOptionnel(d.derouleIntro, fichier?.derouleIntro),
+      deroule: deroule.length > 0 ? deroule : fichier?.deroule,
+      derouleNote: texteOptionnel(d.derouleNote, fichier?.derouleNote),
     }
   })
 })
@@ -234,7 +258,7 @@ export const getPlanning = cache(async (): Promise<JourPlanning[]> => {
 // Tarifs
 // ---------------------------------------------------------------------------
 
-export type TarifVue = Tarif & { avantages: string[]; enAvant: boolean }
+export type TarifVue = Tarif & { avantages: string[]; enAvant: boolean; prioritaire: boolean }
 
 export type TarifsVue = {
   abonnements: TarifVue[]
@@ -253,6 +277,7 @@ export const getTarifs = cache(async (): Promise<TarifsVue> => {
       ...t,
       avantages: t.avantages ?? [],
       enAvant: t.titre === FEATURED_TITRE,
+      prioritaire: Boolean(t.prioritaire),
     })
     return {
       abonnements: ABONNEMENTS.map(marquer),
@@ -260,9 +285,10 @@ export const getTarifs = cache(async (): Promise<TarifsVue> => {
     }
   }
 
-  // Avantages et icône sont ADDITIFS : tant que la base ne les porte pas,
-  // chacun retombe sur le fichier de données, tarif par tarif (appariement par
-  // le titre, comme scripts/fill-avantages-tarifs.mjs).
+  // Avantages, icône et « formule prioritaire » sont ADDITIFS : tant que la base
+  // ne les porte pas, chacun retombe sur le fichier de données, tarif par tarif
+  // (appariement par le titre, comme scripts/fill-avantages-tarifs.mjs et
+  // scripts/fill-tarifs-prioritaires.mjs).
   const FICHIER = [...ABONNEMENTS, ...PRESTATIONS_TARIFS]
   const vue = (type: 'abonnement' | 'prestation') =>
     docs
@@ -277,6 +303,7 @@ export const getTarifs = cache(async (): Promise<TarifsVue> => {
           avantages: avantages.length > 0 ? avantages : (fichier?.avantages ?? []),
           icone: (d.icone ?? undefined) ?? fichier?.icone,
           enAvant: Boolean(d.enAvant),
+          prioritaire: Boolean(d.prioritaire ?? fichier?.prioritaire),
         }
       })
 
@@ -470,13 +497,28 @@ export type ParametresVue = {
   horaires: string
   inscriptionUrl: string
   crmInscriptionUrl: string
+  /** Liens de réservation en ligne du planning, par tranche d'âge. */
+  reservation: {
+    url1036: string
+    url35: string
+    url614: string
+  }
 }
+
+/**
+ * Téléphone au format international attendu par les données structurées :
+ * « tel:+33763251712 » devient « +33763251712 ». Le lien reste la source : il
+ * n'y a jamais de numéro écrit en dur dans un JSON-LD.
+ */
+export const telephoneJsonLd = (coordonnees: ParametresVue['coordonnees']): string =>
+  coordonnees.telephoneHref.replace(/^tel:/, '')
 
 const PARAMETRES_FICHIER: ParametresVue = {
   coordonnees: { ...COORDONNEES },
   horaires: HORAIRES,
   inscriptionUrl: INSCRIPTION_URL,
   crmInscriptionUrl: CRM_INSCRIPTION_URL,
+  reservation: { ...RESERVATION_URLS },
 }
 
 export const getParametres = cache(async (): Promise<ParametresVue> => {
@@ -486,6 +528,7 @@ export const getParametres = cache(async (): Promise<ParametresVue> => {
     const payload = await getPayloadClient()
     const g = await payload.findGlobal({ slug: 'parametres' })
     const c = g?.coordonnees ?? {}
+    const r = g?.reservation ?? {}
     const f = PARAMETRES_FICHIER
     // Champ par champ : un champ vide dans l'admin ne doit pas vider le site.
     return {
@@ -502,6 +545,11 @@ export const getParametres = cache(async (): Promise<ParametresVue> => {
       horaires: texteOu(g?.horaires, f.horaires),
       inscriptionUrl: texteOu(g?.inscriptionUrl, f.inscriptionUrl),
       crmInscriptionUrl: texteOu(g?.crmInscriptionUrl, f.crmInscriptionUrl),
+      reservation: {
+        url1036: texteOu(r.url1036, f.reservation.url1036),
+        url35: texteOu(r.url35, f.reservation.url35),
+        url614: texteOu(r.url614, f.reservation.url614),
+      },
     }
   } catch (erreur) {
     console.warn(

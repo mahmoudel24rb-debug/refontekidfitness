@@ -13,6 +13,27 @@ const nextConfig: NextConfig = {
     // resservi un routes-manifest périmé (redirection garderie absente en prod).
     return [
       { source: '/nos-prestations/garderie', destination: '/nos-prestations/mercredis-sportifs', permanent: true },
+      // Retour client n5 (09/09/2026) : les 24 activités des 4 cours par tranche
+      // d'âge sont remplacées par les 16 cours réellement dispensés. Chaque
+      // ancienne URL part vers son équivalent, ou vers la fiche du cours quand
+      // l'activité n'est plus proposée.
+      { source: '/nos-prestations/cours-10-36-mois/gym-maman-bebe', destination: '/nos-prestations/cours-10-36-mois', permanent: true },
+      { source: '/nos-prestations/cours-10-36-mois/baby-eveil', destination: '/nos-prestations/cours-10-36-mois', permanent: true },
+      { source: '/nos-prestations/cours-10-36-mois/accueil-assistantes-maternelles', destination: '/nos-prestations/cours-10-36-mois', permanent: true },
+      { source: '/nos-prestations/cours-10-36-mois/baby-rugby', destination: '/nos-prestations/cours-10-36-mois', permanent: true },
+      { source: '/nos-prestations/cours-10-36-mois/baby-gym-et-dance', destination: '/nos-prestations/cours-10-36-mois/baby-gym-dance', permanent: true },
+      { source: '/nos-prestations/cours-3-5-ans/kid-gym-et-dance', destination: '/nos-prestations/cours-3-5-ans/gym-et-dance', permanent: true },
+      { source: '/nos-prestations/cours-3-5-ans/kid-training-et-boxing', destination: '/nos-prestations/cours-3-5-ans/cross-training-et-boxing', permanent: true },
+      { source: '/nos-prestations/cours-3-5-ans/sports-de-ballon', destination: '/nos-prestations/cours-3-5-ans/multisports', permanent: true },
+      { source: '/nos-prestations/cours-6-10-ans/fun-fit-zumba', destination: '/nos-prestations/cours-6-10-ans/zumba-mix-dance', permanent: true },
+      { source: '/nos-prestations/cours-6-10-ans/gym-acrobatique', destination: '/nos-prestations/cours-6-10-ans/gym-accro-jungle-warrior', permanent: true },
+      { source: '/nos-prestations/cours-6-10-ans/sports-de-ballon', destination: '/nos-prestations/cours-6-10-ans/multisports', permanent: true },
+      { source: '/nos-prestations/cours-6-10-ans/sports-de-combat', destination: '/nos-prestations/cours-6-10-ans', permanent: true },
+      { source: '/nos-prestations/cours-6-10-ans/kid-coaching', destination: '/nos-prestations/cours-6-10-ans', permanent: true },
+      { source: '/nos-prestations/cours-11-14-ans/zumba-family', destination: '/nos-prestations/cours-11-14-ans/zumba-mix-dance', permanent: true },
+      { source: '/nos-prestations/cours-11-14-ans/gym-acrobatique', destination: '/nos-prestations/cours-11-14-ans/gym-accro-jungle-warrior', permanent: true },
+      { source: '/nos-prestations/cours-11-14-ans/sports-de-ballon', destination: '/nos-prestations/cours-11-14-ans/multisports', permanent: true },
+      { source: '/nos-prestations/cours-11-14-ans/fitness', destination: '/nos-prestations/cours-11-14-ans', permanent: true },
       { source: '/about-us', destination: '/qui-sommes-nous', permanent: true },
       { source: '/programs', destination: '/nos-prestations', permanent: true },
       { source: '/admission', destination: '/nos-prestations', permanent: true },

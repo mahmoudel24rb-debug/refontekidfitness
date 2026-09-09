@@ -170,6 +170,28 @@ export interface Prestation {
       }[]
     | null;
   /**
+   * Optionnelle, affichée au-dessus des étapes. Ex. : « Même principe que les Mercredis Sportifs, avec un accueil dès 8h00. »
+   */
+  derouleIntro?: string | null;
+  /**
+   * Uniquement pour les Mercredis Sportifs et les Stages vacances : les étapes de la journée, dans l’ordre. Liste vide : la section n’est pas affichée sur la fiche.
+   */
+  deroule?:
+    | {
+        /**
+         * Ex. : « 7h30 – 10h00 ».
+         */
+        horaire: string;
+        titre: string;
+        description: string;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Phrase affichée sous les étapes, en italique.
+   */
+  derouleNote?: string | null;
+  /**
    * Uniquement pour les 4 cours par tranche d’âge : le détail des activités pratiquées. Chaque activité a sa propre page /nos-prestations/[cours]/[activité], une carte sur la fiche du cours et une entrée du sous-menu « Nos activités ».
    */
   disciplines?:
@@ -205,9 +227,21 @@ export interface Prestation {
          * Un paragraphe : à quels enfants cette activité s’adresse.
          */
         pourQui?: string | null;
+        /**
+         * Durée d’une séance, affichée en pastille (« 45 min », « 1h ») sur la fiche du cours et sur la page de l’activité. Vide : aucune pastille.
+         */
+        duree?: number | null;
+        /**
+         * Nom exact de l’activité dans le planning, pour lister ses créneaux réels sur sa page. Plusieurs noms possibles, séparés par « | ». Ex. : « Pompom|Pompom Girl ».
+         */
+        activitePlanning?: string | null;
         id?: string | null;
       }[]
     | null;
+  /**
+   * Petite note affichée sous la grille des activités. Ex. : « *Multisports : football, rugby, basket… ».
+   */
+  noteDisciplines?: string | null;
   /**
    * Ex. : « 95 €/mois », « À partir de 29,90 €/mois ».
    */
@@ -321,7 +355,11 @@ export interface Tarif {
   /**
    * Pastille en tête de carte. Vide : éclair par défaut.
    */
-  icone?: ('zap' | 'layers2' | 'layers3' | 'carte') | null;
+  icone?: ('zap' | 'layers2' | 'layers3' | 'carte' | 'calendrier' | 'vacances') | null;
+  /**
+   * Coché : la formule est présentée en carte complète dans « Nos formules » sur la page Tarifs. Décoché : elle apparaît en ligne compacte dans « Autres formules ».
+   */
+  prioritaire?: boolean | null;
   /**
    * Badge « La plus choisie » et bordure magenta. Une seule carte à la fois.
    */
@@ -576,6 +614,16 @@ export interface PrestationsSelect<T extends boolean = true> {
         texte?: T;
         id?: T;
       };
+  derouleIntro?: T;
+  deroule?:
+    | T
+    | {
+        horaire?: T;
+        titre?: T;
+        description?: T;
+        id?: T;
+      };
+  derouleNote?: T;
   disciplines?:
     | T
     | {
@@ -595,8 +643,11 @@ export interface PrestationsSelect<T extends boolean = true> {
               id?: T;
             };
         pourQui?: T;
+        duree?: T;
+        activitePlanning?: T;
         id?: T;
       };
+  noteDisciplines?: T;
   prix?: T;
   creneauxTexte?: T;
   motCle?: T;
@@ -637,6 +688,7 @@ export interface TarifsSelect<T extends boolean = true> {
         id?: T;
       };
   icone?: T;
+  prioritaire?: T;
   enAvant?: T;
   ordre?: T;
   updatedAt?: T;
@@ -792,12 +844,12 @@ export interface Parametre {
   coordonnees?: {
     telephone?: string | null;
     /**
-     * Format international. Ex. : tel:+33247444143
+     * Format international. Ex. : tel:+33763251712
      */
     telephoneHref?: string | null;
     email?: string | null;
     /**
-     * Ex. : mailto:kidfitnessrochecorbon@gmail.com
+     * Ex. : mailto:kidsportclubrochecorbon@gmail.com
      */
     emailHref?: string | null;
     adresse?: string | null;
@@ -823,6 +875,14 @@ export interface Parametre {
    * Lien ouvert par les boutons « S’inscrire » de la landing catalogue. « # » tant que le calendrier n’est pas fourni.
    */
   crmInscriptionUrl?: string | null;
+  /**
+   * Chaque créneau du calendrier de la semaine ouvre le lien de sa tranche d’âge. Un créneau sans tranche d’âge ouvre le lien 6-14 ans.
+   */
+  reservation?: {
+    url1036?: string | null;
+    url35?: string | null;
+    url614?: string | null;
+  };
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -846,6 +906,13 @@ export interface ParametresSelect<T extends boolean = true> {
   horaires?: T;
   inscriptionUrl?: T;
   crmInscriptionUrl?: T;
+  reservation?:
+    | T
+    | {
+        url1036?: T;
+        url35?: T;
+        url614?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

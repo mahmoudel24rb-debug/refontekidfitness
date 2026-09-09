@@ -1,11 +1,10 @@
 import React from 'react'
-import { Check, CreditCard, Layers2, Layers3, Zap } from 'lucide-react'
+import { CalendarDays, Check, CreditCard, Layers2, Layers3, Sun, Zap } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
-import { classesCarte } from '@/lib/grilleCartes'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import InscriptionCTA from './InscriptionCTA'
@@ -22,17 +21,24 @@ import type { IconeTarif } from '@/data/tarifs'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 
-// Cartes d'abonnement : structure du composant Untitled UI « PricingSimpleIcon »
+// Cartes de formule : structure du composant Untitled UI « PricingSimpleIcon »
 // fourni par le client (en-tête de section aligné à gauche, puis grille de
 // cartes icône / titre / prix / description / liste d'avantages / CTA en pied),
 // transposée aux tokens KSC — Card shadcn maison, coches magenta du motif de
 // Prestation.tsx, CTA « S'inscrire » existant, badge « La plus choisie ».
+//
+// Retour client n5 : la page ne sépare plus abonnements et prestations mais
+// formules PRIORITAIRES (champ `prioritaire` : 1 cours / semaine, Illimité,
+// Mercredis Sportifs, Stages vacances), en cartes complètes, et « autres
+// formules », en lignes compactes d'emprise nettement moindre.
 
 const ICONES: Record<IconeTarif, React.ComponentType<{ className?: string }>> = {
   zap: Zap,
   layers2: Layers2,
   layers3: Layers3,
   carte: CreditCard,
+  calendrier: CalendarDays,
+  vacances: Sun,
 }
 
 function PastilleIcone({ icone }: { icone?: IconeTarif }) {
@@ -47,14 +53,14 @@ function PastilleIcone({ icone }: { icone?: IconeTarif }) {
   )
 }
 
-/** Une carte d'abonnement. */
+/** Une carte de formule prioritaire. */
 function CarteTarif({ tarif, className }: { tarif: TarifVue; className?: string }) {
   const featured = tarif.enAvant
   return (
     <Card
       className={cn(
-        // Pas de h-full : dans le flux flex centré, une hauteur explicite
-        // désactive l'étirement (stretch) qui égalise les cartes par rangée.
+        // Pas de hauteur explicite : la grille étire déjà les cartes d'une même
+        // rangée (align-items: stretch), ce qui les égalise deux à deux.
         'items-start gap-0 p-7',
         featured && 'relative overflow-visible border-2 border-magenta',
         className,
@@ -68,7 +74,8 @@ function CarteTarif({ tarif, className }: { tarif: TarifVue; className?: string 
       )}
       <PastilleIcone icone={tarif.icone} />
       <h3 className="mt-5 font-heading text-lg font-bold leading-snug text-marine">{tarif.titre}</h3>
-      <p className="mt-2 font-heading text-[38px] font-extrabold leading-[1.15] text-magenta">
+      {/* 30px : à 4 colonnes, « 29,90 €/mois » tient encore sur une ligne. */}
+      <p className="mt-2 font-heading text-[30px] font-extrabold leading-[1.15] text-magenta">
         {tarif.prix}
       </p>
       <p className="mt-1.5 text-[15px] leading-snug text-muted-foreground">{tarif.detail}</p>
@@ -84,8 +91,8 @@ function CarteTarif({ tarif, className }: { tarif: TarifVue; className?: string 
           ))}
         </ul>
       )}
-      {/* CTA en pied de carte : `mt-auto` aligne les 5 boutons sur la même
-          ligne, quelle que soit la longueur des listes d'avantages. */}
+      {/* CTA en pied de carte : `mt-auto` aligne les boutons sur la même ligne,
+          quelle que soit la longueur des listes d'avantages. */}
       <div className="mt-auto w-full pt-8">
         <InscriptionCTA className="w-full" />
       </div>
@@ -95,7 +102,13 @@ function CarteTarif({ tarif, className }: { tarif: TarifVue; className?: string 
 
 export default async function TarifsKSC() {
   const tarifs = await getTarifs()
-  // Product/Offer par abonnement : le prix numérique s'extrait proprement des
+  // Abonnements et prestations sont réunis : c'est le champ `prioritaire` qui
+  // décide du rendu, et non le type. L'ordre d'affichage est celui des données
+  // (1 cours / semaine, Illimité, puis Mercredis Sportifs, Stages vacances).
+  const tous = [...tarifs.abonnements, ...tarifs.prestations]
+  const prioritaires = tous.filter((t) => t.prioritaire)
+  const autres = tous.filter((t) => !t.prioritaire)
+  // Product/Offer par formule : le prix numérique s'extrait proprement des
   // libellés (« 29,90 €/mois » -> 29.90), on peut donc enrichir le JSON-LD
   // au-delà du fil d'Ariane.
   const prixNumerique = (prix: string) => {
@@ -111,7 +124,7 @@ export default async function TarifsKSC() {
         { '@type': 'ListItem', position: 2, name: 'Tarifs', item: `${SITE}/tarifs` },
       ],
     },
-    ...tarifs.abonnements
+    ...tous
       .map((t) => {
         const prix = prixNumerique(t.prix)
         if (!prix) return null
@@ -144,56 +157,54 @@ export default async function TarifsKSC() {
           padding="72px 24px"
         />
 
-        {/* Abonnements — en-tête de section aligné à gauche puis grille 1/2/3 */}
+        {/* Nos formules : en-tête de section aligné à gauche puis grille de
+            cartes complètes (les 4 formules prioritaires). */}
         <Section tone="cream">
           <Container>
             <div className="flex w-full max-w-3xl flex-col">
-              <Kicker>Abonnements</Kicker>
+              <Kicker>Nos formules</Kicker>
               <SectionHeading className="mt-3">Une formule par rythme</SectionHeading>
               <p className="mt-4 text-lg leading-relaxed text-muted-foreground md:mt-5">
                 Un cours par semaine ou tous les cours de la tranche d’âge, avec ou sans
                 engagement. Dans tous les cas, la première séance d’essai est gratuite.
               </p>
             </div>
-            {/* Flux centré : 5 cartes -> 3 + 2 CENTRÉES en desktop, 2 + 2 + 1
-                centrée en tablette, jamais de case vide en bout de rangée. La
-                base Untitled passe à 3 colonnes en xl (1280) ; le conteneur KSC
-                plafonne à 1200px, la bascule est donc avancée à lg (1024),
-                sinon un écran 1536 en zoom 125 % (1229 px CSS) resterait à
-                2 colonnes. Pas d'overflow-hidden ici : le badge « La plus
-                choisie » déborde en haut de sa carte. */}
-            <div className="mt-12 flex w-full flex-wrap justify-center gap-6 lg:mt-16">
-              {tarifs.abonnements.map((t) => (
-                <CarteTarif
-                  key={t.titre}
-                  tarif={t}
-                  className={classesCarte(tarifs.abonnements.length, 3, 6)}
-                />
+            {/* 1 colonne en mobile, 2 dès sm, 4 en xl : avec 4 formules, les
+                rangées sont toujours pleines (2 + 2, puis 4 sur une ligne).
+                Pas d'overflow-hidden ici : le badge « La plus choisie »
+                déborde en haut de sa carte. */}
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:mt-16 xl:grid-cols-4">
+              {prioritaires.map((t) => (
+                <CarteTarif key={t.titre} tarif={t} />
               ))}
             </div>
           </Container>
         </Section>
 
-        {/* Prestations — fond blanc, 3 lignes (style LandingTarifs) */}
+        {/* Autres formules, fond blanc : lignes compactes, ni pastille, ni
+            liste d'avantages, un simple lien d'inscription. */}
         <Section tone="white">
           <Container>
             <SectionHeading underline className="mb-8 text-[clamp(24px,3vw,32px)]">
-              Prestations
+              Autres formules
             </SectionHeading>
-            <div className="flex flex-col gap-3">
-              {tarifs.prestations.map((t) => (
-                <div
+            <ul className="flex flex-col gap-3">
+              {autres.map((t) => (
+                <li
                   key={t.titre}
-                  className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-border bg-card p-5 shadow-sm"
+                  className="flex flex-wrap items-center justify-between gap-x-6 gap-y-4 rounded-lg border border-border bg-card p-5 shadow-sm"
                 >
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="font-heading text-lg font-bold text-marine">{t.titre}</h3>
                     <p className="text-[14px] text-muted-foreground">{t.detail}</p>
                   </div>
-                  <p className="font-heading text-xl font-extrabold text-magenta">{t.prix}</p>
-                </div>
+                  <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                    <p className="font-heading text-xl font-extrabold text-magenta">{t.prix}</p>
+                    <InscriptionCTA variant="outline" size="sm" />
+                  </div>
+                </li>
               ))}
-            </div>
+            </ul>
             <p className="mt-7 text-sm italic text-muted-foreground">
               Les réservations en ligne sont confirmées par notre équipe.
             </p>

@@ -25,7 +25,7 @@ export type CreneauCal = {
   debutMin: number | null
   /** Durée en minutes (60 par défaut côté serveur). */
   duree: number
-  /** Tranche d'âge : détermine la couleur et les fiches liées. */
+  /** Tranche d'âge : détermine la couleur et le lien de réservation. */
   age?: string
 }
 
@@ -79,23 +79,19 @@ export function rangSalle(salle?: string): number {
 }
 
 /**
- * Fiches de cours liées à une tranche d'âge. « 6-14 ans » couvre DEUX fiches
- * (6-10 ans et 11-14 ans) : les deux liens sont proposés. Un créneau sans
- * tranche (Pompom, Zumba) n'a pas de fiche dédiée : aucun lien.
+ * Liens de réservation en ligne du planning, par tranche d'âge (groupe
+ * « reservation » des Paramètres du site, repli src/data/site.ts).
  */
-export type LienTranche = { label: string; href: string }
+export type LiensReservation = { url1036: string; url35: string; url614: string }
 
-const LIENS_TRANCHE: Record<string, LienTranche[]> = {
-  '10-36 mois': [{ label: 'Cours 10 – 36 mois', href: '/nos-prestations/cours-10-36-mois' }],
-  '3-5 ans': [{ label: 'Cours 3 – 5 ans', href: '/nos-prestations/cours-3-5-ans' }],
-  '6-14 ans': [
-    { label: 'Cours 6 – 10 ans', href: '/nos-prestations/cours-6-10-ans' },
-    { label: 'Cours 11 – 14 ans', href: '/nos-prestations/cours-11-14-ans' },
-  ],
-}
-
-export function liensTranche(age?: string): LienTranche[] {
-  return (age && LIENS_TRANCHE[age]) || []
+/**
+ * Lien de réservation d'un créneau. Un créneau sans tranche d'âge (Pompom et
+ * Zumba du mercredi) ouvre le lien 6-14 ans, décision du club.
+ */
+export function lienReservation(age: string | undefined, urls: LiensReservation): string {
+  if (age === '10-36 mois') return urls.url1036
+  if (age === '3-5 ans') return urls.url35
+  return urls.url614
 }
 
 /** « 10h », « 9h30 » -> minutes depuis minuit ; null si le format est autre. */
@@ -127,6 +123,21 @@ export function formatDuree(minutes: number): string {
   const h = Math.floor(minutes / 60)
   const m = minutes % 60
   return m === 0 ? `${h}h` : `${h}h${String(m).padStart(2, '0')}`
+}
+
+/**
+ * Libellé accessible du lien de réservation d'un créneau : « Réserver Baby Gym,
+ * lundi 10h30, 45 min, Salle Kid (nouvel onglet) ». La mention « (nouvel
+ * onglet) » est portée par l'aria-label, la réservation s'ouvrant hors du site.
+ * Partagé par la grille et la vue Liste : un seul libellé pour tout /planning.
+ */
+export function libelleReservation(c: CreneauCal): string {
+  const jour = c.jour.toLowerCase()
+  const quand =
+    c.debutMin === null
+      ? `${jour}, horaire à confirmer`
+      : `${jour} ${formatHeure(c.debutMin)}, ${formatDuree(c.duree)}`
+  return `Réserver ${c.activite}, ${quand}, ${c.salle} (nouvel onglet)`
 }
 
 /**

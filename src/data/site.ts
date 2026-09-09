@@ -19,15 +19,25 @@ export const CRM_INSCRIPTION_URL = '#'
 // caractère depuis ContactKSC.tsx (labels, valeurs, hrefs, URL d'embed Maps),
 // pour être réutilisées par les landings sans dupliquer les chaînes.
 export const COORDONNEES = {
-  telephone: '02 47 44 41 43',
-  telephoneHref: 'tel:+33247444143',
-  email: 'kidfitnessrochecorbon@gmail.com',
-  emailHref: 'mailto:kidfitnessrochecorbon@gmail.com',
+  telephone: '07 63 25 17 12',
+  telephoneHref: 'tel:+33763251712',
+  email: 'kidsportclubrochecorbon@gmail.com',
+  emailHref: 'mailto:kidsportclubrochecorbon@gmail.com',
   adresse: '1 Quai de la Loire, 37210 Rochecorbon',
   adresseHref: 'https://maps.google.com/?q=1+Quai+de+la+Loire+37210+Rochecorbon',
   mapsEmbedUrl:
     'https://maps.google.com/maps?q=1%20Quai%20de%20la%20Loire%2037210%20Rochecorbon&t=&z=15&ie=UTF8&iwloc=&output=embed',
   mapTitle: 'Plan | Kid Sport Club Rochecorbon',
+} as const
+
+// Liens de réservation en ligne du planning (outil MSDS), un par tranche d'âge.
+// SOURCE DE SECOURS du groupe « reservation » des Paramètres du site : c'est le
+// seul endroit du code à modifier si les liens changent hors admin. Un créneau
+// sans tranche d'âge ouvre le lien 6-14 ans (décision client).
+export const RESERVATION_URLS = {
+  url1036: 'https://msds.club/?a=13704/4805',
+  url35: 'https://msds.club/?a=13704/4876',
+  url614: 'https://msds.club/?a=13704/4877',
 } as const
 
 // Horaires — valeur telle qu'affichée dans ContactKSC (le libellé « Horaires »

@@ -7,13 +7,14 @@ import { cn } from '@/lib/utils'
 import FiltreActivites from './FiltreActivites'
 import GrilleTemps from './GrilleTemps'
 import ListePlanning from './ListePlanning'
-import PopoverCreneau, { type ModePopover } from './PopoverCreneau'
+import PopoverCreneau from './PopoverCreneau'
 import {
   JOURS,
   activitesDisponibles,
   agesPresents,
   bornesAxe,
   type CreneauCal,
+  type LiensReservation,
 } from '@/lib/planningLayout'
 
 // Calendrier « Semaine type » de /planning.
@@ -24,12 +25,17 @@ import {
 // mobile. Pas de CRUD, pas de drag & drop, pas de navigation de dates : un
 // planning hebdomadaire type n'a ni dates ni édition.
 //
-// Différence KSC : la légende et les couleurs sont par TRANCHE D'ÂGE, et la
-// fiche d'un créneau renvoie vers la ou les fiches de cours de sa tranche.
+// Différence KSC : la légende et les couleurs sont par TRANCHE D'ÂGE, et un
+// créneau mène à la réservation en ligne de sa tranche, dans un nouvel onglet.
+// Il n'y a donc pas de fiche épinglée : le seul état de survol est un aperçu.
 
 export type Vue = 'semaine' | 'jour' | 'liste'
 
-export type CalendrierPlanningProps = { creneaux: CreneauCal[] }
+export type CalendrierPlanningProps = {
+  creneaux: CreneauCal[]
+  /** Liens de réservation en ligne, par tranche d'âge (Paramètres du site). */
+  liensReservation: LiensReservation
+}
 
 const VUES: { cle: Vue; libelle: string }[] = [
   { cle: 'semaine', libelle: 'Semaine' },
@@ -62,7 +68,10 @@ const abonnerPetitEcran = (rappel: () => void) => {
 const estPetitEcran = () => window.matchMedia(PETIT_ECRAN).matches
 const pasPetitEcran = () => false
 
-export default function CalendrierPlanning({ creneaux }: CalendrierPlanningProps) {
+export default function CalendrierPlanning({
+  creneaux,
+  liensReservation,
+}: CalendrierPlanningProps) {
   const aujourdhui = useSyncExternalStore(AUCUN_ABONNEMENT, jourCourant, aucunJour)
   const petitEcran = useSyncExternalStore(abonnerPetitEcran, estPetitEcran, pasPetitEcran)
 
@@ -86,15 +95,14 @@ export default function CalendrierPlanning({ creneaux }: CalendrierPlanningProps
   const bornes = useMemo(() => bornesAxe(creneaux), [creneaux])
   const tranches = useMemo(() => agesPresents(creneaux), [creneaux])
 
-  // Fiche de créneau : une seule ouverte à la fois. L'aperçu au survol attend
-  // 250 ms (le pointeur qui traverse la grille ne doit pas la faire clignoter)
-  // et ne s'active qu'avec une vraie souris.
+  // Aperçu de créneau : un seul à la fois, purement informatif. Il attend
+  // 250 ms (le pointeur qui traverse la grille ne doit pas le faire clignoter)
+  // et ne s'active qu'avec une vraie souris. Le clic, lui, appartient au bloc :
+  // c'est un lien vers la réservation en ligne.
   const [fiche, setFiche] = useState<{
     creneau: CreneauCal
     rect: { top: number; left: number; bottom: number; width: number }
-    mode: ModePopover
   } | null>(null)
-  const ancre = useRef<HTMLElement | null>(null)
   const minuterie = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const annulerMinuterie = () => {
@@ -108,29 +116,28 @@ export default function CalendrierPlanning({ creneaux }: CalendrierPlanningProps
     return { top: r.top, left: r.left, bottom: r.bottom, width: r.width }
   }
 
-  const ouvrirFiche = (creneau: CreneauCal, el: HTMLElement) => {
-    annulerMinuterie()
-    ancre.current = el
-    setFiche({ creneau, rect: rectDe(el), mode: 'epingle' })
-  }
-
   const survolerFiche = (creneau: CreneauCal | null, el: HTMLElement | null) => {
     annulerMinuterie()
-    if (fiche?.mode === 'epingle') return
     if (!creneau || !el) {
       setFiche(null)
       return
     }
     if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return
-    minuterie.current = setTimeout(() => setFiche({ creneau, rect: rectDe(el), mode: 'apercu' }), 250)
+    minuterie.current = setTimeout(() => setFiche({ creneau, rect: rectDe(el) }), 250)
   }
 
-  const fermerFiche = (rendreLeFocus: boolean) => {
-    annulerMinuterie()
-    setFiche(null)
-    if (rendreLeFocus) ancre.current?.focus()
-    ancre.current = null
-  }
+  // Échap referme l'aperçu, comme une infobulle : il n'y a rien à y focaliser,
+  // donc rien à rendre au bloc d'origine.
+  useEffect(() => {
+    if (!fiche) return
+    const auClavier = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return
+      annulerMinuterie()
+      setFiche(null)
+    }
+    document.addEventListener('keydown', auClavier)
+    return () => document.removeEventListener('keydown', auClavier)
+  }, [fiche])
 
   const indexJour = JOURS.indexOf(jourActif)
   const allerAuJour = (delta: number) => {
@@ -296,7 +303,7 @@ export default function CalendrierPlanning({ creneaux }: CalendrierPlanningProps
       </ul>
 
       {vue === 'liste' ? (
-        <ListePlanning jours={JOURS} creneaux={filtres} />
+        <ListePlanning jours={JOURS} creneaux={filtres} liensReservation={liensReservation} />
       ) : (
         <GrilleTemps
           jours={vue === 'jour' ? [jourActif] : JOURS}
@@ -304,20 +311,12 @@ export default function CalendrierPlanning({ creneaux }: CalendrierPlanningProps
           bornes={bornes}
           aujourdhui={aujourdhui}
           variante={vue === 'jour' ? 'detailed' : 'compact'}
-          onOuvrir={ouvrirFiche}
+          liensReservation={liensReservation}
           onApercu={survolerFiche}
-          ouvertId={fiche?.mode === 'epingle' ? fiche.creneau.id : null}
         />
       )}
 
-      {fiche && (
-        <PopoverCreneau
-          creneau={fiche.creneau}
-          rect={fiche.rect}
-          mode={fiche.mode}
-          onFermer={fermerFiche}
-        />
-      )}
+      {fiche && <PopoverCreneau creneau={fiche.creneau} rect={fiche.rect} />}
     </section>
   )
 }
