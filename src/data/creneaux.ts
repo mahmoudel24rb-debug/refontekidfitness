@@ -46,9 +46,10 @@ const rangCreneau = (c: CreneauPlat) => {
  *
  * L'activité porte le ou les noms exacts qu'elle a dans le planning
  * (`activitePlanning`, plusieurs noms séparés par « | » : « Pompom|Pompom
- * Girl »). On ne retient ensuite que la tranche d'âge de la fiche parente ;
- * si l'activité n'a AUCUN créneau de cette tranche, on accepte ses créneaux
- * sans tranche d'âge (Pompom et Zumba du mercredi, non typés au planning).
+ * Girl »). On ne retient ensuite que la tranche d'âge de la fiche parente.
+ * Les créneaux sans tranche d'âge (Pompom et Zumba du mercredi, non typés au
+ * planning) sont ajoutés sur les fiches 6-14 ans, et servent de repli aux
+ * autres fiches quand l'activité n'a aucun créneau typé.
  */
 export function creneauxPourDiscipline(
   slugPrestation: string,
@@ -63,6 +64,9 @@ export function creneauxPourDiscipline(
   const memeActivite = planning.filter((c) => noms.includes(c.activite))
   const age = AGE_PAR_SLUG[slugPrestation]
   const tranche = memeActivite.filter((c) => c.age === age)
-  const retenus = tranche.length > 0 ? tranche : memeActivite.filter((c) => !c.age)
+  const sansAge = memeActivite.filter((c) => !c.age)
+  // Les créneaux sans tranche renvoient au lien de réservation 6-14 ans
+  // (décision client) : les fiches 6-14 les listent donc en plus des leurs.
+  const retenus = age === '6-14 ans' ? [...tranche, ...sansAge] : tranche.length > 0 ? tranche : sansAge
   return [...retenus].sort((a, b) => rangCreneau(a) - rangCreneau(b))
 }
