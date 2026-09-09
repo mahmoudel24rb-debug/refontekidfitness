@@ -6,6 +6,7 @@ import { Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import FormField from './FormField'
+import { COORDONNEES } from '@/data/site'
 
 // Formulaire de capture de lead (landings Meta Ads + Contact + Séance d'essai).
 // - ≤ 5 champs (standard conversion), honeypot anti-bots, UTM capturés depuis
@@ -157,7 +158,7 @@ export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compac
         {etat === 'erreur' && (
           <p className="text-sm font-semibold text-destructive">
             L’envoi a échoué. Réessayez, ou appelez-nous au{' '}
-            <a href="tel:+33247444143" className="underline underline-offset-2">02 47 44 41 43</a>.
+            <a href={COORDONNEES.telephoneHref} className="underline underline-offset-2">{COORDONNEES.telephone}</a>.
           </p>
         )}
         <p className="text-xs leading-relaxed text-muted-foreground">

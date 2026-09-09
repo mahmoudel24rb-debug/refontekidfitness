@@ -17,7 +17,7 @@ import SectionHeading from './SectionHeading'
 import Underline from './Underline'
 import LeadForm from './LeadForm'
 import { creneauxPourPrestation } from '@/data/creneaux'
-import { getPlanningPlat, getPrestations } from '@/lib/contenu'
+import { getParametres, getPlanningPlat, getPrestations, telephoneJsonLd } from '@/lib/contenu'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 
@@ -41,7 +41,11 @@ function Creneaux({ texte }: { texte: string }) {
 }
 
 export default async function Prestation({ slug }: { slug: string }) {
-  const [prestations, planning] = await Promise.all([getPrestations(), getPlanningPlat()])
+  const [prestations, planning, { coordonnees }] = await Promise.all([
+    getPrestations(),
+    getPlanningPlat(),
+    getParametres(),
+  ])
   const p = prestations.find((x) => x.slug === slug)
   if (!p) return null
   const autres = prestations.filter((x) => x.slug !== slug).slice(0, 3)
@@ -72,7 +76,7 @@ export default async function Prestation({ slug }: { slug: string }) {
         provider: {
           '@type': 'SportsActivityLocation',
           name: 'Kid Sport Club',
-          telephone: '+33247444143',
+          telephone: telephoneJsonLd(coordonnees),
           address: { '@type': 'PostalAddress', streetAddress: '1 Quai de la Loire', postalCode: '37210', addressLocality: 'Rochecorbon', addressCountry: 'FR' },
         },
       },

@@ -25,14 +25,14 @@ export const Parametres: GlobalConfig = {
           name: 'telephoneHref',
           label: 'Téléphone (lien)',
           type: 'text',
-          admin: { description: 'Format international. Ex. : tel:+33247444143' },
+          admin: { description: 'Format international. Ex. : tel:+33763251712' },
         },
         { name: 'email', label: 'Email (affiché)', type: 'text' },
         {
           name: 'emailHref',
           label: 'Email (lien)',
           type: 'text',
-          admin: { description: 'Ex. : mailto:kidfitnessrochecorbon@gmail.com' },
+          admin: { description: 'Ex. : mailto:kidsportclubrochecorbon@gmail.com' },
         },
         { name: 'adresse', label: 'Adresse (affichée)', type: 'text' },
         {

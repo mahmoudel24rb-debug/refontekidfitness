@@ -472,6 +472,14 @@ export type ParametresVue = {
   crmInscriptionUrl: string
 }
 
+/**
+ * Téléphone au format international attendu par les données structurées :
+ * « tel:+33763251712 » devient « +33763251712 ». Le lien reste la source : il
+ * n'y a jamais de numéro écrit en dur dans un JSON-LD.
+ */
+export const telephoneJsonLd = (coordonnees: ParametresVue['coordonnees']): string =>
+  coordonnees.telephoneHref.replace(/^tel:/, '')
+
 const PARAMETRES_FICHIER: ParametresVue = {
   coordonnees: { ...COORDONNEES },
   horaires: HORAIRES,

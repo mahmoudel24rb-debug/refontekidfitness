@@ -19,10 +19,10 @@ export const CRM_INSCRIPTION_URL = '#'
 // caractère depuis ContactKSC.tsx (labels, valeurs, hrefs, URL d'embed Maps),
 // pour être réutilisées par les landings sans dupliquer les chaînes.
 export const COORDONNEES = {
-  telephone: '02 47 44 41 43',
-  telephoneHref: 'tel:+33247444143',
-  email: 'kidfitnessrochecorbon@gmail.com',
-  emailHref: 'mailto:kidfitnessrochecorbon@gmail.com',
+  telephone: '07 63 25 17 12',
+  telephoneHref: 'tel:+33763251712',
+  email: 'kidsportclubrochecorbon@gmail.com',
+  emailHref: 'mailto:kidsportclubrochecorbon@gmail.com',
   adresse: '1 Quai de la Loire, 37210 Rochecorbon',
   adresseHref: 'https://maps.google.com/?q=1+Quai+de+la+Loire+37210+Rochecorbon',
   mapsEmbedUrl:

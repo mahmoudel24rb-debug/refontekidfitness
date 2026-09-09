@@ -7,6 +7,7 @@ import { Baloo_2, Inter } from 'next/font/google'
 // composants propres (src/components/home/).
 import './globals.css'
 
+import { getParametres, telephoneJsonLd, type ParametresVue } from '@/lib/contenu'
 
 // Typographie de la charte : Baloo 2 (display, titres) + Inter (texte courant).
 // Fontes variables Google auto-hébergées par next/font (aucune requête externe au runtime).
@@ -48,28 +49,31 @@ export const metadata = {
   },
 }
 
-// Données structurées LocalBusiness (NAP + horaires) — SEO local Rochecorbon.
-const localBusiness = {
+// Données structurées LocalBusiness (NAP + horaires) : SEO local Rochecorbon.
+// Téléphone et email viennent des Paramètres du site (Payload, repli
+// src/data/site.ts) : une seule source pour toutes les coordonnées du site.
+const localBusiness = (coordonnees: ParametresVue['coordonnees']) => ({
   '@context': 'https://schema.org',
   '@type': 'SportsActivityLocation',
   name: 'Kid Sport Club',
   description: 'Club de sport pour enfants de 10 mois à 14 ans à Rochecorbon.',
   address: { '@type': 'PostalAddress', streetAddress: '1 Quai de la Loire', postalCode: '37210', addressLocality: 'Rochecorbon', addressCountry: 'FR' },
-  telephone: '+33247444143',
-  email: 'kidfitnessrochecorbon@gmail.com',
+  telephone: telephoneJsonLd(coordonnees),
+  email: coordonnees.email,
   url: SITE,
   // Horaires MàJ récap client : Lun–Ven 9h00–19h30 sans coupure · Samedi 9h30–12h30.
   openingHoursSpecification: [
     { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:00', closes: '19:30' },
     { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:30', closes: '12:30' },
   ],
-}
+})
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const { coordonnees } = await getParametres()
   return (
     <html lang="fr" className={`${display.variable} ${body.variable}`}>
       <body>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness(coordonnees)) }} />
         {children}
       </body>
     </html>
