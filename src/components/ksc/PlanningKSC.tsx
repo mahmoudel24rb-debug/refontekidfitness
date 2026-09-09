@@ -17,7 +17,7 @@ const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 export default async function PlanningKSC() {
   const plat = await getPlanningPlat()
   // Liens de réservation en ligne (Paramètres du site) : lus ICI, côté serveur,
-  // et passés en props — le calendrier est un composant client.
+  // et passés en props, le calendrier étant un composant client.
   const { reservation } = await getParametres()
   // Passage à la forme attendue par le calendrier : un identifiant stable et
   // l'heure convertie en minutes (le composant client ne fait aucun parsing).

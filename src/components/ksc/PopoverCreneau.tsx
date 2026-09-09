@@ -12,7 +12,7 @@ import {
 } from '@/lib/planningLayout'
 
 // Aperçu d'un créneau : une seule surface, purement informative, affichée au
-// survol après 250 ms et JAMAIS cliquable (`pointer-events-none`) — le clic
+// survol après 250 ms et JAMAIS cliquable (`pointer-events-none`) : le clic
 // appartient au bloc lui-même, qui mène à la réservation en ligne. Il n'y a donc
 // ni fiche épinglée, ni feuille basse mobile, ni piège de tabulation : l'aperçu
 // n'existe qu'au pointeur fin (Échap le referme, côté CalendrierPlanning).
