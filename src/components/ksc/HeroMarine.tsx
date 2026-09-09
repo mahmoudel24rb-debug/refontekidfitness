@@ -49,6 +49,7 @@ type Props = {
   image?: string
   imageAlt?: string
   badge?: React.ReactNode // pill d'âge posée sur la photo (variante image)
+  badgeExtra?: React.ReactNode // 2e pill à côté de la première (durée du cours)
 }
 
 export default function HeroMarine({
@@ -61,6 +62,7 @@ export default function HeroMarine({
   image,
   imageAlt,
   badge,
+  badgeExtra,
 }: Props) {
   if (image) {
     return (
@@ -90,10 +92,19 @@ export default function HeroMarine({
               />
             </div>
             {badge && (
-              // Pill blanche sur la photo (lisibilité sur image, cf. charte v2).
-              <Badge variant="ageDark" className="absolute top-[18px] left-[18px] bg-white text-marine shadow-md">
-                {badge}
-              </Badge>
+              // Pills blanches sur la photo (lisibilité sur image, cf. charte
+              // v2) : la tranche d'âge, puis la durée de la séance si la page
+              // en fournit une.
+              <div className="absolute top-[18px] left-[18px] flex flex-wrap items-center gap-2">
+                <Badge variant="ageDark" className="bg-white text-marine shadow-md">
+                  {badge}
+                </Badge>
+                {badgeExtra && (
+                  <Badge variant="ageDark" className="bg-white text-marine shadow-md">
+                    {badgeExtra}
+                  </Badge>
+                )}
+              </div>
             )}
           </div>
         </div>

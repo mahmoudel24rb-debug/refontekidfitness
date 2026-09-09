@@ -2,10 +2,12 @@ import React from 'react'
 import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, cardInteractive } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import { classesCarte } from '@/lib/grilleCartes'
+import { formatDuree } from '@/lib/planningLayout'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import InscriptionCTA from './InscriptionCTA'
@@ -176,6 +178,12 @@ export default async function Prestation({ slug }: { slug: string }) {
                     )}
                   >
                     <h3 className="mb-2 font-heading text-xl font-bold text-marine">{d.nom}</h3>
+                    {/* Durée d'une séance, telle qu'elle figure au planning. */}
+                    {d.duree ? (
+                      <Badge variant="age" className="mb-2.5 self-start px-2.5 py-1 text-[12px]">
+                        {formatDuree(d.duree)}
+                      </Badge>
+                    ) : null}
                     <p className="mb-3.5 flex-1 leading-relaxed text-ink">{d.accroche}</p>
                     <span className="inline-flex items-center gap-1.5 font-bold text-magenta">
                       En savoir plus
@@ -184,6 +192,10 @@ export default async function Prestation({ slug }: { slug: string }) {
                   </a>
                 ))}
               </div>
+              {/* Note du club sous la grille (astérisque du cours Multisports). */}
+              {p.noteDisciplines && (
+                <p className="mt-7 text-center text-sm text-muted-foreground">{p.noteDisciplines}</p>
+              )}
             </Container>
           </Section>
         )}
