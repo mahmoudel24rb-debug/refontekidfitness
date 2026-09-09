@@ -8,7 +8,13 @@ import { FAQ, type FaqItem } from '@/data/faq'
 import { PLANNING, type JourPlanning } from '@/data/planning'
 import { PRESTATIONS, type Prestation } from '@/data/prestations'
 import { ABONNEMENTS, FEATURED_TITRE, PRESTATIONS_TARIFS, type Tarif } from '@/data/tarifs'
-import { COORDONNEES, CRM_INSCRIPTION_URL, HORAIRES, INSCRIPTION_URL } from '@/data/site'
+import {
+  COORDONNEES,
+  CRM_INSCRIPTION_URL,
+  HORAIRES,
+  INSCRIPTION_URL,
+  RESERVATION_URLS,
+} from '@/data/site'
 import { slugifie } from './utils'
 
 /**
@@ -491,6 +497,12 @@ export type ParametresVue = {
   horaires: string
   inscriptionUrl: string
   crmInscriptionUrl: string
+  /** Liens de réservation en ligne du planning, par tranche d'âge. */
+  reservation: {
+    url1036: string
+    url35: string
+    url614: string
+  }
 }
 
 /**
@@ -506,6 +518,7 @@ const PARAMETRES_FICHIER: ParametresVue = {
   horaires: HORAIRES,
   inscriptionUrl: INSCRIPTION_URL,
   crmInscriptionUrl: CRM_INSCRIPTION_URL,
+  reservation: { ...RESERVATION_URLS },
 }
 
 export const getParametres = cache(async (): Promise<ParametresVue> => {
@@ -515,6 +528,7 @@ export const getParametres = cache(async (): Promise<ParametresVue> => {
     const payload = await getPayloadClient()
     const g = await payload.findGlobal({ slug: 'parametres' })
     const c = g?.coordonnees ?? {}
+    const r = g?.reservation ?? {}
     const f = PARAMETRES_FICHIER
     // Champ par champ : un champ vide dans l'admin ne doit pas vider le site.
     return {
@@ -531,6 +545,11 @@ export const getParametres = cache(async (): Promise<ParametresVue> => {
       horaires: texteOu(g?.horaires, f.horaires),
       inscriptionUrl: texteOu(g?.inscriptionUrl, f.inscriptionUrl),
       crmInscriptionUrl: texteOu(g?.crmInscriptionUrl, f.crmInscriptionUrl),
+      reservation: {
+        url1036: texteOu(r.url1036, f.reservation.url1036),
+        url35: texteOu(r.url35, f.reservation.url35),
+        url614: texteOu(r.url614, f.reservation.url614),
+      },
     }
   } catch (erreur) {
     console.warn(

@@ -77,5 +77,19 @@ export const Parametres: GlobalConfig = {
           'Lien ouvert par les boutons « S’inscrire » de la landing catalogue. « # » tant que le calendrier n’est pas fourni.',
       },
     },
+    {
+      name: 'reservation',
+      label: 'Réservation en ligne (planning)',
+      type: 'group',
+      admin: {
+        description:
+          'Chaque créneau du calendrier de la semaine ouvre le lien de sa tranche d’âge. Un créneau sans tranche d’âge ouvre le lien 6-14 ans.',
+      },
+      fields: [
+        { name: 'url1036', label: 'Réservation 10-36 mois', type: 'text' },
+        { name: 'url35', label: 'Réservation 3-5 ans', type: 'text' },
+        { name: 'url614', label: 'Réservation 6-14 ans', type: 'text' },
+      ],
+    },
   ],
 }

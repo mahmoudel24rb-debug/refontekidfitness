@@ -79,6 +79,22 @@ export function rangSalle(salle?: string): number {
 }
 
 /**
+ * Liens de réservation en ligne du planning, par tranche d'âge (groupe
+ * « reservation » des Paramètres du site, repli src/data/site.ts).
+ */
+export type LiensReservation = { url1036: string; url35: string; url614: string }
+
+/**
+ * Lien de réservation d'un créneau. Un créneau sans tranche d'âge (Pompom et
+ * Zumba du mercredi) ouvre le lien 6-14 ans, décision du club.
+ */
+export function lienReservation(age: string | undefined, urls: LiensReservation): string {
+  if (age === '10-36 mois') return urls.url1036
+  if (age === '3-5 ans') return urls.url35
+  return urls.url614
+}
+
+/**
  * Fiches de cours liées à une tranche d'âge. « 6-14 ans » couvre DEUX fiches
  * (6-10 ans et 11-14 ans) : les deux liens sont proposés. Un créneau sans
  * tranche (Pompom, Zumba) n'a pas de fiche dédiée : aucun lien.
@@ -94,6 +110,11 @@ const LIENS_TRANCHE: Record<string, LienTranche[]> = {
   ],
 }
 
+/**
+ * @deprecated Remplacé par `lienReservation` : dans le calendrier, un créneau
+ * mène désormais à la réservation en ligne et non plus aux fiches de cours.
+ * Conservé le temps que PopoverCreneau et ListePlanning soient repris.
+ */
 export function liensTranche(age?: string): LienTranche[] {
   return (age && LIENS_TRANCHE[age]) || []
 }

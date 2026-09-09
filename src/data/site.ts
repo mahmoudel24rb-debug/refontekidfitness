@@ -30,6 +30,16 @@ export const COORDONNEES = {
   mapTitle: 'Plan | Kid Sport Club Rochecorbon',
 } as const
 
+// Liens de réservation en ligne du planning (outil MSDS), un par tranche d'âge.
+// SOURCE DE SECOURS du groupe « reservation » des Paramètres du site : c'est le
+// seul endroit du code à modifier si les liens changent hors admin. Un créneau
+// sans tranche d'âge ouvre le lien 6-14 ans (décision client).
+export const RESERVATION_URLS = {
+  url1036: 'https://msds.club/?a=13704/4805',
+  url35: 'https://msds.club/?a=13704/4876',
+  url614: 'https://msds.club/?a=13704/4877',
+} as const
+
 // Horaires — valeur telle qu'affichée dans ContactKSC (le libellé « Horaires »
 // reste porté par l'UI).
 export const HORAIRES = 'Lun–Ven : 9h00–19h30 (sans coupure) · Samedi : 9h30–12h30'
