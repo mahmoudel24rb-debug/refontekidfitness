@@ -25,7 +25,7 @@ export type CreneauCal = {
   debutMin: number | null
   /** Durée en minutes (60 par défaut côté serveur). */
   duree: number
-  /** Tranche d'âge : détermine la couleur et les fiches liées. */
+  /** Tranche d'âge : détermine la couleur et le lien de réservation. */
   age?: string
 }
 
@@ -92,31 +92,6 @@ export function lienReservation(age: string | undefined, urls: LiensReservation)
   if (age === '10-36 mois') return urls.url1036
   if (age === '3-5 ans') return urls.url35
   return urls.url614
-}
-
-/**
- * Fiches de cours liées à une tranche d'âge. « 6-14 ans » couvre DEUX fiches
- * (6-10 ans et 11-14 ans) : les deux liens sont proposés. Un créneau sans
- * tranche (Pompom, Zumba) n'a pas de fiche dédiée : aucun lien.
- */
-export type LienTranche = { label: string; href: string }
-
-const LIENS_TRANCHE: Record<string, LienTranche[]> = {
-  '10-36 mois': [{ label: 'Cours 10 – 36 mois', href: '/nos-prestations/cours-10-36-mois' }],
-  '3-5 ans': [{ label: 'Cours 3 – 5 ans', href: '/nos-prestations/cours-3-5-ans' }],
-  '6-14 ans': [
-    { label: 'Cours 6 – 10 ans', href: '/nos-prestations/cours-6-10-ans' },
-    { label: 'Cours 11 – 14 ans', href: '/nos-prestations/cours-11-14-ans' },
-  ],
-}
-
-/**
- * @deprecated Remplacé par `lienReservation` : dans le calendrier, un créneau
- * mène désormais à la réservation en ligne et non plus aux fiches de cours.
- * Conservé le temps que PopoverCreneau et ListePlanning soient repris.
- */
-export function liensTranche(age?: string): LienTranche[] {
-  return (age && LIENS_TRANCHE[age]) || []
 }
 
 /** « 10h », « 9h30 » -> minutes depuis minuit ; null si le format est autre. */
