@@ -158,7 +158,36 @@ export const Prestations: CollectionConfig = {
           type: 'textarea',
           admin: { description: 'Un paragraphe : à quels enfants cette activité s’adresse.' },
         },
+        {
+          name: 'duree',
+          label: 'Durée (minutes)',
+          type: 'number',
+          min: 15,
+          max: 600,
+          admin: {
+            description:
+              'Durée d’une séance, affichée en pastille (« 45 min », « 1h ») sur la fiche du cours et sur la page de l’activité. Vide : aucune pastille.',
+          },
+        },
+        {
+          name: 'activitePlanning',
+          label: 'Nom dans le planning',
+          type: 'text',
+          admin: {
+            description:
+              'Nom exact de l’activité dans le planning, pour lister ses créneaux réels sur sa page. Plusieurs noms possibles, séparés par « | ». Ex. : « Pompom|Pompom Girl ».',
+          },
+        },
       ],
+    },
+    {
+      name: 'noteDisciplines',
+      label: 'Note sous les activités',
+      type: 'text',
+      admin: {
+        description:
+          'Petite note affichée sous la grille des activités. Ex. : « *Multisports : football, rugby, basket… ».',
+      },
     },
     {
       name: 'prix',

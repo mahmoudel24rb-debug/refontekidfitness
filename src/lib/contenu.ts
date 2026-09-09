@@ -122,6 +122,8 @@ export const getPrestations = cache(async (): Promise<PrestationVue[]> => {
         intro: intro.length > 0 ? intro : (df?.intro ?? []),
         benefices: benefices.length > 0 ? benefices : (df?.benefices ?? []),
         pourQui: texteOu(x.pourQui, df?.pourQui ?? ''),
+        duree: typeof x.duree === 'number' && x.duree > 0 ? x.duree : df?.duree,
+        activitePlanning: texteOptionnel(x.activitePlanning, df?.activitePlanning),
       }
     })
     // Déroulé de la journée : champ ADDITIF, comme les autres. Tant que la base
@@ -144,6 +146,7 @@ export const getPrestations = cache(async (): Promise<PrestationVue[]> => {
       image: urlMedia(d.image) ?? fichier?.image ?? '',
       motCle: d.motCle,
       disciplines: disciplines.length > 0 ? disciplines : fichier?.disciplines,
+      noteDisciplines: texteOptionnel(d.noteDisciplines, fichier?.noteDisciplines),
       derouleIntro: texteOptionnel(d.derouleIntro, fichier?.derouleIntro),
       deroule: deroule.length > 0 ? deroule : fichier?.deroule,
       derouleNote: texteOptionnel(d.derouleNote, fichier?.derouleNote),
