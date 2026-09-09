@@ -8,8 +8,11 @@
    visibles et modifiables dans l'admin.
 
    IDEMPOTENT ET NON DESTRUCTIF :
-   - `prioritaire` n'est ecrit QUE s'il est encore NULL en base (une case
-     cochee ou decochee dans l'admin fait foi et n'est jamais reecrite) ;
+   - `prioritaire` n'est COCHE que pour les formules que le fichier declare
+     prioritaires et qui ne le sont pas encore en base. La colonne etant creee
+     avec la valeur `false`, c'est ce `false` qui vaut « pas encore renseigne ».
+     Le script ne DECOCHE jamais une case : un tarif coche dans l'admin mais
+     non prioritaire dans le fichier est laisse tel quel ;
    - `icone` n'est ecrite que si elle est vide ;
    - `avantages` n'est ecrit que si la liste est vide ;
    - appariement par TITRE ; un tarif de la base absent du fichier est laisse
@@ -50,9 +53,7 @@ async function run() {
     }
 
     const patch = {}
-    if (d.prioritaire === null || d.prioritaire === undefined) {
-      patch.prioritaire = Boolean(fichier.prioritaire)
-    }
+    if (fichier.prioritaire && !d.prioritaire) patch.prioritaire = true
     if (!d.icone && fichier.icone) patch.icone = fichier.icone
     const aDejaDesAvantages = Array.isArray(d.avantages) && d.avantages.length > 0
     if (!aDejaDesAvantages && (fichier.avantages ?? []).length > 0) {
@@ -71,7 +72,7 @@ async function run() {
     await payload.update({ collection: 'tarifs', id: d.id, data: patch })
     majs += 1
     const details = []
-    if ('prioritaire' in patch) details.push(`prioritaire=${patch.prioritaire} (avant : vide)`)
+    if ('prioritaire' in patch) details.push(`prioritaire=true (avant : ${d.prioritaire})`)
     if (patch.icone) details.push(`icone="${patch.icone}" (avant : vide)`)
     if (patch.avantages) {
       details.push(`avantages=[${patch.avantages.map((a) => `« ${a.texte} »`).join(' | ')}]`)

@@ -7,7 +7,7 @@
 
    GARDE-FOUS :
    1. SAUVEGARDE OBLIGATOIRE : les activites actuelles des 4 fiches sont ecrites
-      dans C:\tmp\pg18\ksc-disciplines-backup-<date>.json AVANT toute ecriture.
+      dans C:/tmp/pg18/ksc-disciplines-backup-<date>.json AVANT toute ecriture.
       Si la sauvegarde echoue, le script s'arrete sans rien modifier.
    2. UNE SEULE FOIS : si les 4 fiches portent deja exactement les nouveaux noms,
       le script refuse de tourner (les modifications faites dans l'admin apres le
@@ -30,7 +30,7 @@ import config from '../src/payload.config.ts'
 
 import { PRESTATIONS } from '../src/data/prestations.ts'
 
-const DOSSIER_BACKUP = 'C:\tmp\pg18'
+const DOSSIER_BACKUP = 'C:/tmp/pg18'
 const vide = (v) => typeof v !== 'string' || v.trim().length === 0
 
 // Forme Payload d'une activite : `description` porte l'accroche du fichier.

@@ -25,7 +25,7 @@ async function run() {
   console.log('Coachs de l\'equipe (idempotent, non destructif)')
 
   const { docs } = await payload.find({ collection: 'equipe', limit: 200, sort: 'ordre' })
-  console.log(`- base : ${docs.length} coach(s) — ${docs.map((d) => d.nom).join(', ')}`)
+  console.log(`- base : ${docs.length} coach(s) : ${docs.map((d) => d.nom).join(', ')}`)
 
   let crees = 0
   let inchanges = 0
