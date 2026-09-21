@@ -89,9 +89,9 @@ export const ABONNEMENTS: Tarif[] = [
   },
 ]
 
-// Les avantages des Mercredis Sportifs et des Stages vacances sont rédigés à
-// partir du déroulé de journée fourni par le club (accueil échelonné, activités
-// encadrées matin et après-midi, départ échelonné) : rien n'y est promis qui ne
+// Avantages des Mercredis Sportifs : texte fourni par le club (21/09/2026).
+// Avantages des Stages vacances : rédigés à partir du déroulé de journée fourni
+// par le club (accueil dès 8h00, journée encadrée) : rien n'y est promis qui ne
 // figure pas dans le déroulé publié sur la fiche.
 export const PRESTATIONS_TARIFS: Tarif[] = [
   {
@@ -101,10 +101,10 @@ export const PRESTATIONS_TARIFS: Tarif[] = [
     prioritaire: true,
     icone: 'calendrier',
     avantages: [
-      'Tous les mercredis, hors vacances d’été',
-      'Accueil échelonné de 7h30 à 10h00',
-      'Activités sportives encadrées matin et après-midi',
-      'Départ échelonné jusqu’à 18h00',
+      'Seule solution de garde 100% sportive : parc dédié au sport, équipé en conséquence',
+      'Accès maintenu pendant les mercredis des vacances scolaires (hors vacances de Noël)',
+      'Accès anticipé et prioritaire aux Stages Vacances',
+      'Accès libre aux cours de sport dispensés en parallèle (normalement réservés aux abonnés classiques) : de quoi tester un maximum d’activités et trouver celles qui plaisent vraiment à l’enfant',
     ],
   },
   {

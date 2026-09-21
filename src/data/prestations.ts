@@ -74,13 +74,13 @@ const derouleJournee = (debutAccueil: string): EtapeDeroule[] => [
     horaire: '10h00 – 12h00',
     titre: 'Activités physiques encadrées',
     description:
-      "Séances sportives animées par nos coachs, avec accès aux cours dispensés dans l'établissement selon les envies de l'enfant et sa tranche d'âge.",
+      "Séances sportives animées par nos coachs, avec accès aux cours dispensés dans l’établissement selon les envies de l’enfant et sa tranche d'âge.",
   },
   {
     horaire: '12h00 – 14h00',
     titre: 'Pause déjeuner & temps calme',
     description:
-      "Repas tiré du sac (à prévoir par les familles), frigo et micro-ondes à disposition sur place. Les coachs déjeunent avec les enfants et les accompagnent pour faire chauffer leur repas et tout ce dont ils ont besoin. Suivi d'un temps calme, libre ou d'une sieste selon les besoins de l'enfant.",
+      "Repas tiré du sac (à prévoir par les familles), frigo et micro-ondes à disposition sur place. Les coachs déjeunent avec les enfants et les accompagnent pour faire chauffer leur repas et tout ce dont ils ont besoin. Suivi d’un temps calme, libre ou d’une sieste selon les besoins de l’enfant.",
   },
   {
     horaire: '14h00 – 16h00',
@@ -92,7 +92,7 @@ const derouleJournee = (debutAccueil: string): EtapeDeroule[] => [
     horaire: '16h00 – 18h00',
     titre: 'Goûter & départ échelonné',
     description:
-      "Goûter à prévoir par les familles. Les enfants repartent au fur et à mesure, selon l'horaire choisi par les parents.",
+      "Goûter à prévoir par les familles. Les enfants repartent au fur et à mesure, selon l’horaire choisi par les parents.",
   },
 ]
 
@@ -234,7 +234,7 @@ export const PRESTATIONS: Prestation[] = [
         duree: 45,
         activitePlanning: 'Pompom|Pompom Girl',
         accroche:
-          "Un cours de danse sportive et énergique, mêlant chorégraphies rythmées, maniement des pompons, sauts et petites acrobaties. Les enfants travaillent la coordination, la synchronisation et l'esprit d'équipe, dans une ambiance dynamique et festive.",
+          "Un cours de danse sportive et énergique, mêlant chorégraphies rythmées, maniement des pompons, sauts et petites acrobaties. Les enfants travaillent la coordination, la synchronisation et l’esprit d’équipe, dans une ambiance dynamique et festive.",
         intro: [],
         benefices: [],
         pourQui: '',
@@ -262,12 +262,12 @@ export const PRESTATIONS: Prestation[] = [
         pourQui: '',
       },
       {
-        nom: "Fit'Family (Parent/Enfant)",
+        nom: "Fit’Family (Parent/Enfant)",
         slug: 'fit-family',
         duree: 60,
         activitePlanning: 'Fit Family',
         accroche:
-          "Un vrai cours de fitness à partager en duo parent-enfant, mêlant exercices ludiques, renforcement et jeux coopératifs. Un moment de sport et de complicité, où l'on se dépense ensemble dans la bonne humeur.",
+          "Un vrai cours de fitness à partager en duo parent-enfant, mêlant exercices ludiques, renforcement et jeux coopératifs. Un moment de sport et de complicité, où l’on se dépense ensemble dans la bonne humeur.",
         intro: [],
         benefices: [],
         pourQui: '',
@@ -289,7 +289,7 @@ export const PRESTATIONS: Prestation[] = [
         duree: 60,
         activitePlanning: 'Gym Accro',
         accroche:
-          "Un cours d'acrosport qui combine gymnastique et figures acrobatiques réalisées à plusieurs. Les enfants développent leur équilibre, la confiance en l'autre et le travail collectif, à travers portés et figures progressives.",
+          "Un cours d’acrosport qui combine gymnastique et figures acrobatiques réalisées à plusieurs. Les enfants développent leur équilibre, la confiance en l’autre et le travail collectif, à travers portés et figures progressives.",
         intro: [],
         benefices: [],
         pourQui: '',
@@ -315,7 +315,7 @@ export const PRESTATIONS: Prestation[] = [
         duree: 45,
         activitePlanning: 'Pompom|Pompom Girl',
         accroche:
-          "Un cours de danse sportive et énergique, mêlant chorégraphies rythmées, maniement des pompons, sauts et petites acrobaties. Les enfants travaillent la coordination, la synchronisation et l'esprit d'équipe, dans une ambiance dynamique et festive.",
+          "Un cours de danse sportive et énergique, mêlant chorégraphies rythmées, maniement des pompons, sauts et petites acrobaties. Les enfants travaillent la coordination, la synchronisation et l’esprit d’équipe, dans une ambiance dynamique et festive.",
         intro: [],
         benefices: [],
         pourQui: '',
@@ -343,12 +343,12 @@ export const PRESTATIONS: Prestation[] = [
         pourQui: '',
       },
       {
-        nom: "Fit'Family (Parent/Enfant)",
+        nom: "Fit’Family (Parent/Enfant)",
         slug: 'fit-family',
         duree: 60,
         activitePlanning: 'Fit Family',
         accroche:
-          "Un vrai cours de fitness à partager en duo parent-enfant, mêlant exercices ludiques, renforcement et jeux coopératifs. Un moment de sport et de complicité, où l'on se dépense ensemble dans la bonne humeur.",
+          "Un vrai cours de fitness à partager en duo parent-enfant, mêlant exercices ludiques, renforcement et jeux coopératifs. Un moment de sport et de complicité, où l’on se dépense ensemble dans la bonne humeur.",
         intro: [],
         benefices: [],
         pourQui: '',
@@ -370,7 +370,7 @@ export const PRESTATIONS: Prestation[] = [
         duree: 60,
         activitePlanning: 'Gym Accro',
         accroche:
-          "Un cours d'acrosport qui combine gymnastique et figures acrobatiques réalisées à plusieurs. Les enfants développent leur équilibre, la confiance en l'autre et le travail collectif, à travers portés et figures progressives.",
+          "Un cours d’acrosport qui combine gymnastique et figures acrobatiques réalisées à plusieurs. Les enfants développent leur équilibre, la confiance en l’autre et le travail collectif, à travers portés et figures progressives.",
         intro: [],
         benefices: [],
         pourQui: '',
