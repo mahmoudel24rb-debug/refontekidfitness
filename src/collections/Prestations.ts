@@ -5,15 +5,19 @@ import { authenticated, publicRead } from '../access'
 // Les activités du club (« Nos activités »). Une fiche = une page
 // /nos-prestations/[slug] + une carte dans la mosaïque du hub, le footer et les
 // landings. Source de secours : src/data/prestations.ts.
+// Vocabulaire de l'admin : la collection = « Activités » (les 7 fiches), le
+// tableau `disciplines` = « Cours de la tranche », le champ `activite` du
+// planning = « Cours ».
 export const Prestations: CollectionConfig = {
   slug: 'prestations',
   labels: { singular: 'Activité', plural: 'Activités' },
   admin: {
     useAsTitle: 'titre',
     defaultColumns: ['titre', 'age', 'prix', 'ordre'],
-    group: 'Contenu',
+    group: 'Contenu du site',
     description:
-      'Fiches activités : mercredis sportifs, stages, anniversaire, cours par tranche d’âge.',
+      'Les 7 fiches du menu « Nos activités » : Mercredis Sportifs, stages, anniversaire et les 4 cours par tranche d’âge. Chaque fiche est une page du site.',
+    hideAPIURL: true,
   },
   access: {
     read: publicRead,
@@ -25,13 +29,14 @@ export const Prestations: CollectionConfig = {
     { name: 'titre', label: 'Titre', type: 'text', required: true },
     {
       name: 'slug',
-      label: 'Slug (URL)',
+      label: 'Adresse de la page',
       type: 'text',
       required: true,
       unique: true,
       admin: {
         position: 'sidebar',
-        description: 'Ex. : cours-3-5-ans → /nos-prestations/cours-3-5-ans. Ne pas modifier une fois la page en ligne.',
+        description:
+          'Fin de l’adresse de la page sur le site. Ex. : cours-3-5-ans donne kidsportclub.fr/nos-prestations/cours-3-5-ans. En minuscules, sans accents ni espaces (mots séparés par des tirets). Ne plus la modifier une fois la page en ligne.',
       },
     },
     {
@@ -46,7 +51,7 @@ export const Prestations: CollectionConfig = {
       label: 'Accroche',
       type: 'text',
       required: true,
-      admin: { description: 'Une phrase, reprise sous le titre du hero et sur les cartes.' },
+      admin: { description: 'Une phrase, reprise sous le titre en haut de la page et sur les cartes.' },
     },
     {
       name: 'intro',
@@ -102,25 +107,25 @@ export const Prestations: CollectionConfig = {
     },
     {
       name: 'disciplines',
-      label: 'Activités de la tranche',
+      label: 'Cours de la tranche',
       type: 'array',
-      labels: { singular: 'Activité', plural: 'Activités' },
+      labels: { singular: 'Cours', plural: 'Cours' },
       admin: {
         description:
-          'Uniquement pour les 4 cours par tranche d’âge : le détail des activités pratiquées. Chaque activité a sa propre page /nos-prestations/[cours]/[activité], une carte sur la fiche du cours et une entrée du sous-menu « Nos activités ».',
+          'Uniquement pour les 4 fiches de cours par tranche d’âge : les cours pratiqués. Chaque cours a sa propre page, une carte sur la fiche de la tranche et une entrée dans le sous-menu « Nos activités » du site.',
       },
       fields: [
         { name: 'nom', label: 'Nom', type: 'text', required: true },
         {
           name: 'slug',
-          label: 'Slug (URL)',
+          label: 'Adresse de la page',
           type: 'text',
           // Volontairement NON requis : le champ est additif sur une table déjà
           // peuplée (une colonne NOT NULL casserait la mise à jour du schéma).
           // Vide, le site recalcule le slug depuis le nom (même règle qu'avant).
           admin: {
             description:
-              'Segment d’URL de la page de l’activité. Ex. : kid-gym-et-dance → /nos-prestations/cours-3-5-ans/kid-gym-et-dance. Laisser vide pour le déduire du nom. Ne pas modifier une fois la page en ligne.',
+              'Fin de l’adresse de la page du cours, après celle de la tranche. Ex. : gym-et-dance donne kidsportclub.fr/nos-prestations/cours-3-5-ans/gym-et-dance. Vide : elle est déduite du nom. Ne plus la modifier une fois la page en ligne.',
           },
         },
         {
@@ -130,7 +135,7 @@ export const Prestations: CollectionConfig = {
           required: true,
           admin: {
             description:
-              'Résumé court : sous-titre du hero de la page de l’activité, texte de sa carte sur la fiche du cours.',
+              'Résumé court : sous-titre en haut de la page du cours et texte de sa carte sur la fiche de la tranche.',
           },
         },
         {
@@ -140,7 +145,7 @@ export const Prestations: CollectionConfig = {
           labels: { singular: 'Paragraphe', plural: 'Paragraphes' },
           admin: {
             description:
-              'Corps de la page de l’activité : 2 paragraphes. Vide, le texte de src/data/prestations.ts est servi.',
+              'Texte de la page du cours, en 2 paragraphes. Vide : le texte actuel du site est conservé.',
           },
           fields: [{ name: 'texte', label: 'Texte', type: 'textarea', required: true }],
         },
@@ -156,7 +161,7 @@ export const Prestations: CollectionConfig = {
           name: 'pourQui',
           label: 'Pour qui ?',
           type: 'textarea',
-          admin: { description: 'Un paragraphe : à quels enfants cette activité s’adresse.' },
+          admin: { description: 'Un paragraphe : à quels enfants ce cours s’adresse.' },
         },
         {
           name: 'duree',
@@ -166,7 +171,7 @@ export const Prestations: CollectionConfig = {
           max: 600,
           admin: {
             description:
-              'Durée d’une séance, affichée en pastille (« 45 min », « 1h ») sur la fiche du cours et sur la page de l’activité. Vide : aucune pastille.',
+              'Durée d’une séance, affichée en pastille (« 45 min », « 1h ») sur la fiche de la tranche et sur la page du cours. Vide : aucune pastille.',
           },
         },
         {
@@ -175,18 +180,18 @@ export const Prestations: CollectionConfig = {
           type: 'text',
           admin: {
             description:
-              'Nom exact de l’activité dans le planning, pour lister ses créneaux réels sur sa page. Plusieurs noms possibles, séparés par « | ». Ex. : « Pompom|Pompom Girl ».',
+              'Nom du cours tel qu’il est écrit dans le planning, pour afficher ses horaires sur sa page. S’il porte plusieurs noms dans le planning, séparez-les par une barre verticale. Ex. : Pompom|Pompom Girl.',
           },
         },
       ],
     },
     {
       name: 'noteDisciplines',
-      label: 'Note sous les activités',
+      label: 'Note sous les cours',
       type: 'text',
       admin: {
         description:
-          'Petite note affichée sous la grille des activités. Ex. : « *Multisports : football, rugby, basket… ».',
+          'Petite note affichée sous la grille des cours. Ex. : « *Multisports : football, rugby, basket… ».',
       },
     },
     {
@@ -203,17 +208,18 @@ export const Prestations: CollectionConfig = {
       required: true,
       admin: {
         description:
-          'Phrase du bloc « Créneaux ». Si elle contient « voir le planning », ces mots deviennent un lien vers /planning.',
+          'Phrase du bloc « Créneaux ». Si elle contient « voir le planning », ces mots deviennent un lien vers la page Planning.',
       },
     },
     {
       name: 'motCle',
-      label: 'Mot-clé SEO',
+      label: 'Mot-clé pour Google',
       type: 'text',
       required: true,
       admin: {
         position: 'sidebar',
-        description: 'Utilisé dans la meta description et les données structurées de la fiche.',
+        description:
+          'Expression que les parents tapent dans Google pour trouver cette activité. Elle est reprise dans le résumé de la page destiné aux moteurs de recherche.',
       },
     },
     {
@@ -228,7 +234,10 @@ export const Prestations: CollectionConfig = {
       label: 'Ordre d’affichage',
       type: 'number',
       defaultValue: 0,
-      admin: { position: 'sidebar', description: 'Ordre dans la mosaïque, le footer et le sitemap.' },
+      admin: {
+        position: 'sidebar',
+        description: 'Ordre d’affichage sur la page Nos activités et dans le pied de page.',
+      },
     },
   ],
 }

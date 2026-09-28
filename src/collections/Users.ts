@@ -8,7 +8,9 @@ export const Users: CollectionConfig = {
   admin: {
     useAsTitle: 'email',
     defaultColumns: ['email', 'nom', 'role'],
-    group: 'Administration',
+    group: 'Réglages',
+    description: 'Les comptes qui peuvent se connecter à cet espace de gestion.',
+    hideAPIURL: true,
   },
   auth: true,
   access: {
@@ -34,7 +36,15 @@ export const Users: CollectionConfig = {
         { label: 'Éditeur (client)', value: 'editeur' },
       ],
       saveToJWT: true,
+      admin: {
+        description: 'Admin : gestion complète, comptes compris. Éditeur : gestion du contenu du site.',
+      },
     },
-    { name: 'nom', label: 'Nom', type: 'text' },
+    {
+      name: 'nom',
+      label: 'Nom',
+      type: 'text',
+      admin: { description: 'Utilisé pour vous saluer sur l’accueil de cet espace.' },
+    },
   ],
 }

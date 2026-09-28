@@ -9,7 +9,12 @@ import { authenticated, publicRead } from '../access'
 export const Parametres: GlobalConfig = {
   slug: 'parametres',
   label: 'Paramètres du site',
-  admin: { group: 'Réglages' },
+  admin: {
+    group: 'Réglages',
+    description:
+      'Coordonnées, horaires et liens utilisés partout sur le site : pied de page, page Contact, séance d’essai, pages de publicité.',
+    hideAPIURL: true,
+  },
   access: {
     read: publicRead,
     update: authenticated,

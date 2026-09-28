@@ -11,8 +11,10 @@ export const Avis: CollectionConfig = {
   admin: {
     useAsTitle: 'auteur',
     defaultColumns: ['auteur', 'ordre'],
-    group: 'Contenu',
-    description: 'Avis recopiés tels quels (verbatim). L’ordre est celui d’affichage sur le site.',
+    group: 'Contenu du site',
+    description:
+      'Avis de parents recopiés mot pour mot depuis Google. L’ordre est celui de l’affichage sur le site.',
+    hideAPIURL: true,
   },
   access: {
     read: publicRead,

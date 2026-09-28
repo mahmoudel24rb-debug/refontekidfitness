@@ -10,7 +10,10 @@ export const Faq: CollectionConfig = {
   admin: {
     useAsTitle: 'question',
     defaultColumns: ['question', 'ordre'],
-    group: 'Contenu',
+    group: 'Contenu du site',
+    description:
+      'Les questions fréquentes de la page FAQ, dans l’ordre d’affichage. Quelques-unes sont aussi reprises sur l’accueil.',
+    hideAPIURL: true,
   },
   access: {
     read: publicRead,
@@ -29,7 +32,7 @@ export const Faq: CollectionConfig = {
       admin: {
         position: 'sidebar',
         description:
-          'Si la réponse contient les mots « page tarifs », ils deviennent un lien vers /tarifs.',
+          'Si la réponse contient les mots « page tarifs », ils deviennent un lien vers la page Tarifs.',
       },
     },
     {

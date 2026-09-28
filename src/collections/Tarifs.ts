@@ -11,7 +11,10 @@ export const Tarifs: CollectionConfig = {
   admin: {
     useAsTitle: 'titre',
     defaultColumns: ['titre', 'type', 'prix', 'icone', 'prioritaire', 'enAvant', 'ordre'],
-    group: 'Contenu',
+    group: 'Contenu du site',
+    description:
+      'Les formules affichées sur la page Tarifs : les abonnements aux cours d’un côté, les autres prestations de l’autre.',
+    hideAPIURL: true,
   },
   access: {
     read: publicRead,
@@ -30,7 +33,7 @@ export const Tarifs: CollectionConfig = {
         { label: 'Abonnement', value: 'abonnement' },
         { label: 'Prestation', value: 'prestation' },
       ],
-      admin: { description: 'Détermine le groupe dans lequel la carte apparaît sur la page Tarifs.' },
+      admin: { description: 'Détermine le groupe dans lequel la formule apparaît sur la page Tarifs.' },
     },
     { name: 'titre', label: 'Titre', type: 'text', required: true },
     {
@@ -54,7 +57,7 @@ export const Tarifs: CollectionConfig = {
       labels: { singular: 'Avantage', plural: 'Avantages' },
       admin: {
         description:
-          'Points listés sous le prix, avec une coche magenta. Uniquement sur les cartes d’abonnement.',
+          'Points listés sous le prix, avec une coche magenta. Affichés uniquement sur les cartes complètes (formules prioritaires).',
       },
       fields: [{ name: 'texte', label: 'Texte', type: 'text', required: true }],
     },

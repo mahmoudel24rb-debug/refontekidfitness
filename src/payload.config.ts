@@ -89,7 +89,10 @@ export default buildConfig({
       },
     },
   },
-  collections: [Prestations, Planning, Tarifs, Faq, Avis, Equipe, Articles, Media, Users],
+  // Ordre du menu et de l'accueil : « Contenu du site » (planning, activités,
+  // tarifs, articles, FAQ, avis, équipe), « Médias », puis « Réglages »
+  // (utilisateurs, et le global Paramètres du site).
+  collections: [Planning, Prestations, Tarifs, Articles, Faq, Avis, Equipe, Media, Users],
   globals: [Parametres],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || 'dev-secret-ksc',

@@ -9,7 +9,12 @@ import { authenticated, publicRead } from '../access'
 export const Media: CollectionConfig = {
   slug: 'media',
   labels: { singular: 'Média', plural: 'Médias' },
-  admin: { group: 'Administration' },
+  admin: {
+    group: 'Médias',
+    description:
+      'Les photos utilisées sur le site : activités, équipe, articles, avis. Le texte alternatif décrit chaque photo aux personnes malvoyantes et à Google.',
+    hideAPIURL: true,
+  },
   access: {
     read: publicRead,
     create: authenticated,
@@ -22,7 +27,10 @@ export const Media: CollectionConfig = {
       label: 'Texte alternatif',
       type: 'text',
       required: true,
-      admin: { description: 'Décrit l’image pour l’accessibilité et le référencement.' },
+      admin: {
+        description:
+          'Décrivez la photo en une phrase. Ex. : « Enfants en cours de gym dans la salle Kid ».',
+      },
     },
   ],
   upload: true,

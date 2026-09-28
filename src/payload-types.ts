@@ -67,13 +67,13 @@ export interface Config {
   };
   blocks: {};
   collections: {
-    prestations: Prestation;
     planning: Planning;
+    prestations: Prestation;
     tarifs: Tarif;
+    articles: Article;
     faq: Faq;
     avis: Avi;
     equipe: Equipe;
-    articles: Article;
     media: Media;
     users: User;
     'payload-kv': PayloadKv;
@@ -83,13 +83,13 @@ export interface Config {
   };
   collectionsJoins: {};
   collectionsSelect: {
-    prestations: PrestationsSelect<false> | PrestationsSelect<true>;
     planning: PlanningSelect<false> | PlanningSelect<true>;
+    prestations: PrestationsSelect<false> | PrestationsSelect<true>;
     tarifs: TarifsSelect<false> | TarifsSelect<true>;
+    articles: ArticlesSelect<false> | ArticlesSelect<true>;
     faq: FaqSelect<false> | FaqSelect<true>;
     avis: AvisSelect<false> | AvisSelect<true>;
     equipe: EquipeSelect<false> | EquipeSelect<true>;
-    articles: ArticlesSelect<false> | ArticlesSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
@@ -136,7 +136,47 @@ export interface UserAuthOperations {
   };
 }
 /**
- * Fiches activités : mercredis sportifs, stages, anniversaire, cours par tranche d’âge.
+ * Les créneaux de la semaine type, affichés sur la page Planning et sur les pages des cours. Un créneau par ligne ; l’ordre s’applique à l’intérieur de chaque journée.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "planning".
+ */
+export interface Planning {
+  id: number;
+  jour: 'Lundi' | 'Mardi' | 'Mercredi' | 'Jeudi' | 'Vendredi' | 'Samedi';
+  /**
+   * Ex. : Salle Kid, Salle Cross, Salle Fitness, Bulle.
+   */
+  salle: string;
+  /**
+   * Heure de début. Ex. : 10h30, 17h, 9h15.
+   */
+  heure: string;
+  /**
+   * Nom du cours tel qu’il s’affiche dans le calendrier. Écrivez-le toujours de la même façon : il sert aussi à retrouver les horaires d’un cours sur sa page.
+   */
+  activite: string;
+  /**
+   * Durée du cours : elle fixe la hauteur du bloc dans le calendrier de la semaine. 60 minutes par défaut.
+   */
+  duree?: number | null;
+  /**
+   * Optionnelle. Elle donne sa couleur et sa pastille d’âge au créneau, ouvre le bon lien de réservation et propose le créneau dans le formulaire des fiches activités.
+   */
+  age?: ('10-36 mois' | '3-5 ans' | '6-14 ans') | null;
+  /**
+   * Ordre du créneau dans sa journée.
+   */
+  ordre?: number | null;
+  /**
+   * Décoché : le créneau disparaît du site.
+   */
+  actif?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Les 7 fiches du menu « Nos activités » : Mercredis Sportifs, stages, anniversaire et les 4 cours par tranche d’âge. Chaque fiche est une page du site.
  *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "prestations".
@@ -145,7 +185,7 @@ export interface Prestation {
   id: number;
   titre: string;
   /**
-   * Ex. : cours-3-5-ans → /nos-prestations/cours-3-5-ans. Ne pas modifier une fois la page en ligne.
+   * Fin de l’adresse de la page sur le site. Ex. : cours-3-5-ans donne kidsportclub.fr/nos-prestations/cours-3-5-ans. En minuscules, sans accents ni espaces (mots séparés par des tirets). Ne plus la modifier une fois la page en ligne.
    */
   slug: string;
   /**
@@ -153,7 +193,7 @@ export interface Prestation {
    */
   age: string;
   /**
-   * Une phrase, reprise sous le titre du hero et sur les cartes.
+   * Une phrase, reprise sous le titre en haut de la page et sur les cartes.
    */
   accroche: string;
   /**
@@ -192,21 +232,21 @@ export interface Prestation {
    */
   derouleNote?: string | null;
   /**
-   * Uniquement pour les 4 cours par tranche d’âge : le détail des activités pratiquées. Chaque activité a sa propre page /nos-prestations/[cours]/[activité], une carte sur la fiche du cours et une entrée du sous-menu « Nos activités ».
+   * Uniquement pour les 4 fiches de cours par tranche d’âge : les cours pratiqués. Chaque cours a sa propre page, une carte sur la fiche de la tranche et une entrée dans le sous-menu « Nos activités » du site.
    */
   disciplines?:
     | {
         nom: string;
         /**
-         * Segment d’URL de la page de l’activité. Ex. : kid-gym-et-dance → /nos-prestations/cours-3-5-ans/kid-gym-et-dance. Laisser vide pour le déduire du nom. Ne pas modifier une fois la page en ligne.
+         * Fin de l’adresse de la page du cours, après celle de la tranche. Ex. : gym-et-dance donne kidsportclub.fr/nos-prestations/cours-3-5-ans/gym-et-dance. Vide : elle est déduite du nom. Ne plus la modifier une fois la page en ligne.
          */
         slug?: string | null;
         /**
-         * Résumé court : sous-titre du hero de la page de l’activité, texte de sa carte sur la fiche du cours.
+         * Résumé court : sous-titre en haut de la page du cours et texte de sa carte sur la fiche de la tranche.
          */
         description: string;
         /**
-         * Corps de la page de l’activité : 2 paragraphes. Vide, le texte de src/data/prestations.ts est servi.
+         * Texte de la page du cours, en 2 paragraphes. Vide : le texte actuel du site est conservé.
          */
         intro?:
           | {
@@ -224,22 +264,22 @@ export interface Prestation {
             }[]
           | null;
         /**
-         * Un paragraphe : à quels enfants cette activité s’adresse.
+         * Un paragraphe : à quels enfants ce cours s’adresse.
          */
         pourQui?: string | null;
         /**
-         * Durée d’une séance, affichée en pastille (« 45 min », « 1h ») sur la fiche du cours et sur la page de l’activité. Vide : aucune pastille.
+         * Durée d’une séance, affichée en pastille (« 45 min », « 1h ») sur la fiche de la tranche et sur la page du cours. Vide : aucune pastille.
          */
         duree?: number | null;
         /**
-         * Nom exact de l’activité dans le planning, pour lister ses créneaux réels sur sa page. Plusieurs noms possibles, séparés par « | ». Ex. : « Pompom|Pompom Girl ».
+         * Nom du cours tel qu’il est écrit dans le planning, pour afficher ses horaires sur sa page. S’il porte plusieurs noms dans le planning, séparez-les par une barre verticale. Ex. : Pompom|Pompom Girl.
          */
         activitePlanning?: string | null;
         id?: string | null;
       }[]
     | null;
   /**
-   * Petite note affichée sous la grille des activités. Ex. : « *Multisports : football, rugby, basket… ».
+   * Petite note affichée sous la grille des cours. Ex. : « *Multisports : football, rugby, basket… ».
    */
   noteDisciplines?: string | null;
   /**
@@ -247,11 +287,11 @@ export interface Prestation {
    */
   prix: string;
   /**
-   * Phrase du bloc « Créneaux ». Si elle contient « voir le planning », ces mots deviennent un lien vers /planning.
+   * Phrase du bloc « Créneaux ». Si elle contient « voir le planning », ces mots deviennent un lien vers la page Planning.
    */
   creneauxTexte: string;
   /**
-   * Utilisé dans la meta description et les données structurées de la fiche.
+   * Expression que les parents tapent dans Google pour trouver cette activité. Elle est reprise dans le résumé de la page destiné aux moteurs de recherche.
    */
   motCle: string;
   /**
@@ -259,20 +299,22 @@ export interface Prestation {
    */
   image?: (number | null) | Media;
   /**
-   * Ordre dans la mosaïque, le footer et le sitemap.
+   * Ordre d’affichage sur la page Nos activités et dans le pied de page.
    */
   ordre?: number | null;
   updatedAt: string;
   createdAt: string;
 }
 /**
+ * Les photos utilisées sur le site : activités, équipe, articles, avis. Le texte alternatif décrit chaque photo aux personnes malvoyantes et à Google.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media".
  */
 export interface Media {
   id: number;
   /**
-   * Décrit l’image pour l’accessibilité et le référencement.
+   * Décrivez la photo en une phrase. Ex. : « Enfants en cours de gym dans la salle Kid ».
    */
   alt: string;
   updatedAt: string;
@@ -288,50 +330,15 @@ export interface Media {
   focalY?: number | null;
 }
 /**
- * Un créneau par ligne. L’ordre s’applique à l’intérieur de chaque journée.
+ * Les formules affichées sur la page Tarifs : les abonnements aux cours d’un côté, les autres prestations de l’autre.
  *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "planning".
- */
-export interface Planning {
-  id: number;
-  jour: 'Lundi' | 'Mardi' | 'Mercredi' | 'Jeudi' | 'Vendredi' | 'Samedi';
-  /**
-   * Ex. : Salle Kid, Salle Cross, Salle Fitness, Bulle.
-   */
-  salle: string;
-  /**
-   * Ex. : 10h30, 17h, 9h15.
-   */
-  heure: string;
-  activite: string;
-  /**
-   * Hauteur du bloc dans le calendrier de la semaine. 60 minutes par défaut ; à ajuster si le cours dure 45 ou 90 minutes.
-   */
-  duree?: number | null;
-  /**
-   * Optionnelle. Elle affiche la pastille d’âge et fait remonter le créneau dans le formulaire des fiches activités.
-   */
-  age?: ('10-36 mois' | '3-5 ans' | '6-14 ans') | null;
-  /**
-   * Ordre du créneau dans sa journée.
-   */
-  ordre?: number | null;
-  /**
-   * Décoché : le créneau disparaît du site.
-   */
-  actif?: boolean | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "tarifs".
  */
 export interface Tarif {
   id: number;
   /**
-   * Détermine le groupe dans lequel la carte apparaît sur la page Tarifs.
+   * Détermine le groupe dans lequel la formule apparaît sur la page Tarifs.
    */
   type: 'abonnement' | 'prestation';
   titre: string;
@@ -344,7 +351,7 @@ export interface Tarif {
    */
   detail: string;
   /**
-   * Points listés sous le prix, avec une coche magenta. Uniquement sur les cartes d’abonnement.
+   * Points listés sous le prix, avec une coche magenta. Affichés uniquement sur les cartes complètes (formules prioritaires).
    */
   avantages?:
     | {
@@ -372,63 +379,8 @@ export interface Tarif {
   createdAt: string;
 }
 /**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "faq".
- */
-export interface Faq {
-  id: number;
-  question: string;
-  reponse: string;
-  /**
-   * Si la réponse contient les mots « page tarifs », ils deviennent un lien vers /tarifs.
-   */
-  lienTarifs?: boolean | null;
-  ordre?: number | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * Avis recopiés tels quels (verbatim). L’ordre est celui d’affichage sur le site.
+ * Les articles du blog, aussi mis en avant sur l’accueil (« Actus & conseils »). Décochez « Publié » pour retirer un article du site sans le supprimer.
  *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "avis".
- */
-export interface Avi {
-  id: number;
-  texte: string;
-  /**
-   * Nom du parent tel qu’il apparaît sur son avis Google (prénom en premier, casse propre).
-   */
-  auteur?: string | null;
-  /**
-   * Chemin d’une photo déposée dans public/assets/ksc/avis (ex. /assets/ksc/avis/celine.webp). Vide = avatar illustré.
-   */
-  photo?: string | null;
-  ordre?: number | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "equipe".
- */
-export interface Equipe {
-  id: number;
-  nom: string;
-  /**
-   * Monogramme affiché tant qu’il n’y a pas de photo. Ex. : « ML ».
-   */
-  initiales: string;
-  bio: string;
-  /**
-   * Optionnelle : sans photo, les initiales sont affichées dans un rond marine.
-   */
-  photo?: (number | null) | Media;
-  ordre?: number | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "articles".
  */
@@ -436,11 +388,11 @@ export interface Article {
   id: number;
   titre: string;
   /**
-   * Ex. : a-quel-age-sport-enfant → /blog/a-quel-age-sport-enfant.
+   * Fin de l’adresse de l’article sur le site. Ex. : a-quel-age-sport-enfant donne kidsportclub.fr/blog/a-quel-age-sport-enfant. En minuscules, sans accents ni espaces (mots séparés par des tirets). Ne plus la modifier une fois l’article publié.
    */
   slug: string;
   /**
-   * Résumé des cartes du blog, également utilisé en meta description.
+   * Résumé affiché sur les cartes du blog et repris par Google sous le titre de la page.
    */
   excerpt: string;
   date: string;
@@ -463,19 +415,88 @@ export interface Article {
    */
   publie?: boolean | null;
   /**
-   * Ordre de référence (blocs « À lire aussi », sitemap). Le hub du blog et l’accueil affichent toujours les articles du plus récent au plus ancien.
+   * Ordre des suggestions « À lire aussi ». Le blog et l’accueil affichent toujours les articles du plus récent au plus ancien.
    */
   ordre?: number | null;
   updatedAt: string;
   createdAt: string;
 }
 /**
+ * Les questions fréquentes de la page FAQ, dans l’ordre d’affichage. Quelques-unes sont aussi reprises sur l’accueil.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faq".
+ */
+export interface Faq {
+  id: number;
+  question: string;
+  reponse: string;
+  /**
+   * Si la réponse contient les mots « page tarifs », ils deviennent un lien vers la page Tarifs.
+   */
+  lienTarifs?: boolean | null;
+  ordre?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Avis de parents recopiés mot pour mot depuis Google. L’ordre est celui de l’affichage sur le site.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "avis".
+ */
+export interface Avi {
+  id: number;
+  texte: string;
+  /**
+   * Nom du parent tel qu’il apparaît sur son avis Google (prénom en premier, casse propre).
+   */
+  auteur?: string | null;
+  /**
+   * Chemin d’une photo déposée dans public/assets/ksc/avis (ex. /assets/ksc/avis/celine.webp). Vide = avatar illustré.
+   */
+  photo?: string | null;
+  ordre?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Les coachs et animateurs présentés sur les pages Qui sommes-nous et Séance d’essai. Sans photo, leurs initiales s’affichent dans un rond.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "equipe".
+ */
+export interface Equipe {
+  id: number;
+  nom: string;
+  /**
+   * Affichées dans un rond tant qu’il n’y a pas de photo. Ex. : « ML ».
+   */
+  initiales: string;
+  bio: string;
+  /**
+   * Optionnelle : sans photo, les initiales sont affichées dans un rond marine.
+   */
+  photo?: (number | null) | Media;
+  ordre?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Les comptes qui peuvent se connecter à cet espace de gestion.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
 export interface User {
   id: number;
+  /**
+   * Admin : gestion complète, comptes compris. Éditeur : gestion du contenu du site.
+   */
   role: 'admin' | 'editeur';
+  /**
+   * Utilisé pour vous saluer sur l’accueil de cet espace.
+   */
   nom?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -521,16 +542,20 @@ export interface PayloadLockedDocument {
   id: number;
   document?:
     | ({
-        relationTo: 'prestations';
-        value: number | Prestation;
-      } | null)
-    | ({
         relationTo: 'planning';
         value: number | Planning;
       } | null)
     | ({
+        relationTo: 'prestations';
+        value: number | Prestation;
+      } | null)
+    | ({
         relationTo: 'tarifs';
         value: number | Tarif;
+      } | null)
+    | ({
+        relationTo: 'articles';
+        value: number | Article;
       } | null)
     | ({
         relationTo: 'faq';
@@ -543,10 +568,6 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'equipe';
         value: number | Equipe;
-      } | null)
-    | ({
-        relationTo: 'articles';
-        value: number | Article;
       } | null)
     | ({
         relationTo: 'media';
@@ -597,6 +618,22 @@ export interface PayloadMigration {
   batch?: number | null;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "planning_select".
+ */
+export interface PlanningSelect<T extends boolean = true> {
+  jour?: T;
+  salle?: T;
+  heure?: T;
+  activite?: T;
+  duree?: T;
+  age?: T;
+  ordre?: T;
+  actif?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -658,22 +695,6 @@ export interface PrestationsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "planning_select".
- */
-export interface PlanningSelect<T extends boolean = true> {
-  jour?: T;
-  salle?: T;
-  heure?: T;
-  activite?: T;
-  duree?: T;
-  age?: T;
-  ordre?: T;
-  actif?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "tarifs_select".
  */
 export interface TarifsSelect<T extends boolean = true> {
@@ -690,6 +711,28 @@ export interface TarifsSelect<T extends boolean = true> {
   icone?: T;
   prioritaire?: T;
   enAvant?: T;
+  ordre?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "articles_select".
+ */
+export interface ArticlesSelect<T extends boolean = true> {
+  titre?: T;
+  slug?: T;
+  excerpt?: T;
+  date?: T;
+  blocs?:
+    | T
+    | {
+        t?: T;
+        texte?: T;
+        id?: T;
+      };
+  image?: T;
+  publie?: T;
   ordre?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -727,28 +770,6 @@ export interface EquipeSelect<T extends boolean = true> {
   initiales?: T;
   bio?: T;
   photo?: T;
-  ordre?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "articles_select".
- */
-export interface ArticlesSelect<T extends boolean = true> {
-  titre?: T;
-  slug?: T;
-  excerpt?: T;
-  date?: T;
-  blocs?:
-    | T
-    | {
-        t?: T;
-        texte?: T;
-        id?: T;
-      };
-  image?: T;
-  publie?: T;
   ordre?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -836,6 +857,8 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   createdAt?: T;
 }
 /**
+ * Coordonnées, horaires et liens utilisés partout sur le site : pied de page, page Contact, séance d’essai, pages de publicité.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "parametres".
  */

@@ -2,7 +2,7 @@ import type { CollectionConfig } from 'payload'
 
 import { authenticated, publicRead } from '../access'
 
-// Créneaux du planning. Une ligne = un créneau (jour, salle, heure, activité).
+// Créneaux du planning. Une ligne = un créneau (jour, salle, heure, cours).
 // La page /planning les regroupe par jour puis par salle, dans l'ordre du champ
 // « ordre ». Les tranches d'âge alimentent aussi le sélecteur de créneau des
 // fiches activités. Source de secours : src/data/planning.ts.
@@ -12,8 +12,10 @@ export const Planning: CollectionConfig = {
   admin: {
     useAsTitle: 'activite',
     defaultColumns: ['jour', 'salle', 'heure', 'activite', 'age', 'duree', 'ordre', 'actif'],
-    group: 'Contenu',
-    description: 'Un créneau par ligne. L’ordre s’applique à l’intérieur de chaque journée.',
+    group: 'Contenu du site',
+    description:
+      'Les créneaux de la semaine type, affichés sur la page Planning et sur les pages des cours. Un créneau par ligne ; l’ordre s’applique à l’intérieur de chaque journée.',
+    hideAPIURL: true,
   },
   access: {
     read: publicRead,
@@ -44,9 +46,18 @@ export const Planning: CollectionConfig = {
       label: 'Heure',
       type: 'text',
       required: true,
-      admin: { description: 'Ex. : 10h30, 17h, 9h15.' },
+      admin: { description: 'Heure de début. Ex. : 10h30, 17h, 9h15.' },
     },
-    { name: 'activite', label: 'Activité', type: 'text', required: true },
+    {
+      name: 'activite',
+      label: 'Cours',
+      type: 'text',
+      required: true,
+      admin: {
+        description:
+          'Nom du cours tel qu’il s’affiche dans le calendrier. Écrivez-le toujours de la même façon : il sert aussi à retrouver les horaires d’un cours sur sa page.',
+      },
+    },
     {
       name: 'duree',
       label: 'Durée (minutes)',
@@ -57,7 +68,7 @@ export const Planning: CollectionConfig = {
       admin: {
         position: 'sidebar',
         description:
-          'Hauteur du bloc dans le calendrier de la semaine. 60 minutes par défaut ; à ajuster si le cours dure 45 ou 90 minutes.',
+          'Durée du cours : elle fixe la hauteur du bloc dans le calendrier de la semaine. 60 minutes par défaut.',
       },
     },
     {
@@ -71,7 +82,7 @@ export const Planning: CollectionConfig = {
       ],
       admin: {
         description:
-          'Optionnelle. Elle affiche la pastille d’âge et fait remonter le créneau dans le formulaire des fiches activités.',
+          'Optionnelle. Elle donne sa couleur et sa pastille d’âge au créneau, ouvre le bon lien de réservation et propose le créneau dans le formulaire des fiches activités.',
       },
     },
     {
