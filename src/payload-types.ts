@@ -865,37 +865,46 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 export interface Parametre {
   id: number;
   coordonnees?: {
+    /**
+     * Numéro affiché sur le site. Le lien pour appeler d’un clic est créé automatiquement à partir de ce numéro.
+     */
     telephone?: string | null;
     /**
-     * Format international. Ex. : tel:+33763251712
+     * Adresse affichée sur le site. Le lien pour écrire d’un clic est créé automatiquement à partir de cette adresse.
      */
-    telephoneHref?: string | null;
     email?: string | null;
     /**
-     * Ex. : mailto:kidsportclubrochecorbon@gmail.com
+     * Adresse postale du club, telle qu’elle s’affiche sur le site.
      */
-    emailHref?: string | null;
     adresse?: string | null;
     /**
-     * Lien Google Maps ouvert au clic sur l’adresse.
+     * Calculé automatiquement à partir du téléphone affiché : laissez ce champ vide.
+     */
+    telephoneHref?: string | null;
+    /**
+     * Calculé automatiquement à partir de l’email affiché : laissez ce champ vide.
+     */
+    emailHref?: string | null;
+    /**
+     * Page Google Maps ouverte quand on clique sur l’adresse.
      */
     adresseHref?: string | null;
     /**
-     * URL « output=embed » de Google Maps, affichée dans l’iframe du plan.
+     * Lien de la carte Google Maps affichée sur la page Contact et les pages de publicité.
      */
     mapsEmbedUrl?: string | null;
+    /**
+     * Nom de la carte, lu aux personnes malvoyantes. Ex. : « Plan | Kid Sport Club Rochecorbon ».
+     */
     mapTitle?: string | null;
   };
   /**
-   * Une seule ligne. Le footer coupe l’affichage sur les séparateurs « · ». Ex. : « Lun–Ven : 9h00–19h30 (sans coupure) · Samedi : 9h30–12h30 ».
+   * Une seule ligne. Séparez les jours par un point médian « · » : le pied de page passe à la ligne à cet endroit. Ex. : « Lun–Ven : 9h00–19h30 (sans coupure) · Samedi : 9h30–12h30 ».
    */
   horaires?: string | null;
-  /**
-   * Destination du bouton « S’inscrire ». Réservé : le bouton est rendu dans l’en-tête (composant interactif) et suit encore la valeur du code (src/data/site.ts) tant que l’inscription en ligne n’est pas branchée.
-   */
   inscriptionUrl?: string | null;
   /**
-   * Lien ouvert par les boutons « S’inscrire » de la landing catalogue. « # » tant que le calendrier n’est pas fourni.
+   * Lien ouvert par les boutons « S’inscrire » de la page catalogue utilisée pour les publicités. Laissez « # » tant que le calendrier n’est pas fourni.
    */
   crmInscriptionUrl?: string | null;
   /**
@@ -918,10 +927,10 @@ export interface ParametresSelect<T extends boolean = true> {
     | T
     | {
         telephone?: T;
-        telephoneHref?: T;
         email?: T;
-        emailHref?: T;
         adresse?: T;
+        telephoneHref?: T;
+        emailHref?: T;
         adresseHref?: T;
         mapsEmbedUrl?: T;
         mapTitle?: T;
