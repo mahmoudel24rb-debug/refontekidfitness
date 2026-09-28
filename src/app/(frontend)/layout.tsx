@@ -49,6 +49,11 @@ export const metadata = {
     description: 'Le club de sport des enfants de 10 mois à 14 ans à Rochecorbon, près de Tours.',
     images: ['/og.png'],
   },
+  // Vérification du domaine kidsportclub.fr dans Meta Business (balise méta
+  // du <head>, lue par Meta sur la page d'accueil).
+  other: {
+    'facebook-domain-verification': '0i26dk2l3zumwm5j5a5fzd1iyn6kqh',
+  },
 }
 
 // Données structurées LocalBusiness (NAP + horaires) : SEO local Rochecorbon.
