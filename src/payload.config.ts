@@ -49,8 +49,18 @@ export default buildConfig({
       },
       beforeDashboard: ['/components/admin/Accueil#Accueil'],
     },
+    // Avatar générique : pas de requête vers Gravatar.
+    avatar: 'default',
+    // Dates à la française, ex. « 28 septembre 2026 à 14:05 » (date-fns).
+    dateFormat: "d MMMM yyyy 'à' HH:mm",
     meta: {
-      titleSuffix: ' | Kid Sport Club',
+      // Payload insère lui-même une espace entre le titre et le suffixe.
+      titleSuffix: '| Kid Sport Club',
+      icons: [
+        { rel: 'icon', type: 'image/png', url: '/icon.png' },
+        { rel: 'apple-touch-icon', type: 'image/png', url: '/apple-icon.png' },
+      ],
+      robots: 'noindex, nofollow',
     },
     // Thème KSC (src/app/(payload)/custom.css) : clair uniquement.
     theme: 'light',
@@ -58,6 +68,26 @@ export default buildConfig({
   i18n: {
     supportedLanguages: { fr },
     fallbackLanguage: 'fr',
+    // Libellés français ajustés (le reste vient de @payloadcms/translations).
+    translations: {
+      fr: {
+        general: {
+          dashboard: 'Accueil',
+          globals: 'Réglages',
+          backToDashboard: 'Retour à l’accueil',
+          createNew: 'Créer',
+          createNewLabel: 'Créer : {{label}}',
+          creatingNewLabel: 'Création : {{label}}',
+        },
+        dashboard: {
+          editDashboard: 'Modifier l’accueil',
+          editingDashboard: 'Modification de l’accueil',
+          addWidget: 'Ajouter un widget',
+          noItems:
+            'Aucun widget sur l’accueil. Vous pouvez en ajouter depuis le menu « Accueil » de la barre supérieure.',
+        },
+      },
+    },
   },
   collections: [Prestations, Planning, Tarifs, Faq, Avis, Equipe, Articles, Media, Users],
   globals: [Parametres],
