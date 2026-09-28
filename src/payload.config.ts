@@ -1,9 +1,8 @@
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
-import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { fr } from '@payloadcms/translations/languages/fr'
 import path from 'path'
-import { buildConfig, type Plugin } from 'payload'
+import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 
@@ -34,32 +33,6 @@ const databaseUrl =
   process.env.POSTGRES_URL_NON_POOLING ||
   process.env.DATABASE_URL ||
   ''
-
-// Le plugin Vercel Blob (Payload 3.85.1) ajoute TOUJOURS à l'admin son
-// composant de téléversement direct depuis le navigateur, même quand cette
-// option (clientUploads) est désactivée. Ce composant n'est pas compilable par
-// webpack (il importe du code serveur) et, absent de l'import map, il vide
-// l'admin. Le téléversement direct n'est pas utilisé ici (les images passent
-// par le serveur, limite de taille suffisante pour des photos) : on le retire.
-const CLIENT_BLOB = '@payloadcms/storage-vercel-blob/client'
-const sansTeleversementDirect =
-  (plugin: Plugin): Plugin =>
-  async (config) => {
-    const resultat = await plugin(config)
-    const admin = resultat.admin
-    if (admin?.components?.providers) {
-      admin.components.providers = admin.components.providers.filter((p) => {
-        const chemin = typeof p === 'string' ? p : p && typeof p === 'object' ? p.path : undefined
-        return !(typeof chemin === 'string' && chemin.startsWith(CLIENT_BLOB))
-      })
-    }
-    if (admin?.dependencies) {
-      for (const cle of Object.keys(admin.dependencies)) {
-        if (cle.startsWith(CLIENT_BLOB)) delete admin.dependencies[cle]
-      }
-    }
-    return resultat
-  }
 
 export default buildConfig({
   admin: {
@@ -139,19 +112,6 @@ export default buildConfig({
   },
   db: postgresAdapter({ pool: { connectionString: databaseUrl } }),
   sharp,
-  plugins: [
-    // Images de l'admin stockées sur Vercel Blob (le disque du serveur est
-    // effacé à chaque redéploiement). Actif uniquement si BLOB_READ_WRITE_TOKEN
-    // est défini, donc pas en local.
-    ...(process.env.BLOB_READ_WRITE_TOKEN
-      ? [
-          sansTeleversementDirect(
-            vercelBlobStorage({
-              collections: { media: true },
-              token: process.env.BLOB_READ_WRITE_TOKEN,
-            }),
-          ),
-        ]
-      : []),
-  ],
+  // Pas de plugin de stockage : les images de l'admin sont écrites sur le
+  // disque du serveur (dossier choisi par src/lib/dossierMedias.ts).
 })
