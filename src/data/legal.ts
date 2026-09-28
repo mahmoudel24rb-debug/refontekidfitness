@@ -12,7 +12,7 @@ export const MENTIONS_LEGALES: LegalContent = {
     // Éditeur : SAS Parc Beauregard (récap client). Pas de responsable de publication
     // nommé publiquement — le client ne veut pas de nom : « le représentant légal de la société ».
     { h: 'Éditeur du site', p: `Kid Sport Club, un établissement de la SAS Parc Beauregard\nSIREN : 932 593 452\n${COORDONNEES.adresse}\nTéléphone : ${COORDONNEES.telephone}\nEmail : ${COORDONNEES.email}\nDirecteur de la publication : le représentant légal de la société.` },
-    { h: 'Hébergement', p: "Site hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA." },
+    { h: 'Hébergement', p: "Site hébergé par Hostinger International Ltd, 61 Lordou Vironos Street, 6023 Larnaca, Chypre." },
     { h: 'Propriété intellectuelle', p: "L'ensemble des contenus de ce site (textes, visuels, logo) est la propriété de Kid Sport Club, sauf mention contraire. Toute reproduction est interdite sans autorisation." },
   ],
 }
