@@ -16,7 +16,7 @@ import { ACTIVITE_NON_PRECISEE, champ, envoyerLead } from '@/lib/envoiLead'
 //   page du formulaire, l'attribution first / last touch (cookie
 //   ksc_attribution si la publicité est acceptée, sinon visite d'arrivée en
 //   mémoire) et les UTM de la dernière visite ; après succès,
-//   dataLayer.push({ event: 'lead', source, activite }).
+//   dataLayer.push({ event, event_id, source, activite }).
 // - Activité : liste déroulante (`activites`) ou valeur déduite de la page
 //   (`activite`), l'une ou l'autre obligatoire : chaque lead en porte une.
 // - RGPD : first-party, mention de consentement + lien Confidentialité.

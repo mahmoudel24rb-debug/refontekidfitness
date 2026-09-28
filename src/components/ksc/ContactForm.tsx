@@ -14,7 +14,7 @@ import { ACTIVITE_NON_PRECISEE, champ, envoyerLead } from '@/lib/envoiLead'
 // passe ici le téléphone (message d'erreur) et la liste des activités.
 // Envoi par envoyerLead (src/lib/envoiLead.ts), comme les autres formulaires :
 // page, attribution first / last touch, UTM de la dernière visite, activité ;
-// dataLayer.push({ event: 'lead', source, activite }) après succès.
+// dataLayer.push({ event, event_id, source, activite }) après succès.
 export default function ContactForm({ telephone, activites }: { telephone: string; activites: string[] }) {
   const [etat, setEtat] = useState<'idle' | 'envoi' | 'ok' | 'erreur'>('idle')
   const sent = etat === 'ok'
