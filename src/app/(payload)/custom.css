@@ -1,0 +1,263 @@
+/* ============================================================
+   Admin Payload aux couleurs du Kid Sport Club.
+   Tout est dans @layer payload : le RootLayout de Payload déclare
+   « @layer payload-default, payload; », ce calque passe donc après
+   les styles par défaut et l'emporte sans !important.
+   Valeurs de la charte : src/app/(frontend)/globals.css.
+   Attention : une propriété redéfinie ici bat aussi les variantes
+   d'état de payload-default (:hover, --disabled…) ; ces variantes
+   sont donc redéclarées ci-dessous quand c'est nécessaire.
+   ============================================================ */
+
+@layer payload {
+  :root {
+    /* --- Charte KSC --- */
+    --ksc-marine: #081646;
+    --ksc-navy2: #122a63;
+    --ksc-magenta: #e6007e;
+    --ksc-magenta-hover: #c4006b; /* aussi magenta des textes : AA sur crème (5,6:1) */
+    --ksc-magenta-light: #ff5aa8; /* magenta des textes sur fond marine */
+    --ksc-royal: #1060c8;
+    --ksc-cream: #fbf9f0;
+    --ksc-cream2: #f5f1e3;
+    --ksc-border: #eae5d6;
+    --ksc-ink: #404a63;
+    --ksc-muted: #64708f;
+    --ksc-shadow-sm: 0 2px 8px rgb(8 22 70 / 0.06);
+    --ksc-shadow-md: 0 12px 28px rgb(8 22 70 / 0.12);
+    --ksc-titres: var(--ksc-font-display), 'Baloo 2', ui-sans-serif, system-ui, sans-serif;
+
+    /* --- Polices (variables next/font posées sur <html> par (payload)/layout.tsx) --- */
+    --font-body: var(--ksc-font-body), Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+      'Helvetica Neue', Arial, sans-serif;
+
+    /* --- Neutres teintés : blanc > crème > bordure chaude > ardoise > ink > marine ---
+       Interpolation OKLab entre les couleurs de la charte (800 = entre ink et marine). */
+    --color-base-0: #ffffff;
+    --color-base-50: #fbf9f0; /* crème */
+    --color-base-100: #f5f1e3; /* crème 2 */
+    --color-base-150: #eae5d6; /* bordure */
+    --color-base-200: #d7d4cc;
+    --color-base-250: #c5c4c2;
+    --color-base-300: #b2b4b8;
+    --color-base-350: #a0a4ae;
+    --color-base-400: #8f95a4;
+    --color-base-450: #7e859a;
+    --color-base-500: #6d7690;
+    --color-base-550: #616b84;
+    --color-base-600: #566079;
+    --color-base-650: #4b556e;
+    --color-base-700: #404a63; /* ink */
+    --color-base-750: #313d5c;
+    --color-base-800: #223155; /* texte courant */
+    --color-base-850: #15244e;
+    --color-base-900: #081646; /* marine */
+    --color-base-950: #061138;
+    --color-base-1000: #050d2b;
+
+    /* --- Succès et focus : échelle royal (500 = royal de la charte) --- */
+    --color-success-50: #e8effb;
+    --color-success-100: #d0e0f7;
+    --color-success-150: #b9d0f2;
+    --color-success-200: #a3c1ed;
+    --color-success-250: #8cb1e8;
+    --color-success-300: #76a1e2;
+    --color-success-350: #5f91dc;
+    --color-success-400: #4881d6;
+    --color-success-450: #3071cf;
+    --color-success-500: #1060c8;
+    --color-success-550: #0f58b9;
+    --color-success-600: #0e50a9;
+    --color-success-650: #0d489a;
+    --color-success-700: #0b408c;
+    --color-success-750: #0a387d;
+    --color-success-800: #09316f;
+    --color-success-850: #072a61;
+    --color-success-900: #062354;
+    --color-success-950: #051c47;
+
+    /* --- Erreurs : rouge du site (500 = #dc2626) --- */
+    --theme-error-50: #ffece9;
+    --theme-error-100: #ffd9d4;
+    --theme-error-150: #fdc6be;
+    --theme-error-200: #fbb3a9;
+    --theme-error-250: #f89f94;
+    --theme-error-300: #f38b7f;
+    --theme-error-350: #ef766a;
+    --theme-error-400: #e96055;
+    --theme-error-450: #e3473f;
+    --theme-error-500: #dc2626;
+    --theme-error-550: #c82323;
+    --theme-error-600: #b52020;
+    --theme-error-650: #a21d1d;
+    --theme-error-700: #8f1a1a;
+    --theme-error-750: #7d1717;
+    --theme-error-800: #6b1413;
+    --theme-error-850: #5a1110;
+    --theme-error-900: #490d0d;
+    --theme-error-950: #390a0a;
+
+    /* --- Fonds : page crème, champs de saisie blancs --- */
+    --theme-bg: var(--theme-elevation-50);
+    --theme-input-bg: var(--theme-elevation-0);
+
+    /* --- Rayons de la charte --- */
+    --style-radius-s: 8px;
+    --style-radius-m: 12px;
+    --style-radius-l: 16px;
+
+    /* --- Focus clavier : anneau royal du site --- */
+    --accessibility-outline: 3px solid rgb(16 96 200 / 0.45);
+    --accessibility-outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--ksc-magenta);
+    color: #fff;
+  }
+
+  ::-moz-selection {
+    background: var(--ksc-magenta);
+    color: #fff;
+  }
+
+  /* ---------- Titres : Baloo 2, marine ---------- */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--ksc-titres);
+    font-weight: 700;
+    color: var(--ksc-marine);
+    letter-spacing: -0.01em;
+  }
+
+  /* ---------- Boutons ---------- */
+  /* Primaire : magenta, texte blanc (4,5:1), survol magenta foncé. */
+  .btn--style-primary {
+    --color: #fff;
+    --bg-color: var(--ksc-magenta);
+    --hover-bg: var(--ksc-magenta-hover);
+    --hover-color: #fff;
+    --btn-font-weight: 600;
+  }
+
+  .btn--style-primary.btn--disabled {
+    --color: var(--theme-elevation-600);
+    --bg-color: var(--theme-elevation-150);
+    --hover-bg: var(--bg-color);
+    --hover-color: var(--color);
+  }
+
+  /* Secondaire : contour marine, plein marine au survol. */
+  .btn--style-secondary {
+    --color: var(--ksc-marine);
+    --bg-color: transparent;
+    --btn-border: 1px solid var(--ksc-marine);
+    --hover-bg: var(--ksc-marine);
+    --hover-color: var(--ksc-cream);
+    --hover-btn-border: 1px solid var(--ksc-marine);
+    --btn-font-weight: 600;
+  }
+
+  .btn--style-secondary.btn--disabled {
+    --color: var(--theme-elevation-400);
+    --bg-color: transparent;
+    --btn-border: 1px solid var(--theme-elevation-200);
+    --hover-bg: transparent;
+    --hover-color: var(--color);
+    --hover-btn-border: 1px solid var(--theme-elevation-200);
+  }
+
+  /* Forme pilule (les boutons à menu déroulant gardent leurs angles). */
+  .btn.btn--style-primary.btn--withoutPopup,
+  .btn.btn--style-secondary.btn--withoutPopup {
+    border-radius: 999px;
+  }
+
+  /* ---------- Liens ---------- */
+  .template-minimal a:not(.btn),
+  .table td a:not(.btn):not(.pill),
+  .field-description a {
+    color: var(--ksc-magenta-hover);
+  }
+
+  .step-nav a:hover,
+  .step-nav a:focus-visible {
+    color: var(--ksc-magenta-hover);
+  }
+
+  /* ---------- Navigation latérale ---------- */
+  .nav {
+    background-color: var(--ksc-cream2);
+    border-color: var(--theme-elevation-150);
+  }
+
+  .nav a.nav__link:hover,
+  .nav a.nav__link:focus-visible,
+  .nav__link:has(.nav__link-indicator) {
+    color: var(--ksc-magenta-hover);
+  }
+
+  .nav__link-indicator {
+    width: 3px;
+    background: var(--ksc-magenta);
+  }
+
+  /* Libellés de groupes : ardoise lisible sur crème 2 (5,5:1). */
+  .nav-group__toggle {
+    color: var(--theme-elevation-600);
+    font-weight: 600;
+  }
+
+  .nav-group__toggle:hover,
+  .nav-group__toggle:focus-visible {
+    color: var(--ksc-marine);
+  }
+
+  /* ---------- Cartes (accueil) et fenêtres surgissantes ---------- */
+  .card {
+    background: var(--theme-elevation-0);
+    border-color: var(--theme-border-color);
+    box-shadow: var(--ksc-shadow-sm);
+  }
+
+  .card--has-onclick:hover {
+    background: var(--theme-elevation-0);
+    border-color: var(--ksc-magenta);
+    box-shadow: var(--ksc-shadow-md);
+  }
+
+  .card__title {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .popup__content {
+    border-radius: var(--style-radius-m);
+    box-shadow: var(--ksc-shadow-md);
+  }
+
+  /* ---------- Listes : lignes alternées blanches sur fond crème ---------- */
+  .table tbody tr:nth-child(odd) {
+    background: var(--theme-elevation-0);
+  }
+
+  /* ---------- Textes secondaires lisibles (AA) ---------- */
+  .field-description,
+  .table thead {
+    color: var(--theme-elevation-600);
+  }
+
+  /* ---------- Champs de saisie : focus royal ---------- */
+  .field-type.text:not(.has-many) input:focus,
+  .field-type.email input:focus,
+  .field-type.password input:focus,
+  .field-type.confirm-password input:focus,
+  .field-type.number:not(.has-many) input:focus,
+  .field-type.textarea textarea:focus,
+  .date-time-picker .react-datepicker__input-container input:focus,
+  .react-select .rs__control:focus-within {
+    border-color: var(--ksc-royal);
+    box-shadow: 0 0 0 3px rgb(16 96 200 / 0.2);
+  }
+}

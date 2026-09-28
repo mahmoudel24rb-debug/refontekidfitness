@@ -43,6 +43,8 @@ export default buildConfig({
     meta: {
       titleSuffix: ' | Kid Sport Club',
     },
+    // Thème KSC (src/app/(payload)/custom.css) : clair uniquement.
+    theme: 'light',
   },
   i18n: {
     supportedLanguages: { fr },
