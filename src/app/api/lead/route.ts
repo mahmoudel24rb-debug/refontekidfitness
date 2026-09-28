@@ -3,6 +3,7 @@ import { after, NextResponse } from 'next/server'
 import { normaliserVisite, visiteVide, type Visite } from '@/lib/attribution'
 import { evenementLead } from '@/lib/evenementsSuivi'
 import { envoyerEvenementMeta } from '@/lib/metaCapi'
+import { sourceCrm } from '@/lib/sourceCrm'
 
 // Réception des leads (tous les formulaires du site : landings Meta Ads,
 // Contact, Séance d'essai, fiches prestation, pages des cours).
@@ -14,6 +15,8 @@ import { envoyerEvenementMeta } from '@/lib/metaCapi'
 // - Structure stable : toutes les clés sont toujours transmises, chaîne vide
 //   quand la valeur manque (les 5 clés d'`utm` comprises). Make ne détecte que
 //   les clés reçues : elles sont ainsi mappables quel que soit le formulaire.
+// - `sourceCrm` : valeur du champ `source` du CRM, toujours présente, calculée
+//   ici sur la dernière visite bornée (src/lib/sourceCrm.ts).
 // Liste des champs transmis au webhook : WEBHOOK-LEADS.md (racine du dépôt).
 // - Lead accepté : événement envoyé en plus à l'API Conversions Meta, après la
 //   réponse (after), avec l'event_id du navigateur pour le dédoublonnage avec
@@ -88,6 +91,7 @@ export async function POST(req: Request) {
 
   const attribution: NonNullable<LeadPayload['attribution']> =
     body.attribution && typeof body.attribution === 'object' ? body.attribution : {}
+  const derniere = visite(attribution.last)
 
   // Toutes les clés, toujours : chaîne vide quand la valeur manque.
   const lead = {
@@ -111,8 +115,10 @@ export async function POST(req: Request) {
     },
     attribution: {
       first: visite(attribution.first),
-      last: visite(attribution.last),
+      last: derniere,
     },
+    // Valeur du champ `source` du CRM, déduite de la dernière visite.
+    sourceCrm: sourceCrm(derniere),
     recuLe: new Date().toISOString(),
   }
 
