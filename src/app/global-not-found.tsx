@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button'
 import HeroMarine from '@/components/ksc/HeroMarine'
 import SiteFooter from '@/components/ksc/SiteFooter'
 import SiteHeader from '@/components/ksc/SiteHeader'
+import SuiviAttribution from '@/components/ksc/SuiviAttribution'
 
 const display = Baloo_2({
   subsets: ['latin', 'latin-ext'],
@@ -59,6 +60,8 @@ export default function GlobalNotFound() {
           </HeroMarine>
         </main>
         <SiteFooter />
+        {/* Source du visiteur (first / last touch) : cookie ksc_attribution. */}
+        <SuiviAttribution />
       </body>
     </html>
   )

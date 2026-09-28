@@ -8,6 +8,7 @@ import { Baloo_2, Inter } from 'next/font/google'
 import './globals.css'
 
 import { GtmHead, GtmNoscript } from '@/app/GoogleTagManager'
+import SuiviAttribution from '@/components/ksc/SuiviAttribution'
 import { getParametres, telephoneJsonLd, type ParametresVue } from '@/lib/contenu'
 
 // Typographie de la charte : Baloo 2 (display, titres) + Inter (texte courant).
@@ -80,6 +81,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <GtmNoscript />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness(coordonnees)) }} />
         {children}
+        {/* Source du visiteur (first / last touch) : cookie ksc_attribution. */}
+        <SuiviAttribution />
       </body>
     </html>
   )
