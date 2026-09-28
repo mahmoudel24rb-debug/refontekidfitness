@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 import { authenticated, publicRead } from '../access'
+import { hooksRevalidation } from '../lib/revalider'
 
 // Questions fréquentes : page /faq (accordéons + JSON-LD FAQPage), bloc FAQ de
 // l'accueil et mini-FAQ des landings. Source de secours : src/data/faq.ts.
@@ -16,6 +17,8 @@ export const Faq: CollectionConfig = {
     description:
       'Les questions fréquentes de la page FAQ, dans l’ordre d’affichage. Quelques-unes sont aussi reprises sur l’accueil.',
     hideAPIURL: true,
+    // Bouton « Aperçu » : ouvre la page du site concernée dans un nouvel onglet.
+    preview: () => '/faq',
   },
   access: {
     read: publicRead,
@@ -23,6 +26,8 @@ export const Faq: CollectionConfig = {
     update: authenticated,
     delete: authenticated,
   },
+  // Site remis à jour dès l'enregistrement ou la suppression.
+  hooks: hooksRevalidation(),
   fields: [
     { name: 'question', label: 'Question', type: 'text', required: true },
     { name: 'reponse', label: 'Réponse', type: 'textarea', required: true },

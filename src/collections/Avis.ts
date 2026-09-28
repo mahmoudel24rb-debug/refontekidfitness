@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 import { authenticated, publicRead } from '../access'
+import { hooksRevalidation } from '../lib/revalider'
 
 // Avis de parents (accueil, séance d'essai, landings) et citations mises en
 // scène. Les textes sont des verbatims : ne pas les reformuler.
@@ -17,6 +18,8 @@ export const Avis: CollectionConfig = {
     description:
       'Avis de parents recopiés mot pour mot depuis Google. L’ordre est celui de l’affichage sur le site.',
     hideAPIURL: true,
+    // Bouton « Aperçu » : ouvre la page du site concernée dans un nouvel onglet.
+    preview: () => '/',
   },
   access: {
     read: publicRead,
@@ -24,6 +27,8 @@ export const Avis: CollectionConfig = {
     update: authenticated,
     delete: authenticated,
   },
+  // Site remis à jour dès l'enregistrement ou la suppression.
+  hooks: hooksRevalidation(),
   fields: [
     { name: 'texte', label: 'Avis', type: 'textarea', required: true },
     {

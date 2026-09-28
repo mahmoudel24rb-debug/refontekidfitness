@@ -1,6 +1,7 @@
 import type { GlobalConfig } from 'payload'
 
 import { authenticated, publicRead } from '../access'
+import { revaliderApresReglages } from '../lib/revalider'
 
 // Source unique des coordonnées et des liens transverses : footer, page Contact,
 // séance d'essai, bloc « Où nous trouver » des landings, barre CTA mobile.
@@ -19,11 +20,15 @@ export const Parametres: GlobalConfig = {
     description:
       'Coordonnées, horaires et liens utilisés partout sur le site : pied de page, page Contact, séance d’essai, pages de publicité.',
     hideAPIURL: true,
+    // Bouton « Aperçu » : la page Contact reprend toutes les coordonnées.
+    preview: () => '/contact',
   },
   access: {
     read: publicRead,
     update: authenticated,
   },
+  // Site remis à jour dès l'enregistrement.
+  hooks: { afterChange: [revaliderApresReglages] },
   fields: [
     {
       name: 'coordonnees',

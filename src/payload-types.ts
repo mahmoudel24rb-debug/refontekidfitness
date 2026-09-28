@@ -483,7 +483,7 @@ export interface Equipe {
   createdAt: string;
 }
 /**
- * Les comptes qui peuvent se connecter à cet espace de gestion.
+ * Les comptes qui peuvent se connecter à cet espace de gestion. Chacun peut changer son nom et son mot de passe depuis « Mon compte » ; seul un administrateur crée ou supprime des comptes.
  *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".

@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 import { authenticated, publicRead } from '../access'
+import { hooksRevalidation } from '../lib/revalider'
 
 // Créneaux du planning. Une ligne = un créneau (jour, salle, heure, cours).
 // La page /planning les regroupe par jour puis par salle, dans l'ordre du champ
@@ -18,6 +19,8 @@ export const Planning: CollectionConfig = {
     description:
       'Les créneaux de la semaine type, affichés sur la page Planning et sur les pages des cours. Un créneau par ligne ; l’ordre s’applique à l’intérieur de chaque journée.',
     hideAPIURL: true,
+    // Bouton « Aperçu » : ouvre la page du site concernée dans un nouvel onglet.
+    preview: () => '/planning',
   },
   access: {
     read: publicRead,
@@ -25,6 +28,8 @@ export const Planning: CollectionConfig = {
     update: authenticated,
     delete: authenticated,
   },
+  // Site remis à jour dès l'enregistrement ou la suppression.
+  hooks: hooksRevalidation(),
   fields: [
     {
       type: 'row',

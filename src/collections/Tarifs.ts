@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 import { authenticated, publicRead } from '../access'
+import { hooksRevalidation } from '../lib/revalider'
 
 // Tarifs affichés sur /tarifs et sur la landing catalogue : les abonnements aux
 // cours d'un côté, les prestations de l'autre. Source de secours :
@@ -17,6 +18,8 @@ export const Tarifs: CollectionConfig = {
     description:
       'Les formules affichées sur la page Tarifs : les abonnements aux cours d’un côté, les autres prestations de l’autre.',
     hideAPIURL: true,
+    // Bouton « Aperçu » : ouvre la page du site concernée dans un nouvel onglet.
+    preview: () => '/tarifs',
   },
   access: {
     read: publicRead,
@@ -24,6 +27,8 @@ export const Tarifs: CollectionConfig = {
     update: authenticated,
     delete: authenticated,
   },
+  // Site remis à jour dès l'enregistrement ou la suppression.
+  hooks: hooksRevalidation(),
   fields: [
     { name: 'titre', label: 'Titre', type: 'text', required: true },
     {

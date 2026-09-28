@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 import { authenticated, publicRead } from '../access'
+import { hooksRevalidation } from '../lib/revalider'
 
 // Bibliothèque de médias (photos des activités, coachs, articles). Les fichiers
 // sont servis par Payload sur /api/media/file/** (cf. images.localPatterns dans
@@ -23,6 +24,8 @@ export const Media: CollectionConfig = {
     update: authenticated,
     delete: authenticated,
   },
+  // Site remis à jour dès l'enregistrement ou la suppression.
+  hooks: hooksRevalidation(),
   fields: [
     {
       name: 'alt',

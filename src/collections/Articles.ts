@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 import { authenticated, publicRead } from '../access'
+import { hooksRevalidation } from '../lib/revalider'
 
 // Articles du blog (/blog et /blog/[slug]) + bandeau « Actus & conseils » de
 // l'accueil. Le corps est une suite de blocs : paragraphes et intertitres h2,
@@ -17,6 +18,8 @@ export const Articles: CollectionConfig = {
     description:
       'Les articles du blog, aussi mis en avant sur l’accueil (« Actus & conseils »). Décochez « Publié » pour retirer un article du site sans le supprimer.',
     hideAPIURL: true,
+    // Bouton « Aperçu » : ouvre la page du site concernée dans un nouvel onglet.
+    preview: ({ slug }) => (typeof slug === 'string' && slug ? `/blog/${slug}` : null),
   },
   access: {
     read: publicRead,
@@ -24,6 +27,8 @@ export const Articles: CollectionConfig = {
     update: authenticated,
     delete: authenticated,
   },
+  // Site remis à jour dès l'enregistrement ou la suppression.
+  hooks: hooksRevalidation(),
   fields: [
     { name: 'titre', label: 'Titre', type: 'text', required: true },
     {

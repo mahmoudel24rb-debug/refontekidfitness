@@ -1,6 +1,7 @@
 import type { CollectionConfig, Condition } from 'payload'
 
 import { authenticated, publicRead } from '../access'
+import { hooksRevalidation } from '../lib/revalider'
 
 // Les activités du club (« Nos activités »). Une fiche = une page
 // /nos-prestations/[slug] + une carte dans la mosaïque du hub, le footer et les
@@ -36,6 +37,8 @@ export const Prestations: CollectionConfig = {
     description:
       'Les 7 fiches du menu « Nos activités » : Mercredis Sportifs, stages, anniversaire et les 4 cours par tranche d’âge. Chaque fiche est une page du site.',
     hideAPIURL: true,
+    // Bouton « Aperçu » : ouvre la page du site concernée dans un nouvel onglet.
+    preview: ({ slug }) => (typeof slug === 'string' && slug ? `/nos-prestations/${slug}` : null),
   },
   access: {
     read: publicRead,
@@ -43,6 +46,8 @@ export const Prestations: CollectionConfig = {
     update: authenticated,
     delete: authenticated,
   },
+  // Site remis à jour dès l'enregistrement ou la suppression.
+  hooks: hooksRevalidation(),
   fields: [
     {
       type: 'tabs',

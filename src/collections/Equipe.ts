@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 import { authenticated, publicRead } from '../access'
+import { hooksRevalidation } from '../lib/revalider'
 
 // Coachs et animateurs (« Notre équipe » sur /qui-sommes-nous, /seance-essai et
 // les landings). Tant qu'une fiche n'a pas de photo, le monogramme (initiales)
@@ -16,6 +17,8 @@ export const Equipe: CollectionConfig = {
     description:
       'Les coachs et animateurs présentés sur les pages Qui sommes-nous et Séance d’essai. Sans photo, leurs initiales s’affichent dans un rond.',
     hideAPIURL: true,
+    // Bouton « Aperçu » : ouvre la page du site concernée dans un nouvel onglet.
+    preview: () => '/qui-sommes-nous',
   },
   access: {
     read: publicRead,
@@ -23,6 +26,8 @@ export const Equipe: CollectionConfig = {
     update: authenticated,
     delete: authenticated,
   },
+  // Site remis à jour dès l'enregistrement ou la suppression.
+  hooks: hooksRevalidation(),
   fields: [
     {
       type: 'row',
