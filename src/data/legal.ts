@@ -27,12 +27,34 @@ export const CONFIDENTIALITE: LegalContent = {
   ],
 }
 
+// Traceurs réels du site (bandeau de consentement, src/lib/consentement.ts) :
+// texte factuel à faire valider par le client. ` ` : espace insécable
+// (avant les deux-points, dans les guillemets, entre un nombre et son unité).
 export const COOKIES: LegalContent = {
   titre: 'Gestion des cookies',
-  intro: "Ce site utilise des cookies pour son bon fonctionnement et, à terme, pour la mesure d'audience.",
+  intro:
+    'Cette page présente les cookies et traceurs utilisés sur le site kidsportclub.fr, leur finalité, leur durée de conservation et la façon de modifier votre choix.',
   sections: [
-    { h: 'Cookies utilisés', p: "Cookies techniques nécessaires au fonctionnement du site. Des cookies de mesure d'audience (statistiques) pourront être ajoutés à la mise en ligne, soumis à votre consentement." },
-    { h: 'Votre consentement', p: "Un bandeau de consentement sera affiché à la mise en production : vous pourrez accepter ou refuser les cookies non essentiels." },
+    {
+      h: 'Votre choix',
+      p: 'Lors de votre première visite, un bandeau vous permet d’accepter ou de refuser les cookies non nécessaires, ou de choisir catégorie par catégorie. Refuser est aussi simple qu’accepter, et aucun cookie non nécessaire n’est déposé sans votre accord.\nVotre choix, accord comme refus, est conservé 6 mois. À l’issue de ce délai, ou si la liste des traceurs change, le bandeau vous est de nouveau proposé.',
+    },
+    {
+      h: 'Cookies nécessaires',
+      p: 'ksc_consentement : mémorise votre choix sur les cookies (catégories acceptées ou refusées, date du choix). Durée : 6 mois. Indispensable au respect de votre choix, ce cookie ne peut pas être désactivé.',
+    },
+    {
+      h: 'Mesure d’audience',
+      p: 'Les traceurs de mesure d’audience de Google (Google Analytics), chargés par l’intermédiaire de Google Tag Manager, ne sont déposés qu’avec votre accord pour la catégorie « Mesure d’audience ». Ils établissent des statistiques de visite (pages consultées, provenance des visites) qui nous aident à améliorer le site. Leur durée de conservation est définie par Google.',
+    },
+    {
+      h: 'Publicité et suivi des campagnes',
+      p: 'Avec votre accord pour la catégorie « Publicité et suivi des campagnes » :\n- ksc_attribution : mémorise la source de vos visites (paramètres des liens publicitaires, site d’origine, page d’entrée, date), transmise avec vos demandes de contact pour mesurer l’efficacité de nos campagnes. Durée : 90 jours, prolongée à chaque nouvelle visite issue d’une campagne ou d’un autre site.\n- les traceurs publicitaires de Google (Google Ads) et de Meta (Facebook, Instagram), chargés par l’intermédiaire de Google Tag Manager, mesurent les résultats de nos publicités. Leur durée de conservation est définie par Google et par Meta.\nSans votre accord, le cookie ksc_attribution n’est pas déposé, et il est supprimé si vous retirez votre accord : la source de la visite en cours est seulement gardée en mémoire par la page et jointe à une demande envoyée par formulaire, sans rien enregistrer sur votre appareil.',
+    },
+    {
+      h: 'Modifier votre choix',
+      p: 'Vous pouvez modifier ou retirer votre choix à tout moment, aussi simplement que vous l’avez donné, grâce au lien « Gérer les cookies » en bas des pages du site ou au bouton ci-dessous. Vous pouvez aussi supprimer les cookies depuis les réglages de votre navigateur.',
+    },
   ],
 }
 

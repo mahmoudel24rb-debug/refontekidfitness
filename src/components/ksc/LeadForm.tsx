@@ -13,8 +13,9 @@ import { ACTIVITE_NON_PRECISEE, champ, envoyerLead } from '@/lib/envoiLead'
 // prestation, pages des cours).
 // - ≤ 5 champs (standard conversion), honeypot anti-bots.
 // - Envoi par envoyerLead (src/lib/envoiLead.ts) : POST /api/lead avec la
-//   page du formulaire, l'attribution first / last touch lue dans le cookie
-//   ksc_attribution et les UTM de la dernière visite ; après succès,
+//   page du formulaire, l'attribution first / last touch (cookie
+//   ksc_attribution si la publicité est acceptée, sinon visite d'arrivée en
+//   mémoire) et les UTM de la dernière visite ; après succès,
 //   dataLayer.push({ event: 'lead', source, activite }).
 // - Activité : liste déroulante (`activites`) ou valeur déduite de la page
 //   (`activite`), l'une ou l'autre obligatoire : chaque lead en porte une.
@@ -61,6 +62,7 @@ export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compac
         landing,
         activite: activites ? (champ(data, 'activite') ?? ACTIVITE_NON_PRECISEE) : (activite ?? ACTIVITE_NON_PRECISEE),
         prenom: champ(data, 'prenom'),
+        nom: champ(data, 'nom'),
         telephone: champ(data, 'telephone'),
         email: champ(data, 'email'),
         ageEnfant: champ(data, 'ageEnfant'),
@@ -91,7 +93,12 @@ export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compac
   return (
     <form onSubmit={onSubmit} className={className} id={formId} noValidate={false}>
       <div className="flex flex-col gap-4 rounded-lg bg-card p-6 shadow-md sm:p-7">
-        <FormField id={`${source}-prenom`} name="prenom" label="Prénom du parent" required autoComplete="given-name" />
+        {/* Prénom et nom du parent (nom : champ lastname du CRM), côte à côte
+            à partir de sm, empilés sur mobile. */}
+        <div className="grid gap-4 sm:grid-cols-2">
+          <FormField id={`${source}-prenom`} name="prenom" label="Prénom du parent" required autoComplete="given-name" />
+          <FormField id={`${source}-nom`} name="nom" label="Nom du parent" required autoComplete="family-name" />
+        </div>
         <FormField id={`${source}-tel`} name="telephone" label="Téléphone" type="tel" required autoComplete="tel" />
         {withEmail && <FormField id={`${source}-email`} name="email" label="Email" type="email" autoComplete="email" />}
         <FormField id={`${source}-age`} name="ageEnfant" label="Âge de l’enfant" placeholder="ex. 4 ans" />
@@ -100,11 +107,13 @@ export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compac
             <Label htmlFor={`${source}-activite`} className="text-sm font-semibold text-marine">
               Quelle activité voulez-vous tester ? (optionnel)
             </Label>
+            {/* w-full min-w-0 : la largeur de l'option la plus longue ne doit
+                pas élargir la carte au-delà de sa colonne (mobile). */}
             <select
               id={`${source}-activite`}
               name="activite"
               defaultValue={ACTIVITE_NON_PRECISEE}
-              className="h-[52px] rounded-xl border-[1.5px] border-input bg-[#fdfcf7] px-4 text-base text-ink"
+              className="h-[52px] w-full min-w-0 rounded-xl border-[1.5px] border-input bg-[#fdfcf7] px-4 text-base text-ink"
             >
               {/* Laissée par défaut, cette valeur est transmise telle quelle. */}
               <option value={ACTIVITE_NON_PRECISEE}>{ACTIVITE_NON_PRECISEE}</option>
@@ -119,11 +128,12 @@ export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compac
             <Label htmlFor={`${source}-creneau`} className="text-sm font-semibold text-marine">
               Créneau souhaité (optionnel)
             </Label>
+            {/* Même règle : un libellé de créneau long ne déborde pas de la carte. */}
             <select
               id={`${source}-creneau`}
               name="creneau"
               defaultValue=""
-              className="h-[52px] rounded-xl border-[1.5px] border-input bg-[#fdfcf7] px-4 text-base text-ink"
+              className="h-[52px] w-full min-w-0 rounded-xl border-[1.5px] border-input bg-[#fdfcf7] px-4 text-base text-ink"
             >
               <option value="">Je ne sais pas encore</option>
               {creneaux.map((c) => (
