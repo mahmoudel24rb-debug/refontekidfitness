@@ -12,7 +12,9 @@ const nextConfig: NextConfig = {
   //   Turbopack ouvre un thread par cœur de la machine hôte, ce qui bute sur le
   //   plafond de processus de l'hébergement mutualisé (build figé en compilation).
   typescript: { ignoreBuildErrors: true },
-  experimental: { cpus: 1 },
+  // globalNotFound : 404 des URL inconnues (src/app/global-not-found.tsx),
+  // nécessaire avec deux layouts racine (site dans (frontend), admin dans (payload)).
+  experimental: { cpus: 1, globalNotFound: true },
   // NB : pas de `images.localPatterns` — le définir bloquerait tous les autres
   // chemins locaux (400). Les médias Payload (/api/media/file/**) comme les
   // visuels de /public/assets sont des chemins locaux, autorisés par défaut.
