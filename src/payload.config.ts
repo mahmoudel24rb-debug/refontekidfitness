@@ -40,6 +40,15 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    // Composants KSC (src/components/admin/, chemins relatifs à src/) :
+    // logo de connexion, icône du fil d'Ariane, accueil avec raccourcis.
+    components: {
+      graphics: {
+        Logo: '/components/admin/Logo#Logo',
+        Icon: '/components/admin/Icone#Icone',
+      },
+      beforeDashboard: ['/components/admin/Accueil#Accueil'],
+    },
     meta: {
       titleSuffix: ' | Kid Sport Club',
     },
