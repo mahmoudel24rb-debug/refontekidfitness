@@ -148,10 +148,11 @@ tags.push({ ...base, tagId: String(gid++), name: 'GA4 - Événements de conversi
   ],
   firingTriggerId: [trGa4Events], tagFiringOption: 'ONCE_PER_EVENT', consentSettings: noConsent })
 
+// Variables intégrées déjà activées dans le conteneur (les seules utilisées
+// sont Event et _event) : en ajouter d'autres fait échouer l'import.
 const builtIn = [
   ['PAGE_URL', 'Page URL'], ['PAGE_HOSTNAME', 'Page Hostname'], ['PAGE_PATH', 'Page Path'],
-  ['REFERRER', 'Referrer'], ['EVENT', 'Event'], ['HISTORY_SOURCE', 'History Source'],
-  ['NEW_HISTORY_URL', 'New History URL'],
+  ['REFERRER', 'Referrer'], ['EVENT', 'Event'],
 ].map(([type, name]) => ({ ...base, type, name }))
 
 const out = {

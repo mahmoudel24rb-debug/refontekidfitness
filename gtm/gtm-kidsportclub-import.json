@@ -1198,18 +1198,6 @@
         "containerId": "265426379",
         "type": "EVENT",
         "name": "Event"
-      },
-      {
-        "accountId": "6060080614",
-        "containerId": "265426379",
-        "type": "HISTORY_SOURCE",
-        "name": "History Source"
-      },
-      {
-        "accountId": "6060080614",
-        "containerId": "265426379",
-        "type": "NEW_HISTORY_URL",
-        "name": "New History URL"
       }
     ]
   }
