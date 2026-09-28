@@ -27,7 +27,7 @@ type LeadPayload = {
   creneau?: string
   message?: string
   utm?: Partial<Record<'source' | 'medium' | 'campaign' | 'content' | 'term', string>>
-  /** Première et dernière source du visiteur (cookie ksc_attribution). */
+  /** Première et dernière source du visiteur (cookie ksc_attribution, ou visite d'arrivée sans consentement). */
   attribution?: { first?: unknown; last?: unknown }
   website?: string // honeypot
 }

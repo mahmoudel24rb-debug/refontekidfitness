@@ -8,6 +8,7 @@ import {
   valeurCookie,
   type Choix,
 } from './consentement'
+import { appliquerConsentementAttribution } from './attributionNavigateur'
 
 // Consentement côté navigateur : état lu par le bandeau (useSyncExternalStore)
 // et actions (choix du visiteur, réouverture du panneau par « Gérer les
@@ -116,7 +117,8 @@ export function fermerPanneau() {
 
 /**
  * Enregistre le choix du visiteur : cookie ksc_consentement (6 mois), mise à
- * jour Consent Mode, puis événement consent_update pour GTM.
+ * jour Consent Mode, événement consent_update pour GTM, puis cookie
+ * d'attribution écrit ou supprimé selon la catégorie publicité.
  */
 export function enregistrerChoix(choix: Choix) {
   const maintenant = new Date()
@@ -132,6 +134,7 @@ export function enregistrerChoix(choix: Choix) {
   window.gtag?.('consent', 'update', signauxConsentMode(choix))
   window.dataLayer = window.dataLayer || []
   window.dataLayer.push(evenementConsentement(choix))
+  appliquerConsentementAttribution(choix.publicite)
   panneau = false
   notifier()
   rendreFocus()

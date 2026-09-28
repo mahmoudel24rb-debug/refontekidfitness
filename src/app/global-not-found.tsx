@@ -63,7 +63,8 @@ export default function GlobalNotFound() {
           </HeroMarine>
         </main>
         <SiteFooter />
-        {/* Source du visiteur (first / last touch) : cookie ksc_attribution. */}
+        {/* Source du visiteur (first / last touch) : visite d'arrivée en
+            mémoire, cookie ksc_attribution si la publicité est acceptée. */}
         <SuiviAttribution />
       </body>
     </html>
