@@ -62,6 +62,9 @@ export default buildConfig({
         { rel: 'apple-touch-icon', type: 'image/png', url: '/apple-icon.png' },
       ],
       robots: 'noindex, nofollow',
+      // Pas d'image Open Graph pour l'admin (noindex, jamais partagé) : sa
+      // génération échouait au premier appel après le démarrage.
+      defaultOGImageType: 'off',
     },
     // Thème KSC (src/app/(payload)/custom.css) : clair uniquement.
     theme: 'light',
@@ -74,7 +77,12 @@ export default buildConfig({
       fr: {
         general: {
           dashboard: 'Accueil',
-          globals: 'Réglages',
+          // Libellé du groupe par défaut des globals (seul un global SANS
+          // admin.group y serait rangé). Il ne doit PAS valoir « Réglages » :
+          // Payload (groupNavItems) crée ce groupe en 2e position, avant tous
+          // les groupes nommés, et y aurait placé le groupe « Réglages » en tête
+          // du menu et de l'accueil.
+          globals: 'Autres réglages',
           backToDashboard: 'Retour à l’accueil',
           createNew: 'Créer',
           createNewLabel: 'Créer : {{label}}',
@@ -92,7 +100,10 @@ export default buildConfig({
   },
   // Ordre du menu et de l'accueil : « Contenu du site » (planning, activités,
   // tarifs, articles, FAQ, avis, équipe), « Médias », puis « Réglages »
-  // (utilisateurs, et le global Paramètres du site).
+  // (Paramètres du site, Utilisateurs). Les groupes suivent l'ordre de première
+  // apparition dans cette liste ; dans « Réglages », Payload place toujours les
+  // collections avant les globals : Paramètres du site est remonté en tête par
+  // custom.css (propriété order).
   collections: [Planning, Prestations, Tarifs, Articles, Faq, Avis, Equipe, Media, Users],
   globals: [Parametres],
   editor: lexicalEditor(),

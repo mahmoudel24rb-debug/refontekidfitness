@@ -203,6 +203,19 @@
     background: var(--ksc-magenta);
   }
 
+  /* Groupe « Réglages » : « Paramètres du site » avant « Utilisateurs ».
+     Payload range toujours les collections avant les globals d'un même
+     groupe ; l'ordre est rétabli ici, dans le menu et sur l'accueil. */
+  .nav-group__content:has(> #nav-global-parametres) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #nav-global-parametres,
+  .collections__card-list > li:has(#card-parametres) {
+    order: -1;
+  }
+
   /* Libellés de groupes : ardoise lisible sur crème 2 (5,5:1). */
   .nav-group__toggle {
     color: var(--theme-elevation-600);

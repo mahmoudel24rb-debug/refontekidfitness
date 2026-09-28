@@ -28,6 +28,9 @@ export const Planning: CollectionConfig = {
     update: authenticated,
     delete: authenticated,
   },
+  // Liste triée par jour (l'énum Postgres enum_planning_jour suit l'ordre de
+  // déclaration, Lundi à Samedi) puis par ordre dans la journée.
+  defaultSort: ['jour', 'ordre'],
   // Site remis à jour dès l'enregistrement ou la suppression.
   hooks: hooksRevalidation(),
   fields: [
