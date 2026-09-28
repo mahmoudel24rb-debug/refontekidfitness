@@ -2,9 +2,17 @@ import { withPayload } from "@payloadcms/next/withPayload";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Type-check ACTIF au build : le port Framer vendored (seule raison
-  // historique de le désactiver) a été purgé lors de la refonte des fondations.
-  typescript: { ignoreBuildErrors: false },
+  // Build allégé pour l'hébergement Hostinger (serveur de build limité en RAM
+  // et en nombre de processus : le build complet y mourait sans message).
+  // - Type-check désactivé AU BUILD : il est fait avant chaque merge
+  //   (`npx tsc --noEmit`), inutile de le rejouer sur le serveur.
+  // - Génération statique sur un seul worker : chaque worker charge Payload et
+  //   ouvre sa propre connexion Postgres.
+  // - Compilation webpack (script `build` de package.json) et non Turbopack :
+  //   Turbopack ouvre un thread par cœur de la machine hôte, ce qui bute sur le
+  //   plafond de processus de l'hébergement mutualisé (build figé en compilation).
+  typescript: { ignoreBuildErrors: true },
+  experimental: { cpus: 1 },
   // NB : pas de `images.localPatterns` — le définir bloquerait tous les autres
   // chemins locaux (400). Les médias Payload (/api/media/file/**) comme les
   // visuels de /public/assets sont des chemins locaux, autorisés par défaut.
