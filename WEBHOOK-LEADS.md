@@ -7,9 +7,9 @@ kidsportclub.fr (état au 28/09/2026).
 
 1. Le visiteur envoie un formulaire du site.
 2. Le navigateur poste la demande sur `/api/lead` (même domaine).
-3. `/api/lead` vérifie et borne les champs, puis transmet un JSON (`POST`,
-   `Content-Type: application/json`) à l'URL de la variable d'environnement
-   `LEAD_WEBHOOK_URL` (webhook Make), qui alimente le CRM.
+3. `/api/lead` vérifie et borne les champs, calcule `sourceCrm`, puis transmet
+   un JSON (`POST`, `Content-Type: application/json`) à l'URL de la variable
+   d'environnement `LEAD_WEBHOOK_URL` (webhook Make), qui alimente le CRM.
 
 Une demande = un appel au webhook. Ne sont jamais transmis : les envois de
 robots (champ-piège `website` rempli) et les demandes sans prénom ou sans moyen
@@ -34,11 +34,13 @@ personnelle.
 | `utm` | toujours | UTM de la dernière visite : `source`, `medium`, `campaign`, `content`, `term`, les 5 clés toujours présentes (vides si non renseignées). Champ historique, conservé pour le mapping existant : mêmes valeurs que `attribution.last.utm_*`. |
 | `attribution.first` | toujours | Première source connue du visiteur (first touch) : 10 clés, détail ci-dessous. Provenance selon le consentement aux cookies : voir « Consentement et provenance d'`attribution` ». |
 | `attribution.last` | toujours | Dernière source connue du visiteur (last touch) : mêmes 10 clés. |
+| `sourceCrm` | toujours | Valeur du champ `source` du CRM, calculée par le site sur la dernière visite (`attribution.last`) : toujours l'une des 44 valeurs acceptées par le CRM. Règles : voir « Calcul de `sourceCrm` ». |
 | `recuLe` | toujours | Date et heure de réception par le site (ISO 8601, UTC). |
 
 Structure stable : toutes les clés sont toujours présentes, dans cet ordre,
 quel que soit le formulaire ; une valeur manquante vaut une chaîne vide (y
 compris les 5 clés d'`utm` et les 10 clés de chaque visite d'`attribution`).
+`sourceCrm` n'est jamais vide : `WEBSITE_FORM` quand rien n'est connu.
 Make ne détecte que les clés reçues : chaque champ, même `landing`,
 `ageEnfant` ou `creneau`, est ainsi mappable dès la première demande de test.
 Longueurs maximales : 120 caractères pour les champs courts, 2 000 pour
@@ -54,6 +56,47 @@ Longueurs maximales : 120 caractères pour les champs courts, 2 000 pour
 | `referrer` | Page d'où venait le visiteur (`document.referrer`), seulement si elle est sur un autre domaine ; souvent réduite au domaine par le navigateur, ex. `https://www.google.com/`. Vide pour une visite directe, une navigation interne, ou quand le navigateur ne la transmet pas. |
 | `landing_page` | Page d'entrée : chemin et paramètres, ex. `/landing/essai-gratuit?utm_source=facebook&utm_medium=cpc`. |
 | `date` | Date et heure de la visite (ISO 8601, UTC). |
+
+## Calcul de `sourceCrm`
+
+Le champ `source` du CRM n'accepte que sa liste de 44 valeurs (constante
+`SOURCES_CRM` de `src/lib/sourceCrm.ts`, dans l'ordre du CRM). `/api/lead`
+calcule `sourceCrm` côté serveur, sur la dernière visite (`attribution.last`,
+après bornage des valeurs) ; la valeur transmise appartient toujours à cette
+liste.
+
+Comparaisons : `utm_source`, `utm_medium` et `utm_campaign` sans espaces de
+bord et sans tenir compte de la casse ; domaine du référent sans `www.`. Les
+règles sont examinées dans l'ordre, la première qui s'applique donne la valeur.
+
+| Ordre | Condition sur la dernière visite | `sourceCrm` | Exemple (URL d'arrivée, référent) |
+|---|---|---|---|
+| 1 | `utm_source` égal, casse ignorée, à l'une des 44 valeurs du CRM | Cette valeur | `/?utm_source=META_ADS` : `META_ADS` ; `/?utm_source=facebook&utm_medium=cpc` : `FACEBOOK` |
+| 2 | `gclid` renseigné | `GOOGLE_ADS` | `/?gclid=Cj0KCQjw...` |
+| 3 | `utm_source` parmi `google_ads`, `googleads`, `adwords`, `gads` ; ou `utm_source=google` avec un `utm_medium` payant : `cpc`, `ppc`, `paid`, `sem`, `ads`, `ad`, `cpm`, `display`, `paid_search` | `GOOGLE_ADS` | `/?utm_source=adwords&utm_medium=cpc` |
+| 4 | `utm_source` parmi `gmb`, `gbp`, `google_my_business`, `googlemybusiness`, `google_business`, `googlebusiness`, `google_business_profile`, `mybusiness` ; ou `utm_source=google` avec un `utm_medium` ou un `utm_campaign` contenant `gmb`, `gbp`, `mybusiness`, `business`, `fiche` ou `maps` | `GOOGLE_MYBUSINESS` | `/?utm_source=gmb&utm_medium=organic` |
+| 5 | Source Meta : `utm_source` parmi `meta`, `meta_ads`, `metaads`, `facebook_ads`, `facebookads`, `fb_ads`, `instagram_ads`, `ig_ads`, `facebook`, `fb`, `instagram`, `ig`, `an`, `audience_network`, `msg`, `messenger`, ou contenant `facebook`, `instagram` ou `meta` ; avec un `utm_medium` organique : `social`, `organic`, `organique`, `post`, `bio`, `profile`, `profil`, `story`, `reel`, `link`, `lien` | `INSTAGRAM` (source `instagram` ou `ig`), `FACEBOOK_MESSENGER` (source `messenger` ou `msg`), sinon `FACEBOOK` | `/?utm_source=ig&utm_medium=bio` : `INSTAGRAM` |
+| 5 | Source Meta avec tout autre `utm_medium` (payant, vide ou autre) | `META_ADS` | `/landing/essai-gratuit?utm_source=fb&utm_medium=paid&fbclid=...` |
+| 6 | Autres sources connues : `whatsapp`, `wa` ; `chatgpt`, `chatgpt.com`, `openai` ; `activecampaign`, `active_campaign` ; `typeform` ; `systeme`, `systeme_io`, `system_io`, `systemeio` ; `clickfunnels` ; `urban_sports_club`, `urbansportsclub`, `usc` ; `resamania` ; `deciplus` ; `google` (sans support payant ni indice de fiche) | Dans l'ordre : `WHATSAPP`, `CHATGPT`, `ACTIVE_CAMPAIGN`, `TYPEFORM`, `SYSTEM_IO`, `CLICKFUNNELS`, `URBAN_SPORTS_CLUB`, `RESAMANIA`, `DECIPLUS`, `GOOGLE` | `/?utm_source=wa` : `WHATSAPP` |
+| 7 | `utm_source` renseigné mais non reconnu | `MSDS_EXTERN_REFERER` | `/?utm_source=newsletter` |
+| 8 | Pas d'`utm_source`, `fbclid` renseigné | `INSTAGRAM` si le référent est `instagram.com` ou `l.instagram.com`, sinon `FACEBOOK` | `/?fbclid=IwAR...` depuis `https://l.instagram.com/` : `INSTAGRAM` |
+| 9 | Aucun paramètre UTM, référent externe | `google.*` : `GOOGLE` ; `facebook.com`, `m.facebook.com`, `l.facebook.com`, `lm.facebook.com`, `business.facebook.com` : `FACEBOOK` ; `instagram.com`, `l.instagram.com` : `INSTAGRAM` ; `messenger.com`, `m.me` : `FACEBOOK_MESSENGER` ; `chatgpt.com`, `chat.openai.com` : `CHATGPT` ; `wa.me`, `whatsapp.com`, `web.whatsapp.com`, `api.whatsapp.com` : `WHATSAPP` ; tout autre référent : `MSDS_EXTERN_REFERER` | `/contact` depuis `https://www.google.fr/` : `GOOGLE` |
+| 10 | Sinon (visite directe, rien de connu) | `WEBSITE_FORM` | `/contact` tapé dans la barre d'adresse |
+
+Précisions :
+
+- `fb`, `ig`, `an` et `msg` sont les valeurs du paramètre dynamique Meta
+  `{{site_source_name}}`.
+- Règle 8 : Meta ajoute `fbclid` à tous les clics sortants, publicités comme
+  publications ; les publicités balisées sont déjà classées par la règle 5.
+- La liste du CRM contient aussi `GOOGLE`, `FACEBOOK`, `INSTAGRAM`,
+  `WHATSAPP`, `CHATGPT`, `TYPEFORM`, etc. : un `utm_source` égal à l'un de ces
+  mots relève de la règle 1, quels que soient `utm_medium`, `utm_campaign` et
+  `gclid` (`utm_source=facebook&utm_medium=cpc` donne `FACEBOOK`,
+  `utm_source=google&utm_medium=cpc&gclid=...` donne `GOOGLE`).
+- Règle 9 : une visite sans `utm_source`, `gclid` ni `fbclid` mais avec un
+  autre paramètre UTM (`utm_medium`, `utm_campaign`, `utm_content` ou
+  `utm_term`) n'en relève pas : `WEBSITE_FORM`, même avec un référent externe.
 
 ## Consentement et provenance d'`attribution`
 
@@ -190,7 +233,9 @@ Pages des cours (16) :
 JSON réellement reçu lors des tests (données fictives) pour une demande envoyée
 depuis la page Contact, par un visiteur ayant accepté la catégorie « Publicité
 et suivi des campagnes », arrivé d'abord par une annonce Facebook (`first`) puis
-revenu par une annonce Google (`last`) :
+revenu par une annonce Google (`last`). `sourceCrm` vaut `GOOGLE` : il est
+calculé sur `last`, dont l'`utm_source` `google` est une valeur du CRM
+(règle 1) :
 
 ```json
 {
@@ -223,7 +268,7 @@ revenu par une annonce Google (`last`) :
       "fbclid": "abc",
       "referrer": "",
       "landing_page": "/landing/essai-gratuit?utm_source=facebook&utm_medium=cpc&utm_campaign=test&fbclid=abc",
-      "date": "2026-09-28T14:33:02.044Z"
+      "date": "2026-09-28T15:27:29.742Z"
     },
     "last": {
       "utm_source": "google",
@@ -235,10 +280,11 @@ revenu par une annonce Google (`last`) :
       "fbclid": "",
       "referrer": "",
       "landing_page": "/?utm_source=google&utm_medium=cpc&utm_campaign=rentree&gclid=test123",
-      "date": "2026-09-28T14:33:02.767Z"
+      "date": "2026-09-28T15:27:30.381Z"
     }
   },
-  "recuLe": "2026-09-28T14:33:06.080Z"
+  "sourceCrm": "GOOGLE",
+  "recuLe": "2026-09-28T15:27:33.342Z"
 }
 ```
 
@@ -264,15 +310,16 @@ publiques (jamais dans l'administration). Dans GTM : déclencheur
    structure », puis envoyer une demande de test depuis le site en ligne (par
    exemple en arrivant par une URL avec `?utm_source=test`), pour que Make
    découvre tous les champs : les clés étant toujours présentes (`landing`,
-   `nom`, `ageEnfant`, `creneau` et les 5 clés d'`utm` compris), une seule
-   demande de test suffit.
+   `nom`, `ageEnfant`, `creneau`, les 5 clés d'`utm` et `sourceCrm` compris),
+   une seule demande de test suffit.
 2. Rattacher ces champs aux champs du CRM, par exemple :
 
 | Webhook | Donnée CRM |
 |---|---|
+| `sourceCrm` | Champ `source` du CRM : dans le module CRM de Make, ligne `source` = `21.sourceCrm` (à la place de la valeur fixe `META_ADS`). |
 | `prenom`, `nom` | Prénom et nom de famille du parent (`nom` : lastname). |
 | `activite` | Activité qui intéresse le prospect. |
-| `source`, `page` | Formulaire et page d'origine de la demande. |
+| `source`, `page` | Formulaire et page d'origine de la demande (le champ `source` du webhook désigne le formulaire, pas la source du CRM). |
 | `attribution.first.utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term` | Source, support, campagne, contenu et mot-clé du premier contact. |
 | `attribution.first.referrer`, `landing_page`, `date` | Site référent, page d'entrée et date du premier contact. |
 | `attribution.first.gclid`, `fbclid` | Identifiants de clic du premier contact (Google Ads, Meta). |
