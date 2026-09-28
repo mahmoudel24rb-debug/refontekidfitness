@@ -10,7 +10,9 @@ export const Avis: CollectionConfig = {
   labels: { singular: 'Avis', plural: 'Avis' },
   admin: {
     useAsTitle: 'auteur',
-    defaultColumns: ['auteur', 'ordre'],
+    defaultColumns: ['auteur', 'texte', 'ordre'],
+    listSearchableFields: ['auteur', 'texte'],
+    pagination: { defaultLimit: 25 },
     group: 'Contenu du site',
     description:
       'Avis de parents recopiés mot pour mot depuis Google. L’ordre est celui de l’affichage sur le site.',

@@ -10,6 +10,8 @@ export const Faq: CollectionConfig = {
   admin: {
     useAsTitle: 'question',
     defaultColumns: ['question', 'ordre'],
+    listSearchableFields: ['question'],
+    pagination: { defaultLimit: 25 },
     group: 'Contenu du site',
     description:
       'Les questions fréquentes de la page FAQ, dans l’ordre d’affichage. Quelques-unes sont aussi reprises sur l’accueil.',

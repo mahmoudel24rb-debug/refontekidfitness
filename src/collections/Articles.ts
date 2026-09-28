@@ -11,6 +11,8 @@ export const Articles: CollectionConfig = {
   admin: {
     useAsTitle: 'titre',
     defaultColumns: ['titre', 'date', 'publie'],
+    listSearchableFields: ['titre'],
+    pagination: { defaultLimit: 25 },
     group: 'Contenu du site',
     description:
       'Les articles du blog, aussi mis en avant sur l’accueil (« Actus & conseils »). Décochez « Publié » pour retirer un article du site sans le supprimer.',

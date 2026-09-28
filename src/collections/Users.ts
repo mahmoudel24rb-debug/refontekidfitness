@@ -8,6 +8,7 @@ export const Users: CollectionConfig = {
   admin: {
     useAsTitle: 'email',
     defaultColumns: ['email', 'nom', 'role'],
+    pagination: { defaultLimit: 25 },
     group: 'Réglages',
     description: 'Les comptes qui peuvent se connecter à cet espace de gestion.',
     hideAPIURL: true,

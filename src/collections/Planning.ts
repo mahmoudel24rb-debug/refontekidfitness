@@ -11,7 +11,9 @@ export const Planning: CollectionConfig = {
   labels: { singular: 'Créneau', plural: 'Planning' },
   admin: {
     useAsTitle: 'activite',
-    defaultColumns: ['jour', 'salle', 'heure', 'activite', 'age', 'duree', 'ordre', 'actif'],
+    defaultColumns: ['jour', 'heure', 'activite', 'age', 'salle', 'duree', 'actif'],
+    listSearchableFields: ['activite', 'salle'],
+    pagination: { defaultLimit: 50 },
     group: 'Contenu du site',
     description:
       'Les créneaux de la semaine type, affichés sur la page Planning et sur les pages des cours. Un créneau par ligne ; l’ordre s’applique à l’intérieur de chaque journée.',
@@ -25,51 +27,63 @@ export const Planning: CollectionConfig = {
   },
   fields: [
     {
-      name: 'jour',
-      label: 'Jour',
-      type: 'select',
-      required: true,
-      options: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'].map((j) => ({
-        label: j,
-        value: j,
-      })),
+      type: 'row',
+      fields: [
+        {
+          name: 'jour',
+          label: 'Jour',
+          type: 'select',
+          required: true,
+          admin: { width: '33.33%' },
+          options: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'].map((j) => ({
+            label: j,
+            value: j,
+          })),
+        },
+        {
+          name: 'heure',
+          label: 'Heure',
+          type: 'text',
+          required: true,
+          admin: { width: '33.33%', description: 'Heure de début. Ex. : 10h30, 17h, 9h15.' },
+        },
+        {
+          name: 'duree',
+          label: 'Durée (minutes)',
+          type: 'number',
+          defaultValue: 60,
+          min: 15,
+          max: 600,
+          admin: {
+            width: '33.33%',
+            description:
+              'Elle fixe la hauteur du bloc dans le calendrier de la semaine. 60 minutes par défaut.',
+          },
+        },
+      ],
     },
     {
-      name: 'salle',
-      label: 'Salle',
-      type: 'text',
-      required: true,
-      admin: { description: 'Ex. : Salle Kid, Salle Cross, Salle Fitness, Bulle.' },
-    },
-    {
-      name: 'heure',
-      label: 'Heure',
-      type: 'text',
-      required: true,
-      admin: { description: 'Heure de début. Ex. : 10h30, 17h, 9h15.' },
-    },
-    {
-      name: 'activite',
-      label: 'Cours',
-      type: 'text',
-      required: true,
-      admin: {
-        description:
-          'Nom du cours tel qu’il s’affiche dans le calendrier. Écrivez-le toujours de la même façon : il sert aussi à retrouver les horaires d’un cours sur sa page.',
-      },
-    },
-    {
-      name: 'duree',
-      label: 'Durée (minutes)',
-      type: 'number',
-      defaultValue: 60,
-      min: 15,
-      max: 600,
-      admin: {
-        position: 'sidebar',
-        description:
-          'Durée du cours : elle fixe la hauteur du bloc dans le calendrier de la semaine. 60 minutes par défaut.',
-      },
+      type: 'row',
+      fields: [
+        {
+          name: 'activite',
+          label: 'Cours',
+          type: 'text',
+          required: true,
+          admin: {
+            width: '50%',
+            description:
+              'Nom du cours tel qu’il s’affiche dans le calendrier. Écrivez-le toujours de la même façon : il sert aussi à retrouver les horaires d’un cours sur sa page.',
+          },
+        },
+        {
+          name: 'salle',
+          label: 'Salle',
+          type: 'text',
+          required: true,
+          admin: { width: '50%', description: 'Ex. : Salle Kid, Salle Cross, Salle Fitness, Bulle.' },
+        },
+      ],
     },
     {
       name: 'age',

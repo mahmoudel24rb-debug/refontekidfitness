@@ -145,21 +145,21 @@ export interface Planning {
   id: number;
   jour: 'Lundi' | 'Mardi' | 'Mercredi' | 'Jeudi' | 'Vendredi' | 'Samedi';
   /**
-   * Ex. : Salle Kid, Salle Cross, Salle Fitness, Bulle.
-   */
-  salle: string;
-  /**
    * Heure de début. Ex. : 10h30, 17h, 9h15.
    */
   heure: string;
+  /**
+   * Elle fixe la hauteur du bloc dans le calendrier de la semaine. 60 minutes par défaut.
+   */
+  duree?: number | null;
   /**
    * Nom du cours tel qu’il s’affiche dans le calendrier. Écrivez-le toujours de la même façon : il sert aussi à retrouver les horaires d’un cours sur sa page.
    */
   activite: string;
   /**
-   * Durée du cours : elle fixe la hauteur du bloc dans le calendrier de la semaine. 60 minutes par défaut.
+   * Ex. : Salle Kid, Salle Cross, Salle Fitness, Bulle.
    */
-  duree?: number | null;
+  salle: string;
   /**
    * Optionnelle. Elle donne sa couleur et sa pastille d’âge au créneau, ouvre le bon lien de réservation et propose le créneau dans le formulaire des fiches activités.
    */
@@ -185,13 +185,13 @@ export interface Prestation {
   id: number;
   titre: string;
   /**
-   * Fin de l’adresse de la page sur le site. Ex. : cours-3-5-ans donne kidsportclub.fr/nos-prestations/cours-3-5-ans. En minuscules, sans accents ni espaces (mots séparés par des tirets). Ne plus la modifier une fois la page en ligne.
-   */
-  slug: string;
-  /**
    * Affichée en pastille sur l’image. Ex. : « 3 – 5 ans », « Tous âges ».
    */
   age: string;
+  /**
+   * Ex. : « 95 €/mois », « À partir de 29,90 €/mois ».
+   */
+  prix: string;
   /**
    * Une phrase, reprise sous le titre en haut de la page et sur les cartes.
    */
@@ -210,37 +210,23 @@ export interface Prestation {
       }[]
     | null;
   /**
-   * Optionnelle, affichée au-dessus des étapes. Ex. : « Même principe que les Mercredis Sportifs, avec un accueil dès 8h00. »
+   * Phrase du bloc « Créneaux ». Si elle contient « voir le planning », ces mots deviennent un lien vers la page Planning.
    */
-  derouleIntro?: string | null;
+  creneauxTexte: string;
   /**
-   * Uniquement pour les Mercredis Sportifs et les Stages vacances : les étapes de la journée, dans l’ordre. Liste vide : la section n’est pas affichée sur la fiche.
+   * Optionnelle : sans photo, le visuel actuel du site est conservé.
    */
-  deroule?:
-    | {
-        /**
-         * Ex. : « 7h30 – 10h00 ».
-         */
-        horaire: string;
-        titre: string;
-        description: string;
-        id?: string | null;
-      }[]
-    | null;
+  image?: (number | null) | Media;
   /**
-   * Phrase affichée sous les étapes, en italique.
-   */
-  derouleNote?: string | null;
-  /**
-   * Uniquement pour les 4 fiches de cours par tranche d’âge : les cours pratiqués. Chaque cours a sa propre page, une carte sur la fiche de la tranche et une entrée dans le sous-menu « Nos activités » du site.
+   * Les cours pratiqués dans cette tranche d’âge. Chaque cours a sa propre page, une carte sur la fiche de la tranche et une entrée dans le sous-menu « Nos activités » du site.
    */
   disciplines?:
     | {
         nom: string;
         /**
-         * Fin de l’adresse de la page du cours, après celle de la tranche. Ex. : gym-et-dance donne kidsportclub.fr/nos-prestations/cours-3-5-ans/gym-et-dance. Vide : elle est déduite du nom. Ne plus la modifier une fois la page en ligne.
+         * Durée d’une séance, affichée en pastille (« 45 min », « 1h ») sur la fiche de la tranche et sur la page du cours. Vide : aucune pastille.
          */
-        slug?: string | null;
+        duree?: number | null;
         /**
          * Résumé court : sous-titre en haut de la page du cours et texte de sa carte sur la fiche de la tranche.
          */
@@ -268,9 +254,9 @@ export interface Prestation {
          */
         pourQui?: string | null;
         /**
-         * Durée d’une séance, affichée en pastille (« 45 min », « 1h ») sur la fiche de la tranche et sur la page du cours. Vide : aucune pastille.
+         * Fin de l’adresse de la page du cours, après celle de la tranche. Ex. : gym-et-dance donne kidsportclub.fr/nos-prestations/cours-3-5-ans/gym-et-dance. Vide : elle est déduite du nom. Ne plus la modifier une fois la page en ligne.
          */
-        duree?: number | null;
+        slug?: string | null;
         /**
          * Nom du cours tel qu’il est écrit dans le planning, pour afficher ses horaires sur sa page. S’il porte plusieurs noms dans le planning, séparez-les par une barre verticale. Ex. : Pompom|Pompom Girl.
          */
@@ -283,21 +269,35 @@ export interface Prestation {
    */
   noteDisciplines?: string | null;
   /**
-   * Ex. : « 95 €/mois », « À partir de 29,90 €/mois ».
+   * Optionnelle, affichée au-dessus des étapes. Ex. : « Même principe que les Mercredis Sportifs, avec un accueil dès 8h00. »
    */
-  prix: string;
+  derouleIntro?: string | null;
   /**
-   * Phrase du bloc « Créneaux ». Si elle contient « voir le planning », ces mots deviennent un lien vers la page Planning.
+   * Les étapes de la journée, dans l’ordre. Liste vide : la section n’est pas affichée sur la fiche.
    */
-  creneauxTexte: string;
+  deroule?:
+    | {
+        /**
+         * Ex. : « 7h30 – 10h00 ».
+         */
+        horaire: string;
+        titre: string;
+        description: string;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Phrase affichée sous les étapes, en italique.
+   */
+  derouleNote?: string | null;
+  /**
+   * Fin de l’adresse de la page sur le site. Ex. : cours-3-5-ans donne kidsportclub.fr/nos-prestations/cours-3-5-ans. En minuscules, sans accents ni espaces (mots séparés par des tirets). Ne plus la modifier une fois la page en ligne.
+   */
+  slug: string;
   /**
    * Expression que les parents tapent dans Google pour trouver cette activité. Elle est reprise dans le résumé de la page destiné aux moteurs de recherche.
    */
   motCle: string;
-  /**
-   * Optionnelle : sans photo, le visuel actuel du site est conservé.
-   */
-  image?: (number | null) | Media;
   /**
    * Ordre d’affichage sur la page Nos activités et dans le pied de page.
    */
@@ -337,15 +337,15 @@ export interface Media {
  */
 export interface Tarif {
   id: number;
-  /**
-   * Détermine le groupe dans lequel la formule apparaît sur la page Tarifs.
-   */
-  type: 'abonnement' | 'prestation';
   titre: string;
   /**
    * Ex. : « 29,90 €/mois », « 190 € », « 35 €/jour ou 150 €/semaine ».
    */
   prix: string;
+  /**
+   * Détermine le groupe dans lequel la formule apparaît sur la page Tarifs.
+   */
+  type: 'abonnement' | 'prestation';
   /**
    * Mention sous le prix. Ex. : « Engagement 10 mois ».
    */
@@ -625,10 +625,10 @@ export interface PayloadMigration {
  */
 export interface PlanningSelect<T extends boolean = true> {
   jour?: T;
-  salle?: T;
   heure?: T;
-  activite?: T;
   duree?: T;
+  activite?: T;
+  salle?: T;
   age?: T;
   ordre?: T;
   actif?: T;
@@ -641,8 +641,8 @@ export interface PlanningSelect<T extends boolean = true> {
  */
 export interface PrestationsSelect<T extends boolean = true> {
   titre?: T;
-  slug?: T;
   age?: T;
+  prix?: T;
   accroche?: T;
   intro?: T;
   benefices?:
@@ -651,21 +651,13 @@ export interface PrestationsSelect<T extends boolean = true> {
         texte?: T;
         id?: T;
       };
-  derouleIntro?: T;
-  deroule?:
-    | T
-    | {
-        horaire?: T;
-        titre?: T;
-        description?: T;
-        id?: T;
-      };
-  derouleNote?: T;
+  creneauxTexte?: T;
+  image?: T;
   disciplines?:
     | T
     | {
         nom?: T;
-        slug?: T;
+        duree?: T;
         description?: T;
         intro?:
           | T
@@ -680,15 +672,23 @@ export interface PrestationsSelect<T extends boolean = true> {
               id?: T;
             };
         pourQui?: T;
-        duree?: T;
+        slug?: T;
         activitePlanning?: T;
         id?: T;
       };
   noteDisciplines?: T;
-  prix?: T;
-  creneauxTexte?: T;
+  derouleIntro?: T;
+  deroule?:
+    | T
+    | {
+        horaire?: T;
+        titre?: T;
+        description?: T;
+        id?: T;
+      };
+  derouleNote?: T;
+  slug?: T;
   motCle?: T;
-  image?: T;
   ordre?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -698,9 +698,9 @@ export interface PrestationsSelect<T extends boolean = true> {
  * via the `definition` "tarifs_select".
  */
 export interface TarifsSelect<T extends boolean = true> {
-  type?: T;
   titre?: T;
   prix?: T;
+  type?: T;
   detail?: T;
   avantages?:
     | T

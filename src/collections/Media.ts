@@ -10,6 +10,8 @@ export const Media: CollectionConfig = {
   slug: 'media',
   labels: { singular: 'Média', plural: 'Médias' },
   admin: {
+    defaultColumns: ['filename', 'alt', 'createdAt'],
+    pagination: { defaultLimit: 25 },
     group: 'Médias',
     description:
       'Les photos utilisées sur le site : activités, équipe, articles, avis. Le texte alternatif décrit chaque photo aux personnes malvoyantes et à Google.',
