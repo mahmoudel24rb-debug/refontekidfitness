@@ -20,24 +20,27 @@ personnelle.
 
 | Champ | Présence | Sens |
 |---|---|---|
-| `source` | toujours | Formulaire d'origine (valeurs plus bas). `inconnu` s'il manque. |
-| `landing` | selon le formulaire | Slug de la landing (landings), de la prestation (fiche prestation) ou de la tranche d'âge (page d'un cours). Absent pour Contact et Séance d'essai. |
+| `source` | toujours | Formulaire d'origine (valeurs plus bas). Vide s'il manque. |
+| `landing` | toujours | Slug de la landing (landings), de la prestation (fiche prestation) ou de la tranche d'âge (page d'un cours). Vide pour Contact et Séance d'essai. |
 | `page` | toujours | Chemin de la page du formulaire, ex. `/contact`. |
 | `prenom` | toujours | Prénom (du parent). Obligatoire. |
-| `nom` | si saisi | Nom (formulaire Contact). |
-| `telephone` | si saisi | Téléphone. Téléphone ou email obligatoire. |
-| `email` | si saisi | Email. |
-| `ageEnfant` | si saisi | Âge de l'enfant, texte libre (ex. « 6 ans »). |
+| `nom` | toujours | Nom (formulaire Contact). Vide si non saisi. |
+| `telephone` | toujours | Téléphone. Téléphone ou email obligatoire ; vide si non saisi. |
+| `email` | toujours | Email. Vide si non saisi. |
+| `ageEnfant` | toujours | Âge de l'enfant, texte libre (ex. « 6 ans »). Vide si non saisi. |
 | `activite` | toujours | Activité qui intéresse le prospect (valeurs plus bas). |
-| `creneau` | si choisi | Créneau souhaité (fiches prestation et pages des cours). |
-| `message` | si saisi | Message libre. |
-| `utm` | toujours | UTM de la dernière visite : `source`, `medium`, `campaign`, `content`, `term`, chaque clé seulement si elle est renseignée. Champ historique, conservé pour le mapping existant : mêmes valeurs que `attribution.last.utm_*`. |
+| `creneau` | toujours | Créneau souhaité (fiches prestation et pages des cours). Vide si non choisi. |
+| `message` | toujours | Message libre. Vide si non saisi. |
+| `utm` | toujours | UTM de la dernière visite : `source`, `medium`, `campaign`, `content`, `term`, les 5 clés toujours présentes (vides si non renseignées). Champ historique, conservé pour le mapping existant : mêmes valeurs que `attribution.last.utm_*`. |
 | `attribution.first` | toujours | Première source connue du visiteur (first touch) : 10 clés, détail ci-dessous. Provenance selon le consentement aux cookies : voir « Consentement et provenance d'`attribution` ». |
 | `attribution.last` | toujours | Dernière source connue du visiteur (last touch) : mêmes 10 clés. |
 | `recuLe` | toujours | Date et heure de réception par le site (ISO 8601, UTC). |
 
-Un champ vide ou non saisi est absent du JSON, sauf dans `attribution` où les
-10 clés sont toujours présentes (chaîne vide quand la valeur manque).
+Structure stable : toutes les clés sont toujours présentes, dans cet ordre,
+quel que soit le formulaire ; une valeur manquante vaut une chaîne vide (y
+compris les 5 clés d'`utm` et les 10 clés de chaque visite d'`attribution`).
+Make ne détecte que les clés reçues : chaque champ, même `landing`,
+`ageEnfant` ou `creneau`, est ainsi mappable dès la première demande de test.
 Longueurs maximales : 120 caractères pour les champs courts, 2 000 pour
 `message`, 300 pour `page` et pour chaque valeur d'`attribution`.
 
@@ -185,24 +188,29 @@ Pages des cours (16) :
 ## Exemple de JSON reçu
 
 JSON réellement reçu lors des tests (données fictives) pour une demande envoyée
-depuis la page du cours Zumba Mix Dance, par un visiteur arrivé d'abord par une
-annonce Facebook (`first`) puis revenu par une annonce Google (`last`) :
+depuis la page Contact, par un visiteur ayant accepté la catégorie « Publicité
+et suivi des campagnes », arrivé d'abord par une annonce Facebook (`first`) puis
+revenu par une annonce Google (`last`) :
 
 ```json
 {
-  "source": "activite-cours-6-10-ans-zumba-mix-dance",
-  "landing": "cours-6-10-ans",
-  "page": "/nos-prestations/cours-6-10-ans/zumba-mix-dance",
+  "source": "contact",
+  "landing": "",
+  "page": "/contact",
   "prenom": "Testeur",
+  "nom": "Tracking",
   "telephone": "0600000000",
   "email": "test.tracking@example.com",
-  "ageEnfant": "6 ans",
-  "activite": "Zumba Mix Dance (Cours 6 – 10 ans)",
+  "ageEnfant": "",
+  "activite": "Mercredis Sportifs",
+  "creneau": "",
   "message": "Test automatique du tracking, a ignorer.",
   "utm": {
     "source": "google",
     "medium": "cpc",
-    "campaign": "rentree"
+    "campaign": "rentree",
+    "content": "",
+    "term": ""
   },
   "attribution": {
     "first": {
@@ -215,7 +223,7 @@ annonce Facebook (`first`) puis revenu par une annonce Google (`last`) :
       "fbclid": "abc",
       "referrer": "",
       "landing_page": "/landing/essai-gratuit?utm_source=facebook&utm_medium=cpc&utm_campaign=test&fbclid=abc",
-      "date": "2026-09-28T13:36:37.321Z"
+      "date": "2026-09-28T14:33:02.044Z"
     },
     "last": {
       "utm_source": "google",
@@ -226,16 +234,16 @@ annonce Facebook (`first`) puis revenu par une annonce Google (`last`) :
       "gclid": "test123",
       "fbclid": "",
       "referrer": "",
-      "landing_page": "/landing/essai-gratuit?utm_source=google&utm_medium=cpc&utm_campaign=rentree&gclid=test123",
-      "date": "2026-09-28T13:36:43.199Z"
+      "landing_page": "/?utm_source=google&utm_medium=cpc&utm_campaign=rentree&gclid=test123",
+      "date": "2026-09-28T14:33:02.767Z"
     }
   },
-  "recuLe": "2026-09-28T13:36:50.272Z"
+  "recuLe": "2026-09-28T14:33:06.080Z"
 }
 ```
 
-`nom` et `creneau` sont absents ici car non saisis (le formulaire d'un cours
-n'a pas de champ nom ; le créneau est optionnel).
+`landing`, `ageEnfant` et `creneau` sont vides ici : le formulaire Contact n'a
+pas ces champs, mais les clés restent présentes.
 
 ## Événement dataLayer
 
@@ -255,8 +263,9 @@ publiques (jamais dans l'administration). Dans GTM : déclencheur
 1. Dans le scénario Make, sur le module webhook : « Redetermine data
    structure », puis envoyer une demande de test depuis le site en ligne (par
    exemple en arrivant par une URL avec `?utm_source=test`), pour que Make
-   découvre les nouveaux champs `page`, `activite`, `attribution.first.*` et
-   `attribution.last.*`.
+   découvre tous les champs : les clés étant toujours présentes (`landing`,
+   `nom`, `ageEnfant`, `creneau` et les 5 clés d'`utm` compris), une seule
+   demande de test suffit.
 2. Rattacher ces champs aux champs du CRM, par exemple :
 
 | Webhook | Donnée CRM |
@@ -268,4 +277,5 @@ publiques (jamais dans l'administration). Dans GTM : déclencheur
 | `attribution.first.gclid`, `fbclid` | Identifiants de clic du premier contact (Google Ads, Meta). |
 | `attribution.last.*` | Mêmes informations pour la dernière source avant la demande. |
 
-3. Le champ `utm` est inchangé : le mapping existant continue de fonctionner.
+3. Le champ `utm` garde ses 5 clés, désormais toujours présentes (vides si non
+   renseignées) : le mapping existant continue de fonctionner.
