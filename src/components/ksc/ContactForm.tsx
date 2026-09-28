@@ -5,12 +5,17 @@ import React, { useState } from 'react'
 import Underline from './Underline'
 import FormField from './FormField'
 import { Button } from '@/components/ui/button'
+import { Label } from '@/components/ui/label'
+import { ACTIVITE_NON_PRECISEE, champ, envoyerLead } from '@/lib/envoiLead'
 
 // Formulaire de la page Contact (partie interactive). Extrait de ContactKSC pour
 // que la page reste un composant serveur : c'est elle qui lit les coordonnées
-// dans le global `parametres` (repli src/data/site.ts) et passe le téléphone ici
-// pour le message d'erreur. Le rendu (markup, classes, textes) est inchangé.
-export default function ContactForm({ telephone }: { telephone: string }) {
+// dans le global `parametres` (repli src/data/site.ts) et les prestations, et
+// passe ici le téléphone (message d'erreur) et la liste des activités.
+// Envoi par envoyerLead (src/lib/envoiLead.ts), comme les autres formulaires :
+// page, attribution first / last touch, UTM de la dernière visite, activité ;
+// dataLayer.push({ event: 'lead', source, activite }) après succès.
+export default function ContactForm({ telephone, activites }: { telephone: string; activites: string[] }) {
   const [etat, setEtat] = useState<'idle' | 'envoi' | 'ok' | 'erreur'>('idle')
   const sent = etat === 'ok'
   // Envoi réel vers /api/lead (transféré au CRM via LEAD_WEBHOOK_URL quand posée).
@@ -20,21 +25,15 @@ export default function ContactForm({ telephone }: { telephone: string }) {
     const data = new FormData(e.currentTarget)
     setEtat('envoi')
     try {
-      const res = await fetch('/api/lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          source: 'contact',
-          prenom: data.get('p'),
-          nom: data.get('n') || undefined,
-          email: data.get('e') || undefined,
-          telephone: data.get('t') || undefined,
-          message: data.get('m') || undefined,
-        }),
+      await envoyerLead({
+        source: 'contact',
+        activite: champ(data, 'activite') ?? ACTIVITE_NON_PRECISEE,
+        prenom: champ(data, 'p'),
+        nom: champ(data, 'n'),
+        email: champ(data, 'e'),
+        telephone: champ(data, 't'),
+        message: champ(data, 'm'),
       })
-      if (!res.ok) throw new Error(String(res.status))
-      window.dataLayer = window.dataLayer || []
-      window.dataLayer.push({ event: 'lead', source: 'contact' })
       setEtat('ok')
     } catch {
       setEtat('erreur')
@@ -54,6 +53,25 @@ export default function ContactForm({ telephone }: { telephone: string }) {
           </div>
           <FormField id="e" label="Email" type="email" required />
           <FormField id="t" label="Téléphone" type="tel" />
+          {/* Activité qui intéresse le prospect : même liste et même style que
+              sur la page Séance d'essai. Laissée par défaut, « Je ne sais pas
+              encore » est transmise telle quelle. */}
+          <div className="grid gap-2">
+            <Label htmlFor="contact-activite" className="text-sm font-semibold text-marine">
+              Quelle activité vous intéresse ?
+            </Label>
+            <select
+              id="contact-activite"
+              name="activite"
+              defaultValue={ACTIVITE_NON_PRECISEE}
+              className="h-[52px] rounded-xl border-[1.5px] border-input bg-[#fdfcf7] px-4 text-base text-ink"
+            >
+              <option value={ACTIVITE_NON_PRECISEE}>{ACTIVITE_NON_PRECISEE}</option>
+              {activites.map((a) => (
+                <option key={a} value={a}>{a}</option>
+              ))}
+            </select>
+          </div>
           <FormField id="m" label="Message" as="textarea" rows={5} required />
           <Button type="submit" className="w-full" disabled={etat === 'envoi'}>
             {etat === 'envoi' ? 'Envoi en cours…' : 'Envoyer'}

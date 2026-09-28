@@ -7,22 +7,18 @@ import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import FormField from './FormField'
 import { COORDONNEES } from '@/data/site'
+import { ACTIVITE_NON_PRECISEE, champ, envoyerLead } from '@/lib/envoiLead'
 
-// Formulaire de capture de lead (landings Meta Ads + Contact + Séance d'essai).
-// - ≤ 5 champs (standard conversion), honeypot anti-bots, UTM capturés depuis
-//   l'URL et transmis avec le lead (traçabilité campagne -> prospect).
-//   NB : les UTM sont lus AU SUBMIT via window.location.search (pas de
-//   useSearchParams : il forcerait une frontière Suspense et sortirait le
-//   formulaire du HTML statique prérendu).
-// - Poste sur /api/lead ; état succès inline + dataLayer.push({event:'lead'})
-//   (préparation pixel/CAPI — aucun cookie posé ici).
+// Formulaire de capture de lead (landings Meta Ads, Séance d'essai, fiches
+// prestation, pages des cours).
+// - ≤ 5 champs (standard conversion), honeypot anti-bots.
+// - Envoi par envoyerLead (src/lib/envoiLead.ts) : POST /api/lead avec la
+//   page du formulaire, l'attribution first / last touch lue dans le cookie
+//   ksc_attribution et les UTM de la dernière visite ; après succès,
+//   dataLayer.push({ event: 'lead', source, activite }).
+// - Activité : liste déroulante (`activites`) ou valeur déduite de la page
+//   (`activite`), l'une ou l'autre obligatoire : chaque lead en porte une.
 // - RGPD : first-party, mention de consentement + lien Confidentialité.
-
-declare global {
-  interface Window {
-    dataLayer?: Array<Record<string, unknown>>
-  }
-}
 
 type Props = {
   source: string
@@ -34,53 +30,44 @@ type Props = {
   withEmail?: boolean
   /** Options de créneau (fiches prestation) : ajoute un <select> optionnel. */
   creneaux?: { value: string; label: string }[]
-  /** Activités proposées (page Séance d'essai) : ajoute un <select> optionnel. */
-  activites?: string[]
   /** id du <form> (défaut 'lead-form'). Le 2e formulaire de fin de page
    *  utilise 'lead-form-final' pour être observé par la StickyCtaBar. */
   formId?: string
   className?: string
-}
+} & (
+  | {
+      /** Activités proposées : ajoute un <select> optionnel (défaut « Je ne sais pas encore »). */
+      activites: string[]
+      activite?: never
+    }
+  | {
+      /** Activité déduite de la page (fiche prestation, cours, landing dédiée). */
+      activite: string
+      activites?: never
+    }
+)
 
-export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compact, withEmail, creneaux, activites, formId = 'lead-form', className }: Props) {
+export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compact, withEmail, creneaux, activites, activite, formId = 'lead-form', className }: Props) {
   const [etat, setEtat] = useState<'idle' | 'envoi' | 'ok' | 'erreur'>('idle')
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     if (etat === 'envoi') return
-    const form = e.currentTarget
-    const data = new FormData(form)
-    // UTM lus au moment de l'envoi (les paramètres de l'annonce restent dans
-    // l'URL pendant toute la visite de la landing).
-    const params = new URLSearchParams(window.location.search)
+    const data = new FormData(e.currentTarget)
     setEtat('envoi')
     try {
-      const res = await fetch('/api/lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          source,
-          landing,
-          prenom: data.get('prenom'),
-          telephone: data.get('telephone'),
-          email: data.get('email') || undefined,
-          ageEnfant: data.get('ageEnfant') || undefined,
-          activite: data.get('activite') || undefined,
-          creneau: data.get('creneau') || undefined,
-          message: data.get('message') || undefined,
-          website: data.get('website') || undefined,
-          utm: {
-            source: params.get('utm_source') ?? undefined,
-            medium: params.get('utm_medium') ?? undefined,
-            campaign: params.get('utm_campaign') ?? undefined,
-            content: params.get('utm_content') ?? undefined,
-            term: params.get('utm_term') ?? undefined,
-          },
-        }),
+      await envoyerLead({
+        source,
+        landing,
+        activite: activites ? (champ(data, 'activite') ?? ACTIVITE_NON_PRECISEE) : (activite ?? ACTIVITE_NON_PRECISEE),
+        prenom: champ(data, 'prenom'),
+        telephone: champ(data, 'telephone'),
+        email: champ(data, 'email'),
+        ageEnfant: champ(data, 'ageEnfant'),
+        creneau: champ(data, 'creneau'),
+        message: champ(data, 'message'),
+        website: champ(data, 'website'),
       })
-      if (!res.ok) throw new Error(String(res.status))
-      window.dataLayer = window.dataLayer || []
-      window.dataLayer.push({ event: 'lead', source })
       setEtat('ok')
     } catch {
       setEtat('erreur')
@@ -116,10 +103,11 @@ export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compac
             <select
               id={`${source}-activite`}
               name="activite"
-              defaultValue=""
+              defaultValue={ACTIVITE_NON_PRECISEE}
               className="h-[52px] rounded-xl border-[1.5px] border-input bg-[#fdfcf7] px-4 text-base text-ink"
             >
-              <option value="">Je ne sais pas encore</option>
+              {/* Laissée par défaut, cette valeur est transmise telle quelle. */}
+              <option value={ACTIVITE_NON_PRECISEE}>{ACTIVITE_NON_PRECISEE}</option>
               {activites.map((a) => (
                 <option key={a} value={a}>{a}</option>
               ))}

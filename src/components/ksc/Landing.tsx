@@ -58,6 +58,11 @@ export default async function Landing({ slug }: { slug: string }) {
     ? prestations.find((p) => p.slug === l.spotlightSlug)
     : undefined
   const faqItems = l.faq && l.faq.length > 0 ? faqParQuestions(faq, l.faq) : []
+  // Activité transmise par les formulaires : celle de la landing quand elle
+  // est dédiée (anniversaire, stage), sinon au choix parmi les prestations.
+  const activiteForm = l.activite
+    ? { activite: l.activite }
+    : { activites: prestations.map((p) => p.titre) }
 
   return (
     <div className="bg-cream pb-16 text-ink lg:pb-0">
@@ -117,7 +122,7 @@ export default async function Landing({ slug }: { slug: string }) {
           {isLead ? (
             <div className="lg:pl-4">
               <p className="mb-3 font-heading text-lg font-bold text-cream">{l.formCtaLabel ?? l.ctaLabel} :</p>
-              <LeadForm source={`landing-${l.slug}`} landing={l.slug} ctaLabel={l.formCtaLabel ?? l.ctaLabel} compact />
+              <LeadForm source={`landing-${l.slug}`} landing={l.slug} {...activiteForm} ctaLabel={l.formCtaLabel ?? l.ctaLabel} compact />
             </div>
           ) : (
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-md">
@@ -378,6 +383,7 @@ export default async function Landing({ slug }: { slug: string }) {
                     formId="lead-form-final"
                     source={`landing-${l.slug}-final`}
                     landing={l.slug}
+                    {...activiteForm}
                     ctaLabel={l.formCtaLabel ?? l.ctaLabel}
                     withEmail
                   />

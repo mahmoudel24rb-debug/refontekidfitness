@@ -233,6 +233,9 @@ export default async function DisciplinePage({
                 <LeadForm
                   source={`activite-${p.slug}-${d.slug}`}
                   landing={p.slug}
+                  // Activité déduite : le cours et sa tranche d'âge,
+                  // ex. « Zumba Mix Dance (Cours 6 – 10 ans) ».
+                  activite={`${d.nom} (${p.titre})`}
                   withEmail
                   creneaux={creneaux.map(optionCreneau)}
                   ctaLabel="Demander une place"

@@ -27,6 +27,9 @@ export type Landing = {
   heroBullets?: string[]
   /** Libellé du bouton du formulaire de lead. */
   formCtaLabel?: string
+  /** Activité transmise avec chaque demande des formulaires de la landing
+   *  (champ `activite` du webhook). Absente : liste déroulante des prestations. */
+  activite?: string
   points?: { titre: string; texte: string }[]
   ctaLabel: string
   reassurance: string[]
@@ -125,6 +128,7 @@ export const LANDINGS: Landing[] = [
     image: '/assets/ksc/anniversaire.webp',
     heroBullets: ['Formule clé en main', 'Gâteau + déco + boissons inclus', 'Jusqu’à 10 enfants, espace privatisé'],
     formCtaLabel: 'Réserver une date',
+    activite: 'Anniversaire',
     ctaLabel: 'Réserver une date',
     reassurance: ['Espace sécurisé', 'Encadrement diplômé', 'De 3 à 14 ans', 'Au bord de la Loire'],
     etapes: [
@@ -182,6 +186,7 @@ export const LANDINGS: Landing[] = [
     image: '/assets/ksc/stages-vacances.webp',
     heroBullets: ['Multisport, jeux d’équipe, ateliers', 'À la journée ou à la semaine', 'Groupes par âge, encadrement diplômé'],
     formCtaLabel: 'Réserver une place',
+    activite: 'Stages vacances',
     ctaLabel: 'Réserver une place',
     reassurance: ['Encadrement diplômé', 'Groupes par âge', 'Mercredis + vacances', 'Journée complète'],
     etapes: [

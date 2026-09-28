@@ -9,10 +9,12 @@ import { Baloo_2, Inter } from 'next/font/google'
 // polices du site (mêmes réglages que src/app/(frontend)/layout.tsx).
 import './(frontend)/globals.css'
 
+import { GtmHead, GtmNoscript } from '@/app/GoogleTagManager'
 import { Button } from '@/components/ui/button'
 import HeroMarine from '@/components/ksc/HeroMarine'
 import SiteFooter from '@/components/ksc/SiteFooter'
 import SiteHeader from '@/components/ksc/SiteHeader'
+import SuiviAttribution from '@/components/ksc/SuiviAttribution'
 
 const display = Baloo_2({
   subsets: ['latin', 'latin-ext'],
@@ -39,7 +41,10 @@ export const metadata: Metadata = {
 export default function GlobalNotFound() {
   return (
     <html lang="fr" className={`${display.variable} ${body.variable}`}>
+      {/* Google Tag Manager, comme sur les autres pages publiques. */}
+      <GtmHead />
       <body>
+        <GtmNoscript />
         <SiteHeader />
         <main className="bg-cream text-ink">
           <HeroMarine
@@ -55,6 +60,8 @@ export default function GlobalNotFound() {
           </HeroMarine>
         </main>
         <SiteFooter />
+        {/* Source du visiteur (first / last touch) : cookie ksc_attribution. */}
+        <SuiviAttribution />
       </body>
     </html>
   )
