@@ -7,6 +7,7 @@ import { Baloo_2, Inter } from 'next/font/google'
 // composants propres (src/components/home/).
 import './globals.css'
 
+import { GtmHead, GtmNoscript } from '@/app/GoogleTagManager'
 import { getParametres, telephoneJsonLd, type ParametresVue } from '@/lib/contenu'
 
 // Typographie de la charte : Baloo 2 (display, titres) + Inter (texte courant).
@@ -72,7 +73,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const { coordonnees } = await getParametres()
   return (
     <html lang="fr" className={`${display.variable} ${body.variable}`}>
+      {/* Google Tag Manager : snippet en tête du <head>, iframe noscript en
+          premier dans le <body> (pages publiques uniquement). */}
+      <GtmHead />
       <body>
+        <GtmNoscript />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness(coordonnees)) }} />
         {children}
       </body>

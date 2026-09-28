@@ -43,3 +43,8 @@ export const RESERVATION_URLS = {
 // Horaires — valeur telle qu'affichée dans ContactKSC (le libellé « Horaires »
 // reste porté par l'UI).
 export const HORAIRES = 'Lun–Ven : 9h00–19h30 (sans coupure) · Samedi : 9h30–12h30'
+
+// Conteneur Google Tag Manager du site (pages publiques uniquement, jamais
+// l'admin). SEUL endroit où figure l'identifiant : le snippet officiel est
+// rendu par src/app/GoogleTagManager.tsx.
+export const GTM_ID = 'GTM-W2WBD65R'

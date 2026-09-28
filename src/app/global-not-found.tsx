@@ -9,6 +9,7 @@ import { Baloo_2, Inter } from 'next/font/google'
 // polices du site (mêmes réglages que src/app/(frontend)/layout.tsx).
 import './(frontend)/globals.css'
 
+import { GtmHead, GtmNoscript } from '@/app/GoogleTagManager'
 import { Button } from '@/components/ui/button'
 import HeroMarine from '@/components/ksc/HeroMarine'
 import SiteFooter from '@/components/ksc/SiteFooter'
@@ -39,7 +40,10 @@ export const metadata: Metadata = {
 export default function GlobalNotFound() {
   return (
     <html lang="fr" className={`${display.variable} ${body.variable}`}>
+      {/* Google Tag Manager, comme sur les autres pages publiques. */}
+      <GtmHead />
       <body>
+        <GtmNoscript />
         <SiteHeader />
         <main className="bg-cream text-ink">
           <HeroMarine
