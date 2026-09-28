@@ -3,6 +3,7 @@ import { MapPin } from 'lucide-react'
 
 import { FOOTER_NAV, LEGAL_NAV } from '@/data/nav'
 import { getParametres, getPrestations } from '@/lib/contenu'
+import GererCookies from './GererCookies'
 import TerrainLines from './TerrainLines'
 
 // Footer KSC partagé — Tailwind intégral (l'ex-section §9 d'overrides.css
@@ -15,6 +16,8 @@ const colTitleCls = 'mb-1.5 font-heading text-[17px] font-bold text-cream'
 // même survol que les liens du pied de page (magenta clair).
 const socialCls =
   'grid size-10 place-items-center rounded-full bg-white/10 text-cream transition-colors duration-150 hover:text-magenta-light'
+// Liens de la barre légale (et bouton « Gérer les cookies », même apparence).
+const legalCls = 'text-[13px] text-cream/85 transition-colors duration-150 hover:text-magenta-light'
 
 // Logos officiels (tracés simple-icons), monochromes : couleur héritée du lien.
 function LogoFacebook() {
@@ -105,13 +108,14 @@ export default async function SiteFooter() {
       <div className="relative bg-[#0a1a4f] px-6 py-[18px] text-center text-[13px] text-cream/75">
         <div className="mb-2 flex flex-wrap justify-center gap-4">
           {LEGAL_NAV.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-[13px] text-cream/85 transition-colors duration-150 hover:text-magenta-light"
-            >
-              {l.label}
-            </a>
+            <React.Fragment key={l.href}>
+              <a href={l.href} className={legalCls}>
+                {l.label}
+              </a>
+              {/* Retrait du consentement aussi simple que l'accord : le
+                  panneau des cookies se rouvre depuis le pied de page. */}
+              {l.href === '/cookies' && <GererCookies className={`${legalCls} cursor-pointer`} />}
+            </React.Fragment>
           ))}
         </div>
         © 2026 Kid Sport Club Rochecorbon. Tous droits réservés. Réalisé par{' '}

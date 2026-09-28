@@ -32,7 +32,7 @@ personnelle.
 | `creneau` | si choisi | Créneau souhaité (fiches prestation et pages des cours). |
 | `message` | si saisi | Message libre. |
 | `utm` | toujours | UTM de la dernière visite : `source`, `medium`, `campaign`, `content`, `term`, chaque clé seulement si elle est renseignée. Champ historique, conservé pour le mapping existant : mêmes valeurs que `attribution.last.utm_*`. |
-| `attribution.first` | toujours | Première source connue du visiteur (first touch) : 10 clés, détail ci-dessous. |
+| `attribution.first` | toujours | Première source connue du visiteur (first touch) : 10 clés, détail ci-dessous. Provenance selon le consentement aux cookies : voir « Consentement et provenance d'`attribution` ». |
 | `attribution.last` | toujours | Dernière source connue du visiteur (last touch) : mêmes 10 clés. |
 | `recuLe` | toujours | Date et heure de réception par le site (ISO 8601, UTC). |
 
@@ -52,9 +52,30 @@ Longueurs maximales : 120 caractères pour les champs courts, 2 000 pour
 | `landing_page` | Page d'entrée : chemin et paramètres, ex. `/landing/essai-gratuit?utm_source=facebook&utm_medium=cpc`. |
 | `date` | Date et heure de la visite (ISO 8601, UTC). |
 
+## Consentement et provenance d'`attribution`
+
+Le site affiche un bandeau de consentement aux cookies (règles CNIL). La
+provenance d'`attribution` dépend du choix du visiteur pour la catégorie
+« Publicité et suivi des campagnes » :
+
+- catégorie acceptée : `attribution` vient du cookie `ksc_attribution`
+  (first touch / last touch, règles ci-dessous) ;
+- catégorie refusée, ou pas encore de choix : rien n'est enregistré sur
+  l'appareil. `first` et `last` valent tous deux la visite d'arrivée gardée
+  en mémoire par la page (session en cours uniquement) : paramètres de
+  campagne, référent et page d'entrée du chargement de page en cours. Un
+  rechargement complet de page (la plupart des liens du site en provoquent
+  un) la remplace par celle de la nouvelle page. Le formulaire d'une landing
+  transmet ainsi les UTM de l'annonce qui y a mené.
+
+Si le visiteur accepte la catégorie plus tard sur la même page, le cookie est
+écrit avec cette visite d'arrivée ; s'il retire son accord, le cookie est
+supprimé.
+
 ## Règles first touch / last touch
 
-Chaque chargement de page du site est classé :
+Avec l'accord du visiteur (catégorie « Publicité et suivi des campagnes »),
+chaque chargement de page du site est classé :
 
 - visite **campagne** : l'URL contient au moins un des 7 paramètres
   `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`,
@@ -83,12 +104,15 @@ Exemple :
 
 Limites : l'attribution est propre à un navigateur sur un appareil. Si le
 visiteur efface ses cookies, sa visite suivante redevient une première visite.
-Si le cookie est illisible au moment de l'envoi (cookies bloqués), `first` et
-`last` décrivent la visite en cours.
+Si le cookie est absent ou illisible au moment de l'envoi (catégorie refusée,
+cookies bloqués), `first` et `last` décrivent la visite d'arrivée en mémoire.
 
 ## Cookie
 
 - Nom : `ksc_attribution` (cookie first-party, domaine du site).
+- Déposé uniquement avec l'accord du visiteur pour la catégorie « Publicité
+  et suivi des campagnes » (choix conservé 6 mois dans le cookie
+  `ksc_consentement`) ; supprimé si la catégorie est refusée ou retirée.
 - Durée : 90 jours (`Max-Age=7776000`), repoussée à chaque mise à jour
   (première visite, visite campagne ou référent).
 - Attributs : `Path=/`, `SameSite=Lax`, `Secure` en https ; lisible par
@@ -96,8 +120,8 @@ Si le cookie est illisible au moment de l'envoi (cookies bloqués), `first` et
 - Contenu : `{ "first": {...}, "last": {...} }` en JSON encodé pour l'URL, avec
   les 10 clés décrites plus haut ; valeurs tronquées à 200 caractères. Aucune
   donnée personnelle.
-- Mis à jour à chaque chargement d'une page publique (jamais dans
-  l'administration).
+- Mis à jour à chaque chargement d'une page publique tant que l'accord est
+  valable (jamais dans l'administration).
 
 ## Valeurs de `source`
 
