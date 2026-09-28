@@ -1,32 +1,45 @@
 import { NextResponse } from 'next/server'
 
-// Réception des leads (landings Meta Ads + formulaires Contact / Séance d'essai).
+import { normaliserVisite, visiteVide } from '@/lib/attribution'
+
+// Réception des leads (tous les formulaires du site : landings Meta Ads,
+// Contact, Séance d'essai, fiches prestation, pages des cours).
 // - Transfert vers LEAD_WEBHOOK_URL (Make/CRM) si la variable d'env est posée ;
 //   sinon accusé de réception sans transfert (préview) et log NEUTRE : on ne
 //   journalise JAMAIS de données personnelles côté serveur (RGPD).
 // - `website` est un champ-piège (honeypot) : rempli = bot -> 200 silencieux.
+// - Chaque champ est borné ; `attribution` ne garde que les clés connues.
+// Liste des champs transmis au webhook : WEBHOOK-LEADS.md (racine du dépôt).
 // Le jour J : poser LEAD_WEBHOOK_URL dans Vercel (voir .env.example).
 
 type LeadPayload = {
   source?: string
   landing?: string
+  /** Chemin de la page du formulaire. */
+  page?: string
   prenom?: string
   nom?: string
   telephone?: string
   email?: string
   ageEnfant?: string
-  /** Activité que le parent veut faire tester (page Séance d'essai). */
+  /** Activité qui intéresse le prospect (liste déroulante ou déduite de la page). */
   activite?: string
   creneau?: string
   message?: string
   utm?: Partial<Record<'source' | 'medium' | 'campaign' | 'content' | 'term', string>>
+  /** Première et dernière source du visiteur (cookie ksc_attribution). */
+  attribution?: { first?: unknown; last?: unknown }
   website?: string // honeypot
 }
 
-const MAX = { court: 120, message: 2000 } as const
+const MAX = { court: 120, message: 2000, page: 300, attribution: 300 } as const
 
 const borné = (v: unknown, max: number) =>
   typeof v === 'string' ? v.trim().slice(0, max) : ''
+
+// Une visite de l'attribution : clés connues seulement, 300 caractères par
+// valeur ; visite vide si la donnée manque (forme stable pour le mapping CRM).
+const visite = (v: unknown) => normaliserVisite(v, MAX.attribution) ?? visiteVide()
 
 export async function POST(req: Request) {
   let body: LeadPayload
@@ -41,9 +54,13 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: true })
   }
 
+  const attribution: NonNullable<LeadPayload['attribution']> =
+    body.attribution && typeof body.attribution === 'object' ? body.attribution : {}
+
   const lead = {
     source: borné(body.source, MAX.court) || 'inconnu',
     landing: borné(body.landing, MAX.court) || undefined,
+    page: borné(body.page, MAX.page) || undefined,
     prenom: borné(body.prenom, MAX.court),
     nom: borné(body.nom, MAX.court) || undefined,
     telephone: borné(body.telephone, MAX.court),
@@ -58,6 +75,10 @@ export async function POST(req: Request) {
       campaign: borné(body.utm?.campaign, MAX.court) || undefined,
       content: borné(body.utm?.content, MAX.court) || undefined,
       term: borné(body.utm?.term, MAX.court) || undefined,
+    },
+    attribution: {
+      first: visite(attribution.first),
+      last: visite(attribution.last),
     },
     recuLe: new Date().toISOString(),
   }

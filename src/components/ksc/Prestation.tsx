@@ -230,6 +230,7 @@ export default async function Prestation({ slug }: { slug: string }) {
                 <LeadForm
                   source={`prestation-${slug}`}
                   landing={slug}
+                  activite={p.titre}
                   withEmail
                   creneaux={creneaux}
                   ctaLabel="Demander une place"

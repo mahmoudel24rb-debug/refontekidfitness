@@ -7,13 +7,19 @@ import HeroMarine from './HeroMarine'
 import Underline from './Underline'
 import RoundIcon from './RoundIcon'
 import ContactForm from './ContactForm'
-import { getParametres } from '@/lib/contenu'
+import { getParametres, getPrestations } from '@/lib/contenu'
 
 // Page Contact — composant SERVEUR : les coordonnées viennent du global
 // `parametres` (repli src/data/site.ts). La partie interactive (formulaire +
 // état d'envoi) est isolée dans ContactForm ('use client').
 export default async function ContactKSC() {
-  const { coordonnees, horaires } = await getParametres()
+  const [{ coordonnees, horaires }, prestations] = await Promise.all([
+    getParametres(),
+    getPrestations(),
+  ])
+  // Liste déroulante « Quelle activité vous intéresse ? » : les 7 prestations,
+  // dans l'ordre du catalogue (comme sur la page Séance d'essai).
+  const activites = prestations.map((p) => p.titre)
   const INFOS = [
     { t: 'Téléphone', v: coordonnees.telephone, href: coordonnees.telephoneHref, icon: <Phone className="size-[18px]" /> },
     { t: 'Email', v: coordonnees.email, href: coordonnees.emailHref, icon: <Mail className="size-[18px]" /> },
@@ -36,7 +42,7 @@ export default async function ContactKSC() {
           <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[7fr_5fr] lg:gap-14">
             {/* Carte formulaire */}
             <div className="rounded-lg border border-border bg-white p-[clamp(26px,4vw,44px)] shadow-md">
-              <ContactForm telephone={coordonnees.telephone} />
+              <ContactForm telephone={coordonnees.telephone} activites={activites} />
             </div>
 
             {/* Colonne réassurance : coordonnées, horaires, plan */}
