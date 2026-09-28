@@ -107,11 +107,13 @@ export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compac
             <Label htmlFor={`${source}-activite`} className="text-sm font-semibold text-marine">
               Quelle activité voulez-vous tester ? (optionnel)
             </Label>
+            {/* w-full min-w-0 : la largeur de l'option la plus longue ne doit
+                pas élargir la carte au-delà de sa colonne (mobile). */}
             <select
               id={`${source}-activite`}
               name="activite"
               defaultValue={ACTIVITE_NON_PRECISEE}
-              className="h-[52px] rounded-xl border-[1.5px] border-input bg-[#fdfcf7] px-4 text-base text-ink"
+              className="h-[52px] w-full min-w-0 rounded-xl border-[1.5px] border-input bg-[#fdfcf7] px-4 text-base text-ink"
             >
               {/* Laissée par défaut, cette valeur est transmise telle quelle. */}
               <option value={ACTIVITE_NON_PRECISEE}>{ACTIVITE_NON_PRECISEE}</option>
@@ -126,11 +128,12 @@ export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compac
             <Label htmlFor={`${source}-creneau`} className="text-sm font-semibold text-marine">
               Créneau souhaité (optionnel)
             </Label>
+            {/* Même règle : un libellé de créneau long ne déborde pas de la carte. */}
             <select
               id={`${source}-creneau`}
               name="creneau"
               defaultValue=""
-              className="h-[52px] rounded-xl border-[1.5px] border-input bg-[#fdfcf7] px-4 text-base text-ink"
+              className="h-[52px] w-full min-w-0 rounded-xl border-[1.5px] border-input bg-[#fdfcf7] px-4 text-base text-ink"
             >
               <option value="">Je ne sais pas encore</option>
               {creneaux.map((c) => (
