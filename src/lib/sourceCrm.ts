@@ -8,10 +8,15 @@ import type { Visite } from './attribution'
 // Module PUR : aucune lecture de window, document ou cookie.
 //
 // Normalisation : utm_source, utm_medium et utm_campaign sans espaces de bord
-// et en minuscules ; hôte du référent sans « www. ».
+// et en minuscules (sauf règle 1a, sensible à la casse) ; hôte du référent
+// sans « www. ».
 //
 // Règles, dans cet ordre (la première qui s'applique gagne) :
-//  1. utm_source égal, casse ignorée, à une valeur de SOURCES_CRM : cette valeur ;
+//  1. utm_source égal à une valeur de SOURCES_CRM, cette valeur :
+//     a. tel quel, casse respectée (code du CRM écrit exprès, ex. META_ADS,
+//        FACEBOOK, GOOGLE) ;
+//     b. sinon casse ignorée (ex. meta_ads, whatsapp), sauf google, facebook
+//        et instagram, classés par les règles suivantes ;
 //  2. gclid renseigné : GOOGLE_ADS ;
 //  3. source Google Ads, ou google avec un support payant : GOOGLE_ADS ;
 //  4. source fiche Google, ou google avec un indice de fiche dans le support
@@ -75,6 +80,9 @@ export const SOURCES_CRM = [
 ] as const
 
 export type SourceCrm = (typeof SOURCES_CRM)[number]
+
+/** Règle 1b : sources exclues, classées selon le support et la campagne (règles 2 à 10). */
+const SOURCES_HORS_REGLE_1B = new Set(['google', 'facebook', 'instagram'])
 
 /** Règle 3 : sources Google Ads. */
 const SOURCES_GOOGLE_ADS = new Set(['google_ads', 'googleads', 'adwords', 'gads'])
@@ -204,9 +212,16 @@ export function sourceCrm(visite: Visite): SourceCrm {
   const support = normaliser(visite.utm_medium)
   const campagne = normaliser(visite.utm_campaign)
 
-  // 1. Code du CRM directement dans utm_source (ex. utm_source=META_ADS).
-  const code = SOURCES_CRM.find((valeur) => valeur.toLowerCase() === source)
-  if (code) return code
+  // 1a. Code du CRM écrit tel quel dans utm_source (ex. utm_source=META_ADS).
+  const brute = typeof visite.utm_source === 'string' ? visite.utm_source.trim() : ''
+  const exact = SOURCES_CRM.find((valeur) => valeur === brute)
+  if (exact) return exact
+
+  // 1b. Même code, casse ignorée, sauf google, facebook et instagram.
+  if (!SOURCES_HORS_REGLE_1B.has(source)) {
+    const code = SOURCES_CRM.find((valeur) => valeur.toLowerCase() === source)
+    if (code) return code
+  }
 
   // 2. Marquage automatique Google Ads.
   if (renseigne(visite.gclid)) return 'GOOGLE_ADS'
