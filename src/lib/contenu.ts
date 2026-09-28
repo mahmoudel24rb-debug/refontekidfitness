@@ -350,7 +350,10 @@ export type AvisVue = {
   texte: string
   /** Nom réel de l'auteur de l'avis Google (normalisé, prénom en premier). */
   auteur: string
-  /** Photo de profil publique ; sinon avatar illustré (par index). */
+  /**
+   * Photo du parent : photo choisie dans les médias, sinon ancien chemin saisi
+   * ou photo du fichier de données. Absente : monogramme (AvisAvatar).
+   */
   photo?: string
 }
 
@@ -371,19 +374,22 @@ const avisFichier = (texte: unknown) => {
 
 export const getAvis = cache(async (): Promise<AvisVue[]> => {
   const docs = await depuisPayload('avis', async (payload) => {
-    const { docs } = await payload.find({ collection: 'avis', limit: 100, sort: 'ordre' })
+    const { docs } = await payload.find({ collection: 'avis', limit: 100, sort: 'ordre', depth: 1 })
     return docs
   })
   if (!docs) return AVIS.map((a) => ({ texte: a.texte, auteur: a.auteur, photo: a.photo }))
   // Auteur et photo sont ADDITIFS : tant que la base ne les porte pas, chacun
   // retombe sur le fichier de données, avis par avis (appariement par le début
   // du texte, comme scripts/maj-avis-reels.mjs).
+  // Photo, par priorité : photo choisie dans les médias (« Photo »), puis
+  // ancien chemin saisi (champ masqué), puis fichier de données ; sinon
+  // AvisAvatar affiche le monogramme.
   return docs.map((d) => {
     const fichier = avisFichier(d.texte)
     return {
       texte: d.texte,
       auteur: texteOu(d.auteur, fichier?.auteur ?? ''),
-      photo: photoValide(d.photo) ?? fichier?.photo,
+      photo: urlMedia(d.photoFichier) ?? photoValide(d.photo) ?? fichier?.photo,
     }
   })
 })
@@ -513,6 +519,48 @@ export type ParametresVue = {
 export const telephoneJsonLd = (coordonnees: ParametresVue['coordonnees']): string =>
   coordonnees.telephoneHref.replace(/^tel:/, '')
 
+/**
+ * Numéro affiché -> format international des liens d'appel :
+ * « 07 63 25 17 12 » donne « +33763251712 ». `undefined` si le numéro n'est pas
+ * reconnu (on garde alors le lien saisi).
+ */
+export function numeroInternational(affiche: string): string | undefined {
+  const brut = affiche.trim()
+  const chiffres = brut.replace(/\D/g, '')
+  if (brut.startsWith('+') && chiffres.length >= 8) return `+${chiffres}`
+  if (/^00\d{8,}$/.test(chiffres)) return `+${chiffres.slice(2)}`
+  if (/^0\d{9}$/.test(chiffres)) return `+33${chiffres.slice(1)}`
+  return undefined
+}
+
+/**
+ * Lien d'appel : calculé depuis le numéro affiché quand le lien saisi est vide
+ * ou compose un autre numéro (numéro changé sans mettre le lien à jour).
+ */
+export function lienTelephone(affiche: string, saisi: unknown, defaut: string): string {
+  const numero = numeroInternational(affiche)
+  if (!numero) return texteOu(saisi, defaut)
+  if (typeof saisi === 'string' && numeroInternational(saisi.trim().replace(/^tel:/i, '')) === numero) {
+    return saisi.trim()
+  }
+  return `tel:${numero}`
+}
+
+/**
+ * Lien d'email : calculé depuis l'adresse affichée quand le lien saisi est vide
+ * ou vise une autre adresse. Un lien saisi vers la même adresse est conservé
+ * (il peut porter un objet de message, « ?subject=… »).
+ */
+export function lienEmail(affiche: string, saisi: unknown, defaut: string): string {
+  const adresse = affiche.trim()
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(adresse)) return texteOu(saisi, defaut)
+  if (typeof saisi === 'string' && /^mailto:/i.test(saisi.trim())) {
+    const cible = saisi.trim().replace(/^mailto:/i, '').split('?')[0]
+    if (cible.toLowerCase() === adresse.toLowerCase()) return saisi.trim()
+  }
+  return `mailto:${adresse}`
+}
+
 const PARAMETRES_FICHIER: ParametresVue = {
   coordonnees: { ...COORDONNEES },
   horaires: HORAIRES,
@@ -531,12 +579,16 @@ export const getParametres = cache(async (): Promise<ParametresVue> => {
     const r = g?.reservation ?? {}
     const f = PARAMETRES_FICHIER
     // Champ par champ : un champ vide dans l'admin ne doit pas vider le site.
+    const telephone = texteOu(c.telephone, f.coordonnees.telephone)
+    const email = texteOu(c.email, f.coordonnees.email)
     return {
       coordonnees: {
-        telephone: texteOu(c.telephone, f.coordonnees.telephone),
-        telephoneHref: texteOu(c.telephoneHref, f.coordonnees.telephoneHref),
-        email: texteOu(c.email, f.coordonnees.email),
-        emailHref: texteOu(c.emailHref, f.coordonnees.emailHref),
+        telephone,
+        // Liens d'appel et d'email : déduits du numéro et de l'email affichés
+        // quand ils sont vides ou ne leur correspondent plus.
+        telephoneHref: lienTelephone(telephone, c.telephoneHref, f.coordonnees.telephoneHref),
+        email,
+        emailHref: lienEmail(email, c.emailHref, f.coordonnees.emailHref),
         adresse: texteOu(c.adresse, f.coordonnees.adresse),
         adresseHref: texteOu(c.adresseHref, f.coordonnees.adresseHref),
         mapsEmbedUrl: texteOu(c.mapsEmbedUrl, f.coordonnees.mapsEmbedUrl),

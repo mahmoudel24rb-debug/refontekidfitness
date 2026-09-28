@@ -1,6 +1,6 @@
 import type { CollectionConfig } from 'payload'
 
-import { adminOnly } from '../access'
+import { adminOnly, adminOnlyChamp, adminOuSoiMeme } from '../access'
 
 export const Users: CollectionConfig = {
   slug: 'users',
@@ -8,18 +8,23 @@ export const Users: CollectionConfig = {
   admin: {
     useAsTitle: 'email',
     defaultColumns: ['email', 'nom', 'role'],
-    group: 'Administration',
+    pagination: { defaultLimit: 25 },
+    group: 'Réglages',
+    description:
+      'Les comptes qui peuvent se connecter à cet espace de gestion. Chacun peut changer son nom et son mot de passe depuis « Mon compte » ; seul un administrateur crée ou supprime des comptes.',
+    hideAPIURL: true,
   },
   auth: true,
   access: {
-    // Seul un admin gère les comptes ; chacun peut lire son propre profil.
+    // Seul un admin crée et supprime les comptes ; chacun peut lire et modifier
+    // son propre compte (nom, email, mot de passe), mais pas son rôle.
     read: ({ req: { user } }) => {
       if (user?.role === 'admin') return true
       if (user) return { id: { equals: user.id } }
       return false
     },
     create: adminOnly,
-    update: adminOnly,
+    update: adminOuSoiMeme,
     delete: adminOnly,
   },
   fields: [
@@ -34,7 +39,17 @@ export const Users: CollectionConfig = {
         { label: 'Éditeur (client)', value: 'editeur' },
       ],
       saveToJWT: true,
+      // Un éditeur ne peut pas se promouvoir admin : champ modifiable par un admin seulement.
+      access: { update: adminOnlyChamp },
+      admin: {
+        description: 'Admin : gestion complète, comptes compris. Éditeur : gestion du contenu du site.',
+      },
     },
-    { name: 'nom', label: 'Nom', type: 'text' },
+    {
+      name: 'nom',
+      label: 'Nom',
+      type: 'text',
+      admin: { description: 'Utilisé pour vous saluer sur l’accueil de cet espace.' },
+    },
   ],
 }

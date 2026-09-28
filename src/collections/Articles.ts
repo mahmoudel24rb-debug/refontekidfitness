@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 import { authenticated, publicRead } from '../access'
+import { hooksRevalidation } from '../lib/revalider'
 
 // Articles du blog (/blog et /blog/[slug]) + bandeau « Actus & conseils » de
 // l'accueil. Le corps est une suite de blocs : paragraphes et intertitres h2,
@@ -11,7 +12,14 @@ export const Articles: CollectionConfig = {
   admin: {
     useAsTitle: 'titre',
     defaultColumns: ['titre', 'date', 'publie'],
-    group: 'Contenu',
+    listSearchableFields: ['titre'],
+    pagination: { defaultLimit: 25 },
+    group: 'Contenu du site',
+    description:
+      'Les articles du blog, aussi mis en avant sur l’accueil (« Actus & conseils »). Décochez « Publié » pour retirer un article du site sans le supprimer.',
+    hideAPIURL: true,
+    // Bouton « Aperçu » : ouvre la page du site concernée dans un nouvel onglet.
+    preview: ({ slug }) => (typeof slug === 'string' && slug ? `/blog/${slug}` : null),
   },
   access: {
     read: publicRead,
@@ -19,17 +27,20 @@ export const Articles: CollectionConfig = {
     update: authenticated,
     delete: authenticated,
   },
+  // Site remis à jour dès l'enregistrement ou la suppression.
+  hooks: hooksRevalidation(),
   fields: [
     { name: 'titre', label: 'Titre', type: 'text', required: true },
     {
       name: 'slug',
-      label: 'Slug (URL)',
+      label: 'Adresse de la page',
       type: 'text',
       required: true,
       unique: true,
       admin: {
         position: 'sidebar',
-        description: 'Ex. : a-quel-age-sport-enfant → /blog/a-quel-age-sport-enfant.',
+        description:
+          'Fin de l’adresse de l’article sur le site. Ex. : a-quel-age-sport-enfant donne kidsportclub.fr/blog/a-quel-age-sport-enfant. En minuscules, sans accents ni espaces (mots séparés par des tirets). Ne plus la modifier une fois l’article publié.',
       },
     },
     {
@@ -37,7 +48,9 @@ export const Articles: CollectionConfig = {
       label: 'Chapô / résumé',
       type: 'textarea',
       required: true,
-      admin: { description: 'Résumé des cartes du blog, également utilisé en meta description.' },
+      admin: {
+        description: 'Résumé affiché sur les cartes du blog et repris par Google sous le titre de la page.',
+      },
     },
     {
       name: 'date',
@@ -68,7 +81,7 @@ export const Articles: CollectionConfig = {
           defaultValue: 'p',
           options: [
             { label: 'Paragraphe', value: 'p' },
-            { label: 'Intertitre (h2)', value: 'h2' },
+            { label: 'Intertitre', value: 'h2' },
           ],
         },
         { name: 'texte', label: 'Texte', type: 'textarea', required: true },
@@ -96,7 +109,7 @@ export const Articles: CollectionConfig = {
       admin: {
         position: 'sidebar',
         description:
-          'Ordre de référence (blocs « À lire aussi », sitemap). Le hub du blog et l’accueil affichent toujours les articles du plus récent au plus ancien.',
+          'Ordre des suggestions « À lire aussi ». Le blog et l’accueil affichent toujours les articles du plus récent au plus ancien.',
       },
     },
   ],

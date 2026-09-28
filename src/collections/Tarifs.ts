@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 import { authenticated, publicRead } from '../access'
+import { hooksRevalidation } from '../lib/revalider'
 
 // Tarifs affichés sur /tarifs et sur la landing catalogue : les abonnements aux
 // cours d'un côté, les prestations de l'autre. Source de secours :
@@ -10,8 +11,15 @@ export const Tarifs: CollectionConfig = {
   labels: { singular: 'Tarif', plural: 'Tarifs' },
   admin: {
     useAsTitle: 'titre',
-    defaultColumns: ['titre', 'type', 'prix', 'icone', 'prioritaire', 'enAvant', 'ordre'],
-    group: 'Contenu',
+    defaultColumns: ['titre', 'prix', 'type', 'prioritaire', 'ordre'],
+    listSearchableFields: ['titre'],
+    pagination: { defaultLimit: 25 },
+    group: 'Contenu du site',
+    description:
+      'Les formules affichées sur la page Tarifs : les abonnements aux cours d’un côté, les autres prestations de l’autre.',
+    hideAPIURL: true,
+    // Bouton « Aperçu » : ouvre la page du site concernée dans un nouvel onglet.
+    preview: () => '/tarifs',
   },
   access: {
     read: publicRead,
@@ -19,26 +27,39 @@ export const Tarifs: CollectionConfig = {
     update: authenticated,
     delete: authenticated,
   },
+  // Site remis à jour dès l'enregistrement ou la suppression.
+  hooks: hooksRevalidation(),
   fields: [
-    {
-      name: 'type',
-      label: 'Type',
-      type: 'select',
-      required: true,
-      defaultValue: 'abonnement',
-      options: [
-        { label: 'Abonnement', value: 'abonnement' },
-        { label: 'Prestation', value: 'prestation' },
-      ],
-      admin: { description: 'Détermine le groupe dans lequel la carte apparaît sur la page Tarifs.' },
-    },
     { name: 'titre', label: 'Titre', type: 'text', required: true },
     {
-      name: 'prix',
-      label: 'Prix',
-      type: 'text',
-      required: true,
-      admin: { description: 'Ex. : « 29,90 €/mois », « 190 € », « 35 €/jour ou 150 €/semaine ».' },
+      type: 'row',
+      fields: [
+        {
+          name: 'prix',
+          label: 'Prix',
+          type: 'text',
+          required: true,
+          admin: {
+            width: '50%',
+            description: 'Ex. : « 29,90 €/mois », « 190 € », « 35 €/jour ou 150 €/semaine ».',
+          },
+        },
+        {
+          name: 'type',
+          label: 'Type',
+          type: 'select',
+          required: true,
+          defaultValue: 'abonnement',
+          options: [
+            { label: 'Abonnement', value: 'abonnement' },
+            { label: 'Prestation', value: 'prestation' },
+          ],
+          admin: {
+            width: '50%',
+            description: 'Détermine le groupe dans lequel la formule apparaît sur la page Tarifs.',
+          },
+        },
+      ],
     },
     {
       name: 'detail',
@@ -54,7 +75,7 @@ export const Tarifs: CollectionConfig = {
       labels: { singular: 'Avantage', plural: 'Avantages' },
       admin: {
         description:
-          'Points listés sous le prix, avec une coche magenta. Uniquement sur les cartes d’abonnement.',
+          'Points listés sous le prix, avec une coche magenta. Affichés uniquement sur les cartes complètes (formules prioritaires).',
       },
       fields: [{ name: 'texte', label: 'Texte', type: 'text', required: true }],
     },

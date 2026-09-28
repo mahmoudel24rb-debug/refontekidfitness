@@ -1,8 +1,9 @@
 import type { CollectionConfig } from 'payload'
 
 import { authenticated, publicRead } from '../access'
+import { hooksRevalidation } from '../lib/revalider'
 
-// Créneaux du planning. Une ligne = un créneau (jour, salle, heure, activité).
+// Créneaux du planning. Une ligne = un créneau (jour, salle, heure, cours).
 // La page /planning les regroupe par jour puis par salle, dans l'ordre du champ
 // « ordre ». Les tranches d'âge alimentent aussi le sélecteur de créneau des
 // fiches activités. Source de secours : src/data/planning.ts.
@@ -11,9 +12,15 @@ export const Planning: CollectionConfig = {
   labels: { singular: 'Créneau', plural: 'Planning' },
   admin: {
     useAsTitle: 'activite',
-    defaultColumns: ['jour', 'salle', 'heure', 'activite', 'age', 'duree', 'ordre', 'actif'],
-    group: 'Contenu',
-    description: 'Un créneau par ligne. L’ordre s’applique à l’intérieur de chaque journée.',
+    defaultColumns: ['jour', 'heure', 'activite', 'age', 'salle', 'duree', 'actif'],
+    listSearchableFields: ['activite', 'salle'],
+    pagination: { defaultLimit: 50 },
+    group: 'Contenu du site',
+    description:
+      'Les créneaux de la semaine type, affichés sur la page Planning et sur les pages des cours. Un créneau par ligne ; l’ordre s’applique à l’intérieur de chaque journée.',
+    hideAPIURL: true,
+    // Bouton « Aperçu » : ouvre la page du site concernée dans un nouvel onglet.
+    preview: () => '/planning',
   },
   access: {
     read: publicRead,
@@ -21,44 +28,70 @@ export const Planning: CollectionConfig = {
     update: authenticated,
     delete: authenticated,
   },
+  // Liste triée par jour (l'énum Postgres enum_planning_jour suit l'ordre de
+  // déclaration, Lundi à Samedi) puis par ordre dans la journée.
+  defaultSort: ['jour', 'ordre'],
+  // Site remis à jour dès l'enregistrement ou la suppression.
+  hooks: hooksRevalidation(),
   fields: [
     {
-      name: 'jour',
-      label: 'Jour',
-      type: 'select',
-      required: true,
-      options: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'].map((j) => ({
-        label: j,
-        value: j,
-      })),
+      type: 'row',
+      fields: [
+        {
+          name: 'jour',
+          label: 'Jour',
+          type: 'select',
+          required: true,
+          admin: { width: '33.33%' },
+          options: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'].map((j) => ({
+            label: j,
+            value: j,
+          })),
+        },
+        {
+          name: 'heure',
+          label: 'Heure',
+          type: 'text',
+          required: true,
+          admin: { width: '33.33%', description: 'Heure de début. Ex. : 10h30, 17h, 9h15.' },
+        },
+        {
+          name: 'duree',
+          label: 'Durée (minutes)',
+          type: 'number',
+          defaultValue: 60,
+          min: 15,
+          max: 600,
+          admin: {
+            width: '33.33%',
+            description:
+              'Elle fixe la hauteur du bloc dans le calendrier de la semaine. 60 minutes par défaut.',
+          },
+        },
+      ],
     },
     {
-      name: 'salle',
-      label: 'Salle',
-      type: 'text',
-      required: true,
-      admin: { description: 'Ex. : Salle Kid, Salle Cross, Salle Fitness, Bulle.' },
-    },
-    {
-      name: 'heure',
-      label: 'Heure',
-      type: 'text',
-      required: true,
-      admin: { description: 'Ex. : 10h30, 17h, 9h15.' },
-    },
-    { name: 'activite', label: 'Activité', type: 'text', required: true },
-    {
-      name: 'duree',
-      label: 'Durée (minutes)',
-      type: 'number',
-      defaultValue: 60,
-      min: 15,
-      max: 600,
-      admin: {
-        position: 'sidebar',
-        description:
-          'Hauteur du bloc dans le calendrier de la semaine. 60 minutes par défaut ; à ajuster si le cours dure 45 ou 90 minutes.',
-      },
+      type: 'row',
+      fields: [
+        {
+          name: 'activite',
+          label: 'Cours',
+          type: 'text',
+          required: true,
+          admin: {
+            width: '50%',
+            description:
+              'Nom du cours tel qu’il s’affiche dans le calendrier. Écrivez-le toujours de la même façon : il sert aussi à retrouver les horaires d’un cours sur sa page.',
+          },
+        },
+        {
+          name: 'salle',
+          label: 'Salle',
+          type: 'text',
+          required: true,
+          admin: { width: '50%', description: 'Ex. : Salle Kid, Salle Cross, Salle Fitness, Bulle.' },
+        },
+      ],
     },
     {
       name: 'age',
@@ -71,7 +104,7 @@ export const Planning: CollectionConfig = {
       ],
       admin: {
         description:
-          'Optionnelle. Elle affiche la pastille d’âge et fait remonter le créneau dans le formulaire des fiches activités.',
+          'Optionnelle. Elle donne sa couleur et sa pastille d’âge au créneau, ouvre le bon lien de réservation et propose le créneau dans le formulaire des fiches activités.',
       },
     },
     {
