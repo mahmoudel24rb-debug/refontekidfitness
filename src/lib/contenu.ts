@@ -350,7 +350,10 @@ export type AvisVue = {
   texte: string
   /** Nom réel de l'auteur de l'avis Google (normalisé, prénom en premier). */
   auteur: string
-  /** Photo de profil publique ; sinon avatar illustré (par index). */
+  /**
+   * Photo du parent : photo choisie dans les médias, sinon ancien chemin saisi
+   * ou photo du fichier de données. Absente : monogramme (AvisAvatar).
+   */
   photo?: string
 }
 
@@ -371,19 +374,22 @@ const avisFichier = (texte: unknown) => {
 
 export const getAvis = cache(async (): Promise<AvisVue[]> => {
   const docs = await depuisPayload('avis', async (payload) => {
-    const { docs } = await payload.find({ collection: 'avis', limit: 100, sort: 'ordre' })
+    const { docs } = await payload.find({ collection: 'avis', limit: 100, sort: 'ordre', depth: 1 })
     return docs
   })
   if (!docs) return AVIS.map((a) => ({ texte: a.texte, auteur: a.auteur, photo: a.photo }))
   // Auteur et photo sont ADDITIFS : tant que la base ne les porte pas, chacun
   // retombe sur le fichier de données, avis par avis (appariement par le début
   // du texte, comme scripts/maj-avis-reels.mjs).
+  // Photo, par priorité : photo choisie dans les médias (« Photo »), puis
+  // ancien chemin saisi (champ masqué), puis fichier de données ; sinon
+  // AvisAvatar affiche le monogramme.
   return docs.map((d) => {
     const fichier = avisFichier(d.texte)
     return {
       texte: d.texte,
       auteur: texteOu(d.auteur, fichier?.auteur ?? ''),
-      photo: photoValide(d.photo) ?? fichier?.photo,
+      photo: urlMedia(d.photoFichier) ?? photoValide(d.photo) ?? fichier?.photo,
     }
   })
 })

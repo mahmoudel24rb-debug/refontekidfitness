@@ -3,11 +3,15 @@ import Image from 'next/image'
 
 import { cn } from '@/lib/utils'
 
-// Avatar d'un avis parent.
-// - `photo` fournie (vraie photo de profil, chemin dans public/) : affichée en
-//   rond, recadrée en `object-cover` ;
-// - sinon : MONOGRAMME à la Google — pastille de couleur (palette du site,
-//   rotation stable par index) avec les initiales réelles de l'auteur.
+// Avatar d'un avis parent. Ordre de priorité (résolu par getAvis(),
+// src/lib/contenu.ts, qui fournit `photo`) :
+// 1. photo choisie dans l'admin (champ « Photo » de l'avis, média servi par
+//    Payload sur /api/media/file/**) ;
+// 2. sinon ancien chemin saisi (champ masqué `photo`, fichier de
+//    public/assets/ksc/avis) ou photo du fichier de données ;
+//    une photo présente est affichée en rond, recadrée en `object-cover` ;
+// 3. sinon : MONOGRAMME à la Google, pastille de couleur (palette du site,
+//    rotation stable par index) avec les initiales réelles de l'auteur.
 //   Les profils Google des parents du club n'ont pas de portraits : le
 //   monogramme aux initiales exactes est le rendu le plus authentique.
 // Décoratif : aria-hidden, l'auteur est écrit juste à côté.

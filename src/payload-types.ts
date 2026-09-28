@@ -328,6 +328,16 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+  sizes?: {
+    vignette?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+  };
 }
 /**
  * Les formules affichées sur la page Tarifs : les abonnements aux cours d’un côté, les autres prestations de l’autre.
@@ -453,8 +463,9 @@ export interface Avi {
    */
   auteur?: string | null;
   /**
-   * Chemin d’une photo déposée dans public/assets/ksc/avis (ex. /assets/ksc/avis/celine.webp). Vide = avatar illustré.
+   * Optionnelle : photo de profil du parent. Sans photo, ses initiales s’affichent dans une pastille de couleur.
    */
+  photoFichier?: (number | null) | Media;
   photo?: string | null;
   ordre?: number | null;
   updatedAt: string;
@@ -756,6 +767,7 @@ export interface FaqSelect<T extends boolean = true> {
 export interface AvisSelect<T extends boolean = true> {
   texte?: T;
   auteur?: T;
+  photoFichier?: T;
   photo?: T;
   ordre?: T;
   updatedAt?: T;
@@ -791,6 +803,20 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+  sizes?:
+    | T
+    | {
+        vignette?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+      };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

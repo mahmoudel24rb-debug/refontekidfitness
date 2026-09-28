@@ -3,10 +3,12 @@ import type { CollectionConfig } from 'payload'
 import { authenticated, publicRead } from '../access'
 import { hooksRevalidation } from '../lib/revalider'
 
-// Bibliothèque de médias (photos des activités, coachs, articles). Les fichiers
-// sont servis par Payload sur /api/media/file/** (cf. images.localPatterns dans
-// next.config.ts). Tant qu'aucun média n'est chargé, le front garde les visuels
-// statiques de /public/assets/ksc.
+// Bibliothèque de médias (photos des activités, coachs, articles, avis). Les
+// fichiers sont servis par Payload sur /api/media/file/** (chemins locaux,
+// autorisés par défaut par next/image). En production, ils sont stockés sur
+// Vercel Blob (plugin de src/payload.config.ts, actif avec BLOB_READ_WRITE_TOKEN).
+// Tant qu'aucun média n'est chargé, le front garde les visuels statiques de
+// /public/assets/ksc.
 export const Media: CollectionConfig = {
   slug: 'media',
   labels: { singular: 'Média', plural: 'Médias' },
@@ -38,5 +40,13 @@ export const Media: CollectionConfig = {
       },
     },
   ],
-  upload: true,
+  upload: {
+    mimeTypes: ['image/*'],
+    // Vignette de 400 px de large (hauteur proportionnelle), utilisée pour les
+    // aperçus de l'admin.
+    imageSizes: [{ name: 'vignette', width: 400 }],
+    adminThumbnail: 'vignette',
+    // Point d'intérêt de la photo, à placer dans l'admin (recadrages).
+    focalPoint: true,
+  },
 }

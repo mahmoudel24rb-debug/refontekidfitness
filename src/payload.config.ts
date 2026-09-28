@@ -1,5 +1,6 @@
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { fr } from '@payloadcms/translations/languages/fr'
 import path from 'path'
 import { buildConfig } from 'payload'
@@ -101,4 +102,21 @@ export default buildConfig({
   },
   db: postgresAdapter({ pool: { connectionString: databaseUrl } }),
   sharp,
+  plugins: [
+    // ATTENTION (constaté avec Payload 3.85.1) : actif, le plugin ajoute à
+    // l'admin le fournisseur VercelBlobClientUploadHandler. Absent de l'import
+    // map (cas actuel, généré sans jeton), l'admin ne s'affiche plus ; présent,
+    // le build webpack échoue (ce composant client importe du code serveur).
+    // Ne pas poser BLOB_READ_WRITE_TOKEN avant d'avoir réglé ce point.
+    // Sur Vercel le filesystem est éphémère : les uploads partent sur Blob
+    // (actif uniquement si BLOB_READ_WRITE_TOKEN est défini, donc pas en local)
+    ...(process.env.BLOB_READ_WRITE_TOKEN
+      ? [
+          vercelBlobStorage({
+            collections: { media: true },
+            token: process.env.BLOB_READ_WRITE_TOKEN,
+          }),
+        ]
+      : []),
+  ],
 })
