@@ -62,6 +62,7 @@ export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compac
         landing,
         activite: activites ? (champ(data, 'activite') ?? ACTIVITE_NON_PRECISEE) : (activite ?? ACTIVITE_NON_PRECISEE),
         prenom: champ(data, 'prenom'),
+        nom: champ(data, 'nom'),
         telephone: champ(data, 'telephone'),
         email: champ(data, 'email'),
         ageEnfant: champ(data, 'ageEnfant'),
@@ -92,7 +93,12 @@ export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compac
   return (
     <form onSubmit={onSubmit} className={className} id={formId} noValidate={false}>
       <div className="flex flex-col gap-4 rounded-lg bg-card p-6 shadow-md sm:p-7">
-        <FormField id={`${source}-prenom`} name="prenom" label="Prénom du parent" required autoComplete="given-name" />
+        {/* Prénom et nom du parent (nom : champ lastname du CRM), côte à côte
+            à partir de sm, empilés sur mobile. */}
+        <div className="grid gap-4 sm:grid-cols-2">
+          <FormField id={`${source}-prenom`} name="prenom" label="Prénom du parent" required autoComplete="given-name" />
+          <FormField id={`${source}-nom`} name="nom" label="Nom du parent" required autoComplete="family-name" />
+        </div>
         <FormField id={`${source}-tel`} name="telephone" label="Téléphone" type="tel" required autoComplete="tel" />
         {withEmail && <FormField id={`${source}-email`} name="email" label="Email" type="email" autoComplete="email" />}
         <FormField id={`${source}-age`} name="ageEnfant" label="Âge de l’enfant" placeholder="ex. 4 ans" />

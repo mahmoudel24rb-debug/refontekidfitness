@@ -24,7 +24,7 @@ personnelle.
 | `landing` | toujours | Slug de la landing (landings), de la prestation (fiche prestation) ou de la tranche d'âge (page d'un cours). Vide pour Contact et Séance d'essai. |
 | `page` | toujours | Chemin de la page du formulaire, ex. `/contact`. |
 | `prenom` | toujours | Prénom (du parent). Obligatoire. |
-| `nom` | toujours | Nom (formulaire Contact). Vide si non saisi. |
+| `nom` | toujours | Nom du parent, demandé et obligatoire dans tous les formulaires (Contact, Séance d'essai, fiches prestation, pages des cours, landings). Vide seulement pour un envoi depuis une page restée en cache avant l'ajout du champ (la validation du serveur ne l'exige pas). |
 | `telephone` | toujours | Téléphone. Téléphone ou email obligatoire ; vide si non saisi. |
 | `email` | toujours | Email. Vide si non saisi. |
 | `ageEnfant` | toujours | Âge de l'enfant, texte libre (ex. « 6 ans »). Vide si non saisi. |
@@ -270,6 +270,7 @@ publiques (jamais dans l'administration). Dans GTM : déclencheur
 
 | Webhook | Donnée CRM |
 |---|---|
+| `prenom`, `nom` | Prénom et nom de famille du parent (`nom` : lastname). |
 | `activite` | Activité qui intéresse le prospect. |
 | `source`, `page` | Formulaire et page d'origine de la demande. |
 | `attribution.first.utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term` | Source, support, campagne, contenu et mot-clé du premier contact. |
