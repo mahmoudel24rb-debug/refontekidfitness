@@ -11,6 +11,7 @@ import './(frontend)/globals.css'
 
 import { GtmHead, GtmNoscript } from '@/app/GoogleTagManager'
 import { Button } from '@/components/ui/button'
+import BandeauConsentement from '@/components/ksc/BandeauConsentement'
 import HeroMarine from '@/components/ksc/HeroMarine'
 import SiteFooter from '@/components/ksc/SiteFooter'
 import SiteHeader from '@/components/ksc/SiteHeader'
@@ -45,6 +46,8 @@ export default function GlobalNotFound() {
       <GtmHead />
       <body>
         <GtmNoscript />
+        {/* Bandeau de consentement aux cookies, comme sur les autres pages publiques. */}
+        <BandeauConsentement />
         <SiteHeader />
         <main className="bg-cream text-ink">
           <HeroMarine
