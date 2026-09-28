@@ -11,6 +11,9 @@ import { envoyerEvenementMeta } from '@/lib/metaCapi'
 //   journalise JAMAIS de données personnelles côté serveur (RGPD).
 // - `website` est un champ-piège (honeypot) : rempli = bot -> 200 silencieux.
 // - Chaque champ est borné ; `attribution` ne garde que les clés connues.
+// - Structure stable : toutes les clés sont toujours transmises, chaîne vide
+//   quand la valeur manque (les 5 clés d'`utm` comprises). Make ne détecte que
+//   les clés reçues : elles sont ainsi mappables quel que soit le formulaire.
 // Liste des champs transmis au webhook : WEBHOOK-LEADS.md (racine du dépôt).
 // - Lead accepté : événement envoyé en plus à l'API Conversions Meta, après la
 //   réponse (after), avec l'event_id du navigateur pour le dédoublonnage avec
@@ -33,7 +36,7 @@ type LeadPayload = {
   creneau?: string
   message?: string
   utm?: Partial<Record<'source' | 'medium' | 'campaign' | 'content' | 'term', string>>
-  /** Première et dernière source du visiteur (cookie ksc_attribution). */
+  /** Première et dernière source du visiteur (cookie ksc_attribution, ou visite d'arrivée sans consentement). */
   attribution?: { first?: unknown; last?: unknown }
   website?: string // honeypot
   /** Identifiants de suivi Meta (API Conversions). */
@@ -86,24 +89,25 @@ export async function POST(req: Request) {
   const attribution: NonNullable<LeadPayload['attribution']> =
     body.attribution && typeof body.attribution === 'object' ? body.attribution : {}
 
+  // Toutes les clés, toujours : chaîne vide quand la valeur manque.
   const lead = {
-    source: borné(body.source, MAX.court) || 'inconnu',
-    landing: borné(body.landing, MAX.court) || undefined,
-    page: borné(body.page, MAX.page) || undefined,
+    source: borné(body.source, MAX.court),
+    landing: borné(body.landing, MAX.court),
+    page: borné(body.page, MAX.page),
     prenom: borné(body.prenom, MAX.court),
-    nom: borné(body.nom, MAX.court) || undefined,
+    nom: borné(body.nom, MAX.court),
     telephone: borné(body.telephone, MAX.court),
-    email: borné(body.email, MAX.court) || undefined,
-    ageEnfant: borné(body.ageEnfant, MAX.court) || undefined,
-    activite: borné(body.activite, MAX.court) || undefined,
-    creneau: borné(body.creneau, MAX.court) || undefined,
-    message: borné(body.message, MAX.message) || undefined,
+    email: borné(body.email, MAX.court),
+    ageEnfant: borné(body.ageEnfant, MAX.court),
+    activite: borné(body.activite, MAX.court),
+    creneau: borné(body.creneau, MAX.court),
+    message: borné(body.message, MAX.message),
     utm: {
-      source: borné(body.utm?.source, MAX.court) || undefined,
-      medium: borné(body.utm?.medium, MAX.court) || undefined,
-      campaign: borné(body.utm?.campaign, MAX.court) || undefined,
-      content: borné(body.utm?.content, MAX.court) || undefined,
-      term: borné(body.utm?.term, MAX.court) || undefined,
+      source: borné(body.utm?.source, MAX.court),
+      medium: borné(body.utm?.medium, MAX.court),
+      campaign: borné(body.utm?.campaign, MAX.court),
+      content: borné(body.utm?.content, MAX.court),
+      term: borné(body.utm?.term, MAX.court),
     },
     attribution: {
       first: visite(attribution.first),

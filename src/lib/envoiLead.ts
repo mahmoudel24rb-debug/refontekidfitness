@@ -1,11 +1,15 @@
-import { construireVisite, lireCookie, utmDerniereVisite, type Attribution } from './attribution'
+import { utmDerniereVisite } from './attribution'
+import { attributionPourEnvoi } from './attributionNavigateur'
 import { evenementLead } from './evenementsSuivi'
 
 // Envoi d'un lead vers /api/lead, commun à tous les formulaires du site
 // (LeadForm, ContactForm). Appelé à la soumission, donc dans le navigateur
 // uniquement. Ajoute aux champs saisis :
 // - page : chemin de la page du formulaire ;
-// - attribution : { first, last } lus dans le cookie ksc_attribution ;
+// - attribution : { first, last } lus dans le cookie ksc_attribution si la
+//   catégorie « Publicité et suivi des campagnes » est acceptée ; sinon la
+//   visite d'arrivée gardée en mémoire, en first comme en last (aucun
+//   stockage sur l'appareil) ;
 // - utm : UTM de la dernière visite (champ historique, mapping Make existant) ;
 // - suivi : event_id, cookies Meta _fbp / _fbc et identifiant visiteur
 //   ksc_vid, pour l'API Conversions Meta (non transmis au webhook).
@@ -46,27 +50,6 @@ export function champ(data: FormData, nom: string): string | undefined {
   return typeof valeur === 'string' && valeur.trim() !== '' ? valeur : undefined
 }
 
-/**
- * Attribution du cookie ; à défaut (cookie refusé ou effacé), celle de la
- * visite en cours, reconstruite avec les mêmes règles.
- */
-function attributionCourante(): Attribution {
-  try {
-    const cookie = lireCookie(document.cookie)
-    if (cookie) return cookie
-  } catch {
-    // Cookies inaccessibles : visite en cours.
-  }
-  const { visite } = construireVisite({
-    recherche: window.location.search,
-    chemin: window.location.pathname,
-    hote: window.location.hostname,
-    referent: document.referrer,
-    date: new Date(),
-  })
-  return { first: visite, last: visite }
-}
-
 /** Cookie d'identifiant visiteur (external_id Meta) : 13 mois. */
 const COOKIE_VISITEUR = 'ksc_vid'
 const DUREE_VISITEUR = 60 * 60 * 24 * 395
@@ -103,7 +86,7 @@ function identifiantVisiteur(): string {
 
 /** Poste le lead ; lève une erreur si la réponse n'est pas un succès. */
 export async function envoyerLead(champs: ChampsLead): Promise<void> {
-  const attribution = attributionCourante()
+  const attribution = attributionPourEnvoi()
   const eventId = identifiant()
   const res = await fetch('/api/lead', {
     method: 'POST',

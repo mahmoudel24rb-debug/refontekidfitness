@@ -61,12 +61,16 @@ const html = (name, code, firing, consent, extra = {}) => {
   return t
 }
 
+const trConsent = ce('CE - consent_update', 'EQUALS', 'consent_update')
 html('Consent - tout accordé (Consent Mode v2)', `<script>
-  // Choix de l'éditeur du site : consentement accordé par défaut pour tous
-  // les usages (pas de bandeau cookies pour l'instant).
+  // Choix de l'éditeur du site : consentement accordé pour tous les usages,
+  // quel que soit le choix fait dans le bandeau cookies. Le site pose « tout
+  // refusé » par défaut dans le <head> et le bandeau envoie un « update » à
+  // chaque choix : cette balise repasse tout en « granted » à l'initialisation
+  // puis après chaque choix (événement consent_update).
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('consent', 'default', {
+  gtag('consent', 'update', {
     analytics_storage: 'granted',
     ad_storage: 'granted',
     ad_user_data: 'granted',
@@ -75,7 +79,7 @@ html('Consent - tout accordé (Consent Mode v2)', `<script>
     personalization_storage: 'granted',
     security_storage: 'granted'
   });
-</script>`, [CONSENT_INIT], noConsent)
+</script>`, [CONSENT_INIT, trConsent], noConsent)
 
 const metaBase = html('Meta - Pixel base + PageView', `<script>
   if (!window.__kscMetaInit) {

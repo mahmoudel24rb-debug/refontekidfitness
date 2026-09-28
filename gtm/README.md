@@ -9,9 +9,14 @@ Import : GTM > Admin > Importer un conteneur > espace de travail > **Fusionner**
 
 ## Consentement
 
-Choix de l'éditeur du site : consentement **accordé par défaut** pour tous les
-usages (balise « Consent - tout accordé », déclencheur Consent Initialization).
-Aucun bandeau cookies pour l'instant ; les balises ne sont pas conditionnées.
+Choix de l'éditeur du site : consentement **accordé pour tous les usages**,
+quel que soit le choix fait dans le bandeau cookies du site
+(`src/components/ksc/BandeauConsentement.tsx`). Le site pose « tout refusé »
+par défaut dans le `<head>` (`src/lib/consentement.ts`) ; la balise GTM
+« Consent - tout accordé » envoie un `gtag('consent', 'update', …)` tout en
+« granted » à l'initialisation (Consent Initialization) puis après chaque
+choix du bandeau (événement `consent_update`). Les balises Meta ne sont pas
+conditionnées au consentement ; l'API Conversions est envoyée pour chaque lead.
 
 ## Événements du dataLayer
 

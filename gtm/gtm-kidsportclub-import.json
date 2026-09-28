@@ -27,7 +27,7 @@
           {
             "type": "TEMPLATE",
             "key": "html",
-            "value": "<script>\n  // Choix de l'éditeur du site : consentement accordé par défaut pour tous\n  // les usages (pas de bandeau cookies pour l'instant).\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('consent', 'default', {\n    analytics_storage: 'granted',\n    ad_storage: 'granted',\n    ad_user_data: 'granted',\n    ad_personalization: 'granted',\n    functionality_storage: 'granted',\n    personalization_storage: 'granted',\n    security_storage: 'granted'\n  });\n</script>"
+            "value": "<script>\n  // Choix de l'éditeur du site : consentement accordé pour tous les usages,\n  // quel que soit le choix fait dans le bandeau cookies. Le site pose « tout\n  // refusé » par défaut dans le <head> et le bandeau envoie un « update » à\n  // chaque choix : cette balise repasse tout en « granted » à l'initialisation\n  // puis après chaque choix (événement consent_update).\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('consent', 'update', {\n    analytics_storage: 'granted',\n    ad_storage: 'granted',\n    ad_user_data: 'granted',\n    ad_personalization: 'granted',\n    functionality_storage: 'granted',\n    personalization_storage: 'granted',\n    security_storage: 'granted'\n  });\n</script>"
           },
           {
             "type": "BOOLEAN",
@@ -36,7 +36,8 @@
           }
         ],
         "firingTriggerId": [
-          "2147479572"
+          "2147479572",
+          "3"
         ],
         "tagFiringOption": "ONCE_PER_EVENT",
         "consentSettings": {
@@ -120,7 +121,7 @@
           }
         ],
         "firingTriggerId": [
-          "3"
+          "4"
         ],
         "tagFiringOption": "ONCE_PER_EVENT",
         "consentSettings": {
@@ -152,7 +153,7 @@
           }
         ],
         "firingTriggerId": [
-          "4"
+          "5"
         ],
         "tagFiringOption": "ONCE_PER_EVENT",
         "consentSettings": {
@@ -184,7 +185,7 @@
           }
         ],
         "firingTriggerId": [
-          "5"
+          "6"
         ],
         "tagFiringOption": "ONCE_PER_EVENT",
         "consentSettings": {
@@ -216,7 +217,7 @@
           }
         ],
         "firingTriggerId": [
-          "6"
+          "7"
         ],
         "tagFiringOption": "ONCE_PER_EVENT",
         "consentSettings": {
@@ -248,7 +249,7 @@
           }
         ],
         "firingTriggerId": [
-          "7"
+          "8"
         ],
         "tagFiringOption": "ONCE_PER_EVENT",
         "consentSettings": {
@@ -280,7 +281,7 @@
           }
         ],
         "firingTriggerId": [
-          "8"
+          "9"
         ],
         "tagFiringOption": "ONCE_PER_EVENT",
         "consentSettings": {
@@ -312,7 +313,7 @@
           }
         ],
         "firingTriggerId": [
-          "9"
+          "10"
         ],
         "tagFiringOption": "ONCE_PER_EVENT",
         "consentSettings": {
@@ -344,7 +345,7 @@
           }
         ],
         "firingTriggerId": [
-          "10"
+          "11"
         ],
         "tagFiringOption": "ONCE_PER_EVENT",
         "consentSettings": {
@@ -376,7 +377,7 @@
           }
         ],
         "firingTriggerId": [
-          "11"
+          "12"
         ],
         "tagFiringOption": "ONCE_PER_EVENT",
         "consentSettings": {
@@ -408,7 +409,7 @@
           }
         ],
         "firingTriggerId": [
-          "12"
+          "13"
         ],
         "tagFiringOption": "ONCE_PER_EVENT",
         "consentSettings": {
@@ -581,6 +582,30 @@
         "accountId": "6060080614",
         "containerId": "265426379",
         "triggerId": "3",
+        "name": "CE - consent_update",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "consent_update"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "accountId": "6060080614",
+        "containerId": "265426379",
+        "triggerId": "4",
         "name": "CE - lead",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -604,7 +629,7 @@
       {
         "accountId": "6060080614",
         "containerId": "265426379",
-        "triggerId": "4",
+        "triggerId": "5",
         "name": "CE - schedule",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -628,7 +653,7 @@
       {
         "accountId": "6060080614",
         "containerId": "265426379",
-        "triggerId": "5",
+        "triggerId": "6",
         "name": "CE - contact",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -652,7 +677,7 @@
       {
         "accountId": "6060080614",
         "containerId": "265426379",
-        "triggerId": "6",
+        "triggerId": "7",
         "name": "CE - complete_registration",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -676,7 +701,7 @@
       {
         "accountId": "6060080614",
         "containerId": "265426379",
-        "triggerId": "7",
+        "triggerId": "8",
         "name": "CE - start_trial",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -700,7 +725,7 @@
       {
         "accountId": "6060080614",
         "containerId": "265426379",
-        "triggerId": "8",
+        "triggerId": "9",
         "name": "CE - find_location",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -724,7 +749,7 @@
       {
         "accountId": "6060080614",
         "containerId": "265426379",
-        "triggerId": "9",
+        "triggerId": "10",
         "name": "CE - add_to_cart",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -748,7 +773,7 @@
       {
         "accountId": "6060080614",
         "containerId": "265426379",
-        "triggerId": "10",
+        "triggerId": "11",
         "name": "CE - initiate_checkout",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -772,7 +797,7 @@
       {
         "accountId": "6060080614",
         "containerId": "265426379",
-        "triggerId": "11",
+        "triggerId": "12",
         "name": "CE - add_payment_info",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
@@ -796,7 +821,7 @@
       {
         "accountId": "6060080614",
         "containerId": "265426379",
-        "triggerId": "12",
+        "triggerId": "13",
         "name": "CE - purchase",
         "type": "CUSTOM_EVENT",
         "customEventFilter": [
