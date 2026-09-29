@@ -19,8 +19,8 @@ const buttonVariants = cva(
       variant: {
         primary:
           "bg-magenta border-magenta text-white hover:bg-magenta-hover hover:border-magenta-hover hover:shadow-md",
-        // Plein marine : même poids visuel que primary (ex. « Tout refuser »
-        // face à « Tout accepter » dans le bandeau de consentement).
+        // Plein marine : même poids visuel que primary, fond marine et texte
+        // crème.
         marine:
           "bg-marine border-marine text-cream hover:bg-navy hover:border-navy hover:shadow-md",
         outline:

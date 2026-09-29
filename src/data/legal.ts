@@ -27,33 +27,37 @@ export const CONFIDENTIALITE: LegalContent = {
   ],
 }
 
-// Traceurs réels du site (bandeau de consentement, src/lib/consentement.ts) :
-// texte factuel à faire valider par le client. ` ` : espace insécable
+// Traceurs réels du site (src/lib/attribution.ts, src/lib/envoiLead.ts, conteneur
+// GTM) : texte factuel à faire valider par le client. ` ` : espace insécable
 // (avant les deux-points, dans les guillemets, entre un nombre et son unité).
 export const COOKIES: LegalContent = {
   titre: 'Gestion des cookies',
   intro:
-    'Cette page présente les cookies et traceurs utilisés sur le site kidsportclub.fr, leur finalité, leur durée de conservation et la façon de modifier votre choix.',
+    'Cette page présente les cookies et traceurs utilisés sur le site kidsportclub.fr, leur finalité et leur durée de conservation.',
   sections: [
     {
-      h: 'Votre choix',
-      p: 'Lors de votre première visite, un bandeau vous permet d’accepter ou de refuser les cookies non nécessaires, ou de choisir catégorie par catégorie. Refuser est aussi simple qu’accepter, et aucun cookie non nécessaire n’est déposé sans votre accord.\nVotre choix, accord comme refus, est conservé 6 mois. À l’issue de ce délai, ou si la liste des traceurs change, le bandeau vous est de nouveau proposé.',
-    },
-    {
-      h: 'Cookies nécessaires',
-      p: 'ksc_consentement : mémorise votre choix sur les cookies (catégories acceptées ou refusées, date du choix). Durée : 6 mois. Indispensable au respect de votre choix, ce cookie ne peut pas être désactivé.',
+      h: 'Source de votre visite',
+      p: 'ksc_attribution : mémorise la source de votre première visite et celle de votre visite la plus récente (paramètres des liens publicitaires, identifiants de clic Google Ads et Meta, site d’origine, page d’entrée, date). Ces informations sont transmises avec vos demandes de contact pour mesurer l’efficacité de nos campagnes. Durée : 90 jours, prolongée à chaque nouvelle visite issue d’une campagne ou d’un autre site.',
     },
     {
       h: 'Mesure d’audience',
-      p: 'Les traceurs de mesure d’audience de Google (Google Analytics), chargés par l’intermédiaire de Google Tag Manager, ne sont déposés qu’avec votre accord pour la catégorie « Mesure d’audience ». Ils établissent des statistiques de visite (pages consultées, provenance des visites) qui nous aident à améliorer le site. Leur durée de conservation est définie par Google.',
+      p: 'Google Analytics, chargé par l’intermédiaire de Google Tag Manager, dépose les cookies _ga et _ga_VB7RJBHMRZ. Ils établissent des statistiques de visite (pages consultées, provenance des visites) qui nous aident à améliorer le site. Durée : jusqu’à 2 ans, définie par Google.',
     },
     {
-      h: 'Publicité et suivi des campagnes',
-      p: 'Avec votre accord pour la catégorie « Publicité et suivi des campagnes » :\n- ksc_attribution : mémorise la source de vos visites (paramètres des liens publicitaires, site d’origine, page d’entrée, date), transmise avec vos demandes de contact pour mesurer l’efficacité de nos campagnes. Durée : 90 jours, prolongée à chaque nouvelle visite issue d’une campagne ou d’un autre site.\n- les traceurs publicitaires de Google (Google Ads) et de Meta (Facebook, Instagram), chargés par l’intermédiaire de Google Tag Manager, mesurent les résultats de nos publicités. Leur durée de conservation est définie par Google et par Meta.\nSans votre accord, le cookie ksc_attribution n’est pas déposé, et il est supprimé si vous retirez votre accord : la source de la visite en cours est seulement gardée en mémoire par la page et jointe à une demande envoyée par formulaire, sans rien enregistrer sur votre appareil.',
+      h: 'Publicité Meta',
+      p: 'Le pixel Meta (Facebook, Instagram), chargé par l’intermédiaire de Google Tag Manager, dépose le cookie _fbp (et _fbc si vous arrivez par un lien Facebook ou Instagram) et enregistre des informations dans le stockage local de votre navigateur, pour mesurer les résultats de nos publicités. Durée : 90 jours.\nksc_vid : identifiant aléatoire déposé à l’envoi d’un formulaire, qui permet de rapprocher votre demande des mesures du pixel Meta sans la compter deux fois. Durée : 395 jours.',
     },
     {
-      h: 'Modifier votre choix',
-      p: 'Vous pouvez modifier ou retirer votre choix à tout moment, aussi simplement que vous l’avez donné, grâce au lien « Gérer les cookies » en bas des pages du site ou au bouton ci-dessous. Vous pouvez aussi supprimer les cookies depuis les réglages de votre navigateur.',
+      h: 'Carte Google Maps',
+      p: 'Les pages qui affichent notre plan d’accès intègrent une carte Google Maps. Google peut alors déposer ses propres cookies, selon ses règles.',
+    },
+    {
+      h: 'Bandeau d’information',
+      p: 'Le bandeau affiché lors de votre première visite présente ces cookies. Le bouton « J’ai compris » le ferme : ce choix est mémorisé dans le stockage local de votre navigateur (ksc_bandeau_cookies), sans cookie, pour ne plus l’afficher.',
+    },
+    {
+      h: 'Supprimer les cookies',
+      p: 'Vous pouvez supprimer à tout moment les cookies et le stockage local du site depuis les réglages de votre navigateur.',
     },
   ],
 }
