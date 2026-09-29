@@ -6,10 +6,9 @@ import { evenementLead } from './evenementsSuivi'
 // (LeadForm, ContactForm). Appelé à la soumission, donc dans le navigateur
 // uniquement. Ajoute aux champs saisis :
 // - page : chemin de la page du formulaire ;
-// - attribution : { first, last } lus dans le cookie ksc_attribution si la
-//   catégorie « Publicité et suivi des campagnes » est acceptée ; sinon la
-//   visite d'arrivée gardée en mémoire, en first comme en last (aucun
-//   stockage sur l'appareil) ;
+// - attribution : { first, last } lus dans le cookie ksc_attribution ; si les
+//   cookies sont bloqués, la visite d'arrivée gardée en mémoire, en first
+//   comme en last ;
 // - utm : UTM de la dernière visite (champ historique, mapping Make existant) ;
 // - suivi : event_id, cookies Meta _fbp / _fbc et identifiant visiteur
 //   ksc_vid, pour l'API Conversions Meta (non transmis au webhook).

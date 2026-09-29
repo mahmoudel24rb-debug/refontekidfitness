@@ -6,8 +6,8 @@ import type { LegalContent } from '@/data/legal'
 
 // Gabarit typographique sobre des pages légales (mentions, CGV, confidentialité,
 // cookies) : bandeau HeroMarine + corps texte étroit. Aucune donnée en dur —
-// tout vient de @/data/legal. `children` : action placée après les sections
-// (ex. bouton « Gérer les cookies » de la page /cookies).
+// tout vient de @/data/legal. `children` : action facultative placée après
+// les sections.
 export default function LegalPage({ content, children }: { content: LegalContent; children?: React.ReactNode }) {
   return (
     <>

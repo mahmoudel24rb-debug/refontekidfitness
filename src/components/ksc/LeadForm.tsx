@@ -14,8 +14,8 @@ import { ACTIVITE_NON_PRECISEE, champ, envoyerLead } from '@/lib/envoiLead'
 // - ≤ 5 champs (standard conversion), honeypot anti-bots.
 // - Envoi par envoyerLead (src/lib/envoiLead.ts) : POST /api/lead avec la
 //   page du formulaire, l'attribution first / last touch (cookie
-//   ksc_attribution si la publicité est acceptée, sinon visite d'arrivée en
-//   mémoire) et les UTM de la dernière visite ; après succès,
+//   ksc_attribution, ou visite d'arrivée en mémoire si les cookies sont
+//   bloqués) et les UTM de la dernière visite ; après succès,
 //   dataLayer.push({ event, event_id, source, activite }).
 // - Activité : liste déroulante (`activites`) ou valeur déduite de la page
 //   (`activite`), l'une ou l'autre obligatoire : chaque lead en porte une.

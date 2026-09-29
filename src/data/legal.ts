@@ -45,7 +45,7 @@ export const COOKIES: LegalContent = {
     },
     {
       h: 'Publicité Meta',
-      p: 'Le pixel Meta (Facebook, Instagram), chargé par l’intermédiaire de Google Tag Manager, dépose le cookie _fbp (et _fbc si vous arrivez par un lien Facebook ou Instagram) et enregistre des informations dans le stockage local de votre navigateur, pour mesurer les résultats de nos publicités. Durée : 90 jours.\nksc_vid : identifiant aléatoire déposé à l’envoi d’un formulaire, qui permet de rapprocher votre demande des mesures du pixel Meta sans la compter deux fois. Durée : 395 jours.',
+      p: 'Le pixel Meta (Facebook, Instagram), chargé par l’intermédiaire de Google Tag Manager, dépose le cookie _fbp (et _fbc si vous arrivez par un lien Facebook ou Instagram) et enregistre des informations dans le stockage local de votre navigateur, pour mesurer les résultats de nos publicités. Durée : 90 jours.\nksc_vid : identifiant aléatoire déposé à l’envoi d’un formulaire et transmis à Meta sous forme hachée avec votre demande, pour améliorer la mesure de nos publicités. Durée : 395 jours.',
     },
     {
       h: 'Carte Google Maps',
