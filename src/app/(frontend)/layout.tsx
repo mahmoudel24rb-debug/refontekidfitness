@@ -8,7 +8,7 @@ import { Baloo_2, Inter } from 'next/font/google'
 import './globals.css'
 
 import { GtmHead, GtmNoscript } from '@/app/GoogleTagManager'
-import BandeauConsentement from '@/components/ksc/BandeauConsentement'
+import BandeauCookies from '@/components/ksc/BandeauCookies'
 import SuiviAttribution from '@/components/ksc/SuiviAttribution'
 import { getParametres, telephoneJsonLd, type ParametresVue } from '@/lib/contenu'
 
@@ -86,13 +86,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body>
         <GtmNoscript />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness(coordonnees)) }} />
-        {/* Bandeau de consentement aux cookies : rendu dans le navigateur
+        {/* Bandeau d'information sur les cookies : rendu dans le navigateur
             seulement, placé avant la page pour être atteint en premier au
             clavier (affiché en bas de l'écran). */}
-        <BandeauConsentement />
+        <BandeauCookies />
         {children}
-        {/* Source du visiteur (first / last touch) : visite d'arrivée en
-            mémoire, cookie ksc_attribution si la publicité est acceptée. */}
+        {/* Source du visiteur (first / last touch) : cookie ksc_attribution
+            mis à jour à chaque chargement de page. */}
         <SuiviAttribution />
       </body>
     </html>

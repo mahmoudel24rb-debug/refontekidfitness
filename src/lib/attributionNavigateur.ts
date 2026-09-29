@@ -3,24 +3,22 @@ import {
   ecritureCookie,
   fusionner,
   lireCookie,
-  suppressionCookie,
   type Attribution,
   type TypeVisite,
   type Visite,
 } from './attribution'
-import { lireConsentement } from './consentement'
 
-// Attribution côté navigateur, soumise au consentement « Publicité et suivi
-// des campagnes » (catégorie publicite de src/lib/consentement.ts).
+// Attribution côté navigateur (règles et formats : src/lib/attribution.ts).
 //
 // - Visite d'arrivée : paramètres de campagne, référent externe et page
 //   d'entrée du chargement de page, gardés EN MÉMOIRE dès le premier appel
-//   (variable de module, aucun stockage sur l'appareil). Elle vit jusqu'au
-//   prochain chargement complet de page.
-// - Cookie ksc_attribution : écrit uniquement si la publicité est acceptée,
-//   supprimé si elle est refusée ou retirée.
-// - Envoi d'un formulaire : cookie si la publicité est acceptée, sinon la
-//   visite d'arrivée en mémoire, en first comme en last.
+//   (variable de module). Elle vit jusqu'au prochain chargement complet de
+//   page.
+// - Cookie ksc_attribution : écrit dès la première page vue, sans condition,
+//   puis mis à jour à chaque chargement de page (first / last touch) ; 90
+//   jours, repoussés à chaque écriture.
+// - Envoi d'un formulaire : le cookie ; la visite d'arrivée en mémoire, en
+//   first comme en last, seulement si les cookies sont bloqués.
 // Navigateur uniquement (lit window et document).
 
 let arrivee: { type: TypeVisite; visite: Visite } | null = null
@@ -40,37 +38,30 @@ export function visiteArrivee(): { type: TypeVisite; visite: Visite } {
 }
 
 /**
- * Applique le choix de la catégorie publicité au cookie ksc_attribution :
- * accord, la visite d'arrivée est fusionnée (first / last touch) puis écrite ;
- * refus ou retrait, le cookie est supprimé.
+ * Met à jour le cookie ksc_attribution avec la visite d'arrivée : fusion
+ * first / last touch, puis écriture si la visite change quelque chose
+ * (première visite, visite campagne ou référent).
  */
-export function appliquerConsentementAttribution(publicite: boolean) {
+export function mettreAJourAttribution() {
   try {
-    const https = window.location.protocol === 'https:'
-    if (publicite) {
-      const { type, visite } = visiteArrivee()
-      const suivant = fusionner(lireCookie(document.cookie), type, visite)
-      if (suivant) document.cookie = ecritureCookie(suivant, https)
-    } else {
-      document.cookie = suppressionCookie(https)
-    }
+    const { type, visite } = visiteArrivee()
+    const suivant = fusionner(lireCookie(document.cookie), type, visite)
+    if (suivant) document.cookie = ecritureCookie(suivant, window.location.protocol === 'https:')
   } catch {
-    // Cookies inaccessibles : rien à écrire ni à supprimer.
+    // Cookies inaccessibles : rien à écrire.
   }
 }
 
 /**
- * Attribution jointe à un lead : celle du cookie ksc_attribution si la
- * publicité est acceptée ; sinon (refus, pas encore de choix, cookie absent
- * ou illisible) la visite d'arrivée en mémoire, en first comme en last.
+ * Attribution jointe à un lead : celle du cookie ksc_attribution ; si le
+ * cookie est absent ou illisible (cookies bloqués), la visite d'arrivée en
+ * mémoire, en first comme en last.
  */
 export function attributionPourEnvoi(): Attribution {
   const { visite } = visiteArrivee()
   try {
-    if (lireConsentement(document.cookie, new Date())?.publicite) {
-      const cookie = lireCookie(document.cookie)
-      if (cookie) return cookie
-    }
+    const cookie = lireCookie(document.cookie)
+    if (cookie) return cookie
   } catch {
     // Cookies inaccessibles : visite d'arrivée.
   }

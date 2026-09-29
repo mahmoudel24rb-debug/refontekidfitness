@@ -1,14 +1,14 @@
 // Attribution des visiteurs : première source (first touch) et dernière source
 // (last touch), conservées 90 jours dans le cookie first-party ksc_attribution
 // et transmises au webhook avec chaque lead (documentation : WEBHOOK-LEADS.md).
-// Le cookie n'est écrit qu'avec l'accord du visiteur pour la catégorie
-// « Publicité et suivi des campagnes » (src/lib/attributionNavigateur.ts).
+// Le cookie est écrit dès la première page vue, sans condition
+// (src/lib/attributionNavigateur.ts).
 //
 // Module PUR : aucune lecture de window, document ou cookie ici. Les valeurs
 // du navigateur sont passées en paramètres, ce qui rend chaque étape testable
 // hors navigateur. Sert au suivi côté navigateur (src/lib/attributionNavigateur.ts :
-// visite d'arrivée, écriture ou suppression du cookie, attribution des
-// formulaires) et à /api/lead (clés acceptées).
+// visite d'arrivée, écriture du cookie, attribution des formulaires) et à
+// /api/lead (clés acceptées).
 //
 // Règles :
 // - visite « campagne » : au moins un des 7 paramètres de campagne dans l'URL ;
@@ -220,11 +220,6 @@ export function ecritureCookie(attribution: Attribution, https: boolean): string
     `${COOKIE_ATTRIBUTION}=${serialiser(attribution)}; Max-Age=${DUREE_COOKIE_SECONDES}; Path=/; SameSite=Lax` +
     (https ? '; Secure' : '')
   )
-}
-
-/** Chaîne à affecter à document.cookie pour supprimer le cookie (mêmes attributs qu'à l'écriture). */
-export function suppressionCookie(https: boolean): string {
-  return `${COOKIE_ATTRIBUTION}=; Max-Age=0; Path=/; SameSite=Lax` + (https ? '; Secure' : '')
 }
 
 /** Champ `utm` historique du webhook : les UTM de la dernière visite (last touch). */

@@ -39,7 +39,7 @@ type LeadPayload = {
   creneau?: string
   message?: string
   utm?: Partial<Record<'source' | 'medium' | 'campaign' | 'content' | 'term', string>>
-  /** Première et dernière source du visiteur (cookie ksc_attribution, ou visite d'arrivée sans consentement). */
+  /** Première et dernière source du visiteur (cookie ksc_attribution, ou visite d'arrivée si les cookies sont bloqués). */
   attribution?: { first?: unknown; last?: unknown }
   website?: string // honeypot
   /** Identifiants de suivi Meta (API Conversions). */
