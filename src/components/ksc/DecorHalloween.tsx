@@ -1,20 +1,37 @@
 import React from 'react'
 import { Candy, Ghost, Icon, Lollipop, Sparkles } from 'lucide-react'
 
-import { araignee, chauveSouris, chaudron, citrouille, toile } from './iconesHalloween'
+import { araignee, chauveSouris, chaudron, citrouille } from './iconesHalloween'
+import ToileAraignee from './ToileAraignee'
 
 // Décor de nuit d'Halloween du hero des landings à thème (stages de la
-// Toussaint) : bande décorative au-dessus du titre, purement visuelle
-// (aria-hidden). Icônes Lucide et Lucide Lab ; les éléments secondaires
-// disparaissent sur les petits écrans pour ne pas surcharger.
+// Toussaint), purement visuel (aria-hidden) :
+// - ToilesHalloween : toiles d'araignée accrochées aux coins de la section,
+//   araignée suspendue à son fil (à placer directement dans la section) ;
+// - DecorHalloween : bande au-dessus du titre (fantôme, citrouilles, lune,
+//   chauves-souris). Icônes Lucide et Lucide Lab ; les éléments secondaires
+//   disparaissent sur les petits écrans pour ne pas surcharger.
+export function ToilesHalloween() {
+  return (
+    <div aria-hidden="true" className="pointer-events-none select-none">
+      <div className="absolute top-0 left-0 size-[150px] text-white/30 sm:size-[190px] xl:size-[230px]">
+        <ToileAraignee className="size-full" />
+        {/* Araignée suspendue à un fil, au bord de la toile */}
+        <span className="absolute top-[18%] left-[46%] h-[30%] w-px bg-white/45" />
+        <Icon
+          iconNode={araignee}
+          className="absolute top-[46%] left-[46%] size-6 -translate-x-1/2 text-[#cfc8e6] sm:size-7"
+          strokeWidth={2.3}
+        />
+      </div>
+      <ToileAraignee inverse className="absolute top-0 right-0 hidden size-[220px] text-white/20 xl:block" />
+    </div>
+  )
+}
+
 export default function DecorHalloween() {
   return (
     <div aria-hidden="true" className="pointer-events-none relative mx-auto mb-4 h-[92px] max-w-[1120px] select-none sm:h-[112px]">
-      {/* Toile et araignée suspendue, à gauche */}
-      <Icon iconNode={toile} className="absolute -top-8 -left-8 size-[130px] text-white/15 sm:size-[150px]" strokeWidth={1.2} />
-      <span className="absolute top-[-48px] left-[104px] h-[92px] w-px bg-[#cfc8e6]/50 sm:left-[118px] sm:h-[100px]" />
-      <Icon iconNode={araignee} className="absolute top-[40px] left-[92px] size-6 text-[#cfc8e6] sm:top-[48px] sm:left-[106px]" strokeWidth={2.4} />
-
       {/* Fantôme et citrouilles */}
       <Ghost className="absolute bottom-0 left-[150px] hidden size-[52px] fill-[#2a2550] text-cream sm:block" strokeWidth={1.8} />
       <Icon iconNode={citrouille} className="absolute bottom-0 left-[150px] size-[54px] fill-[#7a2e0b] text-[#ff9a4d] sm:left-[222px] sm:size-[68px]" strokeWidth={1.7} />

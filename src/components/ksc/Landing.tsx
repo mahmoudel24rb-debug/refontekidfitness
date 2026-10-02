@@ -25,7 +25,7 @@ import LandingTeam from './LandingTeam'
 import LandingTarifs from './LandingTarifs'
 import LandingPlace from './LandingPlace'
 import PullQuote from './PullQuote'
-import DecorHalloween from './DecorHalloween'
+import DecorHalloween, { ToilesHalloween } from './DecorHalloween'
 import PlanningStage from './PlanningStage'
 import { landingBySlug } from '@/data/landings'
 import { HOME } from '@/data/home'
@@ -118,7 +118,14 @@ export default async function Landing({ slug }: { slug: string }) {
           l.halloween ? 'bg-[linear-gradient(180deg,#081646_0%,#081646_55%,#1f1147_100%)] pt-8' : 'bg-marine pt-12',
         )}
       >
-        {l.halloween ? <DecorHalloween /> : <TerrainLines />}
+        {l.halloween ? (
+          <>
+            <ToilesHalloween />
+            <DecorHalloween />
+          </>
+        ) : (
+          <TerrainLines />
+        )}
         <div className={`relative mx-auto grid max-w-[1120px] gap-10 ${isLead ? 'lg:grid-cols-[1.1fr_0.9fr]' : 'items-center lg:grid-cols-2'}`}>
           <div>
             <p className={cn('mb-4 text-sm font-bold uppercase tracking-[.05em]', l.halloween ? 'text-[#ff9a4d]' : 'text-magenta-light')}>{l.eyebrow}</p>

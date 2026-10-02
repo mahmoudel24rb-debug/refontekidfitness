@@ -33,13 +33,6 @@ export const araignee: IconNode = [
   ['path', { d: 'M16.57 17 19 20l-1 2', key: 'araignee-11' }],
 ]
 
-export const toile: IconNode = [
-  ['path', { d: 'M21 17.2V6.8L12 2 3 6.8v10.4l9 4.8Z', key: 'toile-0' }],
-  ['path', { d: 'M2 17.8 22 6.2', key: 'toile-1' }],
-  ['path', { d: 'm2 6.2 20 11.6', key: 'toile-2' }],
-  ['path', { d: 'M12 2v20', key: 'toile-3' }],
-  ['path', { d: 'M17 14.9V9.1l-5-2.6-5 2.6v5.8l5 2.6Z', key: 'toile-4' }],
-]
 
 export const chaudron: IconNode = [
   ['circle', { cx: '8', cy: '3.5', r: '.5', key: 'chaudron-0' }],
