@@ -3,7 +3,9 @@
 // - variant 'lead' : capture du lead SUR la page (formulaire hero + form final +
 //   sticky mobile, UN objectif par page, message match annonce -> h1).
 // - variant 'catalogue' : toutes les prestations en blocs, CTA -> calendrier CRM.
-// Créer une variante de campagne = ajouter une entrée ici (h1 = hook de l'annonce).
+// Créer une variante de campagne = ajouter une entrée ici (h1 = hook de l'annonce)
+// ET la page src/app/(frontend)/{slug}/page.tsx (copie d'une landing existante) :
+// les landings sont servies à la racine, une page statique par landing.
 //
 // Enrichissement structurel : les entrées portent, en OPTION, des blocs de
 // contenu déjà validé (stats, spotlight prestation, tranches d'âge, planning
