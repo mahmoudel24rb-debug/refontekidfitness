@@ -47,6 +47,9 @@
     "esbuild": "0.28.2",
     "payload": {
       "undici": "7.29.1"
+    },
+    "monaco-editor": {
+      "dompurify": "3.4.16"
     }
   }
 }
