@@ -109,7 +109,8 @@ Contact                       /contact
 Séance d'essai                /seance-essai
 Blog / Actualités             /blog  (+ /blog/[slug] ×4)
 Légales                       /mentions-legales /confidentialite /cookies /cgv
-Landings (hors menu)          /landing/[slug]   (noindex, hors sitemap)
+Landings (hors menu)          /[slug] à la racine, ex. /essai-gratuit (noindex, hors sitemap ; sauf /stage-toussaint, indexée et au sitemap)
+Répertoire interne            /landing (liste des landings, noindex) ; /landing/[slug] redirige vers /[slug]
 ```
 
 **Redirections 301** (anciennes routes Kinderly → nouvelles) définies dans `next.config.ts` :
@@ -144,9 +145,9 @@ Le point structurant du brief (§5). Pour la version preview (GitHub/Vercel), le
 - Zone SEO : **Rochecorbon** (mono-ville), variantes Tours / 37 en secondaire.
 
 ### Gabarit Landing réutilisable (brief §3)
-- Route `/landing/[slug]`, **hors menu**, **noindex**, **hors sitemap** (pour ne pas cannibaliser le SEO).
+- Route `/[slug]` à la racine (depuis le 02/10/2026 ; `/landing/[slug]` redirige en 308, UTM conservés), **hors menu**, **noindex**, **hors sitemap** (pour ne pas cannibaliser le SEO).
 - Composant `Landing.tsx` orienté conversion : barre de marque minimale (pas de nav), hero, bandeau réassurance, bénéfices, preuve sociale, CTA final, pied légal.
-- Données dans `landings.ts`. **2 exemples livrés** : `/landing/anniversaire-sportif`, `/landing/stage-vacances`. Créer une nouvelle landing = ajouter une entrée dans `landings.ts`.
+- Données dans `landings.ts`. Landings : `/essai-gratuit`, `/anniversaire-sportif`, `/stage-vacances`, `/stage-toussaint` (Halloween), `/prestations` (catalogue). Créer une nouvelle landing = ajouter une entrée dans `landings.ts`.
 
 ### Détourage d'images (hero)
 Les images IA fournies par le client sont détourées avec un script `sharp` maison (region-growing sur le fond + masque « brun-sombre » limité aux pixels connectés au bord, dilation + feather). Le hero (`public/assets/ksc/hero.webp`) est un PNG/webp à fond transparent qui « flotte » sur le crème avec les décorations du template (avion, étoiles). L'`objectFit` du hero est `contain` (sujet vertical entier, non recadré).

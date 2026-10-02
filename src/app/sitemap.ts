@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { getArticles, getPrestations } from '@/lib/contenu'
+import { LANDINGS } from '@/data/landings'
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://kidsportclub.fr'
 
@@ -17,6 +18,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       ...(p.disciplines ?? []).map((d) => `/nos-prestations/${p.slug}/${d.slug}`),
     ]),
     ...articles.map((a) => `/blog/${a.slug}`),
+    // Landings indexables seulement (les autres sont en noindex).
+    ...LANDINGS.filter((l) => l.indexable).map((l) => `/${l.slug}`),
   ]
   return routes.map((path) => ({
     url: `${SITE}${path}`,

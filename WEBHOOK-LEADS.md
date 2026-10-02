@@ -54,7 +54,7 @@ Longueurs maximales : 120 caractères pour les champs courts, 2 000 pour
 | `gclid` | Identifiant de clic Google Ads (marquage automatique). |
 | `fbclid` | Identifiant de clic Facebook / Instagram. |
 | `referrer` | Page d'où venait le visiteur (`document.referrer`), seulement si elle est sur un autre domaine ; souvent réduite au domaine par le navigateur, ex. `https://www.google.com/`. Vide pour une visite directe, une navigation interne, ou quand le navigateur ne la transmet pas. |
-| `landing_page` | Page d'entrée : chemin et paramètres, ex. `/landing/essai-gratuit?utm_source=facebook&utm_medium=cpc`. |
+| `landing_page` | Page d'entrée : chemin et paramètres, ex. `/essai-gratuit?utm_source=facebook&utm_medium=cpc`. |
 | `date` | Date et heure de la visite (ISO 8601, UTC). |
 
 ## Calcul de `sourceCrm`
@@ -78,7 +78,7 @@ première qui s'applique donne la valeur.
 | 3 | `utm_source` parmi `google_ads`, `googleads`, `adwords`, `gads` ; ou `utm_source=google` avec un `utm_medium` payant : `cpc`, `ppc`, `paid`, `sem`, `ads`, `ad`, `cpm`, `display`, `paid_search` | `GOOGLE_ADS` | `/?utm_source=google&utm_medium=cpc` ; `/?utm_source=adwords` |
 | 4 | `utm_source` parmi `gmb`, `gbp`, `google_my_business`, `googlemybusiness`, `google_business`, `googlebusiness`, `google_business_profile`, `mybusiness` ; ou `utm_source=google` avec un `utm_medium` ou un `utm_campaign` contenant `gmb`, `gbp`, `mybusiness`, `business`, `fiche` ou `maps` | `GOOGLE_MYBUSINESS` | `/?utm_source=gmb&utm_medium=organic` ; `/?utm_source=google&utm_campaign=fiche-gmb` |
 | 5 | Source Meta : `utm_source` parmi `meta`, `meta_ads`, `metaads`, `facebook_ads`, `facebookads`, `fb_ads`, `instagram_ads`, `ig_ads`, `facebook`, `fb`, `instagram`, `ig`, `an`, `audience_network`, `msg`, `messenger`, ou contenant `facebook`, `instagram` ou `meta` ; avec un `utm_medium` organique : `social`, `organic`, `organique`, `post`, `bio`, `profile`, `profil`, `story`, `reel`, `link`, `lien` | `INSTAGRAM` (source `instagram` ou `ig`), `FACEBOOK_MESSENGER` (source `messenger` ou `msg`), sinon `FACEBOOK` | `/?utm_source=facebook&utm_medium=social` : `FACEBOOK` ; `/?utm_source=instagram&utm_medium=bio` : `INSTAGRAM` |
-| 5 | Source Meta avec tout autre `utm_medium` (payant, vide ou autre) | `META_ADS` | `/landing/essai-gratuit?utm_source=facebook&utm_medium=cpc&fbclid=...` : `META_ADS` ; `/?utm_source=fb&utm_medium=paid` : `META_ADS` |
+| 5 | Source Meta avec tout autre `utm_medium` (payant, vide ou autre) | `META_ADS` | `/essai-gratuit?utm_source=facebook&utm_medium=cpc&fbclid=...` : `META_ADS` ; `/?utm_source=fb&utm_medium=paid` : `META_ADS` |
 | 6 | Autres sources connues : `whatsapp`, `wa` ; `chatgpt`, `chatgpt.com`, `openai` ; `activecampaign`, `active_campaign` ; `typeform` ; `systeme`, `systeme_io`, `system_io`, `systemeio` ; `clickfunnels` ; `urban_sports_club`, `urbansportsclub`, `usc` ; `resamania` ; `deciplus` ; `google` (sans support payant ni indice de fiche) | Dans l'ordre : `WHATSAPP`, `CHATGPT`, `ACTIVE_CAMPAIGN`, `TYPEFORM`, `SYSTEM_IO`, `CLICKFUNNELS`, `URBAN_SPORTS_CLUB`, `RESAMANIA`, `DECIPLUS`, `GOOGLE` | `/?utm_source=wa` : `WHATSAPP` ; `/?utm_source=google&utm_medium=organic` : `GOOGLE` |
 | 7 | `utm_source` renseigné mais non reconnu | `MSDS_EXTERN_REFERER` | `/?utm_source=newsletter` |
 | 8 | Pas d'`utm_source`, `fbclid` renseigné | `INSTAGRAM` si le référent est `instagram.com` ou `l.instagram.com`, sinon `FACEBOOK` | `/?fbclid=IwAR...` depuis `https://l.instagram.com/` : `INSTAGRAM` |
@@ -137,7 +137,7 @@ Exemple :
 
 | Visite | `first` | `last` |
 |---|---|---|
-| 1. Annonce Facebook : `/landing/essai-gratuit?utm_source=facebook&utm_medium=cpc&fbclid=...` | Facebook | Facebook |
+| 1. Annonce Facebook : `/essai-gratuit?utm_source=facebook&utm_medium=cpc&fbclid=...` | Facebook | Facebook |
 | 2. Clic vers `/tarifs` sur le site | Facebook | Facebook |
 | 3. Quelques jours plus tard, annonce Google : `/?utm_source=google&gclid=...` | Facebook | Google |
 | 4. Retour direct (favori, adresse tapée), puis envoi du formulaire | Facebook | Google |
@@ -170,7 +170,7 @@ Si le cookie est absent ou illisible au moment de l'envoi (cookies bloqués),
 | `seance-essai` | Page Séance d'essai (`/seance-essai`). |
 | `prestation-{slug}` | Fiche prestation `/nos-prestations/{slug}`. |
 | `activite-{tranche}-{cours}` | Page d'un cours `/nos-prestations/{tranche}/{cours}`. |
-| `landing-{slug}` | Formulaire du haut d'une landing `/landing/{slug}`. |
+| `landing-{slug}` | Formulaire du haut d'une landing `/{slug}` (ex. `/essai-gratuit`). |
 | `landing-{slug}-final` | Formulaire de fin de page de la même landing. |
 
 Fiches prestation (7) : `prestation-mercredis-sportifs`,
@@ -179,9 +179,14 @@ Fiches prestation (7) : `prestation-mercredis-sportifs`,
 `prestation-cours-6-10-ans`, `prestation-cours-11-14-ans`.
 
 Landings avec formulaires : `essai-gratuit`, `anniversaire-sportif`,
-`stage-vacances` (sources `landing-essai-gratuit`,
-`landing-essai-gratuit-final`, etc.). La landing catalogue `/landing/prestations`
+`stage-vacances`, `stage-toussaint` (sources `landing-essai-gratuit`,
+`landing-essai-gratuit-final`, etc.). La landing catalogue `/prestations`
 n'a pas de formulaire (ses boutons ouvrent le calendrier d'inscription).
+
+Depuis le 02/10/2026, les landings sont servies à la racine du site
+(`/essai-gratuit`, `/stage-toussaint`...). Les anciennes adresses
+`/landing/{slug}` redirigent (308) vers la nouvelle, paramètres UTM compris :
+les valeurs de `source` et `landing` ne changent pas.
 
 Les prestations et les cours sont administrables (Payload) : les listes de ce
 document sont celles du 28/09/2026 et suivent le contenu de l'admin.
@@ -194,7 +199,7 @@ document sont celles du 28/09/2026 et suivent le contenu de l'admin.
 | Fiche prestation | Titre de la prestation. |
 | Page d'un cours | `{cours} ({tranche})`, voir le tableau ci-dessous. |
 | Landing anniversaire-sportif | `Anniversaire` |
-| Landing stage-vacances | `Stages vacances` |
+| Landings stage-vacances et stage-toussaint | `Stages vacances` |
 
 Les 7 prestations : `Mercredis Sportifs`, `Stages vacances`, `Anniversaire`,
 `Cours 10 – 36 mois`, `Cours 3 – 5 ans`, `Cours 6 – 10 ans`,
