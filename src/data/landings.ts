@@ -10,6 +10,7 @@
 // rentrée, galerie photo, avis mis en scène, équipe, tarifs, lieu…). ZÉRO copy
 // neuf : toute chaîne provient de src/data/* ou d'un composant existant.
 import { HOME } from '@/data/home'
+import { FICHE_INSCRIPTION_STAGES, PLANNING_TOUSSAINT, type PlanningStage } from '@/data/stageToussaint'
 
 const RENTREE_STAT = { valeur: 'Septembre 2026', label: 'Rentrée' }
 const STATS_BASE = HOME.hero.stats // « + de 10 activités » / « + de 600 enfants »
@@ -63,6 +64,14 @@ export type Landing = {
   lieu?: boolean
   /** Second formulaire complet en fin de page (variant lead). */
   formFinal?: boolean
+
+  // --- Landing à thème (stages de la Toussaint, Halloween) ---
+  /** Ambiance Halloween : décor de nuit dans le hero, partie du h1 en orange, dates en pastilles. */
+  halloween?: { h1Accent: string; dates: string[] }
+  /** Planning thématique de la semaine de stage (PlanningStage), sous le bandeau de réassurance. */
+  planningStage?: PlanningStage
+  /** Fiche d'inscription PDF proposée en plus des formulaires, à renvoyer remplie et signée. */
+  fiche?: string
 }
 
 export const LANDINGS: Landing[] = [
@@ -217,6 +226,57 @@ export const LANDINGS: Landing[] = [
       'Quels sont vos tarifs ?',
       'À partir de quel âge mon enfant peut-il commencer ?',
       'Les Mercredis Sportifs, qu’est-ce que c’est exactement ?',
+      'Le club est-il uniquement à Rochecorbon ?',
+    ],
+  },
+  {
+    // Stages de la Toussaint 2026, ambiance Halloween (campagne Meta en cours) :
+    // textes repris de l'annonce, du planning fourni par le club et de la page
+    // Stages vacances. Formulaire de rappel + fiche d'inscription PDF.
+    slug: 'stage-toussaint',
+    variant: 'lead',
+    metaTitle: 'Stages Halloween de la Toussaint à Rochecorbon | Kid Sport Club',
+    metaDescription:
+      'Stages sportifs Halloween pour les 3 à 14 ans au Kid Sport Club de Rochecorbon, du 19 au 23 et du 26 au 30 octobre, à la journée ou à la semaine.',
+    eyebrow: 'Stages Halloween · Vacances de la Toussaint',
+    h1: 'Pas de sort, que du sport !',
+    sousTitre:
+      'Cette Toussaint, le Kid Sport Club de Rochecorbon accueille les 3 à 14 ans en stages sportifs, à la journée ou à la semaine. Multisports, gym, danse, jeux d’équipe : ils se dépensent toute la journée avec des coachs diplômés, pendant que vous gérez votre semaine sereinement.',
+    image: '/assets/ksc/stages-vacances.webp',
+    halloween: { h1Accent: 'que du sport', dates: ['Du 19 au 23 octobre', 'Du 26 au 30 octobre', '3 à 14 ans'] },
+    heroBullets: ['Un thème Halloween par jour', 'À la journée ou à la semaine', 'Groupes par âge, encadrement diplômé'],
+    formCtaLabel: 'Réserver ses dates',
+    activite: 'Stages vacances',
+    ctaLabel: 'Réserver ses dates',
+    reassurance: ['Encadrement diplômé', 'Groupes par âge', 'De 3 à 14 ans', 'À 5 min de Tours'],
+    planningStage: PLANNING_TOUSSAINT,
+    fiche: FICHE_INSCRIPTION_STAGES,
+    etapes: [
+      { titre: 'Laissez vos coordonnées', texte: 'Vos coordonnées et l’âge de votre enfant : 30 secondes suffisent.' },
+      { titre: 'On vous rappelle', texte: 'Notre équipe vous rappelle dans la journée pour réserver ses dates.' },
+      { titre: 'La fiche d’inscription', texte: 'Remplissez et signez la fiche d’inscription, puis renvoyez-la au club par e-mail.' },
+    ],
+    tarif: { prix: '35 €/jour ou 150 €/semaine', details: ['Du 19 au 23 et du 26 au 30 octobre', 'Journée ou semaine complète'] },
+    stats: [...STATS_BASE],
+    pullQuote: {
+      avisIndex: 1,
+      extrait: 'il est toujours content d’y aller, il ne veut pas repartir le soir',
+    },
+    galerie: [
+      { src: '/assets/ksc/stages-vacances.webp', alt: 'Enfants en plein jeu de relais pendant un stage sportif' },
+      { src: '/assets/ksc/stages-mercredi.webp', alt: 'Enfants en stage sportif au club' },
+      { src: '/assets/ksc/cours-6-10-ans.webp', alt: 'Enfants de 6 à 10 ans en jeu collectif' },
+      { src: '/assets/ksc/cours-11-14-ans.webp', alt: 'Préados en séance de sport' },
+      { src: '/assets/ksc/collectivites.webp', alt: 'Groupe d’enfants lors d’une activité collective' },
+    ],
+    equipe: true,
+    lieu: true,
+    formFinal: true,
+    avis: true,
+    faq: [
+      'Proposez-vous des stages pendant les vacances scolaires ?',
+      'Quels sont vos tarifs ?',
+      'À partir de quel âge mon enfant peut-il commencer ?',
       'Le club est-il uniquement à Rochecorbon ?',
     ],
   },

@@ -22,6 +22,10 @@ const nextConfig: NextConfig = {
     // NB: modification 2026-07-07 — invalide le cache de build Vercel qui avait
     // resservi un routes-manifest périmé (redirection garderie absente en prod).
     return [
+      // Landings servies à la racine depuis le 02/10/2026 (/essai-gratuit…) : un
+      // visiteur qui raccourcit l'URL retombe sur l'accueil. Les anciennes URL
+      // /landing/{slug} (annonces en cours) redirigent, paramètres UTM conservés.
+      { source: '/landing/:slug', destination: '/:slug', permanent: true },
       { source: '/nos-prestations/garderie', destination: '/nos-prestations/mercredis-sportifs', permanent: true },
       // Retour client n5 (09/09/2026) : les 24 activités des 4 cours par tranche
       // d'âge sont remplacées par les 16 cours réellement dispensés. Chaque

@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Check, Plus, Star } from 'lucide-react'
+import { Check, FileDown, Plus, Star } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -25,6 +25,8 @@ import LandingTeam from './LandingTeam'
 import LandingTarifs from './LandingTarifs'
 import LandingPlace from './LandingPlace'
 import PullQuote from './PullQuote'
+import DecorHalloween from './DecorHalloween'
+import PlanningStage from './PlanningStage'
 import { landingBySlug } from '@/data/landings'
 import { HOME } from '@/data/home'
 import { faqParQuestions, getAvis, getFaq, getParametres, getPrestations } from '@/lib/contenu'
@@ -63,6 +65,36 @@ export default async function Landing({ slug }: { slug: string }) {
   const activiteForm = l.activite
     ? { activite: l.activite }
     : { activites: prestations.map((p) => p.titre) }
+  // Landing à thème Halloween : partie du h1 mise en valeur en orange.
+  const h1 = l.halloween && l.h1.includes(l.halloween.h1Accent)
+    ? (() => {
+        const [avant, apres] = l.h1.split(l.halloween.h1Accent)
+        return (
+          <>
+            {avant}
+            <span className="text-[#ff9a4d]">{l.halloween.h1Accent}</span>
+            {apres}
+          </>
+        )
+      })()
+    : l.h1
+  // Fiche d'inscription PDF, en alternative au formulaire (stages).
+  const fiche = l.fiche ? (
+    <p className="mt-4 flex items-start gap-2.5 text-sm leading-relaxed text-cream/80">
+      <FileDown size={18} className="mt-0.5 shrink-0 text-magenta-light" aria-hidden="true" />
+      <span>
+        Vous préférez la fiche d’inscription&nbsp;?{' '}
+        <a href={l.fiche} target="_blank" rel="noopener" className="font-bold whitespace-nowrap text-cream underline underline-offset-2 hover:text-magenta-light">
+          Télécharger la fiche (PDF)
+        </a>
+        <br />
+        À renvoyer remplie et signée à{' '}
+        <a href={coordonnees.emailHref} className="font-bold text-magenta-light [overflow-wrap:anywhere] underline-offset-2 hover:underline">
+          {coordonnees.email}
+        </a>
+      </span>
+    </p>
+  ) : null
 
   return (
     <div className="bg-cream pb-16 text-ink lg:pb-0">
@@ -79,13 +111,35 @@ export default async function Landing({ slug }: { slug: string }) {
       </header>
 
       {/* Hero marine : hook à gauche, FORMULAIRE à droite (variant lead). */}
-      <section className="relative overflow-hidden bg-marine px-6 pt-12 pb-16 text-cream">
-        <TerrainLines />
+      <section
+        className={cn(
+          'relative overflow-hidden px-6 pb-16 text-cream',
+          // Halloween : nuit marine qui glisse vers le violet, décor au-dessus du titre.
+          l.halloween ? 'bg-[linear-gradient(180deg,#081646_0%,#081646_55%,#1f1147_100%)] pt-8' : 'bg-marine pt-12',
+        )}
+      >
+        {l.halloween ? <DecorHalloween /> : <TerrainLines />}
         <div className={`relative mx-auto grid max-w-[1120px] gap-10 ${isLead ? 'lg:grid-cols-[1.1fr_0.9fr]' : 'items-center lg:grid-cols-2'}`}>
           <div>
-            <p className="mb-4 text-sm font-bold uppercase tracking-[.05em] text-magenta-light">{l.eyebrow}</p>
-            <h1 className="mb-4 font-heading text-[clamp(30px,4.4vw,48px)] font-extrabold leading-[1.08] text-cream">{l.h1}</h1>
+            <p className={cn('mb-4 text-sm font-bold uppercase tracking-[.05em]', l.halloween ? 'text-[#ff9a4d]' : 'text-magenta-light')}>{l.eyebrow}</p>
+            <h1 className="mb-4 font-heading text-[clamp(30px,4.4vw,48px)] font-extrabold leading-[1.08] text-cream">{h1}</h1>
             <p className="mb-6 max-w-[520px] text-[18px] leading-relaxed text-cream/80">{l.sousTitre}</p>
+
+            {l.halloween && (
+              <ul className="mb-6 flex flex-wrap gap-2.5">
+                {l.halloween.dates.map((d, i) => (
+                  <li
+                    key={d}
+                    className={cn(
+                      'rounded-full px-3.5 py-1.5 text-sm font-bold',
+                      i < l.halloween!.dates.length - 1 ? 'border border-[#f97316] bg-[#2a2550] text-white' : 'bg-white text-marine',
+                    )}
+                  >
+                    {d}
+                  </li>
+                ))}
+              </ul>
+            )}
 
             {isLead && l.heroBullets && (
               <ul className="mb-6 flex flex-col gap-2.5">
@@ -123,6 +177,7 @@ export default async function Landing({ slug }: { slug: string }) {
             <div className="lg:pl-4">
               <p className="mb-3 font-heading text-lg font-bold text-cream">{l.formCtaLabel ?? l.ctaLabel} :</p>
               <LeadForm source={`landing-${l.slug}`} landing={l.slug} {...activiteForm} ctaLabel={l.formCtaLabel ?? l.ctaLabel} compact />
+              {fiche}
             </div>
           ) : (
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-md">
@@ -140,6 +195,9 @@ export default async function Landing({ slug }: { slug: string }) {
           ))}
         </div>
       </div>
+
+      {/* Planning thématique de la semaine de stage (Toussaint, Halloween) */}
+      {l.planningStage && <PlanningStage planning={l.planningStage} />}
 
       {/* Bienvenue (catalogue) — EditorialSplit HOME.bienvenue, sans CTA de fuite */}
       {l.bienvenue && (
@@ -377,6 +435,7 @@ export default async function Landing({ slug }: { slug: string }) {
                   <Button asChild variant="outlineCream">
                     <a href={coordonnees.telephoneHref}>{coordonnees.telephone}</a>
                   </Button>
+                  {fiche}
                 </div>
                 <div>
                   <LeadForm

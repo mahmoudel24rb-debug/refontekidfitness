@@ -8,7 +8,9 @@ import { Badge } from '@/components/ui/badge'
 import { LANDINGS } from '@/data/landings'
 
 // Répertoire INTERNE des landing pages (confort d'équipe : tous les liens au
-// même endroit). Généré depuis data/landings.ts — toute nouvelle landing
+// même endroit). Les landings sont servies à la racine (/essai-gratuit…), les
+// anciennes URL /landing/{slug} redirigent (next.config.ts). Généré depuis
+// data/landings.ts — toute nouvelle landing
 // apparaît ici automatiquement. noindex, hors menu, hors sitemap, comme les
 // landings elles-mêmes.
 export const metadata: Metadata = {
@@ -34,7 +36,7 @@ export default function LandingIndex() {
           {LANDINGS.map((l) => (
             <Link
               key={l.slug}
-              href={`/landing/${l.slug}`}
+              href={`/${l.slug}`}
               className="group flex items-center gap-5 rounded-lg border border-border bg-card p-5 shadow-sm transition-shadow hover:shadow-md"
             >
               <div className="relative hidden size-16 shrink-0 overflow-hidden rounded-md sm:block">
@@ -47,7 +49,7 @@ export default function LandingIndex() {
                     {l.variant === 'catalogue' ? 'Catalogue → CRM' : 'Lead-gen (formulaire)'}
                   </Badge>
                 </div>
-                <p className="truncate font-mono text-[13px] text-muted-foreground">/landing/{l.slug}</p>
+                <p className="truncate font-mono text-[13px] text-muted-foreground">/{l.slug}</p>
               </div>
               <ArrowRight size={18} className="shrink-0 text-magenta transition-transform group-hover:translate-x-[3px]" aria-hidden="true" />
             </Link>
