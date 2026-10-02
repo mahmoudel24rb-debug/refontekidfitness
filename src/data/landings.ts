@@ -72,6 +72,8 @@ export type Landing = {
   planningStage?: PlanningStage
   /** Fiche d'inscription PDF proposée en plus des formulaires, à renvoyer remplie et signée. */
   fiche?: string
+  /** Landing indexée par les moteurs (et listée dans le sitemap) ; par défaut, noindex. */
+  indexable?: boolean
 }
 
 export const LANDINGS: Landing[] = [
@@ -235,6 +237,8 @@ export const LANDINGS: Landing[] = [
     // Stages vacances. Formulaire de rappel + fiche d'inscription PDF.
     slug: 'stage-toussaint',
     variant: 'lead',
+    // Indexée à la demande de Mahmoud (02/10/2026), contrairement aux autres landings.
+    indexable: true,
     metaTitle: 'Stages Halloween de la Toussaint à Rochecorbon | Kid Sport Club',
     metaDescription:
       'Stages sportifs Halloween pour les 3 à 14 ans au Kid Sport Club de Rochecorbon, du 19 au 23 et du 26 au 30 octobre, à la journée ou à la semaine.',

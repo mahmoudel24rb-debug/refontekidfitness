@@ -109,7 +109,7 @@ Contact                       /contact
 Séance d'essai                /seance-essai
 Blog / Actualités             /blog  (+ /blog/[slug] ×4)
 Légales                       /mentions-legales /confidentialite /cookies /cgv
-Landings (hors menu)          /[slug] à la racine, ex. /essai-gratuit (noindex, hors sitemap)
+Landings (hors menu)          /[slug] à la racine, ex. /essai-gratuit (noindex, hors sitemap ; sauf /stage-toussaint, indexée et au sitemap)
 Répertoire interne            /landing (liste des landings, noindex) ; /landing/[slug] redirige vers /[slug]
 ```
 

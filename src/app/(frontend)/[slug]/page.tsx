@@ -18,10 +18,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const l = landingBySlug(slug)
   if (!l) return { title: 'Kid Sport Club', robots: { index: false, follow: false } }
+  // Landings de campagne : non indexées pour ne pas concurrencer les pages SEO,
+  // sauf celles marquées indexable (stages de la Toussaint), listées au sitemap.
+  if (l.indexable) {
+    return { title: l.metaTitle, description: l.metaDescription, alternates: { canonical: `/${l.slug}` } }
+  }
   return {
     title: l.metaTitle,
     description: l.metaDescription,
-    // Landings de campagne : non indexées pour ne pas concurrencer les pages SEO.
     robots: { index: false, follow: true },
   }
 }
