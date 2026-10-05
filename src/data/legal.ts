@@ -53,7 +53,7 @@ export const COOKIES: LegalContent = {
     },
     {
       h: 'Bandeau d’information',
-      p: 'Le bandeau affiché lors de votre première visite présente ces cookies. Le bouton « J’ai compris » le ferme : ce choix est mémorisé dans le stockage local de votre navigateur (ksc_bandeau_cookies), sans cookie, pour ne plus l’afficher.',
+      p: 'Le bandeau affiché lors de votre première visite présente ces cookies. Le bouton « J’ai compris » le ferme : ce choix est mémorisé dans le stockage local de votre navigateur (ksc_bandeau_cookies), sans cookie, pour ne plus l’afficher. La croix le ferme seulement pour la page en cours : il réapparaît à la page suivante.',
     },
     {
       h: 'Supprimer les cookies',
