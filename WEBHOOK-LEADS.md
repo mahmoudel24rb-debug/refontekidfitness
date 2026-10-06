@@ -26,7 +26,7 @@ personnelle.
 | `prenom` | toujours | Prénom (du parent). Obligatoire. |
 | `nom` | toujours | Nom du parent, demandé et obligatoire dans tous les formulaires (Contact, Séance d'essai, fiches prestation, pages des cours, landings). Vide seulement pour un envoi depuis une page restée en cache avant l'ajout du champ (la validation du serveur ne l'exige pas). |
 | `telephone` | toujours | Téléphone. Téléphone ou email obligatoire ; vide si non saisi. |
-| `email` | toujours | Email. Vide si non saisi. |
+| `email` | toujours | Email. Obligatoire dans le formulaire du haut des landings (depuis le 06/10/2026), facultatif ailleurs ; vide si non saisi. |
 | `ageEnfant` | toujours | Âge de l'enfant, texte libre (ex. « 6 ans »). Vide si non saisi. |
 | `activite` | toujours | Activité qui intéresse le prospect (valeurs plus bas). |
 | `creneau` | toujours | Créneau souhaité (fiches prestation et pages des cours). Vide si non choisi. |

@@ -29,6 +29,8 @@ type Props = {
   compact?: boolean
   /** avec champ email (page Contact) */
   withEmail?: boolean
+  /** champ email obligatoire (formulaire du haut des landings) ; implique withEmail */
+  emailObligatoire?: boolean
   /** Options de créneau (fiches prestation) : ajoute un <select> optionnel. */
   creneaux?: { value: string; label: string }[]
   /** id du <form> (défaut 'lead-form'). Le 2e formulaire de fin de page
@@ -48,7 +50,7 @@ type Props = {
     }
 )
 
-export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compact, withEmail, creneaux, activites, activite, formId = 'lead-form', className }: Props) {
+export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compact, withEmail, emailObligatoire, creneaux, activites, activite, formId = 'lead-form', className }: Props) {
   const [etat, setEtat] = useState<'idle' | 'envoi' | 'ok' | 'erreur'>('idle')
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -84,7 +86,7 @@ export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compac
             <Check size={24} strokeWidth={3} aria-hidden="true" />
           </span>
           <p className="font-heading text-xl font-bold text-marine">Merci !</p>
-          <p className="leading-relaxed">Notre équipe vous rappelle très vite pour tout organiser.</p>
+          <p className="leading-relaxed text-ink">Notre équipe vous rappelle très vite pour tout organiser.</p>
         </div>
       </div>
     )
@@ -100,7 +102,9 @@ export default function LeadForm({ source, landing, ctaLabel = 'Envoyer', compac
           <FormField id={`${source}-nom`} name="nom" label="Nom du parent" required autoComplete="family-name" />
         </div>
         <FormField id={`${source}-tel`} name="telephone" label="Téléphone" type="tel" required autoComplete="tel" />
-        {withEmail && <FormField id={`${source}-email`} name="email" label="Email" type="email" autoComplete="email" />}
+        {(withEmail || emailObligatoire) && (
+          <FormField id={`${source}-email`} name="email" label="Email" type="email" autoComplete="email" required={emailObligatoire} />
+        )}
         <FormField id={`${source}-age`} name="ageEnfant" label="Âge de l’enfant" placeholder="ex. 4 ans" />
         {activites && activites.length > 0 && (
           <div className="grid gap-2">

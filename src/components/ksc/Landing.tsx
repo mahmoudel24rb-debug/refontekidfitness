@@ -183,7 +183,7 @@ export default async function Landing({ slug }: { slug: string }) {
           {isLead ? (
             <div className="lg:pl-4">
               <p className="mb-3 font-heading text-lg font-bold text-cream">{l.formCtaLabel ?? l.ctaLabel} :</p>
-              <LeadForm source={`landing-${l.slug}`} landing={l.slug} {...activiteForm} ctaLabel={l.formCtaLabel ?? l.ctaLabel} compact />
+              <LeadForm source={`landing-${l.slug}`} landing={l.slug} {...activiteForm} ctaLabel={l.formCtaLabel ?? l.ctaLabel} compact emailObligatoire />
               {fiche}
             </div>
           ) : (
