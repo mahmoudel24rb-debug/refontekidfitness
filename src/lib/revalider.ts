@@ -1,19 +1,37 @@
 import { revalidatePath } from 'next/cache'
+import { after } from 'next/server'
 import type {
   CollectionAfterChangeHook,
   CollectionAfterDeleteHook,
   GlobalAfterChangeHook,
 } from 'payload'
 
+import { marquerContenuModifie } from './versionContenu'
+
 /**
- * Remet tout le site à jour après une modification dans l'admin : toutes les
- * pages (layout racine « / ») seront régénérées à leur prochaine visite, sans
- * attendre la revalidation périodique (revalidate = 60).
+ * Remet tout le site à jour après une modification dans l'admin :
+ * - nouvelle version du contenu (src/lib/versionContenu.ts) : chaque processus
+ *   Node relit Payload au lieu de servir le contenu gardé en mémoire ;
+ * - toutes les pages (layout racine « / ») du processus qui a traité
+ *   l'enregistrement sont régénérées à leur prochaine visite ; les autres
+ *   processus suivent à leur revalidation périodique (revalidate = 60).
  *
- * Silencieux hors de Next.js : les scripts `payload run` (seed, remplissages)
- * n'ont pas de contexte de rendu et revalidatePath y lève une erreur.
+ * La version est écrite après la réponse (`after`) : la transaction de
+ * l'enregistrement est alors validée, et une lecture lancée entre-temps ne peut
+ * pas garder l'ancien contenu sous la nouvelle version.
+ *
+ * Hors de Next.js (scripts `payload run` : seed, remplissages), `after` et
+ * revalidatePath lèvent une erreur : la version est alors écrite tout de suite,
+ * dans le dossier local du script. Une modification faite par un script sur la
+ * base de production n'atteint donc pas le site en ligne : enregistrer ensuite
+ * un document dans l'admin pour le mettre à jour.
  */
 export function revaliderSite(): void {
+  try {
+    after(marquerContenuModifie)
+  } catch {
+    marquerContenuModifie()
+  }
   try {
     revalidatePath('/', 'layout')
   } catch {

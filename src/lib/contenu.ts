@@ -16,6 +16,7 @@ import {
   RESERVATION_URLS,
 } from '@/data/site'
 import { slugifie } from './utils'
+import { lireVersionContenu } from './versionContenu'
 
 /**
  * COUCHE D'ACCÈS AU CONTENU — à n'utiliser que côté serveur.
@@ -30,6 +31,13 @@ import { slugifie } from './utils'
  *
  * Les résultats sont mémorisés par requête (React `cache`) : plusieurs
  * composants d'une même page ne déclenchent qu'une seule lecture.
+ *
+ * Entre les requêtes, chaque lecture Payload est gardée en mémoire par le
+ * processus Node jusqu'au prochain enregistrement dans l'admin (version du
+ * contenu, src/lib/versionContenu.ts). Une régénération de page (revalidate =
+ * 60) ne relit donc pas la base. Avant, chaque visite d'une page vieille de plus
+ * de 60 s relisait Neon, qui ne s'endormait presque plus : 84 % du quota de
+ * calcul mensuel du forfait gratuit atteint le 19/10/2026.
  */
 
 // ---------------------------------------------------------------------------
@@ -45,9 +53,49 @@ const basePresente = () =>
   )
 
 /**
+ * Dernière lecture Payload de chaque fetcher, avec la version du contenu lue
+ * juste avant la requête. Partagée par toutes les requêtes du processus : ces
+ * objets ne sont jamais modifiés (comme les fichiers src/data, servis tels quels).
+ */
+const memoire = new Map<string, { version: string; valeur: unknown }>()
+
+/**
+ * Lecture Payload gardée en mémoire jusqu'au prochain enregistrement dans
+ * l'admin :
+ * - version du contenu inchangée : contenu en mémoire, sans requête ;
+ * - sinon (premier rendu du processus, ou enregistrement depuis) : lecture
+ *   Payload, gardée avec la version lue AVANT la requête : un enregistrement
+ *   pendant la lecture déclenche donc une nouvelle lecture au rendu suivant ;
+ * - lecture impossible : dernier contenu en mémoire s'il existe, même ancien,
+ *   plutôt que les fichiers src/data ; sinon l'erreur remonte à l'appelant.
+ */
+async function lireAvecMemoire<T>(cle: string, lire: (payload: BasePayload) => Promise<T>): Promise<T> {
+  const version = lireVersionContenu()
+  const gardee = memoire.get(cle) as { version: string; valeur: T } | undefined
+  if (gardee && gardee.version === version) return gardee.valeur
+  try {
+    // Import dynamique : sans base, le module Payload n'est même pas chargé.
+    const { getPayloadClient } = await import('./payload')
+    const payload = await getPayloadClient()
+    const valeur = await lire(payload)
+    memoire.set(cle, { version, valeur })
+    return valeur
+  } catch (erreur) {
+    if (!gardee) throw erreur
+    console.warn(
+      `[contenu] ${cle} : lecture Payload impossible, dernier contenu lu conservé — ${
+        erreur instanceof Error ? erreur.message : String(erreur)
+      }`,
+    )
+    return gardee.valeur
+  }
+}
+
+/**
  * Exécute une lecture Payload si (et seulement si) une base est configurée.
  * Retourne `null` pour signaler « pas de contenu utilisable » : base absente,
- * erreur, ou collection vide. L'appelant sert alors le fichier de données.
+ * erreur sans contenu en mémoire, ou collection vide. L'appelant sert alors le
+ * fichier de données.
  */
 async function depuisPayload<T>(
   quoi: string,
@@ -55,10 +103,7 @@ async function depuisPayload<T>(
 ): Promise<T[] | null> {
   if (!basePresente()) return null
   try {
-    // Import dynamique : sans base, le module Payload n'est même pas chargé.
-    const { getPayloadClient } = await import('./payload')
-    const payload = await getPayloadClient()
-    const docs = await lire(payload)
+    const docs = await lireAvecMemoire(quoi, lire)
     return docs.length > 0 ? docs : null
   } catch (erreur) {
     console.warn(
@@ -572,9 +617,7 @@ const PARAMETRES_FICHIER: ParametresVue = {
 export const getParametres = cache(async (): Promise<ParametresVue> => {
   if (!basePresente()) return PARAMETRES_FICHIER
   try {
-    const { getPayloadClient } = await import('./payload')
-    const payload = await getPayloadClient()
-    const g = await payload.findGlobal({ slug: 'parametres' })
+    const g = await lireAvecMemoire('parametres', (payload) => payload.findGlobal({ slug: 'parametres' }))
     const c = g?.coordonnees ?? {}
     const r = g?.reservation ?? {}
     const f = PARAMETRES_FICHIER
