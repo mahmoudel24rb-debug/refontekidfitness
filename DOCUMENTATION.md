@@ -404,6 +404,27 @@ Les fichiers `src/data/*` restent donc à la fois la source de secours permanent
 et la source des seeds. Les résultats sont mémorisés par requête (`cache` de
 React) : plusieurs composants d'une même page ne déclenchent qu'une lecture.
 
+Entre les requêtes, chaque lecture Payload est **gardée en mémoire** par le
+processus Node jusqu'au prochain enregistrement dans l'admin. Les hooks de
+`src/lib/revalider.ts` (toutes les collections de contenu et le global) écrivent
+alors une nouvelle version du contenu dans `.next/cache/ksc-version-contenu`
+(`src/lib/versionContenu.ts`). Ce fichier est lu par tous les processus
+(Hostinger en fait tourner plusieurs), et chacun relit Payload à son prochain
+rendu. Une page régénérée sans enregistrement depuis ne touche donc pas la base.
+Neon ne se réveille plus qu'aux enregistrements, aux déploiements et aux
+redémarrages du serveur.
+
+Avant ce mécanisme, chaque visite d'une page vieille de plus de 60 s relisait
+Neon. Un robot passait sur l'accueil toutes les 3 minutes, si bien que la base
+ne s'endormait presque plus : 84 % du quota de calcul mensuel du forfait gratuit
+était atteint le 19/10/2026.
+
+- Base injoignable au moment d'une relecture : le dernier contenu lu reste
+  servi. Sans contenu en mémoire, le repli sur `src/data/*` s'applique.
+- Modification faite **hors de l'admin** (script `payload run`, console Neon) :
+  le site en ligne ne la voit pas. Il faut ensuite enregistrer un document dans
+  l'admin, ou redéployer.
+
 Les pages qui exposent ce contenu sont en **ISR (`export const revalidate = 60`)**.
 Sans base, elles prérendent exactement le contenu actuel : le markup des 31 pages
 statiques est identique à celui d'avant l'intégration (vérifié par diff HTML).
